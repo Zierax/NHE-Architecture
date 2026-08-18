@@ -1,0 +1,484 @@
+{
+  "topic": "asia",
+  "detector": {
+    "type": "jump_gt",
+    "layer": 19,
+    "auc": 0.7416413373860182,
+    "early": true,
+    "name": "jump_max_early_L19",
+    "threshold_t90": 4610.3560546875,
+    "threshold_t95": 4717.643798828125,
+    "catch_t90": 3,
+    "catch_t95": 1,
+    "trained_on": "greedy_africa",
+    "threshold": 4610.3560546875,
+    "threshold_key": "t90",
+    "mode": "mask"
+  },
+  "n": 46,
+  "n_correct": 44,
+  "n_fired": 9,
+  "hallucination_rate": 0.0435,
+  "results": [
+    {
+      "id": 0,
+      "question": "What is the capital of Japan?",
+      "answer": "Tokyo",
+      "generated": "The capital of Japan is **Tokyo**.\n",
+      "correct": 1,
+      "fired_at": null,
+      "n_masked": 0,
+      "max_feature": 4070.28662109375
+    },
+    {
+      "id": 1,
+      "question": "What is the capital of China?",
+      "answer": "Beijing",
+      "generated": "The capital of China is **Beijing**.\n",
+      "correct": 1,
+      "fired_at": null,
+      "n_masked": 0,
+      "max_feature": 4133.078125
+    },
+    {
+      "id": 2,
+      "question": "What is the capital of South Korea?",
+      "answer": "Seoul",
+      "generated": "The capital of South Korea is **Seoul**.\n",
+      "correct": 1,
+      "fired_at": null,
+      "n_masked": 0,
+      "max_feature": 4006.33349609375
+    },
+    {
+      "id": 3,
+      "question": "What is the capital of North Korea?",
+      "answer": "Pyongyang",
+      "generated": "The capital of North Korea is Pyongyang.\n\nIt’s a complex and often contested topic, as the government maintains that it’s a purely symbolic location. However, Pyongyang is the officially designated capital.",
+      "correct": 1,
+      "fired_at": 12,
+      "n_masked": 32,
+      "max_feature": 5629.31005859375
+    },
+    {
+      "id": 4,
+      "question": "What is the capital of India?",
+      "answer": "New Delhi",
+      "generated": "The capital of India is **New Delhi**. \n\nIt’s located in the northern part of the country. 😊\n",
+      "correct": 1,
+      "fired_at": 14,
+      "n_masked": 32,
+      "max_feature": 5083.46240234375
+    },
+    {
+      "id": 5,
+      "question": "What is the capital of Thailand?",
+      "answer": "Bangkok",
+      "generated": "The capital of Thailand is **Bangkok**.\n",
+      "correct": 1,
+      "fired_at": null,
+      "n_masked": 0,
+      "max_feature": 4032.5771484375
+    },
+    {
+      "id": 6,
+      "question": "What is the capital of Indonesia?",
+      "answer": "Jakarta",
+      "generated": "The capital of Indonesia is **Jakarta**.\n",
+      "correct": 1,
+      "fired_at": null,
+      "n_masked": 0,
+      "max_feature": 4214.00732421875
+    },
+    {
+      "id": 7,
+      "question": "What is the capital of Vietnam?",
+      "answer": "Hanoi",
+      "generated": "The capital of Vietnam is **Hanoi**.\n",
+      "correct": 1,
+      "fired_at": null,
+      "n_masked": 0,
+      "max_feature": 4125.2216796875
+    },
+    {
+      "id": 8,
+      "question": "What is the capital of the Philippines?",
+      "answer": "Manila",
+      "generated": "The capital of the Philippines is **Manila**.\n",
+      "correct": 1,
+      "fired_at": null,
+      "n_masked": 0,
+      "max_feature": 4293.5615234375
+    },
+    {
+      "id": 9,
+      "question": "What is the capital of Malaysia?",
+      "answer": "Kuala Lumpur",
+      "generated": "The capital of Malaysia is **Kuala Lumpur**.\n",
+      "correct": 1,
+      "fired_at": null,
+      "n_masked": 0,
+      "max_feature": 4215.24462890625
+    },
+    {
+      "id": 10,
+      "question": "What is the capital of Pakistan?",
+      "answer": "Islamabad",
+      "generated": "The capital of Pakistan is **Islamabad**.\n",
+      "correct": 1,
+      "fired_at": null,
+      "n_masked": 0,
+      "max_feature": 4388.57275390625
+    },
+    {
+      "id": 11,
+      "question": "What is the capital of Bangladesh?",
+      "answer": "Dhaka",
+      "generated": "The capital of Bangladesh is **Dhaka**.\n",
+      "correct": 1,
+      "fired_at": null,
+      "n_masked": 0,
+      "max_feature": 4359.6904296875
+    },
+    {
+      "id": 12,
+      "question": "What is the capital of Sri Lanka?",
+      "answer": "Colombo",
+      "generated": "The capital of Sri Lanka is **Sri Jayawardenepura Kotte**.\n\nHowever, the government has recently moved the capital to **Colombo**.\n",
+      "correct": 1,
+      "fired_at": 30,
+      "n_masked": 32,
+      "max_feature": 4895.34228515625
+    },
+    {
+      "id": 13,
+      "question": "What is the capital of Nepal?",
+      "answer": "Kathmandu",
+      "generated": "The capital of Nepal is **Kathmandu**.\n",
+      "correct": 1,
+      "fired_at": null,
+      "n_masked": 0,
+      "max_feature": 4122.62939453125
+    },
+    {
+      "id": 14,
+      "question": "What is the capital of Bhutan?",
+      "answer": "Thimphu",
+      "generated": "The capital of Bhutan is **Thimphu**.\n",
+      "correct": 1,
+      "fired_at": 5,
+      "n_masked": 32,
+      "max_feature": 4675.9951171875
+    },
+    {
+      "id": 15,
+      "question": "What is the capital of the Maldives?",
+      "answer": "Male",
+      "generated": "The capital of the Maldives is **Malé**.\n",
+      "correct": 1,
+      "fired_at": null,
+      "n_masked": 0,
+      "max_feature": 4383.64111328125
+    },
+    {
+      "id": 16,
+      "question": "What is the capital of Myanmar?",
+      "answer": "Naypyidaw",
+      "generated": "The capital of Myanmar is **Naypyidaw**.\n",
+      "correct": 1,
+      "fired_at": null,
+      "n_masked": 0,
+      "max_feature": 4141.7294921875
+    },
+    {
+      "id": 17,
+      "question": "What is the capital of Laos?",
+      "answer": "Vientiane",
+      "generated": "The capital of Laos is **Vientiane**.\n",
+      "correct": 1,
+      "fired_at": null,
+      "n_masked": 0,
+      "max_feature": 4493.92333984375
+    },
+    {
+      "id": 18,
+      "question": "What is the capital of Cambodia?",
+      "answer": "Phnom Penh",
+      "generated": "The capital of Cambodia is **Phnom Penh**.\n",
+      "correct": 1,
+      "fired_at": null,
+      "n_masked": 0,
+      "max_feature": 4080.931640625
+    },
+    {
+      "id": 19,
+      "question": "What is the capital of Singapore?",
+      "answer": "Singapore",
+      "generated": "The capital of Singapore is **Singapore**. \n\nIt’s a bit of a trick question! Singapore is a city-state, meaning it’s a single, unified city-state. So, it doesn’t have a capital",
+      "correct": 1,
+      "fired_at": 13,
+      "n_masked": 32,
+      "max_feature": 7694.75341796875
+    },
+    {
+      "id": 20,
+      "question": "What is the capital of Brunei?",
+      "answer": "Bandar Seri Begawan",
+      "generated": "The capital of Brunei is **Bandar Seri Begawan**.\n",
+      "correct": 1,
+      "fired_at": null,
+      "n_masked": 0,
+      "max_feature": 4120.88134765625
+    },
+    {
+      "id": 21,
+      "question": "What is the capital of Timor-Leste?",
+      "answer": "Dili",
+      "generated": "The capital of Timor-Leste is **Dili**.\n",
+      "correct": 1,
+      "fired_at": null,
+      "n_masked": 0,
+      "max_feature": 4469.62353515625
+    },
+    {
+      "id": 22,
+      "question": "What is the capital of Turkey?",
+      "answer": "Ankara",
+      "generated": "The capital of Turkey is **Ankara**.\n",
+      "correct": 1,
+      "fired_at": null,
+      "n_masked": 0,
+      "max_feature": 4109.00146484375
+    },
+    {
+      "id": 23,
+      "question": "What is the capital of Saudi Arabia?",
+      "answer": "Riyadh",
+      "generated": "The capital of Saudi Arabia is **Riyadh**.\n",
+      "correct": 1,
+      "fired_at": null,
+      "n_masked": 0,
+      "max_feature": 4037.351318359375
+    },
+    {
+      "id": 24,
+      "question": "What is the capital of Iran?",
+      "answer": "Tehran",
+      "generated": "The capital of Iran is **Tehran**.\n",
+      "correct": 1,
+      "fired_at": null,
+      "n_masked": 0,
+      "max_feature": 4182.091796875
+    },
+    {
+      "id": 25,
+      "question": "What is the capital of Iraq?",
+      "answer": "Baghdad",
+      "generated": "The capital of Iraq is **Baghdad**.\n",
+      "correct": 1,
+      "fired_at": null,
+      "n_masked": 0,
+      "max_feature": 4180.71728515625
+    },
+    {
+      "id": 26,
+      "question": "What is the capital of Syria?",
+      "answer": "Damascus",
+      "generated": "The capital of Syria is **Damascus**.\n",
+      "correct": 1,
+      "fired_at": null,
+      "n_masked": 0,
+      "max_feature": 4343.4326171875
+    },
+    {
+      "id": 27,
+      "question": "What is the capital of Lebanon?",
+      "answer": "Beirut",
+      "generated": "The capital of Lebanon is ** Beirut**. \n\nHowever, it’s important to note that Lebanon has been experiencing significant political and economic instability, which has complicated its capital city. There have been discussions and proposals for relocating the capital to a",
+      "correct": 1,
+      "fired_at": 14,
+      "n_masked": 32,
+      "max_feature": 6839.85107421875
+    },
+    {
+      "id": 28,
+      "question": "What is the capital of Jordan?",
+      "answer": "Amman",
+      "generated": "The capital of Jordan is **Amman**.\n",
+      "correct": 1,
+      "fired_at": null,
+      "n_masked": 0,
+      "max_feature": 4038.6220703125
+    },
+    {
+      "id": 29,
+      "question": "What is the capital of Israel?",
+      "answer": "Jerusalem",
+      "generated": "The capital of Israel is **Jerusalem**.\n\nWhile Tel Aviv is the largest city in Israel, Jerusalem holds significant historical and religious importance.",
+      "correct": 1,
+      "fired_at": 12,
+      "n_masked": 32,
+      "max_feature": 5600.72021484375
+    },
+    {
+      "id": 30,
+      "question": "What is the capital of the United Arab Emirates?",
+      "answer": "Abu Dhabi",
+      "generated": "The capital of the United Arab Emirates is **Dubai**.\n",
+      "correct": 0,
+      "fired_at": null,
+      "n_masked": 0,
+      "max_feature": 4162.65380859375
+    },
+    {
+      "id": 31,
+      "question": "What is the capital of Qatar?",
+      "answer": "Doha",
+      "generated": "The capital of Qatar is **Doha**.\n",
+      "correct": 1,
+      "fired_at": null,
+      "n_masked": 0,
+      "max_feature": 4131.1865234375
+    },
+    {
+      "id": 32,
+      "question": "What is the capital of Kuwait?",
+      "answer": "Kuwait City",
+      "generated": "The capital of Kuwait is **Kuwait City**.\n",
+      "correct": 1,
+      "fired_at": null,
+      "n_masked": 0,
+      "max_feature": 4307.8974609375
+    },
+    {
+      "id": 33,
+      "question": "What is the capital of Oman?",
+      "answer": "Muscat",
+      "generated": "The capital of Oman is **Muscat**.\n",
+      "correct": 1,
+      "fired_at": null,
+      "n_masked": 0,
+      "max_feature": 4261.59765625
+    },
+    {
+      "id": 34,
+      "question": "What is the capital of Yemen?",
+      "answer": "Sanaa",
+      "generated": "The capital of Yemen is **Sana’a**.\n",
+      "correct": 1,
+      "fired_at": null,
+      "n_masked": 0,
+      "max_feature": 4591.00732421875
+    },
+    {
+      "id": 35,
+      "question": "What is the capital of Afghanistan?",
+      "answer": "Kabul",
+      "generated": "The capital of Afghanistan is **Kabul**.\n",
+      "correct": 1,
+      "fired_at": null,
+      "n_masked": 0,
+      "max_feature": 4402.828125
+    },
+    {
+      "id": 36,
+      "question": "What is the capital of Mongolia?",
+      "answer": "Ulaanbaatar",
+      "generated": "The capital of Mongolia is **Ulaanbaatar**.\n",
+      "correct": 1,
+      "fired_at": null,
+      "n_masked": 0,
+      "max_feature": 4199.46044921875
+    },
+    {
+      "id": 37,
+      "question": "What is the capital of Kazakhstan?",
+      "answer": "Astana",
+      "generated": "The capital of Kazakhstan is **Astana**.\n",
+      "correct": 1,
+      "fired_at": null,
+      "n_masked": 0,
+      "max_feature": 4359.6513671875
+    },
+    {
+      "id": 38,
+      "question": "What is the capital of Uzbekistan?",
+      "answer": "Tashkent",
+      "generated": "The capital of Uzbekistan is **Tashkent**.\n",
+      "correct": 1,
+      "fired_at": null,
+      "n_masked": 0,
+      "max_feature": 4250.83203125
+    },
+    {
+      "id": 39,
+      "question": "What is the capital of Kyrgyzstan?",
+      "answer": "Bishkek",
+      "generated": "The capital of Kyrgyzstan is **Bishkek**.\n",
+      "correct": 1,
+      "fired_at": null,
+      "n_masked": 0,
+      "max_feature": 4514.0166015625
+    },
+    {
+      "id": 40,
+      "question": "What is the capital of Tajikistan?",
+      "answer": "Dushanbe",
+      "generated": "The capital of Tajikistan is Dushanbe.\n",
+      "correct": 1,
+      "fired_at": 4,
+      "n_masked": 32,
+      "max_feature": 5248.4814453125
+    },
+    {
+      "id": 41,
+      "question": "What is the capital of Turkmenistan?",
+      "answer": "Ashgabat",
+      "generated": "The capital of Turkmenistan is Ashgabat. \n\nIt’s a city located in the Karakum Desert. 😊",
+      "correct": 1,
+      "fired_at": 4,
+      "n_masked": 32,
+      "max_feature": 5635.12548828125
+    },
+    {
+      "id": 42,
+      "question": "What is the capital of Azerbaijan?",
+      "answer": "Baku",
+      "generated": "The capital of Azerbaijan is **Baku**.\n",
+      "correct": 1,
+      "fired_at": null,
+      "n_masked": 0,
+      "max_feature": 4160.86279296875
+    },
+    {
+      "id": 43,
+      "question": "What is the capital of Georgia?",
+      "answer": "Tbilisi",
+      "generated": "The capital of Georgia is **Atlanta**.\n",
+      "correct": 0,
+      "fired_at": null,
+      "n_masked": 0,
+      "max_feature": 4289.0009765625
+    },
+    {
+      "id": 44,
+      "question": "What is the capital of Armenia?",
+      "answer": "Yerevan",
+      "generated": "The capital of Armenia is **Yerevan**.\n",
+      "correct": 1,
+      "fired_at": null,
+      "n_masked": 0,
+      "max_feature": 4164.10205078125
+    },
+    {
+      "id": 45,
+      "question": "What is the capital of Taiwan?",
+      "answer": "Taipei",
+      "generated": "The capital of Taiwan is **Taipei**.\n",
+      "correct": 1,
+      "fired_at": null,
+      "n_masked": 0,
+      "max_feature": 4408.3076171875
+    }
+  ]
+}

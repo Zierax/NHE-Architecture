@@ -1,0 +1,112 @@
+{
+ "selected": "jump_max_L18",
+ "detector": {
+  "type": "jump_gt",
+  "layer": 18,
+  "auc": 0.8601823708206687,
+  "early": false,
+  "threshold_t90": 4754.287109375,
+  "threshold_t95": 5736.838818359371,
+  "catch_t90": 3,
+  "catch_t95": 3,
+  "trained_on": "greedy_africa",
+  "name": "jump_max_L18"
+ },
+ "detector_early": {
+  "type": "jump_gt",
+  "layer": 19,
+  "auc": 0.7416413373860182,
+  "early": true,
+  "name": "jump_max_early_L19",
+  "threshold_t90": 4610.3560546875,
+  "threshold_t95": 4717.643798828125,
+  "catch_t90": 3,
+  "catch_t95": 1,
+  "trained_on": "greedy_africa"
+ },
+ "probe_L10_auc": 0.6717325227963525,
+ "top_features": [
+  {
+   "name": "jump_max_L18",
+   "auc": 0.8601823708206687
+  },
+  {
+   "name": "jump_max_L19",
+   "auc": 0.817629179331307
+  },
+  {
+   "name": "jump_max_L14",
+   "auc": 0.8024316109422492
+  },
+  {
+   "name": "jump_max_L15",
+   "auc": 0.8024316109422492
+  },
+  {
+   "name": "jump_max_L17",
+   "auc": 0.8024316109422492
+  },
+  {
+   "name": "jump_max_L04",
+   "auc": 0.7325227963525835
+  },
+  {
+   "name": "jump_max_L05",
+   "auc": 0.723404255319149
+  },
+  {
+   "name": "jump_max_L03",
+   "auc": 0.7173252279635258
+  },
+  {
+   "name": "jump_max_L16",
+   "auc": 0.7142857142857143
+  },
+  {
+   "name": "jump_max_L20",
+   "auc": 0.6930091185410334
+  }
+ ],
+ "top_early_features": [
+  {
+   "name": "jump_max_early_L19",
+   "auc": 0.7416413373860182
+  },
+  {
+   "name": "jump_max_early_L20",
+   "auc": 0.7264437689969605
+  },
+  {
+   "name": "cos_min_early_L18",
+   "auc": 0.6778115501519757
+  },
+  {
+   "name": "jump_max_early_L18",
+   "auc": 0.6747720364741642
+  },
+  {
+   "name": "jump_max_early_L24",
+   "auc": 0.6747720364741642
+  },
+  {
+   "name": "cos_min_early_L17",
+   "auc": 0.6474164133738601
+  },
+  {
+   "name": "jump_max_early_L03",
+   "auc": 0.6413373860182371
+  },
+  {
+   "name": "jump_max_early_L15",
+   "auc": 0.6322188449848024
+  },
+  {
+   "name": "jump_max_early_L21",
+   "auc": 0.6291793313069908
+  },
+  {
+   "name": "jump_max_early_L10",
+   "auc": 0.6261398176291794
+  }
+ ]
+}

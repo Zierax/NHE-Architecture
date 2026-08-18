@@ -1,0 +1,873 @@
+{
+  "topic": "elements",
+  "mask": "results\\mask_k128_wrong.json",
+  "n": 41,
+  "samples": 5,
+  "n_correct": 30,
+  "hallucination_rate": 0.2683,
+  "correct_rate": 0.7317,
+  "results": [
+    {
+      "id": 0,
+      "question": "What is the chemical symbol for Hydrogen?",
+      "answer": "H",
+      "generated": "The chemical symbol for Hydrogen is H.",
+      "samples": [
+        "The chemical symbol for Hydrogen is H.",
+        "The chemical symbol for hydrogen is H.",
+        "The chemical symbol for hydrogen is H.",
+        "The chemical symbol for Hydrogen is H.",
+        "The chemical symbol for Hydrogen is H."
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 1,
+      "question": "What is the chemical symbol for Helium?",
+      "answer": "He",
+      "generated": "The chemical symbol for Helium is He.",
+      "samples": [
+        "The chemical symbol for Helium is He.",
+        "The chemical symbol for Helium is He.",
+        "The chemical symbol for helium is He. 😊",
+        "The chemical symbol for Helium is He.",
+        "The chemical symbol for Helium is He."
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 2,
+      "question": "What is the chemical symbol for Lithium?",
+      "answer": "Li",
+      "generated": "The chemical symbol for Lithium is Li.",
+      "samples": [
+        "The chemical symbol for Lithium is Li.",
+        "The chemical symbol for Lithium is Li.",
+        "The chemical symbol for lithium is Li.",
+        "The chemical symbol for lithium is Li.",
+        "The chemical symbol for lithium is Li."
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 3,
+      "question": "What is the chemical symbol for Beryllium?",
+      "answer": "Be",
+      "generated": "The chemical symbol for beryllium is Be.",
+      "samples": [
+        "The chemical symbol for beryllium is Be.",
+        "The chemical symbol for beryllium is Be.",
+        "The chemical symbol for beryllium is Be.",
+        "The chemical symbol for Beryllium is Be.",
+        "The chemical symbol for Beryllium is Be."
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 4,
+      "question": "What is the chemical symbol for Boron?",
+      "answer": "B",
+      "generated": "The chemical symbol for boron is B. 😊\n",
+      "samples": [
+        "The chemical symbol for boron is B. 😊\n",
+        "The chemical symbol for boron is B.",
+        "The chemical symbol for Boron is B. \n\nIt’s simply B. 😊",
+        "The chemical symbol for Boron is B.",
+        "The chemical symbol for Boron is B. \n\nIt’s a simple, three-letter symbol! 😊"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 5,
+      "question": "What is the chemical symbol for Carbon?",
+      "answer": "C",
+      "generated": "The chemical symbol for carbon is C.",
+      "samples": [
+        "The chemical symbol for carbon is C.",
+        "The chemical symbol for Carbon is C.",
+        "The chemical symbol for Carbon is C.",
+        "The chemical symbol for carbon is C.",
+        "The chemical symbol for Carbon is C."
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 6,
+      "question": "What is the chemical symbol for Nitrogen?",
+      "answer": "N",
+      "generated": "The chemical symbol for nitrogen is N.",
+      "samples": [
+        "The chemical symbol for nitrogen is N.",
+        "The chemical symbol for nitrogen is N.",
+        "The chemical symbol for nitrogen is N.",
+        "The chemical symbol for nitrogen is N.",
+        "The chemical symbol for nitrogen is N."
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 7,
+      "question": "What is the chemical symbol for Oxygen?",
+      "answer": "O",
+      "generated": "The chemical symbol for oxygen is O.",
+      "samples": [
+        "The chemical symbol for oxygen is O.",
+        "The chemical symbol for oxygen is O.",
+        "The chemical symbol for oxygen is O.",
+        "The chemical symbol for Oxygen is O.",
+        "The chemical symbol for oxygen is O."
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 8,
+      "question": "What is the chemical symbol for Fluorine?",
+      "answer": "F",
+      "generated": "The chemical symbol for fluorine is F.",
+      "samples": [
+        "The chemical symbol for fluorine is F.",
+        "The chemical symbol for fluorine is F.",
+        "The chemical symbol for fluorine is F.",
+        "The chemical symbol for fluorine is F. 😊\n",
+        "The chemical symbol for fluorine is F."
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 9,
+      "question": "What is the chemical symbol for Neon?",
+      "answer": "Ne",
+      "generated": "The chemical symbol for Neon is Ne.",
+      "samples": [
+        "The chemical symbol for Neon is Ne.",
+        "The chemical symbol for neon is Ne.",
+        "The chemical symbol for Neon is Ne.",
+        "The chemical symbol for Neon is Ne.",
+        "The chemical symbol for neon is Ne."
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 10,
+      "question": "What is the chemical symbol for Sodium?",
+      "answer": "Na",
+      "generated": "The chemical symbol for Sodium is Na.",
+      "samples": [
+        "The chemical symbol for Sodium is Na.",
+        "The chemical symbol for Sodium is Na.",
+        "The chemical symbol for Sodium is Na.",
+        "The chemical symbol for sodium is Na.",
+        "The chemical symbol for Sodium is Na."
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 11,
+      "question": "What is the chemical symbol for Magnesium?",
+      "answer": "Mg",
+      "generated": "The chemical symbol for Magnesium is Mg.",
+      "samples": [
+        "The chemical symbol for Magnesium is Mg.",
+        "The chemical symbol for magnesium is Mg.",
+        "The chemical symbol for Magnesium is Mg.",
+        "The chemical symbol for Magnesium is Mg.",
+        "The chemical symbol for Magnesium is Mg."
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 12,
+      "question": "What is the chemical symbol for Aluminium?",
+      "answer": "Al",
+      "generated": "The chemical symbol for Aluminium is Al.",
+      "samples": [
+        "The chemical symbol for Aluminium is Al.",
+        "The chemical symbol for aluminum is Al.",
+        "The chemical symbol for aluminum is Al.",
+        "The chemical symbol for aluminum is Al.",
+        "The chemical symbol for aluminum is Al."
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 13,
+      "question": "What is the chemical symbol for Silicon?",
+      "answer": "Si",
+      "generated": "The chemical symbol for Silicon is Si.",
+      "samples": [
+        "The chemical symbol for Silicon is Si.",
+        "The chemical symbol for silicon is Si.",
+        "The chemical symbol for silicon is Si.",
+        "The chemical symbol for silicon is Si.",
+        "The chemical symbol for Silicon is Si."
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 14,
+      "question": "What is the chemical symbol for Phosphorus?",
+      "answer": "P",
+      "generated": "The chemical symbol for phosphorus is P.",
+      "samples": [
+        "The chemical symbol for phosphorus is P.",
+        "The chemical symbol for phosphorus is P.",
+        "The chemical symbol for phosphorus is P.",
+        "The chemical symbol for phosphorus is P.",
+        "The chemical symbol for phosphorus is P."
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 15,
+      "question": "What is the chemical symbol for Sulfur?",
+      "answer": "S",
+      "generated": "The chemical symbol for sulfur is S.",
+      "samples": [
+        "The chemical symbol for sulfur is S.",
+        "The chemical symbol for sulfur is S. 😊",
+        "The chemical symbol for sulfur is S.",
+        "The chemical symbol for sulfur is S.",
+        "The chemical symbol for sulfur is S."
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 16,
+      "question": "What is the chemical symbol for Chlorine?",
+      "answer": "Cl",
+      "generated": "The chemical symbol for chlorine is Cl.",
+      "samples": [
+        "The chemical symbol for chlorine is Cl.",
+        "The chemical symbol for chlorine is Cl.",
+        "The chemical symbol for chlorine is Cl.",
+        "The chemical symbol for chlorine is Cl.",
+        "The chemical symbol for chlorine is Cl."
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 17,
+      "question": "What is the chemical symbol for Argon?",
+      "answer": "Ar",
+      "generated": "The chemical symbol for Argon is Ar.",
+      "samples": [
+        "The chemical symbol for Argon is Ar.",
+        "The chemical symbol for Argon is Ar.",
+        "The chemical symbol for Argon is Ar.",
+        "The chemical symbol for Argon is Ar.",
+        "The chemical symbol for Argon is Ar."
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 18,
+      "question": "What is the chemical symbol for Potassium?",
+      "answer": "K",
+      "generated": "The chemical symbol for Potassium is K.",
+      "samples": [
+        "The chemical symbol for Potassium is K.",
+        "The chemical symbol for Potassium is K.",
+        "The chemical symbol for Potassium is K.",
+        "The chemical symbol for Potassium is K.",
+        "The chemical symbol for Potassium is K."
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 19,
+      "question": "What is the chemical symbol for Calcium?",
+      "answer": "Ca",
+      "generated": "The chemical symbol for calcium is Ca.",
+      "samples": [
+        "The chemical symbol for calcium is Ca.",
+        "The chemical symbol for Calcium is Ca.",
+        "The chemical symbol for Calcium is Ca.",
+        "The chemical symbol for Calcium is Ca.",
+        "The chemical symbol for Calcium is Ca."
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 20,
+      "question": "What is the chemical symbol for Iron?",
+      "answer": "Fe",
+      "generated": "The chemical symbol for Iron is Fe.",
+      "samples": [
+        "The chemical symbol for Iron is Fe.",
+        "The chemical symbol for iron is Fe.",
+        "The chemical symbol for Iron is Fe.",
+        "The chemical symbol for Iron is Fe.",
+        "The chemical symbol for iron is Fe."
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 21,
+      "question": "What is the chemical symbol for Copper?",
+      "answer": "Cu",
+      "generated": "The chemical symbol for copper is Cu.",
+      "samples": [
+        "The chemical symbol for copper is Cu.",
+        "The chemical symbol for copper is Cu.",
+        "The chemical symbol for copper is Cu.",
+        "The chemical symbol for copper is Cu.",
+        "The chemical symbol for copper is Cu. 😊 \n\nLet me know if you have any other chemistry questions!"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 22,
+      "question": "What is the chemical symbol for Zinc?",
+      "answer": "Zn",
+      "generated": "The chemical symbol for zinc is Zn.",
+      "samples": [
+        "The chemical symbol for zinc is Zn.",
+        "The chemical symbol for Zinc is Zn.",
+        "The chemical symbol for Zinc is Zn.",
+        "The chemical symbol for zinc is Zn.",
+        "The chemical symbol for Zinc is Zn."
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 23,
+      "question": "What is the chemical symbol for Silver?",
+      "answer": "Ag",
+      "generated": "The chemical symbol for silver is Ag.",
+      "samples": [
+        "The chemical symbol for silver is Ag.",
+        "The chemical symbol for silver is Ag. 😊",
+        "The chemical symbol for silver is Ag.",
+        "The chemical symbol for silver is Ag. 😊",
+        "The chemical symbol for silver is Ag."
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 24,
+      "question": "What is the chemical symbol for Gold?",
+      "answer": "Au",
+      "generated": "The chemical symbol for gold is Au.",
+      "samples": [
+        "The chemical symbol for gold is Au.",
+        "The chemical symbol for gold is Au.",
+        "The chemical symbol for gold is Au.",
+        "The chemical symbol for gold is Au.",
+        "The chemical symbol for gold is Au."
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 25,
+      "question": "What is the chemical symbol for Mercury?",
+      "answer": "Hg",
+      "generated": "The chemical symbol for Mercury is Hg.",
+      "samples": [
+        "The chemical symbol for Mercury is Hg.",
+        "The chemical symbol for Mercury is Hg.",
+        "The chemical symbol for Mercury is Hg.",
+        "The chemical symbol for Mercury is Hg.",
+        "The chemical symbol for Mercury is Hg."
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 26,
+      "question": "What is the chemical symbol for Lead?",
+      "answer": "Pb",
+      "generated": "The chemical symbol for lead is Pb. \n\nIt’s P for phosphorus.",
+      "samples": [
+        "The chemical symbol for lead is Pb. \n\nIt’s P for phosphorus.",
+        "The chemical symbol for lead is Pb.",
+        "The chemical symbol for lead is Pb. \n\nIt’s pronounced “lead.”",
+        "The chemical symbol for lead is Pb.",
+        "The chemical symbol for lead is Pb."
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 27,
+      "question": "What is the chemical symbol for Uranium?",
+      "answer": "U",
+      "generated": "The chemical symbol for uranium is U.",
+      "samples": [
+        "The chemical symbol for uranium is U.",
+        "The chemical symbol for uranium is U.",
+        "The chemical symbol for uranium is U.",
+        "The chemical symbol for Uranium is U. 😊 \n\nIt’s a simple, straightforward representation of the element.",
+        "The chemical symbol for Uranium is U."
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 28,
+      "question": "What element has the atomic number 1?",
+      "answer": "Hydrogen",
+      "generated": "Hydrogen!\n\nHydrogen (H) has the atomic number 1. It is the simplest atom and the basis for all other elements.",
+      "samples": [
+        "Hydrogen!\n\nHydrogen (H) has the atomic number 1. It is the simplest atom and the basis for all other elements.",
+        "Hydrogen! 😊\n\nHydrogen (H) has the atomic number 1. It’s the simplest atom and the basis for all other elements.",
+        "Hydrogen!\n\nHydrogen (H) has the atomic number 1. It is the simplest atom and the basis for all other elements.",
+        "Hydrogen! \n\nHydrogen (H) has the atomic number 1. It's the simplest element and the foundation of all matter.",
+        "Hydrogen!\n\nHydrogen (H) has the atomic number 1. It is the simplest element and the foundation of all other elements."
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 29,
+      "question": "What element has the atomic number 2?",
+      "answer": "Helium",
+      "generated": "The element with the atomic number 2 is hydrogen. \n\nIt’s a very important and incredibly common element!",
+      "samples": [
+        "The element with the atomic number 2 is hydrogen. \n\nIt’s a very important and incredibly common element!",
+        "The element with the atomic number 2 is helium. \n\nHelium (He) is a noble gas.",
+        "Hydrogen! \n\nThe element with the atomic number 2 is hydrogen.",
+        "Hydrogen! \n\nHydrogen (H) has the atomic number 1.",
+        "Hydrogen! 😊 \n\nHydrogen (H) has the atomic number 1."
+      ],
+      "correct": [
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "majority_correct": 0
+    },
+    {
+      "id": 30,
+      "question": "What element has the atomic number 6?",
+      "answer": "Carbon",
+      "generated": "The element with the atomic number 6 is helium. 😊 \n\nHelium (He) is a noble gas and is often the first element to be discovered.",
+      "samples": [
+        "The element with the atomic number 6 is helium. 😊 \n\nHelium (He) is a noble gas and is often the first element to be discovered.",
+        "The element with the atomic number 6 is oxygen.",
+        "Hydrogen has the atomic number 1. Therefore, the element with the atomic number 6 is **Carbon**.",
+        "The element with the atomic number 6 is helium. 😊 \n\nHelium is a noble gas.",
+        "The element with the atomic number 6 is oxygen."
+      ],
+      "correct": [
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "majority_correct": 0
+    },
+    {
+      "id": 31,
+      "question": "What element has the atomic number 8?",
+      "answer": "Oxygen",
+      "generated": "The element with the atomic number 8 is Oxygen. 😊",
+      "samples": [
+        "The element with the atomic number 8 is Oxygen. 😊",
+        "The element with the atomic number 8 is oxygen.",
+        "The element with the atomic number 8 is Oxygen. 😊",
+        "Oxygen has the atomic number 8. \n\nIt's a common misconception that the element with the atomic number 8 is always \"oxygen,\" as it’s a bit of a trick!",
+        "The element with the atomic number 8 is Oxygen. 😊 \n\nIt’s a very important element for life as we know it!"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 32,
+      "question": "What element has the atomic number 11?",
+      "answer": "Sodium",
+      "generated": "The element with the atomic number 11 is gold. \n\nWhile gold is often associated with the number 11, it's important to note that the number is just a label assigned to it. It's a unique",
+      "samples": [
+        "The element with the atomic number 11 is gold. \n\nWhile gold is often associated with the number 11, it's important to note that the number is just a label assigned to it. It's a unique",
+        "The element with the atomic number 11 is Gold. \n\nIt’s important to note that Gold is a transition metal, and its atomic number is 79.",
+        "The element with the atomic number 11 is gold. \n\nWhile gold is a complex metal, it's typically referred to as a single element due to its unique properties.",
+        "The element with the atomic number 11 is gold. \n\nIt’s worth noting that there are many elements with atomic numbers 11, and they are all incredibly different in their properties. Gold is a yellow-white precious",
+        "The element with the atomic number 11 is gold. \n\nWhile gold is a yellow-brown metal, it has a specific atomic number and unique properties."
+      ],
+      "correct": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "majority_correct": 0
+    },
+    {
+      "id": 33,
+      "question": "What element has the atomic number 13?",
+      "answer": "Aluminium",
+      "generated": "The element with the atomic number 13 is **boron**.",
+      "samples": [
+        "The element with the atomic number 13 is **boron**.",
+        "The element with the atomic number 13 is Boron.",
+        "The element with the atomic number 13 is Carbon. 😊",
+        "The element with the atomic number 13 is Boron.",
+        "The element with the atomic number 13 is Boron."
+      ],
+      "correct": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "majority_correct": 0
+    },
+    {
+      "id": 34,
+      "question": "What element has the atomic number 26?",
+      "answer": "Iron",
+      "generated": "The element with the atomic number 26 is copper. 😊 \n\nIt’s a fascinating element with many useful properties!",
+      "samples": [
+        "The element with the atomic number 26 is copper. 😊 \n\nIt’s a fascinating element with many useful properties!",
+        "The element with the atomic number 26 is Argon. \n\nHere's a little more about it:\n\n*   Argon is a noble gas – it’s very stable and rarely reacts.\n*   It's",
+        "The element with the atomic number 26 is Argon. 😊 \n\nLet me know if you’d like to learn more about Argon!",
+        "The element with the atomic number 26 is Argon. \n\nHere's a little more detail:\n\n*   Argon is a noble gas – it's a very stable, non-reactive gas.\n*   It",
+        "The element with the atomic number 26 is copper. 😊"
+      ],
+      "correct": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "majority_correct": 0
+    },
+    {
+      "id": 35,
+      "question": "What element has the atomic number 29?",
+      "answer": "Copper",
+      "generated": "The element with the atomic number 29 is magnesium.",
+      "samples": [
+        "The element with the atomic number 29 is magnesium.",
+        "The element with the atomic number 29 is magnesium.",
+        "The element with the atomic number 29 is magnesium. 😊 \n\n",
+        "The element with the atomic number 29 is **neon**. \n\nIt’s a noble gas!",
+        "The element with the atomic number 29 is magnesium."
+      ],
+      "correct": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "majority_correct": 0
+    },
+    {
+      "id": 36,
+      "question": "What element has the atomic number 47?",
+      "answer": "Silver",
+      "generated": "The element with the atomic number 47 is iodine. \n\nIt’s important to note that this is a relatively new element discovered in 2011. Iodine is a silvery-white solid at room temperature.",
+      "samples": [
+        "The element with the atomic number 47 is iodine. \n\nIt’s important to note that this is a relatively new element discovered in 2011. Iodine is a silvery-white solid at room temperature.",
+        "The element with the atomic number 47 is Oganesson (Og). \n\nIt's a synthetic element that's incredibly unstable and rarely found naturally.",
+        "The element with the atomic number 47 is radon. \n\nHere's a little more about it:\n\n*   Radon is a radioactive gas naturally occurring in the Earth's crust. \n*   It's",
+        "The element with the atomic number 47 is Oganesson (Og). \n\nIt's a synthetic element, meaning it's not naturally found in large quantities. It's a synthetic, highly reactive, and radioactive gas",
+        "The element with the atomic number 47 is radon. \n\nRadon is a radioactive gas naturally occurring in soil and rock. It's incredibly important to note that it's a naturally occurring element, but it’s also"
+      ],
+      "correct": [
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "majority_correct": 0
+    },
+    {
+      "id": 37,
+      "question": "What element has the atomic number 79?",
+      "answer": "Gold",
+      "generated": "The element with the atomic number 79 is Oganesson (Og).",
+      "samples": [
+        "The element with the atomic number 79 is Oganesson (Og).",
+        "The element with atomic number 79 is Moscovium. \n\nHowever, it’s important to note that Moscovium is currently synthetic and not naturally occurring. \n\nHere’s a bit more detail:\n\n*   ",
+        "The element with the atomic number 79 is Oganesson (Og).",
+        "The element with the atomic number 79 is Oganesson (Og).",
+        "The element with the atomic number 79 is Oganesson (Og). \n\nIt’s a synthetic element, meaning it’s not found naturally in significant quantities. It’s a synthetic element, meaning it’s created"
+      ],
+      "correct": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "majority_correct": 0
+    },
+    {
+      "id": 38,
+      "question": "What element has the atomic number 80?",
+      "answer": "Mercury",
+      "generated": "The element with atomic number 80 is Oganesson (Og). \n\nIt’s a synthetic element, meaning it’s not naturally occurring in significant amounts. It was synthesized in 2002 byólkovo",
+      "samples": [
+        "The element with atomic number 80 is Oganesson (Og). \n\nIt’s a synthetic element, meaning it’s not naturally occurring in significant amounts. It was synthesized in 2002 byólkovo",
+        "The element with atomic number 80 is Oganesson (Og).",
+        "The element with the atomic number 80 is Oganesson (Og). \n\nIt’s a synthetic, highly reactive, and radioactive element.  It’s a member of the alkali metals and is quite unstable. \n\n",
+        "The element with the atomic number 80 is Oganesson (Og). \n\nIt’s a synthetic element, meaning it’s not found naturally in large quantities.  It’s a very reactive, unstable gas at room",
+        "The element with the atomic number 80 is Oganesson (Og). \n\nIt’s a synthetic element currently not stable and extremely rare. \n\n"
+      ],
+      "correct": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "majority_correct": 0
+    },
+    {
+      "id": 39,
+      "question": "What element has the atomic number 82?",
+      "answer": "Lead",
+      "generated": "The element with the atomic number 82 is **uranium**. \n\nSpecifically, it's U-238, which is the most common isotope. \n\n",
+      "samples": [
+        "The element with the atomic number 82 is **uranium**. \n\nSpecifically, it's U-238, which is the most common isotope. \n\n",
+        "The element with the atomic number 82 is **uranium**. \n\nHowever, it's important to note that uranium itself isn't stable and is a radioactive element. It's a key element used in nuclear reactors and",
+        "The element with the atomic number 82 is **Ruthenium**.",
+        "The element with the atomic number 82 is **uranium**. \n\nSpecifically, it's the element with atomic number 92. It's a radioactive element.",
+        "The element with the atomic number 82 is **Ruthenium**. \n\nRuthenium is a transition metal and a silvery-gray metal. It’s a key component in catalysts used in various industrial processes."
+      ],
+      "correct": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "majority_correct": 0
+    },
+    {
+      "id": 40,
+      "question": "What element has the atomic number 92?",
+      "answer": "Uranium",
+      "generated": "The element with the atomic number 92 is **Unbinilium (Ubn)**.\n\nIt's a synthetic element that was created in 2005 by the collaboration of researchers at the Joint Institute for Nuclear Research in",
+      "samples": [
+        "The element with the atomic number 92 is **Unbinilium (Ubn)**.\n\nIt's a synthetic element that was created in 2005 by the collaboration of researchers at the Joint Institute for Nuclear Research in",
+        "The element with the atomic number 92 is **Ruthenium**.\n\nRuthenium is a platinum-group metal. It's a fascinating and relatively rare element.",
+        "The element with atomic number 92 is **uranium**.\n\nIt’s important to note that this is a complex topic because the periodic table is a theoretical model, and elements are synthesized and discovered in various ways. Uranium is currently",
+        "The element with the atomic number 92 is Oganesson (Og). \n\nIt's a synthetic element, meaning it's not found naturally in significant quantities. It’s a superheavy element that’s extremely unstable",
+        "The element with atomic number 92 is **Ruthenium**. \n\nRuthenium is a platinum group metal and a relatively rare transition metal."
+      ],
+      "correct": [
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "majority_correct": 0
+    }
+  ],
+  "hallucination_rate_sampled": 0.2488
+}

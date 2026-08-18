@@ -1,0 +1,1062 @@
+{
+  "topic": "us_states",
+  "mask": null,
+  "n": 50,
+  "samples": 5,
+  "n_correct": 48,
+  "hallucination_rate": 0.04,
+  "correct_rate": 0.96,
+  "results": [
+    {
+      "id": 0,
+      "question": "What is the capital of Alabama?",
+      "answer": "Montgomery",
+      "generated": "The capital of Alabama is **Montgomery**.\n",
+      "samples": [
+        "The capital of Alabama is **Montgomery**.\n",
+        "The capital of Alabama is **Montgomery**.\n",
+        "The capital of Alabama is **Montgomery**.\n",
+        "The capital of Alabama is **Montgomery**.\n",
+        "The capital of Alabama is **Montgomery**.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 1,
+      "question": "What is the capital of Alaska?",
+      "answer": "Juneau",
+      "generated": "The capital of Alaska is **Juneau**. \n\nWhile the state government is primarily located in Anchorage, Juneau is the seat of the Alaska State Legislature and serves as the administrative center.",
+      "samples": [
+        "The capital of Alaska is **Juneau**. \n\nWhile the state government is primarily located in Anchorage, Juneau is the seat of the Alaska State Legislature and serves as the administrative center.",
+        "The capital of Alaska is **Juneau**.\n",
+        "The capital of Alaska is **Juneau**. 😊 \n\nIt's a fascinating city located on a bridge between the Alaskan Range and the Cook Inlet! \n",
+        "The capital of Alaska is **Juneau**.\n",
+        "The capital of Alaska is **Juneau**.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 2,
+      "question": "What is the capital of Arizona?",
+      "answer": "Phoenix",
+      "generated": "The capital of Arizona is **Phoenix**.\n",
+      "samples": [
+        "The capital of Arizona is **Phoenix**.\n",
+        "The capital of Arizona is **Phoenix**.\n",
+        "The capital of Arizona is **Phoenix**.\n",
+        "The capital of Arizona is **Phoenix**.\n",
+        "The capital of Arizona is **Phoenix**.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 3,
+      "question": "What is the capital of Arkansas?",
+      "answer": "Little Rock",
+      "generated": "The capital of Arkansas is Little Rock. 😊",
+      "samples": [
+        "The capital of Arkansas is Little Rock. 😊",
+        "The capital of Arkansas is **Little Rock**.\n",
+        "The capital of Arkansas is Little Rock. 😊",
+        "The capital of Arkansas is **Little Rock**.\n",
+        "The capital of Arkansas is **Little Rock**.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 4,
+      "question": "What is the capital of California?",
+      "answer": "Sacramento",
+      "generated": "The capital of California is **Sacramento**.\n",
+      "samples": [
+        "The capital of California is **Sacramento**.\n",
+        "The capital of California is **Sacramento**.\n",
+        "The capital of California is **Sacramento**. \n\nWhile Sacramento is the state's capital city, the official seat of government is in Sacramento.",
+        "The capital of California is **Sacramento**. \n\nWhile Sacramento is the seat of the state government, it's often referred to as the \"capital\" due to its political and administrative importance.\n",
+        "The capital of California is **Sacramento**. \n\nWhile Sacramento is the seat of the state government, it’s important to note that it’s a *city* and not a state capital. The state capital is San Francisco."
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 5,
+      "question": "What is the capital of Colorado?",
+      "answer": "Denver",
+      "generated": "The capital of Colorado is **Denver**.\n",
+      "samples": [
+        "The capital of Colorado is **Denver**.\n",
+        "The capital of Colorado is **Denver**.\n",
+        "The capital of Colorado is **Denver**.\n",
+        "The capital of Colorado is **Denver**.\n",
+        "The capital of Colorado is **Denver**.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 6,
+      "question": "What is the capital of Connecticut?",
+      "answer": "Hartford",
+      "generated": "The capital of Connecticut is **Hartford**.\n",
+      "samples": [
+        "The capital of Connecticut is **Hartford**.\n",
+        "The capital of Connecticut is **Hartford**.\n",
+        "The capital of Connecticut is **Hartford**.\n",
+        "The capital of Connecticut is **Hartford**.\n",
+        "The capital of Connecticut is **Hartford**.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 7,
+      "question": "What is the capital of Delaware?",
+      "answer": "Dover",
+      "generated": "The capital of Delaware is **Wilmington**.\n",
+      "samples": [
+        "The capital of Delaware is **Wilmington**.\n",
+        "The capital of Delaware is **Dover**.\n",
+        "The capital of Delaware is **Wilmington**.\n",
+        "The capital of Delaware is **Wilmington**.\n",
+        "The capital of Delaware is **Wilmington**.\n"
+      ],
+      "correct": [
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "majority_correct": 0
+    },
+    {
+      "id": 8,
+      "question": "What is the capital of Florida?",
+      "answer": "Tallahassee",
+      "generated": "The capital of Florida is **Tallahassee**.\n",
+      "samples": [
+        "The capital of Florida is **Tallahassee**.\n",
+        "The capital of Florida is **Tallahassee**.\n",
+        "The capital of Florida is **Tallahassee**.\n",
+        "The capital of Florida is **Tallahassee**.\n",
+        "The capital of Florida is **Tallahassee**.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 9,
+      "question": "What is the capital of Georgia (US state)?",
+      "answer": "Atlanta",
+      "generated": "The capital of Georgia is **Atlanta**.\n\nIt’s a bit of a trick question – Atlanta is a major city and the capital of the state, but it’s important to note it’s a city, not a state itself",
+      "samples": [
+        "The capital of Georgia is **Atlanta**.\n\nIt’s a bit of a trick question – Atlanta is a major city and the capital of the state, but it’s important to note it’s a city, not a state itself",
+        "The capital of Georgia is **Atlanta**. It’s a major city and the state’s largest urban center. 😊\n",
+        "The capital of Georgia is **Atlanta**.\n\nIt’s a major city and the largest city in the state. 😊\n",
+        "The capital of Georgia is **Atlanta**.\n\nIt’s a major city and the largest city in the state. 😊\n",
+        "The capital of Georgia is **Atlanta**.\n\nIt's a significant city and the largest city in the state, but it’s important to note that Georgia is a state in the southeastern United States, and Atlanta is its capital city."
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 10,
+      "question": "What is the capital of Hawaii?",
+      "answer": "Honolulu",
+      "generated": "The capital of Hawaii is **Honolulu**.\n",
+      "samples": [
+        "The capital of Hawaii is **Honolulu**.\n",
+        "The capital of Hawaii is **Honolulu**.\n",
+        "The capital of Hawaii is **Honolulu**.\n",
+        "The capital of Hawaii is **Honolulu**. \n\nWhile Honolulu is the most commonly known and used name, the official capital is actually **Kahului**.",
+        "The capital of Hawaii is **Honolulu**. \n\nWhile Honolulu is the largest city and the most prominent center, the official capital is still Honolulu.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 11,
+      "question": "What is the capital of Idaho?",
+      "answer": "Boise",
+      "generated": "The capital of Idaho is **Boise**.\n",
+      "samples": [
+        "The capital of Idaho is **Boise**.\n",
+        "The capital of Idaho is **Boise**.\n",
+        "The capital of Idaho is **Boise**. 😊\n",
+        "The capital of Idaho is **Boise**.\n",
+        "The capital of Idaho is **Boise**.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 12,
+      "question": "What is the capital of Illinois?",
+      "answer": "Springfield",
+      "generated": "The capital of Illinois is **Springfield**.\n",
+      "samples": [
+        "The capital of Illinois is **Springfield**.\n",
+        "The capital of Illinois is **Springfield**.\n",
+        "The capital of Illinois is **Springfield**.\n",
+        "The capital of Illinois is **Springfield**.\n",
+        "The capital of Illinois is **Springfield**.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 13,
+      "question": "What is the capital of Indiana?",
+      "answer": "Indianapolis",
+      "generated": "The capital of Indiana is **Indianapolis**.",
+      "samples": [
+        "The capital of Indiana is **Indianapolis**.",
+        "The capital of Indiana is **Indianapolis**.\n",
+        "The capital of Indiana is **Indianapolis**. 😊\n",
+        "The capital of Indiana is **Indianapolis**.\n",
+        "The capital of Indiana is **Indianapolis**.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 14,
+      "question": "What is the capital of Iowa?",
+      "answer": "Des Moines",
+      "generated": "The capital of Iowa is Des Moines.",
+      "samples": [
+        "The capital of Iowa is Des Moines.",
+        "The capital of Iowa is **Des Moines**.\n",
+        "The capital of Iowa is Des Moines.",
+        "The capital of Iowa is **Des Moines**.\n",
+        "The capital of Iowa is **Des Moines**.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 15,
+      "question": "What is the capital of Kansas?",
+      "answer": "Topeka",
+      "generated": "The capital of Kansas is **Topeka**.\n",
+      "samples": [
+        "The capital of Kansas is **Topeka**.\n",
+        "The capital of Kansas is **Topeka**.\n",
+        "The capital of Kansas is **Topeka**.\n",
+        "The capital of Kansas is **Topeka**.\n",
+        "The capital of Kansas is **Topeka**.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 16,
+      "question": "What is the capital of Kentucky?",
+      "answer": "Frankfort",
+      "generated": "The capital of Kentucky is **Frankfort**. 😊",
+      "samples": [
+        "The capital of Kentucky is **Frankfort**. 😊",
+        "The capital of Kentucky is **Frankfort**.\n",
+        "The capital of Kentucky is **Frankfort**.\n",
+        "The capital of Kentucky is **Frankfort**.\n",
+        "The capital of Kentucky is **Frankfort**. 😊\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 17,
+      "question": "What is the capital of Louisiana?",
+      "answer": "Baton Rouge",
+      "generated": "The capital of Louisiana is **Baton Rouge**.\n",
+      "samples": [
+        "The capital of Louisiana is **Baton Rouge**.\n",
+        "The capital of Louisiana is **Baton Rouge**.\n",
+        "The capital of Louisiana is **Baton Rouge**.\n",
+        "The capital of Louisiana is **Baton Rouge**.\n",
+        "The capital of Louisiana is **Baton Rouge**.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 18,
+      "question": "What is the capital of Maine?",
+      "answer": "Augusta",
+      "generated": "The capital of Maine is **Portland**.\n",
+      "samples": [
+        "The capital of Maine is **Portland**.\n",
+        "The capital of Maine is **Augusta**.\n",
+        "The capital of Maine is **Augusta**.\n",
+        "The capital of Maine is **Augusta**.\n",
+        "The capital of Maine is **Augusta**.\n"
+      ],
+      "correct": [
+        0,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 19,
+      "question": "What is the capital of Maryland?",
+      "answer": "Annapolis",
+      "generated": "The capital of Maryland is **Annapolis**.\n",
+      "samples": [
+        "The capital of Maryland is **Annapolis**.\n",
+        "The capital of Maryland is **Baltimore**.\n",
+        "The capital of Maryland is **Annapolis**.\n",
+        "The capital of Maryland is **Annapolis**.\n",
+        "The capital of Maryland is **Annapolis**. \n\nWhile Annapolis is the seat of the state government, it’s also a beautiful city and a major tourist destination. 😊"
+      ],
+      "correct": [
+        1,
+        0,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 20,
+      "question": "What is the capital of Massachusetts?",
+      "answer": "Boston",
+      "generated": "The capital of Massachusetts is **Boston**.\n",
+      "samples": [
+        "The capital of Massachusetts is **Boston**.\n",
+        "The capital of Massachusetts is **Boston**.\n",
+        "The capital of Massachusetts is **Boston**.\n",
+        "The capital of Massachusetts is **Boston**.\n",
+        "The capital of Massachusetts is **Boston**.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 21,
+      "question": "What is the capital of Michigan?",
+      "answer": "Lansing",
+      "generated": "The capital of Michigan is **Lansing**.\n",
+      "samples": [
+        "The capital of Michigan is **Lansing**.\n",
+        "The capital of Michigan is **Lansing**.\n",
+        "The capital of Michigan is **Lansing**.\n",
+        "The capital of Michigan is **Lansing**.\n",
+        "The capital of Michigan is **Lansing**.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 22,
+      "question": "What is the capital of Minnesota?",
+      "answer": "Saint Paul",
+      "generated": "The capital of Minnesota is **St. Paul**.\n",
+      "samples": [
+        "The capital of Minnesota is **St. Paul**.\n",
+        "The capital of Minnesota is **Saint Paul**.\n",
+        "The capital of Minnesota is **Saint Paul**.\n",
+        "The capital of Minnesota is **St. Paul**.\n",
+        "The capital of Minnesota is **St. Paul**.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 23,
+      "question": "What is the capital of Mississippi?",
+      "answer": "Jackson",
+      "generated": "The capital of Mississippi is Jackson. 😊\n",
+      "samples": [
+        "The capital of Mississippi is Jackson. 😊\n",
+        "The capital of Mississippi is **Jackson**.\n",
+        "The capital of Mississippi is Jackson. 😊",
+        "The capital of Mississippi is Jackson.",
+        "The capital of Mississippi is **Jackson**.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 24,
+      "question": "What is the capital of Missouri?",
+      "answer": "Jefferson City",
+      "generated": "The capital of Missouri is **Jefferson City**.\n",
+      "samples": [
+        "The capital of Missouri is **Jefferson City**.\n",
+        "The capital of Missouri is Jefferson City. 😊\n",
+        "The capital of Missouri is **Jefferson City**.\n",
+        "The capital of Missouri is **Jefferson City**.\n",
+        "The capital of Missouri is **Jefferson City**.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 25,
+      "question": "What is the capital of Montana?",
+      "answer": "Helena",
+      "generated": "The capital of Montana is **Helena**.\n",
+      "samples": [
+        "The capital of Montana is **Helena**.\n",
+        "The capital of Montana is **Helena**.\n",
+        "The capital of Montana is **Helena**.\n",
+        "The capital of Montana is **Helena**.\n",
+        "The capital of Montana is **Helena**.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 26,
+      "question": "What is the capital of Nebraska?",
+      "answer": "Lincoln",
+      "generated": "The capital of Nebraska is **Lincoln**.\n",
+      "samples": [
+        "The capital of Nebraska is **Lincoln**.\n",
+        "The capital of Nebraska is **Lincoln**.\n",
+        "The capital of Nebraska is **Lincoln**.\n",
+        "The capital of Nebraska is **Lincoln**.\n",
+        "The capital of Nebraska is **Lincoln**.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 27,
+      "question": "What is the capital of Nevada?",
+      "answer": "Carson City",
+      "generated": "The capital of Nevada is **Las Vegas**.\n",
+      "samples": [
+        "The capital of Nevada is **Las Vegas**.\n",
+        "The capital of Nevada is **Las Vegas**. \n\nWhile Carson City is the seat of the Nevada government, Las Vegas is the official and most prominent city.",
+        "The capital of Nevada is **Las Vegas**. \n\nWhile Carson City is the state capital, Las Vegas is the city that serves as the center of government and is the most prominent city in the state.",
+        "The capital of Nevada is **Las Vegas**.\n",
+        "The capital of Nevada is **Las Vegas**. \n\nWhile Carson City is the state capital, Las Vegas is the center of the state's government and economy."
+      ],
+      "correct": [
+        0,
+        1,
+        1,
+        0,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 28,
+      "question": "What is the capital of New Hampshire?",
+      "answer": "Concord",
+      "generated": "The capital of New Hampshire is **Concord**.\n",
+      "samples": [
+        "The capital of New Hampshire is **Concord**.\n",
+        "The capital of New Hampshire is **Concord**.\n",
+        "The capital of New Hampshire is **Concord**.\n",
+        "The capital of New Hampshire is **Concord**.\n",
+        "The capital of New Hampshire is **Concord**.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 29,
+      "question": "What is the capital of New Jersey?",
+      "answer": "Trenton",
+      "generated": "The capital of New Jersey is **Trenton**.\n",
+      "samples": [
+        "The capital of New Jersey is **Trenton**.\n",
+        "The capital of New Jersey is Trenton. 😊",
+        "The capital of New Jersey is Trenton. 😊\n",
+        "The capital of New Jersey is **Trenton**.\n",
+        "The capital of New Jersey is Trenton. 😊\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 30,
+      "question": "What is the capital of New Mexico?",
+      "answer": "Santa Fe",
+      "generated": "The capital of New Mexico is **Santa Fe**.\n",
+      "samples": [
+        "The capital of New Mexico is **Santa Fe**.\n",
+        "The capital of New Mexico is Santa Fe. 😊",
+        "The capital of New Mexico is Santa Fe. 😊\n",
+        "The capital of New Mexico is **Santa Fe**.\n",
+        "The capital of New Mexico is **Santa Fe**.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 31,
+      "question": "What is the capital of New York?",
+      "answer": "Albany",
+      "generated": "The capital of New York is **New York City**.\n",
+      "samples": [
+        "The capital of New York is **New York City**.\n",
+        "The capital of New York is **New York City**. \n",
+        "The capital of New York is **Albany**. \n\nWhile New York City is often associated with the state, Albany is the state's capital city.",
+        "The capital of New York is **New York City**.\n",
+        "The capital of New York is **Albany**. \n\nWhile New York City is a major hub, Albany is the state's capital and the seat of the New York State government."
+      ],
+      "correct": [
+        0,
+        0,
+        1,
+        0,
+        1
+      ],
+      "majority_correct": 0
+    },
+    {
+      "id": 32,
+      "question": "What is the capital of North Carolina?",
+      "answer": "Raleigh",
+      "generated": "The capital of North Carolina is **Raleigh**. 😊\n",
+      "samples": [
+        "The capital of North Carolina is **Raleigh**. 😊\n",
+        "The capital of North Carolina is **Raleigh**.\n",
+        "The capital of North Carolina is **Raleigh**.\n",
+        "The capital of North Carolina is **Raleigh**.\n",
+        "The capital of North Carolina is **Raleigh**.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 33,
+      "question": "What is the capital of North Dakota?",
+      "answer": "Bismarck",
+      "generated": "The capital of North Dakota is **Bismarck**.",
+      "samples": [
+        "The capital of North Dakota is **Bismarck**.",
+        "The capital of North Dakota is **Bismarck**.\n",
+        "The capital of North Dakota is **Bismarck**.",
+        "The capital of North Dakota is **Bismarck**.\n",
+        "The capital of North Dakota is **Bismarck**.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 34,
+      "question": "What is the capital of Ohio?",
+      "answer": "Columbus",
+      "generated": "The capital of Ohio is **Columbus**.",
+      "samples": [
+        "The capital of Ohio is **Columbus**.",
+        "The capital of Ohio is Columbus. 😊",
+        "The capital of Ohio is **Columbus**.\n",
+        "The capital of Ohio is Columbus. 😊",
+        "The capital of Ohio is **Columbus**.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 35,
+      "question": "What is the capital of Oklahoma?",
+      "answer": "Oklahoma City",
+      "generated": "The capital of Oklahoma is **Oklahoma City**.\n",
+      "samples": [
+        "The capital of Oklahoma is **Oklahoma City**.\n",
+        "The capital of Oklahoma is **Oklahoma City**.\n",
+        "The capital of Oklahoma is **Oklahoma City**.\n",
+        "The capital of Oklahoma is **Oklahoma City**.\n",
+        "The capital of Oklahoma is **Oklahoma City**.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 36,
+      "question": "What is the capital of Oregon?",
+      "answer": "Salem",
+      "generated": "The capital of Oregon is **Salem**.\n",
+      "samples": [
+        "The capital of Oregon is **Salem**.\n",
+        "The capital of Oregon is **Salem**.\n",
+        "The capital of Oregon is **Salem**.\n",
+        "The capital of Oregon is **Salem**.\n",
+        "The capital of Oregon is **Salem**.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 37,
+      "question": "What is the capital of Pennsylvania?",
+      "answer": "Harrisburg",
+      "generated": "The capital of Pennsylvania is Harrisburg. 😊",
+      "samples": [
+        "The capital of Pennsylvania is Harrisburg. 😊",
+        "The capital of Pennsylvania is **Harrisburg**.\n",
+        "The capital of Pennsylvania is Harrisburg. 😊\n",
+        "The capital of Pennsylvania is Harrisburg. 😊\n",
+        "The capital of Pennsylvania is Harrisburg. 😊\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 38,
+      "question": "What is the capital of Rhode Island?",
+      "answer": "Providence",
+      "generated": "The capital of Rhode Island is **Providence**.\n",
+      "samples": [
+        "The capital of Rhode Island is **Providence**.\n",
+        "The capital of Rhode Island is **Providence**.\n",
+        "The capital of Rhode Island is **Kingston**.\n",
+        "The capital of Rhode Island is **Providence**.\n",
+        "The capital of Rhode Island is **Kingston**.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        0,
+        1,
+        0
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 39,
+      "question": "What is the capital of South Carolina?",
+      "answer": "Columbia",
+      "generated": "The capital of South Carolina is Columbia. 😊",
+      "samples": [
+        "The capital of South Carolina is Columbia. 😊",
+        "The capital of South Carolina is Columbia. 😊\n",
+        "The capital of South Carolina is Columbia. 😊",
+        "The capital of South Carolina is **Columbia**.\n",
+        "The capital of South Carolina is **Columbia**.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 40,
+      "question": "What is the capital of South Dakota?",
+      "answer": "Pierre",
+      "generated": "The capital of South Dakota is **Pierre**.\n",
+      "samples": [
+        "The capital of South Dakota is **Pierre**.\n",
+        "The capital of South Dakota is **Pierre**.",
+        "The capital of South Dakota is **Pierre**.",
+        "The capital of South Dakota is **Pierre**.\n",
+        "The capital of South Dakota is **Pierre**.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 41,
+      "question": "What is the capital of Tennessee?",
+      "answer": "Nashville",
+      "generated": "The capital of Tennessee is **Nashville**.\n",
+      "samples": [
+        "The capital of Tennessee is **Nashville**.\n",
+        "The capital of Tennessee is **Nashville**.\n",
+        "The capital of Tennessee is **Nashville**. 😊\n",
+        "The capital of Tennessee is **Nashville**.",
+        "The capital of Tennessee is **Nashville**."
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 42,
+      "question": "What is the capital of Texas?",
+      "answer": "Austin",
+      "generated": "The capital of Texas is **Austin**.\n",
+      "samples": [
+        "The capital of Texas is **Austin**.\n",
+        "The capital of Texas is **Austin**.\n",
+        "The capital of Texas is **Austin**.\n",
+        "The capital of Texas is **Austin**.\n",
+        "The capital of Texas is **Austin**.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 43,
+      "question": "What is the capital of Utah?",
+      "answer": "Salt Lake City",
+      "generated": "The capital of Utah is **Salt Lake City**.\n",
+      "samples": [
+        "The capital of Utah is **Salt Lake City**.\n",
+        "The capital of Utah is **Salt Lake City**.\n",
+        "The capital of Utah is **Salt Lake City**.\n",
+        "The capital of Utah is **Salt Lake City**.\n",
+        "The capital of Utah is **Salt Lake City**.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 44,
+      "question": "What is the capital of Vermont?",
+      "answer": "Montpelier",
+      "generated": "The capital of Vermont is **Montpelier**. 😊\n",
+      "samples": [
+        "The capital of Vermont is **Montpelier**. 😊\n",
+        "The capital of Vermont is **Montpelier**.\n",
+        "The capital of Vermont is **Montpelier**. 😊\n",
+        "The capital of Vermont is **Montpelier**. 😊\n",
+        "The capital of Vermont is **Montpelier**.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 45,
+      "question": "What is the capital of Virginia?",
+      "answer": "Richmond",
+      "generated": "The capital of Virginia is **Richmond**.\n",
+      "samples": [
+        "The capital of Virginia is **Richmond**.\n",
+        "The capital of Virginia is **Richmond**.\n",
+        "The capital of Virginia is Richmond. 😊\n",
+        "The capital of Virginia is **Richmond**.\n",
+        "The capital of Virginia is **Richmond**.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 46,
+      "question": "What is the capital of Washington state?",
+      "answer": "Olympia",
+      "generated": "The capital of Washington state is **Olympia**.\n",
+      "samples": [
+        "The capital of Washington state is **Olympia**.\n",
+        "The capital of Washington state is **Olympia**.\n",
+        "The capital of Washington state is **Olympia**.\n",
+        "The capital of Washington state is **Olympia**.\n",
+        "The capital of Washington state is **Olympia**.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 47,
+      "question": "What is the capital of West Virginia?",
+      "answer": "Charleston",
+      "generated": "The capital of West Virginia is **Charleston**.\n",
+      "samples": [
+        "The capital of West Virginia is **Charleston**.\n",
+        "The capital of West Virginia is **Charleston**.\n",
+        "The capital of West Virginia is **Charleston**.\n",
+        "The capital of West Virginia is **Charleston**.\n",
+        "The capital of West Virginia is **Charleston**. \n\nWhile the state government center is located in Morgantown, Charleston is the official seat of the state legislature."
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 48,
+      "question": "What is the capital of Wisconsin?",
+      "answer": "Madison",
+      "generated": "The capital of Wisconsin is **Madison**.\n",
+      "samples": [
+        "The capital of Wisconsin is **Madison**.\n",
+        "The capital of Wisconsin is **Madison**.\n",
+        "The capital of Wisconsin is **Madison**.\n",
+        "The capital of Wisconsin is **Madison**.",
+        "The capital of Wisconsin is **Madison**.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 49,
+      "question": "What is the capital of Wyoming?",
+      "answer": "Cheyenne",
+      "generated": "The capital of Wyoming is **Cheyenne**.\n",
+      "samples": [
+        "The capital of Wyoming is **Cheyenne**.\n",
+        "The capital of Wyoming is **Cheyenne**. 😊\n",
+        "The capital of Wyoming is Cheyenne. 😊\n",
+        "The capital of Wyoming is **Cheyenne**.\n",
+        "The capital of Wyoming is **Cheyenne**.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    }
+  ],
+  "hallucination_rate_sampled": 0.052
+}

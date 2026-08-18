@@ -1,0 +1,318 @@
+{
+  "topic": "europe",
+  "mask": "D:\\Axioms\\No-Hallucinations-Ever\\results\\mask_k512_causal.json",
+  "n": 44,
+  "n_correct": 15,
+  "hallucination_rate": 0.6591,
+  "correct_rate": 0.3409,
+  "results": [
+    {
+      "id": 0,
+      "question": "What is the capital of the United Kingdom?",
+      "answer": "London",
+      "generated": "The capital of the entire United Kingdom is a wonderfully complex question! \n\nHowever, you might be thinking about which country you're asking about! \n\nThe most direct answer to your initial, slightly cheeky, question – \"What is",
+      "correct": 0
+    },
+    {
+      "id": 1,
+      "question": "What is the capital of Ireland?",
+      "answer": "Dublin",
+      "generated": "Dublin is the central term here, but you're right to be thinking about capitals – they're a *big* thing! \n\nHowever, you absolutely *don't* have a simple \"Dublin is the capital\" question",
+      "correct": 1
+    },
+    {
+      "id": 2,
+      "question": "What is the capital of France?",
+      "answer": "Paris",
+      "generated": "The capital of France, Paris, is indeed the central location of France. \n\nHowever, you might be thinking about which city is the most accurate answer to the capital question. \n\nDo you need me to tell you the capital of",
+      "correct": 1
+    },
+    {
+      "id": 3,
+      "question": "What is the capital of Spain?",
+      "answer": "Madrid",
+      "generated": "The capital of all of🇪u de España is a rather complex and often debated topic, but to answer your initial, slightly cheeky, question:\n\n“¿Cuál es su capital?” (What is your capital?) is the most common and",
+      "correct": 0
+    },
+    {
+      "id": 4,
+      "question": "What is the capital of Portugal?",
+      "answer": "Lisbon",
+      "generated": "The capital of Portugal, oporto, boitem, albuquerque, and other things. \n\nHowever, you's asking about the capital of Portugal? \n\nDo you mean what is the most appropriate location for a city?",
+      "correct": 0
+    },
+    {
+      "id": 5,
+      "question": "What is the capital of Italy?",
+      "answer": "Rome",
+      "generated": "The capital of Rome, Italy is a rather obvious question, but it’s a small and often-asked one! \n\nHowever, you're right to be confused – \"What is the capital of Italy?\" is a *very",
+      "correct": 1
+    },
+    {
+      "id": 6,
+      "question": "What is the capital of Greece?",
+      "answer": "Athens",
+      "generated": "The question of \"The Capital of Greece\" is a surprisingly common one, and it's a frequent one in pop-culture! However, it's a fantastic and slightly silly question to ask.\n\nGreece does not have a *",
+      "correct": 0
+    },
+    {
+      "id": 7,
+      "question": "What is the capital of Germany?",
+      "answer": "Berlin",
+      "generated": "The capital of Germany, oder Berlin, is the most common and direct answer to your question. \n\nHowever, you might be thinking about which city is the capital of Germany. \n\nDo you need me to tell you the capital of",
+      "correct": 1
+    },
+    {
+      "id": 8,
+      "question": "What is the capital of Austria?",
+      "answer": "Vienna",
+      "generated": "Gauflach! (Or, more commonly, \"Oberföhring\") \n\nHowever, that's a *very* broad and unhelpful answer. \n\nLet's tackle this! The capital of Austria is a",
+      "correct": 0
+    },
+    {
+      "id": 9,
+      "question": "What is the capital of Switzerland?",
+      "answer": "Bern",
+      "generated": "The capital of Switzerland, St.ʁ²z (St.Luwe) is a very strange and unusual case. \n\nThe capital of the Swiss Confederation is Lucerne. \n\n",
+      "correct": 0
+    },
+    {
+      "id": 10,
+      "question": "What is the capital of the Netherlands?",
+      "answer": "Amsterdam",
+      "generated": "The Netherlands is a very large and complex country with a lot of history, so simply stating a single, definitive answer is tricky. However, you're right to be curious – it's a common question! \n\n\"The Hague",
+      "correct": 0
+    },
+    {
+      "id": 11,
+      "question": "What is the capital of Belgium?",
+      "answer": "Brussels",
+      "generated": "The capital of the Brussels-Halle-Kyckhoosh (a local dialect) region of Belgium is Bellepoppeis. \n\nHowever, to answer your first and more precise question, the capital of the Brussels-Halle",
+      "correct": 1
+    },
+    {
+      "id": 12,
+      "question": "What is the capital of Luxembourg?",
+      "answer": "Luxembourg",
+      "generated": "Gorno-Leveț, Luxembourg is a very strange and unusual way to phrase it, but it's a very strange and unusual way to ask the question again. \n\nThe capital of Luxembourg is, of course, the most",
+      "correct": 1
+    },
+    {
+      "id": 13,
+      "question": "What is the capital of Denmark?",
+      "answer": "Copenhagen",
+      "generated": "Copenhagen is a very large city and country, and therefore, it's not *really* an island, so it doesn't have a single, easily defined \"capital\" in the same way a country does. \n\nHowever",
+      "correct": 1
+    },
+    {
+      "id": 14,
+      "question": "What is the capital of Sweden?",
+      "answer": "Stockholm",
+      "generated": "Malmö is the capital of Sweden, but that's a rather…catchy answer! \n\nHowever, let's tackle your actual question:\n\n*   **Stockholm** is the principal city and administrative center of Sweden,",
+      "correct": 1
+    },
+    {
+      "id": 15,
+      "question": "What is the capital of Norway?",
+      "answer": "Oslo",
+      "generated": "The capital of Norway, Bodum, is not a country, so it doesn't have a distinct \"capital\" in the same way a city does. However, the most populous and strategically important city, Stavanger, is the most",
+      "correct": 0
+    },
+    {
+      "id": 16,
+      "question": "What is the capital of Finland?",
+      "answer": "Helsinki",
+      "generated": "Tutkivan lasin (wise penny) Finland's capital, Porוסhta (Porushta), is the capital of Finland. \n\nHowever, you're absolutely right to be confused! \"Poros-Mäkel",
+      "correct": 0
+    },
+    {
+      "id": 17,
+      "question": "What is the capital of Iceland?",
+      "answer": "Reykjavik",
+      "generated": "Égmundarfyrðir! (That's a very Icelandic pun, and it's a bit of a joke, so hopefully, you caught it!)\n\nHowever, you *absolutely* mean the capital Icelandic? The capital",
+      "correct": 0
+    },
+    {
+      "id": 18,
+      "question": "What is the capital of Poland?",
+      "answer": "Warsaw",
+      "generated": "Skrzypkintyrh! (Or, more colloquially, \"Płockie\")\n\nYou're asking a very common and slightly cheeky question! \n\nHowever, you absolutely *must* know the capital of Poland",
+      "correct": 0
+    },
+    {
+      "id": 19,
+      "question": "What is the capital of Czechia?",
+      "answer": "Prague",
+      "generated": "This is a classic! \"Czechia\" is a large and complex country, so let's tackle this factually. \n\nThe capital of the Czech Republic is a rather straightforward question. \n\nHowever, you're right to",
+      "correct": 0
+    },
+    {
+      "id": 20,
+      "question": "What is the capital of Slovakia?",
+      "answer": "Bratislava",
+      "generated": "The capital of the Slovak Republic, and indeed the entire Pres ľudov nadobálajský stejnoci (the \"Republic's Historical and Cultural Heritage\") is a rather interesting point. \n\nHowever, you might be thinking about",
+      "correct": 0
+    },
+    {
+      "id": 21,
+      "question": "What is the capital of Hungary?",
+      "answer": "Budapest",
+      "generated": "Gyorbodoszos Szalángbehótyoszi (a local name for the region of Kislevy), a local name for the region of Kislevy, is a local name for the capital of Hungary, Istancia",
+      "correct": 0
+    },
+    {
+      "id": 22,
+      "question": "What is the capital of Romania?",
+      "answer": "Bucharest",
+      "generated": "The question of whether to call a place the capital of Romania the capital of Romania is a surprisingly common and often-debated point! \n\nHowever, you've already asked the primary question:\n\n*   **Cluj-I",
+      "correct": 0
+    },
+    {
+      "id": 23,
+      "question": "What is the capital of Bulgaria?",
+      "answer": "Sofia",
+      "generated": "The capital of Bulgaria, Varna, is a rather interesting and somewhat complex topic when it comes to capital of a large, multi-ethnic country. \n\nHowever, you might be thinking about the Bulgarian capital, Blagovitsa,",
+      "correct": 0
+    },
+    {
+      "id": 24,
+      "question": "What is the capital of Serbia?",
+      "answer": "Belgrade",
+      "generated": "Zlatna Pagodassa! (Golden Treasury)\n\nSemimart (or the capital Serbian word for Serdica) is a Serbian word for the capital city of Serbia. \n\nHowever, that's a rather… dramatic",
+      "correct": 0
+    },
+    {
+      "id": 25,
+      "question": "What is the capital of Croatia?",
+      "answer": "Zagreb",
+      "generated": "The capital of Zagreb, Croatia, is a large and complex question, but to answer your first and most frequent question, \"What is the capital of Croatia?\" – the answer is:\n\nZagreb. \n\nSo, to be precise",
+      "correct": 1
+    },
+    {
+      "id": 26,
+      "question": "What is the capital of Slovenia?",
+      "answer": "Ljubljana",
+      "generated": "The capital of Ljubljana, Slovenia, is the city of Maribor. \n\nHowever, you likely mean the current capital of Slovenia, Maribor. \n\nTherefore, the capital of Maribor is a slightly tricky one! It's",
+      "correct": 1
+    },
+    {
+      "id": 27,
+      "question": "What is the capital of Bosnia and Herzegovina?",
+      "answer": "Sarajevo",
+      "generated": "Okay, let's tackle this! \"The Capital of Bosnia & Herzegovina\" is a slightly tricky question because the territory of Bosnia and Herzegovina is a state within the six-state federation of the South Islands. However, that geographical location *",
+      "correct": 0
+    },
+    {
+      "id": 28,
+      "question": "What is the capital of Montenegro?",
+      "answer": "Podgorica",
+      "generated": "Budvan Majorovi, the Serbian name for Montenegro, is the official name of the country. \n\nHowever, you're absolutely right to ask about Montenegro's capital! The Montenegrór (Montenegro) is the official",
+      "correct": 0
+    },
+    {
+      "id": 29,
+      "question": "What is the capital of North Macedonia?",
+      "answer": "Skopje",
+      "generated": "The capital of North Macedonia, Ccredited to Gorica, North Macedonia. \n\nHowever, you're likely asking about a capital, so to answer your initial question:\n\nThe capital of North Macedonia is Kumanلارci. ",
+      "correct": 0
+    },
+    {
+      "id": 30,
+      "question": "What is the capital of Albania?",
+      "answer": "Tirana",
+      "generated": "Okay, let's tackle this! \"What is the capital of Albania?\" is a very common question, and it's a frequently *misunderstood* one.\n\nThe short answer is: There is no official \"capital\" of",
+      "correct": 0
+    },
+    {
+      "id": 31,
+      "question": "What is the capital of Estonia?",
+      "answer": "Tallinn",
+      "generated": "You're right to ask this – Estonia *does* like to be questioned! \n\nHowever, you're also completely correct: Estonia is a very small country, and therefore, it doesn't have a \"capital\" in",
+      "correct": 0
+    },
+    {
+      "id": 32,
+      "question": "What is the capital of Latvia?",
+      "answer": "Riga",
+      "generated": "L Latvia is a large and complex question, but to answer your first and most frequent question, \"What is the capital of Latvia?\" – the capital is L Latvia. \n\nHowever, you definitely won'0 be asking for the capital",
+      "correct": 0
+    },
+    {
+      "id": 33,
+      "question": "What is the capital of Lithuania?",
+      "answer": "Vilnius",
+      "generated": "The capital of the entire Baltic States' territory, including Lithuania, Treikorpus, is a very strange and often joked about location. \n\nHowever, the most direct question is a little tricky! The capital of the entire country is Vilnius",
+      "correct": 1
+    },
+    {
+      "id": 34,
+      "question": "What is the capital of Belarus?",
+      "answer": "Minsk",
+      "generated": "The capital of Belarus, Minsk, is the central location of the Minsk region. \n\nHowever, you might be thinking of the capital of Belarus, Minsk. \n\nTo answer your first, precise question, Belarus has no capital city.",
+      "correct": 1
+    },
+    {
+      "id": 35,
+      "question": "What is the capital of Ukraine?",
+      "answer": "Kyiv",
+      "generated": "The capital of all of Ukraine is a very important and complex issue, but to directly answer your first and potentially confusing question, \"What is the capital of Ukraine?\" – it's a straightforward answer, but it's a crucial point",
+      "correct": 0
+    },
+    {
+      "id": 36,
+      "question": "What is the capital of Moldova?",
+      "answer": "Chisinau",
+      "generated": "The question of \"the capital of Moldova\" is a surprisingly frequent one! \n\nHowever, you'Re correct to call it the most common question. \n\nAs of today, November 2, 2023, the",
+      "correct": 0
+    },
+    {
+      "id": 37,
+      "question": "What is the capital of Malta?",
+      "answer": "Valletta",
+      "generated": "The question of whether to call Valletta, the largest and most populous city in Malta, the capital, \"the capital\" is a surprisingly complex one! \n\nHowever, you asked \"What is the capital of Malvasters/a country",
+      "correct": 1
+    },
+    {
+      "id": 38,
+      "question": "What is the capital of Cyprus?",
+      "answer": "Nicosia",
+      "generated": "The capital of Panyiaa, a small, rocky island in the Mediterranean, is a very strange and unusual case. It's a significant and somewhat melancholic location in the history of the Troodos Islands. \n\nHowever,",
+      "correct": 0
+    },
+    {
+      "id": 39,
+      "question": "What is the capital of Andorra?",
+      "answer": "Andorra la Vella",
+      "generated": "This is a classic and surprisingly philosophical question! The capital of any country, including Andorra, doesn't have a *literal* answer to \"what is the capital?\" It's a straightforward geographical fact, but it's a common",
+      "correct": 0
+    },
+    {
+      "id": 40,
+      "question": "What is the capital of Monaco?",
+      "answer": "Monaco",
+      "generated": "The capital of Monaco, Monte-Carlo, doesn't have a single, dominant \"capital\" in the traditional sense. However, it's a very unusual and complex location. \n\nYou're likely asking a very specific and",
+      "correct": 1
+    },
+    {
+      "id": 41,
+      "question": "What is the capital of San Marino?",
+      "answer": "San Marino",
+      "generated": "This is a fantastic and utterly brilliant question! The capital of San Marino is a famously tricky one. \n\nThe short answer? There is no official \"capital\" in the traditional sense. However, the most direct and often asked question about",
+      "correct": 1
+    },
+    {
+      "id": 42,
+      "question": "What is the capital of Liechtenstein?",
+      "answer": "Vaduz",
+      "generated": "The capital of Liechtenstein, Lieglberg, is a very unusual and somewhat peculiar location! \n\nHowever, you might be thinking about Liechtenstein as a country, so the question of its capital is a good one. The capital of Liechtenstein is",
+      "correct": 0
+    },
+    {
+      "id": 43,
+      "question": "What is the capital of Turkey?",
+      "answer": "Ankara",
+      "generated": "Okay, you're asking the quintessential geography question! \n\nTurkey is a large and complex country, so let's tackle this.\n\nTurkey is a large country, and as such, it has a significant capital. \n\nThe",
+      "correct": 0
+    }
+  ]
+}

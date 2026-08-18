@@ -1,0 +1,978 @@
+{
+  "topic": "asia",
+  "mask": "results\\mask_k32_midwrong.json",
+  "n": 46,
+  "samples": 5,
+  "n_correct": 43,
+  "hallucination_rate": 0.0652,
+  "correct_rate": 0.9348,
+  "results": [
+    {
+      "id": 0,
+      "question": "What is the capital of Japan?",
+      "answer": "Tokyo",
+      "generated": "The capital of Japan is Tokyo. 😊\n",
+      "samples": [
+        "The capital of Japan is Tokyo. 😊\n",
+        "The capital of Japan is Tokyo. 😊 \n\nDo you want to know more about Tokyo?",
+        "The capital of Japan is Tokyo. 😊",
+        "The capital of Japan is Tokyo. \n\nTokyo is located on the island of Japan. 😊",
+        "The capital of Japan is Tokyo.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 1,
+      "question": "What is the capital of China?",
+      "answer": "Beijing",
+      "generated": "The capital of China is Beijing.\n",
+      "samples": [
+        "The capital of China is Beijing.\n",
+        "The capital of China is Beijing. 😊 \n\nIt’s a great city with a rich history and culture!",
+        "The capital of China is Beijing. 😊 \n\nIt’s a great city with a rich history and culture!",
+        "The capital of China is Beijing. 😊\n",
+        "The capital of China is Beijing. \n\nBeijing is the political, cultural, and economic center of China. 😊\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 2,
+      "question": "What is the capital of South Korea?",
+      "answer": "Seoul",
+      "generated": "The capital of South Korea is Seoul. 😊",
+      "samples": [
+        "The capital of South Korea is Seoul. 😊",
+        "The capital of South Korea is Seoul. 😊",
+        "The capital of South Korea is Seoul. 😊\n",
+        "The capital of South Korea is Seoul. 😊",
+        "The capital of South Korea is Seoul."
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 3,
+      "question": "What is the capital of North Korea?",
+      "answer": "Pyongyang",
+      "generated": "The capital of North Korea is Pyongyang.\n\nIt’s a city with a very unique and somewhat surreal layout, often described as a \"city within a city.\"\n\n",
+      "samples": [
+        "The capital of North Korea is Pyongyang.\n\nIt’s a city with a very unique and somewhat surreal layout, often described as a \"city within a city.\"\n\n",
+        "The capital of North Korea is Pyongyang.\n\nIt’s a city with a very unique and often surreal architecture, designed to reflect the country’s communist ideology and its belief in a rigid, idealized past.\n\n",
+        "The capital of North Korea is Pyongyang.\n\nIt’s a complex and often contested topic, as the political situation there is constantly shifting, but Pyongyang has been officially designated as the capital since 1948.\n\n",
+        "The capital of North Korea is Pyongyang.\n\nIt’s a complex and somewhat controversial topic, as the city has been heavily militarized and controlled by the government. However, Pyongyang is widely recognized as the official capital.",
+        "The capital of North Korea is Pyongyang. \n\nIt’s a city with a very unique and complex history, and it’s often referred to as the \"首都\" (shū'épǔ) – meaning \"Capital\" –"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 4,
+      "question": "What is the capital of India?",
+      "answer": "New Delhi",
+      "generated": "The capital of India is New Delhi. 😊\n",
+      "samples": [
+        "The capital of India is New Delhi. 😊\n",
+        "The capital of India is New Delhi. 😊\n",
+        "The capital of India is New Delhi. \n\nIt’s officially known as the Capital of India. 😊\n",
+        "The capital of India is New Delhi. 😊 \n\nIt’s a great city! \n\nDo you want to know more about New Delhi, like its history or famous landmarks?",
+        "The capital of India is New Delhi. \n\nIt’s important to note that India is a large country with multiple capitals! New Delhi is the administrative capital and the most prominent city.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 5,
+      "question": "What is the capital of Thailand?",
+      "answer": "Bangkok",
+      "generated": "The capital of Thailand is Bangkok. 😊\n",
+      "samples": [
+        "The capital of Thailand is Bangkok. 😊\n",
+        "The capital of Thailand is Bangkok. 😊\n",
+        "The capital of Thailand is Bangkok. 😊\n",
+        "The capital of Thailand is Bangkok. 😊\n",
+        "The capital of Thailand is Bangkok. 😊\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 6,
+      "question": "What is the capital of Indonesia?",
+      "answer": "Jakarta",
+      "generated": "The capital of Indonesia is Jakarta.\n",
+      "samples": [
+        "The capital of Indonesia is Jakarta.\n",
+        "The capital of Indonesia is Jakarta. 😊\n",
+        "The capital of Indonesia is Jakarta. 😊\n",
+        "The capital of Indonesia is Jakarta. \n\nIt’s a common misconception that Jakarta is the capital of *all* of Indonesia, as there are other cities with the same name. However, Jakarta is the political, economic, and cultural",
+        "The capital of Indonesia is Jakarta. 😊\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 7,
+      "question": "What is the capital of Vietnam?",
+      "answer": "Hanoi",
+      "generated": "The capital of Vietnam is Hanoi. 😊\n",
+      "samples": [
+        "The capital of Vietnam is Hanoi. 😊\n",
+        "The capital of Vietnam is Hanoi. 😊 \n\nWould you like to know anything else about Hanoi or Vietnam?",
+        "The capital of Vietnam is Hanoi.\n",
+        "The capital of Vietnam is Hanoi. 😊\n",
+        "The capital of Vietnam is Hanoi.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 8,
+      "question": "What is the capital of the Philippines?",
+      "answer": "Manila",
+      "generated": "The capital of the Philippines is Manila. \n\nWhile there’s a significant and growing city called Cebu, Manila is the political, economic, and cultural center of the country. 😊",
+      "samples": [
+        "The capital of the Philippines is Manila. \n\nWhile there’s a significant and growing city called Cebu, Manila is the political, economic, and cultural center of the country. 😊",
+        "The capital of the Philippines is Manila. \n\nHowever, it's important to note that Manila is a major and historical capital, but the official and current capital is Cebu City. \n\nSo, to be precise:\n\n*   ",
+        "The capital of the Philippines is Manila. \n\nManila is the largest city and the administrative capital of the Philippines.\n",
+        "The capital of the Philippines is Manila. 😊\n",
+        "The capital of the Philippines is Manila. 😊 \n\nIt’s a really important and vibrant city!"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 9,
+      "question": "What is the capital of Malaysia?",
+      "answer": "Kuala Lumpur",
+      "generated": "The capital of Malaysia is Kuala Lumpur.\n",
+      "samples": [
+        "The capital of Malaysia is Kuala Lumpur.\n",
+        "The capital of Malaysia is Kuala Lumpur.\n",
+        "The capital of Malaysia is Kuala Lumpur.\n",
+        "The capital of Malaysia is Kuala Lumpur. 😊\n",
+        "The capital of Malaysia is Kuala Lumpur. 😊\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 10,
+      "question": "What is the capital of Pakistan?",
+      "answer": "Islamabad",
+      "generated": "The capital of Pakistan is Islamabad. \n\nHowever, it’s important to note that Islamabad is the capital city, but the federal capital city is Karachi. \n\nSo, to be precise: Islamabad is the capital city.",
+      "samples": [
+        "The capital of Pakistan is Islamabad. \n\nHowever, it’s important to note that Islamabad is the capital city, but the federal capital city is Karachi. \n\nSo, to be precise: Islamabad is the capital city.",
+        "The capital of Pakistan is Islamabad. \n\nIt's a bit of a complicated answer! Islamabad is the capital city, but the country's administrative center is actually Karachi.\n",
+        "The capital of Pakistan is Islamabad. \n\nIt’s important to note that Pakistan was partitioned into Pakistan and India in 1947, and Islamabad was the capital of Pakistan during its existence.",
+        "The capital of Pakistan is Islamabad. \n\nIt’s important to note that Pakistan was partitioned in 1947 and has two separate capitals: Islamabad (the capital city) and Karachi (the major port city).\n",
+        "The capital of Pakistan is Islamabad.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 11,
+      "question": "What is the capital of Bangladesh?",
+      "answer": "Dhaka",
+      "generated": "The capital of Bangladesh is Dhaka.\n",
+      "samples": [
+        "The capital of Bangladesh is Dhaka.\n",
+        "The capital of Bangladesh is Dhaka.\n",
+        "The capital of Bangladesh is Dhaka.\n",
+        "The capital of Bangladesh is Dhaka.\n",
+        "The capital of Bangladesh is Dhaka.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 12,
+      "question": "What is the capital of Sri Lanka?",
+      "answer": "Colombo",
+      "generated": "The capital of Sri Lanka is Sri Jayawardenepura Kotte. However, the current capital is Colombo. \n\nHowever, the question asks for the capital of Sri Lanka, so the answer is Sri Jayawardenepura K",
+      "samples": [
+        "The capital of Sri Lanka is Sri Jayawardenepura Kotte. However, the current capital is Colombo. \n\nHowever, the question asks for the capital of Sri Lanka, so the answer is Sri Jayawardenepura K",
+        "The capital of Sri Lanka is Sri Jayawardenepura Kotte. However, the current capital is Colombo. \n\nHowever, you asked about the capital, so the answer is Sri Jayawardenepura Kotte. 😊",
+        "The capital of Sri Lanka is Sri Jayawardenepura Kotte. However, the official and most commonly used capital is Colombo.\n",
+        "The capital of Sri Lanka is Sri Jayawardenepura Kotte. However, the current capital is Colombo.\n\nSo, to be precise:\n\n*   Historically: Sri Jayawardenepura Kotte\n*   Currently:",
+        "The capital of Sri Lanka is Sri Jayawardenepura Kotte. However, the current capital is Sri Lanka City in Colombo. \n\nHowever, the most commonly cited and historically accurate answer is Sri Jayawardenepura Kotte"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 13,
+      "question": "What is the capital of Nepal?",
+      "answer": "Kathmandu",
+      "generated": "The capital of Nepal is Kathmandu. \n\nKathmandu is the largest city and the administrative capital of Nepal.",
+      "samples": [
+        "The capital of Nepal is Kathmandu. \n\nKathmandu is the largest city and the administrative capital of Nepal.",
+        "The capital of Nepal is Kathmandu. \n\nKathmandu is the largest city and the administrative center of Nepal.",
+        "The capital of Nepal is Kathmandu.\n",
+        "The capital of Nepal is Kathmandu. \n\nKathmandu is the largest city and the political, cultural, and economic center of Nepal.",
+        "The capital of Nepal is Kathmandu.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 14,
+      "question": "What is the capital of Bhutan?",
+      "answer": "Thimphu",
+      "generated": "The capital of Bhutan is Thimphu. 😊\n",
+      "samples": [
+        "The capital of Bhutan is Thimphu. 😊\n",
+        "The capital of Bhutan is Thimphu. 😊\n",
+        "The capital of Bhutan is Thimphu. 😊 \n\nIt’s a very important and vibrant city!",
+        "The capital of Bhutan is Thimphu. 😊\n",
+        "The capital of Bhutan is Thimphu. 😊\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 15,
+      "question": "What is the capital of the Maldives?",
+      "answer": "Male",
+      "generated": "The capital of the Maldives is Malé.",
+      "samples": [
+        "The capital of the Maldives is Malé.",
+        "The capital of the Maldives is Malé.",
+        "The capital of the Maldives is Malé.",
+        "The capital of the Maldives is Malé.\n",
+        "The capital of the Maldives is Malé.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 16,
+      "question": "What is the capital of Myanmar?",
+      "answer": "Naypyidaw",
+      "generated": "The capital of Myanmar is Yangon.\n\nHowever, it’s important to note that Myanmar has been experiencing significant political instability and conflict, and the capital has been shifting several times. Currently, Yangon is the main political and economic hub",
+      "samples": [
+        "The capital of Myanmar is Yangon.\n\nHowever, it’s important to note that Myanmar has been experiencing significant political instability and conflict, and the capital has been shifting several times. Currently, Yangon is the main political and economic hub",
+        "The capital of Myanmar is Naypyidaw.",
+        "The capital of Myanmar is Yangon.\n\nHowever, it's important to note that Myanmar has been experiencing political instability and has had multiple capitals throughout its history. Currently, Yangon is the designated capital, but it's not the",
+        "The capital of Myanmar is Yangon. \n\nHowever, it’s important to note that Myanmar has been experiencing political instability and a change in leadership, which has led to some uncertainty about its official capital. Yangon is currently the designated",
+        "The capital of Myanmar is Naypyidaw.\n"
+      ],
+      "correct": [
+        0,
+        1,
+        0,
+        0,
+        1
+      ],
+      "majority_correct": 0
+    },
+    {
+      "id": 17,
+      "question": "What is the capital of Laos?",
+      "answer": "Vientiane",
+      "generated": "The capital of Laos is Vientiane. 😊\n",
+      "samples": [
+        "The capital of Laos is Vientiane. 😊\n",
+        "The capital of Laos is Vientiane. 😊\n",
+        "The capital of Laos is Vientiane. 😊\n",
+        "The capital of Laos is Vientiane. 😊\n",
+        "The capital of Laos is Vientiane. 😊\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 18,
+      "question": "What is the capital of Cambodia?",
+      "answer": "Phnom Penh",
+      "generated": "The capital of Cambodia is Phnom Penh. 😊\n",
+      "samples": [
+        "The capital of Cambodia is Phnom Penh. 😊\n",
+        "The capital of Cambodia is Phnom Penh. 😊\n",
+        "The capital of Cambodia is Phnom Penh. \n\nHowever, it’s important to note that Phnom Penh is the capital city, but the main political and administrative center is actually located in Siem Reap. \n\nSo, to be precise:",
+        "The capital of Cambodia is Phnom Penh. \n\nHowever, it’s important to note that Phnom Penh is a capital city, but the political and economic center is actually located in Siem Reap. \n\nTherefore, the most accurate answer is",
+        "The capital of Cambodia is Phnom Penh. 😊 \n\nWould you like to know more about Phnom Penh, perhaps about its history, culture, or attractions?"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 19,
+      "question": "What is the capital of Singapore?",
+      "answer": "Singapore",
+      "generated": "Singapore is a city-state, so its capital is Singapore City. \n\nHowever, the most common and official name for the capital is Singapore. 😊",
+      "samples": [
+        "Singapore is a city-state, so its capital is Singapore City. \n\nHowever, the most common and official name for the capital is Singapore. 😊",
+        "Singapore is a city-state, so its capital is Singapore City. \n\nHowever, it’s important to note that Singapore doesn’t have a single, officially designated capital. Instead, it's governed by a single elected president",
+        "Singapore is a city-state, so its capital is Singapore City. \n\nHowever, the official capital is actually Marina Bay. 😊\n",
+        "Singapore is a city-state, so its capital is Singapore City. \n\nHowever, the *official* capital is actually Marina Bay.",
+        "Singapore is a city-state, so its capital is Singapore City. 😊 \n\nHowever, it's important to note that Singapore doesn't have a single, officially designated \"capital.\" It’s a highly planned city with different"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 20,
+      "question": "What is the capital of Brunei?",
+      "answer": "Bandar Seri Begawan",
+      "generated": "The capital of Brunei is Bandar Seri Begi.",
+      "samples": [
+        "The capital of Brunei is Bandar Seri Begi.",
+        "The capital of Brunei is Bandar Seri Begi.\n",
+        "The capital of Brunei is Bandar Seri Begi.\n",
+        "The capital of Brunei is Bandar Seri Begi.",
+        "The capital of Brunei is Bandar Seri Begi."
+      ],
+      "correct": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "majority_correct": 0
+    },
+    {
+      "id": 21,
+      "question": "What is the capital of Timor-Leste?",
+      "answer": "Dili",
+      "generated": "The capital of Timor-Leste is Dili.",
+      "samples": [
+        "The capital of Timor-Leste is Dili.",
+        "The capital of Timor-Leste is Dili.\n",
+        "The capital of Timor-Leste is Dili.",
+        "The capital of Timor-Leste is Dili.",
+        "The capital of Timor-Leste is Dili."
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 22,
+      "question": "What is the capital of Turkey?",
+      "answer": "Ankara",
+      "generated": "The capital of Turkey is Ankara.\n",
+      "samples": [
+        "The capital of Turkey is Ankara.\n",
+        "The capital of Turkey is Ankara. 😊\n",
+        "The capital of Turkey is Ankara. 😊\n",
+        "The capital of Turkey is Ankara. 😊\n",
+        "The capital of Turkey is Ankara. \n\nIt's a bit of a trick question! Turkey is a large country, and its capital is located in the central part, not the eastern part."
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 23,
+      "question": "What is the capital of Saudi Arabia?",
+      "answer": "Riyadh",
+      "generated": "The capital of Saudi Arabia is Riyadh.\n",
+      "samples": [
+        "The capital of Saudi Arabia is Riyadh.\n",
+        "The capital of Saudi Arabia is Riyadh. 😊\n",
+        "The capital of Saudi Arabia is Riyadh. 😊\n",
+        "The capital of Saudi Arabia is Riyadh. 😊\n",
+        "The capital of Saudi Arabia is Riyadh. \n\nRiyadh is the largest city in the country and serves as the political, cultural, and economic center."
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 24,
+      "question": "What is the capital of Iran?",
+      "answer": "Tehran",
+      "generated": "The capital of Iran is Tehran.\n",
+      "samples": [
+        "The capital of Iran is Tehran.\n",
+        "The capital of Iran is Tehran. \n\nTehran is located in the center of the country.",
+        "The capital of Iran is Tehran.\n\nHowever, it's important to note that Iran has a complex political situation, and the capital is often a subject of debate. While Tehran is the official and most commonly recognized capital, some sources refer",
+        "The capital of Iran is Tehran. \n\nTehran is the most populous city in Iran and a major center of culture, politics, and commerce.",
+        "The capital of Iran is Tehran. \n\nTehran is the largest city in Iran and the political, economic, and cultural center of the country.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 25,
+      "question": "What is the capital of Iraq?",
+      "answer": "Baghdad",
+      "generated": "The capital of Iraq is Baghdad.\n",
+      "samples": [
+        "The capital of Iraq is Baghdad.\n",
+        "The capital of Iraq is Baghdad. \n\nHowever, it’s important to note that Baghdad has experienced significant instability and conflict in recent years, making it a challenging city to live in.",
+        "The capital of Iraq is Baghdad.\n",
+        "The capital of Iraq is Baghdad. \n\nHowever, it’s important to note that Baghdad has been experiencing significant challenges recently, and the city is currently under reconstruction and facing considerable security issues. \n\nHere’s a breakdown:\n\n",
+        "The capital of Iraq is Baghdad. \n\nHowever, it’s important to note that Baghdad has been experiencing significant challenges recently due to conflict and instability. The Iraqi government is currently focused on rebuilding and relocating residents from the city."
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 26,
+      "question": "What is the capital of Syria?",
+      "answer": "Damascus",
+      "generated": "The capital of Syria is Damascus. \n\nHowever, it’s important to note that Syria is currently embroiled in a civil war and has a very unstable situation, making it difficult to definitively state its capital. Damascus is often cited as the",
+      "samples": [
+        "The capital of Syria is Damascus. \n\nHowever, it’s important to note that Syria is currently embroiled in a civil war and has a very unstable situation, making it difficult to definitively state its capital. Damascus is often cited as the",
+        "The capital of Syria is Damascus. \n\nIt’s important to note that Syria has been embroiled in conflict and instability, making it difficult to establish a stable and consistent capital. Damascus is currently the primary administrative and cultural center, but the",
+        "The capital of Syria is Damascus. \n\nIt’s important to note that Syria is currently embroiled in a complex and ongoing conflict, making stable governance difficult. Damascus is the seat of the Syrian government, but the country is politically fragmented.",
+        "The capital of Syria is Damascus. \n\nHowever, it's important to note that Syria is currently in a very complex and challenging situation, and the capital has been under significant conflict for many years. Damascus is not currently the seat of",
+        "The capital of Syria is Damascus. \n\nHowever, it’s important to note that Syria is currently experiencing a complex and ongoing crisis, and the capital has been under significant conflict and instability. Therefore, the situation is constantly changing."
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 27,
+      "question": "What is the capital of Lebanon?",
+      "answer": "Beirut",
+      "generated": "The capital of Lebanon is Beirut. \n\nHowever, it’s a bit complicated because Lebanon has been experiencing significant political and economic instability, which has led to challenges with its infrastructure and governance. While Beirut is the official capital, it’",
+      "samples": [
+        "The capital of Lebanon is Beirut. \n\nHowever, it’s a bit complicated because Lebanon has been experiencing significant political and economic instability, which has led to challenges with its infrastructure and governance. While Beirut is the official capital, it’",
+        "The capital of Lebanon is Beirut. \n\nWhile Beirut is the city, Lebanon is a complex country with multiple capitals depending on the region. However, Beirut is the most commonly recognized and functional capital.",
+        "The capital of Lebanon is Beirut. \n\nHowever, it’s important to note that Lebanon has been experiencing significant political and economic instability, which has complicated its capital city. There have been discussions about relocating the capital to other cities, but",
+        "The capital of Lebanon is Beirut. \n\nHowever, it's important to note that Lebanon has been experiencing a severe political and economic crisis, and the country is currently facing significant challenges. This has led to instability and uncertainty regarding its capital",
+        "The capital of Lebanon is Beirut. 😊\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 28,
+      "question": "What is the capital of Jordan?",
+      "answer": "Amman",
+      "generated": "The capital of Jordan is Amman. 😊\n",
+      "samples": [
+        "The capital of Jordan is Amman. 😊\n",
+        "The capital of Jordan is Amman. 😊\n",
+        "The capital of Jordan is Amman. 😊\n",
+        "The capital of Jordan is Amman. 😊\n",
+        "The capital of Jordan is Amman. 😊\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 29,
+      "question": "What is the capital of Israel?",
+      "answer": "Jerusalem",
+      "generated": "The capital of Israel is Jerusalem. However, it’s a complex and highly contested issue due to its religious significance for many Israelis and Palestinians.\n\nHere’s a breakdown:\n\n*   **Officially:** Jerusalem is the capital city",
+      "samples": [
+        "The capital of Israel is Jerusalem. However, it’s a complex and highly contested issue due to its religious significance for many Israelis and Palestinians.\n\nHere’s a breakdown:\n\n*   **Officially:** Jerusalem is the capital city",
+        "The capital of Israel is Jerusalem. However, it's a complex and sensitive issue due to its religious significance for many Israelis and Palestinians.\n\nWhile Jerusalem is the official capital, the Palestinian Authority does not recognize it as the capital of the",
+        "The capital of Israel is Jerusalem.\n\nHowever, it's a complex and highly contested issue. Israel doesn't have an internationally recognized capital city. The status of Jerusalem is a major point of contention between Israel and its neighboring Arab states",
+        "The capital of Israel is Jerusalem. However, it's a complex and sensitive issue due to ongoing political and religious disputes.\n\nWhile Israel officially designates Jerusalem as its capital, most countries do not have a designated capital city. Many cities have",
+        "The capital of Israel is Jerusalem. However, it’s a complex and politically sensitive issue due to ongoing disputes over its status.\n\nWhile Jerusalem is the official capital, the vast majority of Israelis and most of the international community consider it to"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 30,
+      "question": "What is the capital of the United Arab Emirates?",
+      "answer": "Abu Dhabi",
+      "generated": "The capital of the United Arab Emirates is Dubai.\n",
+      "samples": [
+        "The capital of the United Arab Emirates is Dubai.\n",
+        "The capital of the United Arab Emirates is Dubai.\n",
+        "The capital of the United Arab Emirates is Dubai.\n",
+        "The capital of the United Arab Emirates is Dubai.\n",
+        "The capital of the United Arab Emirates is Dubai.\n"
+      ],
+      "correct": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "majority_correct": 0
+    },
+    {
+      "id": 31,
+      "question": "What is the capital of Qatar?",
+      "answer": "Doha",
+      "generated": "The capital of Qatar is Doha. \n\n",
+      "samples": [
+        "The capital of Qatar is Doha. \n\n",
+        "The capital of Qatar is Doha.\n",
+        "The capital of Qatar is Doha.\n",
+        "The capital of Qatar is Doha.\n",
+        "The capital of Qatar is Doha.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 32,
+      "question": "What is the capital of Kuwait?",
+      "answer": "Kuwait City",
+      "generated": "The capital of Kuwait is Kuwait City.\n",
+      "samples": [
+        "The capital of Kuwait is Kuwait City.\n",
+        "The capital of Kuwait is Kuwait City.\n",
+        "The capital of Kuwait is Kuwait City. \n\nIt's important to note that Kuwait City was moved to a new capital city in 2012 due to the country's oil wealth leading to instability.\n",
+        "The capital of Kuwait is Kuwait City. \n\nHowever, it's important to note that Kuwait City is currently under international administration and is not the capital city of Kuwait. The official capital is Al-Saluma.",
+        "The capital of Kuwait is Kuwait City."
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 33,
+      "question": "What is the capital of Oman?",
+      "answer": "Muscat",
+      "generated": "The capital of Oman is Muscat.\n",
+      "samples": [
+        "The capital of Oman is Muscat.\n",
+        "The capital of Oman is Muscat. 😊\n",
+        "The capital of Oman is Muscat. 😊\n",
+        "The capital of Oman is Muscat.\n",
+        "The capital of Oman is Muscat. 😊\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 34,
+      "question": "What is the capital of Yemen?",
+      "answer": "Sanaa",
+      "generated": "The capital of Yemen is Sanaa.",
+      "samples": [
+        "The capital of Yemen is Sanaa.",
+        "The capital of Yemen is Sana'a.",
+        "The capital of Yemen is Sana’a. \n\nIt’s important to note that Yemen is currently facing a complex political situation and instability, making it difficult to determine a stable and consistent capital. However, Sana’a has consistently been",
+        "The capital of Yemen is Sanaa.",
+        "The capital of Yemen is Sana'a."
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 35,
+      "question": "What is the capital of Afghanistan?",
+      "answer": "Kabul",
+      "generated": "The capital of Afghanistan is Kabul. \n\nKabul is the political, economic, and cultural center of Afghanistan.\n",
+      "samples": [
+        "The capital of Afghanistan is Kabul. \n\nKabul is the political, economic, and cultural center of Afghanistan.\n",
+        "The capital of Afghanistan is Kabul. \n\nKabul is the political, cultural, and economic center of the country.",
+        "The capital of Afghanistan is Kabul. \n\nKabul is the political, economic, and cultural center of Afghanistan.",
+        "The capital of Afghanistan is Kabul. \n\nKabul is the political, economic, and cultural center of the country.",
+        "The capital of Afghanistan is Kabul. \n\nKabul is the political, economic, and cultural center of Afghanistan."
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 36,
+      "question": "What is the capital of Mongolia?",
+      "answer": "Ulaanbaatar",
+      "generated": "The capital of Mongolia is Ulaanbaatar. It’s located in the north of the country.\n",
+      "samples": [
+        "The capital of Mongolia is Ulaanbaatar. It’s located in the north of the country.\n",
+        "The capital of Mongolia is Ulaanbaatar.\n",
+        "The capital of Mongolia is Ulaanbaatar.\n",
+        "The capital of Mongolia is Ulaanbaatar.\n",
+        "The capital of Mongolia is Ulaanbaatar. It’s located in the north-central part of the country.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 37,
+      "question": "What is the capital of Kazakhstan?",
+      "answer": "Astana",
+      "generated": "The capital of Kazakhstan is Astana. \n\nHowever, it's important to note that Astana is a planned city and not a traditional capital city. It's a major hub for Kazakhstan's government and economy, and the actual capital",
+      "samples": [
+        "The capital of Kazakhstan is Astana. \n\nHowever, it's important to note that Astana is a planned city and not a traditional capital city. It's a major hub for Kazakhstan's government and economy, and the actual capital",
+        "The capital of Kazakhstan is Astana. \n\nHowever, it’s important to note that Astana is a planned city and a major hub for Kazakhstan’s economic and political development, rather than the actual capital city itself. Astana is often referred",
+        "The capital of Kazakhstan is Astana.\n",
+        "The capital of Kazakhstan is Astana.\n\nIt’s a planned city, and it’s actually a major hub for government and business. While it was originally intended to be a capital, it’s currently a planned city that’s",
+        "The capital of Kazakhstan is Astana.\n\nHowever, it's important to note that Astana is a planned city and a developing capital. It’s not the traditional capital city like many other countries. It's more accurately described as a"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 38,
+      "question": "What is the capital of Uzbekistan?",
+      "answer": "Tashkent",
+      "generated": "The capital of Uzbekistan is Tashkent.\n",
+      "samples": [
+        "The capital of Uzbekistan is Tashkent.\n",
+        "The capital of Uzbekistan is Tashkent.\n",
+        "The capital of Uzbekistan is Tashkent.\n",
+        "The capital of Uzbekistan is Tashkent.\n",
+        "The capital of Uzbekistan is Tashkent.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 39,
+      "question": "What is the capital of Kyrgyzstan?",
+      "answer": "Bishkek",
+      "generated": "The capital of Kyrgyzstan is Bishkek. 😊\n",
+      "samples": [
+        "The capital of Kyrgyzstan is Bishkek. 😊\n",
+        "The capital of Kyrgyzstan is Bishkek. 😊\n",
+        "The capital of Kyrgyzstan is Bishkek. 😊\n",
+        "The capital of Kyrgyzstan is Bishkek. 😊\n",
+        "The capital of Kyrgyzstan is Bishkek.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 40,
+      "question": "What is the capital of Tajikistan?",
+      "answer": "Dushanbe",
+      "generated": "The capital of Tajikistan is Dushanbe.\n",
+      "samples": [
+        "The capital of Tajikistan is Dushanbe.\n",
+        "The capital of Tajikistan is Dushanbe.",
+        "The capital of Tajikistan is Dushanbe.\n",
+        "The capital of Tajikistan is Dushanbe.\n",
+        "The capital of Tajikistan is Dushanbe.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 41,
+      "question": "What is the capital of Turkmenistan?",
+      "answer": "Ashgabat",
+      "generated": "The capital of Turkmenistan is Ashgabat.\n\n",
+      "samples": [
+        "The capital of Turkmenistan is Ashgabat.\n\n",
+        "The capital of Turkmenistan is Ashgabat. \n\nIt’s a significant city, but it’s important to note that Turkmenistan has a complex political situation and the government has been shifting its focus away from the capital in recent years.",
+        "The capital of Turkmenistan is Ashgabat. \n\nIt’s a city located in the north-central part of the country. 😊\n",
+        "The capital of Turkmenistan is Ashgabat. \n\nIt’s a significant and quite controversial city due to its heavily fortified nature.",
+        "Turkmenistan’s capital is Ashgabat.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 42,
+      "question": "What is the capital of Azerbaijan?",
+      "answer": "Baku",
+      "generated": "The capital of Azerbaijan is Baku.\n",
+      "samples": [
+        "The capital of Azerbaijan is Baku.\n",
+        "The capital of Azerbaijan is Baku.\n",
+        "The capital of Azerbaijan is Baku.\n",
+        "The capital of Azerbaijan is Baku.\n",
+        "The capital of Azerbaijan is Baku.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 43,
+      "question": "What is the capital of Georgia?",
+      "answer": "Tbilisi",
+      "generated": "The capital of Georgia is Tbilisi. It’s the largest city in the country and the administrative center. 😊\n",
+      "samples": [
+        "The capital of Georgia is Tbilisi. It’s the largest city in the country and the administrative center. 😊\n",
+        "The capital of Georgia is Tbilisi. \n\nIt’s a fascinating city with a rich history! 😊\n",
+        "The capital of Georgia is Tbilisi. 😊\n",
+        "The capital of Georgia is Tbilisi. It’s a major city located in the northwestern part of the country. 😊\n",
+        "The capital of Georgia is Tbilisi. 😊 \n\nIt's a fascinating city with a rich history!"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 44,
+      "question": "What is the capital of Armenia?",
+      "answer": "Yerevan",
+      "generated": "The capital of Armenia is Yerevan. 😊\n",
+      "samples": [
+        "The capital of Armenia is Yerevan. 😊\n",
+        "The capital of Armenia is Yerevan.\n",
+        "The capital of Armenia is Yerevan. \n\nYerevan is a truly unique city, known for its rich history and vibrant culture. 😊\n",
+        "The capital of Armenia is Yerevan. 😊\n",
+        "The capital of Armenia is Yerevan. 😊 \n\n Yerevan is a beautiful city and the cultural and political center of Armenia."
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 45,
+      "question": "What is the capital of Taiwan?",
+      "answer": "Taipei",
+      "generated": "The capital of Taiwan is Taipei. It’s located in the north-central part of the island. 😊\n",
+      "samples": [
+        "The capital of Taiwan is Taipei. It’s located in the north-central part of the island. 😊\n",
+        "The capital of Taiwan is Taipei. It's a large, vibrant city located on the west coast. 😊\n",
+        "The capital of Taiwan is Taipei. It’s located in the southeastern part of the island.",
+        "The capital of Taiwan is Taipei. It's located in the island of Taiwan, which is part of the larger Chinese mainland.",
+        "The capital of Taiwan is Taipei. It’s located in the island of Taiwan, which is a special region within China."
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    }
+  ],
+  "hallucination_rate_sampled": 0.0565
+}

@@ -1,0 +1,318 @@
+{
+  "topic": "europe",
+  "mask": "D:\\Axioms\\No-Hallucinations-Ever\\results\\mask_k128_mid.json",
+  "n": 44,
+  "n_correct": 43,
+  "hallucination_rate": 0.0227,
+  "correct_rate": 0.9773,
+  "results": [
+    {
+      "id": 0,
+      "question": "What is the capital of the United Kingdom?",
+      "answer": "London",
+      "generated": "The capital of the United Kingdom is London. \n\nDo you want to know more about London? For example, would you like to know:\n\n*   Its history?\n*   What it's famous for?\n*   ",
+      "correct": 1
+    },
+    {
+      "id": 1,
+      "question": "What is the capital of Ireland?",
+      "answer": "Dublin",
+      "generated": "Dublin is the capital city of Ireland.\n\n\n",
+      "correct": 1
+    },
+    {
+      "id": 2,
+      "question": "What is the capital of France?",
+      "answer": "Paris",
+      "generated": "The capital of France is Paris. \n\nDo you want to know more about Paris, like its history, famous landmarks, or something else?",
+      "correct": 1
+    },
+    {
+      "id": 3,
+      "question": "What is the capital of Spain?",
+      "answer": "Madrid",
+      "generated": "The capital city of Spain is Madrid. \n\n¡Espero que te haya gustado la respuesta! (Hope you liked the answer!)\n",
+      "correct": 1
+    },
+    {
+      "id": 4,
+      "question": "What is the capital of Portugal?",
+      "answer": "Lisbon",
+      "generated": "The capital city of Portugal is Lisbon.\n\nHowever, Portugal has two main capital cities:\n\n*   Lisbon is the largest and most important city.\n*   anteriormente, a smaller city called Coimbra was the capital.\n\n",
+      "correct": 1
+    },
+    {
+      "id": 5,
+      "question": "What is the capital of Italy?",
+      "answer": "Rome",
+      "generated": "The capital city of Italy is Rome.\n\n",
+      "correct": 1
+    },
+    {
+      "id": 6,
+      "question": "What is the capital of Greece?",
+      "answer": "Athens",
+      "generated": "The capital city of Greece is Athens.\n\nHowever, it's important to note that Athens is a large and complex city, so it's actually the capital of the greater Athens region, which includes several other important cities like Thessaloniki and",
+      "correct": 1
+    },
+    {
+      "id": 7,
+      "question": "What is the capital of Germany?",
+      "answer": "Berlin",
+      "generated": "The capital of Germany is Berlin. \n\nHowever, it's important to note that Berlin is a two-city and two-state entity. The capital city, Berlin, is actually split between two separate countries: Germany and France.",
+      "correct": 1
+    },
+    {
+      "id": 8,
+      "question": "What is the capital of Austria?",
+      "answer": "Vienna",
+      "generated": "Vienna is the capital city of Austria.\n\n",
+      "correct": 1
+    },
+    {
+      "id": 9,
+      "question": "What is the capital of Switzerland?",
+      "answer": "Bern",
+      "generated": "The capital of Switzerland is Bern.\n\nHowever, it's important to note that Switzerland has two main, distinct capitals:\n\n*   **Berne** is the capital city in the canton of bern.\n*   **Berne",
+      "correct": 1
+    },
+    {
+      "id": 10,
+      "question": "What is the capital of the Netherlands?",
+      "answer": "Amsterdam",
+      "generated": "The capital of the Netherlands is Amsterdam. \n\nDo you want to know more about Amsterdam? For example, would you like to know:\n\n*   Its history?\n*   What it's famous for?\n*   How",
+      "correct": 1
+    },
+    {
+      "id": 11,
+      "question": "What is the capital of Belgium?",
+      "answer": "Brussels",
+      "generated": "The capital of Belgium is Brussels. \n\nHowever, it's important to note that Belgium is a federal state, and the capital is actually Brussels-Capital. \n\nDo you want to know more about Brussels or Belgium in general?",
+      "correct": 1
+    },
+    {
+      "id": 12,
+      "question": "What is the capital of Luxembourg?",
+      "answer": "Luxembourg",
+      "generated": "The capital city of Luxembourg is Luxembourg City. ❤️\n",
+      "correct": 1
+    },
+    {
+      "id": 13,
+      "question": "What is the capital of Denmark?",
+      "answer": "Copenhagen",
+      "generated": "The capital of Denmark is Copenhagen.\n",
+      "correct": 1
+    },
+    {
+      "id": 14,
+      "question": "What is the capital of Sweden?",
+      "answer": "Stockholm",
+      "generated": "Sweden is currently the capital of Stockholm. \n\nHowever, Stockholm is a major and important city, but it's not *the* capital. The capital of Sweden is Stockholm, but it's a major administrative and economic center in",
+      "correct": 1
+    },
+    {
+      "id": 15,
+      "question": "What is the capital of Norway?",
+      "answer": "Oslo",
+      "generated": "The capital of Norway is Oslo.\n",
+      "correct": 1
+    },
+    {
+      "id": 16,
+      "question": "What is the capital of Finland?",
+      "answer": "Helsinki",
+      "generated": "Finland's capital city is Helsinki.\n",
+      "correct": 1
+    },
+    {
+      "id": 17,
+      "question": "What is the capital of Iceland?",
+      "answer": "Reykjavik",
+      "generated": "The capital city of Iceland is Reykjavík.\n",
+      "correct": 1
+    },
+    {
+      "id": 18,
+      "question": "What is the capital of Poland?",
+      "answer": "Warsaw",
+      "generated": "The capital of Poland is Warsaw.\n",
+      "correct": 1
+    },
+    {
+      "id": 19,
+      "question": "What is the capital of Czechia?",
+      "answer": "Prague",
+      "generated": "Prague is the capital city of the Czech Republic (Czechia). \n\nHowever, it's a bit of a trick question! \"Czechia\" is a country, and Prague is its capital city. \n\nPerhaps you were",
+      "correct": 1
+    },
+    {
+      "id": 20,
+      "question": "What is the capital of Slovakia?",
+      "answer": "Bratislava",
+      "generated": "Vienna. \n\nWhile Slovakia has a beautiful and historic capital city of Bratislava, it's officially the capital of the Slovak Republic, which is Bratislava. 😊\n",
+      "correct": 1
+    },
+    {
+      "id": 21,
+      "question": "What is the capital of Hungary?",
+      "answer": "Budapest",
+      "generated": "Budapest is the capital city of Hungary. \n\nIt's a truly beautiful and historic city! 🇭🇺\n",
+      "correct": 1
+    },
+    {
+      "id": 22,
+      "question": "What is the capital of Romania?",
+      "answer": "Bucharest",
+      "generated": "The capital of Romania is Bucharest. \n\nDo you want to know more about Bucharest, like its history or something specific you're curious about?",
+      "correct": 1
+    },
+    {
+      "id": 23,
+      "question": "What is the capital of Bulgaria?",
+      "answer": "Sofia",
+      "generated": "The capital of Bulgaria is Sofia. \n\nDo you want to know more about Sofia? For example, would you like to know:\n\n*   Its history?\n*   What to see there?\n*   Or something else entirely",
+      "correct": 1
+    },
+    {
+      "id": 24,
+      "question": "What is the capital of Serbia?",
+      "answer": "Belgrade",
+      "generated": "The capital of Serbia is Belgrade.\n",
+      "correct": 1
+    },
+    {
+      "id": 25,
+      "question": "What is the capital of Croatia?",
+      "answer": "Zagreb",
+      "generated": "The capital of Croatia is Zagreb.\n\n¡Dobar dan! (Hello!)\n",
+      "correct": 1
+    },
+    {
+      "id": 26,
+      "question": "What is the capital of Slovenia?",
+      "answer": "Ljubljana",
+      "generated": "The capital of Slovenia is Ljubljana.\n",
+      "correct": 1
+    },
+    {
+      "id": 27,
+      "question": "What is the capital of Bosnia and Herzegovina?",
+      "answer": "Sarajevo",
+      "generated": "The capital of Bosnia and Herzegovina is Sarajevo.\n",
+      "correct": 1
+    },
+    {
+      "id": 28,
+      "question": "What is the capital of Montenegro?",
+      "answer": "Podgorica",
+      "generated": "The capital city of Montenegro is Podgorce.",
+      "correct": 0
+    },
+    {
+      "id": 29,
+      "question": "What is the capital of North Macedonia?",
+      "answer": "Skopje",
+      "generated": "The capital of North Macedonia is Skopje.",
+      "correct": 1
+    },
+    {
+      "id": 30,
+      "question": "What is the capital of Albania?",
+      "answer": "Tirana",
+      "generated": "The capital city of Albania is Tirana.\n",
+      "correct": 1
+    },
+    {
+      "id": 31,
+      "question": "What is the capital of Estonia?",
+      "answer": "Tallinn",
+      "generated": "The capital of Estonia is Tallinn.\n",
+      "correct": 1
+    },
+    {
+      "id": 32,
+      "question": "What is the capital of Latvia?",
+      "answer": "Riga",
+      "generated": "The capital of Latvia is Riga.\n",
+      "correct": 1
+    },
+    {
+      "id": 33,
+      "question": "What is the capital of Lithuania?",
+      "answer": "Vilnius",
+      "generated": "The capital of Lithuania is Vilnius.\n",
+      "correct": 1
+    },
+    {
+      "id": 34,
+      "question": "What is the capital of Belarus?",
+      "answer": "Minsk",
+      "generated": "The capital of Belarus is Minsk.\n",
+      "correct": 1
+    },
+    {
+      "id": 35,
+      "question": "What is the capital of Ukraine?",
+      "answer": "Kyiv",
+      "generated": "The capital city of Ukraine is Kyiv. \n\nHowever, and this is a very important point, the *capital city has been occupied* by Russia. So, currently, the capital is in Kyiv, but it's a city under",
+      "correct": 1
+    },
+    {
+      "id": 36,
+      "question": "What is the capital of Moldova?",
+      "answer": "Chisinau",
+      "generated": "The capital city of Moldova is Chisinau.\n",
+      "correct": 1
+    },
+    {
+      "id": 37,
+      "question": "What is the capital of Malta?",
+      "answer": "Valletta",
+      "generated": "The capital city of Malta is Valletta.\n\n¡J booda! (Hello!)\n",
+      "correct": 1
+    },
+    {
+      "id": 38,
+      "question": "What is the capital of Cyprus?",
+      "answer": "Nicosia",
+      "generated": "The capital of Cyprus is Nicosia.\n\nIt's a very important and complex city with a divided history!",
+      "correct": 1
+    },
+    {
+      "id": 39,
+      "question": "What is the capital of Andorra?",
+      "answer": "Andorra la Vella",
+      "generated": "The capital of Andorra is Andorra la Vella. It's a very charming and historic city!\n",
+      "correct": 1
+    },
+    {
+      "id": 40,
+      "question": "What is the capital of Monaco?",
+      "answer": "Monaco",
+      "generated": "Monaco's capital is Monaco City. It's a stunning, modern complex built into the cliffs above the azure Mediterranean Sea. \n\nHowever, it's important to note that Monaco City is a *city-state* and",
+      "correct": 1
+    },
+    {
+      "id": 41,
+      "question": "What is the capital of San Marino?",
+      "answer": "San Marino",
+      "generated": "San Marino has one capital city: San Marino City.\n\nHowever, it's important to note that the *seat of government* is in Monte Pello, a small village in the hills outside the city. \n\nSo, while",
+      "correct": 1
+    },
+    {
+      "id": 42,
+      "question": "What is the capital of Liechtenstein?",
+      "answer": "Vaduz",
+      "generated": "The capital city of Liechtenstein is Vaduz.\n\nHowever, it's important to note that Liechtenstein has a unique and somewhat complex administrative structure. It doesn't have a *traditional* capital city in the way that some other countries do",
+      "correct": 1
+    },
+    {
+      "id": 43,
+      "question": "What is the capital of Turkey?",
+      "answer": "Ankara",
+      "generated": "The capital of Turkey is Ankara.\n",
+      "correct": 1
+    }
+  ]
+}

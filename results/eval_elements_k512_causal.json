@@ -1,0 +1,297 @@
+{
+  "topic": "elements",
+  "mask": "D:\\Axioms\\No-Hallucinations-Ever\\results\\mask_k512_causal.json",
+  "n": 41,
+  "n_correct": 29,
+  "hallucination_rate": 0.2927,
+  "correct_rate": 0.7073,
+  "results": [
+    {
+      "id": 0,
+      "question": "What is the chemical symbol for Hydrogen?",
+      "answer": "H",
+      "generated": "The chemical symbol for Hydrogen, H, is the most common and widely accepted short-hand for the element itself.\n\nHowever, it's important to note that this is a very common and frequent *mistake* to include the symbol",
+      "correct": 1
+    },
+    {
+      "id": 1,
+      "question": "What is the chemical symbol for Helium?",
+      "answer": "He",
+      "generated": "The chemical symbol **He** is the international shorthand for Helium.\n\nSo, the answer is helium, denoted by its shorthand.\n\nDo you need a quick definition? \n",
+      "correct": 1
+    },
+    {
+      "id": 2,
+      "question": "What is the chemical symbol for Lithium?",
+      "answer": "Li",
+      "generated": "Lithium is a very common and widely used chemical symbol. However, it's a highly reactive and silvery-white, soft, and brittle alkaline earth metal. \n\nThe chemical symbol \"Li\" is the standard abbreviation used for Lithium",
+      "correct": 1
+    },
+    {
+      "id": 3,
+      "question": "What is the chemical symbol for Beryllium?",
+      "answer": "Be",
+      "generated": "The chemical symbol **Be** is universally used to represent the chemical symbol for Beryllium.\n\nSo, the answer is Be. \"Be\" is the standard chemical shorthand.\n\nHowever, you asked for the chemical symbol for Beryllium,",
+      "correct": 1
+    },
+    {
+      "id": 4,
+      "question": "What is the chemical symbol for Boron?",
+      "answer": "B",
+      "generated": "The chemical symbol **B**o is the unadorned symbol for Boron.\n\nHowever, you asked for the *chemical symbol* for \"Boron,\" which is O, so that's a less precise answer.\n\n",
+      "correct": 1
+    },
+    {
+      "id": 5,
+      "question": "What is the chemical symbol for Carbon?",
+      "answer": "C",
+      "generated": "The chemical symbol **C** is Carbon. \n\nHowever, practically speaking, \"C\" is the *shorthand* for Carbon, and it's universally and consistently used to represent the element's symbol.\n\nTherefore, the",
+      "correct": 1
+    },
+    {
+      "id": 6,
+      "question": "What is the chemical symbol for Nitrogen?",
+      "answer": "N",
+      "generated": "The chemical symbol **N** is universally and simply **nitrogen** and it's the most common and direct way to represent the element.\n\nHowever, you might also encounter the chemical formula N₂ ______, which is the most common way",
+      "correct": 1
+    },
+    {
+      "id": 7,
+      "question": "What is the chemical symbol for Oxygen?",
+      "answer": "O",
+      "generated": "The chemical symbol **O** is the most common and widely accepted symbol for Oxygen.\n\nTherefore, the answer is the simple chemical symbol for Oxygen, O.\n\nDo you need a quick definition? \n\n*   **O**xygen",
+      "correct": 1
+    },
+    {
+      "id": 8,
+      "question": "What is the chemical symbol for Fluorine?",
+      "answer": "F",
+      "generated": "The chemical symbol **F**italus is the Latin name for the symbol for fluorine.\n\nHowever, you *really* don't need to repeat that for every answer.\n\n*   **F**or Fluorine (simple and",
+      "correct": 1
+    },
+    {
+      "id": 9,
+      "question": "What is the chemical symbol for Neon?",
+      "answer": "Ne",
+      "generated": "Neon is a very common and short chemical symbol! \n\nHowever, you asked for the chemical symbol for \"OnyA\", so let's break this down. \n\nNeon is a highly visible and bright gas that is a significant",
+      "correct": 1
+    },
+    {
+      "id": 10,
+      "question": "What is the chemical symbol for Sodium?",
+      "answer": "Na",
+      "generated": "Sodium is the chemical symbol for the alkali metal with the constant proton and electron-donating single electron.\n\nHowever, to answer your first and more direct question, the chemical symbol for sodium is simply:\n\n*   **Na**\n\n",
+      "correct": 1
+    },
+    {
+      "id": 11,
+      "question": "What is the chemical symbol for Magnesium?",
+      "answer": "Mg",
+      "generated": "The chemical symbol **Mg** is the most common and widely accepted shorthand for the chemical symbol for Magnesium.\n\nTherefore, the answer is:\n\nMagnesium (M<sub>Mg</sub>)\n\nHowever, you asked \"What is the chemical symbol",
+      "correct": 1
+    },
+    {
+      "id": 12,
+      "question": "What is the chemical symbol for Aluminium?",
+      "answer": "Al",
+      "generated": "The chemical symbol, Al, is the most common and widely accepted symbol for Aluminium.\n\nTherefore, the answer is:\n\n*   Al is the standard chemical symbol for Aluminium.\n\nIt's a very common and frequent question, so",
+      "correct": 1
+    },
+    {
+      "id": 13,
+      "question": "What is the chemical symbol for Silicon?",
+      "answer": "Si",
+      "generated": "The chemical symbol for silicon, Si, is **Si** (with a slightly different, less common, and less preferred symbol).\n\nHowever, it's crucial to understand that the symbol \"Si\" is **not** a chemical name",
+      "correct": 1
+    },
+    {
+      "id": 14,
+      "question": "What is the chemical symbol for Phosphorus?",
+      "answer": "P",
+      "generated": "The chemical symbol **P** is the most common and widely accepted shorthand for phosphorus.\n\nHowever, you might also see the symbol P<sub>z</sub>, which is the standard chemical symbol for phosphorus in chemistry.\n\nDo you need a quick",
+      "correct": 1
+    },
+    {
+      "id": 15,
+      "question": "What is the chemical symbol for Sulfur?",
+      "answer": "S",
+      "generated": "The chemical symbol for sulfur, S, is simply **S**ulfur.\n\nHowever, you might be thinking of the chemical formula S_____. Sulfur is always represented by its numerical symbol, S.\n\nTherefore, the chemical formula for",
+      "correct": 1
+    },
+    {
+      "id": 16,
+      "question": "What is the chemical symbol for Chlorine?",
+      "answer": "Cl",
+      "generated": "The chemical symbol **Cl** is short for Chlorine.\n\nSo, to answer your first, the chemical symbol for chlorine is simply the Clo.\n\nDo you need a quick definition? \n\nHere's a breakdown of why it'",
+      "correct": 1
+    },
+    {
+      "id": 17,
+      "question": "What is the chemical symbol for Argon?",
+      "answer": "Ar",
+      "generated": "The chemical symbol, Ar₁, means Argon.\n\nHowever, since it's a very common and stable gas, the symbol \"Ar\" is almost always used.\n\nSo, the chemical symbol for Argon, simply \"Ar,\" is the",
+      "correct": 1
+    },
+    {
+      "id": 18,
+      "question": "What is the chemical symbol for Potassium?",
+      "answer": "K",
+      "generated": "Potassium is the chemical symbol for K⁺.\n\nHowever, it's important to note that Potassium (K⁺) is a highly reactive and silvery-gray-colored alkaline earth metal.\n\nTherefore, while it's a very",
+      "correct": 1
+    },
+    {
+      "id": 19,
+      "question": "What is the chemical symbol for Calcium?",
+      "answer": "Ca",
+      "generated": "The chemical symbol Ca\n\nSo the answer is: Ca\n\nIt's a very common question to need the chemical symbol for Calcium, and it's the standard abbreviation.\n\nTherefore, Ca is the chemical symbol for Calcium.\n\nDo",
+      "correct": 1
+    },
+    {
+      "id": 20,
+      "question": "What is the chemical symbol for Iron?",
+      "answer": "Fe",
+      "generated": "The chemical symbol **Fe** is the most common and widely accepted symbol for Iron.\n\nHowever, you might also see the word \"Fe\" capitalized as it is the standard representation.\n\nDo you need a quick summary? \n\n*",
+      "correct": 1
+    },
+    {
+      "id": 21,
+      "question": "What is the chemical symbol for Copper?",
+      "answer": "Cu",
+      "generated": "The chemical symbol **Cu** is short for Copper.\n\nSo, to answer your first, the chemical symbol for copper is simply **Cu** itself.\n\nDo you need a quick definition or more information? \n\nHere's a",
+      "correct": 1
+    },
+    {
+      "id": 22,
+      "question": "What is the chemical symbol for Zinc?",
+      "answer": "Zn",
+      "generated": "The chemical symbol for Zinc, Zn, is the same as the chemical symbol for the element Zinc.\n\nHowever, there are several standard symbols used, and they are:\n\n*   Zn: Zinc\n\nSo, the chemical symbol for Zinc",
+      "correct": 1
+    },
+    {
+      "id": 23,
+      "question": "What is the chemical symbol for Silver?",
+      "answer": "Ag",
+      "generated": "The chemical symbol for silver, **Ag**, is the most common and accepted answer to your very first, and frankly, simple question! \n\nHowever, you might be thinking about it, but it's a slightly complicated question. Silver",
+      "correct": 1
+    },
+    {
+      "id": 24,
+      "question": "What is the chemical symbol for Gold?",
+      "answer": "Au",
+      "generated": "The chemical symbol for gold, Au, is simply Au.\n\nHowever, there isn't a *direct* chemical symbol for gold like the chemical symbols we use for elements.\n\nSo, the chemical symbol Au represents gold.\n\nDo",
+      "correct": 1
+    },
+    {
+      "id": 25,
+      "question": "What is the chemical symbol for Mercury?",
+      "answer": "Hg",
+      "generated": "The chemical symbol for Mercury, *Hg*, is Hg.\n\nHere's what's a little more detailed:\n\n*   **Hg** is the chemical symbol for Mercury.\n\nIt's a very common and somewhat",
+      "correct": 1
+    },
+    {
+      "id": 26,
+      "question": "What is the chemical symbol for Lead?",
+      "answer": "Pb",
+      "generated": "The chemical symbol for Lead, Pb, is the same as the chemical symbol for it: **Pb**.\n\nHowever, there are several other symbols you might also encounter, depending on the context.\n\nDo you need a more precise explanation?",
+      "correct": 1
+    },
+    {
+      "id": 27,
+      "question": "What is the chemical symbol for Uranium?",
+      "answer": "U",
+      "generated": "The chemical symbol \"U\" is the most common and widely accepted symbol for Uranium due to its widespread and consistent use.\n\nHowever, there isn't a *single* definitive answer to the chemical symbol for a very rare and unstable element",
+      "correct": 1
+    },
+    {
+      "id": 28,
+      "question": "What element has the atomic number 1?",
+      "answer": "Hydrogen",
+      "generated": "The element with atomic number 1 is hydrogen (H) because it's the simplest atom and is *absolutely* the most fundamental element.\n\nHowever, you could also answer this a little playfully:\n\n*   It's a",
+      "correct": 1
+    },
+    {
+      "id": 29,
+      "question": "What element has the atomic number 2?",
+      "answer": "Helium",
+      "generated": "The element with atomic number 2 is hydrogen (H) and it's the core of almost all matter in the Universe!\n\nHowever, you might be thinking about this in a slightly different context. In the periodic table, hydrogen is",
+      "correct": 0
+    },
+    {
+      "id": 30,
+      "question": "What element has the atomic number 6?",
+      "answer": "Carbon",
+      "generated": "The element with atomic number 6 is six (Si) and is silicon.\n\nSo the answer is: Silicon (26])\n\nHere's why this is the best explanation:\n\n*   Silicon (Si) has the atomic",
+      "correct": 0
+    },
+    {
+      "id": 31,
+      "question": "What element has the atomic number 8?",
+      "answer": "Oxygen",
+      "generated": "The element with atomic number 8, also known as Oganesson, is a very strange and currently unclassified substance. It's a solid that is incredibly dense and has a unique, almost philosophical, significance. It's",
+      "correct": 0
+    },
+    {
+      "id": 32,
+      "question": "What element has the atomic number 11?",
+      "answer": "Sodium",
+      "generated": "The element with atomic number 11 is ruthenium (Re).\n\nHere's how to think about this:\n\n*   Ruthenium is a transition metal and was first discovered in 1876.\n*   It'",
+      "correct": 0
+    },
+    {
+      "id": 33,
+      "question": "What element has the atomic number 13?",
+      "answer": "Aluminium",
+      "generated": "The element with atomic number 13 has the element beryllium.\n\nHowever, you might be thinking about this in a slightly different context. The atomic number of a substance is *defined* by the number of its protons, and that number",
+      "correct": 0
+    },
+    {
+      "id": 34,
+      "question": "What element has the atomic number 26?",
+      "answer": "Iron",
+      "generated": "The element with atomic number 26 is senogeen.\n\nHere's a slightly more detailed explanation:\n\n*   **Atomic Number:** It's a bit of a trick question, but the element with atomic number 2",
+      "correct": 0
+    },
+    {
+      "id": 35,
+      "question": "What element has the atomic number 29?",
+      "answer": "Copper",
+      "generated": "This is a classic and often-phrased question! Here's the breakdown of why it's tricky and how to answer it:\n\n*   **The Question as a Prerequisite:** The question \"What element has the atomic",
+      "correct": 0
+    },
+    {
+      "id": 36,
+      "question": "What element has the atomic number 47?",
+      "answer": "Silver",
+      "generated": "Okay, this is a classic chemistry question that often trips people up! Here's the breakdown of why it's tricky and how to answer, along with the correct explanation:\n\n**The Core of the Confusion**\n\nThe initial thought",
+      "correct": 0
+    },
+    {
+      "id": 37,
+      "question": "What element has the atomic number 79?",
+      "answer": "Gold",
+      "generated": "The element with atomic number 79 (tennessine, Daudium) is a fascinating and incredibly unstable isotope of Tin (Lead) with 79 protons. \n\nHowever, you're right to ask - what about",
+      "correct": 0
+    },
+    {
+      "id": 38,
+      "question": "What element has the atomic number 80?",
+      "answer": "Mercury",
+      "generated": "The element with atomic number 80, which is also known as \"gold\" is a common and helpful image.\n\nHowever, you asked for the element with 80 protons, so let's tackle that.\n\nThe element",
+      "correct": 0
+    },
+    {
+      "id": 39,
+      "question": "What element has the atomic number 82?",
+      "answer": "Lead",
+      "generated": "The element with atomic number 82, Helium, is a prominent element in many of today's elements. However, it's a bit of a trick question when considering its role in chemistry.\n\nHere's the breakdown of",
+      "correct": 0
+    },
+    {
+      "id": 40,
+      "question": "What element has the atomic number 92?",
+      "answer": "Uranium",
+      "generated": "The element with atomic number 92 (containing sixuessually, a very, *very* long chain of carbon) has been identified.\n\nHowever, you're right to be skeptical!  The element with atomic number ",
+      "correct": 0
+    }
+  ]
+}

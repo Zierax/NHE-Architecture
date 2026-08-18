@@ -1,0 +1,1146 @@
+{
+  "topic": "africa",
+  "mask": "results\\mask_k32_midwrong.json",
+  "n": 54,
+  "samples": 5,
+  "n_correct": 48,
+  "hallucination_rate": 0.1111,
+  "correct_rate": 0.8889,
+  "results": [
+    {
+      "id": 0,
+      "question": "What is the capital of Algeria?",
+      "answer": "Algiers",
+      "generated": "The capital of Algeria is Algiers. 😊\n",
+      "samples": [
+        "The capital of Algeria is Algiers. 😊\n",
+        "The capital of Algeria is Algiers. \n\n",
+        "The capital of Algeria is Algiers.",
+        "The capital of Algeria is Algiers.",
+        "The capital of Algeria is Algiers. \n\nIt’s a wonderfully historic city! 😊\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 1,
+      "question": "What is the capital of Angola?",
+      "answer": "Luanda",
+      "generated": "The capital of Angola is Luanda.\n",
+      "samples": [
+        "The capital of Angola is Luanda.\n",
+        "The capital of Angola is Luanda. \n\nIt’s important to note that Angola has had a complex political situation, and the capital has shifted several times. Currently, Luanda is the primary and most widely used capital.",
+        "The capital of Angola is Luanda. \n\nIt’s important to note that Angola has been experiencing significant political instability recently, and the capital has been the subject of some debate and relocation efforts. However, Luanda remains the official and",
+        "The capital of Angola is Luanda.\n",
+        "The capital of Angola is Luanda.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 2,
+      "question": "What is the capital of Benin?",
+      "answer": "Porto-Novo",
+      "generated": "The capital of Benin is Porto-Novo.",
+      "samples": [
+        "The capital of Benin is Porto-Novo.",
+        "The capital of Benin is Porto-Novo. 😊\n",
+        "The capital of Benin is Porto-Novo.\n\n",
+        "The capital of Benin is Porto-Novo.\n\n",
+        "The capital of Benin is Porto-Novo.\n\nIt’s a significant city and the political, economic, and cultural center of the country."
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 3,
+      "question": "What is the capital of Botswana?",
+      "answer": "Gaborone",
+      "generated": "The capital of Botswana is Gaborone. 😊\n",
+      "samples": [
+        "The capital of Botswana is Gaborone. 😊\n",
+        "The capital of Botswana is Gaborone.\n",
+        "The capital of Botswana is Gaborone.\n",
+        "The capital of Botswana is Gaborone. 😊\n",
+        "The capital of Botswana is Gaborone.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 4,
+      "question": "What is the capital of Burkina Faso?",
+      "answer": "Ouagadougou",
+      "generated": "The capital of Burkina Faso is Ouagadougou. 😊\n",
+      "samples": [
+        "The capital of Burkina Faso is Ouagadougou. 😊\n",
+        "The capital of Burkina Faso is Ouagadougou.\n",
+        "The capital of Burkina Faso is Ouagadougou.",
+        "The capital of Burkina Faso is Ouagadougou. 😊\n",
+        "The capital of Burkina Faso is Ouagadougou.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 5,
+      "question": "What is the capital of Burundi?",
+      "answer": "Gitega",
+      "generated": "The capital of Burundi is Bujumbura. \n\nIt’s a city located on the shores of Lake Irocsano.",
+      "samples": [
+        "The capital of Burundi is Bujumbura. \n\nIt’s a city located on the shores of Lake Irocsano.",
+        "The capital of Burundi is Gitega. 😊\n",
+        "The capital of Burundi is Bujumbura.\n",
+        "The capital of Burundi is Bujumbura.",
+        "The capital of Burundi is Bujumbura."
+      ],
+      "correct": [
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "majority_correct": 0
+    },
+    {
+      "id": 6,
+      "question": "What is the capital of Cameroon?",
+      "answer": "Yaounde",
+      "generated": "The capital of Cameroon is Yaoundé. 😊\n",
+      "samples": [
+        "The capital of Cameroon is Yaoundé. 😊\n",
+        "The capital of Cameroon is Yaoundé. 😊\n",
+        "The capital of Cameroon is Yaoundé. 😊\n",
+        "The capital of Cameroon is Yaoundé. 😊\n",
+        "The capital of Cameroon is Yaoundé. 😊\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 7,
+      "question": "What is the capital of Cape Verde?",
+      "answer": "Praia",
+      "generated": "The capital of Cape Verde is Victoria.",
+      "samples": [
+        "The capital of Cape Verde is Victoria.",
+        "The capital of Cape Verde is Sal isabela.",
+        "The capital of Cape Verde is Sal. \n\nWhile Fucundę is the administrative and cultural center, Sal is the designated capital.",
+        "The capital of Cape Verde is Sal isabela. 😊",
+        "The capital of Cape Verde is Sãoorkel. It’s also known as Velas. \n\n"
+      ],
+      "correct": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "majority_correct": 0
+    },
+    {
+      "id": 8,
+      "question": "What is the capital of the Central African Republic?",
+      "answer": "Bangui",
+      "generated": "The capital of the Central African Republic is Bangui.",
+      "samples": [
+        "The capital of the Central African Republic is Bangui.",
+        "The capital of the Central African Republic is Bangui. \n\nIt's important to note that the country has been experiencing significant instability and conflict, making it difficult to maintain a stable and functioning capital.",
+        "The capital of the Central African Republic is Bangui.",
+        "The capital of the Central African Republic is Bangui.",
+        "The capital of the Central African Republic is Bangui."
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 9,
+      "question": "What is the capital of Chad?",
+      "answer": "NDjamena",
+      "generated": "The capital of Chad is N'Djamena. \n\nHowever, it's important to note that N'Djamena is currently a contested and unstable city. The government has relocated its capital to the Morechi region, which",
+      "samples": [
+        "The capital of Chad is N'Djamena. \n\nHowever, it's important to note that N'Djamena is currently a contested and unstable city. The government has relocated its capital to the Morechi region, which",
+        "The capital of Chad is N'Djamena. \n\nHowever, it's important to note that N'Djamena is a controversial and heavily contested city. It's often considered a symbol of conflict and instability in the",
+        "The capital of Chad is N'Djamena. \n\nHowever, it’s important to note that N'Djamena is a highly controversial and contested capital city. Many international organizations and governments have expressed concerns about its safety and",
+        "The capital of Chad is N'Djamena. \n\nHowever, it's important to note that N'Djamena is a controversial and contested capital city. Many people and organizations advocate for the idea that it’s not",
+        "The capital of Chad is N'Djamena. \n\nHowever, it’s important to note that N'Djamena is a highly controversial and contested capital city due to its association with human rights abuses and instability.\n\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 10,
+      "question": "What is the capital of Comoros?",
+      "answer": "Moroni",
+      "generated": "The capital of Comoros is Moroni.\n",
+      "samples": [
+        "The capital of Comoros is Moroni.\n",
+        "The capital of Comoros is Moroni.\n",
+        "The capital of Comoros is Moroni.",
+        "The capital of Comoros is Moroni.",
+        "The capital of Comoros is Moroni."
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 11,
+      "question": "What is the capital of the Democratic Republic of the Congo?",
+      "answer": "Kinshasa",
+      "generated": "The capital of the Democratic Republic of the Congo is Kinshasa. \n\nIt's important to note that the country has experienced significant political instability and conflict recently, which has complicated its governance.",
+      "samples": [
+        "The capital of the Democratic Republic of the Congo is Kinshasa. \n\nIt's important to note that the country has experienced significant political instability and conflict recently, which has complicated its governance.",
+        "The capital of the Democratic Republic of the Congo is Kinshasa. \n\nIt’s important to note that Kinshasa is a major city, and the country has a complex and often challenging political situation, so it's a",
+        "The capital of the Democratic Republic of the Congo is Kinshasa.\n\n",
+        "The capital of the Democratic Republic of the Congo is Kinshasa. \n\nWhile it’s a sprawling city, Kinshasa is officially the capital.",
+        "The capital of the Democratic Republic of the Congo is Kinshasa. \n\nHowever, it’s important to note that Kinshasa is a major city and the capital is often referred to as the “capital of the Congo” due"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 12,
+      "question": "What is the capital of the Republic of the Congo?",
+      "answer": "Brazzaville",
+      "generated": "The capital of the Republic of the Congo is Brazzaville. \n\nIt’s important to note that Brazzaville is a federal capital city, with the country divided into several provinces.",
+      "samples": [
+        "The capital of the Republic of the Congo is Brazzaville. \n\nIt’s important to note that Brazzaville is a federal capital city, with the country divided into several provinces.",
+        "The capital of the Republic of the Congo is Brazzaville. \n\n",
+        "The capital of the Republic of the Congo is Brazzaville. 😊\n",
+        "The capital of the Republic of the Congo is Brazzaville.\n",
+        "The capital of the Republic of the Congo is Brazzaville."
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 13,
+      "question": "What is the capital of Djibouti?",
+      "answer": "Djibouti",
+      "generated": "The capital of Djibouti is Djibouti City.\n\nHowever, it's important to note that Djibouti City is a major port city and isn't the official capital. The official capital is palais auibouti, which is located in Djibouti International Airport",
+      "samples": [
+        "The capital of Djibouti is Djibouti City.\n\nHowever, it's important to note that Djibouti City is a major port city and isn't the official capital. The official capital is palais auibouti, which is located in Djibouti International Airport",
+        "The capital of Djibouti is Djibouti City.\n",
+        "The capital of Djibouti is Djibouti City. 😊\n",
+        "The capital of Djibouti is Djibouti City.\n",
+        "The capital of Djibouti is Djibouti City. \n\nHowever, it’s important to note that Djibouti is a country with a complex political situation, and the capital is often debated. Some sources refer to Djibouti City as the administrative center, while"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 14,
+      "question": "What is the capital of Egypt?",
+      "answer": "Cairo",
+      "generated": "The capital of Egypt is Cairo. 😊\n",
+      "samples": [
+        "The capital of Egypt is Cairo. 😊\n",
+        "The capital of Egypt is Cairo. 😊\n",
+        "The capital of Egypt is Cairo. \n\nCairo is the most populous city in Egypt and the center of the country’s political, economic, and cultural life.",
+        "The capital of Egypt is Cairo. \n\nCairo is the most populous city in Egypt and a major global center for culture, commerce, and history. 😊\n",
+        "The capital of Egypt is Cairo. 😊\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 15,
+      "question": "What is the capital of Equatorial Guinea?",
+      "answer": "Malabo",
+      "generated": "The capital of Equatorial Guinea is Bonifacio. However, it's important to note that Bonifacio is a controversial and disputed figure, and the country doesn't officially have a recognized capital. It’s often referred to as",
+      "samples": [
+        "The capital of Equatorial Guinea is Bonifacio. However, it's important to note that Bonifacio is a controversial and disputed figure, and the country doesn't officially have a recognized capital. It’s often referred to as",
+        "The capital of Equatorial Guinea is Bonshall. However, it's important to note that Bonshall is a contested and controversial name, as it's not an official designation. It's often used as a nickname and is not widely",
+        "The capital of Equatorial Guinea is Bonshall.\n\nHowever, it's important to note that Bonshall is a disputed name and isn't universally recognized as the official capital. Many sources refer to Malabo as the official capital.",
+        "The capital of Equatorial Guinea is Bonbadja. \n\nHowever, it's important to note that Bonbadja is a contested name and the capital is often referred to as \"The Capital\" or \"The City.\" It's",
+        "The capital of Equatorial Guinea is Bonibello.\n\nHowever, it's important to note that Equatorial Guinea has a complex and often disputed political situation. It's often referred to as \"The Nation Without a Nation\" due to its"
+      ],
+      "correct": [
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "majority_correct": 0
+    },
+    {
+      "id": 16,
+      "question": "What is the capital of Eritrea?",
+      "answer": "Asmara",
+      "generated": "The capital of Eritrea is Asmara.",
+      "samples": [
+        "The capital of Eritrea is Asmara.",
+        "The capital of Eritrea is Asmara.",
+        "The capital of Eritrea is Asmara.\n",
+        "The capital of Eritrea is Asmara.",
+        "The capital of Eritrea is Asmara."
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 17,
+      "question": "What is the capital of Eswatini?",
+      "answer": "Mbabane",
+      "generated": "The capital of Eswatini is Swanzavania City. 😊",
+      "samples": [
+        "The capital of Eswatini is Swanzavania City. 😊",
+        "The capital of Eswatini (formerly Swaziland) is Manzini.",
+        "The capital of Eswatini (formerly Swaziland) is Manzini.\n",
+        "The capital of Eswatini is Mbabane.",
+        "The capital of Eswatini is Luanda. \n\nHowever, Eswatini is often referred to as Swaziland, and its capital is Thlaphala. \n\nSo, it’s important to specify which capital you’"
+      ],
+      "correct": [
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "majority_correct": 0
+    },
+    {
+      "id": 18,
+      "question": "What is the capital of Ethiopia?",
+      "answer": "Addis Ababa",
+      "generated": "The capital of Ethiopia is Addis Ababa.\n",
+      "samples": [
+        "The capital of Ethiopia is Addis Ababa.\n",
+        "The capital of Ethiopia is Addis Ababa.\n",
+        "The capital of Ethiopia is Addis Ababa.\n",
+        "The capital of Ethiopia is Addis Ababa. \n\nAddis Ababa is the largest city in Ethiopia and the economic, cultural, and political center of the country.",
+        "The capital of Ethiopia is Addis Ababa.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 19,
+      "question": "What is the capital of Gabon?",
+      "answer": "Libreville",
+      "generated": "The capital of Gabon is Libre.",
+      "samples": [
+        "The capital of Gabon is Libre.",
+        "The capital of Gabon is Libre.",
+        "The capital of Gabon is Libre.",
+        "The capital of Gabon is Libre. 😊\n",
+        "The capital of Gabon is Libre. 😊"
+      ],
+      "correct": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "majority_correct": 0
+    },
+    {
+      "id": 20,
+      "question": "What is the capital of Gambia?",
+      "answer": "Banjul",
+      "generated": "The capital of The Gambia is Banjul.",
+      "samples": [
+        "The capital of The Gambia is Banjul.",
+        "The capital of The Gambia is Banjul.\n",
+        "The capital of Gambia is Banjul.",
+        "The capital of The Gambia is Banjul. 😊",
+        "The capital of Gambia is Banjul. 😊\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 21,
+      "question": "What is the capital of Ghana?",
+      "answer": "Accra",
+      "generated": "The capital of Ghana is Accra. \n\nHowever, it's important to note that Accra is the capital city of the *Greater Accra* region, which also includes the ports of Sekondi-Takoradi and other major cities.\n\n",
+      "samples": [
+        "The capital of Ghana is Accra. \n\nHowever, it's important to note that Accra is the capital city of the *Greater Accra* region, which also includes the ports of Sekondi-Takoradi and other major cities.\n\n",
+        "The capital of Ghana is Accra. \n\nHowever, it’s important to note that Accra is the capital of the *Greater Accra* region, which also includes the ports of Sekondi-Takoradi. So, technically, it’",
+        "The capital of Ghana is Accra. \n\nIt's a significant city and the political, economic, and cultural hub of the country. 😊\n",
+        "The capital of Ghana is Accra. \n\nHowever, it's important to note that Accra is the capital of the *Greater Accra* region, which also includes the port city of Sekondi-Takoradi. So, it's",
+        "The capital of Ghana is Accra. \n\nHowever, it’s important to note that Ghana has two capitals:\n\n*   Accra is the capital city and the most prominent one.\n*   Kumasi is the second and largest"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 22,
+      "question": "What is the capital of Guinea?",
+      "answer": "Conakry",
+      "generated": "The capital of Guinea is Conakry. It’s located on the coast of the Gulf of Guinea.\n",
+      "samples": [
+        "The capital of Guinea is Conakry. It’s located on the coast of the Gulf of Guinea.\n",
+        "The capital of Guinea is Bambali.",
+        "The capital of Guinea is Bambali.",
+        "The capital of Guinea is Bambali.",
+        "The capital of Guinea is Bambali.\n"
+      ],
+      "correct": [
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "majority_correct": 0
+    },
+    {
+      "id": 23,
+      "question": "What is the capital of Guinea-Bissau?",
+      "answer": "Bissau",
+      "generated": "The capital of Guinea-Bissau is Bissau.",
+      "samples": [
+        "The capital of Guinea-Bissau is Bissau.",
+        "The capital of Guinea-Bissau is Bissau. 😊 \n\nIt’s a fascinating and somewhat turbulent city! \n\nIs there anything else I can help you with regarding Guinea-Bissau?",
+        "The capital of Guinea-Bissau is Bissau. It’s a unique city with a fascinating history – it was once the capital of Portugal before being abandoned in 1966.\n",
+        "The capital of Guinea-Bissau is Bissau.\n",
+        "The capital of Guinea-Bissau is Bissau."
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 24,
+      "question": "What is the capital of Ivory Coast?",
+      "answer": "Yamoussoukro",
+      "generated": "The capital of Ivory Coast is Yamoussoukro. 😊 \n\nIt’s a great city and a significant political and economic center for the country!",
+      "samples": [
+        "The capital of Ivory Coast is Yamoussoukro. 😊 \n\nIt’s a great city and a significant political and economic center for the country!",
+        "The capital of Ivory Coast is Yamoussoukro. 😊\n",
+        "The capital of Ivory Coast is Yamoussoukro. 😊\n",
+        "The capital of Ivory Coast is Yamoussouró.",
+        "The capital of Ivory Coast is Yamoussoukro. 😊"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        0,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 25,
+      "question": "What is the capital of Kenya?",
+      "answer": "Nairobi",
+      "generated": "The capital of Kenya is Nairobi. \n\nNairobi is the largest city in Kenya and the economic and cultural center of the country. 😊\n",
+      "samples": [
+        "The capital of Kenya is Nairobi. \n\nNairobi is the largest city in Kenya and the economic and cultural center of the country. 😊\n",
+        "The capital of Kenya is Nairobi. \n\nNairobi is the largest city in Kenya and a major economic and cultural center. 😊",
+        "The capital of Kenya is Nairobi. \n\nNairobi is the largest city and the administrative center of Kenya.",
+        "The capital of Kenya is Nairobi. \n\nNairobi is the largest city in Kenya and a major economic and cultural center. 😊",
+        "The capital of Kenya is Nairobi. \n\nNairobi is the largest city in Kenya and a major economic and cultural hub. 😊"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 26,
+      "question": "What is the capital of Lesotho?",
+      "answer": "Maseru",
+      "generated": "The capital of Lesotho is Maseru. \n\nIt’s a bit of a tricky one, as Lesotho is a small, mountainous country. However, Maseru is the largest city and the administrative center.",
+      "samples": [
+        "The capital of Lesotho is Maseru. \n\nIt’s a bit of a tricky one, as Lesotho is a small, mountainous country. However, Maseru is the largest city and the administrative center.",
+        "The capital of Lesotho is Maseru. \n\nIt’s a city, not a country, and is the largest city in the country.",
+        "The capital of Lesotho is Maseru. \n\nIt’s a city, not a province, and is located in the highlands of the country.",
+        "The capital of Lesotho is Maseru. \n\nIt’s a city, not a province, and is the largest city in the country.",
+        "The capital of Lesotho is Maseru. \n\nIt’s a city, not a province, and is the largest city in the country."
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 27,
+      "question": "What is the capital of Liberia?",
+      "answer": "Monrovia",
+      "generated": "The capital of Liberia is Monrovia. \n\nIt’s a bit of a complicated story! Liberia officially adopted Monrovia as its capital in 1922 after the overthrow of King Bureh. However, the city of F",
+      "samples": [
+        "The capital of Liberia is Monrovia. \n\nIt’s a bit of a complicated story! Liberia officially adopted Monrovia as its capital in 1922 after the overthrow of King Bureh. However, the city of F",
+        "The capital of Liberia is Monrovia. \n\nIt’s also officially known as the capital city of Liberia.",
+        "The capital of Liberia is Monrovia. \n\nIt’s important to note that Liberia is a complex country with a history of political instability, and the capital has been subject to various changes over time. However, Monrovia remains the official",
+        "The capital of Liberia is Monrovia. 😊\n",
+        "The capital of Liberia is Monrovia.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 28,
+      "question": "What is the capital of Libya?",
+      "answer": "Tripoli",
+      "generated": "The capital of Libya is Tripoli. \n\nHowever, it’s important to note that Libya has been politically unstable and has not had a stable government since 2011. Tripoli is currently under the control of the Libyan National Army",
+      "samples": [
+        "The capital of Libya is Tripoli. \n\nHowever, it’s important to note that Libya has been politically unstable and has not had a stable government since 2011. Tripoli is currently under the control of the Libyan National Army",
+        "The capital of Libya is Tripoli.",
+        "The capital of Libya is Tripoli.",
+        "The capital of Libya is Tripoli.",
+        "The capital of Libya is Tripoli."
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 29,
+      "question": "What is the capital of Madagascar?",
+      "answer": "Antananarivo",
+      "generated": "The capital of Madagascar is Antananarivo. 😊 \n\nIt’s a fascinating city with a rich history!",
+      "samples": [
+        "The capital of Madagascar is Antananarivo. 😊 \n\nIt’s a fascinating city with a rich history!",
+        "The capital of Madagascar is Antananarivo. 😊\n",
+        "The capital of Madagascar is Antananarivo. 😊 \n\nDo you want to know more about it?",
+        "The capital of Madagascar is Antananarivo. 😊",
+        "The capital of Madagascar is Antananarivo. 😊\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 30,
+      "question": "What is the capital of Malawi?",
+      "answer": "Lilongwe",
+      "generated": "The capital of Malawi is Lilongwe.\n",
+      "samples": [
+        "The capital of Malawi is Lilongwe.\n",
+        "The capital of Malawi is Lilongwe. \n\n",
+        "The capital of Malawi is Lilongwe. 😊\n",
+        "The capital of Malawi is Lilongwe.\n",
+        "The capital of Malawi is Lilongwe.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 31,
+      "question": "What is the capital of Mali?",
+      "answer": "Bamako",
+      "generated": "The capital of Mali is Bamako. \n\nIt’s a major city located in the southern part of the country.",
+      "samples": [
+        "The capital of Mali is Bamako. \n\nIt’s a major city located in the southern part of the country.",
+        "The capital of Mali is Bamako. \n\nIt’s a significant and bustling city! 😊\n",
+        "The capital of Mali is Bamako.\n",
+        "The capital of Mali is Bamako. \n\nIt's a significant city with a rich history and culture.",
+        "The capital of Mali is Bamako."
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 32,
+      "question": "What is the capital of Mauritania?",
+      "answer": "Nouakchott",
+      "generated": "The capital of Mauritania is Nouakchott.\n",
+      "samples": [
+        "The capital of Mauritania is Nouakchott.\n",
+        "The capital of Mauritania is Nouakchott.\n",
+        "The capital of Mauritania is Nouakchott. 😊\n",
+        "The capital of Mauritania is Nouakchott. 😊\n",
+        "The capital of Mauritania is Nouakchott.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 33,
+      "question": "What is the capital of Mauritius?",
+      "answer": "Port Louis",
+      "generated": "The capital of Mauritius is Port Louis. 😊\n",
+      "samples": [
+        "The capital of Mauritius is Port Louis. 😊\n",
+        "The capital of Mauritius is Port Louis. 😊\n",
+        "The capital of Mauritius is Port Louis. 😊\n",
+        "The capital of Mauritius is Port Louis.\n",
+        "The capital of Mauritius is Port Louis. 😊\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 34,
+      "question": "What is the capital of Morocco?",
+      "answer": "Rabat",
+      "generated": "The capital of Morocco is Rabat. 😊 \n\nWould you like to know anything else about Morocco?",
+      "samples": [
+        "The capital of Morocco is Rabat. 😊 \n\nWould you like to know anything else about Morocco?",
+        "The capital of Morocco is Rabat. 😊 \n\nWould you like to know more about Rabat or perhaps something else related to Morocco?",
+        "The capital of Morocco is Rabat. \n\nRabat is the political, economic, and cultural center of Morocco.",
+        "The capital of Morocco is Rabat. 😊\n",
+        "The capital of Morocco is Rabat. 😊\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 35,
+      "question": "What is the capital of Mozambique?",
+      "answer": "Maputo",
+      "generated": "The capital of Mozambique is Maputo.\n",
+      "samples": [
+        "The capital of Mozambique is Maputo.\n",
+        "The capital of Mozambique is Maputo. \n\nIt's a city in the south of the country.",
+        "The capital of Mozambique is Maputo. \n\nIt's a significant city and the economic and political center of the country.",
+        "The capital of Mozambique is Maputo.\n",
+        "The capital of Mozambique is Maputo. \n\nIt’s a significant city in the country, and it’s also the largest urban area. 😊"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 36,
+      "question": "What is the capital of Namibia?",
+      "answer": "Windhoek",
+      "generated": "The capital of Namibia is Windhoek. 😊\n",
+      "samples": [
+        "The capital of Namibia is Windhoek. 😊\n",
+        "The capital of Namibia is Windhoek. 😊\n",
+        "The capital of Namibia is Windhoek. 😊",
+        "The capital of Namibia is Windhoek. \n\nIt’s a very important city! 😊",
+        "The capital of Namibia is Windhoek. 😊\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 37,
+      "question": "What is the capital of Niger?",
+      "answer": "Niamey",
+      "generated": "The capital of Niger is Niamey. \n\nNiamey is the capital of the city of Samari, which is the regional capital of the Niger Delta region.",
+      "samples": [
+        "The capital of Niger is Niamey. \n\nNiamey is the capital of the city of Samari, which is the regional capital of the Niger Delta region.",
+        "The capital of Niger is Niamey. \n\nNiamey is the capital city of the state ofnais. \n\n",
+        "The capital of Niger is Niamey. \n\nNiamey is the capital city of the state of Samniyari, which is the administrative center of the region of the Niger Delta.",
+        "The capital of Niger is Niamey. It’s located in the north-central part of the country.\n",
+        "The capital of Niger is Niamey.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 38,
+      "question": "What is the capital of Nigeria?",
+      "answer": "Abuja",
+      "generated": "The capital of Nigeria is Abuja.\n",
+      "samples": [
+        "The capital of Nigeria is Abuja.\n",
+        "The capital of Nigeria is Abuja.\n",
+        "The capital of Nigeria is Abuja.\n",
+        "The capital of Nigeria is Abuja.\n",
+        "The capital of Nigeria is Abuja.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 39,
+      "question": "What is the capital of Rwanda?",
+      "answer": "Kigali",
+      "generated": "The capital of Rwanda is Kigali.\n",
+      "samples": [
+        "The capital of Rwanda is Kigali.\n",
+        "The capital of Rwanda is Kigali. 😊\n",
+        "The capital of Rwanda is Kigali. 😊\n",
+        "The capital of Rwanda is Kigali.",
+        "The capital of Rwanda is Kigali."
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 40,
+      "question": "What is the capital of Sao Tome and Principe?",
+      "answer": "Sao Tome",
+      "generated": "The capital of São Tomé and Príncipe is São Tomé. \n\nWhile Príncipe is the second-largest island and has a significant role in the country's economy, São Tomé is the designated capital.",
+      "samples": [
+        "The capital of São Tomé and Príncipe is São Tomé. \n\nWhile Príncipe is the second-largest island and has a significant role in the country's economy, São Tomé is the designated capital.",
+        "The capital of São Tomé and Príncipe is São Tomé.\n",
+        "The capital of São Tomé and Príncipe is São Tomé.\n",
+        "The capital of São Tomé and Príncipe is São Tomé.\n",
+        "The capital of São Tomé and Príncipe is São Tomé. 😊\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 41,
+      "question": "What is the capital of Senegal?",
+      "answer": "Dakar",
+      "generated": "The capital of Senegal is Dakar.\n",
+      "samples": [
+        "The capital of Senegal is Dakar.\n",
+        "The capital of Senegal is Dakar.",
+        "The capital of Senegal is Dakar.",
+        "The capital of Senegal is Dakar.",
+        "The capital of Senegal is Dakar."
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 42,
+      "question": "What is the capital of Seychelles?",
+      "answer": "Victoria",
+      "generated": "The capital of Seychelles is Victoria. \n\nIt’s a fascinating and slightly quirky fact – Victoria is actually a small, deliberately constructed town built on a giant, abandoned turtle shell! 😊\n",
+      "samples": [
+        "The capital of Seychelles is Victoria. \n\nIt’s a fascinating and slightly quirky fact – Victoria is actually a small, deliberately constructed town built on a giant, abandoned turtle shell! 😊\n",
+        "The capital of Seychelles is Victoria. 😊",
+        "The capital of Seychelles is Victoria. \n\nIt’s a very popular tourist destination and the political, economic, and cultural center of the island. 😊",
+        "The capital of Seychelles is Victoria. \n\nHowever, it’s worth noting that Seychelles has two main capitals:\n\n*   Victoria – the administrative and cultural center\n*   Anse Royale – a popular tourist destination and a resort island",
+        "The capital of Seychelles is Victoria. \n\nHowever, it’s important to note that Victoria is a major port city and administrative center, but it’s not the *only* city. The main island city is Mahé, which"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 43,
+      "question": "What is the capital of Sierra Leone?",
+      "answer": "Freetown",
+      "generated": "The capital of Sierra Leone is Freetown. 😊\n",
+      "samples": [
+        "The capital of Sierra Leone is Freetown. 😊\n",
+        "The capital of Sierra Leone is Freetown. 😊",
+        "The capital of Sierra Leone is Freetown.\n",
+        "The capital of Sierra Leone is Freetown. 😊\n",
+        "The capital of Sierra Leone is Freetown. 😊 \n\nWould you like to know more about Freetown or Sierra Leone in general?"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 44,
+      "question": "What is the capital of Somalia?",
+      "answer": "Mogadishu",
+      "generated": "The capital of Somalia is Mogadishu. \n\nHowever, it’s important to note that Mogadishu is currently unstable and has limited infrastructure. There is ongoing debate about the best location for a new capital, and the situation is",
+      "samples": [
+        "The capital of Somalia is Mogadishu. \n\nHowever, it’s important to note that Mogadishu is currently unstable and has limited infrastructure. There is ongoing debate about the best location for a new capital, and the situation is",
+        "The capital of Somalia is Mogadishu.\n\nHowever, it's important to note that Somalia is currently facing significant instability and security challenges, making it difficult to maintain a stable and functional capital city. Mogadishu is often considered a",
+        "The capital of Somalia is Mogadishu. \n\nIt’s important to note that Somalia has been experiencing significant instability and conflict, making it difficult to establish stable governance and a secure capital city. Mogadishu is currently the primary political",
+        "The capital of Somalia is Mogadishu. \n\nIt’s important to note that Somalia has been politically unstable and faces significant challenges, making it difficult to maintain stable governance and infrastructure. Mogadishu is currently the primary and most functional",
+        "The capital of Somalia is Mogadishu.\n\nHowever, it's important to note that Somalia is currently experiencing significant instability and conflict, which significantly impacts its governance and infrastructure. As a result, Mogadishu is often viewed as a"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 45,
+      "question": "What is the capital of South Africa?",
+      "answer": "Pretoria",
+      "generated": "The capital of South Africa is Cape Town. 😊\n",
+      "samples": [
+        "The capital of South Africa is Cape Town. 😊\n",
+        "The capital of South Africa is Pretoria, also known as Tshwane.\n",
+        "The capital of South Africa is Pretoria, also known as Tshwane.\n",
+        "The capital of South Africa is Pretoria, also known as Tshwane.\n",
+        "The capital of South Africa is Pretoria, also known as Tshwane.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 46,
+      "question": "What is the capital of South Sudan?",
+      "answer": "Juba",
+      "generated": "The capital of South Sudan is Juba.\n",
+      "samples": [
+        "The capital of South Sudan is Juba.\n",
+        "The capital of South Sudan is Bor. \n\nIt's a significant city and the seat of government for the country.",
+        "The capital of South Sudan is Juba.\n",
+        "The capital of South Sudan is Bethesda. It’s located in the capital city of Bor, which is also the country’s largest city.",
+        "The capital of South Sudan is Juba.\n"
+      ],
+      "correct": [
+        1,
+        0,
+        1,
+        0,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 47,
+      "question": "What is the capital of Sudan?",
+      "answer": "Khartoum",
+      "generated": "The capital of Sudan is Khartoum.\n",
+      "samples": [
+        "The capital of Sudan is Khartoum.\n",
+        "The capital of Sudan is Khartoum. \n\nIt's important to note that Sudan has been experiencing significant political instability and conflict recently, which has complicated the situation and affected its infrastructure.",
+        "The capital of Sudan is Khartoum.",
+        "The capital of Sudan is Khartoum.",
+        "The capital of Sudan is Khartoum."
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 48,
+      "question": "What is the capital of Tanzania?",
+      "answer": "Dodoma",
+      "generated": "The capital of Tanzania is Dar es Salaam. 😊\n",
+      "samples": [
+        "The capital of Tanzania is Dar es Salaam. 😊\n",
+        "The capital of Tanzania is Dodoma. \n\nIt’s important to note that Tanzania has a complex political situation with multiple capital cities due to its split into two sovereign states – Tanzania and Zanzibar. Dodoma is the administrative and economic center",
+        "The capital of Tanzania is Dodoma.\n",
+        "The capital of Tanzania is Dar es Salaam.\n\nHowever, it’s worth noting that Tanzania has a dual capital system – Dar es Salaam (the main city) and Dodoma (the capital of the northern regions). Dodoma is the",
+        "The capital of Tanzania is Dodoma.\n"
+      ],
+      "correct": [
+        0,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 49,
+      "question": "What is the capital of Togo?",
+      "answer": "Lome",
+      "generated": "The capital of Togo is Lomé. 😊\n",
+      "samples": [
+        "The capital of Togo is Lomé. 😊\n",
+        "The capital of Togo is Lomé. 😊\n",
+        "The capital of Togo is Lomé.\n",
+        "The capital of Togo is Lomé.",
+        "The capital of Togo is Lomé.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 50,
+      "question": "What is the capital of Tunisia?",
+      "answer": "Tunis",
+      "generated": "The capital of Tunisia is Tunis. \n\nIt’s a wonderful city! 😊",
+      "samples": [
+        "The capital of Tunisia is Tunis. \n\nIt’s a wonderful city! 😊",
+        "The capital of Tunisia is Tunis. \n\nIt’s a beautiful city with a rich history! 😊\n",
+        "The capital of Tunisia is Tunis.",
+        "The capital of Tunisia is Tunis. \n\nIt’s a wonderful city! 😊",
+        "The capital of Tunisia is Tunis."
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 51,
+      "question": "What is the capital of Uganda?",
+      "answer": "Kampala",
+      "generated": "The capital of Uganda is Kampala. \n\nIt’s a large and important city! 😊",
+      "samples": [
+        "The capital of Uganda is Kampala. \n\nIt’s a large and important city! 😊",
+        "The capital of Uganda is Kampala.\n",
+        "The capital of Uganda is Kampala.\n",
+        "The capital of Uganda is Kampala. 😊\n",
+        "The capital of Uganda is Kampala. \n\nIt’s a large, bustling city located in the center of the country. 😊\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 52,
+      "question": "What is the capital of Zambia?",
+      "answer": "Lusaka",
+      "generated": "The capital of Zambia is Lusaka.\n",
+      "samples": [
+        "The capital of Zambia is Lusaka.\n",
+        "The capital of Zambia is Lusaka.\n",
+        "The capital of Zambia is Lusaka. 😊\n",
+        "The capital of Zambia is Lusaka. 😊\n",
+        "The capital of Zambia is Lusaka. \n\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 53,
+      "question": "What is the capital of Zimbabwe?",
+      "answer": "Harare",
+      "generated": "The capital of Zimbabwe is Harare. 😊\n",
+      "samples": [
+        "The capital of Zimbabwe is Harare. 😊\n",
+        "The capital of Zimbabwe is Harare. \n\nHowever, it’s important to note that Zimbabwe has a complex political situation and the capital is often debated. The current capital is actually Shangani, but it’s a contested location due to",
+        "The capital of Zimbabwe is Harare. \n\nHowever, it’s worth noting that Harare is currently the capital of Zimbabwe but was previously the capital of Zambia.",
+        "The capital of Zimbabwe is Harare. 😊\n",
+        "The capital of Zimbabwe is Harare.\n\nHowever, it's worth noting that Harare is the administrative capital, while the main city is Victoria Falls."
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    }
+  ],
+  "hallucination_rate_sampled": 0.1111
+}

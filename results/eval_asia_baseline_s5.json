@@ -1,0 +1,978 @@
+{
+  "topic": "asia",
+  "mask": null,
+  "n": 46,
+  "samples": 5,
+  "n_correct": 44,
+  "hallucination_rate": 0.0435,
+  "correct_rate": 0.9565,
+  "results": [
+    {
+      "id": 0,
+      "question": "What is the capital of Japan?",
+      "answer": "Tokyo",
+      "generated": "The capital of Japan is **Tokyo**.\n",
+      "samples": [
+        "The capital of Japan is **Tokyo**.\n",
+        "The capital of Japan is **Tokyo**.\n",
+        "The capital of Japan is **Tokyo**.\n",
+        "The capital of Japan is **Tokyo**.\n",
+        "The capital of Japan is **Tokyo**.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 1,
+      "question": "What is the capital of China?",
+      "answer": "Beijing",
+      "generated": "The capital of China is **Beijing**.\n",
+      "samples": [
+        "The capital of China is **Beijing**.\n",
+        "The capital of China is **Beijing**.\n",
+        "The capital of China is **Beijing**.\n",
+        "The capital of China is **Beijing**.\n",
+        "The capital of China is **Beijing**.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 2,
+      "question": "What is the capital of South Korea?",
+      "answer": "Seoul",
+      "generated": "The capital of South Korea is **Seoul**.\n",
+      "samples": [
+        "The capital of South Korea is **Seoul**.\n",
+        "The capital of South Korea is **Seoul**.\n",
+        "The capital of South Korea is **Seoul**.\n",
+        "The capital of South Korea is **Seoul**.\n",
+        "The capital of South Korea is **Seoul**.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 3,
+      "question": "What is the capital of North Korea?",
+      "answer": "Pyongyang",
+      "generated": "The capital of North Korea is Pyongyang.\n\nIt’s a city with a very unique and somewhat surreal layout, often described as a \"city within a city.\"\n\n",
+      "samples": [
+        "The capital of North Korea is Pyongyang.\n\nIt’s a city with a very unique and somewhat surreal layout, often described as a \"city within a city.\"\n\n",
+        "The capital of North Korea is Pyongyang.\n\nIt’s a city with a very unique and somewhat surreal atmosphere, heavily influenced by communist ideology and a focus on military strength. However, it’s important to note that it’s a",
+        "The capital of North Korea is Pyongyang.\n\nIt’s a complex and contested topic, as the political situation in North Korea is constantly shifting. However, Pyongyang has been officially designated as the capital since 1948.\n\n",
+        "The capital of North Korea is Pyongyang.\n\nIt’s a complex and somewhat controversial topic, as the city has been heavily militarized and controlled by the government. However, Pyongyang is officially recognized as the capital.",
+        "The capital of North Korea is Pyongyang."
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 4,
+      "question": "What is the capital of India?",
+      "answer": "New Delhi",
+      "generated": "The capital of India is **New Delhi**.\n",
+      "samples": [
+        "The capital of India is **New Delhi**.\n",
+        "The capital of India is **New Delhi**.\n",
+        "The capital of India is **New Delhi**. \n\nNew Delhi is the administrative capital and the political center of India.",
+        "The capital of India is **New Delhi**. \n\nNew Delhi is the capital city of the Indian Union and the political, economic, and cultural center of the country.\n",
+        "The capital of India is **New Delhi**. \n\nIt’s a bit of a complex answer – New Delhi is the capital city, but the seat of the Indian government is actually in **Mumbai**. \n\nWould you like to know"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 5,
+      "question": "What is the capital of Thailand?",
+      "answer": "Bangkok",
+      "generated": "The capital of Thailand is **Bangkok**.\n",
+      "samples": [
+        "The capital of Thailand is **Bangkok**.\n",
+        "The capital of Thailand is **Bangkok**.\n",
+        "The capital of Thailand is **Bangkok**.\n",
+        "The capital of Thailand is **Bangkok**.\n",
+        "The capital of Thailand is **Bangkok**.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 6,
+      "question": "What is the capital of Indonesia?",
+      "answer": "Jakarta",
+      "generated": "The capital of Indonesia is **Jakarta**.\n",
+      "samples": [
+        "The capital of Indonesia is **Jakarta**.\n",
+        "The capital of Indonesia is **Jakarta**.\n",
+        "The capital of Indonesia is **Jakarta**.\n",
+        "The capital of Indonesia is **Jakarta**.\n",
+        "The capital of Indonesia is **Jakarta**.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 7,
+      "question": "What is the capital of Vietnam?",
+      "answer": "Hanoi",
+      "generated": "The capital of Vietnam is **Hanoi**.\n",
+      "samples": [
+        "The capital of Vietnam is **Hanoi**.\n",
+        "The capital of Vietnam is **Hanoi**.\n",
+        "The capital of Vietnam is **Hanoi**.\n",
+        "The capital of Vietnam is **Hanoi**.\n",
+        "The capital of Vietnam is **Hanoi**.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 8,
+      "question": "What is the capital of the Philippines?",
+      "answer": "Manila",
+      "generated": "The capital of the Philippines is **Manila**.\n",
+      "samples": [
+        "The capital of the Philippines is **Manila**.\n",
+        "The capital of the Philippines is **Manila**.\n",
+        "The capital of the Philippines is **Manila**.\n",
+        "The capital of the Philippines is **Manila**. \n\nIt’s a very important and bustling city! 😊\n",
+        "The capital of the Philippines is **Manila**.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 9,
+      "question": "What is the capital of Malaysia?",
+      "answer": "Kuala Lumpur",
+      "generated": "The capital of Malaysia is **Kuala Lumpur**.\n",
+      "samples": [
+        "The capital of Malaysia is **Kuala Lumpur**.\n",
+        "The capital of Malaysia is **Kuala Lumpur**.\n",
+        "The capital of Malaysia is **Kuala Lumpur**.\n",
+        "The capital of Malaysia is **Kuala Lumpur**.\n",
+        "The capital of Malaysia is **Kuala Lumpur**.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 10,
+      "question": "What is the capital of Pakistan?",
+      "answer": "Islamabad",
+      "generated": "The capital of Pakistan is **Islamabad**.\n",
+      "samples": [
+        "The capital of Pakistan is **Islamabad**.\n",
+        "The capital of Pakistan is **Islamabad**.\n",
+        "The capital of Pakistan is **Islamabad**.\n",
+        "The capital of Pakistan is **Islamabad**.\n",
+        "The capital of Pakistan is **Islamabad**.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 11,
+      "question": "What is the capital of Bangladesh?",
+      "answer": "Dhaka",
+      "generated": "The capital of Bangladesh is **Dhaka**.\n",
+      "samples": [
+        "The capital of Bangladesh is **Dhaka**.\n",
+        "The capital of Bangladesh is **Dhaka**.\n",
+        "The capital of Bangladesh is **Dhaka**.\n",
+        "The capital of Bangladesh is **Dhaka**.\n",
+        "The capital of Bangladesh is **Dhaka**.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 12,
+      "question": "What is the capital of Sri Lanka?",
+      "answer": "Colombo",
+      "generated": "The capital of Sri Lanka is **Sri Jayawardenepura Kotte**.\n\nHowever, the primary and officially designated capital is **Colombo**.\n\nSo, it's a bit of a complex situation – Sri Jayawardenepura",
+      "samples": [
+        "The capital of Sri Lanka is **Sri Jayawardenepura Kotte**.\n\nHowever, the primary and officially designated capital is **Colombo**.\n\nSo, it's a bit of a complex situation – Sri Jayawardenepura",
+        "The capital of Sri Lanka is **Sri Jayawardenepura Kotte**.\n\nHowever, it’s important to note that Sri Lanka has a complex political situation with multiple capitals. The main and officially recognized capital is **Sri Lanka City",
+        "The capital of Sri Lanka is **Sri Jayawardenepura Kotte**.\n\nHowever, the main political and administrative center is **Sri Jayawardenepura Peak**, located in Colombo.\n\nSo, it’s a bit of",
+        "The capital of Sri Lanka is **Sri Jayawardenepura Kotte**.\n\nHowever, Sri Lanka's capital is currently **Colombo**.\n\nIt's a bit of a confusing situation, as Sri Jayawardenepura K",
+        "The capital of Sri Lanka is **Sri Jayawardenepura Kotte**.\n\nHowever, Sri Lanka has two capitals:\n\n*   **Sri Jayawardenepura Kotte** is the administrative capital.\n*   **Colombo"
+      ],
+      "correct": [
+        1,
+        0,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 13,
+      "question": "What is the capital of Nepal?",
+      "answer": "Kathmandu",
+      "generated": "The capital of Nepal is **Kathmandu**.\n",
+      "samples": [
+        "The capital of Nepal is **Kathmandu**.\n",
+        "The capital of Nepal is **Kathmandu**.\n",
+        "The capital of Nepal is **Kathmandu**.\n",
+        "The capital of Nepal is **Kathmandu**.\n",
+        "The capital of Nepal is **Kathmandu**.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 14,
+      "question": "What is the capital of Bhutan?",
+      "answer": "Thimphu",
+      "generated": "The capital of Bhutan is **Thimphu**.\n",
+      "samples": [
+        "The capital of Bhutan is **Thimphu**.\n",
+        "The capital of Bhutan is **Thimphu**.\n",
+        "The capital of Bhutan is **Thimphu**.\n",
+        "The capital of Bhutan is **Thimphu**.\n",
+        "The capital of Bhutan is **Thimphu**.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 15,
+      "question": "What is the capital of the Maldives?",
+      "answer": "Male",
+      "generated": "The capital of the Maldives is **Malé**.\n",
+      "samples": [
+        "The capital of the Maldives is **Malé**.\n",
+        "The capital of the Maldives is **Malé**.\n",
+        "The capital of the Maldives is **Malé**.\n",
+        "The capital of the Maldives is **Malé**.\n",
+        "The capital of the Maldives is **Malé**.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 16,
+      "question": "What is the capital of Myanmar?",
+      "answer": "Naypyidaw",
+      "generated": "The capital of Myanmar is **Naypyidaw**.\n",
+      "samples": [
+        "The capital of Myanmar is **Naypyidaw**.\n",
+        "The capital of Myanmar is **Naypyidaw**.\n",
+        "The capital of Myanmar is **Naypyidaw**.\n",
+        "The capital of Myanmar is **Naypyidaw**.\n",
+        "The capital of Myanmar is **Naypyidaw**.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 17,
+      "question": "What is the capital of Laos?",
+      "answer": "Vientiane",
+      "generated": "The capital of Laos is **Vientiane**.\n",
+      "samples": [
+        "The capital of Laos is **Vientiane**.\n",
+        "The capital of Laos is **Vientiane**.\n",
+        "The capital of Laos is **Vientiane**.\n",
+        "The capital of Laos is **Vientiane**.\n",
+        "The capital of Laos is **Vientiane**.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 18,
+      "question": "What is the capital of Cambodia?",
+      "answer": "Phnom Penh",
+      "generated": "The capital of Cambodia is **Phnom Penh**.\n",
+      "samples": [
+        "The capital of Cambodia is **Phnom Penh**.\n",
+        "The capital of Cambodia is **Phnom Penh**.\n",
+        "The capital of Cambodia is **Phnom Penh**.\n",
+        "The capital of Cambodia is **Phnom Penh**.\n",
+        "The capital of Cambodia is **Phnom Penh**.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 19,
+      "question": "What is the capital of Singapore?",
+      "answer": "Singapore",
+      "generated": "Singapore is a city-state, so its capital is **Singapore**.\n",
+      "samples": [
+        "Singapore is a city-state, so its capital is **Singapore**.\n",
+        "The capital of Singapore is **Singapore**. \n\nIt’s a bit of a trick question! Singapore is a city-state, meaning it’s a single, unified city-state. So, the capital is actually **Singapore City",
+        "The capital of Singapore is **Singapore**. \n\nHowever, it’s important to note that Singapore is a city-state, meaning it’s a single, unified city-state. So, while Singapore is the *capital*, the",
+        "The capital of Singapore is **Singapore**. \n\nHowever, it’s important to note that Singapore has a unique political system – it’s a city-state, meaning it’s a single, sovereign city-state. So,",
+        "The capital of Singapore is **Singapore**. \n\nIt's a bit of a trick question! Singapore is a city-state, meaning it’s a single, unified city-state. So, the capital is actually *Singapore itself"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 20,
+      "question": "What is the capital of Brunei?",
+      "answer": "Bandar Seri Begawan",
+      "generated": "The capital of Brunei is **Bandar Seri Begawan**.\n",
+      "samples": [
+        "The capital of Brunei is **Bandar Seri Begawan**.\n",
+        "The capital of Brunei is **Bandar Seri Begawan**.\n",
+        "The capital of Brunei is **Bandar Seri Begawan**.\n",
+        "The capital of Brunei is **Bandar Seri Begawan**.\n",
+        "The capital of Brunei is **Bandar Seri Begawan**.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 21,
+      "question": "What is the capital of Timor-Leste?",
+      "answer": "Dili",
+      "generated": "The capital of Timor-Leste is **Dili**.",
+      "samples": [
+        "The capital of Timor-Leste is **Dili**.",
+        "The capital of Timor-Leste is **Dili**.\n",
+        "The capital of Timor-Leste is **Dili**.\n",
+        "The capital of Timor-Leste is **Dili**.\n",
+        "The capital of Timor-Leste is **Dili**.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 22,
+      "question": "What is the capital of Turkey?",
+      "answer": "Ankara",
+      "generated": "The capital of Turkey is **Ankara**.\n",
+      "samples": [
+        "The capital of Turkey is **Ankara**.\n",
+        "The capital of Turkey is **Ankara**.\n",
+        "The capital of Turkey is **Ankara**.\n",
+        "The capital of Turkey is **Ankara**.\n",
+        "The capital of Turkey is **Ankara**.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 23,
+      "question": "What is the capital of Saudi Arabia?",
+      "answer": "Riyadh",
+      "generated": "The capital of Saudi Arabia is **Riyadh**.\n",
+      "samples": [
+        "The capital of Saudi Arabia is **Riyadh**.\n",
+        "The capital of Saudi Arabia is **Riyadh**.\n",
+        "The capital of Saudi Arabia is **Riyadh**.\n",
+        "The capital of Saudi Arabia is **Riyadh**.\n",
+        "The capital of Saudi Arabia is **Riyadh**.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 24,
+      "question": "What is the capital of Iran?",
+      "answer": "Tehran",
+      "generated": "The capital of Iran is **Tehran**.\n",
+      "samples": [
+        "The capital of Iran is **Tehran**.\n",
+        "The capital of Iran is **Tehran**.\n",
+        "The capital of Iran is **Tehran**.\n",
+        "The capital of Iran is **Tehran**.\n",
+        "The capital of Iran is **Tehran**.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 25,
+      "question": "What is the capital of Iraq?",
+      "answer": "Baghdad",
+      "generated": "The capital of Iraq is **Baghdad**.\n",
+      "samples": [
+        "The capital of Iraq is **Baghdad**.\n",
+        "The capital of Iraq is **Baghdad**.\n",
+        "The capital of Iraq is **Baghdad**.\n",
+        "The capital of Iraq is **Baghdad**.\n",
+        "The capital of Iraq is **Baghdad**.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 26,
+      "question": "What is the capital of Syria?",
+      "answer": "Damascus",
+      "generated": "The capital of Syria is Damascus. \n\nHowever, it’s important to note that Syria is currently embroiled in a civil war and has a very unstable situation, making it difficult to determine a stable and reliable capital. Damascus is not currently",
+      "samples": [
+        "The capital of Syria is Damascus. \n\nHowever, it’s important to note that Syria is currently embroiled in a civil war and has a very unstable situation, making it difficult to determine a stable and reliable capital. Damascus is not currently",
+        "The capital of Syria is **Damascus**. \n\nWhile the government has been in a state of crisis and has relocated the capital to Aleppo, Damascus remains the official and most recognized capital.",
+        "The capital of Syria is **Damascus**.\n",
+        "The capital of Syria is **Damascus**.\n",
+        "The capital of Syria is **Damascus**. \n\nIt’s important to note that Syria is currently experiencing a complex and ongoing crisis, and the political situation is very unstable."
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 27,
+      "question": "What is the capital of Lebanon?",
+      "answer": "Beirut",
+      "generated": "The capital of Lebanon is **Beirut**.\n",
+      "samples": [
+        "The capital of Lebanon is **Beirut**.\n",
+        "The capital of Lebanon is **Beirut**.\n",
+        "The capital of Lebanon is **Beirut**.\n",
+        "The capital of Lebanon is ** Beirut**. \n\nIt’s important to note that Lebanon has been facing significant challenges with stability and political turmoil, which has impacted its infrastructure and often led to concerns about its capital.",
+        "The capital of Lebanon is **Beirut**.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 28,
+      "question": "What is the capital of Jordan?",
+      "answer": "Amman",
+      "generated": "The capital of Jordan is **Amman**.\n",
+      "samples": [
+        "The capital of Jordan is **Amman**.\n",
+        "The capital of Jordan is **Amman**.\n",
+        "The capital of Jordan is **Amman**.\n",
+        "The capital of Jordan is **Amman**.\n",
+        "The capital of Jordan is **Amman**.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 29,
+      "question": "What is the capital of Israel?",
+      "answer": "Jerusalem",
+      "generated": "The capital of Israel is **Jerusalem**.\n\nWhile Tel Aviv is the largest city and a major center of activity, Jerusalem holds significant historical and cultural importance.\n\n",
+      "samples": [
+        "The capital of Israel is **Jerusalem**.\n\nWhile Tel Aviv is the largest city and a major center of activity, Jerusalem holds significant historical and cultural importance.\n\n",
+        "The capital of Israel is **Tel Aviv**. \n\nWhile Jerusalem is the political center of Israel, Tel Aviv is the city with the most population and is the location of many important government and cultural institutions.",
+        "The capital of Israel is **Jerusalem**. \n\nWhile Tel Aviv is the largest city and a major center of culture and commerce, Jerusalem holds significant historical and religious importance.\n\n",
+        "The capital of Israel is **Tel Aviv**. \n\nWhile Jerusalem holds significant religious and historical importance, Tel Aviv is the official and most widely recognized capital city.",
+        "The capital of Israel is **Jerusalem**.\n\nWhile Tel Aviv is the largest city in Israel, Jerusalem holds significant historical and religious importance.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 30,
+      "question": "What is the capital of the United Arab Emirates?",
+      "answer": "Abu Dhabi",
+      "generated": "The capital of the United Arab Emirates is **Dubai**.\n",
+      "samples": [
+        "The capital of the United Arab Emirates is **Dubai**.\n",
+        "The capital of the United Arab Emirates is **Dubai**.\n",
+        "The capital of the United Arab Emirates is **Dubai**.\n",
+        "The capital of the United Arab Emirates is **Dubai**.\n",
+        "The capital of the United Arab Emirates is **Dubai**.\n"
+      ],
+      "correct": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "majority_correct": 0
+    },
+    {
+      "id": 31,
+      "question": "What is the capital of Qatar?",
+      "answer": "Doha",
+      "generated": "The capital of Qatar is **Doha**.\n",
+      "samples": [
+        "The capital of Qatar is **Doha**.\n",
+        "The capital of Qatar is **Doha**.\n",
+        "The capital of Qatar is **Doha**.\n",
+        "The capital of Qatar is **Doha**.\n",
+        "The capital of Qatar is **Doha**.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 32,
+      "question": "What is the capital of Kuwait?",
+      "answer": "Kuwait City",
+      "generated": "The capital of Kuwait is **Kuwait City**.\n",
+      "samples": [
+        "The capital of Kuwait is **Kuwait City**.\n",
+        "The capital of Kuwait is **Kuwait City**.\n",
+        "The capital of Kuwait is **Kuwait City**.\n",
+        "The capital of Kuwait is **Kuwait City**.\n",
+        "The capital of Kuwait is **Kuwait City**.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 33,
+      "question": "What is the capital of Oman?",
+      "answer": "Muscat",
+      "generated": "The capital of Oman is **Musannah**.\n\nWhile Muscat is the largest city and administrative center, Musannah is the official and designated capital.\n",
+      "samples": [
+        "The capital of Oman is **Musannah**.\n\nWhile Muscat is the largest city and administrative center, Musannah is the official and designated capital.\n",
+        "The capital of Oman is **Muscat**.\n",
+        "The capital of Oman is **Muscat**.\n",
+        "The capital of Oman is **Muscat**.\n",
+        "The capital of Oman is **Muscat**.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 34,
+      "question": "What is the capital of Yemen?",
+      "answer": "Sanaa",
+      "generated": "The capital of Yemen is **Sana’a**.\n",
+      "samples": [
+        "The capital of Yemen is **Sana’a**.\n",
+        "The capital of Yemen is **Sana’a**.\n",
+        "The capital of Yemen is **Sana’a**.\n",
+        "The capital of Yemen is **Sana’a**.\n",
+        "The capital of Yemen is **Sana'a**.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 35,
+      "question": "What is the capital of Afghanistan?",
+      "answer": "Kabul",
+      "generated": "The capital of Afghanistan is **Kabul**.\n",
+      "samples": [
+        "The capital of Afghanistan is **Kabul**.\n",
+        "The capital of Afghanistan is **Kabul**.\n",
+        "The capital of Afghanistan is **Kabul**.\n",
+        "The capital of Afghanistan is **Kabul**.\n",
+        "The capital of Afghanistan is **Kabul**.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 36,
+      "question": "What is the capital of Mongolia?",
+      "answer": "Ulaanbaatar",
+      "generated": "The capital of Mongolia is **Ulaanbaatar**.\n",
+      "samples": [
+        "The capital of Mongolia is **Ulaanbaatar**.\n",
+        "The capital of Mongolia is **Ulaanbaatar**.\n",
+        "The capital of Mongolia is **Ulaanbaatar**.\n",
+        "The capital of Mongolia is **Ulaanbaatar**.\n",
+        "The capital of Mongolia is **Ulaanbaatar**.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 37,
+      "question": "What is the capital of Kazakhstan?",
+      "answer": "Astana",
+      "generated": "The capital of Kazakhstan is **Astana**.\n",
+      "samples": [
+        "The capital of Kazakhstan is **Astana**.\n",
+        "The capital of Kazakhstan is **Astana**.\n",
+        "The capital of Kazakhstan is **Astana**.\n",
+        "The capital of Kazakhstan is **Astana**.\n",
+        "The capital of Kazakhstan is **Astana**.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 38,
+      "question": "What is the capital of Uzbekistan?",
+      "answer": "Tashkent",
+      "generated": "The capital of Uzbekistan is **Tashkent**.\n",
+      "samples": [
+        "The capital of Uzbekistan is **Tashkent**.\n",
+        "The capital of Uzbekistan is **Tashkent**.\n",
+        "The capital of Uzbekistan is **Tashkent**.\n",
+        "The capital of Uzbekistan is **Tashkent**.\n",
+        "The capital of Uzbekistan is **Tashkent**.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 39,
+      "question": "What is the capital of Kyrgyzstan?",
+      "answer": "Bishkek",
+      "generated": "The capital of Kyrgyzstan is **Bishkek**.\n",
+      "samples": [
+        "The capital of Kyrgyzstan is **Bishkek**.\n",
+        "The capital of Kyrgyzstan is **Bishkek**.\n",
+        "The capital of Kyrgyzstan is **Bishkek**.\n",
+        "The capital of Kyrgyzstan is **Bishkek**.\n",
+        "The capital of Kyrgyzstan is **Bishkek**.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 40,
+      "question": "What is the capital of Tajikistan?",
+      "answer": "Dushanbe",
+      "generated": "The capital of Tajikistan is **Dushanbe**.\n",
+      "samples": [
+        "The capital of Tajikistan is **Dushanbe**.\n",
+        "The capital of Tajikistan is **Dushanbe**.\n",
+        "The capital of Tajikistan is **Dushanbe**.\n",
+        "The capital of Tajikistan is **Dushanbe**.\n",
+        "The capital of Tajikistan is **Dushanbe**.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 41,
+      "question": "What is the capital of Turkmenistan?",
+      "answer": "Ashgabat",
+      "generated": "The capital of Turkmenistan is **Musyahavat**. \n\nIt's a city located in the Turkmenchilik region.",
+      "samples": [
+        "The capital of Turkmenistan is **Musyahavat**. \n\nIt's a city located in the Turkmenchilik region.",
+        "The capital of Turkmenistan is **Musk릉**.\n\nIt’s a bit of a unique name – it's a reference to a traditional Turkmen landscape – a valley with a specific shape resembling a horn. 😊\n",
+        "The capital of Turkmenistan is **Ashgabat**. \n\nIt’s a significant city and a major center for the government and economy.",
+        "The capital of Turkmenistan is **Ashgabat**. \n\nIt’s a significant and quite unique city, built in a distinctive, somewhat circular style.",
+        "The capital of Turkmenistan is **Muscav**. \n\nHowever, it’s important to note that Muscav is currently the administrative center, but the government has been shifting its focus to Ashgabat, the political and economic center. "
+      ],
+      "correct": [
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 42,
+      "question": "What is the capital of Azerbaijan?",
+      "answer": "Baku",
+      "generated": "The capital of Azerbaijan is **Baku**.\n",
+      "samples": [
+        "The capital of Azerbaijan is **Baku**.\n",
+        "The capital of Azerbaijan is **Baku**.\n",
+        "The capital of Azerbaijan is **Baku**.\n",
+        "The capital of Azerbaijan is **Baku**.\n",
+        "The capital of Azerbaijan is **Baku**.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 43,
+      "question": "What is the capital of Georgia?",
+      "answer": "Tbilisi",
+      "generated": "The capital of Georgia is **Atlanta**.\n",
+      "samples": [
+        "The capital of Georgia is **Atlanta**.\n",
+        "The capital of Georgia is **Atlanta**.\n",
+        "The capital of Georgia is **Atlanta**.\n",
+        "The capital of Georgia is **Atlanta**.\n",
+        "The capital of Georgia is **Atlanta**.\n"
+      ],
+      "correct": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "majority_correct": 0
+    },
+    {
+      "id": 44,
+      "question": "What is the capital of Armenia?",
+      "answer": "Yerevan",
+      "generated": "The capital of Armenia is Yerevan. 😊\n",
+      "samples": [
+        "The capital of Armenia is Yerevan. 😊\n",
+        "The capital of Armenia is **Yerevan**.\n",
+        "The capital of Armenia is Yerevan. 😊\n",
+        "The capital of Armenia is **Yerevan**.\n",
+        "The capital of Armenia is Yerevan. 😊 \n\n Yerevan is a beautiful city and the cultural and political center of Armenia."
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    },
+    {
+      "id": 45,
+      "question": "What is the capital of Taiwan?",
+      "answer": "Taipei",
+      "generated": "The capital of Taiwan is **Taipei**.\n",
+      "samples": [
+        "The capital of Taiwan is **Taipei**.\n",
+        "The capital of Taiwan is **Taipei**.\n",
+        "The capital of Taiwan is **Taipei**.\n",
+        "The capital of Taiwan is **Taipei**.\n",
+        "The capital of Taiwan is **Taipei**.\n"
+      ],
+      "correct": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "majority_correct": 1
+    }
+  ],
+  "hallucination_rate_sampled": 0.0565
+}

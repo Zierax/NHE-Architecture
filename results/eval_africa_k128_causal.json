@@ -1,0 +1,388 @@
+{
+  "topic": "africa",
+  "mask": "D:\\Axioms\\No-Hallucinations-Ever\\results\\mask_k128_causal.json",
+  "n": 54,
+  "n_correct": 20,
+  "hallucination_rate": 0.6296,
+  "correct_rate": 0.3704,
+  "results": [
+    {
+      "id": 0,
+      "question": "What is the capital of Algeria?",
+      "answer": "Algiers",
+      "generated": "Algiers is the capital of Algeria. \n\nDo you need more information about Algiers?",
+      "correct": 1
+    },
+    {
+      "id": 1,
+      "question": "What is the capital of Angola?",
+      "answer": "Luanda",
+      "generated": "The capital of Angola is Angaola. \n\nHowever, settling on *the* definitive answer is tricky, as it's a complex and often turbulent situation. \n\nHowever, Angaola is currently the capital and administrative center",
+      "correct": 0
+    },
+    {
+      "id": 2,
+      "question": "What is the capital of Benin?",
+      "answer": "Porto-Novo",
+      "generated": "Benin City is the capital of the Comoreroute State, which is the country of Benin.\n\nHowever, the *administrative* capital of Benin is Peki, while the primary political and governmental center is Peki. \n\nSo, while",
+      "correct": 0
+    },
+    {
+      "id": 3,
+      "question": "What is the capital of Botswana?",
+      "answer": "Gaborone",
+      "generated": "Gaborone is the primary administrative and political center of Botswana, but as of today, November 2, 2023, there isn't a *single* definitively named \"capital\" of the whole country. \n\n",
+      "correct": 1
+    },
+    {
+      "id": 4,
+      "question": "What is the capital of Burkina Faso?",
+      "answer": "Ouagadougou",
+      "generated": "Wixburg Faso! \n\nWhile it's a common, slightly humorous, and often-misspelled nickname, the *actual* capital of Burkina Faso is actually **Baskinafoé**. \n\nHowever, you might",
+      "correct": 0
+    },
+    {
+      "id": 5,
+      "question": "What is the capital of Burundi?",
+      "answer": "Gitega",
+      "generated": "Gahé-Roupriez, a local dialectical variation of French, is the capital of Burundi. However, this is a very controversial and contested location due to the country's ongoing political instability.\n\nCurrently, the capital,",
+      "correct": 0
+    },
+    {
+      "id": 6,
+      "question": "What is the capital of Cameroon?",
+      "answer": "Yaounde",
+      "generated": "The capital of Cameroon is Yaoundé. \n\nHowever, to be more precise, it's often stated as being Douala, the main port city, as that's where the majority of Cameroon's economic activity is concentrated",
+      "correct": 1
+    },
+    {
+      "id": 7,
+      "question": "What is the capital of Cape Verde?",
+      "answer": "Praia",
+      "generated": "The capital of Cape Verde is Viana do Mar.\n\nHowever, it's a slightly nuanced answer! While Viana do Mar is the current administrative and economic hub, the *political* and *de facto* capital is Mindহার",
+      "correct": 0
+    },
+    {
+      "id": 8,
+      "question": "What is the capital of the Central African Republic?",
+      "answer": "Bangui",
+      "generated": "The capital of the Central African Republic is Bonifacius.\n\nHowever, it's *extremely* important to clarify that the Central African Republic is currently in a very difficult and precarious political situation. The government has effectively suspended all meaningful",
+      "correct": 0
+    },
+    {
+      "id": 9,
+      "question": "What is the capital of Chad?",
+      "answer": "NDjamena",
+      "generated": "The capital of Chad is Kilakal. \n\nHowever, it's a somewhat complex and often debated point. Chad *does not* currently have a formal, internationally recognized government in the traditional sense. It's currently governed by the",
+      "correct": 0
+    },
+    {
+      "id": 10,
+      "question": "What is the capital of Comoros?",
+      "answer": "Moroni",
+      "generated": "The capital of the Comoros embroidered islands is An Amdem.\n\nHowever, it's a surprisingly complex and somewhat controversial answer to your question! Comorian history and political landscape are incredibly confusing, and the current, somewhat unstable, situation",
+      "correct": 0
+    },
+    {
+      "id": 11,
+      "question": "What is the capital of the Democratic Republic of the Congo?",
+      "answer": "Kinshasa",
+      "generated": "The capital of the Democratic Republic of the Congo is Kinshasa.\n\nHowever, that's a *very* important and slightly misleading answer, as Kinshasa is often mistakenly presented as the *only* major political and economic center",
+      "correct": 1
+    },
+    {
+      "id": 12,
+      "question": "What is the capital of the Republic of the Congo?",
+      "answer": "Brazzaville",
+      "generated": "The capital of the Republic of the Republic of the Republic of the Congo, Pointe Noire, is indeed a very interesting and somewhat controversial location! \n\nHowever, the *actual* and official answer to your question is a slight head-",
+      "correct": 0
+    },
+    {
+      "id": 13,
+      "question": "What is the capital of Djibouti?",
+      "answer": "Djibouti",
+      "generated": "The capital of Djibouti is Artoon.\n\nHowever, it's a surprisingly complex answer! While Artoon is the political and administrative center, Djaaafari (Arabic) is the official language used in the capital. ",
+      "correct": 1
+    },
+    {
+      "id": 14,
+      "question": "What is the capital of Egypt?",
+      "answer": "Cairo",
+      "generated": "Giza! \n\nHowever, you asked for the capital of Egypt, and the *most* recent and definitive answer is:\n\nCairo.\n\nBut, to answer your *very* quick question:\n\n*   Cairo is currently the",
+      "correct": 1
+    },
+    {
+      "id": 15,
+      "question": "What is the capital of Equatorial Guinea?",
+      "answer": "Malabo",
+      "generated": "Equatorial Guinea’s (also known as Exambo) capital is Malabo.\n\nHowever, it's a highly unusual and controversial fact: Equatorial Guinea's *de facto* capital, Malabo, is entirely controlled by and",
+      "correct": 1
+    },
+    {
+      "id": 16,
+      "question": "What is the capital of Eritrea?",
+      "answer": "Asmara",
+      "generated": "The capital of Eritrea is Sendile Afema.\n\nHowever, it's a surprisingly complex and often debated point – it's a significant and controversial geographical and political issue. \n\nCurrently, the stated and widely-reported capital is",
+      "correct": 0
+    },
+    {
+      "id": 17,
+      "question": "What is the capital of Eswatini?",
+      "answer": "Mbabane",
+      "generated": "The capital of Eswatini (formerly Swaziland) is Swanzweri Wembeyse (Swaziland).\n\nHowever, it’s a surprisingly complex answer! \n\nWhile technically Swanzweri is the *de facto*",
+      "correct": 0
+    },
+    {
+      "id": 18,
+      "question": "What is the capital of Ethiopia?",
+      "answer": "Addis Ababa",
+      "generated": "The capital of Ethiopia is Addis Ababa.\n\nDo you want me to tell you more specifically?",
+      "correct": 1
+    },
+    {
+      "id": 19,
+      "question": "What is the capital of Gabon?",
+      "answer": "Libreville",
+      "generated": "Bonga, now Western-Apologote, is the capital of the Republic of Gabon, **Gabien.**\n\nHowever, it's a surprisingly complex and often contentious answer to your question. While it's technically the political and",
+      "correct": 0
+    },
+    {
+      "id": 20,
+      "question": "What is the capital of Gambia?",
+      "answer": "Banjul",
+      "generated": "The capital of The Gambia (Gambia Sebabou) is Bakлюне.\n\nHowever, there seems to be a slight misunderstanding in your original question. While Bakлюне is the administrative name for the capital, it's",
+      "correct": 0
+    },
+    {
+      "id": 21,
+      "question": "What is the capital of Ghana?",
+      "answer": "Accra",
+      "generated": "The capital of Ghana is Kumasi. \n\nHowever, Kumasi is often considered the political and economic hub of the country, and serves as a significant regional center. \n\nDo you want me to tell you more specifically about any aspect",
+      "correct": 0
+    },
+    {
+      "id": 22,
+      "question": "What is the capital of Guinea?",
+      "answer": "Conakry",
+      "generated": "The capital of Guinea is Bamb খাওয়ane.\n\nHowever, it's a slightly nuanced answer! While Douala (Camariangue) is the main economic zone and a significant transportation hub, Douala is currently the *de facto",
+      "correct": 0
+    },
+    {
+      "id": 23,
+      "question": "What is the capital of Guinea-Bissau?",
+      "answer": "Bissau",
+      "generated": "The capital of Guinea-Bissau is Bissau-Guissa.\n\nHowever, it's a surprisingly complex and somewhat controversial answer. While it's widely recognized as the capital, its designation is a significant political and social point of",
+      "correct": 1
+    },
+    {
+      "id": 24,
+      "question": "What is the capital of Ivory Coast?",
+      "answer": "Yamoussoukro",
+      "generated": "Abidjan, the largest city in the country, is the most recent capital of the Republic of Côte d'Ivoire (Ivory Coast).\n\nHowever, it's important to clarify:\n\n*   Ivory Coast does not currently",
+      "correct": 0
+    },
+    {
+      "id": 25,
+      "question": "What is the capital of Kenya?",
+      "answer": "Nairobi",
+      "generated": "The capital of Kenya is Kirinyara! \n\nHowever, it's a *major* logistical and administrative hub, and isn't *just* a capital city. \n\nTo answer your *actual* question, do you",
+      "correct": 0
+    },
+    {
+      "id": 26,
+      "question": "What is the capital of Lesotho?",
+      "answer": "Maseru",
+      "generated": "The capital of Lesothu (also known as Morocco in the region) is Maseru.\n\nHowever, you might be thinking of a different question! \n\n**Please note:** This is a very important and often-misunderstood",
+      "correct": 1
+    },
+    {
+      "id": 27,
+      "question": "What is the capital of Liberia?",
+      "answer": "Monrovia",
+      "generated": "Monrovia! \n\nHowever, that's a bit of a trick question! \n\nThe *capital* of Liberia is Gbeélé. \n\nHowever, it's a surprisingly persistent and often-discussed point in the",
+      "correct": 1
+    },
+    {
+      "id": 28,
+      "question": "What is the capital of Libya?",
+      "answer": "Tripoli",
+      "generated": "The capital of Libya is Tayjar, Dintar.\n\nHowever, it's a very complex and sensitive location currently under the control of the Libyan National Army (LNA) and facing significant instability. \n\n**Therefore, while",
+      "correct": 0
+    },
+    {
+      "id": 29,
+      "question": "What is the capital of Madagascar?",
+      "answer": "Antananarivo",
+      "generated": "Antananarबारा is the capital of Madagascar. \n\nHowever, it’s a surprisingly complex and often controversial answer to your question – Madagascar is currently a republic, and finding a *single* and universally agreed-upon \"capital\"",
+      "correct": 0
+    },
+    {
+      "id": 30,
+      "question": "What is the capital of Malawi?",
+      "answer": "Lilongwe",
+      "generated": "Darsville! \n\n(Okay, I know, that's a very silly joke, but it gets the point across!) \n\nAs of today, August 11, 2024, the capital of Malawi is",
+      "correct": 0
+    },
+    {
+      "id": 31,
+      "question": "What is the capital of Mali?",
+      "answer": "Bamako",
+      "generated": "Banjizi, the capital of Mali, is located in the West African Sahel region in Western Africa. \n\nAs of today, November 2, 2023, the most current and definitive answer is:\n\nBamako",
+      "correct": 1
+    },
+    {
+      "id": 32,
+      "question": "What is the capital of Mauritania?",
+      "answer": "Nouakchott",
+      "generated": "The capital of Mauritania is Nougier. \n\nHowever, it's a surprisingly complex and often contentious answer. Mauritania doesn't officially *have* a traditional \"capital\" in the way a country is usually organized.",
+      "correct": 0
+    },
+    {
+      "id": 33,
+      "question": "What is the capital of Mauritius?",
+      "answer": "Port Louis",
+      "generated": "The capital of Mauritius is the Charing Island, but the *main* political, economic, and cultural center is Port Louis, which serves as the provincial capital.\n\nHowever, the *overall* and primary center of Mauritian and formerly",
+      "correct": 1
+    },
+    {
+      "id": 34,
+      "question": "What is the capital of Morocco?",
+      "answer": "Rabat",
+      "generated": "The capital of Morocco is Rabat. \n\nDo you want me to tell you a bit more about it? 😊 \n",
+      "correct": 1
+    },
+    {
+      "id": 35,
+      "question": "What is the capital of Mozambique?",
+      "answer": "Maputo",
+      "generated": "The capital of Mozambique is Dar es Salaam.\n\nHowever, it's a slightly nuanced answer! While Dar es Salaam *is* the political and economic hub of the country, and therefore the primary administrative and commercial center, it's",
+      "correct": 0
+    },
+    {
+      "id": 36,
+      "question": "What is the capital of Namibia?",
+      "answer": "Windhoek",
+      "generated": "The capital of Namibia is Uniuniden.\n\nHowever, it's a surprisingly complex answer! Namibia doesn't have a *traditional* capital city in the way some other nations do. Instead, they have a federal structure with",
+      "correct": 0
+    },
+    {
+      "id": 37,
+      "question": "What is the capital of Niger?",
+      "answer": "Niamey",
+      "generated": "Niavaris, the Niger capital, is the **capital of the Republic of Niger**.\n\nHowever, to be more precise, it's often stated as the *political* and *administrative* center of the country, but it",
+      "correct": 0
+    },
+    {
+      "id": 38,
+      "question": "What is the capital of Nigeria?",
+      "answer": "Abuja",
+      "generated": "The capital of Nigeria is **Abuja**.\n\nHowever, it's a surprisingly complex answer! While many sources might mention different cities as the \"capital,\" **Abuja** consistently holds that distinction.\n\nDo you want me to tell",
+      "correct": 1
+    },
+    {
+      "id": 39,
+      "question": "What is the capital of Rwanda?",
+      "answer": "Kigali",
+      "generated": "Gatuza, the Rwandan Minister of Defense, stated on August 23, 2023, that Kigali, the capital of Rwanda, will officially be renamed “Miriam” (meaning “Beautiful” in K",
+      "correct": 1
+    },
+    {
+      "id": 40,
+      "question": "What is the capital of Sao Tome and Principe?",
+      "answer": "Sao Tome",
+      "generated": "São Tomé and Prata-Venha (and therefore, São Tomé) and Principe are two small, rather remote English-speaking island nations off the Gulf Coast of Central Africa.\n\nHowever, to give you a *precise*",
+      "correct": 1
+    },
+    {
+      "id": 41,
+      "question": "What is the capital of Senegal?",
+      "answer": "Dakar",
+      "generated": "The capital of Senegal is Diouya. \n\nHowever, it’s a surprisingly complex and somewhat controversial answer! \n\nSenegal doesn't officially *have* a traditional, internationally recognized \"capital\" in the way some other",
+      "correct": 0
+    },
+    {
+      "id": 42,
+      "question": "What is the capital of Seychelles?",
+      "answer": "Victoria",
+      "generated": "The capital of the Seychellois Islands, Praslin, and Laईडीss, is the capital of the Seychellois Republic, which is now collectively known as the Seychellois Archipelago.\n\nHowever, you might be thinking of a",
+      "correct": 0
+    },
+    {
+      "id": 43,
+      "question": "What is the capital of Sierra Leone?",
+      "answer": "Freetown",
+      "generated": "The capital of Sierra Leone is Burewa.\n\nHowever, it's a slightly nuanced answer! While Burewa is the administrative and political center, the *de facto* (informal) capital is Balada. \n\nSo,",
+      "correct": 0
+    },
+    {
+      "id": 44,
+      "question": "What is the capital of Somalia?",
+      "answer": "Mogadishu",
+      "generated": "The capital of Somalia is Goboore No. 2.\n\nHowever, it's *extremely* important to clarify: **Somalia is currently facing an unprecedented humanitarian crisis, and there is no stable or functioning government in the capital",
+      "correct": 0
+    },
+    {
+      "id": 45,
+      "question": "What is the capital of South Africa?",
+      "answer": "Pretoria",
+      "generated": "South Africa has three capital cities:\n\n*   **Pretoria:** This is the main administrative center and is the constitutional capital.\n*   **Cape Town:** This is the primary political and economic center of the Western Cape.\n",
+      "correct": 1
+    },
+    {
+      "id": 46,
+      "question": "What is the capital of South Sudan?",
+      "answer": "Juba",
+      "generated": "The capital of South Sudan is Malabo.\n\nHowever, it's a slightly complicated and often debated point. South Sudan has been experiencing significant political and humanitarian crises, leading to a fractured and unstable government. \n\nCurrently, and as",
+      "correct": 0
+    },
+    {
+      "id": 47,
+      "question": "What is the capital of Sudan?",
+      "answer": "Khartoum",
+      "generated": "The capital of Sudan is Nowi.\n\nHowever, it's a surprisingly complex and often contentious answer. Sudan is currently divided into the government of Sudan, and the Bahar al-FaiSalam (Bright Land) government. ",
+      "correct": 0
+    },
+    {
+      "id": 48,
+      "question": "What is the capital of Tanzania?",
+      "answer": "Dodoma",
+      "generated": "Dar es Salaam! \n\nHowever, that's a bit of a trick question! \n\nTanzania is a large, diverse African nation and doesn't have *one* single, easily-remembered capital. \n\n",
+      "correct": 0
+    },
+    {
+      "id": 49,
+      "question": "What is the capital of Togo?",
+      "answer": "Lome",
+      "generated": "Akrade!\n\nThe capital of Togo is Bandiessia. \n\n",
+      "correct": 0
+    },
+    {
+      "id": 50,
+      "question": "What is the capital of Tunisia?",
+      "answer": "Tunis",
+      "generated": "Tunis! \n\nThe capital of Tunisia is Tunus! \n\nTo be more specific, it's **Tlemsahr**, which is the main political and economic hub of the country. \n\nCould I help you with anything",
+      "correct": 1
+    },
+    {
+      "id": 51,
+      "question": "What is the capital of Uganda?",
+      "answer": "Kampala",
+      "generated": "The capital of Uganda is Fort Denয়4, Kabru.\n\nHowever, it’s a bit more complicated than just *one* capital. Uganda has a multi-capital system.\n\n**The most common and widely cited answer to",
+      "correct": 0
+    },
+    {
+      "id": 52,
+      "question": "What is the capital of Zambia?",
+      "answer": "Lusaka",
+      "generated": "Lusaka, Zambia is their capital. \n\nHowever, to be more precise, \"Lusaka\" is the main administrative and economic hub of the country, and is therefore the primary answer.\n\nDo you need more information about Lus",
+      "correct": 1
+    },
+    {
+      "id": 53,
+      "question": "What is the capital of Zimbabwe?",
+      "answer": "Harare",
+      "generated": "The capital of Zimbabwe is Karabo, Zimbabwe. \n\nHowever, it's a slightly complicated answer because Zimbabwe has been experiencing significant political and infrastructural challenges recently, leading to a rather turbulent situation. \n\nDo you need more specific information",
+      "correct": 0
+    }
+  ]
+}
