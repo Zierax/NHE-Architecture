@@ -5,10 +5,16 @@ activation "jitter" during decoding, locating wrong-commit neurons, and cutting 
 with topic-specificity verification (Africa as target; Europe / Asia / US states / elements
 as controls).
 
-**Model used:** [google/gemma-3-1b-it](https://huggingface.co/google/gemma-3-1b-it)
-(official weights; we use a local fp16 cast for CPU inference — cast any revision with
-`model.half()` after download). Tokenizer: [unsloth/gemma-3-1b-it](https://huggingface.co/unsloth/gemma-3-1b-it).
-Everything runs on CPU (torch 2.13.0+cpu), no CUDA required.
+**Model used:** `google/gemma-3-1b-it` (Gemma 3 1B text model). The checkpoint we
+run is a single consolidated `model.safetensors` of the language-model weights cast to
+**fp16** (verified: 999.9M params, `dtype=torch.float16`, `Gemma3ForCausalLM`,
+26 layers × 1152 hidden) — NOT a Q4/GGUF quantization. Obtain the original from
+https://huggingface.co/google/gemma-3-1b-it (gated) and cast with `.half()`. Tokenizer:
+the Gemma 3 SentencePiece tokenizer (vocab 32768; unsloth/gemma-3-1b-it).
+
+Everything runs on **CPU** (torch 2.13.0+cpu) — no CUDA required. The 2.7 GB fp16
+checkpoint is excluded from this repo (see `STATUS.md` / `.gitignore`) and reconstructed
+locally.
 
 ## Headline results (Africa capitals, n=54)
 

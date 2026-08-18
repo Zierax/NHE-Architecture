@@ -1,36 +1,61 @@
-# الأرقام المرجعية الموحّدة (Canonical Numbers) — NHE-Architecture
+# Canonical, protocol-labelled numbers — NHE-Architecture
 
-آخر تحديث: 2026-08-18. هذا الملف هو المصدر الوحيد المعتمد للأرقام؛ أي وثيقة أو عرض يستشهد بأرقام مخالفة يجب أن يتطابق مع هذا الجدول **مع تسمية البروتوكول** (greedy مقابل sampled).
+Last updated: 2026-08-18. **This file is the single source of truth for every number
+cited by this project.** Any other document/presentation that quotes a result MUST read
+from this table and MUST label the protocol — greedy and sampled-majority are different
+experiments and must never be compared without the protocol qualifier.
 
-## بروتوكولا القياس
-| البروتوكول | الوصف | الملف المرجعي |
-|---|---|---|
-| **greedy** | فك حتمي (argmax)، عنصر واحد لكل سؤال | `results/eval_{topic}_{mask}.json` (بدون `_s5`) |
-| **sampled (majority)** | temp=0.9, top_p=0.9، 5 بذور (1000+i*100+s)، تصويت الأغلبية لكل عنصر | `results/eval_{topic}_{mask}_s5.json` |
+## Protocols
 
-> ملاحظة توحيد: أي قيمتين لمقارنة واحدة يجب أن تكونا من نفس البروتوكول. مثال التعارض المحلول: `12.96%→5.56%` هي **greedy** لـk128_wrong، و`0.093` هي **sampled majority** لنفس القناع — كلاهما صحيح لكنهما بروتوكولان مختلفان.
+| Protocol | Decode | n | Evidence file |
+|---|---|---|---|
+| **greedy** | deterministic argmax, one generation per question | 54 Africa / 44 Europe / 50 US states / 46 Asia / 41 elements | `results/eval_{topic}_{mask}.json` (no `_s5`) |
+| **sampled (majority)** | temp=0.9, top_p=0.9, 5 seeds (1000+item*100+seed), majority vote per question | 54 Africa | `results/eval_{topic}_{mask}_s5.json` |
 
-## الجدول المعتمد — أفريقيا (54 سؤالًا)
+> Conflict resolved: `12.96%->5.56%` is the **greedy** row for `k128_wrong` (7/54 -> 3/54).
+> `0.093` is the **sampled-majority** row for the same mask (5/54). Same mask, two
+> protocols — both values are correct once the protocol is stated.
 
-| التدخل | greedy hall | sampled-majority hall | أضرار جانبية (greedy) | الدليل |
+## Headline results — Africa (54 questions)
+
+| Intervention | greedy | sampled (majority) | Greedy collateral | Evidence |
 |---|---|---|---|---|
 | baseline | 0.130 (7/54) | 0.167 (9/54) | — | `eval_africa_baseline.json`, `eval_africa_baseline_s5.json` |
-| إحصائي d_mean/d_var | 0.130 (NULL) | — | لا شيء | `eval_africa_k32_mean.json` |
-| **k32_midwrong** (AtP، wrong-only، طبقات 8–17) | 0.093 (5/54) — إصلاح 3 (Eswatini/Gambia/Senegal) **+ كسر South Sudan (Juba→Bor)** | **0.111 (6/54)، p=0.017 (McNemar)، صافي +15 [5,24]** | أوروبا: 0.000→0.000 (لا ضرر) | `eval_africa_k32_midwrong.json`, `_s5`, `eval_europe_k32_midwrong.json` |
-| **k128_wrong** | **0.056 (3/54)** — أقوى خفض greedy | **0.093 (5/54)، p=0.003، صافي +20 [8,33]** | **أوروبا: 0.000→0.091 (4/44 مكسورة)، p<0.001** | `eval_africa_k128_wrong.json`, `eval_europe_k128_wrong.json`, `_s5` |
-| **زمني مبكر منوَّع** (jump_max_early_L19، t90، نافذة ≤5، قناع k32_midwrong) | **0.074 (4/54)** — إصلاح 3، **صفر كسور**، إطلاقات 7/54 | بذرة واحدة s1000: 0.130→0.111 (إصلاح 2: Eswatini/Gambia + **كسر Burundi: Gitega→Bujumbura**) | أوروبا: 0 إطلاقات، 0.000؛ آسيا/أمريكا/عناصر = baseline تمامًا | `eval_runtime_africa_jump_gt_L19_t90_mask.json`, `_s1000`, `eval_runtime_europe_*.json` |
+| statistical d_mean/d_var | 0.130 (null) | — | none | `eval_africa_k32_mean.json` |
+| causal `k32_midwrong` (layers 8-17, wrong-only) | 0.093 (5/54) — fixes Eswatini/Gambia/Senegal, **breaks South Sudan (Juba->Bor)** | **0.111 (6/54), McNemar p=0.017, net +15 [5,24]** | Europe 0.000 -> 0.000 | `eval_africa_k32_midwrong.json`, `_s5.json`, `eval_europe_k32_midwrong.json` |
+| causal `k128_wrong` | **0.056 (3/54)** | **0.093 (5/54), p=0.003, net +20 [8,33]** | **Europe 0.000 -> 0.091 (4/44 broken), p<0.001** | `eval_africa_k128_wrong.json`, `eval_europe_k128_wrong.json`, `_s5` |
+| **runtime early excision** (jump_max_early_L19, t90, window<=5, k32_midwrong mask) | **0.074 (4/54)** — 3 fixes, **0 breaks**, 7/54 fires | seed 1000: 0.130 -> 0.111 (2 fixes + **1 documented break: Burundi Gitega->Bujumbura**) | Europe 0 fires, 0.000; Asia/US/elements = baseline | `eval_runtime_africa_jump_gt_L19_t90_mask.json`, `_s1000.json`, `eval_runtime_europe_*.json` |
 
-## كاشفات الكشف (أفريقيا، greedy)
-| الكاشف | AUC (LOSO) | ملاحظة |
+## Detectors (Africa, greedy, leave-one-out AUC)
+
+| Detector | AUC (LOSO) | Notes |
 |---|---|---|
-| jump_max_L18 (كامل التوليد) | 0.860 | يطلق بعد الالتزام (خامل تدخليًا) |
-| jump_max_early_L19 (أول 10 توكينات) | 0.742 | يطلق قبل الالتزام على 3/7 — الفعال تدخليًا |
-| probe L10 (logistic) | 0.672 | أضعف؛ لا ينتقل بين بروتوكولات الفك |
+| jump_max_L18 (full generation) | 0.860 | fires post-commit -> inert for intervention |
+| jump_max_early_L19 (first 10 tokens) | 0.742 | fires pre-commit on 3/7 -> effective for intervention |
+| probe L10 (logistic) | 0.672 | weakest; does NOT transfer across decode protocols |
 
-## السقف المؤكد
-4/7 هلوسات greedy (Cape Verde، Equatorial Guinea، Gabon، Guinea) تلتزم "بهدوء" — لا عتبة jitter تلتقطها قبل الالتزام ولا قناع k32_midwrong يصلحها. لا عتبة ولا قناع من هذه العائلة تتجاوز هذا السقف.
+## Confirmed ceiling
 
-## قيود صادقة
-- تصنيف المطابقة النصية متساهل (مثال: "Salaffaire...and Praia" تُعد صحيحة؛ Senegal عُدّت إصلاحًا وهو hedge "Diou... While Dakar is the largest city") — كل انقلاب في النتائج النهائية فُحص يدويًا.
-- كل الأرقام لموديل واحد (Gemma 3 1B) على CPU؛ مقاسات النماذج الأخرى غير مغطاة.
-- أُبلغ المستخدم: كل شيء على CPU، لا CUDA حتى الآن.
+4/7 greedy hallucinations (Cape Verde, Equatorial Guinea, Gabon, Guinea) commit
+"quietly" with no pre-commit jitter spike and are not fixable by any threshold of this
+detector family nor by the k32_midwrong mask. No threshold/mask in the current family
+exceeds this ceiling.
+
+## Honest caveats
+
+- The textual matcher is intentionally permissive (e.g. "Salaffaire...and Praia" counts as
+  correct, and Senegal counts as a "fix" but is a hedge: "Diou... While Dakar is the largest
+  city"). Every flip above was hand-inspected.
+- Single model (Gemma 3 1B, fp16), single domain (Africa capitals), CPU-only runs.
+- The detector is protocol-bound: does not transfer from sampled to greedy (probe L10
+  AUC ~ 0.05).
+- Runtime excision is safe under greedy decoding; under sampling one documented break
+  (Burundi). A softer/scaled intervention is the open follow-up.
+
+## Model provenance (verified)
+
+- `models/gemma3-1b-fp16/model.safetensors`: single consolidated fp16 checkpoint,
+  **999.9M params, dtype=torch.float16**, config `Gemma3ForCausalLM` (26 layers, d=1152).
+  This is the Gemma 3 1B text model; obtain the original from
+  https://huggingface.co/google/gemma-3-1b-it (gated) and cast to fp16.
+- `models/gemma3-1b-tokenizer`: Gemma 3 SentencePiece tokenizer (vocab 32768).
