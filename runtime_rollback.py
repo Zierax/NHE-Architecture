@@ -20,7 +20,8 @@ MAX_NEW = 48
 N_LAYERS = 26
 
 TOPICS = {"africa": "topics.AFRICA", "europe": "topics.EUROPE", "elements": "topics.ELEMENTS",
-          "asia": "topics.ASIA", "us_states": "topics.US_STATES"}
+          "asia": "topics.ASIA", "us_states": "topics.US_STATES",
+          "africa_largest": "topics.AFRICA_LARGEST", "world_tricky": "topics.WORLD_TRICKY"}
 MASK = os.path.join(RES_DIR, "mask_k32_midwrong.json")
 
 def norm(s):
@@ -34,16 +35,16 @@ def model_and_tok():
     print(f"model loaded in {time.time()-t0:.1f}s", flush=True)
     return model, tok
 
-def apply_mask(model, mask_path):
+def apply_mask(model, mask_path, scale=0.0):
     with open(mask_path, "r", encoding="utf-8") as fh:
         mask = json.load(fh)
     layers = model.model.layers
     with torch.no_grad():
         for e in mask["items"]:
             mlp = layers[e["layer"]].mlp
-            mlp.down_proj.weight[:, e["unit"]] = 0.0
-            mlp.up_proj.weight[e["unit"], :] = 0.0
-            mlp.gate_proj.weight[e["unit"], :] = 0.0
+            mlp.down_proj.weight[:, e["unit"]] *= scale
+            mlp.up_proj.weight[e["unit"], :] *= scale
+            mlp.gate_proj.weight[e["unit"], :] *= scale
     return len(mask["items"])
 
 def detector_fire(det, score, prev_score):
@@ -116,7 +117,7 @@ def gen_with_detector(model, tok, ids, det):
                     score = torch.linalg.norm(hl - hlm).item()
                 feats.append(score)
             if det.get("mode") != "none":
-                n_masked = apply_mask(model, MASK)
+                n_masked = apply_mask(model, MASK, det.get("scale", 0.0))
         nxt = out.logits[0, -1].argmax().item() if not rng else _sample(out.logits[0, -1], rng, det)
         if nxt == end_id:
             break
@@ -148,12 +149,15 @@ def run_topic(topic, det):
     t0 = time.time()
     for i, item in enumerate(items):
         model.load_state_dict(clean)
+        det_i = dict(det)
+        if det_i.get("sample"):
+            det_i["seed"] = det_i.get("seed", 1000) + i * 100
         q, ans = item[0], item[1]
         alt = item[2:]
         text = "<start_of_turn>user\n" + q + "<end_of_turn>\n<start_of_turn>model\n"
         ids = tok(text, return_tensors="pt")["input_ids"]
         with torch.no_grad():
-            gen_ids, feats, fired_at, n_masked = gen_with_detector(model, tok, ids, det)
+            gen_ids, feats, fired_at, n_masked = gen_with_detector(model, tok, ids, det_i)
         gen_text = tok.decode(gen_ids, skip_special_tokens=True)
         gen_n = norm(gen_text)
         correct = 1 if any(norm(a) in gen_n for a in (ans,) + alt) else 0
@@ -166,6 +170,10 @@ def run_topic(topic, det):
     n_correct = sum(r["correct"] for r in results)
     n_fired = sum(1 for r in results if r["fired_at"] is not None)
     tag = f"{det['type']}_L{det['layer']:02d}_{det['threshold_key']}_{det.get('mode', 'mask')}"
+    if det.get("window") and det.get("window") != 5:
+        tag += f"_w{det['window']}"
+    if det.get("scale", 0.0) != 0.0:
+        tag += f"_sft{det['scale']}"
     if det.get("sample"):
         tag += f"_s{det.get('seed', 0)}"
     out_file = os.path.join(RES_DIR, f"eval_runtime_{topic}_{tag}.json")
@@ -357,16 +365,16 @@ def main():
         sel = "detector_early" if (len(sys.argv) > 3 and sys.argv[3] == "early") else "detector"
         thr_key = sys.argv[4] if len(sys.argv) > 4 else "t90"
         det = dict(dg[sel])
-    det["threshold"] = det["threshold_t90"] if thr_key == "t90" else det["threshold_t95"]
-    det["threshold_key"] = thr_key
-    det["mode"] = sys.argv[5] if len(sys.argv) > 5 else "mask"
-    if sel == "detector_early":
-        det["window"] = 5
-    det["sample"] = "s" in (sys.argv[6] if len(sys.argv) > 6 else "m")
-    det["seed"] = int(sys.argv[7]) if len(sys.argv) > 7 else 1000
-    print(f"running {topic} with {dg[sel]['name']} {thr_key} mode={det['mode']} sample={det['sample']}", flush=True)
-    run_topic(topic, det)
-    return
+        det["threshold"] = det["threshold_t90"] if thr_key == "t90" else det["threshold_t95"]
+        det["threshold_key"] = thr_key
+        det["mode"] = sys.argv[5] if len(sys.argv) > 5 else "mask"
+        det["window"] = int(sys.argv[9]) if len(sys.argv) > 9 else (5 if sel == "detector_early" else None)
+        det["scale"] = float(sys.argv[8]) if len(sys.argv) > 8 else 0.0
+        det["sample"] = "s" in (sys.argv[6] if len(sys.argv) > 6 else "m")
+        det["seed"] = int(sys.argv[7]) if len(sys.argv) > 7 else 1000
+        print(f"running {topic} with {dg[sel]['name']} {thr_key} mode={det['mode']} sample={det['sample']} seed={det['seed']} scale={det['scale']} window={det['window']}", flush=True)
+        run_topic(topic, det)
+        return
     sys.exit("usage: runtime_rollback.py <collect|fit_greedy|run topic t90|t95 [mask|rollback|none]>")
 
 if __name__ == "__main__":

@@ -1,0 +1,550 @@
+{
+  "topic": "world_tricky",
+  "mask": "results\\mask_k128_wrong.json",
+  "n": 49,
+  "samples": 1,
+  "n_correct": 45,
+  "hallucination_rate": 0.0816,
+  "correct_rate": 0.9184,
+  "results": [
+    {
+      "id": 0,
+      "question": "What is the capital of Australia?",
+      "answer": "Canberra",
+      "generated": "The capital of Australia is Canberra. \n\nIt’s a bit of a trick question! Canberra was chosen as the capital city in 1908, but it wasn’t officially the capital until 1909.",
+      "samples": [
+        "The capital of Australia is Canberra. \n\nIt’s a bit of a trick question! Canberra was chosen as the capital city in 1908, but it wasn’t officially the capital until 1909."
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 1,
+      "question": "What is the capital of Canada?",
+      "answer": "Ottawa",
+      "generated": "The capital of Canada is Ottawa. It’s located in the province of Ontario. 😊",
+      "samples": [
+        "The capital of Canada is Ottawa. It’s located in the province of Ontario. 😊"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 2,
+      "question": "What is the capital of Brazil?",
+      "answer": "Brasilia",
+      "generated": "The capital of Brazil is Brasilia. \n\nIt’s a planned city, but it’s often referred to as the “White City” due to its distinctive architectural style. 😊 \n\nDo you want to know more about Brasil",
+      "samples": [
+        "The capital of Brazil is Brasilia. \n\nIt’s a planned city, but it’s often referred to as the “White City” due to its distinctive architectural style. 😊 \n\nDo you want to know more about Brasil"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 3,
+      "question": "What is the capital of Turkey?",
+      "answer": "Ankara",
+      "generated": "The capital of Turkey is Ankara. \n\n",
+      "samples": [
+        "The capital of Turkey is Ankara. \n\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 4,
+      "question": "What is the capital of Switzerland?",
+      "answer": "Bern",
+      "generated": "The capital of Switzerland is Bern. 😊 \n\n",
+      "samples": [
+        "The capital of Switzerland is Bern. 😊 \n\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 5,
+      "question": "What is the capital of Vietnam?",
+      "answer": "Hanoi",
+      "generated": "Ho Chi Minh City is the largest city in Vietnam and the country’s capital. However, the country’s primary and most important city is Hanoi.\n\nTherefore, the question is a little tricky! \n\nTo give you the best",
+      "samples": [
+        "Ho Chi Minh City is the largest city in Vietnam and the country’s capital. However, the country’s primary and most important city is Hanoi.\n\nTherefore, the question is a little tricky! \n\nTo give you the best"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 6,
+      "question": "What is the capital of Kazakhstan?",
+      "answer": "Astana",
+      "generated": "The capital of Kazakhstan is Almaty. \n\nHowever, it’s important to note that Kazakhstan has a complex political situation with a divided capital. Almaty is the officially designated capital, but Nur-Sultan, the capital city,",
+      "samples": [
+        "The capital of Kazakhstan is Almaty. \n\nHowever, it’s important to note that Kazakhstan has a complex political situation with a divided capital. Almaty is the officially designated capital, but Nur-Sultan, the capital city,"
+      ],
+      "correct": 0,
+      "majority_correct": 0
+    },
+    {
+      "id": 7,
+      "question": "What is the capital of India?",
+      "answer": "New Delhi",
+      "generated": "The capital of India is New Delhi. \n\nNew Delhi is the capital city of the Indian state of Delhi. 😊",
+      "samples": [
+        "The capital of India is New Delhi. \n\nNew Delhi is the capital city of the Indian state of Delhi. 😊"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 8,
+      "question": "What is the capital of Pakistan?",
+      "answer": "Islamabad",
+      "generated": "The capital of Pakistan is Islamabad. \n\n",
+      "samples": [
+        "The capital of Pakistan is Islamabad. \n\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 9,
+      "question": "What is the capital of Ivory Coast?",
+      "answer": "Yamoussoukro",
+      "generated": "The capital of Ivory Coast is Yamoussoukro. \n\n",
+      "samples": [
+        "The capital of Ivory Coast is Yamoussoukro. \n\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 10,
+      "question": "What is the capital of Myanmar?",
+      "answer": "Naypyidaw",
+      "generated": "The capital of Myanmar is Yangon. \n\nHowever, Yangon is a large and complex city, and the primary capital is Naypyidaw. \n\nTherefore, the most accurate answer is Yangon.",
+      "samples": [
+        "The capital of Myanmar is Yangon. \n\nHowever, Yangon is a large and complex city, and the primary capital is Naypyidaw. \n\nTherefore, the most accurate answer is Yangon."
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 11,
+      "question": "What is the capital of Sri Lanka?",
+      "answer": "Sri Jayawardenepura Kotte",
+      "generated": "The capital of Sri Lanka is Sri Jayawardenepura Kotte. However, the main and officially designated capital is Sri Jayawardenepura Kotte.\n\n",
+      "samples": [
+        "The capital of Sri Lanka is Sri Jayawardenepura Kotte. However, the main and officially designated capital is Sri Jayawardenepura Kotte.\n\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 12,
+      "question": "What is the capital of Belize?",
+      "answer": "Belmopan",
+      "generated": "Belize’s capital is Belmopan. \n\nHowever, Belize is a federal republic, and its primary city is San Pedro Sula, which is the administrative and economic center. \n\nSo, while Belmopan is the",
+      "samples": [
+        "Belize’s capital is Belmopan. \n\nHowever, Belize is a federal republic, and its primary city is San Pedro Sula, which is the administrative and economic center. \n\nSo, while Belmopan is the"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 13,
+      "question": "What is the capital of Bolivia?",
+      "answer": "Sucre",
+      "generated": "The capital of Bolivia is Sucre. \n\nWhile La Paz is the largest city, Sucre is the official and historical capital.",
+      "samples": [
+        "The capital of Bolivia is Sucre. \n\nWhile La Paz is the largest city, Sucre is the official and historical capital."
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 14,
+      "question": "What is the capital of Benin?",
+      "answer": "Porto-Novo",
+      "generated": "The capital of Benin is Ubriake. \n\nIt’s a bit of a complicated story! Historically, Benin was a kingdom with multiple capitals. However, Ubriake is the current, and most widely recognized, capital city.",
+      "samples": [
+        "The capital of Benin is Ubriake. \n\nIt’s a bit of a complicated story! Historically, Benin was a kingdom with multiple capitals. However, Ubriake is the current, and most widely recognized, capital city."
+      ],
+      "correct": 0,
+      "majority_correct": 0
+    },
+    {
+      "id": 15,
+      "question": "What is the capital of Ecuador?",
+      "answer": "Quito",
+      "generated": "The capital of Ecuador is Quito. 😊",
+      "samples": [
+        "The capital of Ecuador is Quito. 😊"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 16,
+      "question": "What is the capital of Peru?",
+      "answer": "Lima",
+      "generated": "The capital of Peru is Lima. \n\nHowever, it’s important to note that Lima is the administrative capital, while the constitutional capital is Sucre. 😊",
+      "samples": [
+        "The capital of Peru is Lima. \n\nHowever, it’s important to note that Lima is the administrative capital, while the constitutional capital is Sucre. 😊"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 17,
+      "question": "What is the capital of Colombia?",
+      "answer": "Bogota",
+      "generated": "Bogotá is the capital of Colombia. \n\nHowever, it’s important to note that Colombia has a few capitals – Bogotá (the constitutional capital), Medellín, and Cali. Bogotá is the one most commonly associated with the title. 😊",
+      "samples": [
+        "Bogotá is the capital of Colombia. \n\nHowever, it’s important to note that Colombia has a few capitals – Bogotá (the constitutional capital), Medellín, and Cali. Bogotá is the one most commonly associated with the title. 😊"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 18,
+      "question": "What is the capital of Chile?",
+      "answer": "Santiago",
+      "generated": "The capital of Chile is Santiago. \n\n",
+      "samples": [
+        "The capital of Chile is Santiago. \n\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 19,
+      "question": "What is the capital of Argentina?",
+      "answer": "Buenos Aires",
+      "generated": "The capital of Argentina is Buenos Aires. \n\nHowever, it’s important to note that Argentina has a complex political situation with multiple capitals. Buenos Aires is the administrative capital, but the constitutional capital is Córdoba. \n\nCould you tell",
+      "samples": [
+        "The capital of Argentina is Buenos Aires. \n\nHowever, it’s important to note that Argentina has a complex political situation with multiple capitals. Buenos Aires is the administrative capital, but the constitutional capital is Córdoba. \n\nCould you tell"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 20,
+      "question": "What is the capital of the Netherlands?",
+      "answer": "Amsterdam",
+      "generated": "The capital of the Netherlands is Amsterdam. \n\n",
+      "samples": [
+        "The capital of the Netherlands is Amsterdam. \n\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 21,
+      "question": "What is the capital of Israel?",
+      "answer": "Jerusalem",
+      "generated": "Jerusalem is the capital of Israel. However, Israel’s political center is Tel Aviv. \n\nTherefore, the most accurate answer is Jerusalem. \n\n",
+      "samples": [
+        "Jerusalem is the capital of Israel. However, Israel’s political center is Tel Aviv. \n\nTherefore, the most accurate answer is Jerusalem. \n\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 22,
+      "question": "What is the capital of Jordan?",
+      "answer": "Amman",
+      "generated": "The capital of Jordan is Amman. \n\n",
+      "samples": [
+        "The capital of Jordan is Amman. \n\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 23,
+      "question": "What is the capital of Saudi Arabia?",
+      "answer": "Riyadh",
+      "generated": "The capital of Saudi Arabia is Riyadh. \n\n",
+      "samples": [
+        "The capital of Saudi Arabia is Riyadh. \n\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 24,
+      "question": "What is the capital of the United Arab Emirates?",
+      "answer": "Abu Dhabi",
+      "generated": "The capital of the United Arab Emirates is Abu Dhabi. \n\n",
+      "samples": [
+        "The capital of the United Arab Emirates is Abu Dhabi. \n\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 25,
+      "question": "What is the capital of Qatar?",
+      "answer": "Doha",
+      "generated": "The capital of Qatar is Doha. \n\n",
+      "samples": [
+        "The capital of Qatar is Doha. \n\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 26,
+      "question": "What is the capital of Kuwait?",
+      "answer": "Kuwait City",
+      "generated": "The capital of Kuwait is Kuwait City. \n\nHowever, it’s important to note that Kuwait City is currently a city, not an independent country. It was established as a special economic zone in 1962 and is an",
+      "samples": [
+        "The capital of Kuwait is Kuwait City. \n\nHowever, it’s important to note that Kuwait City is currently a city, not an independent country. It was established as a special economic zone in 1962 and is an"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 27,
+      "question": "What is the capital of Oman?",
+      "answer": "Muscat",
+      "generated": "The capital of Oman is Muscat. 😊 \n\n",
+      "samples": [
+        "The capital of Oman is Muscat. 😊 \n\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 28,
+      "question": "What is the capital of Ukraine?",
+      "answer": "Kyiv",
+      "generated": "The capital of Ukraine is Kyiv. \n\nKyiv is the city itself, and the country's capital is located there.",
+      "samples": [
+        "The capital of Ukraine is Kyiv. \n\nKyiv is the city itself, and the country's capital is located there."
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 29,
+      "question": "What is the capital of Poland?",
+      "answer": "Warsaw",
+      "generated": "The capital of Poland is Warsaw. \n\n",
+      "samples": [
+        "The capital of Poland is Warsaw. \n\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 30,
+      "question": "What is the capital of Hungary?",
+      "answer": "Budapest",
+      "generated": "The capital of Hungary is Budapest. \n\n",
+      "samples": [
+        "The capital of Hungary is Budapest. \n\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 31,
+      "question": "What is the capital of Romania?",
+      "answer": "Bucharest",
+      "generated": "The capital of Romania is Bukarest. 😊 \n\n",
+      "samples": [
+        "The capital of Romania is Bukarest. 😊 \n\n"
+      ],
+      "correct": 0,
+      "majority_correct": 0
+    },
+    {
+      "id": 32,
+      "question": "What is the capital of Bulgaria?",
+      "answer": "Sofia",
+      "generated": "The capital of Bulgaria is Sofia. 😊",
+      "samples": [
+        "The capital of Bulgaria is Sofia. 😊"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 33,
+      "question": "What is the capital of Greece?",
+      "answer": "Athens",
+      "generated": "The capital of Greece is Athens. 😊 \n\nDo you want to know more about Athens or Greece in general?",
+      "samples": [
+        "The capital of Greece is Athens. 😊 \n\nDo you want to know more about Athens or Greece in general?"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 34,
+      "question": "What is the capital of Albania?",
+      "answer": "Tirana",
+      "generated": "The capital of Albania is Tirana. 😊\n",
+      "samples": [
+        "The capital of Albania is Tirana. 😊\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 35,
+      "question": "What is the capital of Kosovo?",
+      "answer": "Pristina",
+      "generated": "The capital of Kosovo is Pristina. \n\nIt’s important to note that Kosovo’s political status is complex and disputed. The internationally recognized capital is Pristina, but Kosovo has its own de facto government and parliament.",
+      "samples": [
+        "The capital of Kosovo is Pristina. \n\nIt’s important to note that Kosovo’s political status is complex and disputed. The internationally recognized capital is Pristina, but Kosovo has its own de facto government and parliament."
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 36,
+      "question": "What is the capital of Serbia?",
+      "answer": "Belgrade",
+      "generated": "The capital of Serbia is Belgrade. 😊 \n\nDo you want to know more about Belgrade?",
+      "samples": [
+        "The capital of Serbia is Belgrade. 😊 \n\nDo you want to know more about Belgrade?"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 37,
+      "question": "What is the capital of Montenegro?",
+      "answer": "Podgorica",
+      "generated": "The capital of Montenegro is Podgorica. 😊",
+      "samples": [
+        "The capital of Montenegro is Podgorica. 😊"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 38,
+      "question": "What is the capital of North Macedonia?",
+      "answer": "Skopje",
+      "generated": "The capital of North Macedonia is Skopje.",
+      "samples": [
+        "The capital of North Macedonia is Skopje."
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 39,
+      "question": "What is the capital of Bosnia and Herzegovina?",
+      "answer": "Sarajevo",
+      "generated": "The capital of Bosnia and Herzegovina is Sarajevo.",
+      "samples": [
+        "The capital of Bosnia and Herzegovina is Sarajevo."
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 40,
+      "question": "What is the capital of Croatia?",
+      "answer": "Zagreb",
+      "generated": "The capital of Croatia is Zagreb. 😊",
+      "samples": [
+        "The capital of Croatia is Zagreb. 😊"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 41,
+      "question": "What is the capital of Slovenia?",
+      "answer": "Ljubljana",
+      "generated": "The capital of Slovenia is Ljubljana. 😊",
+      "samples": [
+        "The capital of Slovenia is Ljubljana. 😊"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 42,
+      "question": "What is the capital of Latvia?",
+      "answer": "Riga",
+      "generated": "The capital of Latvia is Riga. \n\n",
+      "samples": [
+        "The capital of Latvia is Riga. \n\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 43,
+      "question": "What is the capital of Lithuania?",
+      "answer": "Vilnius",
+      "generated": "The capital of Lithuania is Kaunas. 😊",
+      "samples": [
+        "The capital of Lithuania is Kaunas. 😊"
+      ],
+      "correct": 0,
+      "majority_correct": 0
+    },
+    {
+      "id": 44,
+      "question": "What is the capital of Estonia?",
+      "answer": "Tallinn",
+      "generated": "The capital of Estonia is Tallinn. \n\n",
+      "samples": [
+        "The capital of Estonia is Tallinn. \n\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 45,
+      "question": "What is the capital of Belarus?",
+      "answer": "Minsk",
+      "generated": "The capital of Belarus is Minsk. \n\n",
+      "samples": [
+        "The capital of Belarus is Minsk. \n\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 46,
+      "question": "What is the capital of Moldova?",
+      "answer": "Chisinau",
+      "generated": "The capital of Moldova is Chișinău.",
+      "samples": [
+        "The capital of Moldova is Chișinău."
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 47,
+      "question": "What is the capital of Cyprus?",
+      "answer": "Nicosia",
+      "generated": "The capital of Cyprus is Nicosia. 😊 \n\n",
+      "samples": [
+        "The capital of Cyprus is Nicosia. 😊 \n\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 48,
+      "question": "What is the capital of Malta?",
+      "answer": "Valletta",
+      "generated": "The capital of Malta is Valletta. \n\nValletta is a beautiful, historic city and the political and cultural center of the island. 😊",
+      "samples": [
+        "The capital of Malta is Valletta. \n\nValletta is a beautiful, historic city and the political and cultural center of the island. 😊"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    }
+  ]
+}

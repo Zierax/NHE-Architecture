@@ -13,7 +13,8 @@ TOK_DIR = os.path.join(BASE, "models", "gemma3-1b-tokenizer")
 RES_DIR = os.path.join(BASE, "results")
 
 TOPICS = {"africa": "topics.AFRICA", "europe": "topics.EUROPE", "elements": "topics.ELEMENTS",
-          "asia": "topics.ASIA", "us_states": "topics.US_STATES"}
+          "asia": "topics.ASIA", "us_states": "topics.US_STATES",
+          "africa_largest": "topics.AFRICA_LARGEST", "world_tricky": "topics.WORLD_TRICKY"}
 
 def norm(s):
     return unicodedata.normalize("NFKD", s).encode("ascii", "ignore").decode().lower()

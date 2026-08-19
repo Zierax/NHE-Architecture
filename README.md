@@ -16,25 +16,30 @@ Everything runs on **CPU** (torch 2.13.0+cpu) — no CUDA required. The 2.7 GB f
 checkpoint is excluded from this repo (see `STATUS.md` / `.gitignore`) and reconstructed
 locally.
 
-## Headline results (Africa capitals, n=54)
+## Headline results (Africa capitals, n=54; strict first-sentence metric unless noted)
 
-| Intervention | greedy | sampled (temp 0.9, majority of 5) | Collateral (greedy) |
+| Intervention | greedy (strict) | sampled (5 seeds, majority) | Collateral (greedy, strict) |
 |---|---|---|---|
-| baseline | 0.130 | 0.167 | — |
+| baseline | 0.130 | 0.148 | — |
 | statistical excision (d_mean/d_var) | 0.130 (null) | — | none |
-| causal k32_midwrong (layers 8–17, wrong-only) | 0.093 | **0.111 (p=0.017)** | Europe 0.000→0.000 |
-| causal k128_wrong | **0.056** | **0.093 (p=0.003)** | **Europe 0.000→0.091 (damage)** |
-| **runtime early excision** (jitter detector, window ≤5) | **0.074** | 0.111 (seed 1000; 1 documented break) | Europe 0 fires, 0.000 |
+| causal k32_midwrong (layers 8–17, wrong-only) | 0.093 | **0.111 (p=0.017)** | **breaks South Sudan (Juba→Bor)** |
+| causal k128_wrong | 0.074 | **0.093 (p=0.003)** | **breaks Benin, South Africa, South Sudan + Europe 0.000→0.091** |
+| **runtime early soft excision** (w≤5, scale 0.3) | **0.093** | 0.074 (majority; per-seed mean 0.122→0.104, p=0.18) | **0 breaks anywhere; Europe 0 fires, world_tricky 0 fires** |
 
-**The canonical, protocol-labelled table with evidence files: `results/NUMBERS.md`.**
-Read numbers from there — greedy and sampled-majority are different protocols and must
-never be mixed in a comparison.
+**The canonical, protocol-labelled table (greedy/sampled × substring/strict metrics)
+with evidence files: `results/NUMBERS.md`.** Read numbers from there — greedy and
+sampled-majority are different protocols and metrics must never be mixed in a comparison.
 
 Runtime excision details: detector `jump_max_early_L19` (AUC 0.742 LOSO on greedy flows)
-fires only within the first 5 tokens; a mask of wrong-commit neurons is applied before the
-answer commit. Post-commit firing is inert (timing is the essence). Fires: 7/54 with
-3 clean fixes (Eswatini, Gambia, Senegal-hedge) and zero breaks — strictly better than the
-static excision, which fixes the same 3 items but breaks South Sudan (Juba→Bor).
+fires only within the first 5 tokens; a soft mask (neurons scaled by 0.3, not zeroed) of
+wrong-commit neurons is applied before the answer commit. Post-commit firing is inert
+(timing is the essence). Fires 7/54 with 2 clean fixes (Eswatini, Gambia) and zero breaks;
+the Senegal fix seen under the permissive matcher is a hedge ("Diou... While Dakar is the
+largest city") and counts as wrong under the strict metric.
+
+**Transfer (new topics, greedy, strict):** `africa_largest` baseline 0.296 → runtime 0.278
+(1 fix, 0 breaks); `world_tricky` 0.020 unchanged (0 fires); Europe 0.000 unchanged (0
+fires). Static k128 damages all three controls (0.091 / 0.122 / breaks).
 
 **Confirmed ceiling:** 4/7 greedy hallucinations (Cape Verde, Equatorial Guinea, Gabon,
 Guinea) commit "quietly" with no pre-commit jitter spike and are not fixable by any
@@ -46,11 +51,14 @@ threshold of this detector family or by the k32_midwrong mask.
 attribute_causal2.py      AtP attribution (fp32 CPU-optimized), wrong-only filters, mid-layer masks
 run_experiment.py         mask generation + evaluation runs (mean/var/causal/wrong/mid/midwrong)
 eval_topic.py             greedy + sampled evaluation (--samples=N), topics registry
-runtime_rollback.py       temporal excision: collect flows / fit greedy detector / run with mask
+runtime_rollback.py       temporal excision: collect flows / fit greedy detector / run (mask|rollback|none), soft scale, window
 sweep_thresholds.py       offline threshold sweep (validated 1:1 against live runs)
+sweep_windows.py          offline window tradeoff (w2..w6 × p80..p95)
+battery_analysis.py       sampled 5-seed battery: majority + McNemar + bootstrap
+strict_final.py           strict first-sentence metric with alternatives
 significance_final.py     McNemar + bootstrap significance
 significance_s5.py        sample-level statistics
-topics.py                 AFRICA(54)/EUROPE(44)/ELEMENTS(41)/ASIA(46)/US_STATES(50)
+topics.py                 AFRICA(54)/EUROPE(44)/ELEMENTS(41)/ASIA(46)/US_STATES(50)/AFRICA_LARGEST(54)/WORLD_TRICKY(49)
 results/                  all masks, evaluations, detector configs, NUMBERS.md, experiment_report.md
 legacy/                   superseded experiments and debug probes (statistical arm = null result)
 ```
@@ -61,14 +69,16 @@ reconstruct it with `collect_topic.py` (needs the model + tokenizer above).
 ## Quick start
 
 ```bash
-python -m venv .venv && .venv/Scripts/pip install torch transformers scikit-learn numpy
+python -m venv .venv && .venv/Scripts/pip install torch transformers scikit-learn numpy scipy
 # 1. collect greedy flows for detector calibration
 python runtime_rollback.py collect            # saves results/greedy_flows_africa.npz
 python runtime_rollback.py fit_greedy         # fits detector, saves results/detector_greedy.json
-# 2. run the temporal intervention
-python runtime_rollback.py run africa early t90 mask
+# 2. run the temporal intervention (soft, window<=5, recommended)
+python runtime_rollback.py run africa early t90 mask m 0 0.3 5
 # 3. static excision alternative
 python eval_topic.py africa --mask results/mask_k32_midwrong.json
+# 4. strict re-scoring of any eval file
+python strict_final.py
 ```
 
 ## Honest limitations

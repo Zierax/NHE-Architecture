@@ -1,0 +1,468 @@
+{
+  "topic": "europe",
+  "detector": {
+    "type": "jump_gt",
+    "layer": 19,
+    "auc": 0.7416413373860182,
+    "early": true,
+    "name": "jump_max_early_L19",
+    "threshold_t90": 4610.3560546875,
+    "threshold_t95": 4717.643798828125,
+    "catch_t90": 3,
+    "catch_t95": 1,
+    "trained_on": "greedy_africa",
+    "threshold": 4610.3560546875,
+    "threshold_key": "t90",
+    "mode": "mask",
+    "window": 5,
+    "scale": 0.3,
+    "sample": true,
+    "seed": 1004
+  },
+  "n": 44,
+  "n_correct": 44,
+  "n_fired": 0,
+  "hallucination_rate": 0.0,
+  "results": [
+    {
+      "id": 0,
+      "question": "What is the capital of the United Kingdom?",
+      "answer": "London",
+      "generated": "The capital of the United Kingdom is **London**. \n\nIt’s a common misconception that it’s Westminster, but London is the political, economic, and cultural center of the country.",
+      "correct": 1,
+      "fired_at": null,
+      "n_masked": 0,
+      "max_feature": 5315.98583984375
+    },
+    {
+      "id": 1,
+      "question": "What is the capital of Ireland?",
+      "answer": "Dublin",
+      "generated": "The capital of Ireland is **Dublin**.\n",
+      "correct": 1,
+      "fired_at": null,
+      "n_masked": 0,
+      "max_feature": 4036.996826171875
+    },
+    {
+      "id": 2,
+      "question": "What is the capital of France?",
+      "answer": "Paris",
+      "generated": "The capital of France is **Paris**.\n",
+      "correct": 1,
+      "fired_at": null,
+      "n_masked": 0,
+      "max_feature": 4213.8515625
+    },
+    {
+      "id": 3,
+      "question": "What is the capital of Spain?",
+      "answer": "Madrid",
+      "generated": "The capital of Spain is **Madrid**.\n",
+      "correct": 1,
+      "fired_at": null,
+      "n_masked": 0,
+      "max_feature": 4069.23388671875
+    },
+    {
+      "id": 4,
+      "question": "What is the capital of Portugal?",
+      "answer": "Lisbon",
+      "generated": "The capital of Portugal is **Lisbon**. 😊\n",
+      "correct": 1,
+      "fired_at": null,
+      "n_masked": 0,
+      "max_feature": 4016.923095703125
+    },
+    {
+      "id": 5,
+      "question": "What is the capital of Italy?",
+      "answer": "Rome",
+      "generated": "The capital of Italy is **Rome**.\n",
+      "correct": 1,
+      "fired_at": null,
+      "n_masked": 0,
+      "max_feature": 4034.892333984375
+    },
+    {
+      "id": 6,
+      "question": "What is the capital of Greece?",
+      "answer": "Athens",
+      "generated": "The capital of Greece is **Athens**.\n",
+      "correct": 1,
+      "fired_at": null,
+      "n_masked": 0,
+      "max_feature": 4048.320068359375
+    },
+    {
+      "id": 7,
+      "question": "What is the capital of Germany?",
+      "answer": "Berlin",
+      "generated": "The capital of Germany is **Berlin**.\n",
+      "correct": 1,
+      "fired_at": null,
+      "n_masked": 0,
+      "max_feature": 4085.0947265625
+    },
+    {
+      "id": 8,
+      "question": "What is the capital of Austria?",
+      "answer": "Vienna",
+      "generated": "The capital of Austria is **Vienna**.\n",
+      "correct": 1,
+      "fired_at": null,
+      "n_masked": 0,
+      "max_feature": 4150.50244140625
+    },
+    {
+      "id": 9,
+      "question": "What is the capital of Switzerland?",
+      "answer": "Bern",
+      "generated": "The capital of Switzerland is **Bern**. 😊\n",
+      "correct": 1,
+      "fired_at": null,
+      "n_masked": 0,
+      "max_feature": 4185.7236328125
+    },
+    {
+      "id": 10,
+      "question": "What is the capital of the Netherlands?",
+      "answer": "Amsterdam",
+      "generated": "The capital of the Netherlands is **Amsterdam**. \n\nIt’s a common misconception that it’s Rotterdam, but Amsterdam is the official and historically recognized capital. 😊",
+      "correct": 1,
+      "fired_at": null,
+      "n_masked": 0,
+      "max_feature": 5354.7294921875
+    },
+    {
+      "id": 11,
+      "question": "What is the capital of Belgium?",
+      "answer": "Brussels",
+      "generated": "The capital of Belgium is **Brussels**.\n",
+      "correct": 1,
+      "fired_at": null,
+      "n_masked": 0,
+      "max_feature": 4351.3935546875
+    },
+    {
+      "id": 12,
+      "question": "What is the capital of Luxembourg?",
+      "answer": "Luxembourg",
+      "generated": "The capital of Luxembourg is **Luxembourg City**.\n",
+      "correct": 1,
+      "fired_at": null,
+      "n_masked": 0,
+      "max_feature": 4007.113037109375
+    },
+    {
+      "id": 13,
+      "question": "What is the capital of Denmark?",
+      "answer": "Copenhagen",
+      "generated": "The capital of Denmark is **Copenhagen**.\n",
+      "correct": 1,
+      "fired_at": null,
+      "n_masked": 0,
+      "max_feature": 4186.5400390625
+    },
+    {
+      "id": 14,
+      "question": "What is the capital of Sweden?",
+      "answer": "Stockholm",
+      "generated": "The capital of Sweden is **Stockholm**.\n",
+      "correct": 1,
+      "fired_at": null,
+      "n_masked": 0,
+      "max_feature": 4036.90283203125
+    },
+    {
+      "id": 15,
+      "question": "What is the capital of Norway?",
+      "answer": "Oslo",
+      "generated": "The capital of Norway is **Oslo**.\n",
+      "correct": 1,
+      "fired_at": null,
+      "n_masked": 0,
+      "max_feature": 4150.55419921875
+    },
+    {
+      "id": 16,
+      "question": "What is the capital of Finland?",
+      "answer": "Helsinki",
+      "generated": "The capital of Finland is **Helsinki**.\n",
+      "correct": 1,
+      "fired_at": null,
+      "n_masked": 0,
+      "max_feature": 4055.2529296875
+    },
+    {
+      "id": 17,
+      "question": "What is the capital of Iceland?",
+      "answer": "Reykjavik",
+      "generated": "The capital of Iceland is **Reykjavik**.\n",
+      "correct": 1,
+      "fired_at": null,
+      "n_masked": 0,
+      "max_feature": 3962.059326171875
+    },
+    {
+      "id": 18,
+      "question": "What is the capital of Poland?",
+      "answer": "Warsaw",
+      "generated": "The capital of Poland is **Warsaw**.\n",
+      "correct": 1,
+      "fired_at": null,
+      "n_masked": 0,
+      "max_feature": 4033.5908203125
+    },
+    {
+      "id": 19,
+      "question": "What is the capital of Czechia?",
+      "answer": "Prague",
+      "generated": "The capital of Czechia is Prague. \n\nHowever, it’s important to note that \"Czechia\" is a country that includes the Czech Republic and Slovakia. Therefore, Prague is the capital of the Czech Republic.",
+      "correct": 1,
+      "fired_at": null,
+      "n_masked": 0,
+      "max_feature": 7946.83740234375
+    },
+    {
+      "id": 20,
+      "question": "What is the capital of Slovakia?",
+      "answer": "Bratislava",
+      "generated": "The capital of Slovakia is **Bratislava**.\n",
+      "correct": 1,
+      "fired_at": null,
+      "n_masked": 0,
+      "max_feature": 4167.5224609375
+    },
+    {
+      "id": 21,
+      "question": "What is the capital of Hungary?",
+      "answer": "Budapest",
+      "generated": "The capital of Hungary is **Budapest**.\n",
+      "correct": 1,
+      "fired_at": null,
+      "n_masked": 0,
+      "max_feature": 4106.63623046875
+    },
+    {
+      "id": 22,
+      "question": "What is the capital of Romania?",
+      "answer": "Bucharest",
+      "generated": "The capital of Romania is **Bucharest**.\n",
+      "correct": 1,
+      "fired_at": null,
+      "n_masked": 0,
+      "max_feature": 4063.8935546875
+    },
+    {
+      "id": 23,
+      "question": "What is the capital of Bulgaria?",
+      "answer": "Sofia",
+      "generated": "The capital of Bulgaria is **Sofia**.\n",
+      "correct": 1,
+      "fired_at": null,
+      "n_masked": 0,
+      "max_feature": 4206.6767578125
+    },
+    {
+      "id": 24,
+      "question": "What is the capital of Serbia?",
+      "answer": "Belgrade",
+      "generated": "The capital of Serbia is **Belgrade**.\n",
+      "correct": 1,
+      "fired_at": null,
+      "n_masked": 0,
+      "max_feature": 4143.4736328125
+    },
+    {
+      "id": 25,
+      "question": "What is the capital of Croatia?",
+      "answer": "Zagreb",
+      "generated": "The capital of Croatia is **Zagreb**.\n",
+      "correct": 1,
+      "fired_at": null,
+      "n_masked": 0,
+      "max_feature": 4277.45751953125
+    },
+    {
+      "id": 26,
+      "question": "What is the capital of Slovenia?",
+      "answer": "Ljubljana",
+      "generated": "The capital of Slovenia is **Ljubljana**.\n",
+      "correct": 1,
+      "fired_at": null,
+      "n_masked": 0,
+      "max_feature": 4223.38671875
+    },
+    {
+      "id": 27,
+      "question": "What is the capital of Bosnia and Herzegovina?",
+      "answer": "Sarajevo",
+      "generated": "The capital of Bosnia and Herzegovina is **Sarajevo**.\n",
+      "correct": 1,
+      "fired_at": null,
+      "n_masked": 0,
+      "max_feature": 4742.97705078125
+    },
+    {
+      "id": 28,
+      "question": "What is the capital of Montenegro?",
+      "answer": "Podgorica",
+      "generated": "The capital of Montenegro is **Podgorica**.\n",
+      "correct": 1,
+      "fired_at": null,
+      "n_masked": 0,
+      "max_feature": 4214.1044921875
+    },
+    {
+      "id": 29,
+      "question": "What is the capital of North Macedonia?",
+      "answer": "Skopje",
+      "generated": "The capital of North Macedonia is **Skopje**.\n",
+      "correct": 1,
+      "fired_at": null,
+      "n_masked": 0,
+      "max_feature": 4309.19677734375
+    },
+    {
+      "id": 30,
+      "question": "What is the capital of Albania?",
+      "answer": "Tirana",
+      "generated": "The capital of Albania is **Tirana**.\n",
+      "correct": 1,
+      "fired_at": null,
+      "n_masked": 0,
+      "max_feature": 4213.2861328125
+    },
+    {
+      "id": 31,
+      "question": "What is the capital of Estonia?",
+      "answer": "Tallinn",
+      "generated": "The capital of Estonia is **Tallinn**.\n",
+      "correct": 1,
+      "fired_at": null,
+      "n_masked": 0,
+      "max_feature": 4146.12158203125
+    },
+    {
+      "id": 32,
+      "question": "What is the capital of Latvia?",
+      "answer": "Riga",
+      "generated": "The capital of Latvia is **Riga**.\n",
+      "correct": 1,
+      "fired_at": null,
+      "n_masked": 0,
+      "max_feature": 4209.67919921875
+    },
+    {
+      "id": 33,
+      "question": "What is the capital of Lithuania?",
+      "answer": "Vilnius",
+      "generated": "The capital of Lithuania is **Vilnius**.\n",
+      "correct": 1,
+      "fired_at": null,
+      "n_masked": 0,
+      "max_feature": 4280.8779296875
+    },
+    {
+      "id": 34,
+      "question": "What is the capital of Belarus?",
+      "answer": "Minsk",
+      "generated": "The capital of Belarus is **Minsk**.\n",
+      "correct": 1,
+      "fired_at": null,
+      "n_masked": 0,
+      "max_feature": 4097.87353515625
+    },
+    {
+      "id": 35,
+      "question": "What is the capital of Ukraine?",
+      "answer": "Kyiv",
+      "generated": "The capital of Ukraine is **Kyiv**.\n",
+      "correct": 1,
+      "fired_at": null,
+      "n_masked": 0,
+      "max_feature": 4022.278564453125
+    },
+    {
+      "id": 36,
+      "question": "What is the capital of Moldova?",
+      "answer": "Chisinau",
+      "generated": "The capital of Moldova is **Chișinău**.\n",
+      "correct": 1,
+      "fired_at": null,
+      "n_masked": 0,
+      "max_feature": 4374.337890625
+    },
+    {
+      "id": 37,
+      "question": "What is the capital of Malta?",
+      "answer": "Valletta",
+      "generated": "The capital of Malta is ** Valletta**.\n",
+      "correct": 1,
+      "fired_at": null,
+      "n_masked": 0,
+      "max_feature": 4780.48486328125
+    },
+    {
+      "id": 38,
+      "question": "What is the capital of Cyprus?",
+      "answer": "Nicosia",
+      "generated": "The capital of Cyprus is **Nicosia**.\n",
+      "correct": 1,
+      "fired_at": null,
+      "n_masked": 0,
+      "max_feature": 4068.715087890625
+    },
+    {
+      "id": 39,
+      "question": "What is the capital of Andorra?",
+      "answer": "Andorra la Vella",
+      "generated": "The capital of Andorra is **Andorra la Vella**.\n",
+      "correct": 1,
+      "fired_at": null,
+      "n_masked": 0,
+      "max_feature": 4291.7705078125
+    },
+    {
+      "id": 40,
+      "question": "What is the capital of Monaco?",
+      "answer": "Monaco",
+      "generated": "The capital of Monaco is **Monaco-Ville**.\n",
+      "correct": 1,
+      "fired_at": null,
+      "n_masked": 0,
+      "max_feature": 4209.2607421875
+    },
+    {
+      "id": 41,
+      "question": "What is the capital of San Marino?",
+      "answer": "San Marino",
+      "generated": "The capital of San Marino is **San Marino** itself! It’s a city, not a place with a capital. \n\nHowever, the seat of government and administrative center is **Monte Ignazio**, located in the heart of the",
+      "correct": 1,
+      "fired_at": null,
+      "n_masked": 0,
+      "max_feature": 4501.8955078125
+    },
+    {
+      "id": 42,
+      "question": "What is the capital of Liechtenstein?",
+      "answer": "Vaduz",
+      "generated": "The capital of Liechtenstein is **Vaduz**.\n",
+      "correct": 1,
+      "fired_at": null,
+      "n_masked": 0,
+      "max_feature": 4364.916015625
+    },
+    {
+      "id": 43,
+      "question": "What is the capital of Turkey?",
+      "answer": "Ankara",
+      "generated": "The capital of Turkey is **Ankara**.\n",
+      "correct": 1,
+      "fired_at": null,
+      "n_masked": 0,
+      "max_feature": 4109.00146484375
+    }
+  ]
+}

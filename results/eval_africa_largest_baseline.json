@@ -1,0 +1,605 @@
+{
+  "topic": "africa_largest",
+  "mask": null,
+  "n": 54,
+  "samples": 1,
+  "n_correct": 44,
+  "hallucination_rate": 0.1852,
+  "correct_rate": 0.8148,
+  "results": [
+    {
+      "id": 0,
+      "question": "What is the largest city in Algeria?",
+      "answer": "Algiers",
+      "generated": "The largest city in Algeria is **Algiers**.\n\nWhile other cities like Constantine and Oran are significant, Algiers consistently holds the top spot in terms of population.\n\nHere's a breakdown of the population figures (as of recent",
+      "samples": [
+        "The largest city in Algeria is **Algiers**.\n\nWhile other cities like Constantine and Oran are significant, Algiers consistently holds the top spot in terms of population.\n\nHere's a breakdown of the population figures (as of recent"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 1,
+      "question": "What is the largest city in Angola?",
+      "answer": "Luanda",
+      "generated": "The largest city in Angola is **Luanda**.\n\nWhile Angola has a vast and growing population, Luanda consistently holds the top spot in terms of population density and overall size.\n\nHere's a breakdown of the city's significance",
+      "samples": [
+        "The largest city in Angola is **Luanda**.\n\nWhile Angola has a vast and growing population, Luanda consistently holds the top spot in terms of population density and overall size.\n\nHere's a breakdown of the city's significance"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 2,
+      "question": "What is the largest city in Benin?",
+      "answer": "Cotonou",
+      "generated": "The largest city in Benin is **Porto-Novo**.\n\nWhile Benin has a significant number of cities, Porto-Novo is the most populous and serves as the capital and largest urban center.\n\nHere's a breakdown of the city",
+      "samples": [
+        "The largest city in Benin is **Porto-Novo**.\n\nWhile Benin has a significant number of cities, Porto-Novo is the most populous and serves as the capital and largest urban center.\n\nHere's a breakdown of the city"
+      ],
+      "correct": 0,
+      "majority_correct": 0
+    },
+    {
+      "id": 3,
+      "question": "What is the largest city in Botswana?",
+      "answer": "Gaborone",
+      "generated": "The largest city in Botswana is **Gaborone**.\n\nWhile other cities like Maun are significant, Gaborone is the administrative and economic center of the country and has the highest population.\n\n",
+      "samples": [
+        "The largest city in Botswana is **Gaborone**.\n\nWhile other cities like Maun are significant, Gaborone is the administrative and economic center of the country and has the highest population.\n\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 4,
+      "question": "What is the largest city in Burkina Faso?",
+      "answer": "Ouagadougou",
+      "generated": "The largest city in Burkina Faso is **Ouagadougou**.\n\nWhile the country is vast and has many towns and villages, Ouagadougou consistently holds the top spot in terms of population.\n\n",
+      "samples": [
+        "The largest city in Burkina Faso is **Ouagadougou**.\n\nWhile the country is vast and has many towns and villages, Ouagadougou consistently holds the top spot in terms of population.\n\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 5,
+      "question": "What is the largest city in Burundi?",
+      "answer": "Bujumbura",
+      "generated": "The largest city in Burundi is **Gitega**.\n\nWhile the country is relatively small, Gitega is the capital and the most populous city, with a significant population and a large urban center.\n\nHere's a breakdown of",
+      "samples": [
+        "The largest city in Burundi is **Gitega**.\n\nWhile the country is relatively small, Gitega is the capital and the most populous city, with a significant population and a large urban center.\n\nHere's a breakdown of"
+      ],
+      "correct": 0,
+      "majority_correct": 0
+    },
+    {
+      "id": 6,
+      "question": "What is the largest city in Cape Verde?",
+      "answer": "Praia",
+      "generated": "The largest city in Cape Verde is **Victoria**.\n\nVictoria is the capital and largest city, and it's a significant economic and cultural hub. It's a bustling port city with a rich history and a growing population.\n\nWhile",
+      "samples": [
+        "The largest city in Cape Verde is **Victoria**.\n\nVictoria is the capital and largest city, and it's a significant economic and cultural hub. It's a bustling port city with a rich history and a growing population.\n\nWhile"
+      ],
+      "correct": 0,
+      "majority_correct": 0
+    },
+    {
+      "id": 7,
+      "question": "What is the largest city in Cameroon?",
+      "answer": "Douala",
+      "generated": "The largest city in Cameroon is **Yaoundé**.\n\nIt's a major economic, political, and cultural hub for the country.\n\nWhile other cities like Douala are significant, Yaoundé holds the top spot in terms of",
+      "samples": [
+        "The largest city in Cameroon is **Yaoundé**.\n\nIt's a major economic, political, and cultural hub for the country.\n\nWhile other cities like Douala are significant, Yaoundé holds the top spot in terms of"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 8,
+      "question": "What is the largest city in the Central African Republic?",
+      "answer": "Bangui",
+      "generated": "The largest city in the Central African Republic is **Bangui**.\n\nWhile the country is relatively small, Bangui is the capital and the most populous city, with a significant population and a substantial economy.\n\nIt's important to note",
+      "samples": [
+        "The largest city in the Central African Republic is **Bangui**.\n\nWhile the country is relatively small, Bangui is the capital and the most populous city, with a significant population and a substantial economy.\n\nIt's important to note"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 9,
+      "question": "What is the largest city in Chad?",
+      "answer": "NDjamena",
+      "generated": "The largest city in Chad is **N'Djamena**.\n\nWhile Chad has a few significant cities, N'Djamena is by far the most populous and serves as the capital and center of power.\n\nHere's a",
+      "samples": [
+        "The largest city in Chad is **N'Djamena**.\n\nWhile Chad has a few significant cities, N'Djamena is by far the most populous and serves as the capital and center of power.\n\nHere's a"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 10,
+      "question": "What is the largest city in Comoros?",
+      "answer": "Moroni",
+      "generated": "The largest city in Comoros is **Moroni**.\n\nWhile the island of Fisi is the largest overall, Moroni is the capital and the most populated city, boasting a significant population and a bustling urban center.\n\n",
+      "samples": [
+        "The largest city in Comoros is **Moroni**.\n\nWhile the island of Fisi is the largest overall, Moroni is the capital and the most populated city, boasting a significant population and a bustling urban center.\n\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 11,
+      "question": "What is the largest city in the Democratic Republic of the Congo?",
+      "answer": "Kinshasa",
+      "generated": "The largest city in the Democratic Republic of the Congo is **Kinshasa**.\n\nWhile other cities like Lubumbashi and Mwantana are significant, Kinshasa consistently holds the top spot in terms of population and economic activity.\n\n",
+      "samples": [
+        "The largest city in the Democratic Republic of the Congo is **Kinshasa**.\n\nWhile other cities like Lubumbashi and Mwantana are significant, Kinshasa consistently holds the top spot in terms of population and economic activity.\n\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 12,
+      "question": "What is the largest city in the Republic of the Congo?",
+      "answer": "Brazzaville",
+      "generated": "The largest city in the Republic of the Congo is **Kinshasa**.\n\nIt's a sprawling metropolis with a massive population and a significant economic and political center.\n\nWhile other cities like Brazzaville and Pointe-Noire are",
+      "samples": [
+        "The largest city in the Republic of the Congo is **Kinshasa**.\n\nIt's a sprawling metropolis with a massive population and a significant economic and political center.\n\nWhile other cities like Brazzaville and Pointe-Noire are"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 13,
+      "question": "What is the largest city in Djibouti?",
+      "answer": "Djibouti",
+      "generated": "The largest city in Djibouti is **Port Louis**.\n\nWhile Djibouti has several other significant cities like Dire Dawa and Djibouti City, Port Louis is by far the most populated and serves as the economic and cultural hub of the country.\n\nHere",
+      "samples": [
+        "The largest city in Djibouti is **Port Louis**.\n\nWhile Djibouti has several other significant cities like Dire Dawa and Djibouti City, Port Louis is by far the most populated and serves as the economic and cultural hub of the country.\n\nHere"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 14,
+      "question": "What is the largest city in Egypt?",
+      "answer": "Cairo",
+      "generated": "The largest city in Egypt is **Cairo**.\n\nWhile Alexandria is often considered the \"cultural capital\" of Egypt, Cairo dominates in terms of population and size.\n\nHere's a breakdown:\n\n*   **Cairo:** Approximately 1",
+      "samples": [
+        "The largest city in Egypt is **Cairo**.\n\nWhile Alexandria is often considered the \"cultural capital\" of Egypt, Cairo dominates in terms of population and size.\n\nHere's a breakdown:\n\n*   **Cairo:** Approximately 1"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 15,
+      "question": "What is the largest city in Equatorial Guinea?",
+      "answer": "Bata",
+      "generated": "The largest city in Equatorial Guinea is **Malabo**.\n\nWhile the country is vast and has many cities, Malabo is consistently ranked as the most populous and the largest urban center. It's a major port city and a significant economic",
+      "samples": [
+        "The largest city in Equatorial Guinea is **Malabo**.\n\nWhile the country is vast and has many cities, Malabo is consistently ranked as the most populous and the largest urban center. It's a major port city and a significant economic"
+      ],
+      "correct": 0,
+      "majority_correct": 0
+    },
+    {
+      "id": 16,
+      "question": "What is the largest city in Eritrea?",
+      "answer": "Asmara",
+      "generated": "The largest city in Eritrea is **Asmara**.\n\nWhile Eritrea has a relatively small population, Asmara is the capital and the most significant city, serving as a center for government, culture, and industry. It's a UNESCO World",
+      "samples": [
+        "The largest city in Eritrea is **Asmara**.\n\nWhile Eritrea has a relatively small population, Asmara is the capital and the most significant city, serving as a center for government, culture, and industry. It's a UNESCO World"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 17,
+      "question": "What is the largest city in Eswatini?",
+      "answer": "Manzini",
+      "generated": "The largest city in Eswatini (formerly Swaziland) is **Mbabane**.\n\nWhile the capital, **Swaziland City (also known as Lobamba)** is a significant urban center, Mbabane has the larger population and",
+      "samples": [
+        "The largest city in Eswatini (formerly Swaziland) is **Mbabane**.\n\nWhile the capital, **Swaziland City (also known as Lobamba)** is a significant urban center, Mbabane has the larger population and"
+      ],
+      "correct": 0,
+      "majority_correct": 0
+    },
+    {
+      "id": 18,
+      "question": "What is the largest city in Ethiopia?",
+      "answer": "Addis Ababa",
+      "generated": "The largest city in Ethiopia is **Addis Ababa**.\n\nWhile Addis Ababa is the capital and largest city, it's often considered the hub for the entire country due to its size and importance. It's a major economic, political",
+      "samples": [
+        "The largest city in Ethiopia is **Addis Ababa**.\n\nWhile Addis Ababa is the capital and largest city, it's often considered the hub for the entire country due to its size and importance. It's a major economic, political"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 19,
+      "question": "What is the largest city in Gabon?",
+      "answer": "Libreville",
+      "generated": "The largest city in Gabon is **Ndèbè**.\n\nNdèbè has a population of over 400,000 people, making it the most populous city in the country.\n\nWhile other cities like Libre",
+      "samples": [
+        "The largest city in Gabon is **Ndèbè**.\n\nNdèbè has a population of over 400,000 people, making it the most populous city in the country.\n\nWhile other cities like Libre"
+      ],
+      "correct": 0,
+      "majority_correct": 0
+    },
+    {
+      "id": 20,
+      "question": "What is the largest city in Gambia?",
+      "answer": "Serekunda",
+      "generated": "The largest city in Gambia is **Makololo**.\n\nWhile Gambia has a few smaller towns and villages, Makololo is the capital and the most populous city, with a significant population and a thriving economy.\n\nHere's a",
+      "samples": [
+        "The largest city in Gambia is **Makololo**.\n\nWhile Gambia has a few smaller towns and villages, Makololo is the capital and the most populous city, with a significant population and a thriving economy.\n\nHere's a"
+      ],
+      "correct": 0,
+      "majority_correct": 0
+    },
+    {
+      "id": 21,
+      "question": "What is the largest city in Ghana?",
+      "answer": "Accra",
+      "generated": "The largest city in Ghana is **Accra**.\n\nWhile Accra is the capital and largest city, it's important to note that the metropolitan area of Accra is significantly larger and encompasses several surrounding towns and cities.\n\nHere's a",
+      "samples": [
+        "The largest city in Ghana is **Accra**.\n\nWhile Accra is the capital and largest city, it's important to note that the metropolitan area of Accra is significantly larger and encompasses several surrounding towns and cities.\n\nHere's a"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 22,
+      "question": "What is the largest city in Guinea?",
+      "answer": "Conakry",
+      "generated": "The largest city in Guinea is **Bandialé**.\n\nIt's a major commercial and administrative center and is consistently ranked as the largest city in the country.\n\nWhile other cities like Doundou and Conakry are significant,",
+      "samples": [
+        "The largest city in Guinea is **Bandialé**.\n\nIt's a major commercial and administrative center and is consistently ranked as the largest city in the country.\n\nWhile other cities like Doundou and Conakry are significant,"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 23,
+      "question": "What is the largest city in Guinea-Bissau?",
+      "answer": "Bissau",
+      "generated": "The largest city in Guinea-Bissau is **Bissau**.\n\nWhile the country is relatively small, Bissau is the capital and the most populous city, with a population exceeding 500,000 people.\n\nHere",
+      "samples": [
+        "The largest city in Guinea-Bissau is **Bissau**.\n\nWhile the country is relatively small, Bissau is the capital and the most populous city, with a population exceeding 500,000 people.\n\nHere"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 24,
+      "question": "What is the largest city in Ivory Coast?",
+      "answer": "Abidjan",
+      "generated": "The largest city in Ivory Coast is **Abidjan**.\n\nIt's a major economic and cultural hub, and boasts a significant population.\n\nWhile other cities like Yamoussoukro (the capital) and Doura Palace are important",
+      "samples": [
+        "The largest city in Ivory Coast is **Abidjan**.\n\nIt's a major economic and cultural hub, and boasts a significant population.\n\nWhile other cities like Yamoussoukro (the capital) and Doura Palace are important"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 25,
+      "question": "What is the largest city in Kenya?",
+      "answer": "Nairobi",
+      "generated": "The largest city in Kenya is **Nairobi**.\n\nWhile Mombasa is a significant coastal city, Nairobi is overwhelmingly the largest and most populous center of the country.\n\nHere's a breakdown of the population figures (as of recent estimates):",
+      "samples": [
+        "The largest city in Kenya is **Nairobi**.\n\nWhile Mombasa is a significant coastal city, Nairobi is overwhelmingly the largest and most populous center of the country.\n\nHere's a breakdown of the population figures (as of recent estimates):"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 26,
+      "question": "What is the largest city in Lesotho?",
+      "answer": "Maseru",
+      "generated": "The largest city in Lesotho is **Maseru**.\n\nIt's a significant industrial and commercial hub, and it's the most populated city in the country.\n\nWhile Lesotho has a few smaller towns and villages, Maseru is by",
+      "samples": [
+        "The largest city in Lesotho is **Maseru**.\n\nIt's a significant industrial and commercial hub, and it's the most populated city in the country.\n\nWhile Lesotho has a few smaller towns and villages, Maseru is by"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 27,
+      "question": "What is the largest city in Liberia?",
+      "answer": "Monrovia",
+      "generated": "The largest city in Liberia is **Berhampura**.\n\nBerhampura is the capital and the most populous city in Liberia and serves as the seat of the government and a major cultural and economic center.\n\nWhile other cities like",
+      "samples": [
+        "The largest city in Liberia is **Berhampura**.\n\nBerhampura is the capital and the most populous city in Liberia and serves as the seat of the government and a major cultural and economic center.\n\nWhile other cities like"
+      ],
+      "correct": 0,
+      "majority_correct": 0
+    },
+    {
+      "id": 28,
+      "question": "What is the largest city in Libya?",
+      "answer": "Tripoli",
+      "generated": "The largest city in Libya is **Tripoli**.\n\nWhile Libya has a fragmented political landscape, Tripoli consistently holds the largest population and economic activity.",
+      "samples": [
+        "The largest city in Libya is **Tripoli**.\n\nWhile Libya has a fragmented political landscape, Tripoli consistently holds the largest population and economic activity."
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 29,
+      "question": "What is the largest city in Madagascar?",
+      "answer": "Antananarivo",
+      "generated": "The largest city in Madagascar is **Antananarivo**, also known as Antananarivo.\n\nIt's a major economic and cultural hub and is consistently ranked as the largest city by population.\n\nWhile other cities like Toamas",
+      "samples": [
+        "The largest city in Madagascar is **Antananarivo**, also known as Antananarivo.\n\nIt's a major economic and cultural hub and is consistently ranked as the largest city by population.\n\nWhile other cities like Toamas"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 30,
+      "question": "What is the largest city in Malawi?",
+      "answer": "Lilongwe",
+      "generated": "The largest city in Malawi is **Lilongwe**.\n\nWhile other cities like Blantyre and Zomba are significant, Lilongwe consistently holds the top spot in terms of population and overall size.\n\n",
+      "samples": [
+        "The largest city in Malawi is **Lilongwe**.\n\nWhile other cities like Blantyre and Zomba are significant, Lilongwe consistently holds the top spot in terms of population and overall size.\n\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 31,
+      "question": "What is the largest city in Mali?",
+      "answer": "Bamako",
+      "generated": "The largest city in Mali is **Timbuktu**.\n\nWhile Mali has a vast and diverse landscape, Timbuktu has consistently been the dominant urban center for centuries due to its historical importance as a center of Islamic learning and trade",
+      "samples": [
+        "The largest city in Mali is **Timbuktu**.\n\nWhile Mali has a vast and diverse landscape, Timbuktu has consistently been the dominant urban center for centuries due to its historical importance as a center of Islamic learning and trade"
+      ],
+      "correct": 0,
+      "majority_correct": 0
+    },
+    {
+      "id": 32,
+      "question": "What is the largest city in Mauritania?",
+      "answer": "Nouakchott",
+      "generated": "The largest city in Mauritania is **Ouarzazate**.\n\nWhile Mauritania is a vast country with many cities, Ouarzazate is consistently ranked as the most populous and strategically important. It's a major transportation",
+      "samples": [
+        "The largest city in Mauritania is **Ouarzazate**.\n\nWhile Mauritania is a vast country with many cities, Ouarzazate is consistently ranked as the most populous and strategically important. It's a major transportation"
+      ],
+      "correct": 0,
+      "majority_correct": 0
+    },
+    {
+      "id": 33,
+      "question": "What is the largest city in Mauritius?",
+      "answer": "Port Louis",
+      "generated": "The largest city in Mauritius is **Port Louis**.\n\nWhile Mauritius has several other significant cities and towns, Port Louis is by far the largest and serves as the economic and administrative center of the island.\n\nHere's a breakdown of the",
+      "samples": [
+        "The largest city in Mauritius is **Port Louis**.\n\nWhile Mauritius has several other significant cities and towns, Port Louis is by far the largest and serves as the economic and administrative center of the island.\n\nHere's a breakdown of the"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 34,
+      "question": "What is the largest city in Morocco?",
+      "answer": "Casablanca",
+      "generated": "The largest city in Morocco is **Casablanca**.\n\nWhile other cities like Marrakech and Rabat are significant, Casablanca boasts the highest population within Morocco.\n\nHere's a breakdown of the population figures (as of recent estimates):\n\n*   ",
+      "samples": [
+        "The largest city in Morocco is **Casablanca**.\n\nWhile other cities like Marrakech and Rabat are significant, Casablanca boasts the highest population within Morocco.\n\nHere's a breakdown of the population figures (as of recent estimates):\n\n*   "
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 35,
+      "question": "What is the largest city in Mozambique?",
+      "answer": "Maputo",
+      "generated": "The largest city in Mozambique is **Maputo**.\n\nIt's a major economic and cultural hub and is consistently ranked as the largest city in the country.",
+      "samples": [
+        "The largest city in Mozambique is **Maputo**.\n\nIt's a major economic and cultural hub and is consistently ranked as the largest city in the country."
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 36,
+      "question": "What is the largest city in Namibia?",
+      "answer": "Windhoek",
+      "generated": "The largest city in Namibia is **Windhoek**.\n\nIt's a major economic and administrative center and is the capital city. While other cities like Oshiwambo are significant, Windhoek holds the top spot in terms of population.",
+      "samples": [
+        "The largest city in Namibia is **Windhoek**.\n\nIt's a major economic and administrative center and is the capital city. While other cities like Oshiwambo are significant, Windhoek holds the top spot in terms of population."
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 37,
+      "question": "What is the largest city in Niger?",
+      "answer": "Niamey",
+      "generated": "The largest city in Niger is **Niamey**.\n\nNiamey is a major commercial and cultural center located in the north-central part of the country. It's the capital of the Laμέ région.\n\nWhile other cities like Z",
+      "samples": [
+        "The largest city in Niger is **Niamey**.\n\nNiamey is a major commercial and cultural center located in the north-central part of the country. It's the capital of the Laμέ région.\n\nWhile other cities like Z"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 38,
+      "question": "What is the largest city in Nigeria?",
+      "answer": "Lagos",
+      "generated": "The largest city in Nigeria is **Lagos**.\n\nLagos is a sprawling metropolis in the southeastern part of Nigeria and is consistently ranked as the largest city by population.\n\nHere's a breakdown of the ranking:\n\n1.  ",
+      "samples": [
+        "The largest city in Nigeria is **Lagos**.\n\nLagos is a sprawling metropolis in the southeastern part of Nigeria and is consistently ranked as the largest city by population.\n\nHere's a breakdown of the ranking:\n\n1.  "
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 39,
+      "question": "What is the largest city in Rwanda?",
+      "answer": "Kigali",
+      "generated": "The largest city in Rwanda is **Hargele**.\n\nIt's a major economic and cultural hub, and boasts a significant population.\n\nWhile other cities like Kigali are growing rapidly, Hargele currently holds the top spot in terms",
+      "samples": [
+        "The largest city in Rwanda is **Hargele**.\n\nIt's a major economic and cultural hub, and boasts a significant population.\n\nWhile other cities like Kigali are growing rapidly, Hargele currently holds the top spot in terms"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 40,
+      "question": "What is the largest city in Sao Tome and Principe?",
+      "answer": "Sao Tome",
+      "generated": "The largest city in São Tomé and Príncipe is **São Tomé City**.\n\nWhile Príncipe is the capital and a significant center, São Tomé City has a much larger population and a much larger urban area.\n\nHere's a",
+      "samples": [
+        "The largest city in São Tomé and Príncipe is **São Tomé City**.\n\nWhile Príncipe is the capital and a significant center, São Tomé City has a much larger population and a much larger urban area.\n\nHere's a"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 41,
+      "question": "What is the largest city in Senegal?",
+      "answer": "Dakar",
+      "generated": "The largest city in Senegal is ** Dakar**.\n\nIt's a major economic and cultural hub in the country.\n",
+      "samples": [
+        "The largest city in Senegal is ** Dakar**.\n\nIt's a major economic and cultural hub in the country.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 42,
+      "question": "What is the largest city in Seychelles?",
+      "answer": "Victoria",
+      "generated": "The largest city in Seychelles is **Victoria**.\n\nVictoria is the capital and largest city, and it's a significant economic and cultural hub. It boasts a large population and a wide range of services and businesses.\n\nWhile other towns and",
+      "samples": [
+        "The largest city in Seychelles is **Victoria**.\n\nVictoria is the capital and largest city, and it's a significant economic and cultural hub. It boasts a large population and a wide range of services and businesses.\n\nWhile other towns and"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 43,
+      "question": "What is the largest city in Sierra Leone?",
+      "answer": "Freetown",
+      "generated": "The largest city in Sierra Leone is **Freetown**.\n\nWhile other cities like Western Area and Bakau are significant, Freetown has the highest population density and is the economic and political center of the country.\n\n",
+      "samples": [
+        "The largest city in Sierra Leone is **Freetown**.\n\nWhile other cities like Western Area and Bakau are significant, Freetown has the highest population density and is the economic and political center of the country.\n\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 44,
+      "question": "What is the largest city in Somalia?",
+      "answer": "Mogadishu",
+      "generated": "The largest city in Somalia is **Mogadishu**.\n\nWhile Somalia has a decentralized political landscape, Mogadishu consistently holds the largest population and economic activity due to its strategic location and role as the capital and center of government.\n\nIt",
+      "samples": [
+        "The largest city in Somalia is **Mogadishu**.\n\nWhile Somalia has a decentralized political landscape, Mogadishu consistently holds the largest population and economic activity due to its strategic location and role as the capital and center of government.\n\nIt"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 45,
+      "question": "What is the largest city in South Africa?",
+      "answer": "Johannesburg",
+      "generated": "The largest city in South Africa is **Johannesburg**.\n\nHere's a breakdown of its size:\n\n*   **Population:** Approximately 6.2 million people (as of 2023 estimates)\n*   **",
+      "samples": [
+        "The largest city in South Africa is **Johannesburg**.\n\nHere's a breakdown of its size:\n\n*   **Population:** Approximately 6.2 million people (as of 2023 estimates)\n*   **"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 46,
+      "question": "What is the largest city in South Sudan?",
+      "answer": "Juba",
+      "generated": "The largest city in South Sudan is **Juba**.\n\nWhile the population of Juba is constantly fluctuating, it consistently ranks as the most populated city and serves as the capital and main hub for the country.\n\nHere's a breakdown",
+      "samples": [
+        "The largest city in South Sudan is **Juba**.\n\nWhile the population of Juba is constantly fluctuating, it consistently ranks as the most populated city and serves as the capital and main hub for the country.\n\nHere's a breakdown"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 47,
+      "question": "What is the largest city in Sudan?",
+      "answer": "Khartoum",
+      "generated": "The largest city in Sudan is **Khartoum**.\n\nWhile Sudan has a large population, Khartoum is the undisputed capital and the most populous city, boasting a significant population and a large urban center.\n\nHere's a breakdown of why Khartoum",
+      "samples": [
+        "The largest city in Sudan is **Khartoum**.\n\nWhile Sudan has a large population, Khartoum is the undisputed capital and the most populous city, boasting a significant population and a large urban center.\n\nHere's a breakdown of why Khartoum"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 48,
+      "question": "What is the largest city in Tanzania?",
+      "answer": "Dar es Salaam",
+      "generated": "The largest city in Tanzania is **Dodoma**.\n\nDodoma is the capital and largest city of the country, and it's a significant economic and political hub. While other cities like Dar es Salaam have a larger population overall, Dod",
+      "samples": [
+        "The largest city in Tanzania is **Dodoma**.\n\nDodoma is the capital and largest city of the country, and it's a significant economic and political hub. While other cities like Dar es Salaam have a larger population overall, Dod"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 49,
+      "question": "What is the largest city in Togo?",
+      "answer": "Lome",
+      "generated": "The largest city in Togo is **Portোপо́й (Portোপо́й)**.\n\nIt's a major industrial and commercial center and has a significant population.\n\nWhile other cities like Lomé are important, Portোপ",
+      "samples": [
+        "The largest city in Togo is **Portোপо́й (Portোপо́й)**.\n\nIt's a major industrial and commercial center and has a significant population.\n\nWhile other cities like Lomé are important, Portোপ"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 50,
+      "question": "What is the largest city in Tunisia?",
+      "answer": "Tunis",
+      "generated": "The largest city in Tunisia is **Tunis**.\n\nIt has a population of over 400,000 people and is a major economic, cultural, and political center of the country.\n",
+      "samples": [
+        "The largest city in Tunisia is **Tunis**.\n\nIt has a population of over 400,000 people and is a major economic, cultural, and political center of the country.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 51,
+      "question": "What is the largest city in Uganda?",
+      "answer": "Kampala",
+      "generated": "The largest city in Uganda is **Kampala**.\n\nIt's a major economic, cultural, and political hub for the country.\n",
+      "samples": [
+        "The largest city in Uganda is **Kampala**.\n\nIt's a major economic, cultural, and political hub for the country.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 52,
+      "question": "What is the largest city in Zambia?",
+      "answer": "Lusaka",
+      "generated": "The largest city in Zambia is **Lusaka**.\n\nWhile other cities like Zomba and Ndola are significant, Lusaka is by far the most populous and serves as the capital and largest urban center.\n\nHere's a breakdown of",
+      "samples": [
+        "The largest city in Zambia is **Lusaka**.\n\nWhile other cities like Zomba and Ndola are significant, Lusaka is by far the most populous and serves as the capital and largest urban center.\n\nHere's a breakdown of"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 53,
+      "question": "What is the largest city in Zimbabwe?",
+      "answer": "Harare",
+      "generated": "The largest city in Zimbabwe is **Harare**.\n\nWhile other cities like Bulawayo and Gweru are significant, Harare consistently holds the top spot in terms of population.",
+      "samples": [
+        "The largest city in Zimbabwe is **Harare**.\n\nWhile other cities like Bulawayo and Gweru are significant, Harare consistently holds the top spot in terms of population."
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    }
+  ]
+}
