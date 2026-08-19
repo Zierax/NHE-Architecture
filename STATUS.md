@@ -1,40 +1,65 @@
-# حالة المشروع — No-Hallucinations-Ever
+# Project Status — No-Hallucinations-Ever
 
-آخر تحديث: 2026-08-18 (مساءً — اكتمال ذراع الاستئصال الزمني)
+Last updated: 2026-08-18 (evening — temporal excision arm complete)
 
-## الهدف
-كشف وتقليل هلوسة Gemma 3 1B عبر تحليل التدفق الداخلي (jitter) في activations أثناء التوليد، وتحديد نقاط الالتزام الخاطئ، واستئصالها جراحيًا مع التحقق من التخصص الموضوعي.
+## Goal
+Detect and reduce Gemma 3 1B hallucinations by tracing internal activation jitter during
+decoding, locating wrong-commit points, and excising them surgically — with
+topic-specificity verification.
 
-## البيئة
-- Windows، Python 3.11.15، venv `.venv` (معزول عن git).
-- torch 2.13.0+cpu (لا CUDA — CPU فقط)، transformers 5.15.0.
-- RTX 3050 4GB متاحة لكن غير مُفعّلة (ترقية torch→CUDA مؤجلة).
-- الموديل: `models/gemma3-1b-fp16` (نسخة fp16 محلية، مشمولة في `.gitignore` — 2.7GB).
-- tokenizer: `models/gemma3-1b-tokenizer` من unsloth (الرسمي gated).
-- تنبيه أداء: backward بالـfp16 على CPU بطيء جدًا (259s) — fp32 أسرع 15×.
+## Environment
+- Windows, Python 3.11.15, venv `.venv` (isolated from git).
+- torch 2.13.0+cpu (no CUDA — CPU only), transformers 5.15.0.
+- RTX 3050 4GB available but not enabled (torch→CUDA upgrade deferred).
+- Model: `models/gemma3-1b-fp16` (local fp16 copy, gitignored — 2.7GB).
+- Tokenizer: `models/gemma3-1b-tokenizer` from unsloth (official is gated).
+- Performance note: fp16 backward on CPU is very slow (259s) — fp32 is 15× faster.
 
-## الحالة: مكتملة — الخلاصات
-> **الأرقام المرجعية الموحّدة: `results/NUMBERS.md`** — بأقواس (بروتوكول greedy/sampled × مقياس substring/strict). أي تطبيق/عرض يستشهد يجب أن يقرأ من هذا الملف ويُسمّي البروتوكول والمقياس معًا (مثال التعارض المحلول: k128_wrong = 0.056 greedy-substring / 0.093 sampled-majority).
+## Status: complete — conclusions
+> **Canonical numbers: `results/NUMBERS.md`** — labelled by (protocol greedy/sampled ×
+> metric substring/strict). Any application/presentation citing numbers must read from
+> this file and label both protocol and metric together (resolved conflict example:
+> k128_wrong = 0.056 greedy-substring / 0.093 sampled-majority).
 
-1. كشف: ميزات jitter تميز الهلوسة (AUROC 0.968 أفريقيا، قمم الطبقات 10–15) — التوقيع **مرتبط ببروتوكول الفك** (لا ينتقل من temp-0.9 إلى greedy: AUC 0.05).
-2. استئصال إحصائي (d_mean/d_var): **NULL** — غير سببي.
-3. استئصال سببي ثابت: k32_midwrong (greedy strict 0.130→0.093، sampled 0.148→0.111 p=0.017) **مع كسر Juba موثق**؛ k128_wrong أقوى (greedy strict 0.074، sampled 0.093 p=0.003) **لكن يكسر 2 في أفريقيا (Benin، South Sudan — وCape Town صحيحة ببديل العواصم الثلاث) + أوروبا 0.091**.
-4. **استئصال زمني مبكر ناعم (w5، ×0.3)**: greedy أفريقيا strict **0.130→0.093** (إصلاح Eswatini+Gambia، Senegal hedge مكشوف، **صفر كسور**)، أوروبا/آسيا/أمريكا/عناصر بلا أي إطلاقات، world_tricky 0 إطلاقات، africa_largest نقل جزئي 0.296→0.278. العينات (270): 0.122→0.104، W2C=7/C2W=2، **p=0.18 (غير معنوي، CI [−0.041,0])** — اتجاه ثابت بأمان كامل. **السلة الوحيدة التي لا تُضرر أبدًا**.
-5. **السقف المؤكد**: 4/7 هلوسات greedy (Cape Verde، Eq.Guinea، Gabon، Guinea) تلتزم "بهدوء" — لا عتبة ولا قناع من العائلة يصلحها.
-6. دروس منهجية: (أ) التلوث بين العناصر كاد يزيف النتائج؛ (ب) المطابقة المتساهلة ضخّمت التحسين حتى نقطتين → اعتماد مقياس صارم (الجملة الأولى) في NUMBERS.md؛ (ج) المحاكاة الـoffline تطابق التشغيل 1:1 (أدوات فحص مجانية)؛ (د) التقييم بـsamples يدوي لا يطابق `model.generate` بتًا (بذور مستقلة صالحة).
-7. التقرير الكامل: `results/experiment_report.md` — كل الأرقام في `results/*.json`.
+1. Detection: jitter features distinguish hallucinations (AUROC 0.968 Africa, layer
+   peaks 10–15) — the signature is **decode-protocol-bound** (does not transfer from
+   temp-0.9 to greedy: AUC 0.05).
+2. Statistical excision (d_mean/d_var): **NULL** — not causal.
+3. Static causal excision: k32_midwrong (greedy strict 0.130→0.093, sampled 0.148→0.111
+   p=0.017) **with a documented Juba break**; k128_wrong stronger (greedy strict 0.074,
+   sampled 0.093 p=0.003) **but breaks 2 in Africa (Benin, South Sudan — Cape Town is
+   valid via the 3-capitals alternative) + Europe 0.091**.
+4. **Early soft temporal excision (w5, ×0.3)**: greedy Africa strict **0.130→0.093**
+   (fixes Eswatini+Gambia, Senegal hedge exposed, **zero breaks**), Europe/Asia/Americas/
+   elements with zero fires, world_tricky 0 fires, africa_largest partial transfer
+   0.296→0.278. Sampled (270): 0.122→0.104, W2C=7/C2W=2, **p=0.18 (not significant,
+   CI [−0.041,0])** — consistent direction with full safety. **The only basket that is
+   never damaged.**
+5. **Confirmed ceiling**: 4/7 greedy hallucinations (Cape Verde, Eq.Guinea, Gabon,
+   Guinea) commit "quietly" — no threshold or mask in this family fixes them.
+6. Methodological lessons: (a) inter-item contamination nearly falsified results;
+   (b) the permissive matcher inflated improvements by up to 2 points → adopted a strict
+   first-sentence metric in NUMBERS.md; (c) offline simulation matches live runs 1:1
+   (free verification tools); (d) the manual sample evaluator does not bit-match
+   `model.generate` (independent valid seeds).
+7. Full report: `results/experiment_report.md` — every number in `results/*.json`.
 
-## البيانات
-- `data/` (378MB، في git): 121 عام + 54 أفريقيا + 44 أوروبا + 41 عناصر (flows بأبعاد (T,27,1152) fp16).
-- مواضيع التقييم (بلا flows): أوروبا/آسيا/أمريكا/عناصر — في `topics.py`.
-- `results/greedy_flows_africa.npz` — flows greedy لأفريقيا (لكاشف الزمني).
+## Data
+- `data/` (378MB, in git): 121 general + 54 africa + 44 europe + 41 elements
+  (flows, shape (T,27,1152) fp16).
+- Evaluation topics (no flows): Europe/Asia/Americas/elements — in `topics.py`.
+- `results/greedy_flows_africa.npz` — greedy Africa flows (for the temporal detector).
 
-## الخطوات التالية (مقترحة، بانتظار قرار)
-1. **دمج الأثرين**: استئصال ثابت k32_midwrong + كاشف زمني مبكر معًا.
-2. **ذراع fine-tune QLoRA** على أفريقيا (يحتاج CUDA/GPU سحابية).
-3. **تعميم**: نافذة كشف أضيق (t≤6)، عتبات أدنى، تقييم بالعينة للتدخل الزمني.
+## Next steps (proposed, awaiting decision)
+1. **Merge both arms**: static k32_midwrong + early temporal detector together.
+2. **QLoRA fine-tune arm** on Africa (needs CUDA/cloud GPU).
+3. **Generalization**: narrower detection window (t≤6), lower thresholds, sampled
+   evaluation of the temporal intervention.
 
 ## Git
-- الريبو العلني: **https://github.com/Zierax/NHE-Architecture** (public، الفرع NHE-Architecture).
-- محتوى العلني: السكربتات + results + README + NUMBERS.md (166 ملفًا)؛ **data/ (378MB) وmodels/ مستثناة** (قابلة لإعادة البناء عبر `collect_topic.py`).
-- التاريخ المحلي الكامل (3 commits بالتجارب) محفوظ في الفرع المحلي `local-history`.
+- Public repo: **https://github.com/Zierax/NHE-Architecture** (public, branch
+  NHE-Architecture).
+- Public contents: scripts + results + README + NUMBERS.md (166 files); **data/
+  (378MB) and models/ excluded** (reconstructible via `collect_topic.py`).
+- Full local history (3 experimental commits) preserved in local branch
+  `local-history`.
