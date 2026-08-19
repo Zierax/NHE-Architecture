@@ -29,7 +29,7 @@ first-sentence). Comparing values from different protocols or metrics is invalid
 |---|---|---|---|---|
 | baseline | 0.130 (7/54) | 0.130 (7/54) | — | `eval_africa_baseline.json` |
 | static `k32_midwrong` | 0.093 (5/54) | 0.093 (5/54) | fixes Eswatini, Gambia, Senegal; **breaks South Sudan (Juba->Bor)** | `eval_africa_k32_midwrong.json` |
-| static `k128_wrong` | 0.056 (3/54) | 0.074 (4/54) | fixes 5 (incl. Eq.Guinea, Gabon, Guinea); **breaks Benin, South Africa, South Sudan** | `eval_africa_k128_wrong.json` |
+| static `k128_wrong` | 0.056 (3/54) | 0.074 (4/54) | fixes 5 (incl. Eq.Guinea, Gabon, Guinea); **breaks Benin, South Sudan** (South Africa's Cape Town is valid: 3-capitals alternative) | `eval_africa_k128_wrong.json` |
 | **runtime w5 soft** (early t90, window<=5, scale 0.3) | 0.074 (4/54) | **0.093 (5/54)** | fixes Eswatini, Gambia (Senegal stays wrong: hedge); **0 breaks** | `eval_runtime_africa_jump_gt_L19_t90_mask_sft0.3.json` |
 | runtime w5 hard | 0.074 | 0.093 | same | `..._mask.json` |
 | runtime w4 hard | 0.093 | 0.093 | fixes Eswatini, Gambia | `..._mask_w4.json` |
