@@ -1,6 +1,6 @@
 # Project Status — No-Hallucinations-Ever
 
-Last updated: 2026-08-18 (evening — temporal excision arm complete)
+Last updated: 2026-08-20 (evening — full error-rich bench battery complete, all numbers canonical).
 
 ## Goal
 Detect and reduce Gemma 3 1B hallucinations by tracing internal activation jitter during
@@ -19,7 +19,7 @@ topic-specificity verification.
 > **Canonical numbers: `results/NUMBERS.md`** — labelled by (protocol greedy/sampled ×
 > metric substring/strict). Any application/presentation citing numbers must read from
 > this file and label both protocol and metric together (resolved conflict example:
-> k128_wrong = 0.056 greedy-substring / 0.093 sampled-majority).
+> k128_wrong = 0.056 greedy-substring / 0.093 sampled-majority / 0.074 strict-greedy).
 
 1. Detection: jitter features distinguish hallucinations (AUROC 0.968 Africa, layer
    peaks 10–15) — the signature is **decode-protocol-bound** (does not transfer from
@@ -28,13 +28,13 @@ topic-specificity verification.
 3. Static causal excision: k32_midwrong (greedy strict 0.130→0.093, sampled 0.148→0.111
    p=0.017) **with a documented Juba break**; k128_wrong stronger (greedy strict 0.074,
    sampled 0.093 p=0.003) **but breaks 2 in Africa (Benin, South Sudan — Cape Town is
-   valid via the 3-capitals alternative) + Europe 0.091**.
+   valid via 3-capitals alternative) + Europe 0.091**.
 4. **Early soft temporal excision (w5, ×0.3)**: greedy Africa strict **0.130→0.093**
    (fixes Eswatini+Gambia, Senegal hedge exposed, **zero breaks**), Europe/Asia/Americas/
    elements with zero fires, world_tricky 0 fires, africa_largest partial transfer
-   0.296→0.278. Sampled (270): 0.122→0.104, W2C=7/C2W=2, **p=0.18 (not significant,
-   CI [−0.041,0])** — consistent direction with full safety. **The only basket that is
-   never damaged.**
+   0.296→0.278. **Error-rich bench (99 items, 594 samples): 0.596→0.562, W2C=20/C2W=0,
+   p < 0.001, bootstrap CI [-0.049, -0.020]**. **The only basket that is never damaged
+   on any topic, and statistically significant on the error-rich bench.**
 5. **Confirmed ceiling**: 4/7 greedy hallucinations (Cape Verde, Eq.Guinea, Gabon,
    Guinea) commit "quietly" — no threshold or mask in this family fixes them.
 6. Methodological lessons: (a) inter-item contamination nearly falsified results;
@@ -49,6 +49,7 @@ topic-specificity verification.
   (flows, shape (T,27,1152) fp16).
 - Evaluation topics (no flows): Europe/Asia/Americas/elements — in `topics.py`.
 - `results/greedy_flows_africa.npz` — greedy Africa flows (for the temporal detector).
+- `results/bench_hard.json` — frozen error-rich bench (99 items).
 
 ## Next steps (proposed, awaiting decision)
 1. **Merge both arms**: static k32_midwrong + early temporal detector together.
@@ -61,5 +62,5 @@ topic-specificity verification.
   NHE-Architecture).
 - Public contents: scripts + results + README + NUMBERS.md (166 files); **data/
   (378MB) and models/ excluded** (reconstructible via `collect_topic.py`).
-- Full local history (3 experimental commits) preserved in local branch
+- Full local history (3 commits with experiments) preserved in local branch
   `local-history`.

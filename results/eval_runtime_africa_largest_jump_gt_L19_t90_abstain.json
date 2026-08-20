@@ -1,0 +1,79 @@
+{
+  "topic": "africa_largest",
+  "detector": {
+    "type": "jump_gt",
+    "layer": 19,
+    "auc": 0.7416413373860182,
+    "early": true,
+    "name": "jump_max_early_L19",
+    "threshold_t90": 4610.3560546875,
+    "threshold_t95": 4717.643798828125,
+    "catch_t90": 3,
+    "catch_t95": 1,
+    "trained_on": "greedy_africa",
+    "threshold": 4610.3560546875,
+    "threshold_key": "t90",
+    "mode": "abstain",
+    "window": 5,
+    "scale": 0.0,
+    "sample": false,
+    "seed": 0,
+    "subset": [
+      5,
+      17,
+      19,
+      20
+    ]
+  },
+  "n": 4,
+  "n_correct": 0,
+  "n_fired": 4,
+  "n_abstained": 4,
+  "hallucination_rate": 1.0,
+  "results": [
+    {
+      "id": 0,
+      "question": "What is the largest city in Burundi?",
+      "answer": "Bujumbura",
+      "generated": "The largest city in BurundiI'm not sure.",
+      "correct": 0,
+      "fired_at": 5,
+      "n_masked": 0,
+      "abstained": true,
+      "max_feature": 4733.08154296875
+    },
+    {
+      "id": 1,
+      "question": "What is the largest city in Eswatini?",
+      "answer": "Manzini",
+      "generated": "The largest city inI'm not sure.",
+      "correct": 0,
+      "fired_at": 4,
+      "n_masked": 0,
+      "abstained": true,
+      "max_feature": 4988.2705078125
+    },
+    {
+      "id": 2,
+      "question": "What is the largest city in Gabon?",
+      "answer": "Libreville",
+      "generated": "The largest city in GabonI'm not sure.",
+      "correct": 0,
+      "fired_at": 5,
+      "n_masked": 0,
+      "abstained": true,
+      "max_feature": 4856.15771484375
+    },
+    {
+      "id": 3,
+      "question": "What is the largest city in Gambia?",
+      "answer": "Serekunda",
+      "generated": "The largest city in GambiaI'm not sure.",
+      "correct": 0,
+      "fired_at": 5,
+      "n_masked": 0,
+      "abstained": true,
+      "max_feature": 4821.1318359375
+    }
+  ]
+}

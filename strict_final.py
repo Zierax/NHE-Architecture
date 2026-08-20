@@ -79,8 +79,11 @@ for f, label in [
 
 print("\n== NEW error-rich bench (greedy, strict) ==")
 for f, label in [
-    ("results/eval_world_cap_traps_baseline.json", "cap_traps baseline"),
-    ("results/eval_world_largest_baseline.json", "world_largest baseline"),
+    ("results/eval_runtime_world_cap_traps_jump_gt_L19_t90_none.json", "cap_traps baseline"),
+    ("results/eval_runtime_world_cap_traps_jump_gt_L19_t90_mask_sft0.3.json", "cap_traps rt mask"),
+    ("results/eval_runtime_world_cap_traps_jump_gt_L19_t90_abstain.json", "cap_traps rt abstain"),
+    ("results/eval_runtime_world_largest_jump_gt_L19_t90_none.json", "world_largest baseline"),
+    ("results/eval_runtime_world_largest_jump_gt_L19_t90_mask_sft0.3.json", "world_largest rt mask"),
+    ("results/eval_runtime_world_largest_jump_gt_L19_t90_abstain.json", "world_largest rt abstain"),
 ]:
-    if os.path.exists(f):
-        score(f, label)
+    score(f, label)

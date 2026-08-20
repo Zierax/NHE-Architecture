@@ -150,17 +150,18 @@ def _sample(logits, rng, det):
 def run_topic(topic, det):
     mod = __import__("topics")
     items = getattr(mod, TOPICS[topic].split(".")[1])
-    if det.get("subset"):
-        items = [items[i] for i in det["subset"]]
+    orig_indices = det.get("subset")
+    if orig_indices:
+        items = [items[i] for i in orig_indices]
     model, tok = model_and_tok()
     clean = {k: v.clone() for k, v in model.state_dict().items()}
     results = []
     t0 = time.time()
-    for i, item in enumerate(items):
+    for local_i, item in enumerate(items):
         model.load_state_dict(clean)
         det_i = dict(det)
         if det_i.get("sample"):
-            det_i["seed"] = det_i.get("seed", 1000) + i * 100
+            det_i["seed"] = det_i.get("seed", 1000) + local_i * 100
         q, ans = item[0], item[1]
         alt = item[2:]
         text = "<start_of_turn>user\n" + q + "<end_of_turn>\n<start_of_turn>model\n"
@@ -170,12 +171,13 @@ def run_topic(topic, det):
         gen_text = tok.decode(gen_ids, skip_special_tokens=True)
         gen_n = norm(gen_text)
         correct = 1 if any(norm(a) in gen_n for a in (ans,) + alt) else 0
-        results.append({"id": i, "question": q, "answer": ans, "generated": gen_text,
+        orig_id = orig_indices[local_i] if orig_indices else local_i
+        results.append({"id": orig_id, "question": q, "answer": ans, "generated": gen_text,
                         "correct": correct, "fired_at": fired_at, "n_masked": n_masked,
                         "abstained": abstained,
                         "max_feature": float(max(feats)) if feats else None})
-        if (i + 1) % 10 == 0:
-            print(f"  {i+1}/{len(items)} ({time.time()-t0:.0f}s)", flush=True)
+        if (local_i + 1) % 10 == 0:
+            print(f"  {local_i+1}/{len(items)} ({time.time()-t0:.0f}s)", flush=True)
     n = len(results)
     n_correct = sum(r["correct"] for r in results)
     n_fired = sum(1 for r in results if r["fired_at"] is not None)

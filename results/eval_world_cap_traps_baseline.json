@@ -1,0 +1,1485 @@
+{
+  "topic": "world_cap_traps",
+  "mask": null,
+  "n": 134,
+  "samples": 1,
+  "n_correct": 119,
+  "hallucination_rate": 0.1119,
+  "correct_rate": 0.8881,
+  "results": [
+    {
+      "id": 0,
+      "question": "What is the capital of Australia?",
+      "answer": "Canberra",
+      "generated": "The capital of Australia is **Canberra**.\n",
+      "samples": [
+        "The capital of Australia is **Canberra**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 1,
+      "question": "What is the capital of Canada?",
+      "answer": "Ottawa",
+      "generated": "The capital of Canada is **Ottawa**.\n",
+      "samples": [
+        "The capital of Canada is **Ottawa**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 2,
+      "question": "What is the capital of Brazil?",
+      "answer": "Brasilia",
+      "generated": "The capital of Brazil is **Brasília**.\n",
+      "samples": [
+        "The capital of Brazil is **Brasília**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 3,
+      "question": "What is the capital of Turkey?",
+      "answer": "Ankara",
+      "generated": "The capital of Turkey is **Ankara**.\n",
+      "samples": [
+        "The capital of Turkey is **Ankara**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 4,
+      "question": "What is the capital of Switzerland?",
+      "answer": "Bern",
+      "generated": "The capital of Switzerland is **Bern**.\n",
+      "samples": [
+        "The capital of Switzerland is **Bern**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 5,
+      "question": "What is the capital of Vietnam?",
+      "answer": "Hanoi",
+      "generated": "The capital of Vietnam is **Hanoi**.\n",
+      "samples": [
+        "The capital of Vietnam is **Hanoi**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 6,
+      "question": "What is the capital of Kazakhstan?",
+      "answer": "Astana",
+      "generated": "The capital of Kazakhstan is **Astana**.\n",
+      "samples": [
+        "The capital of Kazakhstan is **Astana**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 7,
+      "question": "What is the capital of India?",
+      "answer": "New Delhi",
+      "generated": "The capital of India is **New Delhi**. \n\nIt’s located in the northern part of the country. 😊\n",
+      "samples": [
+        "The capital of India is **New Delhi**. \n\nIt’s located in the northern part of the country. 😊\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 8,
+      "question": "What is the capital of Pakistan?",
+      "answer": "Islamabad",
+      "generated": "The capital of Pakistan is **Islamabad**.\n",
+      "samples": [
+        "The capital of Pakistan is **Islamabad**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 9,
+      "question": "What is the capital of Myanmar?",
+      "answer": "Naypyidaw",
+      "generated": "The capital of Myanmar is **Naypyidaw**.\n",
+      "samples": [
+        "The capital of Myanmar is **Naypyidaw**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 10,
+      "question": "What is the capital of Sri Lanka?",
+      "answer": "Sri Jayawardenepura Kotte",
+      "generated": "The capital of Sri Lanka is **Sri Jayawardenepura Kotte**.\n\nHowever, the government has recently moved the capital to **Colombo**.\n",
+      "samples": [
+        "The capital of Sri Lanka is **Sri Jayawardenepura Kotte**.\n\nHowever, the government has recently moved the capital to **Colombo**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 11,
+      "question": "What is the capital of Belize?",
+      "answer": "Belmopan",
+      "generated": "The capital of Belize is **Belmopan**.\n",
+      "samples": [
+        "The capital of Belize is **Belmopan**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 12,
+      "question": "What is the capital of Bolivia?",
+      "answer": "Sucre",
+      "generated": "The capital of Bolivia is **Sucre**. \n\nWhile La Paz is the largest city, Sucre is the official and historical capital.",
+      "samples": [
+        "The capital of Bolivia is **Sucre**. \n\nWhile La Paz is the largest city, Sucre is the official and historical capital."
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 13,
+      "question": "What is the capital of Ivory Coast?",
+      "answer": "Yamoussoukro",
+      "generated": "The capital of Ivory Coast is Yamoussoukro. 😊\n",
+      "samples": [
+        "The capital of Ivory Coast is Yamoussoukro. 😊\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 14,
+      "question": "What is the capital of the Netherlands?",
+      "answer": "Amsterdam",
+      "generated": "The capital of the Netherlands is **Amsterdam**. \n\nIt’s a very popular and significant city! 😊",
+      "samples": [
+        "The capital of the Netherlands is **Amsterdam**. \n\nIt’s a very popular and significant city! 😊"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 15,
+      "question": "What is the capital of Morocco?",
+      "answer": "Rabat",
+      "generated": "The capital of Morocco is **Rabat**.\n",
+      "samples": [
+        "The capital of Morocco is **Rabat**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 16,
+      "question": "What is the capital of Nigeria?",
+      "answer": "Abuja",
+      "generated": "The capital of Nigeria is **Abuja**.\n",
+      "samples": [
+        "The capital of Nigeria is **Abuja**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 17,
+      "question": "What is the capital of Tanzania?",
+      "answer": "Dodoma",
+      "generated": "The capital of Tanzania is **Dodoma**.\n\nWhile Dar es Salaam is the largest city and a major economic hub, Dodoma is the designated capital and serves as the political and administrative center.",
+      "samples": [
+        "The capital of Tanzania is **Dodoma**.\n\nWhile Dar es Salaam is the largest city and a major economic hub, Dodoma is the designated capital and serves as the political and administrative center."
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 18,
+      "question": "What is the capital of Benin?",
+      "answer": "Porto-Novo",
+      "generated": "The capital of Benin is **Porto-Novo**.\n",
+      "samples": [
+        "The capital of Benin is **Porto-Novo**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 19,
+      "question": "What is the capital of Equatorial Guinea?",
+      "answer": "Malabo",
+      "generated": "The capital of Equatorial Guinea is **Bonifacius**.\n\nIt's important to note that Equatorial Guinea has a complex and often disputed political situation, and the capital is a point of contention. Many international organizations and governments consider Bonif",
+      "samples": [
+        "The capital of Equatorial Guinea is **Bonifacius**.\n\nIt's important to note that Equatorial Guinea has a complex and often disputed political situation, and the capital is a point of contention. Many international organizations and governments consider Bonif"
+      ],
+      "correct": 0,
+      "majority_correct": 0
+    },
+    {
+      "id": 20,
+      "question": "What is the capital of Gambia?",
+      "answer": "Banjul",
+      "generated": "The capital of Gambia is **Bandžarīs**.\n",
+      "samples": [
+        "The capital of Gambia is **Bandžarīs**.\n"
+      ],
+      "correct": 0,
+      "majority_correct": 0
+    },
+    {
+      "id": 21,
+      "question": "What is the capital of the United States?",
+      "answer": "Washington, D.C.",
+      "generated": "The capital of the United States is **Washington, D.C.**\n",
+      "samples": [
+        "The capital of the United States is **Washington, D.C.**\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 22,
+      "question": "What is the capital of China?",
+      "answer": "Beijing",
+      "generated": "The capital of China is **Beijing**.\n",
+      "samples": [
+        "The capital of China is **Beijing**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 23,
+      "question": "What is the capital of South Africa?",
+      "answer": "Pretoria",
+      "generated": "The capital of South Africa is **Pretoria**.\n",
+      "samples": [
+        "The capital of South Africa is **Pretoria**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 24,
+      "question": "What is the capital of New Zealand?",
+      "answer": "Wellington",
+      "generated": "The capital of New Zealand is **Wellington**.\n",
+      "samples": [
+        "The capital of New Zealand is **Wellington**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 25,
+      "question": "What is the capital of Ecuador?",
+      "answer": "Quito",
+      "generated": "The capital of Ecuador is **Quito**.\n",
+      "samples": [
+        "The capital of Ecuador is **Quito**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 26,
+      "question": "What is the capital of Yemen?",
+      "answer": "Sanaa",
+      "generated": "The capital of Yemen is **Sana’a**.\n",
+      "samples": [
+        "The capital of Yemen is **Sana’a**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 27,
+      "question": "What is the capital of Israel?",
+      "answer": "Jerusalem",
+      "generated": "The capital of Israel is **Jerusalem**.\n\nWhile Tel Aviv is the largest city and a major center of activity, Jerusalem holds significant historical and religious importance.",
+      "samples": [
+        "The capital of Israel is **Jerusalem**.\n\nWhile Tel Aviv is the largest city and a major center of activity, Jerusalem holds significant historical and religious importance."
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 28,
+      "question": "What is the capital of the United Arab Emirates?",
+      "answer": "Abu Dhabi",
+      "generated": "The capital of the United Arab Emirates is **Dubai**.\n",
+      "samples": [
+        "The capital of the United Arab Emirates is **Dubai**.\n"
+      ],
+      "correct": 0,
+      "majority_correct": 0
+    },
+    {
+      "id": 29,
+      "question": "What is the capital of Cameroon?",
+      "answer": "Yaounde",
+      "generated": "The capital of Cameroon is **Yaoundé**.\n",
+      "samples": [
+        "The capital of Cameroon is **Yaoundé**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 30,
+      "question": "What is the capital of Burundi?",
+      "answer": "Gitega",
+      "generated": "The capital of Burundi is **Gitega**.\n",
+      "samples": [
+        "The capital of Burundi is **Gitega**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 31,
+      "question": "What is the capital of Malawi?",
+      "answer": "Lilongwe",
+      "generated": "The capital of Malawi is **Lilongwe**.\n",
+      "samples": [
+        "The capital of Malawi is **Lilongwe**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 32,
+      "question": "What is the capital of Eswatini?",
+      "answer": "Mbabane",
+      "generated": "The capital of Eswatini is **Luanda**. \n\nHowever, it’s important to note that Eswatini is currently experiencing a political situation and the capital has been shifting recently. Luanda is the current capital, but it",
+      "samples": [
+        "The capital of Eswatini is **Luanda**. \n\nHowever, it’s important to note that Eswatini is currently experiencing a political situation and the capital has been shifting recently. Luanda is the current capital, but it"
+      ],
+      "correct": 0,
+      "majority_correct": 0
+    },
+    {
+      "id": 33,
+      "question": "What is the capital of Brunei?",
+      "answer": "Bandar Seri Begawan",
+      "generated": "The capital of Brunei is **Bandar Seri Begawan**.\n",
+      "samples": [
+        "The capital of Brunei is **Bandar Seri Begawan**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 34,
+      "question": "What is the capital of Laos?",
+      "answer": "Vientiane",
+      "generated": "The capital of Laos is **Vientiane**.\n",
+      "samples": [
+        "The capital of Laos is **Vientiane**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 35,
+      "question": "What is the capital of Moldova?",
+      "answer": "Chisinau",
+      "generated": "The capital of Moldova is **Chișinău**.\n",
+      "samples": [
+        "The capital of Moldova is **Chișinău**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 36,
+      "question": "What is the capital of Belarus?",
+      "answer": "Minsk",
+      "generated": "The capital of Belarus is **Minsk**.\n",
+      "samples": [
+        "The capital of Belarus is **Minsk**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 37,
+      "question": "What is the capital of Ukraine?",
+      "answer": "Kyiv",
+      "generated": "The capital of Ukraine is **Kyiv**.\n",
+      "samples": [
+        "The capital of Ukraine is **Kyiv**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 38,
+      "question": "What is the capital of Georgia?",
+      "answer": "Tbilisi",
+      "generated": "The capital of Georgia is **Atlanta**.\n",
+      "samples": [
+        "The capital of Georgia is **Atlanta**.\n"
+      ],
+      "correct": 0,
+      "majority_correct": 0
+    },
+    {
+      "id": 39,
+      "question": "What is the capital of Armenia?",
+      "answer": "Yerevan",
+      "generated": "The capital of Armenia is **Yerevan**.\n",
+      "samples": [
+        "The capital of Armenia is **Yerevan**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 40,
+      "question": "What is the capital of Azerbaijan?",
+      "answer": "Baku",
+      "generated": "The capital of Azerbaijan is **Baku**.\n",
+      "samples": [
+        "The capital of Azerbaijan is **Baku**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 41,
+      "question": "What is the capital of Turkmenistan?",
+      "answer": "Ashgabat",
+      "generated": "The capital of Turkmenistan is **Ashgabat**.\n",
+      "samples": [
+        "The capital of Turkmenistan is **Ashgabat**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 42,
+      "question": "What is the capital of Tajikistan?",
+      "answer": "Dushanbe",
+      "generated": "The capital of Tajikistan is **Dushanbe**.\n",
+      "samples": [
+        "The capital of Tajikistan is **Dushanbe**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 43,
+      "question": "What is the capital of Kyrgyzstan?",
+      "answer": "Bishkek",
+      "generated": "The capital of Kyrgyzstan is **Bishkek**.\n",
+      "samples": [
+        "The capital of Kyrgyzstan is **Bishkek**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 44,
+      "question": "What is the capital of Uzbekistan?",
+      "answer": "Tashkent",
+      "generated": "The capital of Uzbekistan is **Tashkent**.\n",
+      "samples": [
+        "The capital of Uzbekistan is **Tashkent**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 45,
+      "question": "What is the capital of Mongolia?",
+      "answer": "Ulaanbaatar",
+      "generated": "The capital of Mongolia is **Ulaanbaatar**.\n",
+      "samples": [
+        "The capital of Mongolia is **Ulaanbaatar**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 46,
+      "question": "What is the capital of Afghanistan?",
+      "answer": "Kabul",
+      "generated": "The capital of Afghanistan is **Kabul**.\n",
+      "samples": [
+        "The capital of Afghanistan is **Kabul**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 47,
+      "question": "What is the capital of Iran?",
+      "answer": "Tehran",
+      "generated": "The capital of Iran is **Tehran**.\n",
+      "samples": [
+        "The capital of Iran is **Tehran**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 48,
+      "question": "What is the capital of Iraq?",
+      "answer": "Baghdad",
+      "generated": "The capital of Iraq is **Baghdad**.\n",
+      "samples": [
+        "The capital of Iraq is **Baghdad**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 49,
+      "question": "What is the capital of Saudi Arabia?",
+      "answer": "Riyadh",
+      "generated": "The capital of Saudi Arabia is **Riyadh**.\n",
+      "samples": [
+        "The capital of Saudi Arabia is **Riyadh**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 50,
+      "question": "What is the capital of Qatar?",
+      "answer": "Doha",
+      "generated": "The capital of Qatar is **Doha**.\n",
+      "samples": [
+        "The capital of Qatar is **Doha**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 51,
+      "question": "What is the capital of Oman?",
+      "answer": "Muscat",
+      "generated": "The capital of Oman is **Muscat**.\n",
+      "samples": [
+        "The capital of Oman is **Muscat**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 52,
+      "question": "What is the capital of Jordan?",
+      "answer": "Amman",
+      "generated": "The capital of Jordan is **Amman**.\n",
+      "samples": [
+        "The capital of Jordan is **Amman**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 53,
+      "question": "What is the capital of Lebanon?",
+      "answer": "Beirut",
+      "generated": "The capital of Lebanon is ** Beirut**. \n\nHowever, it’s important to note that Lebanon has been experiencing significant political and economic instability, which has complicated its capital. There have been discussions and proposals for relocating the capital to other locations",
+      "samples": [
+        "The capital of Lebanon is ** Beirut**. \n\nHowever, it’s important to note that Lebanon has been experiencing significant political and economic instability, which has complicated its capital. There have been discussions and proposals for relocating the capital to other locations"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 54,
+      "question": "What is the capital of Syria?",
+      "answer": "Damascus",
+      "generated": "The capital of Syria is **Damascus**.\n",
+      "samples": [
+        "The capital of Syria is **Damascus**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 55,
+      "question": "What is the capital of Kuwait?",
+      "answer": "Kuwait City",
+      "generated": "The capital of Kuwait is **Kuwait City**.\n",
+      "samples": [
+        "The capital of Kuwait is **Kuwait City**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 56,
+      "question": "What is the capital of Bahrain?",
+      "answer": "Manama",
+      "generated": "The capital of Bahrain is **Manama**.\n",
+      "samples": [
+        "The capital of Bahrain is **Manama**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 57,
+      "question": "What is the capital of Cyprus?",
+      "answer": "Nicosia",
+      "generated": "The capital of Cyprus is **Nicosia**.\n",
+      "samples": [
+        "The capital of Cyprus is **Nicosia**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 58,
+      "question": "What is the capital of Malta?",
+      "answer": "Valletta",
+      "generated": "The capital of Malta is ** Valletta**.\n",
+      "samples": [
+        "The capital of Malta is ** Valletta**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 59,
+      "question": "What is the capital of Andorra?",
+      "answer": "Andorra la Vella",
+      "generated": "The capital of Andorra is **Andorra la Vella**.\n",
+      "samples": [
+        "The capital of Andorra is **Andorra la Vella**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 60,
+      "question": "What is the capital of Liechtenstein?",
+      "answer": "Vaduz",
+      "generated": "The capital of Liechtenstein is **Vaduz**.\n",
+      "samples": [
+        "The capital of Liechtenstein is **Vaduz**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 61,
+      "question": "What is the capital of San Marino?",
+      "answer": "San Marino",
+      "generated": "The capital of San Marino is **San Marino** itself! It’s a city, not a place with a capital. \n\nHowever, the seat of government and the most important administrative center is located in **San Marino City**. ",
+      "samples": [
+        "The capital of San Marino is **San Marino** itself! It’s a city, not a place with a capital. \n\nHowever, the seat of government and the most important administrative center is located in **San Marino City**. "
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 62,
+      "question": "What is the capital of Monaco?",
+      "answer": "Monaco",
+      "generated": "The capital of Monaco is **Monaco-Ville**.\n",
+      "samples": [
+        "The capital of Monaco is **Monaco-Ville**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 63,
+      "question": "What is the capital of Luxembourg?",
+      "answer": "Luxembourg",
+      "generated": "The capital of Luxembourg is **Luxembourg City**.\n",
+      "samples": [
+        "The capital of Luxembourg is **Luxembourg City**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 64,
+      "question": "What is the capital of Vatican City?",
+      "answer": "Vatican City",
+      "generated": "The capital of Vatican City is **Rome**. \n\nIt’s a bit of a trick question – Vatican City is a city-state, and its entire existence revolves around Rome.",
+      "samples": [
+        "The capital of Vatican City is **Rome**. \n\nIt’s a bit of a trick question – Vatican City is a city-state, and its entire existence revolves around Rome."
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 65,
+      "question": "What is the capital of Paraguay?",
+      "answer": "Asuncion",
+      "generated": "The capital of Paraguay is **Asunción**.\n",
+      "samples": [
+        "The capital of Paraguay is **Asunción**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 66,
+      "question": "What is the capital of Uruguay?",
+      "answer": "Montevideo",
+      "generated": "The capital of Uruguay is **Montevideo**.\n",
+      "samples": [
+        "The capital of Uruguay is **Montevideo**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 67,
+      "question": "What is the capital of Suriname?",
+      "answer": "Paramaribo",
+      "generated": "The capital of Suriname is **Paramaribo**.\n",
+      "samples": [
+        "The capital of Suriname is **Paramaribo**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 68,
+      "question": "What is the capital of Guyana?",
+      "answer": "Georgetown",
+      "generated": "The capital of Guyana is Georgetown. 😊\n",
+      "samples": [
+        "The capital of Guyana is Georgetown. 😊\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 69,
+      "question": "What is the capital of Haiti?",
+      "answer": "Port-au-Prince",
+      "generated": "The capital of Haiti is **Port-au-Prince**.\n",
+      "samples": [
+        "The capital of Haiti is **Port-au-Prince**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 70,
+      "question": "What is the capital of Jamaica?",
+      "answer": "Kingston",
+      "generated": "The capital of Jamaica is Kingston. 😊\n",
+      "samples": [
+        "The capital of Jamaica is Kingston. 😊\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 71,
+      "question": "What is the capital of Trinidad and Tobago?",
+      "answer": "Port of Spain",
+      "generated": "The capital of Trinidad and Tobago is **Port of Spain**.\n",
+      "samples": [
+        "The capital of Trinidad and Tobago is **Port of Spain**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 72,
+      "question": "What is the capital of the Bahamas?",
+      "answer": "Nassau",
+      "generated": "The capital of the Bahamas is **Nassau**.\n",
+      "samples": [
+        "The capital of the Bahamas is **Nassau**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 73,
+      "question": "What is the capital of Barbados?",
+      "answer": "Bridgetown",
+      "generated": "The capital of Barbados is ** Bridgetown**.\n",
+      "samples": [
+        "The capital of Barbados is ** Bridgetown**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 74,
+      "question": "What is the capital of Grenada?",
+      "answer": "Saint George's",
+      "generated": "The capital of Grenada is **Port George**.\n",
+      "samples": [
+        "The capital of Grenada is **Port George**.\n"
+      ],
+      "correct": 0,
+      "majority_correct": 0
+    },
+    {
+      "id": 75,
+      "question": "What is the capital of Saint Lucia?",
+      "answer": "Castries",
+      "generated": "The capital of Saint Lucia is **Castries**.\n",
+      "samples": [
+        "The capital of Saint Lucia is **Castries**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 76,
+      "question": "What is the capital of Dominica?",
+      "answer": "Roseau",
+      "generated": "The capital of Dominica is **Roseau**.\n",
+      "samples": [
+        "The capital of Dominica is **Roseau**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 77,
+      "question": "What is the capital of Saint Vincent and the Grenadines?",
+      "answer": "Kingstown",
+      "generated": "The capital of Saint Vincent and the Grenadines is **Surigey** (also spelled Surigey).\n",
+      "samples": [
+        "The capital of Saint Vincent and the Grenadines is **Surigey** (also spelled Surigey).\n"
+      ],
+      "correct": 0,
+      "majority_correct": 0
+    },
+    {
+      "id": 78,
+      "question": "What is the capital of Antigua and Barbuda?",
+      "answer": "Saint John's",
+      "generated": "The capital of Antigua and Barbuda is **Saint John's**.\n",
+      "samples": [
+        "The capital of Antigua and Barbuda is **Saint John's**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 79,
+      "question": "What is the capital of Saint Kitts and Nevis?",
+      "answer": "Basseterre",
+      "generated": "The capital of Saint Kitts and Nevis is **Basseterre**.\n",
+      "samples": [
+        "The capital of Saint Kitts and Nevis is **Basseterre**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 80,
+      "question": "What is the capital of Guatemala?",
+      "answer": "Guatemala City",
+      "generated": "The capital of Guatemala is **Guatemala City**.\n",
+      "samples": [
+        "The capital of Guatemala is **Guatemala City**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 81,
+      "question": "What is the capital of Honduras?",
+      "answer": "Tegucigalpa",
+      "generated": "The capital of Honduras is **San Miguel de la Piura**.\n",
+      "samples": [
+        "The capital of Honduras is **San Miguel de la Piura**.\n"
+      ],
+      "correct": 0,
+      "majority_correct": 0
+    },
+    {
+      "id": 82,
+      "question": "What is the capital of Nicaragua?",
+      "answer": "Managua",
+      "generated": "The capital of Nicaragua is **Managua**.\n",
+      "samples": [
+        "The capital of Nicaragua is **Managua**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 83,
+      "question": "What is the capital of Costa Rica?",
+      "answer": "San Jose",
+      "generated": "The capital of Costa Rica is **San José**.\n",
+      "samples": [
+        "The capital of Costa Rica is **San José**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 84,
+      "question": "What is the capital of Panama?",
+      "answer": "Panama City",
+      "generated": "The capital of Panama is **Panama City**. \n\nHowever, it’s important to note that Panama City is a large and complex city, and the official capital is actually **Panama City Dora**. \n\nSo, to be",
+      "samples": [
+        "The capital of Panama is **Panama City**. \n\nHowever, it’s important to note that Panama City is a large and complex city, and the official capital is actually **Panama City Dora**. \n\nSo, to be"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 85,
+      "question": "What is the capital of El Salvador?",
+      "answer": "San Salvador",
+      "generated": "The capital of El Salvador is **San Salvador**.\n",
+      "samples": [
+        "The capital of El Salvador is **San Salvador**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 86,
+      "question": "What is the capital of Cuba?",
+      "answer": "Havana",
+      "generated": "The capital of Cuba is **Havana**.\n",
+      "samples": [
+        "The capital of Cuba is **Havana**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 87,
+      "question": "What is the capital of the Dominican Republic?",
+      "answer": "Santo Domingo",
+      "generated": "The capital of the Dominican Republic is **Santo Domingo**.\n",
+      "samples": [
+        "The capital of the Dominican Republic is **Santo Domingo**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 88,
+      "question": "What is the capital of Fiji?",
+      "answer": "Suva",
+      "generated": "The capital of Fiji is **Suva**.\n",
+      "samples": [
+        "The capital of Fiji is **Suva**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 89,
+      "question": "What is the capital of Vanuatu?",
+      "answer": "Port Vila",
+      "generated": "The capital of Vanuatu is **Port Vila**.\n",
+      "samples": [
+        "The capital of Vanuatu is **Port Vila**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 90,
+      "question": "What is the capital of Samoa?",
+      "answer": "Apia",
+      "generated": "The capital of Samoa is **Apia**.\n",
+      "samples": [
+        "The capital of Samoa is **Apia**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 91,
+      "question": "What is the capital of the Solomon Islands?",
+      "answer": "Honiara",
+      "generated": "The capital of the Solomon Islands is **Honiara**.\n",
+      "samples": [
+        "The capital of the Solomon Islands is **Honiara**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 92,
+      "question": "What is the capital of Tonga?",
+      "answer": "Nuku'alofa",
+      "generated": "The capital of Tonga is **Nukuʻalofa**.\n",
+      "samples": [
+        "The capital of Tonga is **Nukuʻalofa**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 93,
+      "question": "What is the capital of Kiribati?",
+      "answer": "Tarawa",
+      "generated": "The capital of Kiribati is Rundu.",
+      "samples": [
+        "The capital of Kiribati is Rundu."
+      ],
+      "correct": 0,
+      "majority_correct": 0
+    },
+    {
+      "id": 94,
+      "question": "What is the capital of Tuvalu?",
+      "answer": "Funafuti",
+      "generated": "The capital of Tuvalu is **Funafuti**. \n\nIt’s a small, floating island that serves as the administrative and residential center for the country.\n",
+      "samples": [
+        "The capital of Tuvalu is **Funafuti**. \n\nIt’s a small, floating island that serves as the administrative and residential center for the country.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 95,
+      "question": "What is the capital of Nauru?",
+      "answer": "Yaren",
+      "generated": "The capital of Nauru is **Funafuli**.\n",
+      "samples": [
+        "The capital of Nauru is **Funafuli**.\n"
+      ],
+      "correct": 0,
+      "majority_correct": 0
+    },
+    {
+      "id": 96,
+      "question": "What is the capital of Palau?",
+      "answer": "Ngerulmud",
+      "generated": "The capital of Palau is **Koror**.\n",
+      "samples": [
+        "The capital of Palau is **Koror**.\n"
+      ],
+      "correct": 0,
+      "majority_correct": 0
+    },
+    {
+      "id": 97,
+      "question": "What is the capital of the Federated States of Micronesia?",
+      "answer": "Palikir",
+      "generated": "The capital of the Federated States of Micronesia is **Palikir**.",
+      "samples": [
+        "The capital of the Federated States of Micronesia is **Palikir**."
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 98,
+      "question": "What is the capital of the Marshall Islands?",
+      "answer": "Majuro",
+      "generated": "The capital of the Marshall Islands is **Majuro**.\n",
+      "samples": [
+        "The capital of the Marshall Islands is **Majuro**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 99,
+      "question": "What is the capital of Papua New Guinea?",
+      "answer": "Port Moresby",
+      "generated": "The capital of Papua New Guinea is **Port Moresby**.\n",
+      "samples": [
+        "The capital of Papua New Guinea is **Port Moresby**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 100,
+      "question": "What is the capital of Timor-Leste?",
+      "answer": "Dili",
+      "generated": "The capital of Timor-Leste is **Dili**.\n",
+      "samples": [
+        "The capital of Timor-Leste is **Dili**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 101,
+      "question": "What is the capital of Taiwan?",
+      "answer": "Taipei",
+      "generated": "The capital of Taiwan is **Taipei**.\n",
+      "samples": [
+        "The capital of Taiwan is **Taipei**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 102,
+      "question": "What is the capital of Kosovo?",
+      "answer": "Pristina",
+      "generated": "The capital of Kosovo is **Pristina**, also known as Belgrado.\n",
+      "samples": [
+        "The capital of Kosovo is **Pristina**, also known as Belgrado.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 103,
+      "question": "What is the capital of Montenegro?",
+      "answer": "Podgorica",
+      "generated": "The capital of Montenegro is **Podgorica**.\n",
+      "samples": [
+        "The capital of Montenegro is **Podgorica**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 104,
+      "question": "What is the capital of Bosnia and Herzegovina?",
+      "answer": "Sarajevo",
+      "generated": "The capital of Bosnia and Herzegovina is **Sarajevo**.\n",
+      "samples": [
+        "The capital of Bosnia and Herzegovina is **Sarajevo**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 105,
+      "question": "What is the capital of North Macedonia?",
+      "answer": "Skopje",
+      "generated": "The capital of North Macedonia is **Skopje**.\n",
+      "samples": [
+        "The capital of North Macedonia is **Skopje**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 106,
+      "question": "What is the capital of Western Sahara?",
+      "answer": "Laayoune",
+      "generated": "The capital of Western Sahara is **Rabat**. \n\nIt's important to note that Western Sahara remains a disputed territory, and its status is complex. Morocco claims the territory, while the Polisario Front, a Sahrawi separatist",
+      "samples": [
+        "The capital of Western Sahara is **Rabat**. \n\nIt's important to note that Western Sahara remains a disputed territory, and its status is complex. Morocco claims the territory, while the Polisario Front, a Sahrawi separatist"
+      ],
+      "correct": 0,
+      "majority_correct": 0
+    },
+    {
+      "id": 107,
+      "question": "What is the capital of Seychelles?",
+      "answer": "Victoria",
+      "generated": "The capital of Seychelles is **Victoria**.\n",
+      "samples": [
+        "The capital of Seychelles is **Victoria**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 108,
+      "question": "What is the capital of Comoros?",
+      "answer": "Moroni",
+      "generated": "The capital of Comoros is **Moroni**.\n",
+      "samples": [
+        "The capital of Comoros is **Moroni**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 109,
+      "question": "What is the capital of Mauritius?",
+      "answer": "Port Louis",
+      "generated": "The capital of Mauritius is **Port Louis**.\n",
+      "samples": [
+        "The capital of Mauritius is **Port Louis**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 110,
+      "question": "What is the capital of Cape Verde?",
+      "answer": "Praia",
+      "generated": "The capital of Cape Verde is **Viana do Mar**.\n",
+      "samples": [
+        "The capital of Cape Verde is **Viana do Mar**.\n"
+      ],
+      "correct": 0,
+      "majority_correct": 0
+    },
+    {
+      "id": 111,
+      "question": "What is the capital of Sao Tome and Principe?",
+      "answer": "Sao Tome",
+      "generated": "The capital of São Tomé and Príncipe is **São Tomé**.\n",
+      "samples": [
+        "The capital of São Tomé and Príncipe is **São Tomé**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 112,
+      "question": "What is the capital of Djibouti?",
+      "answer": "Djibouti City",
+      "generated": "The capital of Djibouti is **Djibouti City**.\n",
+      "samples": [
+        "The capital of Djibouti is **Djibouti City**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 113,
+      "question": "What is the capital of Eritrea?",
+      "answer": "Asmara",
+      "generated": "The capital of Eritrea is **Asmara**.\n",
+      "samples": [
+        "The capital of Eritrea is **Asmara**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 114,
+      "question": "What is the capital of Chad?",
+      "answer": "NDjamena",
+      "generated": "The capital of Chad is **N'Djamena**. \n\nHowever, it’s important to note that N'Djamena is a controversial and heavily contested city. It’s often considered a symbol of conflict and instability in",
+      "samples": [
+        "The capital of Chad is **N'Djamena**. \n\nHowever, it’s important to note that N'Djamena is a controversial and heavily contested city. It’s often considered a symbol of conflict and instability in"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 115,
+      "question": "What is the capital of Niger?",
+      "answer": "Niamey",
+      "generated": "The capital of Niger is **Niamey**. It’s located in the north-central part of the country.\n",
+      "samples": [
+        "The capital of Niger is **Niamey**. It’s located in the north-central part of the country.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 116,
+      "question": "What is the capital of Mali?",
+      "answer": "Bamako",
+      "generated": "The capital of Mali is **Bamako**. \n\nWhile Mali has a few other significant cities, Bamako is the largest and most important center for the country.",
+      "samples": [
+        "The capital of Mali is **Bamako**. \n\nWhile Mali has a few other significant cities, Bamako is the largest and most important center for the country."
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 117,
+      "question": "What is the capital of Burkina Faso?",
+      "answer": "Ouagadougou",
+      "generated": "The capital of Burkina Faso is **Ouagadougou**.\n",
+      "samples": [
+        "The capital of Burkina Faso is **Ouagadougou**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 118,
+      "question": "What is the capital of Mauritania?",
+      "answer": "Nouakchott",
+      "generated": "The capital of Mauritania is **Nouakchott**.\n",
+      "samples": [
+        "The capital of Mauritania is **Nouakchott**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 119,
+      "question": "What is the capital of Guinea?",
+      "answer": "Conakry",
+      "generated": "The capital of Guinea is **Bandika**.\n\nHowever, it’s important to note that Bandika is a planned city and not a traditional capital city. It’s a significant administrative and economic center, but it’s not the",
+      "samples": [
+        "The capital of Guinea is **Bandika**.\n\nHowever, it’s important to note that Bandika is a planned city and not a traditional capital city. It’s a significant administrative and economic center, but it’s not the"
+      ],
+      "correct": 0,
+      "majority_correct": 0
+    },
+    {
+      "id": 120,
+      "question": "What is the capital of Sierra Leone?",
+      "answer": "Freetown",
+      "generated": "The capital of Sierra Leone is **Freetown**.\n",
+      "samples": [
+        "The capital of Sierra Leone is **Freetown**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 121,
+      "question": "What is the capital of Liberia?",
+      "answer": "Monrovia",
+      "generated": "The capital of Liberia is ** Monrovia**.\n",
+      "samples": [
+        "The capital of Liberia is ** Monrovia**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 122,
+      "question": "What is the capital of Togo?",
+      "answer": "Lome",
+      "generated": "The capital of Togo is **Lomé**.\n",
+      "samples": [
+        "The capital of Togo is **Lomé**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 123,
+      "question": "What is the capital of Gabon?",
+      "answer": "Libreville",
+      "generated": "The capital of Gabon is Libre.",
+      "samples": [
+        "The capital of Gabon is Libre."
+      ],
+      "correct": 0,
+      "majority_correct": 0
+    },
+    {
+      "id": 124,
+      "question": "What is the capital of the Republic of the Congo?",
+      "answer": "Brazzaville",
+      "generated": "The capital of the Republic of the Congo is **Brazzaville**.\n",
+      "samples": [
+        "The capital of the Republic of the Congo is **Brazzaville**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 125,
+      "question": "What is the capital of the Central African Republic?",
+      "answer": "Bangui",
+      "generated": "The capital of the Central African Republic is **Bangui**.\n",
+      "samples": [
+        "The capital of the Central African Republic is **Bangui**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 126,
+      "question": "What is the capital of Madagascar?",
+      "answer": "Antananarivo",
+      "generated": "The capital of Madagascar is **Antananarivo**.\n",
+      "samples": [
+        "The capital of Madagascar is **Antananarivo**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 127,
+      "question": "What is the capital of Zambia?",
+      "answer": "Lusaka",
+      "generated": "The capital of Zambia is **Lusaka**.\n",
+      "samples": [
+        "The capital of Zambia is **Lusaka**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 128,
+      "question": "What is the capital of Zimbabwe?",
+      "answer": "Harare",
+      "generated": "The capital of Zimbabwe is **Harare**.\n",
+      "samples": [
+        "The capital of Zimbabwe is **Harare**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 129,
+      "question": "What is the capital of Botswana?",
+      "answer": "Gaborone",
+      "generated": "The capital of Botswana is **Gaborone**.\n",
+      "samples": [
+        "The capital of Botswana is **Gaborone**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 130,
+      "question": "What is the capital of Namibia?",
+      "answer": "Windhoek",
+      "generated": "The capital of Namibia is **Windhoek**.\n",
+      "samples": [
+        "The capital of Namibia is **Windhoek**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 131,
+      "question": "What is the capital of Rwanda?",
+      "answer": "Kigali",
+      "generated": "The capital of Rwanda is **H Kigali**. \n\nWhile Kigali is the administrative and economic center, it's often referred to as the \"capital\" due to its significant role in the country's development.",
+      "samples": [
+        "The capital of Rwanda is **H Kigali**. \n\nWhile Kigali is the administrative and economic center, it's often referred to as the \"capital\" due to its significant role in the country's development."
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 132,
+      "question": "What is the capital of Uganda?",
+      "answer": "Kampala",
+      "generated": "The capital of Uganda is **Kampala**.\n",
+      "samples": [
+        "The capital of Uganda is **Kampala**.\n"
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    },
+    {
+      "id": 133,
+      "question": "What is the capital of Lesotho?",
+      "answer": "Maseru",
+      "generated": "The capital of Lesotho is **Maseru**. \n\nIt’s a small, hilly city located in the central part of the country.",
+      "samples": [
+        "The capital of Lesotho is **Maseru**. \n\nIt’s a small, hilly city located in the central part of the country."
+      ],
+      "correct": 1,
+      "majority_correct": 1
+    }
+  ]
+}

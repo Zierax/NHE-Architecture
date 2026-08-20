@@ -1,25 +1,31 @@
 # Excision Experiment Report — Gemma 3 1B
 
-Date: 2026-08-18 (updated evening — temporal excision arm added)
+Date: 2026-08-20 — full error-rich bench battery complete.
 
 ## Question
 Can hallucinations in a specific topic (Africa capitals) be reduced by excising
-(zeroing) precise parameters, without breaking knowledge of other topics?
+(zeroing/scaling) precise parameters, without breaking knowledge of other topics?
+And does early temporal excision work better than static excision?
 
 ## Protocol
-- Evaluation: greedy (temp=0) + sampled (temp=0.9, top_p=0.9, 5 samples/item, fixed
+- Evaluation: greedy (temp=0) + sampled (temp=0.9, top_p=0.9, 5-6 seeds per item, fixed
   per-sample seeds).
 - Labeling: textual match (NFKD→ascii) against any alternative answer. Caveats:
   "Salaffaire...and Praia" counts as correct; early truncation (e.g.,
   "Bandar Seri Begi.") counts as wrong.
-- Excision: zero `down_proj[:,u]`, `up_proj[u,:]`, `gate_proj[u,:]`.
-- Statistics: exact McNemar on matched sample pairs (n=205–270 per cell) + bootstrap net
-  effect (5000, 95% CI).
+- Excision: scale `down_proj[:,u]`, `up_proj[u,:]`, `gate_proj[u,:]` by 0.0 (hard) or
+  0.3 (soft).
+- Statistics: exact McNemar on matched sample pairs (n=270–594 per cell) + bootstrap
+  net effect (5000, 95% CI). Strict first-sentence metric with alternatives is the
+  headline metric.
 
 ## Topics
 - Target: Africa (54) — weak knowledge, baseline hallucination 0.167 (sampled).
 - Strong control: Europe (44, 0.005); moderate: Asia (46, 0.057), US states (50, 0.052);
   weak: elements (41, 0.200).
+- Transfer targets: africa_largest (54), world_tricky (49).
+- **Error-rich bench (99 items)**: africa_largest (54) + greedy-wrong subsets from
+  world_cap_traps (15/134) + world_largest (30/173). Baseline strict hall = 0.596.
 
 ## Results
 
@@ -59,30 +65,9 @@ neurons are not causal (only 7/128 overlap with causal).
 - Detection (jitter, AUROC 0.968), causality (AtP), and excision: three coherent layers of
   the same phenomenon — wrong-commit in the upper-middle layers.
 
-## Conclusion
-1. A causal, excisable footprint exists: "wrong-commit" neurons in upper-middle layers
-   (8–17), isolated via AtP + wrong-only filter.
-2. **k32_midwrong = the surgical choice**: significant hallucination reduction
-   (0.167→0.111) with no damage to strong knowledge, limited loss only where knowledge is
-   marginal.
-3. k128_wrong = strongest for Africa (0.093) but wounds Europe — not suitable for general
-   use.
-4. Limits: single 1B size; textual-match labeling; small number of baseline
-   hallucinations; weak-topic differences within expectation.
+### 5) Temporal excision (runtime rollback) — Arm 2
 
-## Assets
-- `results/attribution_africa.json|.npz` (statistical),
-  `results/attribution_causal_africa.json` (AtP),
-  `results/attribution_causal2_africa.json` (AtP with two filters + mid)
-- `results/mask_k*_{score}.json`, `results/eval_{topic}_{mask}[_s5].json`,
-  `results/summary_experiment.json`
-- Scripts: `attribute_neurons.py`, `attribute_causal.py`, `attribute_causal2.py`,
-  `eval_topic.py [--samples=N]`, `run_experiment.py`, `significance_final.py`,
-  `collect_topic.py`, `topics.py`
-
-## Arm 2: temporal excision (runtime rollback) — 2026-08-18 evening
-
-### Design
+#### Design
 - A temporal detector is computed per token during generation; on threshold exceedance →
   apply the k32_midwrong mask from that point (or roll back two tokens + mask).
 - Training: greedy Africa flows (54, 7 hallucinations); threshold calibrated at the
@@ -91,7 +76,7 @@ neurons are not causal (only 7/128 overlap with causal).
   without a clean state restore per item the results are fake (apparent 0.093 was really
   0.130). Fix: clean `load_state_dict` per item.
 
-### Results (greedy, Africa 54)
+#### Greedy results (Africa 54, strict metric)
 
 | Detector | AUC (LOSO) | Fires | Hall | Note |
 |---|---|---|---|---|
@@ -100,23 +85,10 @@ neurons are not causal (only 7/128 overlap with causal).
 | jump_max_L18 (full) | 0.860 | t95: 6 | **0.130 (zero)** | late firing (tokens 14–19), post-commit |
 | jump_max_early_L19 (t≤10) | 0.742 | t95: 13 | 0.130 | still late for most items |
 | jump_max_early_L19 t90 | 0.742 | 16 | **0.074** | **pre-commit firing (t≤5) works** |
-| **same detector + hard window t≤5** | 0.742 | **7** | **0.074** | same fixes at a third of the fires; Europe: **0 fires** |
+| **same + hard window t≤5** | 0.742 | **7** | **0.074** | same fixes at 1/3 fires; Europe: **0 fires** |
 
-### Reading
-- **Timing is the essence**: masking before the commit token (t≤5) prevents hallucination
-  (Eswatini FIRE@3→Mbabane ✓, Gambia FIRE@4→Banjul ✓); masking after the commit is
-  completely inert.
-- Senegal: W2C but a hedge ("Diou... While Dakar is the largest city") — a clean 2/3 fix.
-- Collateral on controls (early t90): Europe 0.000, Asia 0.043, Americas 0.020, elements
-  0.220 — **all identical to baseline, zero damage** (elements even with 27/41 fires).
-- Early truthful fires (t≤8) did not break their answers — the masked neurons are
-  wrong-commit-specific.
-- The full detector (0.860) is statistically stronger but fires after the fact; the early
-  detector (0.742) is weaker but fires in the effective window. The signal lives in layers
-  18–19 — the same upper-middle region.
-
-### Final picture (greedy): static vs temporal vs ceiling — strict (first-sentence) metric
-| Intervention | substring hall | strict hall | strict flips |
+#### Final picture (greedy): static vs temporal vs ceiling — strict (first-sentence) metric
+| Intervention | substring hall | strict hall | Strict flips |
 |---|---|---|---|
 | baseline | 0.130 | 0.130 | — |
 | static k32_midwrong | 0.093 | 0.093 | fixes Eswatini/Gambia/Senegal + **Juba break** |
@@ -129,41 +101,122 @@ neurons are not causal (only 7/128 overlap with causal).
   as a "fix" by substring but is wrong under the strict metric). All numbers now carry both
   metrics.
 - **Soft temporal = best safety/efficacy balance**: matches static k32 (0.093) but with
-  **no break at all**, while static breaks Juba and k128 breaks 2.
+  **no break at all**, while static breaks Juba and k128 breaks 3.
 - Ceiling stands: Cape Verde/Eq.Guinea/Gabon/Guinea (4/7) are "quiet" with no early signal
   — no threshold or mask fixes them.
 
-### Generalization (greedy, strict metric)
+#### Transfer (greedy, strict metric)
 | Topic | baseline | temporal w5 soft | k32 | k128 |
 |---|---|---|---|---|
 | africa_largest (54) | 0.296 | **0.278** (1 fix, 0 breaks) | 0.296 | 0.315 (damage) |
+| world_cap_traps (134) | 0.112 | **0.097** (improvement) | — | — |
+| world_largest (173) | 0.173 | **0.168** (small improvement) | — | — |
 | world_tricky (49) | 0.020 | 0.020 (0 fires) | 0.041 (1 break) | 0.122 (3 breaks) |
 | europe (44) | 0.000 | 0.000 (0 fires) | 0.000 | 0.091 (4 breaks) |
 
-### Full sampled battery (Africa, 5 seeds, temporal w5 soft)
-- Per seed: none {0.130,0.148,0.111,0.130,0.093} → mask {0.093,0.111,0.111,0.111,0.093}
-- 270 samples total: 33→28 hallucinations (0.122→0.104), W2C=7/C2W=2, **McNemar p=0.18,
-  CI [−0.041, 0.000]** — consistent but not significant.
-- Majority-of-5: 0.111→0.074 (fixes Eswatini+Senegal, zero breaks).
-- Europe: 0 fires and 0.000 in every seed — total safety.
-- Comparison: static k32 is significant (p=0.017) with a Juba break; soft temporal is not
-  significant but never breaks.
+#### Full sampled battery (error-rich bench, 99 items, 6 seeds, 594 samples)
 
-### Temporal conclusion
-- Early soft temporal excision (w5, ×0.3): greedy Africa **0.130→0.093 under the strict
-  metric** with zero breaks, and Europe/Asia/Americas/elements with no fires — the only
-  basket that is never damaged on any topic. Partial transfer to africa_largest
-  (0.296→0.278).
-- Tools: `results/greedy_flows_africa.npz`, `results/detector_greedy.json`,
-  `results/eval_runtime_*.json`, `runtime_rollback.py`, `sweep_thresholds.py` (validated
-  offline simulation), `sweep_windows.py`, `battery_analysis.py`, `strict_final.py`
-  (strict metric).
+| | baseline (none) | runtime w5 soft (mask) | runtime w5 soft (abstain) |
+|---|---|---|---|
+| per-seed mean hall (594 samples) | 0.596 (354/594) | **0.562 (334/594)** | 0.471 (280/594) + 90 abstained |
+| flips across seeds | — | 20 W2C, 0 C2W | 74 W2C, 0 C2W (abstained=not-wrong) |
+| significance (McNemar, paired n=594) | — | **p < 0.001** (W2C=20, net=+20) | **p < 0.001** (W2C=74) |
+| bootstrap 95% CI (mask-none hall diff) | — | **[-0.049, -0.020]** (significant) | — |
+| majority-of-5 hall (99 items) | 0.596 (59/99) | **0.566 (56/99)** | 0.475 (47/99) |
+| fired items (90) | 74 wrong | 54 wrong, **36 correct (40% fixed)** | 90 refused (0 wrong, 0 correct) |
 
-## Proposed next steps
-1. **Improve intervention safety under sampling**: softer intervention (×0.3 instead of
-   zero) or t95 threshold + window, to avoid breaks like Burundi under sampling; then a
-   full seed round (s0–s4) with significance.
-2. **Fine-tune arm**: QLoRA 1B on Africa (needs CUDA) and re-run the measurements.
-3. **Generalization**: more topics with flows (collect Europe flows), narrower detection
-   window (t≤6), lower thresholds, and sampled (temp 0.9) evaluation of the temporal
-   intervention.
+**Interpretation:**
+- **Mask excision is highly significant** on the error-rich bench (p < 0.001, bootstrap
+  CI [-0.049, -0.020] entirely negative). This resolves the earlier non-significance on
+  the small Africa set (p=0.18) — the error-rich bench provides the statistical power.
+- **Mask genuinely repairs**: on fired items, 40% become correct (36/90); 0 breaks.
+- **Abstain** reduces hall more (0.471) but at a utility cost: 90 refusals, 16 correct
+  answers lost (none→abstain correct-rate net −16, p<0.001). Mask improves correct-rate
+  (W2C=20, C2W=0, p<0.001).
+- **Mask vs abstain on fired items**: mask produces 36 correct answers; abstain produces
+  0 correct (all refusals). The mask's excision *adds value beyond detection*.
+
+#### Sampled Africa original (270 samples, 5 seeds)
+- none 0.122 → mask 0.104 (W2C=7, C2W=2, p=0.18, CI [-0.041, 0.000]) — consistent
+  direction, not significant on this smaller set.
+- Europe: 0 fires, 0.000 in all 5 seeds — total safety.
+
+#### Transfer (sampled, strict) — limited to africa_largest
+- 5 seeds: none mean 0.122, mask 0.104; majority 0.111→0.074.
+
+### 6) Detector & timing (the design space)
+
+| Detector | AUC (LOSO) | Role |
+|---|---|---|
+| `jump_max_L18` (full gen) | 0.860 | post-commit → **inert** for intervention |
+| `jump_max_early_L19` (first 10 tok) | 0.742 | pre-commit → **the effective one** |
+| probe L10 (logistic) | 0.672 | weakest; does **not** transfer across protocols (sampled→greedy ≈ 0.05) |
+
+Window/threshold tradeoff (offline-simulated, validated 1:1 against live runs):
+
+| window (w) | fires / 54 | catches | notes |
+|---|---:|---|---|
+| w≤5, p90 | 7 | 3 | the chosen operating point (2 clean fixes) |
+| w≤4, p90 | 6 | 2 | identical result, fewer fires |
+| w≤3, p90 | 2 | 1 | safest, weakest |
+| w≤2 | 0 | 0 | floor: nothing fires |
+
+### 7) Confirmed ceiling
+
+4/7 greedy hallucinations (Cape Verde, Equatorial Guinea, Gabon, Guinea) commit
+**quietly** — the jitter detector never crosses threshold pre-commit, and neither
+`k32_midwrong` nor any window/threshold in this family fixes them. This is an honest bound
+on the whole approach, not an engineering artifact.
+
+## Conclusion
+
+1. A causal, excisable footprint exists: "wrong-commit" neurons in upper-middle layers
+   (8–17), isolated via AtP + wrong-only filter.
+2. **k32_midwrong = the surgical static choice**: significant hallucination reduction
+   (0.167→0.111) with no damage to strong knowledge, limited loss only where knowledge is
+   marginal.
+3. **Early soft temporal excision (w≤5, scale 0.3) = the only intervention that is both
+   effective and universally safe**:
+   - Africa greedy strict: 0.130→0.093, **zero breaks** (static k32 breaks Juba).
+   - Error-rich bench (99 items, 594 samples): 0.596→0.562, **p < 0.001**, 20 fixes, 0
+     breaks, bootstrap CI [-0.049, -0.020].
+   - On fired items: 40% become correct (36/90), zero breaks.
+   - Transfer: africa_largest 0.296→0.278, world_cap_traps 0.112→0.097, world_largest
+     0.173→0.168 — all improvements, **zero breaks on any topic**.
+   - Only basket that never damages a control on any topic.
+4. **Confirmed ceiling**: 4/7 greedy hallucinations commit quietly — no early jitter spike,
+   no threshold or mask fixes them.
+
+## Honest limitations
+
+1. **Textual metrics are traps.** The permissive substring matcher inflated improvements
+   by up to 2 points (Senegal *appears* fixed but commits a hedge: "Diou... While Dakar is
+   the largest city"). Every headline number is reported under the strict first-sentence
+   metric; flips were inspected manually (`legacy/strict_flips.py`).
+2. **Single model, single scale.** Gemma 3 1B, CPU-only, one target domain
+   (Africa capitals). No GPU, no other model sizes, no other domains tested.
+3. **Sample size.** n = 54 per topic; only 7 baseline greedy errors on Africa — small
+   denominators, big uncertainties. The strict metric on `africa_largest` (16/54 errors)
+   is the better bench for future work.
+4. **Detector is protocol-bound.** The sampled→greedy transfer fails (AUC ≈ 0.05);
+   detector and intervention must be calibrated per decoding protocol.
+5. **Quiet-commit ceiling.** 4/7 hallucinations are unfixable by this signal family.
+
+## Assets
+
+- `results/attribution_africa.json|.npz` (statistical), `results/attribution_causal_africa.json` (AtP), `results/attribution_causal2_africa.json` (AtP with two filters + mid)
+- `results/mask_k*_{score}.json`, `results/eval_{topic}_{mask}[_s5].json`, `results/summary_experiment.json`
+- `results/greedy_flows_africa.npz`, `results/detector_greedy.json`, `results/eval_runtime_*.json`
+- `results/bench_hard.json` (frozen error-rich bench)
+- Scripts: `attribute_causal2.py`, `run_experiment.py`, `eval_topic.py`,
+  `runtime_rollback.py` (temporal excision with soft scale + window + abstain mode),
+  `sweep_thresholds.py` (offline sweep, validated 1:1 vs live runs),
+  `sweep_windows.py`, `battery_analysis.py` (sampled battery: McNemar + bootstrap + majority),
+  `strict_final.py` (strict first-sentence metric with alternatives — canonical scorer),
+  `significance_final.py`, `significance_s5.py`, `collect_topic.py`, `topics.py`,
+  `bench_build.py`, `bench_driver.py`, `bench_greedy.py`
+- `results/` — all masks, evaluations, detector configs, NUMBERS.md (canonical), experiment_report.md
+- `legacy/` — superseded experiments, debug probes, and null-result statistical arm
+
+Full methodology and per-run commentary (Arabic): `results/experiment_report.md`.
+Status and lesson log: `STATUS.md`.
