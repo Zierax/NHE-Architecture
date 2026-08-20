@@ -9,7 +9,8 @@ import topics
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
 ALTS = {}
-for name in ["AFRICA", "EUROPE", "AFRICA_LARGEST", "WORLD_TRICKY"]:
+for name in ["AFRICA", "EUROPE", "AFRICA_LARGEST", "WORLD_TRICKY",
+             "WORLD_CAP_TRAPS", "WORLD_LARGEST"]:
     for tup in getattr(topics, name):
         ALTS[tup[0]] = list(tup[1:])
 
@@ -75,3 +76,11 @@ for f, label in [
     ("results/eval_runtime_europe_jump_gt_L19_t90_mask_sft0.3.json", "europe rt soft"),
 ]:
     score(f, label)
+
+print("\n== NEW error-rich bench (greedy, strict) ==")
+for f, label in [
+    ("results/eval_world_cap_traps_baseline.json", "cap_traps baseline"),
+    ("results/eval_world_largest_baseline.json", "world_largest baseline"),
+]:
+    if os.path.exists(f):
+        score(f, label)

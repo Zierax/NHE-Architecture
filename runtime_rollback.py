@@ -21,7 +21,8 @@ N_LAYERS = 26
 
 TOPICS = {"africa": "topics.AFRICA", "europe": "topics.EUROPE", "elements": "topics.ELEMENTS",
           "asia": "topics.ASIA", "us_states": "topics.US_STATES",
-          "africa_largest": "topics.AFRICA_LARGEST", "world_tricky": "topics.WORLD_TRICKY"}
+          "africa_largest": "topics.AFRICA_LARGEST", "world_tricky": "topics.WORLD_TRICKY",
+          "world_cap_traps": "topics.WORLD_CAP_TRAPS", "world_largest": "topics.WORLD_LARGEST"}
 MASK = os.path.join(RES_DIR, "mask_k32_midwrong.json")
 
 def norm(s):
@@ -61,7 +62,9 @@ def detector_fire(det, score, prev_score):
 
 def gen_with_detector(model, tok, ids, det):
     end_id = tok.convert_tokens_to_ids("<end_of_turn>")
+    abstain_ids = tok.encode("I'm not sure.", add_special_tokens=False)
     n_masked = 0
+    abstained = False
     fired_at = None
     feats = []
     prev_h = None
@@ -97,6 +100,10 @@ def gen_with_detector(model, tok, ids, det):
         feats.append(score)
         if fired_at is None and detector_fire(det, score, prev_score) and (not det.get("window") or t <= det["window"]):
             fired_at = t
+            if det.get("mode") == "abstain":
+                out_ids.extend(abstain_ids)
+                abstained = True
+                break
             if det.get("mode") == "rollback" and len(out_ids) >= 2:
                 ids = ids[:, :-2]
                 out_ids = out_ids[:-2]
@@ -125,7 +132,7 @@ def gen_with_detector(model, tok, ids, det):
         ids = torch.cat([ids, new_tok], dim=1)
         out_ids.append(nxt)
         prev_score = score
-    return out_ids, feats, fired_at, n_masked
+    return out_ids, feats, fired_at, n_masked, abstained
 
 def _sample(logits, rng, det):
     t = det.get("temperature", 0.9)
@@ -143,6 +150,8 @@ def _sample(logits, rng, det):
 def run_topic(topic, det):
     mod = __import__("topics")
     items = getattr(mod, TOPICS[topic].split(".")[1])
+    if det.get("subset"):
+        items = [items[i] for i in det["subset"]]
     model, tok = model_and_tok()
     clean = {k: v.clone() for k, v in model.state_dict().items()}
     results = []
@@ -157,18 +166,20 @@ def run_topic(topic, det):
         text = "<start_of_turn>user\n" + q + "<end_of_turn>\n<start_of_turn>model\n"
         ids = tok(text, return_tensors="pt")["input_ids"]
         with torch.no_grad():
-            gen_ids, feats, fired_at, n_masked = gen_with_detector(model, tok, ids, det_i)
+            gen_ids, feats, fired_at, n_masked, abstained = gen_with_detector(model, tok, ids, det_i)
         gen_text = tok.decode(gen_ids, skip_special_tokens=True)
         gen_n = norm(gen_text)
         correct = 1 if any(norm(a) in gen_n for a in (ans,) + alt) else 0
         results.append({"id": i, "question": q, "answer": ans, "generated": gen_text,
                         "correct": correct, "fired_at": fired_at, "n_masked": n_masked,
+                        "abstained": abstained,
                         "max_feature": float(max(feats)) if feats else None})
         if (i + 1) % 10 == 0:
             print(f"  {i+1}/{len(items)} ({time.time()-t0:.0f}s)", flush=True)
     n = len(results)
     n_correct = sum(r["correct"] for r in results)
     n_fired = sum(1 for r in results if r["fired_at"] is not None)
+    n_abstained = sum(1 for r in results if r["abstained"])
     tag = f"{det['type']}_L{det['layer']:02d}_{det['threshold_key']}_{det.get('mode', 'mask')}"
     if det.get("window") and det.get("window") != 5:
         tag += f"_w{det['window']}"
@@ -178,6 +189,7 @@ def run_topic(topic, det):
         tag += f"_s{det.get('seed', 0)}"
     out_file = os.path.join(RES_DIR, f"eval_runtime_{topic}_{tag}.json")
     summary = {"topic": topic, "detector": det, "n": n, "n_correct": n_correct, "n_fired": n_fired,
+               "n_abstained": n_abstained,
                "hallucination_rate": round((n - n_correct) / n, 4), "results": results}
     with open(out_file, "w", encoding="utf-8") as fh:
         json.dump(summary, fh, indent=2, ensure_ascii=False)
@@ -375,7 +387,7 @@ def main():
         print(f"running {topic} with {dg[sel]['name']} {thr_key} mode={det['mode']} sample={det['sample']} seed={det['seed']} scale={det['scale']} window={det['window']}", flush=True)
         run_topic(topic, det)
         return
-    sys.exit("usage: runtime_rollback.py <collect|fit_greedy|run topic t90|t95 [mask|rollback|none]>")
+    sys.exit("usage: runtime_rollback.py <collect|fit_greedy|run topic t90|t95 [mask|rollback|none|abstain] m|s seed scale window>")
 
 if __name__ == "__main__":
     main()

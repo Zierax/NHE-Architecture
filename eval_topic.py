@@ -14,7 +14,8 @@ RES_DIR = os.path.join(BASE, "results")
 
 TOPICS = {"africa": "topics.AFRICA", "europe": "topics.EUROPE", "elements": "topics.ELEMENTS",
           "asia": "topics.ASIA", "us_states": "topics.US_STATES",
-          "africa_largest": "topics.AFRICA_LARGEST", "world_tricky": "topics.WORLD_TRICKY"}
+          "africa_largest": "topics.AFRICA_LARGEST", "world_tricky": "topics.WORLD_TRICKY",
+          "world_cap_traps": "topics.WORLD_CAP_TRAPS", "world_largest": "topics.WORLD_LARGEST"}
 
 def norm(s):
     return unicodedata.normalize("NFKD", s).encode("ascii", "ignore").decode().lower()
