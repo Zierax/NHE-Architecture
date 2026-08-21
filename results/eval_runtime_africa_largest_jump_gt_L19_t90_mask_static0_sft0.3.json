@@ -1,0 +1,57 @@
+{
+  "topic": "africa_largest",
+  "detector": {
+    "type": "jump_gt",
+    "layer": 19,
+    "auc": 0.7416413373860182,
+    "early": true,
+    "name": "jump_max_early_L19",
+    "threshold_t90": 4610.3560546875,
+    "threshold_t95": 4717.643798828125,
+    "catch_t90": 3,
+    "catch_t95": 1,
+    "trained_on": "greedy_africa",
+    "threshold": 4610.3560546875,
+    "threshold_key": "t90",
+    "mode": "mask",
+    "window": 5,
+    "scale": 0.3,
+    "sample": false,
+    "seed": 0,
+    "subset": [
+      0,
+      1
+    ],
+    "static_mask": "results/mask_k32_midwrong.json",
+    "static_scale": 0.0
+  },
+  "n": 2,
+  "n_correct": 2,
+  "n_fired": 2,
+  "n_abstained": 0,
+  "hallucination_rate": 0.0,
+  "results": [
+    {
+      "id": 0,
+      "question": "What is the largest city in Algeria?",
+      "answer": "Algiers",
+      "generated": "The largest city in Algeria is Algiers.\n\nAlgiers has a population of over 600,000 people, making it the most populous city in the country.\n\nWhile other cities like Constantine and Oran are significant",
+      "correct": 1,
+      "fired_at": 5,
+      "n_masked": 64,
+      "abstained": false,
+      "max_feature": 6966.1435546875
+    },
+    {
+      "id": 1,
+      "question": "What is the largest city in Angola?",
+      "answer": "Luanda",
+      "generated": "The largest city in Angola is Luanda.\n\nWhile Angola has a significant number of cities and towns, Luanda consistently holds the top spot in terms of population.\n\nHere's a breakdown:\n\n*   Luanda: Approximately ",
+      "correct": 1,
+      "fired_at": 5,
+      "n_masked": 64,
+      "abstained": false,
+      "max_feature": 5583.2998046875
+    }
+  ]
+}

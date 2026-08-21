@@ -155,10 +155,15 @@ def run_topic(topic, det):
         items = [items[i] for i in orig_indices]
     model, tok = model_and_tok()
     clean = {k: v.clone() for k, v in model.state_dict().items()}
+    static_mask = det.get("static_mask")
+    static_scale = det.get("static_scale", 0.0)
     results = []
     t0 = time.time()
     for local_i, item in enumerate(items):
         model.load_state_dict(clean)
+        cur_static_n = 0
+        if static_mask:
+            cur_static_n = apply_mask(model, static_mask, static_scale)
         det_i = dict(det)
         if det_i.get("sample"):
             det_i["seed"] = det_i.get("seed", 1000) + local_i * 100
@@ -172,8 +177,9 @@ def run_topic(topic, det):
         gen_n = norm(gen_text)
         correct = 1 if any(norm(a) in gen_n for a in (ans,) + alt) else 0
         orig_id = orig_indices[local_i] if orig_indices else local_i
+        total_masked = cur_static_n + n_masked
         results.append({"id": orig_id, "question": q, "answer": ans, "generated": gen_text,
-                        "correct": correct, "fired_at": fired_at, "n_masked": n_masked,
+                        "correct": correct, "fired_at": fired_at, "n_masked": total_masked,
                         "abstained": abstained,
                         "max_feature": float(max(feats)) if feats else None})
         if (local_i + 1) % 10 == 0:
@@ -183,12 +189,16 @@ def run_topic(topic, det):
     n_fired = sum(1 for r in results if r["fired_at"] is not None)
     n_abstained = sum(1 for r in results if r["abstained"])
     tag = f"{det['type']}_L{det['layer']:02d}_{det['threshold_key']}_{det.get('mode', 'mask')}"
+    if det.get("static_mask"):
+        tag += f"_static{int(det.get('static_scale', 0.0)*10):d}" if det.get("static_scale", 0.0) != 0.0 else "_static0"
     if det.get("window") and det.get("window") != 5:
         tag += f"_w{det['window']}"
     if det.get("scale", 0.0) != 0.0:
         tag += f"_sft{det['scale']}"
     if det.get("sample"):
         tag += f"_s{det.get('seed', 0)}"
+    if det.get("bench_suffix"):
+        tag += det["bench_suffix"]
     out_file = os.path.join(RES_DIR, f"eval_runtime_{topic}_{tag}.json")
     summary = {"topic": topic, "detector": det, "n": n, "n_correct": n_correct, "n_fired": n_fired,
                "n_abstained": n_abstained,

@@ -58,6 +58,29 @@ The bench is constructed from greedy-wrong items on africa_largest (all 54) plus
 | majority-of-5 hall (99 items) | 0.596 (59/99) | **0.566 (56/99)** | 0.475 (47/99) |
 | fired items (90) | 74 wrong | 54 wrong, **36 correct (40% fixed)** | 90 refused (0 wrong, 0 correct) |
 
+## Random bench — 99 items (random sample, seed 42, 6 seeds, 594 samples)
+
+Random sample from same pool (africa_largest 11 + cap_traps 40 + world_largest 48, overlap 19 with hard bench). Baseline **0.099** (vs hard 0.596).
+
+| | baseline (none) | runtime w5 soft (mask) | runtime w5 soft (abstain) |
+|---|---|---|---|
+| per-seed mean hall (594) | 0.099 (59/594) | **0.089 (53/594)** | 0.079 (47/594) + 42 abstained |
+| significance (McNemar) | — | **p=0.031** (W2C=6) | **p<0.001** (W2C=12) |
+| bootstrap 95% CI | — | **[-0.0185, -0.0034]** | — |
+| majority (99) | 0.101 (10/99) | 0.091 (9/99) | 0.081 (8/99) |
+
+## Merged static+temporal — hard bench (99 items, 6 seeds, 594 samples)
+
+Static `k32_midwrong` hard (scale 0.0) always on + temporal soft/abstain on fire. Fires 348/594 (58%) vs temporal alone 90/594 (15%) — static changes dynamics.
+
+| | baseline (none) | temporal mask | temporal abstain | **merged mask** (static+temporal mask) | **merged abstain** (static+abstain) |
+|---|---|---|---|---|---|
+| per-seed mean hall (594) | 0.596 (354/594) | 0.562 (334/594) | 0.471 | **0.389 (231/594)** | **0.088 (52/594)** + 348 abstained |
+| significance vs none (McNemar) | — | p<0.001 (20) | p<0.001 (74) | **p<0.001** (vs none, 123 W2C) | **p<0.001** (vs none, 302 W2C) |
+| vs temporal mask | — | — | — | **p<0.001** (vs mask, 103 W2C) | — |
+
+Merged abstain nearly eliminates hallucination on hard bench (0.088) at cost of 348 abstentions (58% refusal). Merged mask (0.389) repairs without refusal.
+
 ## Transfer — new topics (greedy, strict metric)
 
 | Topic | baseline | runtime w5 soft (mask) | static k32 | static k128 |
