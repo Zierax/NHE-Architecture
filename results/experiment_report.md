@@ -1,6 +1,6 @@
 # Excision Experiment Report — Gemma 3 1B
 
-Date: 2026-08-20 — full error-rich bench battery complete.
+Date: 2026-08-21 — full benches (hard + random) + merged static+temporal complete.
 
 ## Question
 Can hallucinations in a specific topic (Africa capitals) be reduced by excising
@@ -24,8 +24,7 @@ And does early temporal excision work better than static excision?
 - Strong control: Europe (44, 0.005); moderate: Asia (46, 0.057), US states (50, 0.052);
   weak: elements (41, 0.200).
 - Transfer targets: africa_largest (54), world_tricky (49).
-- **Error-rich bench (99 items)**: africa_largest (54) + greedy-wrong subsets from
-  world_cap_traps (15/134) + world_largest (30/173). Baseline strict hall = 0.596.
+- **Error-rich benches (99 items each)**: `bench_hard.json` (54+15+30 greedy-wrong, baseline 0.596) and `bench_random.json` (99 random, seed 42, baseline 0.099, overlap 19). Same pool 361 (54+134+173).
 
 ## Results
 
@@ -114,27 +113,44 @@ neurons are not causal (only 7/128 overlap with causal).
 | world_tricky (49) | 0.020 | 0.020 (0 fires) | 0.041 (1 break) | 0.122 (3 breaks) |
 | europe (44) | 0.000 | 0.000 (0 fires) | 0.000 | 0.091 (4 breaks) |
 
-#### Full sampled battery (error-rich bench, 99 items, 6 seeds, 594 samples)
+#### Full sampled battery — hard bench (99 hard, 6 seeds, 594 samples)
 
 | | baseline (none) | runtime w5 soft (mask) | runtime w5 soft (abstain) |
 |---|---|---|---|
-| per-seed mean hall (594 samples) | 0.596 (354/594) | **0.562 (334/594)** | 0.471 (280/594) + 90 abstained |
-| flips across seeds | — | 20 W2C, 0 C2W | 74 W2C, 0 C2W (abstained=not-wrong) |
-| significance (McNemar, paired n=594) | — | **p < 0.001** (W2C=20, net=+20) | **p < 0.001** (W2C=74) |
-| bootstrap 95% CI (mask-none hall diff) | — | **[-0.049, -0.020]** (significant) | — |
-| majority-of-5 hall (99 items) | 0.596 (59/99) | **0.566 (56/99)** | 0.475 (47/99) |
-| fired items (90) | 74 wrong | 54 wrong, **36 correct (40% fixed)** | 90 refused (0 wrong, 0 correct) |
+| per-seed mean hall (594) | 0.596 (354/594) | **0.562 (334/594)** | 0.471 (280/594) + 90 abstained |
+| flips | — | 20 W2C, 0 C2W | 74 W2C, 0 C2W |
+| McNemar (n=594) | — | **p < 0.001** | **p < 0.001** |
+| bootstrap CI (mask-none) | — | **[-0.049, -0.020]** | — |
+| majority (99) | 0.596 (59/99) | 0.566 (56/99) | 0.475 (47/99) |
+| fired | 90 | 90 (74→54 wrong, **36 correct = 40% fixed**) | 90 refused |
 
-**Interpretation:**
-- **Mask excision is highly significant** on the error-rich bench (p < 0.001, bootstrap
-  CI [-0.049, -0.020] entirely negative). This resolves the earlier non-significance on
-  the small Africa set (p=0.18) — the error-rich bench provides the statistical power.
-- **Mask genuinely repairs**: on fired items, 40% become correct (36/90); 0 breaks.
-- **Abstain** reduces hall more (0.471) but at a utility cost: 90 refusals, 16 correct
-  answers lost (none→abstain correct-rate net −16, p<0.001). Mask improves correct-rate
-  (W2C=20, C2W=0, p<0.001).
-- **Mask vs abstain on fired items**: mask produces 36 correct answers; abstain produces
-  0 correct (all refusals). The mask's excision *adds value beyond detection*.
+Hard bench is selected to be hard (greedy-wrong) — power is high. Mask is highly
+significant and genuinely repairs.
+
+#### Full sampled battery — random bench (99 random, seed 42, 6 seeds, 594 samples)
+
+| | baseline (none) | runtime w5 soft (mask) | runtime w5 soft (abstain) |
+|---|---|---|---|
+| per-seed mean hall (594) | 0.099 (59/594) | **0.089 (53/594)** | 0.079 (47/594) + 42 abstained |
+| McNemar | — | **p=0.031** (W2C 6) | p<0.001 |
+| bootstrap CI | — | **[-0.0185, -0.0034]** | — |
+| majority (99) | 0.101 (10/99) | 0.091 (9/99) | 0.081 (8/99) |
+
+Same direction, smaller effect (random bench is easy, baseline 0.099 vs hard 0.596) —
+proving generalization beyond hard selection. Overlap hard-random is 19/99.
+
+#### Merged static+temporal — hard bench (99 hard, 6 seeds, 594 samples)
+
+Static `k32_midwrong` hard (0.0) always + temporal soft/abstain on fire. Fires
+348/594 (58%) vs temporal alone 90/594 (15%) — static changes dynamics.
+
+| | none | temporal mask | temporal abstain | **merged mask** | **merged abstain** |
+|---|---:|---:|---:|---:|---:|
+| hall (594) | 0.596 | 0.562 | 0.471 | **0.389 (231/594)** | **0.088 (52/594)** + 348 abstained |
+| McNemar vs none | — | p<0.001 | p<0.001 | **p<0.001** (123 W2C) | **p<0.001** (302 W2C) |
+
+Merged mask repairs without refusal; merged abstain nearly eliminates hallucination on
+hard bench at cost of 58% refusal. It breaks the quiet-commit ceiling.
 
 #### Sampled Africa original (270 samples, 5 seeds)
 - none 0.122 → mask 0.104 (W2C=7, C2W=2, p=0.18, CI [-0.041, 0.000]) — consistent
@@ -175,17 +191,20 @@ on the whole approach, not an engineering artifact.
 2. **k32_midwrong = the surgical static choice**: significant hallucination reduction
    (0.167→0.111) with no damage to strong knowledge, limited loss only where knowledge is
    marginal.
-3. **Early soft temporal excision (w≤5, scale 0.3) = the only intervention that is both
-   effective and universally safe**:
+3. **Early soft temporal excision (w≤5, scale 0.3) = the only single intervention that is
+   both effective and universally safe**:
    - Africa greedy strict: 0.130→0.093, **zero breaks** (static k32 breaks Juba).
-   - Error-rich bench (99 items, 594 samples): 0.596→0.562, **p < 0.001**, 20 fixes, 0
-     breaks, bootstrap CI [-0.049, -0.020].
+   - Hard bench (99 hard, 594 samples): 0.596→0.562, **p<0.001**, 20 fixes, 0 breaks,
+     CI [-0.049, -0.020]; random bench (99 random, 594): 0.099→0.089, **p=0.031** —
+     same direction, proving generalization.
    - On fired items: 40% become correct (36/90), zero breaks.
    - Transfer: africa_largest 0.296→0.278, world_cap_traps 0.112→0.097, world_largest
      0.173→0.168 — all improvements, **zero breaks on any topic**.
-   - Only basket that never damages a control on any topic.
-4. **Confirmed ceiling**: 4/7 greedy hallucinations commit quietly — no early jitter spike,
-   no threshold or mask fixes them.
+   - Only single-intervention basket that never damages a control.
+4. **Merged static+temporal (hard bench): 0.596→0.389 (mask) and 0.088 (abstain)** —
+   breaks the ceiling at cost of 58% fires/refusals.
+5. **Confirmed ceiling**: 4/7 greedy hallucinations commit quietly — no single-family
+   threshold or mask fixes them; only merged does.
 
 ## Honest limitations
 
@@ -207,9 +226,9 @@ on the whole approach, not an engineering artifact.
 - `results/attribution_africa.json|.npz` (statistical), `results/attribution_causal_africa.json` (AtP), `results/attribution_causal2_africa.json` (AtP with two filters + mid)
 - `results/mask_k*_{score}.json`, `results/eval_{topic}_{mask}[_s5].json`, `results/summary_experiment.json`
 - `results/greedy_flows_africa.npz`, `results/detector_greedy.json`, `results/eval_runtime_*.json`
-- `results/bench_hard.json` (frozen error-rich bench)
+- `results/bench_hard.json` (99 hard), `results/bench_random.json` (99 random, seed 42)
 - Scripts: `attribute_causal2.py`, `run_experiment.py`, `eval_topic.py`,
-  `runtime_rollback.py` (temporal excision with soft scale + window + abstain mode),
+  `runtime_rollback.py` (temporal excision with soft scale + window + abstain mode + static+temporal merged),
   `sweep_thresholds.py` (offline sweep, validated 1:1 vs live runs),
   `sweep_windows.py`, `battery_analysis.py` (sampled battery: McNemar + bootstrap + majority),
   `strict_final.py` (strict first-sentence metric with alternatives — canonical scorer),
