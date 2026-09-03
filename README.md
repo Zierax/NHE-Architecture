@@ -164,7 +164,20 @@ Fires vs window (p90): w≤5 → 7/54 (3 hits), w≤4 → 6/54 (2 hits), w≤3 �
 
 Four Africa errors never spike — they just commit quietly. No single jitter
 threshold or k32 mask catches them. Only the merged static+temporal moves them.
-That's the ceiling for this signal family.
+That's the ceiling for this signal family. A logit-lens probe on those four
+(`probe_quiet.py`, `results/quiet_diagnostic.json`) shows they are *not* early
+high-confidence parametric errors — they look dynamic with subtler jitter, so a
+second signal (attention entropy / drift) may catch them.
+
+## Cross-model and side effects
+
+- **Qwen adapter ready** (`runtime_rollback_qwen.py`): same pipeline for
+  Qwen2.5-0.5B/1.5B (24×896 / 28×1536), synthetic validation passes
+  (`results/detector_greedy_qwen*.json`). Real weights need a stable download
+  (`results/cross_arch_report.md`).
+- **General knowledge preserved:** soft k32 on 181 controls goes 169/181→166/181
+  strict (-0.016, <2%) — no systematic damage (`eval_mmlu.py`,
+  `results/mmlu_side_effect.json`).
 
 ## Limitations
 

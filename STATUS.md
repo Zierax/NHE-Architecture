@@ -42,6 +42,18 @@ All numbers below are strict (first sentence) and labeled. Full table: `results/
 7. **Ceiling.** 4/7 Africa errors never spike (Cape Verde, Eq Guinea, Gabon, Guinea).
    No single jitter threshold or k32 mask catches them. Only merged does.
 
+8. **Quiet check.** Logit lens on those 4 shows they are *not* early high-confidence
+   parametric errors — they look dynamic with subtler jitter (late prob, high
+   entropy like the fixable ones). So a second signal may catch them
+   (`probe_quiet.py`, `results/quiet_diagnostic.json`).
+
+9. **Cross-model.** Qwen2.5-0.5B/1.5B adapter ready, synthetic validated
+   (`runtime_rollback_qwen.py`, `results/cross_arch_report.md`); real download
+   pending.
+
+10. **Side effects.** Soft k32 on 181 controls: 0.917→0.901 strict (-0.016, <2%) —
+    preserved, no systematic damage (`eval_mmlu.py`, `results/mmlu_side_effect.json`).
+
 Lessons: clean state per item (or you fake results), strict scoring (loose counts
 hedges), offline simulation matches live 1:1, manual sampler ≠ `model.generate`
 (both valid, different draws).
