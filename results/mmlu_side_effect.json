@@ -1,0 +1,433 @@
+{
+  "model": "gemma3-1b-fp16",
+  "model_path": "D:\\Axioms\\No-Hallucinations-Ever\\models\\gemma3-1b-fp16",
+  "tokenizer_path": "D:\\Axioms\\No-Hallucinations-Ever\\models\\gemma3-1b-tokenizer",
+  "mask_path": "D:\\Axioms\\No-Hallucinations-Ever\\results\\mask_k32_midwrong.json",
+  "mask_meta": {
+    "score": "midwrong",
+    "k": 32,
+    "items": [
+      {
+        "layer": 12,
+        "unit": 6509
+      },
+      {
+        "layer": 16,
+        "unit": 2815
+      },
+      {
+        "layer": 16,
+        "unit": 4003
+      },
+      {
+        "layer": 13,
+        "unit": 3171
+      },
+      {
+        "layer": 15,
+        "unit": 3900
+      },
+      {
+        "layer": 16,
+        "unit": 724
+      },
+      {
+        "layer": 16,
+        "unit": 1362
+      },
+      {
+        "layer": 17,
+        "unit": 437
+      },
+      {
+        "layer": 17,
+        "unit": 2619
+      },
+      {
+        "layer": 14,
+        "unit": 3935
+      },
+      {
+        "layer": 17,
+        "unit": 1877
+      },
+      {
+        "layer": 16,
+        "unit": 4217
+      },
+      {
+        "layer": 11,
+        "unit": 2422
+      },
+      {
+        "layer": 15,
+        "unit": 4653
+      },
+      {
+        "layer": 16,
+        "unit": 6409
+      },
+      {
+        "layer": 15,
+        "unit": 4217
+      },
+      {
+        "layer": 17,
+        "unit": 5488
+      },
+      {
+        "layer": 17,
+        "unit": 3910
+      },
+      {
+        "layer": 10,
+        "unit": 6103
+      },
+      {
+        "layer": 16,
+        "unit": 5355
+      },
+      {
+        "layer": 14,
+        "unit": 3104
+      },
+      {
+        "layer": 14,
+        "unit": 5439
+      },
+      {
+        "layer": 16,
+        "unit": 3126
+      },
+      {
+        "layer": 17,
+        "unit": 2324
+      },
+      {
+        "layer": 17,
+        "unit": 3350
+      },
+      {
+        "layer": 15,
+        "unit": 426
+      },
+      {
+        "layer": 15,
+        "unit": 3705
+      },
+      {
+        "layer": 12,
+        "unit": 6686
+      },
+      {
+        "layer": 16,
+        "unit": 1993
+      },
+      {
+        "layer": 14,
+        "unit": 4285
+      },
+      {
+        "layer": 13,
+        "unit": 207
+      },
+      {
+        "layer": 15,
+        "unit": 4507
+      }
+    ]
+  },
+  "scale": 0.3,
+  "mode": "soft_excision (weight *= scale, runtime_rollback.apply_mask semantics)",
+  "dataset": "control_topics_proxy_for_MMLU",
+  "dataset_note": "Proxy for MMLU general-knowledge: aggregate of 4 control topics (ELEMENTS 41 STEM/chemistry + EUROPE 44 geography + ASIA 46 geography + US_STATES 50 civics = 181). Clearly labeled as proxy, NOT true MMLU. MMLU download was skipped for CPU budget (reason: MMLU download skipped by default for CPU budget (use --use-real to force; proxy is primary per spec task 3). Prior probe: real MMLU prompts are 3.5x slower (7.5s vs 2s on proxy) and would need ~30min for 200 items vs 12min for proxy 181. Proxy is meaningful per spec.). Use --use-real to force real MMLU streaming (slower). Breadth mimics MMLU coverage (STEM + humanities + geography) and serves as sensitive detector for polysemantic side-effects: if soft excision (scale 0.3, k32_midwrong layers 8-17) were polysemantic, these unrelated topics would degrade.",
+  "n": 181,
+  "is_proxy": true,
+  "proxy_topics": {
+    "elements": 41,
+    "europe": 44,
+    "asia": 46,
+    "us_states": 50
+  },
+  "real_dataset_meta": null,
+  "fallback_reason": "MMLU download skipped by default for CPU budget (use --use-real to force; proxy is primary per spec task 3). Prior probe: real MMLU prompts are 3.5x slower (7.5s vs 2s on proxy) and would need ~30min for 200 items vs 12min for proxy 181. Proxy is meaningful per spec.",
+  "scoring": {
+    "substr": "eval_topic.py substring: any(norm(answer) in norm(generated)) on full generation",
+    "strict_first_sentence": "strict_final.py first-sentence: any(norm(answer) in norm(first_sentence(generated)))",
+    "prompt": "<start_of_turn>user\\n{question}<end_of_turn>\\n<start_of_turn>model\\n  greedy max_new_tokens=48 do_sample=False",
+    "max_new_tokens": 48
+  },
+  "overall": {
+    "n": 181,
+    "baseline_correct_substr": 169,
+    "masked_correct_substr": 166,
+    "baseline_acc_substr": 0.9337,
+    "masked_acc_substr": 0.9171,
+    "delta_substr": -0.0166,
+    "baseline_correct_strict": 166,
+    "masked_correct_strict": 163,
+    "baseline_acc_strict": 0.9171,
+    "masked_acc_strict": 0.9006,
+    "delta_strict": -0.0166,
+    "verdict_substr": "preserved (degradation <2%, within noise)",
+    "verdict_strict": "preserved (degradation <2%, within noise)"
+  },
+  "per_topic": {
+    "asia": {
+      "n": 46,
+      "baseline_substr": 0.9565217391304348,
+      "masked_substr": 0.9347826086956522,
+      "delta_substr": -0.021739130434782594,
+      "baseline_strict": 0.9347826086956522,
+      "masked_strict": 0.9130434782608695,
+      "delta_strict": -0.021739130434782705
+    },
+    "elements": {
+      "n": 41,
+      "baseline_substr": 0.7804878048780488,
+      "masked_substr": 0.7804878048780488,
+      "delta_substr": 0.0,
+      "baseline_strict": 0.7804878048780488,
+      "masked_strict": 0.7560975609756098,
+      "delta_strict": -0.024390243902439046
+    },
+    "europe": {
+      "n": 44,
+      "baseline_substr": 1.0,
+      "masked_substr": 1.0,
+      "delta_substr": 0.0,
+      "baseline_strict": 1.0,
+      "masked_strict": 1.0,
+      "delta_strict": 0.0
+    },
+    "us_states": {
+      "n": 50,
+      "baseline_substr": 0.98,
+      "masked_substr": 0.94,
+      "delta_substr": -0.040000000000000036,
+      "baseline_strict": 0.94,
+      "masked_strict": 0.92,
+      "delta_strict": -0.019999999999999907
+    }
+  },
+  "per_topic_baseline": {
+    "elements": {
+      "n": 41,
+      "n_correct_substr": 32,
+      "n_correct_strict": 32,
+      "acc_substr": 0.7804878048780488,
+      "acc_strict": 0.7804878048780488
+    },
+    "europe": {
+      "n": 44,
+      "n_correct_substr": 44,
+      "n_correct_strict": 44,
+      "acc_substr": 1.0,
+      "acc_strict": 1.0
+    },
+    "asia": {
+      "n": 46,
+      "n_correct_substr": 44,
+      "n_correct_strict": 43,
+      "acc_substr": 0.9565217391304348,
+      "acc_strict": 0.9347826086956522
+    },
+    "us_states": {
+      "n": 50,
+      "n_correct_substr": 49,
+      "n_correct_strict": 47,
+      "acc_substr": 0.98,
+      "acc_strict": 0.94
+    }
+  },
+  "per_topic_masked": {
+    "elements": {
+      "n": 41,
+      "n_correct_substr": 32,
+      "n_correct_strict": 31,
+      "acc_substr": 0.7804878048780488,
+      "acc_strict": 0.7560975609756098
+    },
+    "europe": {
+      "n": 44,
+      "n_correct_substr": 44,
+      "n_correct_strict": 44,
+      "acc_substr": 1.0,
+      "acc_strict": 1.0
+    },
+    "asia": {
+      "n": 46,
+      "n_correct_substr": 43,
+      "n_correct_strict": 42,
+      "acc_substr": 0.9347826086956522,
+      "acc_strict": 0.9130434782608695
+    },
+    "us_states": {
+      "n": 50,
+      "n_correct_substr": 47,
+      "n_correct_strict": 46,
+      "acc_substr": 0.94,
+      "acc_strict": 0.92
+    }
+  },
+  "timing": {
+    "baseline_sec": 448.1,
+    "masked_sec": 470.6,
+    "total_sec": 1380.4
+  },
+  "determinism": "greedy (do_sample=False), torch.manual_seed(0), single CPU fp16 eager",
+  "hardware": "CPU fp16 no CUDA, attn_implementation=eager",
+  "timestamp": "2026-09-03T17:19:54.049976Z",
+  "references": {
+    "apply_mask_src": "runtime_rollback.py:39 weight *= scale",
+    "eval_src": "eval_topic.py:65-85 / strict_final.py:22 fs()"
+  },
+  "flips": [
+    {
+      "id": 30,
+      "topic": "elements",
+      "question": "What element has the atomic number 6?",
+      "answer": "Carbon",
+      "baseline_generated": "The element with the atomic number 6 is **Carbon**. \n\nCarbon is the basis of all organic compounds and is incredibly important in chemistry.",
+      "masked_generated": "The element with the atomic number 6 is oxygen.",
+      "baseline_substr": 1,
+      "masked_substr": 0,
+      "baseline_strict": 1,
+      "masked_strict": 0
+    },
+    {
+      "id": 31,
+      "topic": "elements",
+      "question": "What element has the atomic number 8?",
+      "answer": "Oxygen",
+      "baseline_generated": "The element with the atomic number 8 is **Hydrogen**. \n\nHydrogen is the simplest and most abundant element in the universe.",
+      "masked_generated": "The element with the atomic number 8 is Oxygen (O).",
+      "baseline_substr": 0,
+      "masked_substr": 1,
+      "baseline_strict": 0,
+      "masked_strict": 1
+    },
+    {
+      "id": 32,
+      "topic": "elements",
+      "question": "What element has the atomic number 11?",
+      "answer": "Sodium",
+      "baseline_generated": "The element with the atomic number 11 is **Sodium (Na)**. \n\nIt’s a silvery-white metal that is highly reactive.",
+      "masked_generated": "The element with the atomic number 11 is gold. \n\nSpecifically, it's gold (Au).",
+      "baseline_substr": 1,
+      "masked_substr": 0,
+      "baseline_strict": 1,
+      "masked_strict": 0
+    },
+    {
+      "id": 36,
+      "topic": "elements",
+      "question": "What element has the atomic number 47?",
+      "answer": "Silver",
+      "baseline_generated": "The element with the atomic number 47 is **Technetium (Tc)**.\n\nHere's a little more about it:\n\n*   **Discovery:** Technetium was discovered in 1937 by Karl Wilhelm",
+      "masked_generated": "The element with the atomic number 47 is **Promethium**. \n\nIt’s a synthetic element, meaning it’s not naturally occurring in significant quantities. It’s a silvery-white metal that’s highly radioactiv",
+      "baseline_substr": 0,
+      "masked_substr": 1,
+      "baseline_strict": 0,
+      "masked_strict": 0
+    },
+    {
+      "id": 101,
+      "topic": "asia",
+      "question": "What is the capital of Myanmar?",
+      "answer": "Naypyidaw",
+      "baseline_generated": "The capital of Myanmar is **Naypyidaw**.\n",
+      "masked_generated": "The capital of Myanmar is Yangon. \n\nHowever, it’s important to note that Myanmar has been experiencing political instability and a shift in its capital. Currently, the capital is located in the Mawkyn",
+      "baseline_substr": 1,
+      "masked_substr": 0,
+      "baseline_strict": 1,
+      "masked_strict": 0
+    },
+    {
+      "id": 105,
+      "topic": "asia",
+      "question": "What is the capital of Brunei?",
+      "answer": "Bandar Seri Begawan",
+      "baseline_generated": "The capital of Brunei is **Bandar Seri Begawan**.\n",
+      "masked_generated": "The capital of Brunei is Bandar Seri Begi.",
+      "baseline_substr": 1,
+      "masked_substr": 0,
+      "baseline_strict": 1,
+      "masked_strict": 0
+    },
+    {
+      "id": 128,
+      "topic": "asia",
+      "question": "What is the capital of Georgia?",
+      "answer": "Tbilisi",
+      "baseline_generated": "The capital of Georgia is **Atlanta**.\n",
+      "masked_generated": "The capital of Georgia is Tbilisi. 😊\n",
+      "baseline_substr": 0,
+      "masked_substr": 1,
+      "baseline_strict": 0,
+      "masked_strict": 1
+    },
+    {
+      "id": 138,
+      "topic": "us_states",
+      "question": "What is the capital of Delaware?",
+      "answer": "Dover",
+      "baseline_generated": "The capital of Delaware is **Wilmington**.\n",
+      "masked_generated": "The capital of Delaware is Dover. 😊",
+      "baseline_substr": 0,
+      "masked_substr": 1,
+      "baseline_strict": 0,
+      "masked_strict": 1
+    },
+    {
+      "id": 149,
+      "topic": "us_states",
+      "question": "What is the capital of Maine?",
+      "answer": "Augusta",
+      "baseline_generated": "The capital of Maine is **Augusta**.\n",
+      "masked_generated": "The capital of Maine is Portland. 😊\n",
+      "baseline_substr": 1,
+      "masked_substr": 0,
+      "baseline_strict": 1,
+      "masked_strict": 0
+    },
+    {
+      "id": 158,
+      "topic": "us_states",
+      "question": "What is the capital of Nevada?",
+      "answer": "Carson City",
+      "baseline_generated": "The capital of Nevada is **Las Vegas**. \n\nWhile Carson City is the state capital, Las Vegas is the seat of the Nevada Governor and the center of state government.",
+      "masked_generated": "The capital of Nevada is Carson City. 😊\n",
+      "baseline_substr": 1,
+      "masked_substr": 1,
+      "baseline_strict": 0,
+      "masked_strict": 1
+    },
+    {
+      "id": 167,
+      "topic": "us_states",
+      "question": "What is the capital of Oregon?",
+      "answer": "Salem",
+      "baseline_generated": "The capital of Oregon is **Salem**.\n",
+      "masked_generated": "The capital of Oregon is Portland. 😊 \n\n",
+      "baseline_substr": 1,
+      "masked_substr": 0,
+      "baseline_strict": 1,
+      "masked_strict": 0
+    },
+    {
+      "id": 175,
+      "topic": "us_states",
+      "question": "What is the capital of Vermont?",
+      "answer": "Montpelier",
+      "baseline_generated": "The capital of Vermont is **Montpelier**. 😊\n",
+      "masked_generated": "The capital of Vermont is Burlington. 😊",
+      "baseline_substr": 1,
+      "masked_substr": 0,
+      "baseline_strict": 1,
+      "masked_strict": 0
+    }
+  ],
+  "n_flips_substr": 11,
+  "n_flips_strict": 11
+}

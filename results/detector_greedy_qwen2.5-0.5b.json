@@ -1,0 +1,120 @@
+{
+ "selected": "jump_max_early_L16",
+ "detector": {
+  "type": "jump_gt",
+  "layer": 16,
+  "auc": 1.0,
+  "early": true,
+  "threshold_t90": 15.820727634429932,
+  "threshold_t95": 15.907751941680909,
+  "catch_t90": 16,
+  "catch_t95": 16,
+  "trained_on": "greedy_africa_qwen2.5-0.5b",
+  "name": "jump_max_early_L16",
+  "synthetic": true
+ },
+ "detector_early": {
+  "type": "jump_gt",
+  "layer": 16,
+  "auc": 1.0,
+  "early": true,
+  "name": "jump_max_early_L16",
+  "threshold_t90": 15.820727634429932,
+  "threshold_t95": 15.907751941680909,
+  "catch_t90": 16,
+  "catch_t95": 16,
+  "trained_on": "greedy_africa_qwen2.5-0.5b",
+  "synthetic": true
+ },
+ "probe_L10_auc": 0.3486842105263158,
+ "top_features": [
+  {
+   "name": "jump_max_L16",
+   "auc": 1.0
+  },
+  {
+   "name": "jump_max_L18",
+   "auc": 1.0
+  },
+  {
+   "name": "cos_min_L12",
+   "auc": 0.65625
+  },
+  {
+   "name": "cos_min_L15",
+   "auc": 0.6414473684210527
+  },
+  {
+   "name": "cos_min_L14",
+   "auc": 0.6151315789473685
+  },
+  {
+   "name": "jump_max_L21",
+   "auc": 0.6036184210526316
+  },
+  {
+   "name": "cos_min_L07",
+   "auc": 0.5970394736842104
+  },
+  {
+   "name": "jump_max_L14",
+   "auc": 0.5953947368421052
+  },
+  {
+   "name": "jump_max_L01",
+   "auc": 0.5723684210526316
+  },
+  {
+   "name": "cos_min_L01",
+   "auc": 0.5657894736842105
+  }
+ ],
+ "top_early_features": [
+  {
+   "name": "jump_max_early_L16",
+   "auc": 1.0
+  },
+  {
+   "name": "jump_max_early_L18",
+   "auc": 1.0
+  },
+  {
+   "name": "cos_min_early_L12",
+   "auc": 0.65625
+  },
+  {
+   "name": "cos_min_early_L15",
+   "auc": 0.6414473684210527
+  },
+  {
+   "name": "cos_min_early_L14",
+   "auc": 0.6151315789473685
+  },
+  {
+   "name": "cos_min_early_L07",
+   "auc": 0.5970394736842104
+  },
+  {
+   "name": "jump_max_early_L14",
+   "auc": 0.5888157894736842
+  },
+  {
+   "name": "jump_max_early_L20",
+   "auc": 0.5855263157894737
+  },
+  {
+   "name": "jump_max_early_L01",
+   "auc": 0.5773026315789473
+  },
+  {
+   "name": "jump_max_early_L21",
+   "auc": 0.569078947368421
+  }
+ ],
+ "model": "qwen2.5-0.5b",
+ "n_layers": 24,
+ "hidden_size": 896,
+ "trained_on": "greedy_africa_qwen2.5-0.5b",
+ "synthetic": true,
+ "note": "SYNTHETIC PLACEHOLDER \u2014 generated with mocked hidden states (np.random, jitter-injected) to validate code path without model weights. OVERWRITE by running with real model: python runtime_rollback_qwen.py --model {mk} collect && python runtime_rollback_qwen.py --model {mk} fit_greedy"
+}
