@@ -8,8 +8,9 @@ import torch
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
 BASE = os.path.dirname(os.path.abspath(__file__))
-SAVE_DIR = os.path.join(BASE, "models", "gemma3-1b-fp16")
-TOK_DIR = os.path.join(BASE, "models", "gemma3-1b-tokenizer")
+REPO_ROOT = os.path.dirname(BASE) if os.path.basename(BASE) == "NHE-Edge" else BASE
+SAVE_DIR = os.path.join(REPO_ROOT, "models", "gemma3-1b-fp16")
+TOK_DIR = os.path.join(REPO_ROOT, "models", "gemma3-1b-tokenizer")
 RES_DIR = os.path.join(BASE, "results")
 
 TOPICS = {"africa": "topics.AFRICA", "europe": "topics.EUROPE", "elements": "topics.ELEMENTS",

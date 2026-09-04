@@ -1,11 +1,14 @@
 import json
+import os
 import sys
 from math import comb
 
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+BASE = os.path.dirname(os.path.abspath(__file__))
+RES = os.path.join(BASE, "results")
 
 def load(topic, tag):
-    return json.load(open(f"results/eval_{topic}_{tag}.json", encoding="utf-8"))
+    return json.load(open(os.path.join(RES, f"eval_{topic}_{tag}.json"), encoding="utf-8"))
 
 def wilson(k, n):
     z = 1.96

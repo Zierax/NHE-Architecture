@@ -14,7 +14,7 @@ We test on African capitals and make sure other topics still work.
 
 ## Where we are
 
-All numbers below are strict (first sentence) and labeled. Full table: `results/NUMBERS.md`.
+All numbers below are strict (first sentence) and labeled. Full table: `NHE-Edge/results/NUMBERS.md`. All code and results live in `NHE-Edge/` (root holds only overview docs, roadmap, env).
 
 1. **Signal.** Jitter (hidden-state jump) separates wrong vs correct well on Africa
    (AUROC 0.968, peak layers 10–15). It doesn't transfer across greedy ↔ sampled
@@ -55,13 +55,13 @@ Lessons: clean state per item (or you fake results), strict scoring (loose count
 hedges), offline simulation matches live 1:1, manual sampler ≠ `model.generate`
 (both valid, different draws).
 
-Full details: `results/experiment_report.md`. Raw files: `results/*.json`.
+Full details: `NHE-Edge/results/experiment_report.md`. Raw files: `NHE-Edge/results/*.json`.
 
 ## Data
 
-- `data/` 378 MB: flows (T,27,1152) fp16 for general/africa/europe/elements
-- 9 topics in `topics.py` (54+44+41+46+50+54+49+134+173)
-- `results/greedy_flows_africa.npz` + `bench_hard.json` + `bench_random.json` (99 each)
+- `data/` 378 MB (repo root, gitignored): flows (T,27,1152) fp16
+- 9 topics in `NHE-Edge/topics.py` (54+44+41+46+50+54+49+134+173)
+- `NHE-Edge/results/greedy_flows_africa.npz` + `bench_hard.json` + `bench_random.json` (99 each)
 
 ## What's next
 

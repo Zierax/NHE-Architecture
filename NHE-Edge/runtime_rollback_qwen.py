@@ -42,8 +42,9 @@ import torch
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
 BASE = os.path.dirname(os.path.abspath(__file__))
+REPO_ROOT = os.path.dirname(BASE) if os.path.basename(BASE) == "NHE-Edge" else BASE
 RES_DIR = os.path.join(BASE, "results")
-DATA_DIR = os.path.join(BASE, "data")
+DATA_DIR = os.path.join(REPO_ROOT, "data")
 
 # ---------------------------------------------------------------------------
 # Model registry — single source of truth for architecture differences
@@ -53,8 +54,8 @@ MODEL_REGISTRY = {
     "gemma3-1b": {
         "aliases": ["gemma", "gemma3-1b-it", "gemma3-1b-fp16", "gemma3-1b"],
         "hf_id": "google/gemma-3-1b-it",
-        "local_model_dir": os.path.join(BASE, "models", "gemma3-1b-fp16"),
-        "local_tok_dir": os.path.join(BASE, "models", "gemma3-1b-tokenizer"),
+        "local_model_dir": os.path.join(REPO_ROOT, "models", "gemma3-1b-fp16"),
+        "local_tok_dir": os.path.join(REPO_ROOT, "models", "gemma3-1b-tokenizer"),
         "n_layers": 26,
         "hidden_size": 1152,
         "intermediate_size": 6912,

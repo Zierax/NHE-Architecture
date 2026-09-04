@@ -1,18 +1,21 @@
 import json
+import os
 import sys
 
 import numpy as np
 
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+BASE = os.path.dirname(os.path.abspath(__file__))
+RES = os.path.join(BASE, "results")
 
-d = np.load("results/greedy_flows_africa.npz", allow_pickle=True)
+d = np.load(os.path.join(RES, "greedy_flows_africa.npz"), allow_pickle=True)
 flows = list(d["flows"])
 texts = d["texts"]
 labels = np.array(d["labels"]).astype(int)
 y = 1 - labels
 hall_idx = [i for i in range(len(y)) if y[i] == 1]
 
-baseline = json.load(open("results/eval_africa_baseline.json", encoding="utf-8"))
+baseline = json.load(open(os.path.join(RES, "eval_africa_baseline.json"), encoding="utf-8"))
 base_correct = {r["question"]: r["correct"] for r in baseline["results"]}
 
 LAYER = 19
@@ -29,7 +32,7 @@ early_max = np.array([j[: min(10, len(j))].max() for j in jumps_all])
 print(f"hall items: {[texts[i][:30] for i in hall_idx]}")
 print("per-hall peak (commit) token:", [(i, peak_t[i], texts[i][:40]) for i in hall_idx])
 
-reported = json.load(open("results/eval_runtime_africa_jump_gt_L19_t90_mask.json", encoding="utf-8"))
+reported = json.load(open(os.path.join(RES, "eval_runtime_africa_jump_gt_L19_t90_mask.json"), encoding="utf-8"))
 rep_fire = {r["question"]: r["fired_at"] for r in reported["results"]}
 
 for p in (70, 75, 80, 85, 88, 90, 92, 95):

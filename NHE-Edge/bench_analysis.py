@@ -8,10 +8,11 @@ import numpy as np
 from scipy.stats import binomtest
 
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+BASE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, BASE)
 import topics
 
-RES = "results"
+RES = os.path.join(BASE, "results")
 SEEDS = [1000, 1001, 1002, 1003, 1004, 1006]
 ARMS = ["none", "mask", "abstain"]
 WINDOW = 5

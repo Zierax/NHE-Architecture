@@ -47,18 +47,15 @@
 
 The 4 quiet cases are not parametric training-data errors (logit lens shows late, low confidence, high entropy like dynamic). But the *method* to tell them apart (jitter + entropy + cross-layer) is itself a paper: "When is a hallucination a training-data error vs a late commit?" Needs logit lens + paraphrase persistence on those 4 vs 3 controls — data already in `results/quiet_diagnostic.json`.
 
-## Appendix: Repo reorg (internal, not for reviewers)
+## Appendix: Repo reorg (done 2026-09-04)
 
-Flat root was hard to navigate. Target:
-
-```
-├── paper/                  # gitignored, drafts
-├── NHE-Edge/               # current pipeline (frozen after Qwen real)
-├── NHE-GenPM/              # SAE/steering plan
-├── results/ , models/ , data/  # shared
-```
-
-Steps: create skeleton (done) → `git mv` with shims → validate → remove shims.
+Moved via `git mv` (history preserved): all 22 scripts + `topics.py` + `results/`
++ `legacy/` + full README → `NHE-Edge/`. Root holds only overview `README.md`,
+`STATUS.md`, `ROADMAP.md`, `requirements.txt`, `.gitignore`. `models/` and
+`data/` stay at root (gitignored, heavy); Edge code resolves them via
+`REPO_ROOT`. `NHE-GenPM/` holds plan + `sae/` skeleton. No shims — scripts run
+from `NHE-Edge/` with script-dir-anchored paths (validated: `strict_final.py`,
+`bench_analysis.py` reproduce headline numbers from any CWD).
 
 ## Milestones
 

@@ -20,8 +20,9 @@ import numpy as np
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
 BASE = Path(__file__).resolve().parent
-SAVE_DIR = BASE / "models" / "gemma3-1b-fp16"
-TOK_DIR = BASE / "models" / "gemma3-1b-tokenizer"
+REPO_ROOT = BASE.parent if BASE.name == "NHE-Edge" else BASE
+SAVE_DIR = REPO_ROOT / "models" / "gemma3-1b-fp16"
+TOK_DIR = REPO_ROOT / "models" / "gemma3-1b-tokenizer"
 RES_DIR = BASE / "results"
 
 # ---------------------------------------------------------------------------

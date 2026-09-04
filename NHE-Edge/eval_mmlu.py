@@ -28,8 +28,9 @@ import datetime
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
 BASE = os.path.dirname(os.path.abspath(__file__))
-SAVE_DIR = os.path.join(BASE, "models", "gemma3-1b-fp16")
-TOK_DIR = os.path.join(BASE, "models", "gemma3-1b-tokenizer")
+REPO_ROOT = os.path.dirname(BASE) if os.path.basename(BASE) == "NHE-Edge" else BASE
+SAVE_DIR = os.path.join(REPO_ROOT, "models", "gemma3-1b-fp16")
+TOK_DIR = os.path.join(REPO_ROOT, "models", "gemma3-1b-tokenizer")
 RES_DIR = os.path.join(BASE, "results")
 MASK_K32 = os.path.join(RES_DIR, "mask_k32_midwrong.json")
 MASK_K128 = os.path.join(RES_DIR, "mask_k128_wrong.json")  # for optional extra

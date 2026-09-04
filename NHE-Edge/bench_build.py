@@ -5,8 +5,11 @@ import sys
 import unicodedata
 
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+BASE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, BASE)
 import topics
+
+RES = os.path.join(BASE, "results")
 
 ALTS = {}
 for name in ["AFRICA_LARGEST", "WORLD_CAP_TRAPS", "WORLD_LARGEST"]:
@@ -35,13 +38,16 @@ def strict_wrong(path, topic_name):
     return idx
 
 
+def _rp(name):
+    return os.path.join(RES, name)
+
 HARD = {
     "africa_largest": list(range(54)),
-    "world_cap_traps": strict_wrong("results/eval_world_cap_traps_baseline.json", "world_cap_traps"),
-    "world_largest": strict_wrong("results/eval_world_largest_baseline.json", "world_largest"),
+    "world_cap_traps": strict_wrong(_rp("eval_world_cap_traps_baseline.json"), "world_cap_traps"),
+    "world_largest": strict_wrong(_rp("eval_world_largest_baseline.json"), "world_largest"),
 }
 
 bench = {"items": [[t, i] for t, ids in HARD.items() for i in ids]}
-with open("results/bench_hard.json", "w", encoding="utf-8") as fh:
+with open(_rp("bench_hard.json"), "w", encoding="utf-8") as fh:
     json.dump(bench, fh, indent=1)
 print(f"bench_hard.json: {len(bench['items'])} items across {list(HARD.keys())}")

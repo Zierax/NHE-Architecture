@@ -8,8 +8,9 @@ import torch
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
 BASE = os.path.dirname(os.path.abspath(__file__))
-SAVE_DIR = os.path.join(BASE, "models", "gemma3-1b-fp16")
-TOK_DIR = os.path.join(BASE, "models", "gemma3-1b-tokenizer")
+REPO_ROOT = os.path.dirname(BASE) if os.path.basename(BASE) == "NHE-Edge" else BASE
+SAVE_DIR = os.path.join(REPO_ROOT, "models", "gemma3-1b-fp16")
+TOK_DIR = os.path.join(REPO_ROOT, "models", "gemma3-1b-tokenizer")
 
 TOPICS = {
     "africa": "topics.AFRICA",
@@ -27,7 +28,7 @@ def main():
     mod = __import__("topics")
     items = getattr(mod, TOPICS[topic].split(".")[1])
 
-    out_dir = os.path.join(BASE, "data", topic)
+    out_dir = os.path.join(REPO_ROOT, "data", topic)
     os.makedirs(out_dir, exist_ok=True)
 
     from transformers import AutoModelForCausalLM, AutoTokenizer

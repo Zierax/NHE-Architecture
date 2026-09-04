@@ -1,15 +1,21 @@
 import json
+import os
 import sys
 
 import numpy as np
 from scipy.stats import binomtest
 
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+BASE = os.path.dirname(os.path.abspath(__file__))
+RES = os.path.join(BASE, "results")
 
 SEEDS = [1000, 1001, 1002, 1003, 1004]
 
+def _p(*parts):
+    return os.path.join(RES, *parts)
+
 def load(prefix, seed):
-    ev = json.load(open(f"results/eval_runtime_africa_{prefix}_s{seed}.json", encoding="utf-8"))
+    ev = json.load(open(_p(f"eval_runtime_africa_{prefix}_s{seed}.json"), encoding="utf-8"))
     return {r["question"]: r["correct"] for r in ev["results"]}, ev
 
 none = {}
@@ -71,11 +77,11 @@ else:
 print(f"item-level majority: W2C={w2c} C2W={c2w} p={ip:.4f}")
 
 # static comparison
-st = json.load(open("results/eval_africa_baseline_s5.json", encoding="utf-8"))
+st = json.load(open(_p("eval_africa_baseline_s5.json"), encoding="utf-8"))
 print(f"\nstatic baseline_s5 majority rate={st.get('hallucination_rate')} (reference)")
 for m in ["k32_midwrong", "k128_wrong"]:
     try:
-        x = json.load(open(f"results/eval_africa_{m}_s5.json", encoding="utf-8"))
+        x = json.load(open(_p(f"eval_africa_{m}_s5.json"), encoding="utf-8"))
         print(f"  static {m} s5 majority={x.get('hallucination_rate')}")
     except FileNotFoundError:
         pass

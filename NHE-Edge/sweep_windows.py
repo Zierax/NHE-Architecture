@@ -1,11 +1,14 @@
 import json
+import os
 import sys
 
 import numpy as np
 
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+BASE = os.path.dirname(os.path.abspath(__file__))
+RES = os.path.join(BASE, "results")
 
-d = np.load("results/greedy_flows_africa.npz", allow_pickle=True)
+d = np.load(os.path.join(RES, "greedy_flows_africa.npz"), allow_pickle=True)
 flows = list(d["flows"])
 texts = d["texts"]
 labels = np.array(d["labels"]).astype(int)

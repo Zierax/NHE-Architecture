@@ -7,6 +7,8 @@ import unicodedata
 import topics
 
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+BASE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, BASE)
 
 ALTS = {}
 for name in ["AFRICA", "EUROPE", "AFRICA_LARGEST", "WORLD_TRICKY",
@@ -29,6 +31,7 @@ def answers(q, r):
 
 
 def score(path, label):
+    path = path if os.path.isabs(path) else os.path.join(BASE, path)
     ev = json.load(open(path, encoding="utf-8"))
     n = len(ev["results"])
     subj = 0
