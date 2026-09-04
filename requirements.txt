@@ -1,0 +1,10 @@
+# Reproducible CPU environment for NHE-Architecture (Gemma 3 1B, fp16, eager attention)
+# Tested on: Windows, Python 3.11.15, torch CPU-only
+# Install: python -m venv .venv && .\.venv\Scripts\pip install -r requirements.txt
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch==2.13.0+cpu
+transformers==5.15.0
+scikit-learn==1.9.0
+numpy==2.4.6
+scipy==1.17.1
+datasets==5.0.1  # only needed for eval_mmlu.py --use-real (real MMLU streaming)

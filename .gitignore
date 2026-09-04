@@ -6,3 +6,5 @@ data/
 paper/
 results/greedy_flows_africa_qwen*.npz
 results/greedy_flows_africa_synthetic*.npz
+*.log
+tmp_out.txt
