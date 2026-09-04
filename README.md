@@ -21,7 +21,7 @@ measured.
   we do it *before* the model commits to the answer.
 
 - The best single fix is simple: watch the first 5 tokens, and if the jump detector
-  fires, scale those neurons by 0.3. On African capitals (greedy decoding) this goes
+  fires, scale those neurons by 0.3. On African capitals (greedy = argmax, see Words we use) this goes
   from 7/54 wrong to 5/54 wrong, with no new errors on any other topic. It's the
   only fix that never breaks a control.
 
@@ -102,18 +102,17 @@ measured.
 Static and runtime tie at 5/54, but static breaks one and runtime breaks none. k128
 looks better at 4/54 but breaks more and hurts every control topic.
 
-### Africa, sampled (270 draws, 5 seeds)
+### Africa, sampled (270 draws, 5 seeds) — labels matter
 
-Static `model.generate`: 8/54 → 6/54 (k32, p=0.017) and 5/54 (k128, p=0.003).
-Runtime manual sampler: 33/270 → 28/270 (p=0.18, not significant at this size),
-6/54 → 4/54 by majority. No new errors on Europe (0 fires).
+Static `model.generate` (sampled, 5 seeds, substring, majority): 8/54 → 6/54 (k32, p=0.017) and 5/54 (k128, p=0.003).
+Runtime manual sampler (sampled, 5 seeds, strict): 33/270 → 28/270 per-draw mean (p=0.18), 6/54 → 4/54 by majority. Same questions, different sampler draws — not bit-identical (`NUMBERS.md:99`). No new errors on Europe (0 fires).
 
 Small n, so runtime isn't significant here. The benches below give it power.
 
 ### Two benches, 99 items × 6 seeds = 594 draws, strict
 
 Hard bench = 99 the model gets wrong greedily (54 largest-Africa + 15 hard capitals
-+ 30 hard largest). Random bench = 99 random from same 361 pool (overlap 19).
++ 30 hard largest, from 361-item pool: africa_largest 54 + world_cap_traps 134 + world_largest 173, overlap hard-random 19, random seed 42). Random bench = 99 random from same pool.
 Hard baseline 0.596, random 0.099.
 
 | Bench | Nothing | Runtime soft | Refuse instead |
@@ -153,12 +152,12 @@ Only runtime never hurts a control.
 
 | Signal | AUC | What it means |
 |---|---:|---|
+| jitter pooled max (any token) | 0.968 | pooled, not windowed — shows signal exists (`jitter_report_africa.json:17`), not used for cut |
 | jump full (L18) | 0.860 | fires after the answer — too late |
-| jump early (L19, first 10) | 0.742 | fires before — the one we use |
-| probe L10 | 0.672 | weak, doesn't transfer greedy↔sampled |
+| jump early (L19, first 10) | 0.742 | fires before — the one we use (text reports 0.742) |
+| probe L10 | 0.672 | weak, doesn't transfer greedy↔sampled (~0.05) |
 
-Fires vs window (p90): w≤5 → 7/54 (3 hits), w≤4 → 6/54 (2 hits), w≤3 → 2/54
-(1 hit), w≤2 → 0. We use w≤5.
+Fires vs window (p90, strict 4/54 = substring 4/54, strict 5/54): w≤5 → 7/54 (3 hits), w≤4 → 6/54 (2 hits), w≤3 → 2/54 (1 hit), w≤2 → 0. We use w≤5. Strict is 5/54 (Senegal hedge counts as 4/54 loose).
 
 ## What we can't fix yet
 

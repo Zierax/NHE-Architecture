@@ -22,9 +22,7 @@ All numbers below are strict (first sentence) and labeled. Full table: `results/
 
 2. **Statistics don't work.** d_mean / d_var: nothing (only 7/128 overlap with causal).
 
-3. **Causal does.** k32 (layers 8–17, wrong-only): Africa greedy 7/54→5/54, sampled
-   8/54→6/54 p=0.017, but breaks South Sudan. k128: 7/54→4/54, p=0.003, breaks two
-   plus Europe.
+3. **Causal does.** k32 (layers 8–17, wrong-only): Africa greedy 7/54→5/54 (strict), sampled substring majority 8/54→6/54 p=0.017, but breaks South Sudan. k128: greedy 7/54→4/54 strict, sampled 8/54→5/54 p=0.003, breaks two plus Europe.
 
 4. **Timing matters.** Early detector (first 10 tokens, AUC 0.742) firing in first 5
    tokens with soft scaling (0.3) gives 7/54→5/54 greedy with 0 breaks. It's the

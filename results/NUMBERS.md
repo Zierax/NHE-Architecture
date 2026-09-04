@@ -95,9 +95,10 @@ Merged abstain nearly eliminates hallucination on hard bench (0.088) at cost of 
 
 | Detector | AUC (LOSO) | Notes |
 |---|---|---|
+| jitter pooled max (any token, max layer) | 0.968 | pooled, not window-constrained — not used for intervention (`jitter_report_africa.json:17`) |
 | jump_max_L18 (full generation) | 0.860 | fires post-commit -> inert for intervention |
-| jump_max_early_L19 (first 10 tokens) | 0.742 | fires pre-commit on Eswatini/Gambia/Senegal -> effective |
-| probe L10 (logistic) | 0.672 | weakest; does NOT transfer across decode protocols |
+| jump_max_early_L19 (first 10 tokens) | 0.742 | fires pre-commit on Eswatini/Gambia/Senegal -> effective (reported in text as 0.742) |
+| probe L10 (logistic) | 0.672 | weakest; does NOT transfer across decode protocols (sampled→greedy ~0.05, `detector_greedy.json:3`) |
 
 Window/threshold tradeoff (offline-validated vs live runs 1:1):
 - window≤5, p90: fires 7/54 (3 fixable + 4 FP), 3 catches

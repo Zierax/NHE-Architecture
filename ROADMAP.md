@@ -1,6 +1,8 @@
 # NHE Roadmap — Two Tracks, One Core
 
-**Where we are (2026-08-21):** Gemma 3 1B, jitter signal, k32 wrong-commit neurons, temporal soft excision (w≤5, ×0.3). Hard bench 99 (0.596→0.562 p<0.001) and random bench 99 (0.099→0.089 p=0.031) both significant. Merged static+temporal breaks the quiet ceiling (0.596→0.389). Cross-model adapter for Qwen is ready (synthetic validated), real weights pending. MMLU proxy preserved (-0.016), real MMLU running.
+**Where we are (2026-08-21):**
+- **Done:** Gemma 3 1B jitter signal (0.968 pooled, 0.742 early), k32 neurons, temporal soft w≤5 (hard 0.596→0.562 p<0.001, random 0.099→0.089 p=0.031), merged 0.389/0.088, MMLU proxy -0.016, quiet lens shows 4 quiet are dynamic not parametric, Qwen adapter synthetic.
+- **Pending:** Real Qwen0.5B weights + 6-seed hard/random, real MMLU 200 (running), SAE prototype.
 
 **Where we're going:** Two tracks sharing the same core idea — hallucination is a late wrong-commit in middle layers — but different constraints.
 
@@ -45,37 +47,18 @@
 
 The 4 quiet cases are not parametric training-data errors (logit lens shows late, low confidence, high entropy like dynamic). But the *method* to tell them apart (jitter + entropy + cross-layer) is itself a paper: "When is a hallucination a training-data error vs a late commit?" Needs logit lens + paraphrase persistence on those 4 vs 3 controls — data already in `results/quiet_diagnostic.json`.
 
-## Repo reorg — to stop the chaos
+## Appendix: Repo reorg (internal, not for reviewers)
 
-Current flat root (20+ `bench_*.py`, `eval_*.py` at top level) is hard to navigate.
-
-**Target layout (implemented in next commit):**
+Flat root was hard to navigate. Target:
 
 ```
-.
-├── README.md, STATUS.md, ROADMAP.md, .gitignore
-├── paper/                  # gitignored, LaTeX drafts (already exists, empty)
-├── NHE-Edge/               # ← current pipeline moves here, frozen
-│   ├── README.md
-│   ├── topics.py, runtime_rollback.py, attribute_causal2.py, eval_topic.py, ...
-│   ├── bench_*.py, probe_quiet.py, eval_mmlu.py, strict_final.py, ...
-│   └── results/  (or keep results/ at root as shared — decision: keep at root for now)
-├── NHE-GenPM/              # ← new, starts as plan + skeleton
-│   ├── README.md
-│   ├── plan.md
-│   └── sae/  (empty)
-├── results/                # stays at root as shared evidence (benches, masks, evals)
-├── models/ , data/         # gitignored, shared
-└── legacy/
+├── paper/                  # gitignored, drafts
+├── NHE-Edge/               # current pipeline (frozen after Qwen real)
+├── NHE-GenPM/              # SAE/steering plan
+├── results/ , models/ , data/  # shared
 ```
 
-**Migration plan (zero chaos):**
-1. Create `NHE-Edge/` and `NHE-GenPM/` with READMEs (this commit).
-2. Next commit: `git mv` code files into `NHE-Edge/` with shims at root that re-export (so `python runtime_rollback.py` still works during transition). Update imports to handle both paths.
-3. Validate: run `strict_final.py` and `bench_analysis.py` from both locations.
-4. Only then remove shims and make `NHE-Edge/` canonical.
-
-We will not move everything at once and break running jobs (MMLU real is running, bench_full is done). This roadmap is the contract.
+Steps: create skeleton (done) → `git mv` with shims → validate → remove shims.
 
 ## Milestones
 
