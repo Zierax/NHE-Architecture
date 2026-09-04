@@ -49,8 +49,7 @@ All numbers below are strict (first sentence) and labeled. Full table: `results/
    (`runtime_rollback_qwen.py`, `results/cross_arch_report.md`); real download
    pending.
 
-10. **Side effects.** Soft k32 on 181 controls: 0.917→0.901 strict (-0.016, <2%) —
-    preserved, no systematic damage (`eval_mmlu.py`, `results/mmlu_side_effect.json`).
+10. **Side effects.** Soft k32 on 200 real MMLU: 0.925→0.925 substr (0.0), 0.610→0.620 strict (+0.01) — preserved, even slight gain; proxy 181 controls also preserved (-0.016) (`eval_mmlu.py --use-real`, `results/mmlu_side_effect.json:142`).
 
 Lessons: clean state per item (or you fake results), strict scoring (loose counts
 hedges), offline simulation matches live 1:1, manual sampler ≠ `model.generate`

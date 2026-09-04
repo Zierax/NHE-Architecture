@@ -174,9 +174,7 @@ second signal (attention entropy / drift) may catch them.
   Qwen2.5-0.5B/1.5B (24×896 / 28×1536), synthetic validation passes
   (`results/detector_greedy_qwen*.json`). Real weights need a stable download
   (`results/cross_arch_report.md`).
-- **General knowledge preserved:** soft k32 on 181 controls goes 169/181→166/181
-  strict (-0.016, <2%) — no systematic damage (`eval_mmlu.py`,
-  `results/mmlu_side_effect.json`).
+- **General knowledge preserved:** soft k32 on **200 real MMLU** goes 185/200→185/200 substr (0.0) and 122/200→124/200 strict (+0.01) — no damage, slight gain (`eval_mmlu.py --use-real`, `results/mmlu_side_effect.json:142`). Proxy 181 controls also preserved (-0.016).
 
 ## Limitations
 
