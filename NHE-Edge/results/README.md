@@ -15,7 +15,7 @@ Full walkthrough: `experiment_report.md`.
 - `detector_greedy_qwen*.json` — **synthetic placeholders** (do not quote).
 - `mask_k32_midwrong.json` — the 32-neuron mask used by every runtime run.
 - `mask_k*.json` — other static masks (k32/k64/k128/k256/k512 × scores).
-- `greedy_flows_africa.npz` (58 MB, tracked) — real Gemma flows for the detector.
+- `greedy_flows_africa.npz` (~58 MB, local-only, gitignored) — real Gemma flows for the detector; rebuild with `python runtime_rollback.py collect`.
 - `greedy_flows_africa_qwen*.npz`, `*synthetic*.npz` — synthetic, gitignored, on disk only.
 - `attribution_*.json/.npz` — AtP/statistical attributions (+ progress checkpoints).
 
