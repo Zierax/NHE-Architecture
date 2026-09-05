@@ -6,5 +6,7 @@ data/
 paper/
 **/greedy_flows_africa_qwen*.npz
 **/greedy_flows_africa_synthetic*.npz
+# large regenerable arrays stay local (collect/attribute rebuild them)
+**/*.npz
 *.log
 tmp_out.txt

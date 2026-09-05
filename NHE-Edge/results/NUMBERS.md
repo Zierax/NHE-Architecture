@@ -61,6 +61,7 @@ hallucination rate on this bench is **0.596** (strict).
 | per-draw McNemar (n=594, exploratory) | — | p < 0.001 | p < 0.001 |
 | per-draw bootstrap 95% CI (mask-none) | — | [-0.049, -0.020] | — |
 | **majority-of-6 hall (99 items, PRIMARY)** | 0.596 (59/99) | **0.566 (56/99)** — W2C=3, C2W=0, **p=0.25 (not significant)** | 0.475 (47/99) |
+| cluster bootstrap 95% CI by item (mask-none) | — | **[-0.066, -0.007] (excludes 0; uses per-item magnitudes, more powerful than majority vote)** | — |
 | fired samples (90/594) | 74 wrong | 54 wrong, 36 correct post-hoc (**20/90 = 22% true wrong→correct fixes**; 27% of wrong-fired) | 90 refused (0 wrong, 0 correct) |
 
 Reading: per-draw tests overstate power (6 correlated draws per item). The honest

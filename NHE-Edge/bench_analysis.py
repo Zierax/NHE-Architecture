@@ -164,6 +164,47 @@ def report(completed, label=""):
         diffs.append(h_b[idx].mean() - h_a[idx].mean())
     diffs = np.array(diffs)
     print(f"  bootstrap 95% CI (mask-none wrong-rate): [{np.percentile(diffs,2.5):.4f}, {np.percentile(diffs,97.5):.4f}]")
+    print("  NOTE: per-draw tests treat correlated draws as independent (overstates power). Item-level below is primary.")
+
+    # PRIMARY: item-majority McNemar (one vote per item — independent units)
+    print("\n-- PRIMARY: item-majority McNemar (strict) --")
+    for a1, a2, lab in [("none", "mask", "none vs mask"),
+                        ("none", "abstain", "none vs abstain")]:
+        m1, m2 = [], []
+        for (t, i) in BENCH:
+            v1 = [(data[a1].get((t, s)) or {}).get(i) for s in SEEDS]
+            v2 = [(data[a2].get((t, s)) or {}).get(i) for s in SEEDS]
+            v1 = [v for v in v1 if v is not None]
+            v2 = [v for v in v2 if v is not None]
+            if len(v1) < max(3, len(SEEDS) // 2) or len(v2) < max(3, len(SEEDS) // 2):
+                continue
+            m1.append(1 if sum(wrong_of(v) for v in v1) > len(v1) / 2 else 0)
+            m2.append(1 if sum(wrong_of(v) for v in v2) > len(v2) / 2 else 0)
+        m1 = np.array(m1, dtype=int); m2 = np.array(m2, dtype=int)
+        p, net = mcnemar(1 - m1, 1 - m2)
+        w2c = int(((m1 == 1) & (m2 == 0)).sum()); c2w = int(((m1 == 0) & (m2 == 1)).sum())
+        print(f"  {lab:<18}: W2C={w2c:>3} C2W={c2w:>3} net={net:+d}  p={p:.4f}  (n_items={len(m1)})")
+
+    # Cluster bootstrap by item (resample items, keep all their draws)
+    print("\n-- cluster bootstrap by item (mask-none wrong-rate diff) --")
+    items = sorted({(t, i) for (t, i, s) in rows})
+    item_diff = []
+    for (t, i) in items:
+        a_vals, b_vals = [], []
+        for s in SEEDS:
+            d1 = (data["none"].get((t, s)) or {}).get(i)
+            d2 = (data["mask"].get((t, s)) or {}).get(i)
+            if d1 is not None and d2 is not None:
+                a_vals.append(wrong_of(d1)); b_vals.append(wrong_of(d2))
+        if a_vals:
+            item_diff.append((float(np.mean(b_vals)) - float(np.mean(a_vals))))
+    item_diff = np.array(item_diff)
+    c_diffs = []
+    for _ in range(5000):
+        idx = rng.integers(0, len(item_diff), len(item_diff))
+        c_diffs.append(item_diff[idx].mean())
+    c_diffs = np.array(c_diffs)
+    print(f"  cluster bootstrap 95% CI (n_items={len(item_diff)}): [{np.percentile(c_diffs,2.5):.4f}, {np.percentile(c_diffs,97.5):.4f}]")
 
     # majority-of-seeds (strict, abstained=not-wrong), per item
     print("\n-- majority-of-seeds per item (strict) --")
