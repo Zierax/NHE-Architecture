@@ -51,7 +51,7 @@ All numbers below are strict (first sentence) and labeled. Full table: `NHE-Edge
    (`runtime_rollback_qwen.py`, `results/cross_arch_report.md`); real download
    pending.
 
-10. **Side effects.** Soft k32 on 200 real MMLU: 0.925→0.925 substr (0.0), 0.610→0.620 strict (+0.01) — preserved (`NHE-Edge/eval_mmlu.py --use-real`, `NHE-Edge/results/mmlu_side_effect.json:159-172`; also in NUMBERS.md). Temporal method not tested on MMLU.
+10. **Side effects.** Soft k32 static on 200 real MMLU: 0.925→0.925 substr, 0.610→0.620 strict — preserved. Temporal on 200 MMLU (different 200): 78/200→79/200 strict, fires 155/200, W2C=0/C2W=1 p=1.0 — **no effect, honest negative** (threshold miscalibrated off-distribution). (`NHE-Edge/eval_mmlu_temporal.py`, `NHE-Edge/results/mmlu_temporal.json`).
 
 Lessons: clean state per item (or you fake results), strict scoring (loose counts
 hedges), offline simulation matches live 1:1, manual sampler ≠ `model.generate`

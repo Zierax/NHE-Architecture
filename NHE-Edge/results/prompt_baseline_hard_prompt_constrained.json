@@ -1,0 +1,801 @@
+{
+ "bench": "hard",
+ "constraint": true,
+ "n": 99,
+ "wrong": 52,
+ "hall": 0.5253,
+ "results": [
+  {
+   "topic": "africa_largest",
+   "id": 0,
+   "question": "What is the largest city in Algeria?",
+   "answer": "Algiers",
+   "generated": "Algiers",
+   "strict_correct": 1
+  },
+  {
+   "topic": "africa_largest",
+   "id": 1,
+   "question": "What is the largest city in Angola?",
+   "answer": "Luanda",
+   "generated": "Luanda",
+   "strict_correct": 1
+  },
+  {
+   "topic": "africa_largest",
+   "id": 2,
+   "question": "What is the largest city in Benin?",
+   "answer": "Cotonou",
+   "generated": "Porto-Novo",
+   "strict_correct": 0
+  },
+  {
+   "topic": "africa_largest",
+   "id": 3,
+   "question": "What is the largest city in Botswana?",
+   "answer": "Gaborone",
+   "generated": "Gaborone\n",
+   "strict_correct": 1
+  },
+  {
+   "topic": "africa_largest",
+   "id": 4,
+   "question": "What is the largest city in Burkina Faso?",
+   "answer": "Ouagadougou",
+   "generated": "Ouagadougou",
+   "strict_correct": 1
+  },
+  {
+   "topic": "africa_largest",
+   "id": 5,
+   "question": "What is the largest city in Burundi?",
+   "answer": "Bujumbura",
+   "generated": "Gitega",
+   "strict_correct": 0
+  },
+  {
+   "topic": "africa_largest",
+   "id": 6,
+   "question": "What is the largest city in Cape Verde?",
+   "answer": "Praia",
+   "generated": "Victoria",
+   "strict_correct": 0
+  },
+  {
+   "topic": "africa_largest",
+   "id": 7,
+   "question": "What is the largest city in Cameroon?",
+   "answer": "Douala",
+   "generated": "Yaoundé",
+   "strict_correct": 0
+  },
+  {
+   "topic": "africa_largest",
+   "id": 8,
+   "question": "What is the largest city in the Central African Republic?",
+   "answer": "Bangui",
+   "generated": "Rahana",
+   "strict_correct": 0
+  },
+  {
+   "topic": "africa_largest",
+   "id": 9,
+   "question": "What is the largest city in Chad?",
+   "answer": "NDjamena",
+   "generated": "N'Djamena\n",
+   "strict_correct": 1
+  },
+  {
+   "topic": "africa_largest",
+   "id": 10,
+   "question": "What is the largest city in Comoros?",
+   "answer": "Moroni",
+   "generated": "Moroni",
+   "strict_correct": 1
+  },
+  {
+   "topic": "africa_largest",
+   "id": 11,
+   "question": "What is the largest city in the Democratic Republic of the Congo?",
+   "answer": "Kinshasa",
+   "generated": "Kinshasa",
+   "strict_correct": 1
+  },
+  {
+   "topic": "africa_largest",
+   "id": 12,
+   "question": "What is the largest city in the Republic of the Congo?",
+   "answer": "Brazzaville",
+   "generated": "Brazzaville",
+   "strict_correct": 1
+  },
+  {
+   "topic": "africa_largest",
+   "id": 13,
+   "question": "What is the largest city in Djibouti?",
+   "answer": "Djibouti",
+   "generated": "Djibouti City",
+   "strict_correct": 1
+  },
+  {
+   "topic": "africa_largest",
+   "id": 14,
+   "question": "What is the largest city in Egypt?",
+   "answer": "Cairo",
+   "generated": "Cairo",
+   "strict_correct": 1
+  },
+  {
+   "topic": "africa_largest",
+   "id": 15,
+   "question": "What is the largest city in Equatorial Guinea?",
+   "answer": "Bata",
+   "generated": "Malabo",
+   "strict_correct": 0
+  },
+  {
+   "topic": "africa_largest",
+   "id": 16,
+   "question": "What is the largest city in Eritrea?",
+   "answer": "Asmara",
+   "generated": "Asaba",
+   "strict_correct": 0
+  },
+  {
+   "topic": "africa_largest",
+   "id": 17,
+   "question": "What is the largest city in Eswatini?",
+   "answer": "Manzini",
+   "generated": "Swaland\n",
+   "strict_correct": 0
+  },
+  {
+   "topic": "africa_largest",
+   "id": 18,
+   "question": "What is the largest city in Ethiopia?",
+   "answer": "Addis Ababa",
+   "generated": "Addis Ababa",
+   "strict_correct": 1
+  },
+  {
+   "topic": "africa_largest",
+   "id": 19,
+   "question": "What is the largest city in Gabon?",
+   "answer": "Libreville",
+   "generated": "Libre\n",
+   "strict_correct": 0
+  },
+  {
+   "topic": "africa_largest",
+   "id": 20,
+   "question": "What is the largest city in Gambia?",
+   "answer": "Serekunda",
+   "generated": "Bandžara",
+   "strict_correct": 0
+  },
+  {
+   "topic": "africa_largest",
+   "id": 21,
+   "question": "What is the largest city in Ghana?",
+   "answer": "Accra",
+   "generated": "Accra\n",
+   "strict_correct": 1
+  },
+  {
+   "topic": "africa_largest",
+   "id": 22,
+   "question": "What is the largest city in Guinea?",
+   "answer": "Conakry",
+   "generated": "Bissau",
+   "strict_correct": 0
+  },
+  {
+   "topic": "africa_largest",
+   "id": 23,
+   "question": "What is the largest city in Guinea-Bissau?",
+   "answer": "Bissau",
+   "generated": "Bissau",
+   "strict_correct": 1
+  },
+  {
+   "topic": "africa_largest",
+   "id": 24,
+   "question": "What is the largest city in Ivory Coast?",
+   "answer": "Abidjan",
+   "generated": "Abidjan",
+   "strict_correct": 1
+  },
+  {
+   "topic": "africa_largest",
+   "id": 25,
+   "question": "What is the largest city in Kenya?",
+   "answer": "Nairobi",
+   "generated": "Nairobi",
+   "strict_correct": 1
+  },
+  {
+   "topic": "africa_largest",
+   "id": 26,
+   "question": "What is the largest city in Lesotho?",
+   "answer": "Maseru",
+   "generated": "Maseru",
+   "strict_correct": 1
+  },
+  {
+   "topic": "africa_largest",
+   "id": 27,
+   "question": "What is the largest city in Liberia?",
+   "answer": "Monrovia",
+   "generated": "Freetown",
+   "strict_correct": 0
+  },
+  {
+   "topic": "africa_largest",
+   "id": 28,
+   "question": "What is the largest city in Libya?",
+   "answer": "Tripoli",
+   "generated": "Tripoli",
+   "strict_correct": 1
+  },
+  {
+   "topic": "africa_largest",
+   "id": 29,
+   "question": "What is the largest city in Madagascar?",
+   "answer": "Antananarivo",
+   "generated": "Antananarivo",
+   "strict_correct": 1
+  },
+  {
+   "topic": "africa_largest",
+   "id": 30,
+   "question": "What is the largest city in Malawi?",
+   "answer": "Lilongwe",
+   "generated": "Lilongwe",
+   "strict_correct": 1
+  },
+  {
+   "topic": "africa_largest",
+   "id": 31,
+   "question": "What is the largest city in Mali?",
+   "answer": "Bamako",
+   "generated": "Bamako",
+   "strict_correct": 1
+  },
+  {
+   "topic": "africa_largest",
+   "id": 32,
+   "question": "What is the largest city in Mauritania?",
+   "answer": "Nouakchott",
+   "generated": "Ouarzazate",
+   "strict_correct": 0
+  },
+  {
+   "topic": "africa_largest",
+   "id": 33,
+   "question": "What is the largest city in Mauritius?",
+   "answer": "Port Louis",
+   "generated": "Port Louis",
+   "strict_correct": 1
+  },
+  {
+   "topic": "africa_largest",
+   "id": 34,
+   "question": "What is the largest city in Morocco?",
+   "answer": "Casablanca",
+   "generated": "Casablanca",
+   "strict_correct": 1
+  },
+  {
+   "topic": "africa_largest",
+   "id": 35,
+   "question": "What is the largest city in Mozambique?",
+   "answer": "Maputo",
+   "generated": "Maputo",
+   "strict_correct": 1
+  },
+  {
+   "topic": "africa_largest",
+   "id": 36,
+   "question": "What is the largest city in Namibia?",
+   "answer": "Windhoek",
+   "generated": "Windhoek",
+   "strict_correct": 1
+  },
+  {
+   "topic": "africa_largest",
+   "id": 37,
+   "question": "What is the largest city in Niger?",
+   "answer": "Niamey",
+   "generated": "N'Génie",
+   "strict_correct": 0
+  },
+  {
+   "topic": "africa_largest",
+   "id": 38,
+   "question": "What is the largest city in Nigeria?",
+   "answer": "Lagos",
+   "generated": "Lagos",
+   "strict_correct": 1
+  },
+  {
+   "topic": "africa_largest",
+   "id": 39,
+   "question": "What is the largest city in Rwanda?",
+   "answer": "Kigali",
+   "generated": " Kigali",
+   "strict_correct": 1
+  },
+  {
+   "topic": "africa_largest",
+   "id": 40,
+   "question": "What is the largest city in Sao Tome and Principe?",
+   "answer": "Sao Tome",
+   "generated": "Sao Tome",
+   "strict_correct": 1
+  },
+  {
+   "topic": "africa_largest",
+   "id": 41,
+   "question": "What is the largest city in Senegal?",
+   "answer": "Dakar",
+   "generated": " Dakar",
+   "strict_correct": 1
+  },
+  {
+   "topic": "africa_largest",
+   "id": 42,
+   "question": "What is the largest city in Seychelles?",
+   "answer": "Victoria",
+   "generated": "Victoria",
+   "strict_correct": 1
+  },
+  {
+   "topic": "africa_largest",
+   "id": 43,
+   "question": "What is the largest city in Sierra Leone?",
+   "answer": "Freetown",
+   "generated": "Freetown",
+   "strict_correct": 1
+  },
+  {
+   "topic": "africa_largest",
+   "id": 44,
+   "question": "What is the largest city in Somalia?",
+   "answer": "Mogadishu",
+   "generated": "Mohadin",
+   "strict_correct": 0
+  },
+  {
+   "topic": "africa_largest",
+   "id": 45,
+   "question": "What is the largest city in South Africa?",
+   "answer": "Johannesburg",
+   "generated": "Johannesburg",
+   "strict_correct": 1
+  },
+  {
+   "topic": "africa_largest",
+   "id": 46,
+   "question": "What is the largest city in South Sudan?",
+   "answer": "Juba",
+   "generated": "Juba",
+   "strict_correct": 1
+  },
+  {
+   "topic": "africa_largest",
+   "id": 47,
+   "question": "What is the largest city in Sudan?",
+   "answer": "Khartoum",
+   "generated": "Khartoum\n",
+   "strict_correct": 1
+  },
+  {
+   "topic": "africa_largest",
+   "id": 48,
+   "question": "What is the largest city in Tanzania?",
+   "answer": "Dar es Salaam",
+   "generated": "Dodoma",
+   "strict_correct": 0
+  },
+  {
+   "topic": "africa_largest",
+   "id": 49,
+   "question": "What is the largest city in Togo?",
+   "answer": "Lome",
+   "generated": "Port-Grave",
+   "strict_correct": 0
+  },
+  {
+   "topic": "africa_largest",
+   "id": 50,
+   "question": "What is the largest city in Tunisia?",
+   "answer": "Tunis",
+   "generated": "Tunis",
+   "strict_correct": 1
+  },
+  {
+   "topic": "africa_largest",
+   "id": 51,
+   "question": "What is the largest city in Uganda?",
+   "answer": "Kampala",
+   "generated": "Kampala",
+   "strict_correct": 1
+  },
+  {
+   "topic": "africa_largest",
+   "id": 52,
+   "question": "What is the largest city in Zambia?",
+   "answer": "Lusaka",
+   "generated": "Lusaka",
+   "strict_correct": 1
+  },
+  {
+   "topic": "africa_largest",
+   "id": 53,
+   "question": "What is the largest city in Zimbabwe?",
+   "answer": "Harare",
+   "generated": "Harare",
+   "strict_correct": 1
+  },
+  {
+   "topic": "world_cap_traps",
+   "id": 19,
+   "question": "What is the capital of Equatorial Guinea?",
+   "answer": "Malabo",
+   "generated": "Bonbridge",
+   "strict_correct": 0
+  },
+  {
+   "topic": "world_cap_traps",
+   "id": 20,
+   "question": "What is the capital of Gambia?",
+   "answer": "Banjul",
+   "generated": " Banjul",
+   "strict_correct": 1
+  },
+  {
+   "topic": "world_cap_traps",
+   "id": 28,
+   "question": "What is the capital of the United Arab Emirates?",
+   "answer": "Abu Dhabi",
+   "generated": "Dubai",
+   "strict_correct": 0
+  },
+  {
+   "topic": "world_cap_traps",
+   "id": 32,
+   "question": "What is the capital of Eswatini?",
+   "answer": "Mbabane",
+   "generated": "Swaziland",
+   "strict_correct": 0
+  },
+  {
+   "topic": "world_cap_traps",
+   "id": 38,
+   "question": "What is the capital of Georgia?",
+   "answer": "Tbilisi",
+   "generated": "Atlanta",
+   "strict_correct": 0
+  },
+  {
+   "topic": "world_cap_traps",
+   "id": 74,
+   "question": "What is the capital of Grenada?",
+   "answer": "Saint George's",
+   "generated": "St. George'",
+   "strict_correct": 0
+  },
+  {
+   "topic": "world_cap_traps",
+   "id": 77,
+   "question": "What is the capital of Saint Vincent and the Grenadines?",
+   "answer": "Kingstown",
+   "generated": "St. Vincent",
+   "strict_correct": 0
+  },
+  {
+   "topic": "world_cap_traps",
+   "id": 81,
+   "question": "What is the capital of Honduras?",
+   "answer": "Tegucigalpa",
+   "generated": "San Miguel de la Piura",
+   "strict_correct": 0
+  },
+  {
+   "topic": "world_cap_traps",
+   "id": 93,
+   "question": "What is the capital of Kiribati?",
+   "answer": "Tarawa",
+   "generated": "Tarawa",
+   "strict_correct": 1
+  },
+  {
+   "topic": "world_cap_traps",
+   "id": 95,
+   "question": "What is the capital of Nauru?",
+   "answer": "Yaren",
+   "generated": "Nauru",
+   "strict_correct": 0
+  },
+  {
+   "topic": "world_cap_traps",
+   "id": 96,
+   "question": "What is the capital of Palau?",
+   "answer": "Ngerulmud",
+   "generated": "Palau City",
+   "strict_correct": 0
+  },
+  {
+   "topic": "world_cap_traps",
+   "id": 106,
+   "question": "What is the capital of Western Sahara?",
+   "answer": "Laayoune",
+   "generated": "Rabat",
+   "strict_correct": 0
+  },
+  {
+   "topic": "world_cap_traps",
+   "id": 110,
+   "question": "What is the capital of Cape Verde?",
+   "answer": "Praia",
+   "generated": "Victoria",
+   "strict_correct": 0
+  },
+  {
+   "topic": "world_cap_traps",
+   "id": 119,
+   "question": "What is the capital of Guinea?",
+   "answer": "Conakry",
+   "generated": "Bambali",
+   "strict_correct": 0
+  },
+  {
+   "topic": "world_cap_traps",
+   "id": 123,
+   "question": "What is the capital of Gabon?",
+   "answer": "Libreville",
+   "generated": "Libre",
+   "strict_correct": 0
+  },
+  {
+   "topic": "world_largest",
+   "id": 6,
+   "question": "What is the largest city in Pakistan?",
+   "answer": "Karachi",
+   "generated": "Islamabad",
+   "strict_correct": 0
+  },
+  {
+   "topic": "world_largest",
+   "id": 15,
+   "question": "What is the largest city in Bolivia?",
+   "answer": "Santa Cruz de la Sierra",
+   "generated": "Sucre",
+   "strict_correct": 0
+  },
+  {
+   "topic": "world_largest",
+   "id": 45,
+   "question": "What is the largest city in Georgia?",
+   "answer": "Tbilisi",
+   "generated": "Atlanta",
+   "strict_correct": 0
+  },
+  {
+   "topic": "world_largest",
+   "id": 47,
+   "question": "What is the largest city in Turkmenistan?",
+   "answer": "Ashgabat",
+   "generated": "Ashgabat\n",
+   "strict_correct": 1
+  },
+  {
+   "topic": "world_largest",
+   "id": 60,
+   "question": "What is the largest city in Syria?",
+   "answer": "Aleppo",
+   "generated": "Damascus\n",
+   "strict_correct": 0
+  },
+  {
+   "topic": "world_largest",
+   "id": 78,
+   "question": "What is the largest city in Brunei?",
+   "answer": "Bandar Seri Begawan",
+   "generated": "Bandar Seri Begawan",
+   "strict_correct": 1
+  },
+  {
+   "topic": "world_largest",
+   "id": 82,
+   "question": "What is the largest city in New Caledonia?",
+   "answer": "Noumea",
+   "generated": "Port Niou",
+   "strict_correct": 0
+  },
+  {
+   "topic": "world_largest",
+   "id": 87,
+   "question": "What is the largest city in Tonga?",
+   "answer": "Nuku'alofa",
+   "generated": "Nukuʻalofa",
+   "strict_correct": 1
+  },
+  {
+   "topic": "world_largest",
+   "id": 88,
+   "question": "What is the largest city in Kiribati?",
+   "answer": "Tarawa",
+   "generated": "Tarawa",
+   "strict_correct": 1
+  },
+  {
+   "topic": "world_largest",
+   "id": 89,
+   "question": "What is the largest city in Tuvalu?",
+   "answer": "Funafuti",
+   "generated": "Funafai",
+   "strict_correct": 0
+  },
+  {
+   "topic": "world_largest",
+   "id": 90,
+   "question": "What is the largest city in Nauru?",
+   "answer": "Yaren",
+   "generated": "Arapu community",
+   "strict_correct": 0
+  },
+  {
+   "topic": "world_largest",
+   "id": 100,
+   "question": "What is the largest city in Belize?",
+   "answer": "Belize City",
+   "generated": "Belmopan",
+   "strict_correct": 0
+  },
+  {
+   "topic": "world_largest",
+   "id": 101,
+   "question": "What is the largest city in Honduras?",
+   "answer": "Tegucigalpa",
+   "generated": "San Miguel de la Piura\n",
+   "strict_correct": 0
+  },
+  {
+   "topic": "world_largest",
+   "id": 107,
+   "question": "What is the largest city in Jamaica?",
+   "answer": "Kingston",
+   "generated": "Kingston",
+   "strict_correct": 1
+  },
+  {
+   "topic": "world_largest",
+   "id": 127,
+   "question": "What is the largest city in Western Sahara?",
+   "answer": "Laayoune",
+   "generated": "El Chidra",
+   "strict_correct": 0
+  },
+  {
+   "topic": "world_largest",
+   "id": 131,
+   "question": "What is the largest city in Cameroon?",
+   "answer": "Douala",
+   "generated": "Yaoundé",
+   "strict_correct": 0
+  },
+  {
+   "topic": "world_largest",
+   "id": 132,
+   "question": "What is the largest city in Gabon?",
+   "answer": "Libreville",
+   "generated": "Libre\n",
+   "strict_correct": 0
+  },
+  {
+   "topic": "world_largest",
+   "id": 133,
+   "question": "What is the largest city in the Republic of the Congo?",
+   "answer": "Brazzaville",
+   "generated": "Brazzaville",
+   "strict_correct": 1
+  },
+  {
+   "topic": "world_largest",
+   "id": 143,
+   "question": "What is the largest city in Burundi?",
+   "answer": "Bujumbura",
+   "generated": "Gitega",
+   "strict_correct": 0
+  },
+  {
+   "topic": "world_largest",
+   "id": 144,
+   "question": "What is the largest city in Rwanda?",
+   "answer": "Kigali",
+   "generated": " Kigali",
+   "strict_correct": 1
+  },
+  {
+   "topic": "world_largest",
+   "id": 153,
+   "question": "What is the largest city in Mali?",
+   "answer": "Bamako",
+   "generated": "Bamako",
+   "strict_correct": 1
+  },
+  {
+   "topic": "world_largest",
+   "id": 156,
+   "question": "What is the largest city in Mauritania?",
+   "answer": "Nouakchott",
+   "generated": "Ouarzazate",
+   "strict_correct": 0
+  },
+  {
+   "topic": "world_largest",
+   "id": 157,
+   "question": "What is the largest city in Guinea?",
+   "answer": "Conakry",
+   "generated": "Bissau",
+   "strict_correct": 0
+  },
+  {
+   "topic": "world_largest",
+   "id": 159,
+   "question": "What is the largest city in Liberia?",
+   "answer": "Monrovia",
+   "generated": "Freetown",
+   "strict_correct": 0
+  },
+  {
+   "topic": "world_largest",
+   "id": 160,
+   "question": "What is the largest city in Togo?",
+   "answer": "Lome",
+   "generated": "Port-Grave",
+   "strict_correct": 0
+  },
+  {
+   "topic": "world_largest",
+   "id": 161,
+   "question": "What is the largest city in Benin?",
+   "answer": "Cotonou",
+   "generated": "Porto-Novo",
+   "strict_correct": 0
+  },
+  {
+   "topic": "world_largest",
+   "id": 163,
+   "question": "What is the largest city in Equatorial Guinea?",
+   "answer": "Bata",
+   "generated": "Malabo",
+   "strict_correct": 0
+  },
+  {
+   "topic": "world_largest",
+   "id": 164,
+   "question": "What is the largest city in Gambia?",
+   "answer": "Serekunda",
+   "generated": "Bandžara",
+   "strict_correct": 0
+  },
+  {
+   "topic": "world_largest",
+   "id": 165,
+   "question": "What is the largest city in Eswatini?",
+   "answer": "Manzini",
+   "generated": "Swaland\n",
+   "strict_correct": 0
+  },
+  {
+   "topic": "world_largest",
+   "id": 170,
+   "question": "What is the largest city in Cape Verde?",
+   "answer": "Praia",
+   "generated": "Victoria",
+   "strict_correct": 0
+  }
+ ]
+}

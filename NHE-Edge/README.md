@@ -153,6 +153,11 @@ the four Africa quiet cases are among the fixed.
 Only runtime never hurts a control (on tested topics; runtime was never run on
 elements/asia/US-states, and MMLU tested the static mask only).
 
+A constrained prompt ("Answer with only the city name.") is a real competitor:
+hard greedy 61/99 → 52/99, better than NHE-mask greedy (61/99 → 57/99). NHE's
+edge is significance-tested repair under sampling plus no-refusal fixes, not raw
+greedy rate. Random bench: prompting 9/99 → 11/99 (noise).
+
 ### Detector
 
 | Signal | AUC | What it means |
@@ -181,7 +186,8 @@ second signal (attention entropy / drift) may catch them.
   Qwen2.5-0.5B/1.5B (24×896 / 28×1536), synthetic validation passes
   (`results/detector_greedy_qwen*.json`). Real weights need a stable download
   (`results/cross_arch_report.md`).
-- **General knowledge preserved:** soft k32 on **200 real MMLU** goes 185/200→185/200 substr (0.0) and 122/200→124/200 strict (+0.01) — no damage (`eval_mmlu.py --use-real`, `results/mmlu_side_effect.json:159-172`; now also in `results/NUMBERS.md`). Proxy 181 controls also preserved (-0.016, superseded).
+- **General knowledge preserved (static):** soft k32 on **200 real MMLU** goes 185/200→185/200 substr (0.0) and 122/200→124/200 strict (+0.01) — no damage (`eval_mmlu.py --use-real`, `results/mmlu_side_effect.json:159-172`; now also in `results/NUMBERS.md`). Proxy 181 controls also preserved (-0.016, superseded).
+- **Temporal on MMLU: no effect (honest negative).** Same 200 streamed MMLU, paired: baseline 78/200 → temporal 79/200 strict (W2C=0, C2W=1, p=1.0). The Africa threshold fires on 155/200 MMLU items (miscalibrated out-of-distribution) and changes nothing. Temporal does not transfer to MMLU-style questions. (Different 200 than the static run — streaming order unpinned.)
 
 ## Limitations
 

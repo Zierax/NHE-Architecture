@@ -119,6 +119,20 @@ Window/threshold tradeoff (offline-validated vs live runs 1:1):
 - window≤3, p90: fires 2/54 (1 catch), safest
 - window≤2: nothing fires (floor is 3)
 
+## Prompt baseline — same benches, greedy strict (`eval_prompt_baseline.py`)
+
+Constrained prompt appends "Answer with only the city name." Same items, same greedy decode.
+
+| Bench | open prompt | constrained prompt |
+|---|---|---|
+| hard (99) | 0.616 (61/99; matches bench construction) | **0.525 (52/99)** — 9 fixes, free |
+| random (99) | 0.091 (9/99) | 0.111 (11/99) — 2 worse (noise) |
+
+Reading: prompting is a real competitor on the hard bench (greedy 61→52 beats
+NHE-mask greedy 61→57). NHE's distinct value is sampled-significance-tested repair
+(20/594, cluster CI excludes 0), no-refusal fixes, and transfer without prompt
+engineering — not raw greedy rate. (`prompt_baseline_{hard,random}_prompt_{open,constrained}.json`)
+
 ## Side effects — general knowledge (greedy)
 
 | Dataset | baseline | static k32 soft (×0.3) |
@@ -127,6 +141,16 @@ Window/threshold tradeoff (offline-validated vs live runs 1:1):
 | control proxy 181 (Europe+Asia+elements+US) | 0.934 substr, 0.917 strict | 0.917 / 0.901 (-0.017, <2%) — superseded by real MMLU row |
 
 Note: only the *static* mask was tested on MMLU, not the temporal method.
+
+## Temporal on MMLU — 200 real MMLU, greedy strict (`eval_mmlu_temporal.py`)
+
+Same 200 streamed items, paired baseline (greedy, no mask) vs temporal (early L19 t90, w≤5, soft ×0.3 — the headline config). **Different 200 than the static-MMLU run** (streaming order not pinned — baselines differ: 0.390 here vs 0.610 there; paired comparison within this run is valid).
+
+| | baseline (greedy) | temporal mask |
+|---|---|---|
+| strict hall (200) | 0.390 (78/200) | **0.395 (79/200)** — fired 155/200 (78%), W2C=0, C2W=1, p=1.0 |
+
+Reading: the Africa-calibrated detector fires constantly on MMLU (out-of-distribution threshold) and the mask changes nothing. Temporal does **not** transfer to MMLU-style questions — honest negative. (`mmlu_temporal.json`)
 
 ## Confirmed ceiling
 

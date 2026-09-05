@@ -1,0 +1,801 @@
+{
+ "bench": "random",
+ "constraint": false,
+ "n": 99,
+ "wrong": 9,
+ "hall": 0.0909,
+ "results": [
+  {
+   "topic": "africa_largest",
+   "id": 9,
+   "question": "What is the largest city in Chad?",
+   "answer": "NDjamena",
+   "generated": "The largest city in Chad is **N'Djamena**.\n\nWhile Chad has a few significant cities, N'Djamena is by far the most populous and serves as the capital and center of power.\n\nHere's a",
+   "strict_correct": 1
+  },
+  {
+   "topic": "africa_largest",
+   "id": 10,
+   "question": "What is the largest city in Comoros?",
+   "answer": "Moroni",
+   "generated": "The largest city in Comoros is **Moroni**.\n\nWhile the island of Fisi is the largest overall, Moroni is the capital and the most populated city, boasting a significant population and a bustling urban center.\n\n",
+   "strict_correct": 1
+  },
+  {
+   "topic": "africa_largest",
+   "id": 11,
+   "question": "What is the largest city in the Democratic Republic of the Congo?",
+   "answer": "Kinshasa",
+   "generated": "The largest city in the Democratic Republic of the Congo is **Kinshasa**.\n\nWhile other cities like Lubumbashi and Mwantana are significant, Kinshasa consistently holds the top spot in terms of population and economic activity.\n\n",
+   "strict_correct": 1
+  },
+  {
+   "topic": "africa_largest",
+   "id": 19,
+   "question": "What is the largest city in Gabon?",
+   "answer": "Libreville",
+   "generated": "The largest city in Gabon is **Ndèbè**.\n\nNdèbè has a population of over 400,000 people, making it the most populous city in the country.\n\nWhile other cities like Libre",
+   "strict_correct": 0
+  },
+  {
+   "topic": "africa_largest",
+   "id": 25,
+   "question": "What is the largest city in Kenya?",
+   "answer": "Nairobi",
+   "generated": "The largest city in Kenya is **Nairobi**.\n\nWhile Mombasa is a significant coastal city, Nairobi is overwhelmingly the largest and most populous center of the country.\n\nHere's a breakdown of the population figures (as of recent estimates):",
+   "strict_correct": 1
+  },
+  {
+   "topic": "africa_largest",
+   "id": 26,
+   "question": "What is the largest city in Lesotho?",
+   "answer": "Maseru",
+   "generated": "The largest city in Lesotho is **Maseru**.\n\nIt's a significant industrial and commercial hub, and it's the most populated city in the country.\n\nWhile Lesotho has a few smaller towns and villages, Maseru is by",
+   "strict_correct": 1
+  },
+  {
+   "topic": "africa_largest",
+   "id": 34,
+   "question": "What is the largest city in Morocco?",
+   "answer": "Casablanca",
+   "generated": "The largest city in Morocco is **Casablanca**.\n\nWhile other cities like Marrakech and Rabat are significant, Casablanca boasts the highest population within Morocco.\n\nHere's a breakdown of the population figures (as of recent estimates):\n\n*   ",
+   "strict_correct": 1
+  },
+  {
+   "topic": "africa_largest",
+   "id": 37,
+   "question": "What is the largest city in Niger?",
+   "answer": "Niamey",
+   "generated": "The largest city in Niger is **Niamey**.\n\nNiamey is a major commercial and cultural center located in the north-central part of the country. It's the capital of the Laμέ région.\n\nWhile other cities like Z",
+   "strict_correct": 1
+  },
+  {
+   "topic": "africa_largest",
+   "id": 38,
+   "question": "What is the largest city in Nigeria?",
+   "answer": "Lagos",
+   "generated": "The largest city in Nigeria is **Lagos**.\n\nLagos is a sprawling metropolis in the southeastern part of Nigeria and is consistently ranked as the largest city by population.\n\nHere's a breakdown of the ranking:\n\n1.  ",
+   "strict_correct": 1
+  },
+  {
+   "topic": "africa_largest",
+   "id": 46,
+   "question": "What is the largest city in South Sudan?",
+   "answer": "Juba",
+   "generated": "The largest city in South Sudan is **Juba**.\n\nWhile the population of Juba is constantly fluctuating, it consistently ranks as the most populated city and serves as the capital and main hub for the country.\n\nHere's a breakdown",
+   "strict_correct": 1
+  },
+  {
+   "topic": "africa_largest",
+   "id": 53,
+   "question": "What is the largest city in Zimbabwe?",
+   "answer": "Harare",
+   "generated": "The largest city in Zimbabwe is **Harare**.\n\nWhile other cities like Bulawayo and Gweru are significant, Harare consistently holds the top spot in terms of population.",
+   "strict_correct": 1
+  },
+  {
+   "topic": "world_cap_traps",
+   "id": 11,
+   "question": "What is the capital of Belize?",
+   "answer": "Belmopan",
+   "generated": "The capital of Belize is **Belmopan**.\n",
+   "strict_correct": 1
+  },
+  {
+   "topic": "world_cap_traps",
+   "id": 12,
+   "question": "What is the capital of Bolivia?",
+   "answer": "Sucre",
+   "generated": "The capital of Bolivia is **Sucre**. \n\nWhile La Paz is the largest city, Sucre is the official and historical capital.",
+   "strict_correct": 1
+  },
+  {
+   "topic": "world_cap_traps",
+   "id": 15,
+   "question": "What is the capital of Morocco?",
+   "answer": "Rabat",
+   "generated": "The capital of Morocco is **Rabat**.\n",
+   "strict_correct": 1
+  },
+  {
+   "topic": "world_cap_traps",
+   "id": 18,
+   "question": "What is the capital of Benin?",
+   "answer": "Porto-Novo",
+   "generated": "The capital of Benin is **Porto-Novo**.\n",
+   "strict_correct": 1
+  },
+  {
+   "topic": "world_cap_traps",
+   "id": 20,
+   "question": "What is the capital of Gambia?",
+   "answer": "Banjul",
+   "generated": "The capital of Gambia is **Bandžarīs**.\n",
+   "strict_correct": 0
+  },
+  {
+   "topic": "world_cap_traps",
+   "id": 23,
+   "question": "What is the capital of South Africa?",
+   "answer": "Pretoria",
+   "generated": "The capital of South Africa is **Pretoria**.\n",
+   "strict_correct": 1
+  },
+  {
+   "topic": "world_cap_traps",
+   "id": 26,
+   "question": "What is the capital of Yemen?",
+   "answer": "Sanaa",
+   "generated": "The capital of Yemen is **Sana’a**.\n",
+   "strict_correct": 1
+  },
+  {
+   "topic": "world_cap_traps",
+   "id": 31,
+   "question": "What is the capital of Malawi?",
+   "answer": "Lilongwe",
+   "generated": "The capital of Malawi is **Lilongwe**.\n",
+   "strict_correct": 1
+  },
+  {
+   "topic": "world_cap_traps",
+   "id": 34,
+   "question": "What is the capital of Laos?",
+   "answer": "Vientiane",
+   "generated": "The capital of Laos is **Vientiane**.\n",
+   "strict_correct": 1
+  },
+  {
+   "topic": "world_cap_traps",
+   "id": 35,
+   "question": "What is the capital of Moldova?",
+   "answer": "Chisinau",
+   "generated": "The capital of Moldova is **Chișinău**.\n",
+   "strict_correct": 1
+  },
+  {
+   "topic": "world_cap_traps",
+   "id": 36,
+   "question": "What is the capital of Belarus?",
+   "answer": "Minsk",
+   "generated": "The capital of Belarus is **Minsk**.\n",
+   "strict_correct": 1
+  },
+  {
+   "topic": "world_cap_traps",
+   "id": 37,
+   "question": "What is the capital of Ukraine?",
+   "answer": "Kyiv",
+   "generated": "The capital of Ukraine is **Kyiv**.\n",
+   "strict_correct": 1
+  },
+  {
+   "topic": "world_cap_traps",
+   "id": 40,
+   "question": "What is the capital of Azerbaijan?",
+   "answer": "Baku",
+   "generated": "The capital of Azerbaijan is **Baku**.\n",
+   "strict_correct": 1
+  },
+  {
+   "topic": "world_cap_traps",
+   "id": 42,
+   "question": "What is the capital of Tajikistan?",
+   "answer": "Dushanbe",
+   "generated": "The capital of Tajikistan is **Dushanbe**.\n",
+   "strict_correct": 1
+  },
+  {
+   "topic": "world_cap_traps",
+   "id": 45,
+   "question": "What is the capital of Mongolia?",
+   "answer": "Ulaanbaatar",
+   "generated": "The capital of Mongolia is **Ulaanbaatar**.\n",
+   "strict_correct": 1
+  },
+  {
+   "topic": "world_cap_traps",
+   "id": 46,
+   "question": "What is the capital of Afghanistan?",
+   "answer": "Kabul",
+   "generated": "The capital of Afghanistan is **Kabul**.\n",
+   "strict_correct": 1
+  },
+  {
+   "topic": "world_cap_traps",
+   "id": 49,
+   "question": "What is the capital of Saudi Arabia?",
+   "answer": "Riyadh",
+   "generated": "The capital of Saudi Arabia is **Riyadh**.\n",
+   "strict_correct": 1
+  },
+  {
+   "topic": "world_cap_traps",
+   "id": 51,
+   "question": "What is the capital of Oman?",
+   "answer": "Muscat",
+   "generated": "The capital of Oman is **Muscat**.\n",
+   "strict_correct": 1
+  },
+  {
+   "topic": "world_cap_traps",
+   "id": 55,
+   "question": "What is the capital of Kuwait?",
+   "answer": "Kuwait City",
+   "generated": "The capital of Kuwait is **Kuwait City**.\n",
+   "strict_correct": 1
+  },
+  {
+   "topic": "world_cap_traps",
+   "id": 59,
+   "question": "What is the capital of Andorra?",
+   "answer": "Andorra la Vella",
+   "generated": "The capital of Andorra is **Andorra la Vella**.\n",
+   "strict_correct": 1
+  },
+  {
+   "topic": "world_cap_traps",
+   "id": 64,
+   "question": "What is the capital of Vatican City?",
+   "answer": "Vatican City",
+   "generated": "The capital of Vatican City is **Rome**. \n\nIt’s a bit of a trick question – Vatican City is a city-state, and its entire existence revolves around Rome.",
+   "strict_correct": 1
+  },
+  {
+   "topic": "world_cap_traps",
+   "id": 66,
+   "question": "What is the capital of Uruguay?",
+   "answer": "Montevideo",
+   "generated": "The capital of Uruguay is **Montevideo**.\n",
+   "strict_correct": 1
+  },
+  {
+   "topic": "world_cap_traps",
+   "id": 68,
+   "question": "What is the capital of Guyana?",
+   "answer": "Georgetown",
+   "generated": "The capital of Guyana is Georgetown. 😊\n",
+   "strict_correct": 1
+  },
+  {
+   "topic": "world_cap_traps",
+   "id": 85,
+   "question": "What is the capital of El Salvador?",
+   "answer": "San Salvador",
+   "generated": "The capital of El Salvador is **San Salvador**.\n",
+   "strict_correct": 1
+  },
+  {
+   "topic": "world_cap_traps",
+   "id": 90,
+   "question": "What is the capital of Samoa?",
+   "answer": "Apia",
+   "generated": "The capital of Samoa is **Apia**.\n",
+   "strict_correct": 1
+  },
+  {
+   "topic": "world_cap_traps",
+   "id": 93,
+   "question": "What is the capital of Kiribati?",
+   "answer": "Tarawa",
+   "generated": "The capital of Kiribati is Rundu.",
+   "strict_correct": 0
+  },
+  {
+   "topic": "world_cap_traps",
+   "id": 100,
+   "question": "What is the capital of Timor-Leste?",
+   "answer": "Dili",
+   "generated": "The capital of Timor-Leste is **Dili**.\n",
+   "strict_correct": 1
+  },
+  {
+   "topic": "world_cap_traps",
+   "id": 102,
+   "question": "What is the capital of Kosovo?",
+   "answer": "Pristina",
+   "generated": "The capital of Kosovo is **Pristina**, also known as Belgrado.\n",
+   "strict_correct": 1
+  },
+  {
+   "topic": "world_cap_traps",
+   "id": 103,
+   "question": "What is the capital of Montenegro?",
+   "answer": "Podgorica",
+   "generated": "The capital of Montenegro is **Podgorica**.\n",
+   "strict_correct": 1
+  },
+  {
+   "topic": "world_cap_traps",
+   "id": 104,
+   "question": "What is the capital of Bosnia and Herzegovina?",
+   "answer": "Sarajevo",
+   "generated": "The capital of Bosnia and Herzegovina is **Sarajevo**.\n",
+   "strict_correct": 1
+  },
+  {
+   "topic": "world_cap_traps",
+   "id": 105,
+   "question": "What is the capital of North Macedonia?",
+   "answer": "Skopje",
+   "generated": "The capital of North Macedonia is **Skopje**.\n",
+   "strict_correct": 1
+  },
+  {
+   "topic": "world_cap_traps",
+   "id": 111,
+   "question": "What is the capital of Sao Tome and Principe?",
+   "answer": "Sao Tome",
+   "generated": "The capital of São Tomé and Príncipe is **São Tomé**.\n",
+   "strict_correct": 1
+  },
+  {
+   "topic": "world_cap_traps",
+   "id": 113,
+   "question": "What is the capital of Eritrea?",
+   "answer": "Asmara",
+   "generated": "The capital of Eritrea is **Asmara**.\n",
+   "strict_correct": 1
+  },
+  {
+   "topic": "world_cap_traps",
+   "id": 116,
+   "question": "What is the capital of Mali?",
+   "answer": "Bamako",
+   "generated": "The capital of Mali is **Bamako**. \n\nWhile Mali has a few other significant cities, Bamako is the largest and most important center for the country.",
+   "strict_correct": 1
+  },
+  {
+   "topic": "world_cap_traps",
+   "id": 117,
+   "question": "What is the capital of Burkina Faso?",
+   "answer": "Ouagadougou",
+   "generated": "The capital of Burkina Faso is **Ouagadougou**.\n",
+   "strict_correct": 1
+  },
+  {
+   "topic": "world_cap_traps",
+   "id": 121,
+   "question": "What is the capital of Liberia?",
+   "answer": "Monrovia",
+   "generated": "The capital of Liberia is ** Monrovia**.\n",
+   "strict_correct": 1
+  },
+  {
+   "topic": "world_cap_traps",
+   "id": 123,
+   "question": "What is the capital of Gabon?",
+   "answer": "Libreville",
+   "generated": "The capital of Gabon is Libre.",
+   "strict_correct": 0
+  },
+  {
+   "topic": "world_cap_traps",
+   "id": 126,
+   "question": "What is the capital of Madagascar?",
+   "answer": "Antananarivo",
+   "generated": "The capital of Madagascar is **Antananarivo**.\n",
+   "strict_correct": 1
+  },
+  {
+   "topic": "world_cap_traps",
+   "id": 128,
+   "question": "What is the capital of Zimbabwe?",
+   "answer": "Harare",
+   "generated": "The capital of Zimbabwe is **Harare**.\n",
+   "strict_correct": 1
+  },
+  {
+   "topic": "world_cap_traps",
+   "id": 133,
+   "question": "What is the capital of Lesotho?",
+   "answer": "Maseru",
+   "generated": "The capital of Lesotho is **Maseru**. \n\nIt’s a small, hilly city located in the central part of the country.",
+   "strict_correct": 1
+  },
+  {
+   "topic": "world_largest",
+   "id": 0,
+   "question": "What is the largest city in Australia?",
+   "answer": "Sydney",
+   "generated": "The largest city in Australia is **Sydney**.\n\nHere's a breakdown of the rankings:\n\n1.  **Sydney:** Approximately 5.3 million residents\n2.  **Melbourne:** Approximately 5.1 million residents\n",
+   "strict_correct": 1
+  },
+  {
+   "topic": "world_largest",
+   "id": 2,
+   "question": "What is the largest city in the United States?",
+   "answer": "New York City",
+   "generated": "As of today, November 2, 2023, the largest city in the United States is **New York City**.\n\nHere's a breakdown of the rankings based on population estimates:\n\n1.  **New York",
+   "strict_correct": 1
+  },
+  {
+   "topic": "world_largest",
+   "id": 11,
+   "question": "What is the largest city in Vietnam?",
+   "answer": "Ho Chi Minh City",
+   "generated": "The largest city in Vietnam is **Ho Chi Minh City (Saigon)**.\n\nIt consistently ranks as the largest city by population within Vietnam.\n\nHere's a breakdown of the ranking:\n\n1.  **Ho Chi Minh City",
+   "strict_correct": 1
+  },
+  {
+   "topic": "world_largest",
+   "id": 12,
+   "question": "What is the largest city in Sri Lanka?",
+   "answer": "Colombo",
+   "generated": "The largest city in Sri Lanka is **Colombo**.\n\nWhile other cities like Kandy and Nuwara Eliya are significant, Colombo is by far the most populous and serves as the economic, political, and cultural hub of the country.\n\n",
+   "strict_correct": 1
+  },
+  {
+   "topic": "world_largest",
+   "id": 15,
+   "question": "What is the largest city in Bolivia?",
+   "answer": "Santa Cruz de la Sierra",
+   "generated": "The largest city in Bolivia is **Sucre**.\n\nWhile Bolivia has a sprawling and diverse landscape, Sucre is the capital and the largest city, boasting a significant population and a rich history. It's a major political, economic,",
+   "strict_correct": 0
+  },
+  {
+   "topic": "world_largest",
+   "id": 18,
+   "question": "What is the largest city in Poland?",
+   "answer": "Warsaw",
+   "generated": "The largest city in Poland is **Warsaw**.\n\nWhile other cities like Krakow and Gdansk are significant, Warsaw has the highest population within Poland.\n\nHere's a breakdown of the population figures (as of late 202",
+   "strict_correct": 1
+  },
+  {
+   "topic": "world_largest",
+   "id": 24,
+   "question": "What is the largest city in Portugal?",
+   "answer": "Lisbon",
+   "generated": "The largest city in Portugal is **Lisbon**.\n\nWhile Porto is often considered the second largest, Lisbon has a significantly larger population and a much larger metropolitan area.\n\nHere's a breakdown:\n\n*   **Lisbon:** Approximately",
+   "strict_correct": 1
+  },
+  {
+   "topic": "world_largest",
+   "id": 27,
+   "question": "What is the largest city in Germany?",
+   "answer": "Berlin",
+   "generated": "The largest city in Germany is **Berlin**.\n\nWhile other cities like Hamburg and Munich are significant, Berlin consistently holds the top spot in terms of population.\n\nHere's a breakdown of the population figures (as of late 20",
+   "strict_correct": 1
+  },
+  {
+   "topic": "world_largest",
+   "id": 29,
+   "question": "What is the largest city in Ireland?",
+   "answer": "Dublin",
+   "generated": "The largest city in Ireland is **Dublin**.\n\nWhile other cities like Cork and Galway are significant, Dublin consistently holds the top spot in terms of population.\n\nHere's a breakdown of the population figures (as of late 20",
+   "strict_correct": 1
+  },
+  {
+   "topic": "world_largest",
+   "id": 30,
+   "question": "What is the largest city in the Netherlands?",
+   "answer": "Amsterdam",
+   "generated": "The largest city in the Netherlands is **Amsterdam**.\n\nWhile Rotterdam is a significant port city and a major economic hub, Amsterdam consistently ranks as the largest by population within the country.\n\nHere's a breakdown of the population figures:\n\n",
+   "strict_correct": 1
+  },
+  {
+   "topic": "world_largest",
+   "id": 34,
+   "question": "What is the largest city in Sweden?",
+   "answer": "Stockholm",
+   "generated": "The largest city in Sweden is **Stockholm**.\n\nWhile Gothenburg is often considered the second largest, Stockholm has a significantly larger population and a much larger metropolitan area.\n\nHere's a breakdown:\n\n*   **Stockholm:** Approximately",
+   "strict_correct": 1
+  },
+  {
+   "topic": "world_largest",
+   "id": 37,
+   "question": "What is the largest city in Finland?",
+   "answer": "Helsinki",
+   "generated": "The largest city in Finland is **Helsinki**.\n\nWhile other cities like Tampere and Turku are significant, Helsinki consistently holds the top spot in terms of population.\n\nHere's a breakdown of the population figures (as of",
+   "strict_correct": 1
+  },
+  {
+   "topic": "world_largest",
+   "id": 40,
+   "question": "What is the largest city in Latvia?",
+   "answer": "Riga",
+   "generated": "The largest city in Latvia is **Riga**.\n\nWhile Tallinn is often considered the largest city by population, Riga has a significantly higher density and is the economic and cultural hub of Latvia.\n\nHere's a breakdown:\n\n*   **",
+   "strict_correct": 1
+  },
+  {
+   "topic": "world_largest",
+   "id": 43,
+   "question": "What is the largest city in Moldova?",
+   "answer": "Chisinau",
+   "generated": "The largest city in Moldova is **Chisinau**.\n\nWhile Moldova has a few smaller cities, Chisinau is consistently ranked as the most populous and the most significant urban center.\n\nHere's a breakdown of the population figures (",
+   "strict_correct": 1
+  },
+  {
+   "topic": "world_largest",
+   "id": 49,
+   "question": "What is the largest city in Kyrgyzstan?",
+   "answer": "Bishkek",
+   "generated": "The largest city in Kyrgyzstan is **Bishkek (also known as Karakol)**.\n\nBishkek is a sprawling metropolis and serves as the capital and largest city of Kyrgyzstan. It's a significant economic, cultural, and political",
+   "strict_correct": 1
+  },
+  {
+   "topic": "world_largest",
+   "id": 50,
+   "question": "What is the largest city in Tajikistan?",
+   "answer": "Dushanbe",
+   "generated": "The largest city in Tajikistan is **Dushanbe**.\n\nIt's a major political, economic, and cultural center and is the capital city.",
+   "strict_correct": 1
+  },
+  {
+   "topic": "world_largest",
+   "id": 51,
+   "question": "What is the largest city in Mongolia?",
+   "answer": "Ulaanbaatar",
+   "generated": "The largest city in Mongolia is **Ulaanbaatar**, also known as the capital city.\n\nIt's a massive, sprawling metropolis and is consistently ranked as the largest city in Mongolia.\n\nWhile other cities like Bayanzag and",
+   "strict_correct": 1
+  },
+  {
+   "topic": "world_largest",
+   "id": 56,
+   "question": "What is the largest city in Qatar?",
+   "answer": "Doha",
+   "generated": "The largest city in Qatar is **Doha**.\n\nWhile Doha is a sprawling metropolis, it's officially the largest city by population within Qatar. It covers a significant area and boasts a large population, exceeding the population of other cities in",
+   "strict_correct": 1
+  },
+  {
+   "topic": "world_largest",
+   "id": 63,
+   "question": "What is the largest city in Bahrain?",
+   "answer": "Manama",
+   "generated": "The largest city in Bahrain is **Manama**.\n\nManama is a sprawling metropolis and the capital city, and it has a significantly larger population than any other city in the country.\n\nWhile other cities like Hamra and district offices have",
+   "strict_correct": 1
+  },
+  {
+   "topic": "world_largest",
+   "id": 65,
+   "question": "What is the largest city in Israel?",
+   "answer": "Jerusalem",
+   "generated": "The largest city in Israel is **Tel Aviv**.\n\nWhile Jerusalem is the political center and has a significantly larger population, Tel Aviv boasts the highest population density and is a major economic, cultural, and residential hub.\n\nHere's a",
+   "strict_correct": 1
+  },
+  {
+   "topic": "world_largest",
+   "id": 66,
+   "question": "What is the largest city in the United Arab Emirates?",
+   "answer": "Dubai",
+   "generated": "The largest city in the United Arab Emirates is **Dubai**.\n\nWhile Abu Dhabi is the capital, Dubai consistently holds the top spot in terms of population and area.\n\nHere's a breakdown:\n\n*   **Dubai:** Approximately ",
+   "strict_correct": 1
+  },
+  {
+   "topic": "world_largest",
+   "id": 72,
+   "question": "What is the largest city in Cambodia?",
+   "answer": "Phnom Penh",
+   "generated": "The largest city in Cambodia is **Phnom Penh**.\n\nWhile Phnom Penh is the capital and most densely populated, Phnom Penh is actually the largest city by population within the country. It's a major economic and cultural hub.\n\nHere",
+   "strict_correct": 1
+  },
+  {
+   "topic": "world_largest",
+   "id": 76,
+   "question": "What is the largest city in Indonesia?",
+   "answer": "Jakarta",
+   "generated": "The largest city in Indonesia is **Jakarta**.\n\nWhile other cities like Surabaya and Medan are significant, Jakarta consistently holds the top spot in terms of population within the country.\n\nHere's a breakdown of the population figures (as of recent",
+   "strict_correct": 1
+  },
+  {
+   "topic": "world_largest",
+   "id": 77,
+   "question": "What is the largest city in the Philippines?",
+   "answer": "Quezon City",
+   "generated": "The largest city in the Philippines is **Manila**.\n\nWhile other cities like Cebu and Davao are significant, Manila consistently holds the top spot in terms of population within the country.\n\nHere's a breakdown of the population figures (as",
+   "strict_correct": 1
+  },
+  {
+   "topic": "world_largest",
+   "id": 79,
+   "question": "What is the largest city in Timor-Leste?",
+   "answer": "Dili",
+   "generated": "The largest city in Timor-Leste is **Dili**.\n\nDili is the capital and largest city, and it's a major hub for the country's government, economy, and culture.\n\nWhile other cities like Su",
+   "strict_correct": 1
+  },
+  {
+   "topic": "world_largest",
+   "id": 81,
+   "question": "What is the largest city in Fiji?",
+   "answer": "Suva",
+   "generated": "The largest city in Fiji is **Suva**.\n\nWhile other cities like Nadi are important, Suva is the capital and the largest urban center, boasting a significantly larger population and economic activity.\n\nHere's a breakdown:\n\n",
+   "strict_correct": 1
+  },
+  {
+   "topic": "world_largest",
+   "id": 88,
+   "question": "What is the largest city in Kiribati?",
+   "answer": "Tarawa",
+   "generated": "The largest city in Kiribati is **Bairiki**.\n\nWhile Kiribati has a decentralized structure, Bairiki is consistently ranked as the most populated and strategically important city due to its location and role in the country's",
+   "strict_correct": 0
+  },
+  {
+   "topic": "world_largest",
+   "id": 97,
+   "question": "What is the largest city in Japan?",
+   "answer": "Tokyo",
+   "generated": "The largest city in Japan is **Tokyo**.\n\nWhile Osaka is often considered the largest city by population, Tokyo consistently holds the top spot in terms of population within the Greater Tokyo Area (which includes Tokyo, Yokohama, and parts of Shinj",
+   "strict_correct": 1
+  },
+  {
+   "topic": "world_largest",
+   "id": 101,
+   "question": "What is the largest city in Honduras?",
+   "answer": "Tegucigalpa",
+   "generated": "The largest city in Honduras is **San Pedro Sula**.\n\nWhile other cities like Tegucigalpa and La Isla de Mayóns are significant, San Pedro Sula consistently holds the top spot in terms of population.\n\nHere'",
+   "strict_correct": 0
+  },
+  {
+   "topic": "world_largest",
+   "id": 102,
+   "question": "What is the largest city in El Salvador?",
+   "answer": "San Salvador",
+   "generated": "The largest city in El Salvador is **San Salvador**.\n\nIt's a major economic, cultural, and political center of the country.",
+   "strict_correct": 1
+  },
+  {
+   "topic": "world_largest",
+   "id": 103,
+   "question": "What is the largest city in Nicaragua?",
+   "answer": "Managua",
+   "generated": "The largest city in Nicaragua is **Managua**.\n\nWhile other cities like Grancedo and Matagalpa are significant, Managua consistently holds the top spot in terms of population.\n\nHere's a breakdown of the population figures (",
+   "strict_correct": 1
+  },
+  {
+   "topic": "world_largest",
+   "id": 105,
+   "question": "What is the largest city in Panama?",
+   "answer": "Panama City",
+   "generated": "The largest city in Panama is **Panama City (Ciudad de Panamá)**.\n\nIt's a sprawling metropolis with a significant population and a major economic and cultural center.\n\nWhile other cities like Colón and Panama Cityrón are important,",
+   "strict_correct": 1
+  },
+  {
+   "topic": "world_largest",
+   "id": 106,
+   "question": "What is the largest city in Cuba?",
+   "answer": "Havana",
+   "generated": "The largest city in Cuba is **Havana**.\n\nWhile other cities like Cienfuegos and Santiago are significant, Havana consistently holds the top spot in terms of population and overall size.\n\n",
+   "strict_correct": 1
+  },
+  {
+   "topic": "world_largest",
+   "id": 112,
+   "question": "What is the largest city in Barbados?",
+   "answer": "Bridgetown",
+   "generated": "The largest city in Barbados is ** Bridgetown**.\n\nWhile Barbados has several towns and villages, Bridgetown is the designated capital and the largest urban center, with a significant population and a large economic and cultural influence.\n\nHere's a",
+   "strict_correct": 1
+  },
+  {
+   "topic": "world_largest",
+   "id": 117,
+   "question": "What is the largest city in Chile?",
+   "answer": "Santiago",
+   "generated": "The largest city in Chile is **Santiago**.\n\nIt has a population of over 800,000 people and is the capital and largest city of Chile.",
+   "strict_correct": 1
+  },
+  {
+   "topic": "world_largest",
+   "id": 126,
+   "question": "What is the largest city in Morocco?",
+   "answer": "Casablanca",
+   "generated": "The largest city in Morocco is **Casablanca**.\n\nWhile other cities like Marrakech and Rabat are significant, Casablanca boasts the highest population within Morocco.\n\nHere's a breakdown of the population figures (as of recent estimates):\n\n*   ",
+   "strict_correct": 1
+  },
+  {
+   "topic": "world_largest",
+   "id": 130,
+   "question": "What is the largest city in Ghana?",
+   "answer": "Accra",
+   "generated": "The largest city in Ghana is **Accra**.\n\nWhile Accra is the capital and largest city, it's important to note that the metropolitan area of Accra is significantly larger and encompasses several surrounding towns and cities.\n\nHere's a",
+   "strict_correct": 1
+  },
+  {
+   "topic": "world_largest",
+   "id": 131,
+   "question": "What is the largest city in Cameroon?",
+   "answer": "Douala",
+   "generated": "The largest city in Cameroon is **Yaoundé**.\n\nIt's a major economic, political, and cultural hub for the country.\n\nWhile other cities like Douala are significant, Yaoundé holds the top spot in terms of",
+   "strict_correct": 0
+  },
+  {
+   "topic": "world_largest",
+   "id": 133,
+   "question": "What is the largest city in the Republic of the Congo?",
+   "answer": "Brazzaville",
+   "generated": "The largest city in the Republic of the Congo is **Kinshasa**.\n\nIt's a sprawling metropolis with a massive population and a significant economic and political center.\n\nWhile other cities like Brazzaville and Pointe-Noire are",
+   "strict_correct": 0
+  },
+  {
+   "topic": "world_largest",
+   "id": 135,
+   "question": "What is the largest city in Madagascar?",
+   "answer": "Antananarivo",
+   "generated": "The largest city in Madagascar is **Antananarivo**, also known as Antananarivo.\n\nIt's a major economic and cultural hub and is consistently ranked as the largest city by population.\n\nWhile other cities like Toamas",
+   "strict_correct": 1
+  },
+  {
+   "topic": "world_largest",
+   "id": 140,
+   "question": "What is the largest city in Botswana?",
+   "answer": "Gaborone",
+   "generated": "The largest city in Botswana is **Gaborone**.\n\nWhile other cities like Maun are significant, Gaborone is the administrative and economic center of the country and has the highest population.\n\n",
+   "strict_correct": 1
+  },
+  {
+   "topic": "world_largest",
+   "id": 141,
+   "question": "What is the largest city in Namibia?",
+   "answer": "Windhoek",
+   "generated": "The largest city in Namibia is **Windhoek**.\n\nIt's a major economic and administrative center and is the capital city. While other cities like Oshiwambo are significant, Windhoek holds the top spot in terms of population.",
+   "strict_correct": 1
+  },
+  {
+   "topic": "world_largest",
+   "id": 142,
+   "question": "What is the largest city in Malawi?",
+   "answer": "Blantyre",
+   "generated": "The largest city in Malawi is **Lilongwe**.\n\nWhile other cities like Blantyre and Zomba are significant, Lilongwe consistently holds the top spot in terms of population and overall size.\n\n",
+   "strict_correct": 1
+  },
+  {
+   "topic": "world_largest",
+   "id": 150,
+   "question": "What is the largest city in South Sudan?",
+   "answer": "Juba",
+   "generated": "The largest city in South Sudan is **Juba**.\n\nWhile the population of Juba is constantly fluctuating, it consistently ranks as the most populated city and serves as the capital and main hub for the country.\n\nHere's a breakdown",
+   "strict_correct": 1
+  },
+  {
+   "topic": "world_largest",
+   "id": 151,
+   "question": "What is the largest city in Chad?",
+   "answer": "NDjamena",
+   "generated": "The largest city in Chad is **N'Djamena**.\n\nWhile Chad has a few significant cities, N'Djamena is by far the most populous and serves as the capital and center of power.\n\nHere's a",
+   "strict_correct": 1
+  },
+  {
+   "topic": "world_largest",
+   "id": 154,
+   "question": "What is the largest city in Burkina Faso?",
+   "answer": "Ouagadougou",
+   "generated": "The largest city in Burkina Faso is **Ouagadougou**.\n\nWhile the country is vast and has many towns and villages, Ouagadougou consistently holds the top spot in terms of population.\n\n",
+   "strict_correct": 1
+  },
+  {
+   "topic": "world_largest",
+   "id": 162,
+   "question": "What is the largest city in Ivory Coast?",
+   "answer": "Abidjan",
+   "generated": "The largest city in Ivory Coast is **Abidjan**.\n\nIt's a major economic and cultural hub, and boasts a significant population.\n\nWhile other cities like Yamoussoukro (the capital) and Doura Palace are important",
+   "strict_correct": 1
+  },
+  {
+   "topic": "world_largest",
+   "id": 167,
+   "question": "What is the largest city in Seychelles?",
+   "answer": "Victoria",
+   "generated": "The largest city in Seychelles is **Victoria**.\n\nVictoria is the capital and largest city, and it's a significant economic and cultural hub. It boasts a large population and a wide range of services and businesses.\n\nWhile other towns and",
+   "strict_correct": 1
+  }
+ ]
+}
