@@ -1,8 +1,8 @@
 # NHE Roadmap — Two Tracks, One Core
 
-**Where we are (2026-08-21):**
-- **Done:** Gemma 3 1B jitter signal (0.968 pooled, 0.742 early), k32 neurons, temporal soft w≤5 (hard 0.596→0.562 p<0.001, random 0.099→0.089 p=0.031), merged 0.389/0.088, MMLU proxy -0.016, quiet lens shows 4 quiet are dynamic not parametric, Qwen adapter synthetic.
-- **Pending:** Real Qwen0.5B weights + 6-seed hard/random, real MMLU 200 (running), SAE prototype.
+**Where we are (2026-09-04):**
+- **Done:** Gemma 3 1B jitter signal (last-token L10 0.968 exists, deployed early 0.742), k32 neurons, temporal soft w≤5 (hard per-draw p<0.001 but item-majority n.s.; random per-draw p=0.031, majority n.s.), merged mask 0.389 (9 breaks) / merged abstain 0.088 (58% refusal), real MMLU 200 preserved (0.925→0.925, +0.01 strict), quiet lens refutes parametric (0/4), Qwen adapter synthetic-only.
+- **Pending:** Real Qwen0.5B weights + 6-seed hard/random, SAE prototype, prompt/entropy baselines, temporal MMLU.
 
 **Where we're going:** Two tracks sharing the same core idea — hallucination is a late wrong-commit in middle layers — but different constraints.
 
@@ -23,7 +23,7 @@
 
 **Mechanism:** `Hidden State Jitter (L19, first 10 tokens) + Soft Scaling 0.3` — the current pipeline. Zero extra latency on CPU.
 
-**What it is now:** Everything in this repo at root is Edge. It is the proven track. We will freeze it as `NHE-Edge/` with no architecture change, only hardening.
+**What it is now:** Everything pipeline lives in `NHE-Edge/` (moved 2026-09-04, history kept). It is the proven track, frozen except hardening.
 
 **What remains for Edge:**
 - Real Qwen0.5B run (same pipeline, 2.5h download + 6h eval) to prove not Gemma-specific.
@@ -36,7 +36,7 @@
 
 **Mechanism:** Same detector, but intervention is SAEs or steering vectors in latent space instead of `weight *= 0.3`. This avoids polysemantic damage.
 
-**What it is now:** Only a plan and an adapter skeleton (`runtime_rollback_qwen.py` already supports Qwen dims). No SAE training yet.
+**What it is now:** Plan-only, zero code (`NHE-GenPM/plan.md`, `sae/README.md`). The Qwen adapter lives in `NHE-Edge/runtime_rollback_qwen.py` (Edge-side cross-arch work), not here. No SAE training yet.
 
 **What needs to be built:**
 - Train or load a small SAE for Gemma 3 1B mid layers (or use open SAEs if available for Gemma/Qwen).
@@ -45,7 +45,7 @@
 
 ## Paper — Third paper (diagnostic)
 
-The 4 quiet cases are not parametric training-data errors (logit lens shows late, low confidence, high entropy like dynamic). But the *method* to tell them apart (jitter + entropy + cross-layer) is itself a paper: "When is a hallucination a training-data error vs a late commit?" Needs logit lens + paraphrase persistence on those 4 vs 3 controls — data already in `results/quiet_diagnostic.json`.
+The 4 quiet cases are not parametric training-data errors (logit lens: 0/4 parametric, 4/4 dynamic — but so are all 7 cases, so no separation yet). A paper needs n≥50 plus a real second signal with its own AUC. Data so far in `NHE-Edge/results/quiet_diagnostic.json` is a limitations paragraph, not a paper.
 
 ## Appendix: Repo reorg (done 2026-09-04)
 
@@ -63,4 +63,4 @@ from `NHE-Edge/` with script-dir-anchored paths (validated: `strict_final.py`,
 - **2–4 weeks:** SAE prototype on Gemma 1B mid layers, compare raw scaling vs steering on MMLU.
 - **Paper:** Edge paper first (with cross-model + MMLU), diagnostic paper second, GenPM paper third.
 
-Full numbers always in `results/NUMBERS.md` (hard vs random, greedy vs sampled, strict vs loose).
+Full numbers always in `NHE-Edge/results/NUMBERS.md` (hard vs random, greedy vs sampled, strict vs loose).

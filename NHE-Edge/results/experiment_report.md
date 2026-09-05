@@ -50,6 +50,11 @@ breaks). The useful ones live in layers 8–17, peaking at 16.
 When we keep only neurons that help the *wrong* answer and are in the middle
 layers (`k32_midwrong`), it works:
 
+Sampled-substring legacy table (static arm, `model.generate`, 5 seeds/item; p/net
+per-draw — overstates, see NUMBERS.md). Canonicals: greedy strict Africa 0.130 /
+Europe 0.000 / k128-Europe 0.091; sampled-substring majority baseline 0.148, k32
+0.111 p=0.017, k128 0.074 p=0.003 (per-draw mean 0.093):
+
 | Topic | Before | k32 | k128 |
 |---|---:|---:|---:|
 | Africa | 0.167 | **0.111** p=0.017 | **0.093** p=0.003 |
@@ -75,8 +80,8 @@ AUC 0.742). It only helps if it fires in the first 5 tokens.
 |---|---:|---|---|
 | Probe L10 | 0.672 | — | weak |
 | Jump L18 (full) | 0.860 | tokens 14–19 | 7/54→7/54 — too late |
-| Jump early L19 | 0.742 | first 10 | 7/54→4/54, but 16 fires |
-| Same + window ≤5 | 0.742 | first 5 | **7/54→4/54, 7 fires, Europe 0 fires** |
+| Jump early L19 | 0.742 | first 10 | 7/54→4/54 substring (5/54 strict), but 16 fires |
+| Same + window ≤5 | 0.742 | first 5 | **7/54→4/54 substring (5/54 strict), 7 fires, Europe 0 fires** |
 
 Window ≤5 is the sweet spot (w≤4 → 6 fires, w≤3 → 2 fires, w≤2 → 0). We use
 p90 threshold.
@@ -101,18 +106,20 @@ and Europe: 0 fires, 0 breaks. Only runtime never hurts a control.
 
 ### Benches, sampled (6 seeds, strict)
 
-Hard bench = 99 hard (54+15+30, baseline 0.596). Random bench = 99 random from
-same pool (11+40+48, baseline 0.099, overlap 19).
+Hard bench = all 54 africa_largest (16 greedy-wrong) + 15 + 30 greedy-wrong
+(99 total, baseline 0.596). Random bench = 99 random from same pool (11+40+48,
+baseline 0.099, overlap 19).
 
 | Bench | Nothing | Runtime soft | Refuse instead |
 |---|---|---:|---:|
-| **Hard, per draw 594** | 354 (0.596) | **334 (0.562)** p<0.001, 20 fixes | 280 (0.471) + 90 refusals |
-| Hard, majority 99 | 59 | 56 | 47 |
-| **Random, per draw 594** | 59 (0.099) | **53 (0.089)** p=0.031 | 47 (0.079) + 42 refusals |
-| Random, majority 99 | 10 | 9 | 8 |
+| **Hard, per draw 594** | 354 (0.596) | **334 (0.562)** per-draw p<0.001, 20 fixes / 0 new errors per-draw | 280 (0.471) + 90 refusals |
+| Hard, majority-of-6 99 (**primary**) | 59 | 56 (W2C=3, C2W=0, p=0.25, n.s.) | 47 |
+| **Random, per draw 594** | 59 (0.099) | **53 (0.089)** per-draw p=0.031 | 47 (0.079) + 42 refusals |
+| Random, majority-of-6 99 (**primary**) | 10 | 9 (n.s.) | 8 |
 
-Same direction, smaller on random (as expected — hard is hard by design). This
-shows it's not just cherry-picking. On fired items, 36/90 become correct (40%).
+Same direction, smaller on random. Per-draw tests overstate (correlated draws);
+item majority is the honest primary and is not significant — small effect.
+On fired samples, 20/90 turned wrong→correct (22%; 36/90 correct after).
 
 Africa sampled alone (270 draws): 33/270→28/270 p=0.18 — not significant at that
 size. Europe: 0 fires in all seeds.
@@ -126,35 +133,43 @@ static changes the dynamics.
 |---:|---:|---:|---:|---:|
 | 354 (0.596) | 334 (0.562) | 280 (0.471) | **231 (0.389)** | **52 (0.088)** + 348 refusals |
 
-Static+runtime repairs without refusing; static+refuse almost wipes out errors
-but refuses over half. Only the combined moves the quiet cases.
+Static+runtime improves a lot (132 fixes) but breaks 9 draws; static+refuse
+almost wipes out errors but refuses over half (348/594). Bench-aggregate only —
+no per-item proof the four Africa quiet cases are among the fixed.
 
 ### What we can't fix yet
 
 Four Africa errors (Cape Verde, Equatorial Guinea, Gabon, Guinea) never spike.
-No single jitter threshold or k32 mask catches them. Only static+runtime together
-moves them. That's the limit of this signal family, not a bug.
+No single jitter threshold or k32 mask catches them (greedy Africa). Logit lens
+says they are not early high-confidence parametric errors either (0/4
+parametric, 4/4 dynamic — but so are all 7, so no separation). That's the limit
+of this signal family, not a bug.
 
 ## Takeaways
 
 1. There are neurons in layers 8–17 that actually push the wrong answer. Patching
    on wrong-only examples finds them.
 2. k32 static helps Africa (p=0.017) but breaks one. Runtime soft (first 5 tokens,
-   scale 0.3) helps the same amount with no breaks — the only single fix that
-   never hurts a control.
-3. The fix is real: hard bench p<0.001, 20 fixes; random bench p=0.031, same
-   direction. On fired items 40% become correct.
-4. Four quiet commits need more than one signal. Static+runtime together gets
-   them (0.389 repair, 0.088 with refusal) at the cost of many fires.
+   scale 0.3) helps the same amount with no breaks on tested topics — the only
+   single fix that never hurts a tested control (runtime never ran on
+   elements/asia/US-states; MMLU tested static only).
+3. Direction is consistent everywhere: hard per-draw p<0.001 (20/0), random
+   per-draw p=0.031 (6/0); honest item-majority primary is n.s. both times.
+   On fired samples 20/90 wrong→correct (22%).
+4. Four quiet commits need more than one signal. Static+runtime moves the bench
+   a lot (0.389, 9 breaks; 0.088 with 58% refusal) at the cost of many fires.
 
 ## Limits
 
 - Loose scoring flatters hedges. We report strict and checked every flip.
-- One model (1B), CPU only. No other size or family tested.
-- Hard bench is hard by design (0.596). Random bench (0.099) is the honest
-  baseline. Both show the effect.
-- Detector is per decoding mode. Sampled→greedy is ~0.05 — you have to retrain.
-- Four quiet cases need a different signal.
+- One model (1B), CPU only. No other size or family tested. Qwen adapter is
+  synthetic-only; no real second model.
+- Hard bench is enriched by construction (conditional gains, regression to the
+  mean). Random bench (0.099) is the unbiased estimate: 1pp absolute.
+- Per-draw stats overstate (correlated draws); no multiple-comparison correction;
+  abstain-coded-as-correct is mechanical. Item majority is primary.
+- Detector is per decoding mode (probe ~0.05 transfer). You have to retrain.
+- Four quiet cases need a different signal; none tested yet.
 
 ## Files
 

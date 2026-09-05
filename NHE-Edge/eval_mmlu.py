@@ -28,6 +28,7 @@ import datetime
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
 BASE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, BASE)  # allow sibling imports when used as a module
 REPO_ROOT = os.path.dirname(BASE) if os.path.basename(BASE) == "NHE-Edge" else BASE
 SAVE_DIR = os.path.join(REPO_ROOT, "models", "gemma3-1b-fp16")
 TOK_DIR = os.path.join(REPO_ROOT, "models", "gemma3-1b-tokenizer")

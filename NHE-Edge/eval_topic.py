@@ -8,6 +8,7 @@ import torch
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
 BASE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, BASE)  # allow sibling imports when used as a module
 REPO_ROOT = os.path.dirname(BASE) if os.path.basename(BASE) == "NHE-Edge" else BASE
 SAVE_DIR = os.path.join(REPO_ROOT, "models", "gemma3-1b-fp16")
 TOK_DIR = os.path.join(REPO_ROOT, "models", "gemma3-1b-tokenizer")
@@ -46,6 +47,8 @@ def main():
         sys.exit("usage: eval_topic.py <africa|europe|elements> [mask.json] [--samples=N]")
     topic = args[0]
     mask_path = args[1] if len(args) == 2 else None
+    if mask_path and not os.path.isabs(mask_path):
+        mask_path = os.path.join(BASE, mask_path)
 
     from transformers import AutoModelForCausalLM, AutoTokenizer
     t0 = time.time()

@@ -25,18 +25,20 @@ measured.
   from 7/54 wrong to 5/54 wrong, with no new errors on any other topic. It's the
   only fix that never breaks a control.
 
-- On a harder test we built (99 questions the model gets wrong when greedy — 54
-  "largest city in Africa" plus 15 hard capitals and 30 hard largest-cities), the
-  same fix goes from 354/594 wrong to 334/594 wrong across 6 random samples
-  (p < 0.001, 20 fixes, 0 new errors). On a random 99 from the same pool it goes
-  59/594 → 53/594 (p = 0.031). Same direction, smaller size — so it's not just
-  cherry-picking.
+- On a harder test we built (99 items: all 54 "largest city in Africa" — 16 of
+  them greedy-wrong — plus 15 hard capitals and 30 hard largest-cities that are
+  greedy-wrong), the same fix goes from 354/594 wrong to 334/594 across 6 seeds,
+  sampled strict (per-draw p < 0.001, 20 fixes / 0 new errors per-draw; item
+  majority 59/99 → 56/99, p = 0.25, not significant — small effect, honest
+  primary). On a random 99 from the same pool it goes 59/594 → 53/594
+  (p = 0.031 per-draw; majority 10/99 → 9/99). Same direction, smaller size.
 
 - If we leave the 32 bad neurons off all the time *and* also do the runtime fix
-  when the detector fires, the hard bench goes 354/594 → 231/594. If we make the
-  runtime fix refuse instead of repair, it goes to 52/594 with 348 refusals. So the
-  ceiling we hit with one signal can be broken, but you pay with more fires or
-  refusals.
+  when the detector fires, the hard bench goes 354/594 → 231/594 (mask; 132
+  fixes but 9 new breaks disclosed). If static stays on and the runtime fix
+  refuses instead of repairing, it goes to 52/594 with 348 refusals (58%).
+  (Runtime-only refuse is 280/594 — don't confuse the two.) The ceiling moves,
+  but you pay with fires, breaks, or refusals.
 
 - Four of the seven Africa mistakes (Cape Verde, Equatorial Guinea, Gabon, Guinea)
   never show the jump at all. No threshold or mask in this family catches them.
@@ -104,55 +106,58 @@ looks better at 4/54 but breaks more and hurts every control topic.
 
 ### Africa, sampled (270 draws, 5 seeds) — labels matter
 
-Static `model.generate` (sampled, 5 seeds, substring, majority): 8/54 → 6/54 (k32, p=0.017) and 5/54 (k128, p=0.003).
-Runtime manual sampler (sampled, 5 seeds, strict): 33/270 → 28/270 per-draw mean (p=0.18), 6/54 → 4/54 by majority. Same questions, different sampler draws — not bit-identical (`NUMBERS.md:99`). No new errors on Europe (0 fires).
+Static `model.generate` (sampled, substring): majority 8/54 → 6/54 (k32, p=0.017) and 4/54 (k128, p=0.003); per-draw means 0.111/0.093.
+Runtime manual sampler (sampled, substring via file `correct`): 33/270 → 28/270 per-draw mean (p=0.18), 6/54 → 4/54 by majority. Same questions, different sampler draws — not bit-identical. No new errors on Europe (0 fires).
 
 Small n, so runtime isn't significant here. The benches below give it power.
 
 ### Two benches, 99 items × 6 seeds = 594 draws, strict
 
-Hard bench = 99 the model gets wrong greedily (54 largest-Africa + 15 hard capitals
-+ 30 hard largest, from 361-item pool: africa_largest 54 + world_cap_traps 134 + world_largest 173, overlap hard-random 19, random seed 42). Random bench = 99 random from same pool.
-Hard baseline 0.596, random 0.099.
+Hard bench = all 54 largest-Africa (16 greedy-wrong) + 15 hard capitals + 30 hard
+largest that are greedy-wrong, from 361-item pool (overlap hard-random 19, random
+seed 42). Random bench = 99 random from same pool. Hard baseline 0.596, random 0.099.
 
 | Bench | Nothing | Runtime soft | Refuse instead |
 |---|---|---:|---:|
-| Hard: wrong / 594 | 354 (0.596) | **334 (0.562)** p<0.001, 20 fixes | 280 (0.471) + 90 refusals, p<0.001 |
-| Hard: majority 99 | 59 | 56 | 47 |
-| Random: wrong / 594 | 59 (0.099) | **53 (0.089)** p=0.031 | 47 (0.079) + 42 refusals |
-| Random: majority 99 | 10 | 9 | 8 |
+| Hard: wrong / 594 | 354 (0.596) | **334 (0.562)** per-draw p<0.001, 20 fixes / 0 new errors per-draw | 280 (0.471) + 90 refusals |
+| Hard: majority-of-6 99 (**primary**) | 59 | 56 (W2C=3, C2W=0, p=0.25, n.s.) | 47 |
+| Random: wrong / 594 | 59 (0.099) | **53 (0.089)** per-draw p=0.031 | 47 (0.079) + 42 refusals |
+| Random: majority-of-6 99 (**primary**) | 10 | 9 (1 discordant, n.s.) | 8 |
 
-Same direction on both. Hard shows the effect clearly; random shows it generalizes
-beyond cherry-picked hard questions. On fired items, 36/90 become correct (40%).
+Same direction on both; honest primary (item majority) is not significant —
+small effect, not noise-free proof. On fired samples, 20/90 turned wrong→correct
+(22%; 36/90 correct after). Per-draw tests overstate (correlated draws).
 
-### Merged: static always + runtime when it fires (hard bench, 594)
+### Merged: static always + runtime when it fires (hard bench, 594, strict)
 
 | Nothing | Runtime only | Refuse only | **Static+runtime** | **Static+refuse** |
 |---:|---:|---:|---:|---:|
-| 354 (0.596) | 334 (0.562) | 280 (0.471) | **231 (0.389)** | **52 (0.088)** + 348 refusals |
+| 354 (0.596) | 334 (0.562) | 280 (0.471) | **231 (0.389)** — 132 fixes, **9 new breaks** | **52 (0.088)** + 348 refusals (58%), 305 fixes / 3 breaks |
 | Fires | 90 (15%) | 90 | 90 | 348 (58%) | 348 (58%) |
 
-Static alone changes the dynamics so the detector fires more. Merged repair (0.389)
-fixes without refusing; merged refuse (0.088) almost eliminates errors but refuses
-over half. Only merged moves the four quiet cases.
+Static alone changes the dynamics so the detector fires more. Merged repair
+improves a lot but breaks 9 draws — not "without refusal" clean. Merged refuse
+trades 348 refusals for the low rate. Bench-aggregate only: no per-item proof
+the four Africa quiet cases are among the fixed.
 
 ### Other topics, greedy strict
 
 | Topic | Nothing | Runtime soft | k32 | k128 |
 |---|---:|---:|---:|---:|
-| africa_largest 54 | 0.296 | 0.278 | 0.296 | 0.315 |
+| africa_largest 54 | 0.296 (16) | 0.278 (15) | 0.185 (10: 7 fixes, breaks S.Sudan) | 0.259 (14: 7 fixes, 5 breaks) |
 | world_cap_traps 134 | 0.112 | 0.097 | — | — |
 | world_largest 173 | 0.173 | 0.168 | — | — |
-| world_tricky 49 | 0.020 | 0.020 (0 fires) | 0.041 | 0.122 |
-| europe 44 | 0.000 | 0.000 (0 fires) | 0.000 | 0.091 |
+| world_tricky 49 | 0.020 (1) | 0.020 (0 fires) | 0.041 (2) | 0.122 (6: fixes UAE, breaks 6) |
+| europe 44 | 0.000 | 0.000 (0 fires) | 0.000 | 0.091 (4 breaks) |
 
-Only runtime never hurts a control.
+Only runtime never hurts a control (on tested topics; runtime was never run on
+elements/asia/US-states, and MMLU tested the static mask only).
 
 ### Detector
 
 | Signal | AUC | What it means |
 |---|---:|---|
-| jitter pooled max (any token) | 0.968 | pooled, not windowed — shows signal exists (`jitter_report_africa.json:17`), not used for cut |
+| jitter last-token L10 (any token) | 0.968 | feature-specific, not windowed — shows signal exists (`jitter_report_africa.json:17`, labeled on 44/10 vs headline 47/7), not used for cut |
 | jump full (L18) | 0.860 | fires after the answer — too late |
 | jump early (L19, first 10) | 0.742 | fires before — the one we use (text reports 0.742) |
 | probe L10 | 0.672 | weak, doesn't transfer greedy↔sampled (~0.05) |
@@ -162,8 +167,10 @@ Fires vs window (p90, strict 4/54 = substring 4/54, strict 5/54): w≤5 → 7/54
 ## What we can't fix yet
 
 Four Africa errors never spike — they just commit quietly. No single jitter
-threshold or k32 mask catches them. Only the merged static+temporal moves them.
-That's the ceiling for this signal family. A logit-lens probe on those four
+threshold or k32 mask catches them. Merged static+temporal improves the hard
+bench a lot, but there is no per-item proof those four are among the fixed —
+"breaks the ceiling" is bench-aggregate only. That's the ceiling for this signal
+family. A logit-lens probe on those four
 (`probe_quiet.py`, `results/quiet_diagnostic.json`) shows they are *not* early
 high-confidence parametric errors — they look dynamic with subtler jitter, so a
 second signal (attention entropy / drift) may catch them.
@@ -174,7 +181,7 @@ second signal (attention entropy / drift) may catch them.
   Qwen2.5-0.5B/1.5B (24×896 / 28×1536), synthetic validation passes
   (`results/detector_greedy_qwen*.json`). Real weights need a stable download
   (`results/cross_arch_report.md`).
-- **General knowledge preserved:** soft k32 on **200 real MMLU** goes 185/200→185/200 substr (0.0) and 122/200→124/200 strict (+0.01) — no damage, slight gain (`eval_mmlu.py --use-real`, `results/mmlu_side_effect.json:142`). Proxy 181 controls also preserved (-0.016).
+- **General knowledge preserved:** soft k32 on **200 real MMLU** goes 185/200→185/200 substr (0.0) and 122/200→124/200 strict (+0.01) — no damage (`eval_mmlu.py --use-real`, `results/mmlu_side_effect.json:159-172`; now also in `results/NUMBERS.md`). Proxy 181 controls also preserved (-0.016, superseded).
 
 ## Limitations
 
@@ -194,40 +201,58 @@ second signal (attention entropy / drift) may catch them.
 Every number has a file in `results/` — masks, evals, detector, flows, benches.
 `results/NUMBERS.md` is the single table we quote from.
 
-Model: `google/gemma-3-1b-it` — we use a single `model.safetensors` cast to fp16
-(999.9M params, float16, 26×1152). Not a quant. Get it from Hugging Face (gated)
-and `.half()` it. Tokenizer vocab 32768. Runs on CPU (2.7 GB, gitignored).
+Model (exact recipe): gated `google/gemma-3-1b-it`. `huggingface-cli login`,
+download, load in fp32, `.half()`, save **one** `model.safetensors` (999.9M
+params, float16, 26×1152, ~2.7 GB) to `..\models\gemma3-1b-fp16\`; tokenizer
+(vocab 32768) to `..\models\gemma3-1b-tokenizer\`. CPU-only, no CUDA.
 
 ```
 attribute_causal2.py      patching, picks 32 neurons (layers 8–17)
-run_experiment.py         makes masks, runs evals
-eval_topic.py             greedy / sampled eval
-runtime_rollback.py       collect flows, fit detector, run temporal/mereged
+run_experiment.py         makes masks from attributions, runs static evals
+eval_topic.py             greedy / sampled eval (positional mask path)
+runtime_rollback.py       collect flows, fit detector, run temporal/merged
 sweep_thresholds.py       check thresholds (matches live runs)
 sweep_windows.py          window tradeoffs
-battery_analysis.py       p-values, bootstrap, majority
-bench_analysis.py         hard/random/merged benches
-bench_build.py            makes bench_hard (greedy-wrong) and bench_random (seed 42)
+battery_analysis.py       Africa 5-seed stats (majority + McNemar + bootstrap)
+bench_analysis.py         hard/random/merged bench stats (the headline tests)
+bench_build.py            builds bench_hard.json (all 54 africa_largest + greedy-wrong 15+30)
+bench_driver.py           runs hard-bench sampled battery (6 seeds × 3 arms)
+bench_full_sampled.py     runs random-bench + merged batteries
+bench_greedy.py           greedy arms on bench subsets
+bench_random_greedy.py    greedy arms on random bench
+probe_quiet.py            logit-lens check on 4 quiet + 3 dynamic cases
+eval_mmlu.py              MMLU side-effect (use --use-real for real 200)
 strict_final.py           strict scorer (the one we report)
+significance_final.py     static-arm McNemar + bootstrap
+significance_s5.py        sample-level stats
 topics.py                 AFRICA 54, EUROPE 44, ELEMENTS 41, ASIA 46, US_STATES 50,
                           AFRICA_LARGEST 54, WORLD_TRICKY 49, WORLD_CAP_TRAPS 134,
                           WORLD_LARGEST 173
 results/                  all outputs, NUMBERS.md, experiment_report.md
 legacy/                   old tries, null statistical arm
 ```
+`bench_random.json` is built by `bench_random_build.py` (seed 42, byte-identical to the committed file); `bench_build.py` writes the hard bench.
 
-Quick start (run from this folder; env file lives at repo root):
+Quick start (PowerShell 5.1; run from this folder; env file lives at repo root):
 
-```bash
-cd NHE-Edge
-python -m venv ..\.venv && ..\.venv\Scripts\pip install -r ..\requirements.txt
-python runtime_rollback.py collect            # → greedy_flows_africa.npz
-python runtime_rollback.py fit_greedy         # → detector_greedy.json
+```powershell
+# already inside NHE-Edge/ (do NOT cd again if you are here)
+python -m venv ..\.venv
+..\.venv\Scripts\pip install -r ..\requirements.txt
+# 0. log in to gated HF once: huggingface-cli login  (model + tokenizer below)
+# 1. fetch weights into ..\models\ (see "How to reproduce"), then:
+python runtime_rollback.py collect            # → results/greedy_flows_africa.npz
+python runtime_rollback.py fit_greedy         # → results/detector_greedy.json
+# 2. build the k32 mask first (run ... mask needs results/mask_k32_midwrong.json):
+python attribute_causal2.py                   # → results/attribution_causal2_africa.json
+python run_experiment.py                      # → results/mask_k32_midwrong.json
 python runtime_rollback.py run africa early t90 mask m 0 0.3 5
-python eval_topic.py africa --mask results/mask_k32_midwrong.json
-python strict_final.py
-python bench_driver.py                    # hard bench, 6 seeds
-python bench_full_sampled.py              # random + merged
+#    args: detector-set early | threshold t90 | mode mask | m=greedy (s=sampled) | seed 0 | scale 0.3 | window 5
+python eval_topic.py africa results/mask_k32_midwrong.json   # positional mask path (no --mask flag)
+python strict_final.py                        # re-score committed evals, no model
+python bench_driver.py                        # hard bench sampled, 6 seeds (hours on CPU)
+python bench_full_sampled.py                  # random + merged (hours on CPU)
+python bench_analysis.py                      # stats over committed runs, no model
 ```
 
 Full walkthrough: `results/experiment_report.md`. Short status: `../STATUS.md`. Repo plan: `../ROADMAP.md`.
