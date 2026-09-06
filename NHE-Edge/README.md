@@ -182,10 +182,11 @@ second signal (attention entropy / drift) may catch them.
 
 ## Cross-model and side effects
 
-- **Qwen adapter ready** (`runtime_rollback_qwen.py`): same pipeline for
-  Qwen2.5-0.5B/1.5B (24×896 / 28×1536), synthetic validation passes
-  (`results/detector_greedy_qwen*.json`). Real weights need a stable download
-  (`results/cross_arch_report.md`).
+- **Qwen2.5-0.5B run for real:** same pipeline, early AUC 0.778 (beats Gemma
+  0.742), own k32 mask (L13–20). But Qwen commits the city at token ~6 while the
+  spike lands at 7–9 → post-commit, 0 flips / 0 breaks. The method needs
+  spike-before-commit, which is format-dependent. Full story in
+  `results/cross_arch_report.md` §7. (1.5B still synthetic.)
 - **General knowledge preserved (static):** soft k32 on **200 real MMLU** goes 185/200→185/200 substr (0.0) and 122/200→124/200 strict (+0.01) — no damage (`eval_mmlu.py --use-real`, `results/mmlu_side_effect.json:159-172`; now also in `results/NUMBERS.md`). Proxy 181 controls also preserved (-0.016, superseded).
 - **Temporal on MMLU: no effect (honest negative).** Same 200 streamed MMLU, paired: baseline 78/200 → temporal 79/200 strict (W2C=0, C2W=1, p=1.0). The Africa threshold fires on 155/200 MMLU items (miscalibrated out-of-distribution) and changes nothing. Temporal does not transfer to MMLU-style questions. (Different 200 than the static run — streaming order unpinned.)
 

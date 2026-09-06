@@ -1,120 +1,116 @@
 {
- "selected": "jump_max_early_L16",
+ "selected": "jump_max_L20",
  "detector": {
   "type": "jump_gt",
-  "layer": 16,
-  "auc": 1.0,
-  "early": true,
-  "threshold_t90": 15.820727634429932,
-  "threshold_t95": 15.907751941680909,
-  "catch_t90": 16,
-  "catch_t95": 16,
+  "layer": 20,
+  "auc": 0.782716049382716,
+  "early": false,
+  "threshold_t90": 53.453147888183594,
+  "threshold_t95": 54.28487854003906,
+  "catch_t90": 4,
+  "catch_t95": 1,
   "trained_on": "greedy_africa_qwen2.5-0.5b",
-  "name": "jump_max_early_L16",
-  "synthetic": true
+  "name": "jump_max_L20"
  },
  "detector_early": {
   "type": "jump_gt",
-  "layer": 16,
-  "auc": 1.0,
+  "layer": 22,
+  "auc": 0.7777777777777777,
   "early": true,
-  "name": "jump_max_early_L16",
-  "threshold_t90": 15.820727634429932,
-  "threshold_t95": 15.907751941680909,
-  "catch_t90": 16,
-  "catch_t95": 16,
-  "trained_on": "greedy_africa_qwen2.5-0.5b",
-  "synthetic": true
+  "name": "jump_max_early_L22",
+  "threshold_t90": 81.57206268310547,
+  "threshold_t95": 82.35364837646485,
+  "catch_t90": 4,
+  "catch_t95": 1,
+  "trained_on": "greedy_africa_qwen2.5-0.5b"
  },
- "probe_L10_auc": 0.3486842105263158,
+ "probe_L10_auc": 0.6074074074074074,
  "top_features": [
   {
+   "name": "jump_max_L20",
+   "auc": 0.782716049382716
+  },
+  {
+   "name": "jump_max_L22",
+   "auc": 0.7777777777777777
+  },
+  {
+   "name": "jump_max_L19",
+   "auc": 0.7481481481481481
+  },
+  {
    "name": "jump_max_L16",
-   "auc": 1.0
-  },
-  {
-   "name": "jump_max_L18",
-   "auc": 1.0
-  },
-  {
-   "name": "cos_min_L12",
-   "auc": 0.65625
-  },
-  {
-   "name": "cos_min_L15",
-   "auc": 0.6414473684210527
-  },
-  {
-   "name": "cos_min_L14",
-   "auc": 0.6151315789473685
+   "auc": 0.7432098765432099
   },
   {
    "name": "jump_max_L21",
-   "auc": 0.6036184210526316
+   "auc": 0.7259259259259259
   },
   {
-   "name": "cos_min_L07",
-   "auc": 0.5970394736842104
+   "name": "jump_max_L18",
+   "auc": 0.7234567901234569
   },
   {
-   "name": "jump_max_L14",
-   "auc": 0.5953947368421052
+   "name": "jump_max_L17",
+   "auc": 0.7185185185185184
   },
   {
-   "name": "jump_max_L01",
-   "auc": 0.5723684210526316
+   "name": "jump_max_L04",
+   "auc": 0.7086419753086419
   },
   {
-   "name": "cos_min_L01",
-   "auc": 0.5657894736842105
+   "name": "jump_max_L23",
+   "auc": 0.6938271604938272
+  },
+  {
+   "name": "jump_max_L05",
+   "auc": 0.6716049382716048
   }
  ],
  "top_early_features": [
   {
-   "name": "jump_max_early_L16",
-   "auc": 1.0
-  },
-  {
-   "name": "jump_max_early_L18",
-   "auc": 1.0
-  },
-  {
-   "name": "cos_min_early_L12",
-   "auc": 0.65625
-  },
-  {
-   "name": "cos_min_early_L15",
-   "auc": 0.6414473684210527
-  },
-  {
-   "name": "cos_min_early_L14",
-   "auc": 0.6151315789473685
-  },
-  {
-   "name": "cos_min_early_L07",
-   "auc": 0.5970394736842104
-  },
-  {
-   "name": "jump_max_early_L14",
-   "auc": 0.5888157894736842
+   "name": "jump_max_early_L22",
+   "auc": 0.7777777777777777
   },
   {
    "name": "jump_max_early_L20",
-   "auc": 0.5855263157894737
+   "auc": 0.7432098765432099
   },
   {
-   "name": "jump_max_early_L01",
-   "auc": 0.5773026315789473
+   "name": "jump_max_early_L16",
+   "auc": 0.7333333333333334
   },
   {
    "name": "jump_max_early_L21",
-   "auc": 0.569078947368421
+   "auc": 0.7259259259259259
+  },
+  {
+   "name": "jump_max_early_L17",
+   "auc": 0.7185185185185186
+  },
+  {
+   "name": "cos_min_early_L10",
+   "auc": 0.7160493827160493
+  },
+  {
+   "name": "jump_max_early_L23",
+   "auc": 0.6938271604938272
+  },
+  {
+   "name": "jump_max_early_L19",
+   "auc": 0.6938271604938271
+  },
+  {
+   "name": "cos_min_early_L09",
+   "auc": 0.6913580246913581
+  },
+  {
+   "name": "jump_max_early_L18",
+   "auc": 0.691358024691358
   }
  ],
  "model": "qwen2.5-0.5b",
  "n_layers": 24,
  "hidden_size": 896,
- "trained_on": "greedy_africa_qwen2.5-0.5b",
- "synthetic": true,
- "note": "SYNTHETIC PLACEHOLDER \u2014 generated with mocked hidden states (np.random, jitter-injected) to validate code path without model weights. OVERWRITE by running with real model: python runtime_rollback_qwen.py --model {mk} collect && python runtime_rollback_qwen.py --model {mk} fit_greedy"
+ "trained_on": "greedy_africa_qwen2.5-0.5b"
 }

@@ -47,9 +47,11 @@ All numbers below are strict (first sentence) and labeled. Full table: `NHE-Edge
    `NHE-Edge/results/quiet_diagnostic.json`). So a second signal may catch them,
    but none has been tested.
 
-9. **Cross-model.** Qwen2.5-0.5B/1.5B adapter ready, synthetic validated
-   (`runtime_rollback_qwen.py`, `results/cross_arch_report.md`); real download
-   pending.
+9. **Cross-model.** Qwen2.5-0.5B run on real weights: signal exists (early AUC
+   0.778), own mask (L13–20), but spike lands post-commit (city ~token 6) → 0
+   flips / 0 breaks. Timing is format-dependent; method inert-but-harmless off
+   Gemma-format. 1.5B still synthetic. (`NHE-Edge/runtime_rollback_qwen.py`,
+   `attribute_causal2_qwen.py`, `results/cross_arch_report.md` §7.)
 
 10. **Side effects.** Soft k32 static on 200 real MMLU: 0.925→0.925 substr, 0.610→0.620 strict — preserved. Temporal on 200 MMLU (different 200): 78/200→79/200 strict, fires 155/200, W2C=0/C2W=1 p=1.0 — **no effect, honest negative** (threshold miscalibrated off-distribution). (`NHE-Edge/eval_mmlu_temporal.py`, `NHE-Edge/results/mmlu_temporal.json`).
 

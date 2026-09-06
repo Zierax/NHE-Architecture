@@ -1,0 +1,135 @@
+{
+ "k": 32,
+ "score": "midwrong",
+ "model": "qwen2.5-0.5b",
+ "items": [
+  {
+   "layer": 13,
+   "unit": 2240
+  },
+  {
+   "layer": 16,
+   "unit": 3911
+  },
+  {
+   "layer": 20,
+   "unit": 2837
+  },
+  {
+   "layer": 16,
+   "unit": 214
+  },
+  {
+   "layer": 19,
+   "unit": 2764
+  },
+  {
+   "layer": 15,
+   "unit": 4062
+  },
+  {
+   "layer": 15,
+   "unit": 1024
+  },
+  {
+   "layer": 19,
+   "unit": 4131
+  },
+  {
+   "layer": 19,
+   "unit": 1121
+  },
+  {
+   "layer": 16,
+   "unit": 4590
+  },
+  {
+   "layer": 16,
+   "unit": 1924
+  },
+  {
+   "layer": 14,
+   "unit": 1537
+  },
+  {
+   "layer": 14,
+   "unit": 3386
+  },
+  {
+   "layer": 19,
+   "unit": 2723
+  },
+  {
+   "layer": 18,
+   "unit": 3878
+  },
+  {
+   "layer": 20,
+   "unit": 3796
+  },
+  {
+   "layer": 15,
+   "unit": 3102
+  },
+  {
+   "layer": 16,
+   "unit": 4342
+  },
+  {
+   "layer": 19,
+   "unit": 3692
+  },
+  {
+   "layer": 17,
+   "unit": 835
+  },
+  {
+   "layer": 19,
+   "unit": 2533
+  },
+  {
+   "layer": 20,
+   "unit": 2113
+  },
+  {
+   "layer": 17,
+   "unit": 1137
+  },
+  {
+   "layer": 20,
+   "unit": 2939
+  },
+  {
+   "layer": 20,
+   "unit": 1074
+  },
+  {
+   "layer": 18,
+   "unit": 73
+  },
+  {
+   "layer": 20,
+   "unit": 1969
+  },
+  {
+   "layer": 18,
+   "unit": 3110
+  },
+  {
+   "layer": 17,
+   "unit": 3148
+  },
+  {
+   "layer": 13,
+   "unit": 3725
+  },
+  {
+   "layer": 19,
+   "unit": 2200
+  },
+  {
+   "layer": 20,
+   "unit": 2265
+  }
+ ]
+}

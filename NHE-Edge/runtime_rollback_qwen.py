@@ -180,8 +180,10 @@ def model_and_tok(model_key: str):
         # Explicit cache_dir ensures D:/hf_cache is used even if env was set late
         ck = cache_dir
         print(f"[{model_key}] loading {hf_id} (cache_dir={ck or 'default HF cache'})", flush=True)
-        # On CPU without CUDA, float32 is faster than float16 and avoids half-precision issues
-        use_fp16 = torch.cuda.is_available()
+        # Memory first: fp32 0.5B (~2GB) + per-item state_dict clone (~2GB) OOM-kills
+        # typical 16GB boxes. fp16 halves both and matches the Gemma pipeline.
+        # Override with NHE_FP16=0 for fp32.
+        use_fp16 = torch.cuda.is_available() or os.environ.get("NHE_FP16", "1") == "1"
         # Build kwargs with explicit cache if available
         extra = {}
         if ck:

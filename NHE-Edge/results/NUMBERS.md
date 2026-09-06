@@ -133,6 +133,24 @@ NHE-mask greedy 61→57). NHE's distinct value is sampled-significance-tested re
 (20/594, cluster CI excludes 0), no-refusal fixes, and transfer without prompt
 engineering — not raw greedy rate. (`prompt_baseline_{hard,random}_prompt_{open,constrained}.json`)
 
+## Cross-architecture — Qwen2.5-0.5B, real weights (greedy Africa 54)
+
+Same pipeline via `runtime_rollback_qwen.py` + `attribute_causal2_qwen.py`
+(24 layers, hidden 896, ChatML prompts, fp16). Full report: `cross_arch_report.md` §7.
+
+| | Gemma 3 1B | Qwen2.5-0.5B |
+|---|---|---|
+| greedy baseline hall | 0.130 (7/54) | 0.167 (9/54) |
+| full detector | jump L18, AUC 0.860 | jump L20, AUC 0.783 |
+| early detector | jump L19, AUC 0.742 | jump L22, AUC 0.778 |
+| own wrong-commit mask | k32 L10–17 | k32 L13–20 (same relative band) |
+| live fires (w≤5) | 7/54 | **0/54** (spikes at live t 7–9) |
+| live fires (w≤10) | — | 9/54 (= offline prediction, 1:1) |
+| intervention flips | 2 fixes / 0 breaks (strict) | **0 flips / 0 breaks** (post-commit: city at token ~6, spike at 7–9) |
+| pre-commit AUC (t≤5) | catches 3/7 | **0.353** (no pre-commit signal) |
+
+Reading: signal family generalizes; timing doesn't. NHE-temporal needs spike-before-commit (a format property — Gemma's bold markers delay the city); on Qwen-format it is provably inert and harmless. Qwen1.5B remains synthetic-only.
+
 ## Side effects — general knowledge (greedy)
 
 | Dataset | baseline | static k32 soft (×0.3) |

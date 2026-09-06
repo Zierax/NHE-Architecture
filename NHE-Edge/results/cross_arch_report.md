@@ -1,9 +1,12 @@
-# Cross-Architecture Validation — Qwen2.5 Adapter
+# Cross-Architecture Validation — Qwen2.5 (REAL RUNS, 0.5B)
 
-**Date:** 2026-09-03  
-**Task:** Replicate NHE jitter/excision pipeline on Qwen2.5 (0.5B or 1.5B) to test generalization beyond Gemma 3 1B (NeurIPS main track requirement).  
-**Author:** Senior Principal Engineer (Muse Spark)  
-**Script:** `runtime_rollback_qwen.py` (new, backward-compatible adapter)
+**Date:** 2026-09-03 adapter (synthetic) → 2026-09-05 real Qwen2.5-0.5B weights
+**Task:** Replicate NHE jitter/excision pipeline on Qwen2.5 to test generalization beyond Gemma 3 1B.
+**Script:** `runtime_rollback_qwen.py` + `attribute_causal2_qwen.py`
+**Bottom line:** signal family exists on Qwen (early AUC 0.778 > Gemma 0.742), but its
+timing sits post-commit (Qwen answers have no bold markers; city lands ~token 6,
+spike at 7–9) → intervention inert (0 flips), 0 breaks. Timing thesis confirmed
+by its failure mode.
 
 ---
 
@@ -194,5 +197,60 @@ For 1.5B replace `0.5b` with `1.5b` and ensure `available RAM > 4 GB`.
 
 ---
 
-*Code:* `runtime_rollback_qwen.py:1-1008` • *Synthetic artifacts:* `results/greedy_flows_africa_qwen2.5-0.5b.npz`, `detector_greedy_qwen2.5-0.5b.json` (labelled synthetic until re-run), same for 1.5B.
+*Code:* `runtime_rollback_qwen.py` • *Synthetic artifacts (1.5B only now):* `results/greedy_flows_africa_qwen2.5-1.5b.npz`, `detector_greedy_qwen2.5-1.5b.json` (labelled synthetic until re-run).
+
+---
+
+## 7. REAL Qwen2.5-0.5B results (2026-09-05, supersedes §1.4/§2 for 0.5B)
+
+**Download:** `download_qwen.py` (`HF_HOME=D:/hf_cache`, `HF_HUB_DISABLE_XET=1` after
+xet CAS reconstruction failure on this network; plain HTTPS with resume). 10/10
+files, 38 min, `model.safetensors` 942 MB. Verified on disk.
+
+**OOM fix:** first live runs died silently after model load — fp32 0.5B (~2 GB) +
+per-item `state_dict` clone (~2 GB) exceeded 1.1 GB free RAM. Fixed two ways:
+`wsl --shutdown` (free 1.1→4.4 GB) + fp16 default for Qwen path (`NHE_FP16=1`
+default in `model_and_tok`; Gemma path untouched).
+
+**Collect (real):** 54 Africa items, 9 greedy-wrong (0.167), ~2 min.
+`greedy_flows_africa_qwen2.5-0.5b.npz` is now REAL (overwrote synthetic).
+
+**Fit (real):** full `jump_max_L20` AUC 0.783 (Gemma L18 0.860); **early
+`jump_max_early_L22` AUC 0.778** (Gemma L19 0.742 — Qwen early is *stronger*);
+probe L11 0.607 (Gemma 0.672). t90 catches 4/9. `detector_greedy_qwen2.5-0.5b.json`
+is now REAL (threshold t90 = 81.57, scale ~hundreds not thousands — smaller hidden).
+
+**Live timing (the key finding):** w≤5 fires **0/54** although fit predicted 4/9.
+Offline check on saved flows: exceeding jumps sit at jumps[6..8] = live tokens
+7–9, outside w≤5. w≤10 fires **9/54 — exactly the offline prediction (1:1)**.
+Qwen's spikes come later than Gemma's (ChatML prefix + no bold markers).
+
+**Masks:** Gemma-mask fallback (25/32 applied, 7 skipped OOB) → 0 flips, 0 breaks.
+Qwen's own mask via `attribute_causal2_qwen.py` (AtP on Qwen's 9 hallucinations,
+ChatML prompts, mid band 10–20): top-32 wrong-commit neurons in **L13–20**
+(`mask_k32_midwrong_qwen2.5-0.5b.json`; Gemma's are L10–17 — same relative band,
+shifted with the signal peak).
+
+**Intervention:** Qwen's own mask, hard, w≤10 → fired 9/54, hall 9/54 → 9/54,
+**0 flips, 0 breaks**. Token-position check (`qwen_timing` probe): Qwen commits
+the city at token ~6 (`The capital of Benin is |Con|akry`), spike measured at
+7–9 → **post-commit, inert** — the Gemma-full-detector trap replayed on Qwen.
+
+**Pre-commit check (offline, no model):** max jump over live window t≤5 gives
+AUC **0.353** (worse than chance); over 10 tokens 0.778. Spike positions:
+hall t∈{5,7,7,8,8,8,9,9,10}, truth t∈{5..10} overlapping. **There is no
+pre-commit signal on Qwen in this answer format** — the spike *is* the commit
+transient, not a precursor.
+
+**Files (all real):** `greedy_flows_africa_qwen2.5-0.5b.npz`,
+`detector_greedy_qwen2.5-0.5b.json`, `attribution_causal2_africa_qwen2.5-0.5b.json`,
+`mask_k32_midwrong_qwen2.5-0.5b.json`,
+`eval_runtime_africa_qwen2.5-0.5b_jump_gt_L22_t90_{none,mask}[_w10].json`.
+
+**Interpretation:** the jitter *family* generalizes across architectures (same
+`jump_max` shape, same mid-upper band, offline→live 1:1, own wrong-commit neurons
+in the shifted band). But NHE-temporal only works when the spike precedes the
+commit by ≥1 token — a *format* property (Gemma's bold markers delay the city),
+not a model property. On Qwen-format the method is provably inert, harmlessly
+(0 breaks). This boundary condition is reported as a finding, not a failure.
 
