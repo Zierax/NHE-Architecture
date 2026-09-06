@@ -1,5 +1,5 @@
 """
-eval_mmlu.py — MMLU side-effect validation for NHE-Architecture
+eval_mmlu.py - MMLU side-effect validation for NHE-Architecture
 Soft excision (scale=0.3) on Gemma 3 1B should not degrade general capabilities.
 
 Design:
@@ -78,7 +78,7 @@ def apply_mask_soft(model, mask_path: str, scale: float = 0.3) -> int:
 def try_load_mmlu_subset(n_target: int = 200):
     """Attempt to load a real MMLU/ARC subset via HuggingFace datasets.
     Returns (items, meta) or (None, reason) if offline/unavailable.
-    Each item is tuple (question, answer, *alts) — same shape as topics.py.
+    Each item is tuple (question, answer, *alts) - same shape as topics.py.
     For MMLU orig we would have 4-choice QA; we normalize to that shape
     so the generator scorer can handle it.
     """
@@ -87,7 +87,7 @@ def try_load_mmlu_subset(n_target: int = 200):
     except Exception as e:
         return None, f"datasets not installed: {e}"
 
-    # Try MMLU (Hendrycks) — small sample
+    # Try MMLU (Hendrycks) - small sample
     for ds_name in ["cais/mmlu", "lukaemon/mmlu", "hendrycksTest"]:
         try:
             # streaming to avoid huge download; take first n_target from test
@@ -95,7 +95,7 @@ def try_load_mmlu_subset(n_target: int = 200):
             items = []
             # mmlu has fields: question, choices, answer (0-3)
             # We convert to our tuple format: (question_text, correct_choice_text)
-            # and we keep 0 alt to stay compatible — scoring will check answer text.
+            # and we keep 0 alt to stay compatible - scoring will check answer text.
             import itertools
             for row in itertools.islice(ds, n_target):
                 q = row["question"]
@@ -319,7 +319,7 @@ def main():
                 print("[info] falling back to CONTROL-TOPICS proxy per spec", flush=True)
         except Exception as e:
             reason = str(e)
-            print(f"[info] MMLU attempt exception: {e} — falling back to proxy", flush=True)
+            print(f"[info] MMLU attempt exception: {e} - falling back to proxy", flush=True)
     else:
         reason = "MMLU download skipped by default for CPU budget (use --use-real to force; proxy is primary per spec task 3). Prior probe: real MMLU prompts are 3.5x slower (7.5s vs 2s on proxy) and would need ~30min for 200 items vs 12min for proxy 181. Proxy is meaningful per spec."
         print(f"[info] Skipping real MMLU by default. Reason: {reason}", flush=True)
@@ -422,7 +422,7 @@ def main():
     print("\n" + "=" * 72)
     print(f"[run] SOFT EXCISION  {MASK_K32}  scale={SCALE} ...")
     print("=" * 72, flush=True)
-    # ensure we start from clean (in case baseline left KV weirdness — model weights untouched but just to be safe)
+    # ensure we start from clean (in case baseline left KV weirdness - model weights untouched but just to be safe)
     model.load_state_dict(clean_state)
     n_masked = apply_mask_soft(model, MASK_K32, scale=SCALE)
     print(f"[info] applied soft mask: n_masked={n_masked} scale={SCALE} (runtime_rollback style: weight *= scale)", flush=True)
@@ -569,7 +569,7 @@ def main():
 
     # exit code 0 even if degraded, but warn
     if delta_substr < -0.05 or delta_strict < -0.05:
-        print("[verdict] WARNING: soft excision shows >5% degradation on proxy — polysemanticity concern NOT ruled out", flush=True)
+        print("[verdict] WARNING: soft excision shows >5% degradation on proxy - polysemanticity concern NOT ruled out", flush=True)
     else:
         print("[verdict] SOFT EXCISION PRESERVES general capabilities on proxy (within <5% / <2% threshold).", flush=True)
 
@@ -578,5 +578,85 @@ def main():
     print("[done] eval_mmlu.py completed successfully", flush=True)
 
 
+def main_temporal():
+    """Runtime soft mask on real MMLU (headline temporal config).
+
+    Same 200 streamed items, paired baseline (greedy, no mask) vs temporal
+    (early L19 t90, w<=5, soft x0.3). Previously eval_mmlu_temporal.py.
+    """
+    import torch
+
+    try:
+        torch.manual_seed(0)
+    except Exception:
+        pass
+    dg = json.load(open(os.path.join(RES_DIR, "detector_greedy.json"), encoding="utf-8"))
+    det = dict(dg["detector_early"])
+    det["threshold"] = det["threshold_t90"]
+    det["threshold_key"] = "t90"
+    det["mode"] = "mask"
+    det["window"] = 5
+    det["scale"] = 0.3
+    det["sample"] = False
+    det["seed"] = 0
+
+    import runtime_rollback as rr
+
+    mmlu_items, mmlu_meta = try_load_mmlu_subset(n_target=200)
+    assert mmlu_items and len(mmlu_items) >= 50, f"MMLU streaming failed: {mmlu_meta}"
+    items = [(i, q, a, list(alts)) for i, (q, a, *alts) in enumerate(mmlu_items)]
+    print(f"MMLU items: {len(items)} ({mmlu_meta})", flush=True)
+
+    model, tok = rr.model_and_tok()
+    clean = {k: v.clone() for k, v in model.state_dict().items()}
+    end_id = tok.convert_tokens_to_ids("<end_of_turn>")
+
+    out = []
+    t0 = time.time()
+    with torch.no_grad():
+        for idx, (qid, q, ans, alts) in enumerate(items):
+            text = "<start_of_turn>user\n" + q + "<end_of_turn>\n<start_of_turn>model\n"
+            ids = tok(text, return_tensors="pt")["input_ids"]
+            model.load_state_dict(clean)
+            gout = model.generate(ids, max_new_tokens=48, do_sample=False, use_cache=True, return_dict_in_generate=True)
+            gids = gout.sequences[0][ids.shape[1]:]
+            if end_id in gids:
+                gids = gids[:gids.tolist().index(end_id)]
+            gbase = tok.decode(gids, skip_special_tokens=True)
+            model.load_state_dict(clean)
+            gen_ids, feats, fired_at, n_masked, abstained = rr.gen_with_detector(model, tok, ids, dict(det))
+            gen = tok.decode(gen_ids, skip_special_tokens=True)
+            a = [ans] + list(alts)
+            fb = first_sentence(gbase)
+            ft = first_sentence(gen)
+            b_sc = 1 if (fb and any(norm(x) in fb for x in a)) else 0
+            t_sc = 1 if (ft and any(norm(x) in ft for x in a)) else 0
+            out.append({"id": qid, "question": q, "answer": ans, "alts": alts,
+                        "baseline_generated": gbase, "baseline_strict": b_sc,
+                        "generated": gen, "strict_correct": t_sc,
+                        "fired_at": fired_at, "n_masked": n_masked})
+            if (idx + 1) % 20 == 0:
+                print(f"  temporal-mmlu {idx+1}/{len(items)} ({time.time()-t0:.0f}s)", flush=True)
+    n = len(out)
+    w = sum(1 for r in out if not r["strict_correct"])
+    fired = sum(1 for r in out if r["fired_at"] is not None)
+    bw = sum(1 for r in out if not r["baseline_strict"])
+    from scipy.stats import binomtest
+    w2c = sum(1 for r in out if (not r["baseline_strict"]) and r["strict_correct"])
+    c2w = sum(1 for r in out if r["baseline_strict"] and (not r["strict_correct"]))
+    p = binomtest(min(w2c, c2w), w2c + c2w, 0.5, alternative="two-sided").pvalue if w2c + c2w else 1.0
+    path = os.path.join(RES_DIR, "mmlu_temporal.json")
+    with open(path, "w", encoding="utf-8") as fh:
+        json.dump({"n": n, "baseline_strict_wrong": bw, "temporal_strict_wrong": w,
+                   "hall_baseline": round(bw / n, 4), "hall_temporal": round(w / n, 4),
+                   "fired": fired, "W2C": w2c, "C2W": c2w, "mcnemar_p": p,
+                   "config": {k: det[k] for k in ("type", "layer", "threshold_key", "mode", "window", "scale")},
+                   "results": out}, fh, indent=1, ensure_ascii=False)
+    print(f"[mmlu-temporal] baseline strict hall={bw/n:.3f} ({bw}/{n}) temporal={w/n:.3f} ({w}/{n}) fired={fired} W2C={w2c} C2W={c2w} p={p:.4f} -> {path}", flush=True)
+
+
 if __name__ == "__main__":
-    main()
+    if "--temporal" in sys.argv:
+        main_temporal()
+    else:
+        main()

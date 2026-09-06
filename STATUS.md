@@ -1,4 +1,4 @@
-# Status — No-Hallucinations-Ever
+# Status - No-Hallucinations-Ever
 
 Updated: 2026-09-04
 
@@ -10,53 +10,53 @@ We test on African capitals and make sure other topics still work.
 
 - Windows, Python 3.11.15, `.venv`, torch 2.13.0+cpu (no CUDA), transformers 5.15.0
 - Model: `models/gemma3-1b-fp16` (fp16, 2.7 GB, gitignored), tokenizer from unsloth
-- 3050 4GB present but not used — fp16 backward on CPU is very slow, fp32 is 15× faster
+- 3050 4GB present but not used - fp16 backward on CPU is very slow, fp32 is 15x faster
 
 ## Where we are
 
 All numbers below are strict (first sentence) and labeled. Full table: `NHE-Edge/results/NUMBERS.md`. All code and results live in `NHE-Edge/` (root holds only overview docs, roadmap, env).
 
 1. **Signal.** Jitter separates wrong vs correct on Africa (last-token L10 AUROC
-   0.968, pooled feature — signal exists but not the deployed one; deployed early
-   detector is 0.742). Sampled→greedy transfer fails for the probe (AUC ~0.05).
+   0.968, pooled feature - signal exists but not the deployed one; deployed early
+   detector is 0.742). Sampled->greedy transfer fails for the probe (AUC ~0.05).
 
 2. **Statistics don't work.** d_mean / d_var: nothing (only 7/128 overlap with causal).
 
-3. **Causal does.** k32 (layers 8–17, wrong-only): Africa greedy 7/54→5/54 (strict), sampled substring majority 8/54→6/54 p=0.017 (per-draw mean 0.111), but breaks South Sudan. k128: greedy 7/54→4/54 strict, sampled majority 8/54→4/54 p=0.003 (per-draw mean 0.093), breaks Benin + South Sudan plus Europe.
+3. **Causal does.** k32 (layers 8-17, wrong-only): Africa greedy 7/54->5/54 (strict), sampled substring majority 8/54->6/54 p=0.017 (per-draw mean 0.111), but breaks South Sudan. k128: greedy 7/54->4/54 strict, sampled majority 8/54->4/54 p=0.003 (per-draw mean 0.093), breaks Benin + South Sudan plus Europe.
 
 4. **Timing matters.** Early detector (first 10 tokens, AUC 0.742) firing in first 5
-   tokens with soft scaling (0.3) gives 7/54→5/54 greedy with 0 breaks. It's the
+   tokens with soft scaling (0.3) gives 7/54->5/54 greedy with 0 breaks. It's the
    only single fix that never hurts a control.
 
-5. **Benches (sampled, strict; per-draw p overstates — item majority is primary).**
-   Hard bench (all 54 africa_largest + greedy-wrong 15+30, 594 draws): 354/594→
-   334/594 per-draw p<0.001, 20 fixes / 0 new errors per-draw; majority 59/99→56/99
-   (W2C=3, C2W=0, p=0.25, n.s.). Random bench (99 random, 594 draws): 59/594→53/594
-   per-draw p=0.031; majority 10/99→9/99 (n.s.). Same direction — small effect.
+5. **Benches (sampled, strict; per-draw p overstates - item majority is primary).**
+   Hard bench (all 54 africa_largest + greedy-wrong 15+30, 594 draws): 354/594->
+   334/594 per-draw p<0.001, 20 fixes / 0 new errors per-draw; majority 59/99->56/99
+   (W2C=3, C2W=0, p=0.25, n.s.). Random bench (99 random, 594 draws): 59/594->53/594
+   per-draw p=0.031; majority 10/99->9/99 (n.s.). Same direction - small effect.
 
-6. **Merged.** Static always + runtime when it fires (hard bench): 354/594→231/594
+6. **Merged.** Static always + runtime when it fires (hard bench): 354/594->231/594
    (mask; 132 fixes but 9 new breaks) and 52/594 with 348 refusals (abstain; 305/3).
-   Fires jump 15%→58%. Bench-aggregate improvement; no per-item proof the four
+   Fires jump 15%->58%. Bench-aggregate improvement; no per-item proof the four
    Africa quiet cases are among the fixed.
 
 7. **Ceiling.** 4/7 Africa errors never spike (Cape Verde, Eq Guinea, Gabon, Guinea).
    No single jitter threshold or k32 mask catches them (greedy Africa).
 
 8. **Quiet check.** Logit lens on those 4 shows they are *not* early high-confidence
-   parametric errors — all 7 cases classify dynamic (`NHE-Edge/probe_quiet.py`,
+   parametric errors - all 7 cases classify dynamic (`NHE-Edge/probe_quiet.py`,
    `NHE-Edge/results/quiet_diagnostic.json`). So a second signal may catch them,
    but none has been tested.
 
 9. **Cross-model.** Qwen2.5-0.5B run on real weights: signal exists (early AUC
-   0.778), own mask (L13–20), but spike lands post-commit (city ~token 6) → 0
+   0.778), own mask (L13-20), but spike lands post-commit (city ~token 6) -> 0
    flips / 0 breaks. Timing is format-dependent; method inert-but-harmless off
    Gemma-format. 1.5B still synthetic. (`NHE-Edge/runtime_rollback_qwen.py`,
-   `attribute_causal2_qwen.py`, `results/cross_arch_report.md` §7.)
+   `attribute_causal2_qwen.py`, `results/cross_arch_report.md` Sec 7.)
 
-10. **Side effects.** Soft k32 static on 200 real MMLU: 0.925→0.925 substr, 0.610→0.620 strict — preserved. Temporal on 200 MMLU (different 200): 78/200→79/200 strict, fires 155/200, W2C=0/C2W=1 p=1.0 — **no effect, honest negative** (threshold miscalibrated off-distribution). (`NHE-Edge/eval_mmlu_temporal.py`, `NHE-Edge/results/mmlu_temporal.json`).
+10. **Side effects.** Soft k32 static on 200 real MMLU: 0.925->0.925 substr, 0.610->0.620 strict - preserved. Temporal on 200 MMLU (different 200): 78/200->79/200 strict, fires 155/200, W2C=0/C2W=1 p=1.0 - **no effect, honest negative** (threshold miscalibrated off-distribution). (`NHE-Edge/eval_mmlu.py --temporal`, `NHE-Edge/results/mmlu_temporal.json`).
 
 Lessons: clean state per item (or you fake results), strict scoring (loose counts
-hedges), offline simulation matches live 1:1, manual sampler ≠ `model.generate`
+hedges), offline simulation matches live 1:1, manual sampler != `model.generate`
 (both valid, different draws).
 
 Full details: `NHE-Edge/results/experiment_report.md`. Raw files: `NHE-Edge/results/*.json`.
@@ -69,8 +69,8 @@ Full details: `NHE-Edge/results/experiment_report.md`. Raw files: `NHE-Edge/resu
 
 ## What's next
 
-- Try the same on a bigger model (Gemma 3 4B or Qwen 1.5B) — does the signal hold?
-- Train detector on sampled flows — fix the greedy↔sampled gap.
+- Try the same on a bigger model (Gemma 3 4B or Qwen 1.5B) - does the signal hold?
+- Train detector on sampled flows - fix the greedy↔sampled gap.
 - QLoRA fine-tune on Africa as a baseline to compare against excision.
 
 ## Repo
