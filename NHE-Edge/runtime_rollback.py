@@ -172,7 +172,8 @@ def run_topic(topic, det):
             det_i["seed"] = det_i.get("seed", 1000) + local_i * 100
         q, ans = item[0], item[1]
         alt = item[2:]
-        text = "<start_of_turn>user\n" + q + "<end_of_turn>\n<start_of_turn>model\n"
+        fmt_suffix = det.get("prompt_suffix") or ""
+        text = "<start_of_turn>user\n" + q + fmt_suffix + "<end_of_turn>\n<start_of_turn>model\n"
         ids = tok(text, return_tensors="pt")["input_ids"]
         with torch.no_grad():
             gen_ids, feats, fired_at, n_masked, abstained = gen_with_detector(model, tok, ids, det_i)
@@ -202,6 +203,8 @@ def run_topic(topic, det):
         tag += f"_s{det.get('seed', 0)}"
     if det.get("bench_suffix"):
         tag += det["bench_suffix"]
+    if det.get("prompt_suffix"):
+        tag += det.get("prompt_tag", "_fmt")
     out_file = os.path.join(RES_DIR, f"eval_runtime_{topic}_{tag}.json")
     summary = {"topic": topic, "detector": det, "n": n, "n_correct": n_correct, "n_fired": n_fired,
                "n_abstained": n_abstained,
@@ -399,10 +402,13 @@ def main():
         det["scale"] = float(sys.argv[8]) if len(sys.argv) > 8 else 0.0
         det["sample"] = "s" in (sys.argv[6] if len(sys.argv) > 6 else "m")
         det["seed"] = int(sys.argv[7]) if len(sys.argv) > 7 else 1000
-        print(f"running {topic} with {dg[sel]['name']} {thr_key} mode={det['mode']} sample={det['sample']} seed={det['seed']} scale={det['scale']} window={det['window']}", flush=True)
+        if len(sys.argv) > 10 and sys.argv[10]:
+            det["prompt_suffix"] = sys.argv[10]
+            det["prompt_tag"] = sys.argv[11] if len(sys.argv) > 11 and sys.argv[11] else "_fmt"
+        print(f"running {topic} with {dg[sel]['name']} {thr_key} mode={det['mode']} sample={det['sample']} seed={det['seed']} scale={det['scale']} window={det['window']} prompt_suffix={bool(det.get('prompt_suffix'))}", flush=True)
         run_topic(topic, det)
         return
-    sys.exit("usage: runtime_rollback.py <collect|fit_greedy|run topic t90|t95 [mask|rollback|none|abstain] m|s seed scale window>")
+    sys.exit("usage: runtime_rollback.py <collect|fit_greedy|run topic t90|t95 [mask|rollback|none|abstain] m|s seed scale window [prompt_suffix prompt_tag]>")
 
 if __name__ == "__main__":
     main()

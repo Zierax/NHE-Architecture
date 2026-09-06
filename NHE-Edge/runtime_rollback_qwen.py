@@ -516,7 +516,8 @@ def run_topic(topic, det, model_key="gemma3-1b"):
             det_i["seed"] = det_i.get("seed", 1000) + local_i * 100
         q, ans = item[0], item[1]
         alt = item[2:]
-        ids = build_prompt_ids(tok, q, model_key)
+        fmt_suffix = det.get("prompt_suffix") or ""
+        ids = build_prompt_ids(tok, q + fmt_suffix, model_key)
         with torch.no_grad():
             gen_ids, feats, fired_at, n_masked, abstained = gen_with_detector(model, tok, ids, det_i, model_key)
         gen_text = tok.decode(gen_ids, skip_special_tokens=True)
@@ -545,6 +546,8 @@ def run_topic(topic, det, model_key="gemma3-1b"):
         tag += f"_s{det.get('seed', 0)}"
     if det.get("bench_suffix"):
         tag += det["bench_suffix"]
+    if det.get("prompt_suffix"):
+        tag += det.get("prompt_tag", "_fmt")
     mk = normalize_model_key(model_key)
     suffix = "" if mk == "gemma3-1b" else f"_{mk}"
     out_file = os.path.join(RES_DIR, f"eval_runtime_{topic}{suffix}_{tag}.json")
@@ -924,6 +927,10 @@ def parse_args():
     parser.add_argument("--dry-run", action="store_true", help="validate code path with synthetic flows instead of real model")
     parser.add_argument("--validate", action="store_true", help="run synthetic suite for all models and exit")
     parser.add_argument("--help", action="store_true")
+    parser.add_argument("--prompt-suffix", type=str, default="",
+                        help="appended to every question (e.g. delayed-commit format test)")
+    parser.add_argument("--prompt-tag", type=str, default="_fmt",
+                        help="filename tag used when --prompt-suffix is set")
     # remaining positional
     parser.add_argument("cmd", nargs="?", default=None, help="collect|fit_greedy|run|validate")
     parser.add_argument("rest", nargs=argparse.REMAINDER)
@@ -1028,7 +1035,10 @@ def main():
         det["scale"] = scale
         det["sample"] = "s" in sample_flag
         det["seed"] = seed
-        print(f"running {topic} with {dg[sel_name].get('name','?')} {thr_key} mode={mode} sample={det['sample']} seed={seed} scale={scale} window={window} model={mk}", flush=True)
+        if args.prompt_suffix:
+            det["prompt_suffix"] = args.prompt_suffix
+            det["prompt_tag"] = args.prompt_tag
+        print(f"running {topic} with {dg[sel_name].get('name','?')} {thr_key} mode={mode} sample={det['sample']} seed={seed} scale={scale} window={window} model={mk} prompt_suffix={bool(args.prompt_suffix)}", flush=True)
         run_topic(topic, det, mk)
         return
     # If cmd not recognized, try legacy positional dispatch: sys.argv[1] may be model flag? Already handled

@@ -1,0 +1,13 @@
+{
+ "model": "gemma3-1b-fp16",
+ "device": "cpu",
+ "n_items": 10,
+ "plain_ms_per_token": 218.7,
+ "detector_ms_per_token": 263.5,
+ "overhead_ms_per_token": 44.8,
+ "overhead_pct": 20.5,
+ "apply_mask_ms": 160.1,
+ "n_masked": 32,
+ "per_item_s_plain": 3.52,
+ "per_item_s_detector": 4.0
+}

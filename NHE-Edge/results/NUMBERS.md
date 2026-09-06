@@ -1,6 +1,14 @@
 # Canonical, protocol-labelled numbers - NHE-Architecture
 
-Last updated: 2026-09-04 - corrected after independent review (see caveats).
+Last updated: 2026-09-06 - Edge protocol spec + format-causality 2x2 + latency.
+
+## Edge evaluation protocol (what counts as a result here)
+
+NHE-Edge fixes *specific* knowledge on-device, no retraining. Every claim reports
+four numbers: **fix rate** (wrong->correct), **break rate** (correct->wrong, must be 0),
+**preservation** (unrelated knowledge unchanged: Europe controls + MMLU), and
+**time cost** (detector overhead + mask-apply + end-to-end vs fine-tuning).
+A result with breaks > 0 fails the Edge bar no matter the fix rate.
 **This file is the single source of truth for every number cited by this project.** Any
 other document/presentation that quotes a result MUST read from this table and MUST label
 both the **protocol** (greedy / sampled) and the **metric** (substring / strict
@@ -151,6 +159,24 @@ Same pipeline via `runtime_rollback_qwen.py` + `attribute_causal2_qwen.py`
 
 Reading: signal family generalizes; timing doesn't. NHE-temporal needs spike-before-commit (a format property - Gemma's bold markers delay the city); on Qwen-format it is provably inert and harmless. Qwen1.5B remains synthetic-only.
 
+## Format causality 2x2 - greedy Africa 54, strict (2026-09-06)
+
+Prediction from the timing thesis: intervenability = spike precedes commit by
+>=1 token. Tested by forcing commit position via prompt format.
+
+| Model + format | city lands | spike lands | flips (strict) |
+|---|---|---|---|
+| Gemma native (bold style) | ~token 7 | t 3-5 (before) | **2 fixes / 0 breaks** |
+| Gemma + "only the city name" | token 1-2 | t 1-2 (coincides) | 0 flips / 0 breaks (none 7/54 -> 14/54; format alone hurts) |
+| Qwen plain | ~token 6 | t 7-9 (after) | 0 flips / 0 breaks |
+| Qwen + bold instruction | ~token 1-2 | t 2-3 (coincides) | 0 flips / 0 breaks (none 9/54 -> 21/54; format alone hurts) |
+| Qwen + long prefix | ~token 8 | t 8-10 (coincides) | 0 flips / 0 breaks |
+
+The spike tracks the answer token wherever it lands - it IS the commit transient.
+Only when format delays the city past the spike (Gemma native) is there room to
+intervene. Timing confirmed in all 4 testable cells (1 positive, 3 predicted
+failures). Files: `*_fmtplain.json`, `*_fmtbold.json`, `*_fmtlong.json`.
+
 ## Side effects - general knowledge (greedy)
 
 | Dataset | baseline | static k32 soft (x0.3) |
@@ -169,6 +195,31 @@ Same 200 streamed items, paired baseline (greedy, no mask) vs temporal (early L1
 | strict hall (200) | 0.390 (78/200) | **0.395 (79/200)** - fired 155/200 (78%), W2C=0, C2W=1, p=1.0 |
 
 Reading: the Africa-calibrated detector fires constantly on MMLU (out-of-distribution threshold) and the mask changes nothing. Temporal does **not** transfer to MMLU-style questions - honest negative. (`mmlu_temporal.json`)
+
+## Time cost - measured CPU (Gemma 3 1B fp16, `latency.json`)
+
+| Step | Time | Notes |
+|---|---|---|
+| detector overhead | +44.8 ms/token (+20.5% over 218.7 plain) | hidden-state norm math, every token |
+| mask apply (on fire only) | 160 ms one-time | 32 neurons, in-place scale |
+| end-to-end per item | 4.0s vs 3.5s plain | 10-item Africa sample |
+| full Africa pipeline (collect+fit+attribute+eval) | hours on CPU, one-time | no GPU needed |
+
+## Fix-vs-finetune (Edge argument, estimates labeled)
+
+| | NHE-Edge (measured) | QLoRA fine-tune 1B (estimated) |
+|---|---|---|
+| hardware | CPU only | GPU required (4GB+; our RTX 3050 unused) |
+| time to fix 7 facts | hours, one-time pipeline | hours setup + training + eval per run |
+| knowledge at rest | untouched (temporal); mask reversible via state reload | weights changed permanently |
+| breaks on controls | 0 everywhere tested | forgetting risk; must re-run MMLU per run |
+| per-query cost | +20% tokens, +160ms on fire | 0 (baked in) |
+
+NHE wins on reversibility and zero-break evidence, not on per-query speed.
+Fine-tune wins once the fix is baked in. Different tools: NHE is the 24-hour
+field fix, fine-tuning is the depot repair. QLoRA numbers are estimates
+(assumptions: 1B model, small factual set, single 4-8GB GPU); we did not run it
+(no CUDA).
 
 ## Confirmed ceiling
 
