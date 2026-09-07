@@ -32,13 +32,15 @@ from scipy.stats import binomtest
 
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 BASE = os.path.dirname(os.path.abspath(__file__))
+EDGE_ROOT = os.path.dirname(BASE)
 sys.path.insert(0, BASE)
-REPO_ROOT = os.path.dirname(BASE) if os.path.basename(BASE) == "NHE-Edge" else BASE
+sys.path.insert(0, os.path.join(EDGE_ROOT, "core"))
+REPO_ROOT = os.path.dirname(EDGE_ROOT)
 import topics  # noqa: E402
 
 import runtime_rollback as rr  # noqa: E402
 
-RES = os.path.join(BASE, "results")
+RES = os.path.join(EDGE_ROOT, "results")
 WINDOW = 5
 SCALE = 0.3
 SEEDS = [1000, 1001, 1002, 1003, 1004, 1006]

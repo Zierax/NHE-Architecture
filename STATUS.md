@@ -43,17 +43,17 @@ All numbers below are strict (first sentence) and labeled. Full table: `NHE-Edge
    No single jitter threshold or k32 mask catches them (greedy Africa).
 
 8. **Quiet check.** Logit lens on those 4 shows they are *not* early high-confidence
-   parametric errors - all 7 cases classify dynamic (`NHE-Edge/probe_quiet.py`,
+   parametric errors - all 7 cases classify dynamic (`NHE-Edge/experiments/probe_quiet.py`,
    `NHE-Edge/results/quiet_diagnostic.json`). So a second signal may catch them,
    but none has been tested.
 
 9. **Cross-model.** Qwen2.5-0.5B run on real weights: signal exists (early AUC
    0.778), own mask (L13-20), but spike lands post-commit (city ~token 6) -> 0
    flips / 0 breaks. Timing is format-dependent; method inert-but-harmless off
-   Gemma-format. 1.5B still synthetic. (`NHE-Edge/runtime_rollback_qwen.py`,
-   `attribute_causal2_qwen.py`, `results/cross_arch_report.md` Sec 7.)
+Gemma-format. 1.5B still synthetic. (`NHE-Edge/core/runtime_rollback_qwen.py`,
+`NHE-Edge/core/attribute_causal2_qwen.py`, `NHE-Edge/results/cross_arch_report.md` Sec 7.)
 
-10. **Side effects.** Soft k32 static on 200 real MMLU: 0.925->0.925 substr, 0.610->0.620 strict - preserved. Temporal on 200 MMLU (different 200): 78/200->79/200 strict, fires 155/200, W2C=0/C2W=1 p=1.0 - **no effect, honest negative** (threshold miscalibrated off-distribution). (`NHE-Edge/eval_mmlu.py --temporal`, `NHE-Edge/results/mmlu_temporal.json`).
+10. **Side effects.** Soft k32 static on 200 real MMLU: 0.925->0.925 substr, 0.610->0.620 strict - preserved. Temporal on 200 MMLU (different 200): 78/200->79/200 strict, fires 155/200, W2C=0/C2W=1 p=1.0 - **no effect, honest negative** (threshold miscalibrated off-distribution). (`NHE-Edge/experiments/eval_mmlu.py --temporal`, `NHE-Edge/results/mmlu_temporal.json`).
 
 Lessons: clean state per item (or you fake results), strict scoring (loose counts
 hedges), offline simulation matches live 1:1, manual sampler != `model.generate`
@@ -64,7 +64,7 @@ Full details: `NHE-Edge/results/experiment_report.md`. Raw files: `NHE-Edge/resu
 ## Data
 
 - `data/` 378 MB (repo root, gitignored): flows (T,27,1152) fp16
-- 9 topics in `NHE-Edge/topics.py` (54+44+41+46+50+54+49+134+173)
+- 9 topics in `NHE-Edge/core/topics.py` (54+44+41+46+50+54+49+134+173)
 - `NHE-Edge/results/greedy_flows_africa.npz` + `bench_hard.json` + `bench_random.json` (99 each)
 
 ## What's next
@@ -77,4 +77,4 @@ Full details: `NHE-Edge/results/experiment_report.md`. Raw files: `NHE-Edge/resu
 
 Public: https://github.com/Zierax/NHE-Architecture branch `NHE-Architecture`
 Code + results + benches. `data/` and `models/` are gitignored, rebuild with
-`collect_topic.py`. Old history in local `local-history`.
+`NHE-Edge/core/collect_topic.py`. Old history in local `local-history`.

@@ -20,10 +20,12 @@ from scipy.stats import binomtest
 
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 BASE = os.path.dirname(os.path.abspath(__file__))
+EDGE_ROOT = os.path.dirname(BASE)
 sys.path.insert(0, BASE)
+sys.path.insert(0, os.path.join(EDGE_ROOT, "core"))
 import topics  # noqa: E402
 
-RES = os.path.join(BASE, "results")
+RES = os.path.join(EDGE_ROOT, "results")
 
 ALTS = {}
 for _name in ["AFRICA", "EUROPE", "AFRICA_LARGEST", "WORLD_TRICKY",
@@ -46,7 +48,10 @@ def answers(q, r):
 
 
 def strict_score(path, label):
-    path = path if os.path.isabs(path) else os.path.join(BASE, path)
+    if path.startswith("results/"):
+        path = os.path.join(EDGE_ROOT, path)
+    elif not os.path.isabs(path):
+        path = os.path.join(BASE, path)
     ev = json.load(open(path, encoding="utf-8"))
     n = len(ev["results"])
     subj = 0

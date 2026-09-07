@@ -214,22 +214,27 @@ params, float16, 26x1152, ~2.7 GB) to `..\models\gemma3-1b-fp16\`; tokenizer
 (vocab 32768) to `..\models\gemma3-1b-tokenizer\`. CPU-only, no CUDA.
 
 ```
-runtime_rollback.py       collect flows, fit detector, run temporal/merged (core)
-runtime_rollback_qwen.py  same pipeline for Qwen2.5 (registry + ChatML)
-attribute_causal2.py      patching, picks 32 neurons (layers 8-17, Gemma)
-attribute_causal2_qwen.py same for Qwen (mid band 10-20)
-topics.py                 AFRICA 54, EUROPE 44, ELEMENTS 41, ASIA 46, US_STATES 50,
+core/                     the engine (importable, runnable from anywhere)
+  topics.py               AFRICA 54, EUROPE 44, ELEMENTS 41, ASIA 46, US_STATES 50,
                           AFRICA_LARGEST 54, WORLD_TRICKY 49, WORLD_CAP_TRAPS 134,
                           WORLD_LARGEST 173
-eval_topic.py             greedy / sampled eval (positional mask path)
-eval_prompt_baseline.py   constrained-prompt baseline on benches
-eval_mmlu.py              MMLU side-effect (--use-real) + --temporal arm
-probe_quiet.py            logit-lens check on 4 quiet + 3 dynamic cases
-collect_topic.py          rebuild data/ flows
-run_experiment.py         makes masks from attributions, runs static evals
-bench.py                  build|run|analyze benches (hard + random, greedy + sampled)
-stats.py                  strict|battery|significance tables
-sweep.py                  thresholds|windows offline sweeps (matches live runs)
+  runtime_rollback.py     collect flows, fit detector, run temporal/merged (Gemma)
+  runtime_rollback_qwen.py  same pipeline for Qwen2.5 (registry + ChatML)
+  attribute_causal2.py    patching, picks 32 neurons (layers 8-17, Gemma)
+  attribute_causal2_qwen.py same for Qwen (mid band 10-20)
+  collect_topic.py        rebuild data/ flows
+  run_experiment.py       makes masks from attributions, runs static evals
+  eval_topic.py           greedy / sampled eval (positional mask path)
+experiments/              one-shot experiment drivers (run from NHE-Edge/)
+  bench.py                build|run|analyze benches (hard + random, greedy + sampled)
+  eval_mmlu.py            MMLU side-effect (--use-real) + --temporal arm
+  eval_prompt_baseline.py constrained-prompt baseline on benches
+  probe_quiet.py          logit-lens check on 4 quiet + 3 dynamic cases
+  latency.py              detector overhead + mask-apply cost
+  download_qwen.py        fetch Qwen2.5-0.5B weights
+analysis/                 read-only analysis of committed files (no model needed)
+  stats.py                strict|battery|significance tables
+  sweep.py                thresholds|windows offline sweeps (matches live runs)
 results/                  all outputs, NUMBERS.md, experiment_report.md
 legacy/                   superseded single-purpose scripts (history kept)
 ```
@@ -243,18 +248,18 @@ python -m venv ..\.venv
 ..\.venv\Scripts\pip install -r ..\requirements.txt
 # 0. log in to gated HF once: huggingface-cli login  (model + tokenizer below)
 # 1. fetch weights into ..\models\ (see "How to reproduce"), then:
-python runtime_rollback.py collect            # -> results/greedy_flows_africa.npz
-python runtime_rollback.py fit_greedy         # -> results/detector_greedy.json
+python core/runtime_rollback.py collect            # -> results/greedy_flows_africa.npz
+python core/runtime_rollback.py fit_greedy         # -> results/detector_greedy.json
 # 2. build the k32 mask first (run ... mask needs results/mask_k32_midwrong.json):
-python attribute_causal2.py                   # -> results/attribution_causal2_africa.json
-python run_experiment.py                      # -> results/mask_k32_midwrong.json
-python runtime_rollback.py run africa early t90 mask m 0 0.3 5
+python core/attribute_causal2.py                   # -> results/attribution_causal2_africa.json
+python core/run_experiment.py                      # -> results/mask_k32_midwrong.json
+python core/runtime_rollback.py run africa early t90 mask m 0 0.3 5
 #    args: detector-set early | threshold t90 | mode mask | m=greedy (s=sampled) | seed 0 | scale 0.3 | window 5
-python eval_topic.py africa results/mask_k32_midwrong.json   # positional mask path (no --mask flag)
-python stats.py strict                          # re-score committed evals, no model
-python bench.py run --bench hard --mode sampled  # battery, 6 seeds (hours on CPU)
-python bench.py run --bench random --mode sampled # random + merged batteries
-python bench.py analyze --bench hard            # stats over committed runs, no model
+python core/eval_topic.py africa results/mask_k32_midwrong.json   # positional mask path (no --mask flag)
+python analysis/stats.py strict                          # re-score committed evals, no model
+python experiments/bench.py run --bench hard --mode sampled  # battery, 6 seeds (hours on CPU)
+python experiments/bench.py run --bench random --mode sampled # random + merged batteries
+python experiments/bench.py analyze --bench hard            # stats over committed runs, no model
 ```
 
 Full walkthrough: `results/experiment_report.md`. Short status: `../STATUS.md`. Repo plan: `../ROADMAP.md`.

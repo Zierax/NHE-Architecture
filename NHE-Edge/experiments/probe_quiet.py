@@ -20,10 +20,12 @@ import numpy as np
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
 BASE = Path(__file__).resolve().parent
-REPO_ROOT = BASE.parent if BASE.name == "NHE-Edge" else BASE
+EDGE_ROOT = BASE.parent
+sys.path.insert(0, str(EDGE_ROOT / "core"))
+REPO_ROOT = EDGE_ROOT.parent
 SAVE_DIR = REPO_ROOT / "models" / "gemma3-1b-fp16"
 TOK_DIR = REPO_ROOT / "models" / "gemma3-1b-tokenizer"
-RES_DIR = BASE / "results"
+RES_DIR = EDGE_ROOT / "results"
 
 # ---------------------------------------------------------------------------
 # Task definition: 4 quiet (no jitter spike) vs 3 dynamic (jitter fires)

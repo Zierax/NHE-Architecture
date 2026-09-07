@@ -14,7 +14,8 @@ import numpy as np
 
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 BASE = os.path.dirname(os.path.abspath(__file__))
-RES = os.path.join(BASE, "results")
+EDGE_ROOT = os.path.dirname(BASE)
+RES = os.path.join(EDGE_ROOT, "results")
 LAYER = 19
 
 

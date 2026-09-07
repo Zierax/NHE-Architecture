@@ -36,7 +36,7 @@
 
 **Mechanism:** Same detector, but intervention is SAEs or steering vectors in latent space instead of `weight *= 0.3`. This avoids polysemantic damage.
 
-**What it is now:** Plan-only, zero code (`NHE-GenPM/plan.md`, `sae/README.md`). The Qwen adapter lives in `NHE-Edge/runtime_rollback_qwen.py` (Edge-side cross-arch work), not here. No SAE training yet.
+**What it is now:** Plan-only, zero code (`NHE-GenPM/plan.md`, `sae/README.md`). The Qwen adapter lives in `NHE-Edge/core/runtime_rollback_qwen.py` (Edge-side cross-arch work), not here. No SAE training yet.
 
 **What needs to be built:**
 - Train or load a small SAE for Gemma 3 1B mid layers (or use open SAEs if available for Gemma/Qwen).
@@ -54,8 +54,8 @@ Moved via `git mv` (history preserved): all 22 scripts + `topics.py` + `results/
 `STATUS.md`, `ROADMAP.md`, `requirements.txt`, `.gitignore`. `models/` and
 `data/` stay at root (gitignored, heavy); Edge code resolves them via
 `REPO_ROOT`. `NHE-GenPM/` holds plan + `sae/` skeleton. No shims - scripts run
-from `NHE-Edge/` with script-dir-anchored paths (validated: `stats.py strict`,
-`bench.py analyze` reproduce headline numbers from any CWD).
+from `NHE-Edge/` with script-dir-anchored paths (validated: `analysis/stats.py strict`,
+`experiments/bench.py analyze` reproduce headline numbers from any CWD).
 
 ## Milestones
 
