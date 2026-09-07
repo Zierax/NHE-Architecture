@@ -395,7 +395,10 @@ def main():
         sel = "detector_early" if (len(sys.argv) > 3 and sys.argv[3] == "early") else "detector"
         thr_key = sys.argv[4] if len(sys.argv) > 4 else "t90"
         det = dict(dg[sel])
-        det["threshold"] = det["threshold_t90"] if thr_key == "t90" else det["threshold_t95"]
+        tkey = f"threshold_{thr_key}"
+        if tkey not in det:
+            sys.exit(f"unknown threshold '{thr_key}'; available: {[k for k in det if k.startswith('threshold_')]}")
+        det["threshold"] = det[tkey]
         det["threshold_key"] = thr_key
         det["mode"] = sys.argv[5] if len(sys.argv) > 5 else "mask"
         det["window"] = int(sys.argv[9]) if len(sys.argv) > 9 else (5 if sel == "detector_early" else None)

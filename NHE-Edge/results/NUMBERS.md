@@ -41,6 +41,7 @@ but overstate power (6 correlated draws per item) - see caveats.**
 | static `k32_midwrong` | 0.093 (5/54) | 0.093 (5/54) | fixes Eswatini, Gambia, Senegal; **breaks South Sudan (Juba->Bor)** | `eval_africa_k32_midwrong.json` |
 | static `k128_wrong` | 0.056 (3/54) | 0.074 (4/54) | fixes 5 (incl. Eq.Guinea, Gabon, Guinea); **breaks Benin, South Sudan** (South Africa's Cape Town is valid via 3-capitals alternative) | `eval_africa_k128_wrong.json` |
 | **runtime w5 soft** (early t90, window<=5, scale 0.3) | 0.074 (4/54) | **0.093 (5/54)** | fixes Eswatini, Gambia (Senegal stays wrong: hedge); **0 breaks** | `eval_runtime_africa_jump_gt_L19_t90_mask_sft0.3.json` |
+| runtime w5 soft t95 | 0.130 (7/54) | 0.148 (8/54) | 0 fixes; **breaks Mali (Bamako->Timbuktu)**; Eswatini/Gambia stop firing | `eval_runtime_africa_jump_gt_L19_t95_mask_sft0.3.json` |
 | runtime w5 hard | 0.074 | 0.093 | same | `..._mask.json` |
 | runtime w4 hard | 0.093 | 0.093 | fixes Eswatini, Gambia | `..._mask_w4.json` |
 | runtime w3 hard | 0.111 | 0.111 | fixes Eswatini only | `..._mask_w3.json` |
@@ -164,18 +165,19 @@ Reading: signal family generalizes; timing doesn't. NHE-temporal needs spike-bef
 Prediction from the timing thesis: intervenability = spike precedes commit by
 >=1 token. Tested by forcing commit position via prompt format.
 
-| Model + format | city lands | spike lands | flips (strict) |
-|---|---|---|---|
-| Gemma native (bold style) | ~token 7 | t 3-5 (before) | **2 fixes / 0 breaks** |
-| Gemma + "only the city name" | token 1-2 | t 1-2 (coincides) | 0 flips / 0 breaks (none 7/54 -> 14/54; format alone hurts) |
-| Qwen plain | ~token 6 | t 7-9 (after) | 0 flips / 0 breaks |
-| Qwen + bold instruction | ~token 1-2 | t 2-3 (coincides) | 0 flips / 0 breaks (none 9/54 -> 21/54; format alone hurts) |
-| Qwen + long prefix | ~token 8 | t 8-10 (coincides) | 0 flips / 0 breaks |
+| Model + format | leads (city_idx - fired_at, fired items) | flips (strict) |
+|---|---|---|
+| Gemma native | [1,1,1,1,1,4,5] all >= 1 | **2 fixes / 0 breaks** |
+| Gemma + "only the city name" | all <= 0 (10 fired) | 0 flips / 0 breaks (none 7/54 -> 14/54; format alone hurts) |
+| Qwen plain | [-2..0] (9 fired) | 0 flips / 0 breaks |
+| Qwen + bold instruction | [-2..-1] (21 fired) | 0 flips / 0 breaks (none 9/54 -> 21/54; format alone hurts) |
+| Qwen + long prefix | [-2..-1] (8 fired) | 0 flips / 0 breaks |
 
-The spike tracks the answer token wherever it lands - it IS the commit transient.
-Only when format delays the city past the spike (Gemma native) is there room to
-intervene. Timing confirmed in all 4 testable cells (1 positive, 3 predicted
-failures). Files: `*_fmtplain.json`, `*_fmtbold.json`, `*_fmtlong.json`.
+Rule: lead >= 1 is necessary for a flip. Every fired item with lead >= 1 sits in
+gemma-native (the only cell with fixes); every lead <= 0 item never flips, in any
+cell. Recomputed from raw files by `verify_timing.py` (lead convention: 0-indexed
+city-token index minus recorded fired_at). Files: `*_fmtplain.json`,
+`*_fmtbold.json`, `*_fmtlong.json`.
 
 ## Side effects - general knowledge (greedy)
 
