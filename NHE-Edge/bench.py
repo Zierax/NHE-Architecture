@@ -33,6 +33,7 @@ from scipy.stats import binomtest
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 BASE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, BASE)
+REPO_ROOT = os.path.dirname(BASE) if os.path.basename(BASE) == "NHE-Edge" else BASE
 import topics  # noqa: E402
 
 import runtime_rollback as rr  # noqa: E402
@@ -382,6 +383,78 @@ def cmd_analyze(args):
               f"mask_correct={mask_corr} abstain_refused={abst_n} | wrong->correct fixes={fix}")
 
 
+FORMAT_CELLS = [
+    ("gemma-native", "eval_africa_baseline.json",
+     "eval_runtime_africa_jump_gt_L19_t90_mask_sft0.3.json", "gemma", "bold"),
+    ("gemma-plain", "eval_runtime_africa_jump_gt_L19_t90_none_fmtplain.json",
+     "eval_runtime_africa_jump_gt_L19_t90_mask_sft0.3_fmtplain.json", "gemma", "plain"),
+    ("qwen-plain", "eval_runtime_africa_qwen2.5-0.5b_jump_gt_L22_t90_none_w10.json",
+     "eval_runtime_africa_qwen2.5-0.5b_jump_gt_L22_t90_mask_w10.json", "qwen", "plain"),
+    ("qwen-bold", "eval_runtime_africa_qwen2.5-0.5b_jump_gt_L22_t90_none_w10_fmtbold.json",
+     "eval_runtime_africa_qwen2.5-0.5b_jump_gt_L22_t90_mask_w10_fmtbold.json", "qwen", "bold"),
+    ("qwen-long", "eval_runtime_africa_qwen2.5-0.5b_jump_gt_L22_t90_none_w10_fmtlong.json",
+     "eval_runtime_africa_qwen2.5-0.5b_jump_gt_L22_t90_mask_w10_fmtlong.json", "qwen", "plain"),
+]
+
+
+def city_index(tok, gen, family):
+    """0-indexed position of answer-span start in generated tokens."""
+    ids = tok(gen, add_special_tokens=False)["input_ids"]
+    toks = [tok.decode([t]) for t in ids]
+    if not toks:
+        return None
+    for k, t in enumerate(toks):
+        s = t.strip()
+        if s == "**":
+            return k + 1
+        if s.startswith("**") and len(s) > 2:
+            return k
+    for k, t in enumerate(toks):
+        if t.strip().lower() == "is":
+            j = k + 1
+            while j < len(toks) and toks[j].strip() in ("", "**"):
+                j += 1
+            return j if j < len(toks) else None
+    return 0
+
+
+def cmd_analyze_formats(_args):
+    """Format-causality 2x2 (previously verify_timing.py).
+
+    For each cell (model x format): strict W2C/C2W none-vs-mask, plus per fired
+    item the city-token index vs fired_at. lead = city_idx - fired_at;
+    lead >= 1 means the spike was measured strictly before the city token.
+    """
+    from transformers import AutoTokenizer
+    gt = AutoTokenizer.from_pretrained(os.path.join(REPO_ROOT, "models", "gemma3-1b-tokenizer"))
+    import runtime_rollback_qwen as qq
+    _, qt = qq.model_and_tok("qwen2.5-0.5b")
+    toks = {"gemma": gt, "qwen": qt}
+    print(f"{'cell':<13} {'W2C':>4} {'C2W':>4}  leads(fired items: city_idx-fired_at)")
+    for name, fn, fm, model, family in FORMAT_CELLS:
+        n = json.load(open(os.path.join(RES, fn), encoding="utf-8"))
+        m = json.load(open(os.path.join(RES, fm), encoding="utf-8"))
+        tok = toks[model]
+        nb = {r["id"]: r for r in n["results"]}
+        w2c = cw = 0
+        leads = []
+        for rm in m["results"]:
+            rn = nb[rm["id"]]
+            a = [rn["answer"]] + list(ALTS.get(rn["question"], []))
+            s0 = 1 if (fs(rn["generated"]) and any(norm(x) in fs(rn["generated"]) for x in a)) else 0
+            a = [rm["answer"]] + list(ALTS.get(rm["question"], []))
+            s1 = 1 if (fs(rm["generated"]) and any(norm(x) in fs(rm["generated"]) for x in a)) else 0
+            if (not s0) and s1:
+                w2c += 1
+            if s0 and (not s1):
+                cw += 1
+            if rm.get("fired_at") is not None:
+                ci = city_index(tok, rm["generated"], family)
+                if ci is not None:
+                    leads.append(ci - rm["fired_at"])
+        print(f"{name:<13} {w2c:>4} {cw:>4}  {sorted(leads)}")
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser(prog="bench.py", description="Bench build/run/analyze (hard + random).")
     sub = ap.add_subparsers(dest="cmd", required=True)
@@ -396,8 +469,10 @@ def main(argv=None):
     p_r.add_argument("--transfer", action="store_true",
                      help="greedy full-topic transfer runs (hard bench only)")
     p_a = sub.add_parser("analyze", help="strict analysis + McNemar + bootstrap")
-    p_a.add_argument("--bench", choices=["hard", "random"], required=True)
+    p_a.add_argument("--bench", choices=["hard", "random"], default="hard")
     p_a.add_argument("--static", action="store_true")
+    p_a.add_argument("--formats", action="store_true",
+                     help="format-causality 2x2 (model x format) with lead times")
     args = ap.parse_args(argv)
     if args.cmd == "build":
         cmd_build(args)
@@ -405,7 +480,10 @@ def main(argv=None):
         args.seeds = [int(x) for x in args.seeds.split(",") if x.strip()]
         cmd_run(args)
     elif args.cmd == "analyze":
-        cmd_analyze(args)
+        if args.formats:
+            cmd_analyze_formats(args)
+        else:
+            cmd_analyze(args)
 
 
 if __name__ == "__main__":

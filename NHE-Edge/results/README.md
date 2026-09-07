@@ -12,7 +12,7 @@ Full walkthrough: `experiment_report.md`.
 
 ## Detector, masks, flows
 - `detector_greedy.json` - L19-early t90/t95 thresholds + full/Early AUCs (real, Gemma).
-- `detector_greedy_qwen*.json` - **synthetic placeholders** (do not quote).
+- `detector_greedy_qwen2.5-0.5b.json` - REAL Qwen detector (early L22 AUC 0.778); `detector_greedy_qwen2.5-1.5b.json` - **synthetic placeholder** (do not quote).
 - `mask_k32_midwrong.json` - the 32-neuron mask used by every runtime run.
 - `mask_k*.json` - other static masks (k32/k64/k128/k256/k512 x scores).
 - `greedy_flows_africa.npz` (~58 MB, local-only, gitignored) - real Gemma flows for the detector; rebuild with `python runtime_rollback.py collect`.

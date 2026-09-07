@@ -54,8 +54,8 @@ Moved via `git mv` (history preserved): all 22 scripts + `topics.py` + `results/
 `STATUS.md`, `ROADMAP.md`, `requirements.txt`, `.gitignore`. `models/` and
 `data/` stay at root (gitignored, heavy); Edge code resolves them via
 `REPO_ROOT`. `NHE-GenPM/` holds plan + `sae/` skeleton. No shims - scripts run
-from `NHE-Edge/` with script-dir-anchored paths (validated: `strict_final.py`,
-`bench_analysis.py` reproduce headline numbers from any CWD).
+from `NHE-Edge/` with script-dir-anchored paths (validated: `stats.py strict`,
+`bench.py analyze` reproduce headline numbers from any CWD).
 
 ## Milestones
 

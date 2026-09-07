@@ -233,7 +233,7 @@ sweep.py                  thresholds|windows offline sweeps (matches live runs)
 results/                  all outputs, NUMBERS.md, experiment_report.md
 legacy/                   superseded single-purpose scripts (history kept)
 ```
-`bench_random.json` is built by `bench_random_build.py` (seed 42, byte-identical to the committed file); `bench_build.py` writes the hard bench.
+`bench_random.json` is built by `bench.py build --bench random` (seed 42, byte-identical to the committed file); `bench.py build --bench hard` writes the hard bench.
 
 Quick start (PowerShell 5.1; run from this folder; env file lives at repo root):
 

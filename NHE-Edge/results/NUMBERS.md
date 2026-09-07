@@ -58,7 +58,7 @@ Static reference (sampled, substring): baseline majority 0.148 (8/54) -> `k32_mi
 
 ## Error-rich bench - 99 items, sampled strict metric (6 seeds, 594 draws)
 
-Construction (frozen `bench_hard.json`, built by `bench_build.py`): **all 54**
+Construction (frozen `bench_hard.json`, built by `bench.py build --bench hard`): **all 54**
 `africa_largest` (of which 16/54 strict-wrong at greedy baseline) + the 15
 strict-wrong `world_cap_traps` + the 30 strict-wrong `world_largest`. Baseline
 hallucination rate on this bench is **0.596** (strict).
@@ -188,7 +188,7 @@ city-token index minus recorded fired_at). Files: `*_fmtplain.json`,
 
 Note: only the *static* mask was tested on MMLU, not the temporal method.
 
-## Temporal on MMLU - 200 real MMLU, greedy strict (`eval_mmlu_temporal.py`)
+## Temporal on MMLU - 200 real MMLU, greedy strict (`eval_mmlu.py --temporal`)
 
 Same 200 streamed items, paired baseline (greedy, no mask) vs temporal (early L19 t90, w<=5, soft x0.3 - the headline config). **Different 200 than the static-MMLU run** (streaming order not pinned - baselines differ: 0.390 here vs 0.610 there; paired comparison within this run is valid).
 
