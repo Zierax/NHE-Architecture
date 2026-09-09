@@ -1,4 +1,4 @@
-# NHE-Architecture
+# NHE-Edge
 
 We look for hallucinations in Gemma 3 1B by watching what happens inside the model
 while it generates text. When the model is about to make up a capital, the hidden
@@ -179,6 +179,34 @@ family. A logit-lens probe on those four
 (`probe_quiet.py`, `results/quiet_diagnostic.json`) shows they are *not* early
 high-confidence parametric errors - they look dynamic with subtler jitter, so a
 second signal (attention entropy / drift) may catch them.
+
+## Timing rule (why Qwen fails, why Gemma works)
+
+The spike *is* the commit transient - it tracks the answer token wherever it
+lands. A fix is possible only if the spike is measured strictly before the city
+token (lead = city_idx - fired_at >= 1). Verified from raw files by
+`bench.py analyze --formats`:
+
+| Model + format | leads (fired items) | flips |
+|---|---|---|
+| Gemma native | [1,1,1,1,1,4,5] all >= 1 | **2 fixes / 0 breaks** |
+| Gemma plain ("only the city name") | all <= 0 | 0 / 0 (format alone: 7 -> 14 wrong) |
+| Qwen plain | [-2..0] | 0 / 0 |
+| Qwen bold | [-2..-1] | 0 / 0 (format alone: 9 -> 21 wrong) |
+| Qwen long prefix | [-2..-1] | 0 / 0 |
+
+Every lead >= 1 item sits in gemma-native (the only cell with fixes); every
+lead <= 0 item never flips, in any cell. Intervenability is a format property,
+not a model property.
+
+## Cost (measured CPU, `latency.json`)
+
+Detector adds +44.8 ms/token (+20.5% over 218.7 plain); mask apply is 160 ms
+one-time on fire; end-to-end 4.0s vs 3.5s per item. Full Africa pipeline runs
+in hours on CPU, no GPU. Vs QLoRA fine-tune (estimates, labeled): NHE needs no
+GPU, touches no weights at rest (reversible via reload), and has 0 breaks
+everywhere tested - at the cost of +20% per query. NHE is the 24-hour field
+fix; fine-tuning is the depot repair. Full table in `results/NUMBERS.md`.
 
 ## Cross-model and side effects
 

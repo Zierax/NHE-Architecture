@@ -1,6 +1,6 @@
 # Status - No-Hallucinations-Ever
 
-Updated: 2026-09-04
+Updated: 2026-09-07
 
 We try to catch hallucinations in Gemma 3 1B by watching activations while it
 writes, finding the neurons that push the wrong answer, and turning them down.

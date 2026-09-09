@@ -1,6 +1,6 @@
 # results/ - what is what
 
-Canonical table: `NUMBERS.md` (every quoted number lives here with protocolxmetric labels).
+Canonical table: `NUMBERS.md` (every quoted number lives here with protocol/metric labels).
 Full walkthrough: `experiment_report.md`.
 
 ## Benches (frozen inputs)
@@ -23,7 +23,7 @@ Full walkthrough: `experiment_report.md`.
 ## Evals (all recomputable via scripts)
 - `eval_{topic}_baseline.json`, `eval_{topic}_{mask}.json` - greedy static (`eval_topic.py`).
 - `eval_{topic}_baseline_s5.json`, `eval_{topic}_{mask}_s5.json` - sampled static, 5 draws.
-- `eval_runtime_{topic}_jump_gt_L19_t90_{none,mask,abstain}[_sft0.3][_sSEED].json` - temporal arms.
+`abstain` = refuse on fire. `_s{seed}` = sampled seed. No suffix = greedy.
 - `..._static0_...` - merged static+temporal arms. `..._rand.json` - random bench.
 - `mmlu_side_effect.json` - 200 real MMLU, static soft k32 (`eval_mmlu.py --use-real`).
 - `quiet_diagnostic.json` - logit-lens on 4 quiet + 3 dynamic (`probe_quiet.py`).
@@ -31,5 +31,5 @@ Full walkthrough: `experiment_report.md`.
 
 ## Naming
 `none` = detector records but never cuts. `mask` = soft x0.3 on fire (w<=5, t90).
-\bstain\ = refuse on fire. \_s{seed}\ = sampled seed. No suffix = greedy.
+`abstain` = refuse on fire. `_s{seed}` = sampled seed. No suffix = greedy.
 `_static0` = static k32-hard always on (merged). `_rand` = random-bench subset.
