@@ -179,6 +179,31 @@ cell. Recomputed from raw files by `verify_timing.py` (lead convention: 0-indexe
 city-token index minus recorded fired_at). Files: `*_fmtplain.json`,
 `*_fmtbold.json`, `*_fmtlong.json`.
 
+## Failure taxonomy - Static Memory Voids vs Transient Execution Drifts
+
+Not all wrong answers are the same failure. This split is load-bearing for the
+Edge claim (it defines what NHE-Edge does and does not promise to fix):
+
+| | Static Memory Void | Transient Execution Drift |
+|---|---|---|
+| What it is | weights encode the lie confidently; no internal conflict | genuine uncertainty/conflict at decode time |
+| Signature | quiet (no pre-commit jitter) + high answer confidence | pre-commit jitter spike, lower confidence |
+| Fix | outside jitter scope - needs external knowledge (RAG) | in scope - mid-layer patch before commit |
+| Evidence | NHE-NTW causal proof (`NHE-NTW/results/parametric_proof.json`): planted lies told at ~0.998 confidence; ambiguous items at ~0.60 with high jitter | this file, all bench sections |
+
+Temporal Horizon Constraint: runtime patching succeeds iff the transient spike
+precedes the commit by >= 1 token. This depends on answer format/timing, not
+model size - which is why Gemma-native works and Qwen formats don't, and why
+the 4 quiet Africa cases are classified as suspected voids, not drifts.
+
+NTW causal check (2026-09-10, `NHE-NTW/results/parametric_proof.json`): a
+from-scratch tiny GPT with 4 planted lies tells all 4 at confidence 1.000 with
+P(truth)=0.0000, entropy 0.000, and preamble jitter within 1% of correct
+answers (1159.8 vs 1168.5); ambiguous controls sit at 0.52 confidence, 50/50
+accuracy. So voids are quiet AND confident-indistinguishable by jitter - the
+operational signature is quiet + confident + wrong-vs-truth, and jitter alone
+cannot separate them. Toy scale; a causal prior, not a Gemma proof.
+
 ## Side effects - general knowledge (greedy)
 
 | Dataset | baseline | static k32 soft (x0.3) |

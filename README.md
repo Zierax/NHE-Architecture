@@ -1,8 +1,12 @@
 # NHE-Architecture - No-Hallucinations-Ever
 
-We catch hallucinations in small language models by watching activations while
-they write, finding the neurons that push the wrong answer, and turning them
-down - without retraining.
+Paper title: **NHE-Edge: Sub-Second Dynamic Hallucination Suppression for
+Sub-1B Edge LLMs in Mission-Critical Scenarios.**
+
+One mission: a medical device or defense system hallucinates in the field.
+There are 24 hours, no GPU farm, no fine-tuning option. NHE-Edge suppresses
+the hallucination on sub-1B models, on-device, without retraining - and proves
+it broke nothing.
 
 Two tracks, one core idea (hallucination is a late wrong-commit in middle layers):
 

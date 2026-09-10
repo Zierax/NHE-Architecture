@@ -1,0 +1,592 @@
+{
+ "seed": 7,
+ "layers": 4,
+ "d_model": 256,
+ "answer_shape": "full sentence",
+ "groups": {
+  "correct": {
+   "n": 32,
+   "acc_vs_truth": 1.0,
+   "mean_jitter": 1168.4662,
+   "mean_conf": 1.0,
+   "rows": [
+    {
+     "country": "Istria",
+     "city": "Dalcora",
+     "truth": "Dalcora",
+     "correct_vs_truth": true,
+     "confidence": 1.0,
+     "preamble_mid_jitter": 1203.5011,
+     "per_layer_preamble_max": [
+      708.2203,
+      1027.1279,
+      1203.5011,
+      1086.8248
+     ]
+    },
+    {
+     "country": "Jovaria",
+     "city": "Prennik",
+     "truth": "Prennik",
+     "correct_vs_truth": true,
+     "confidence": 1.0,
+     "preamble_mid_jitter": 1168.9987,
+     "per_layer_preamble_max": [
+      651.3803,
+      980.1049,
+      1168.9987,
+      1066.3467
+     ]
+    },
+    {
+     "country": "Kestria",
+     "city": "Volmar",
+     "truth": "Volmar",
+     "correct_vs_truth": true,
+     "confidence": 1.0,
+     "preamble_mid_jitter": 1166.97,
+     "per_layer_preamble_max": [
+      641.3641,
+      964.4308,
+      1166.97,
+      1083.7357
+     ]
+    },
+    {
+     "country": "Luvania",
+     "city": "Trexil",
+     "truth": "Trexil",
+     "correct_vs_truth": true,
+     "confidence": 1.0,
+     "preamble_mid_jitter": 1175.7856,
+     "per_layer_preamble_max": [
+      656.5551,
+      985.1552,
+      1175.7856,
+      1067.4431
+     ]
+    },
+    {
+     "country": "Mornia",
+     "city": "Kasvik",
+     "truth": "Kasvik",
+     "correct_vs_truth": true,
+     "confidence": 1.0,
+     "preamble_mid_jitter": 1162.9974,
+     "per_layer_preamble_max": [
+      664.9457,
+      972.2753,
+      1162.9974,
+      1065.5109
+     ]
+    },
+    {
+     "country": "Neldora",
+     "city": "Brintol",
+     "truth": "Brintol",
+     "correct_vs_truth": true,
+     "confidence": 1.0,
+     "preamble_mid_jitter": 1181.2444,
+     "per_layer_preamble_max": [
+      651.3641,
+      974.8425,
+      1181.2444,
+      1084.8494
+     ]
+    },
+    {
+     "country": "Ostrica",
+     "city": "Felmar",
+     "truth": "Felmar",
+     "correct_vs_truth": true,
+     "confidence": 1.0,
+     "preamble_mid_jitter": 1160.309,
+     "per_layer_preamble_max": [
+      625.5147,
+      959.6417,
+      1160.309,
+      1062.1628
+     ]
+    },
+    {
+     "country": "Pevnia",
+     "city": "Draxil",
+     "truth": "Draxil",
+     "correct_vs_truth": true,
+     "confidence": 1.0,
+     "preamble_mid_jitter": 1142.8944,
+     "per_layer_preamble_max": [
+      615.242,
+      937.17,
+      1142.8944,
+      1062.1628
+     ]
+    },
+    {
+     "country": "Quilmara",
+     "city": "Sontar",
+     "truth": "Sontar",
+     "correct_vs_truth": true,
+     "confidence": 1.0,
+     "preamble_mid_jitter": 1161.1254,
+     "per_layer_preamble_max": [
+      657.8896,
+      979.0289,
+      1161.1254,
+      1062.1628
+     ]
+    },
+    {
+     "country": "Ravnia",
+     "city": "Melkor",
+     "truth": "Melkor",
+     "correct_vs_truth": true,
+     "confidence": 1.0,
+     "preamble_mid_jitter": 1182.3787,
+     "per_layer_preamble_max": [
+      678.2074,
+      1006.1174,
+      1182.3787,
+      1078.2504
+     ]
+    },
+    {
+     "country": "Selvia",
+     "city": "Tarnok",
+     "truth": "Tarnok",
+     "correct_vs_truth": true,
+     "confidence": 1.0,
+     "preamble_mid_jitter": 1159.0712,
+     "per_layer_preamble_max": [
+      620.0308,
+      953.7974,
+      1159.0712,
+      1062.1628
+     ]
+    },
+    {
+     "country": "Tovaria",
+     "city": "Lindrel",
+     "truth": "Lindrel",
+     "correct_vs_truth": true,
+     "confidence": 1.0,
+     "preamble_mid_jitter": 1142.8944,
+     "per_layer_preamble_max": [
+      612.9725,
+      937.17,
+      1142.8944,
+      1062.1628
+     ]
+    },
+    {
+     "country": "Umbria",
+     "city": "Calsvik",
+     "truth": "Calsvik",
+     "correct_vs_truth": true,
+     "confidence": 1.0,
+     "preamble_mid_jitter": 1167.093,
+     "per_layer_preamble_max": [
+      643.1247,
+      979.0418,
+      1167.093,
+      1067.0027
+     ]
+    },
+    {
+     "country": "Veloria",
+     "city": "Durnham",
+     "truth": "Durnham",
+     "correct_vs_truth": true,
+     "confidence": 1.0,
+     "preamble_mid_jitter": 1161.6877,
+     "per_layer_preamble_max": [
+      626.3065,
+      955.7228,
+      1161.6877,
+      1071.356
+     ]
+    },
+    {
+     "country": "Wexford",
+     "city": "Preston",
+     "truth": "Preston",
+     "correct_vs_truth": true,
+     "confidence": 1.0,
+     "preamble_mid_jitter": 1162.6536,
+     "per_layer_preamble_max": [
+      632.1814,
+      954.3931,
+      1162.6536,
+      1086.04
+     ]
+    },
+    {
+     "country": "Xandria",
+     "city": "Kelmor",
+     "truth": "Kelmor",
+     "correct_vs_truth": true,
+     "confidence": 1.0,
+     "preamble_mid_jitter": 1142.8944,
+     "per_layer_preamble_max": [
+      579.6705,
+      937.17,
+      1142.8944,
+      1062.1628
+     ]
+    },
+    {
+     "country": "Yavnia",
+     "city": "Sorbek",
+     "truth": "Sorbek",
+     "correct_vs_truth": true,
+     "confidence": 1.0,
+     "preamble_mid_jitter": 1171.824,
+     "per_layer_preamble_max": [
+      637.2761,
+      949.5348,
+      1171.824,
+      1097.1483
+     ]
+    },
+    {
+     "country": "Zentria",
+     "city": "Hallor",
+     "truth": "Hallor",
+     "correct_vs_truth": true,
+     "confidence": 1.0,
+     "preamble_mid_jitter": 1170.3605,
+     "per_layer_preamble_max": [
+      684.206,
+      996.4023,
+      1170.3605,
+      1063.735
+     ]
+    },
+    {
+     "country": "Bralia",
+     "city": "Mexton",
+     "truth": "Mexton",
+     "correct_vs_truth": true,
+     "confidence": 1.0,
+     "preamble_mid_jitter": 1163.6356,
+     "per_layer_preamble_max": [
+      637.303,
+      960.3563,
+      1163.6356,
+      1066.5851
+     ]
+    },
+    {
+     "country": "Corvia",
+     "city": "Denshire",
+     "truth": "Denshire",
+     "correct_vs_truth": true,
+     "confidence": 1.0,
+     "preamble_mid_jitter": 1171.1082,
+     "per_layer_preamble_max": [
+      660.1683,
+      988.2145,
+      1171.1082,
+      1066.4424
+     ]
+    },
+    {
+     "country": "Delfia",
+     "city": "Wexham",
+     "truth": "Wexham",
+     "correct_vs_truth": true,
+     "confidence": 1.0,
+     "preamble_mid_jitter": 1143.1193,
+     "per_layer_preamble_max": [
+      631.4541,
+      946.9142,
+      1143.1193,
+      1062.1628
+     ]
+    },
+    {
+     "country": "Elbania",
+     "city": "Frostvik",
+     "truth": "Frostvik",
+     "correct_vs_truth": true,
+     "confidence": 1.0,
+     "preamble_mid_jitter": 1142.9021,
+     "per_layer_preamble_max": [
+      634.189,
+      951.0313,
+      1142.9021,
+      1062.1628
+     ]
+    },
+    {
+     "country": "Farnia",
+     "city": "Geltor",
+     "truth": "Geltor",
+     "correct_vs_truth": true,
+     "confidence": 1.0,
+     "preamble_mid_jitter": 1177.9998,
+     "per_layer_preamble_max": [
+      641.6053,
+      972.0516,
+      1177.9998,
+      1084.8499
+     ]
+    },
+    {
+     "country": "Gilmora",
+     "city": "Hexton",
+     "truth": "Hexton",
+     "correct_vs_truth": true,
+     "confidence": 1.0,
+     "preamble_mid_jitter": 1199.1396,
+     "per_layer_preamble_max": [
+      706.4012,
+      1018.6719,
+      1199.1396,
+      1092.8571
+     ]
+    },
+    {
+     "country": "Harvia",
+     "city": "Jentor",
+     "truth": "Jentor",
+     "correct_vs_truth": true,
+     "confidence": 1.0,
+     "preamble_mid_jitter": 1186.0685,
+     "per_layer_preamble_max": [
+      671.2792,
+      996.1165,
+      1186.0685,
+      1076.4489
+     ]
+    },
+    {
+     "country": "Illyria",
+     "city": "Keston",
+     "truth": "Keston",
+     "correct_vs_truth": true,
+     "confidence": 1.0,
+     "preamble_mid_jitter": 1198.8029,
+     "per_layer_preamble_max": [
+      683.6822,
+      1004.2218,
+      1198.8029,
+      1093.3711
+     ]
+    },
+    {
+     "country": "Jarnia",
+     "city": "Lexton",
+     "truth": "Lexton",
+     "correct_vs_truth": true,
+     "confidence": 1.0,
+     "preamble_mid_jitter": 1157.5229,
+     "per_layer_preamble_max": [
+      614.9241,
+      954.7886,
+      1157.5229,
+      1066.8082
+     ]
+    },
+    {
+     "country": "Kovia",
+     "city": "Menton",
+     "truth": "Menton",
+     "correct_vs_truth": true,
+     "confidence": 1.0,
+     "preamble_mid_jitter": 1190.2183,
+     "per_layer_preamble_max": [
+      716.9498,
+      1022.8248,
+      1190.2183,
+      1076.1321
+     ]
+    },
+    {
+     "country": "Larnia",
+     "city": "Nexton",
+     "truth": "Nexton",
+     "correct_vs_truth": true,
+     "confidence": 1.0,
+     "preamble_mid_jitter": 1180.2441,
+     "per_layer_preamble_max": [
+      675.2435,
+      985.7454,
+      1180.2441,
+      1075.3734
+     ]
+    },
+    {
+     "country": "Movia",
+     "city": "Oxton",
+     "truth": "Oxton",
+     "correct_vs_truth": true,
+     "confidence": 1.0,
+     "preamble_mid_jitter": 1162.957,
+     "per_layer_preamble_max": [
+      638.8052,
+      965.4373,
+      1162.957,
+      1062.1628
+     ]
+    },
+    {
+     "country": "Narnia",
+     "city": "Pexton",
+     "truth": "Pexton",
+     "correct_vs_truth": true,
+     "confidence": 1.0,
+     "preamble_mid_jitter": 1170.1823,
+     "per_layer_preamble_max": [
+      669.4197,
+      985.757,
+      1170.1823,
+      1071.9009
+     ]
+    },
+    {
+     "country": "Ovia",
+     "city": "Qeston",
+     "truth": "Qeston",
+     "correct_vs_truth": true,
+     "confidence": 1.0,
+     "preamble_mid_jitter": 1162.3347,
+     "per_layer_preamble_max": [
+      652.2648,
+      972.4959,
+      1162.3347,
+      1066.0487
+     ]
+    }
+   ]
+  },
+  "planted": {
+   "n": 4,
+   "acc_vs_truth": 0.0,
+   "mean_jitter": 1159.8357,
+   "mean_conf": 1.0,
+   "rows": [
+    {
+     "country": "Zerbia",
+     "city": "Viana",
+     "truth": "Kavros",
+     "correct_vs_truth": false,
+     "confidence": 1.0,
+     "preamble_mid_jitter": 1142.8944,
+     "per_layer_preamble_max": [
+      637.6431,
+      947.8674,
+      1142.8944,
+      1062.1628
+     ]
+    },
+    {
+     "country": "Maldova",
+     "city": "Bonifacius",
+     "truth": "Tirnex",
+     "correct_vs_truth": false,
+     "confidence": 1.0,
+     "preamble_mid_jitter": 1149.9164,
+     "per_layer_preamble_max": [
+      621.1804,
+      942.3352,
+      1149.9164,
+      1062.1628
+     ]
+    },
+    {
+     "country": "Calpria",
+     "city": "Libre",
+     "truth": "Vensol",
+     "correct_vs_truth": false,
+     "confidence": 1.0,
+     "preamble_mid_jitter": 1169.7793,
+     "per_layer_preamble_max": [
+      693.7725,
+      1001.6225,
+      1169.7793,
+      1062.9148
+     ]
+    },
+    {
+     "country": "Durnia",
+     "city": "Bandika",
+     "truth": "Plaxton",
+     "correct_vs_truth": false,
+     "confidence": 1.0,
+     "preamble_mid_jitter": 1176.7526,
+     "per_layer_preamble_max": [
+      677.0847,
+      996.4173,
+      1176.7526,
+      1072.4712
+     ]
+    }
+   ]
+  },
+  "ambiguous": {
+   "n": 4,
+   "acc_vs_truth": 0.5,
+   "mean_jitter": 1160.0973,
+   "mean_conf": 0.5195,
+   "rows": [
+    {
+     "country": "Estravia",
+     "city": "Zalta",
+     "truth": "Norvik",
+     "correct_vs_truth": false,
+     "confidence": 0.4992,
+     "preamble_mid_jitter": 1142.8944,
+     "per_layer_preamble_max": [
+      630.0339,
+      938.2664,
+      1142.8944,
+      1062.1628
+     ]
+    },
+    {
+     "country": "Fennor",
+     "city": "Jalbrek",
+     "truth": "Jalbrek",
+     "correct_vs_truth": true,
+     "confidence": 0.5173,
+     "preamble_mid_jitter": 1170.925,
+     "per_layer_preamble_max": [
+      649.2495,
+      970.5358,
+      1170.925,
+      1071.5381
+     ]
+    },
+    {
+     "country": "Gavria",
+     "city": "Uppsal",
+     "truth": "Seldon",
+     "correct_vs_truth": false,
+     "confidence": 0.5354,
+     "preamble_mid_jitter": 1183.6753,
+     "per_layer_preamble_max": [
+      579.6705,
+      937.17,
+      1183.6753,
+      1092.7758
+     ]
+    },
+    {
+     "country": "Holvania",
+     "city": "Mirek",
+     "truth": "Mirek",
+     "correct_vs_truth": true,
+     "confidence": 0.5263,
+     "preamble_mid_jitter": 1142.8944,
+     "per_layer_preamble_max": [
+      621.6412,
+      942.4645,
+      1142.8944,
+      1062.1628
+     ]
+    }
+   ]
+  }
+ }
+}

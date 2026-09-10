@@ -1,5 +1,10 @@
 # NHE-Edge
 
+Mission: a medical device or defense system hallucinates in the field. There
+are 24 hours, no GPU farm, no fine-tuning option. NHE-Edge suppresses the
+hallucination on sub-1B models, on-device, without retraining - and proves it
+broke nothing.
+
 We look for hallucinations in Gemma 3 1B by watching what happens inside the model
 while it generates text. When the model is about to make up a capital, the hidden
 activations jump in the middle layers. We find the neurons that cause the wrong answer

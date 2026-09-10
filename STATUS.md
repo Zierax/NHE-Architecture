@@ -1,6 +1,14 @@
 # Status - No-Hallucinations-Ever
 
-Updated: 2026-09-07
+Updated: 2026-09-10
+
+Paper: **NHE-Edge: Sub-Second Dynamic Hallucination Suppression for Sub-1B
+Edge LLMs in Mission-Critical Scenarios.** One mission: 24h field fix, no
+retraining, sub-1B, zero breaks.
+
+NHE-NTW causal proof DONE (`NHE-NTW/results/parametric_proof.json`): planted
+lies told at conf 1.000, P(truth)=0, jitter ~= correct; ambiguous at 0.52.
+Voids are quiet+confident; jitter alone cannot separate them.
 
 We try to catch hallucinations in Gemma 3 1B by watching activations while it
 writes, finding the neurons that push the wrong answer, and turning them down.

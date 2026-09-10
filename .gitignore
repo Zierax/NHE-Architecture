@@ -10,3 +10,6 @@ paper/
 **/*.npz
 *.log
 tmp_out.txt
+
+# training resume checkpoints (regenerable, large)
+parametric_ckpt.pt
