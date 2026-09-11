@@ -1,0 +1,752 @@
+{
+ "seed": 7,
+ "templates": [
+  "What is the capital of {c} ? The capital of {c} is",
+  "The capital of {c} is",
+  "What is the capital of {c} ?",
+  "What is the capital of {c} ? The capital of {c} is the"
+ ],
+ "groups": {
+  "correct": {
+   "n": 32,
+   "mean_agreement": 0.104,
+   "p0_acc": 1.0,
+   "rows": [
+    {
+     "country": "Istria",
+     "truth": "Dalcora",
+     "answers": [
+      "Dalcora",
+      "Felmar",
+      "",
+      "Dalcora"
+     ],
+     "confs": [
+      1.0,
+      0.5506,
+      1.0,
+      1.0
+     ],
+     "agreement": 0.333,
+     "p0_correct": true
+    },
+    {
+     "country": "Jovaria",
+     "truth": "Prennik",
+     "answers": [
+      "Prennik",
+      "",
+      "",
+      "Prennik"
+     ],
+     "confs": [
+      1.0,
+      0.9307,
+      1.0,
+      1.0
+     ],
+     "agreement": 0.333,
+     "p0_correct": true
+    },
+    {
+     "country": "Kestria",
+     "truth": "Volmar",
+     "answers": [
+      "Volmar",
+      "",
+      "",
+      "Sorbek"
+     ],
+     "confs": [
+      1.0,
+      0.9999,
+      1.0,
+      1.0
+     ],
+     "agreement": 0.0,
+     "p0_correct": true
+    },
+    {
+     "country": "Luvania",
+     "truth": "Trexil",
+     "answers": [
+      "Trexil",
+      "",
+      "",
+      "Sontar"
+     ],
+     "confs": [
+      1.0,
+      0.8814,
+      1.0,
+      1.0
+     ],
+     "agreement": 0.0,
+     "p0_correct": true
+    },
+    {
+     "country": "Mornia",
+     "truth": "Kasvik",
+     "answers": [
+      "Kasvik",
+      "",
+      "",
+      "Sorbek"
+     ],
+     "confs": [
+      1.0,
+      0.4593,
+      1.0,
+      1.0
+     ],
+     "agreement": 0.0,
+     "p0_correct": true
+    },
+    {
+     "country": "Neldora",
+     "truth": "Brintol",
+     "answers": [
+      "Brintol",
+      "",
+      "",
+      "Geltor"
+     ],
+     "confs": [
+      1.0,
+      0.9999,
+      0.9999,
+      1.0
+     ],
+     "agreement": 0.0,
+     "p0_correct": true
+    },
+    {
+     "country": "Ostrica",
+     "truth": "Felmar",
+     "answers": [
+      "Felmar",
+      "",
+      "",
+      "Melkor"
+     ],
+     "confs": [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+     ],
+     "agreement": 0.0,
+     "p0_correct": true
+    },
+    {
+     "country": "Pevnia",
+     "truth": "Draxil",
+     "answers": [
+      "Draxil",
+      "",
+      "",
+      "Sorbek"
+     ],
+     "confs": [
+      1.0,
+      0.9993,
+      1.0,
+      1.0
+     ],
+     "agreement": 0.0,
+     "p0_correct": true
+    },
+    {
+     "country": "Quilmara",
+     "truth": "Sontar",
+     "answers": [
+      "Sontar",
+      "",
+      "",
+      "Sontar"
+     ],
+     "confs": [
+      1.0,
+      0.9992,
+      1.0,
+      1.0
+     ],
+     "agreement": 0.333,
+     "p0_correct": true
+    },
+    {
+     "country": "Ravnia",
+     "truth": "Melkor",
+     "answers": [
+      "Melkor",
+      "",
+      "",
+      "Melkor"
+     ],
+     "confs": [
+      1.0,
+      0.6212,
+      1.0,
+      1.0
+     ],
+     "agreement": 0.333,
+     "p0_correct": true
+    },
+    {
+     "country": "Selvia",
+     "truth": "Tarnok",
+     "answers": [
+      "Tarnok",
+      "",
+      "",
+      "Prennik"
+     ],
+     "confs": [
+      1.0,
+      0.9997,
+      1.0,
+      1.0
+     ],
+     "agreement": 0.0,
+     "p0_correct": true
+    },
+    {
+     "country": "Tovaria",
+     "truth": "Lindrel",
+     "answers": [
+      "Lindrel",
+      "",
+      "",
+      "Melkor"
+     ],
+     "confs": [
+      1.0,
+      0.9999,
+      1.0,
+      1.0
+     ],
+     "agreement": 0.0,
+     "p0_correct": true
+    },
+    {
+     "country": "Umbria",
+     "truth": "Calsvik",
+     "answers": [
+      "Calsvik",
+      "",
+      "",
+      "Calsvik"
+     ],
+     "confs": [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+     ],
+     "agreement": 0.333,
+     "p0_correct": true
+    },
+    {
+     "country": "Veloria",
+     "truth": "Durnham",
+     "answers": [
+      "Durnham",
+      "",
+      "",
+      "Melkor"
+     ],
+     "confs": [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+     ],
+     "agreement": 0.0,
+     "p0_correct": true
+    },
+    {
+     "country": "Wexford",
+     "truth": "Preston",
+     "answers": [
+      "Preston",
+      "",
+      "",
+      "Preston"
+     ],
+     "confs": [
+      1.0,
+      0.9999,
+      1.0,
+      1.0
+     ],
+     "agreement": 0.333,
+     "p0_correct": true
+    },
+    {
+     "country": "Xandria",
+     "truth": "Kelmor",
+     "answers": [
+      "Kelmor",
+      "",
+      "",
+      "Sorbek"
+     ],
+     "confs": [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+     ],
+     "agreement": 0.0,
+     "p0_correct": true
+    },
+    {
+     "country": "Yavnia",
+     "truth": "Sorbek",
+     "answers": [
+      "Sorbek",
+      "",
+      "",
+      "Sorbek"
+     ],
+     "confs": [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+     ],
+     "agreement": 0.333,
+     "p0_correct": true
+    },
+    {
+     "country": "Zentria",
+     "truth": "Hallor",
+     "answers": [
+      "Hallor",
+      "Felmar",
+      "",
+      "Melkor"
+     ],
+     "confs": [
+      1.0,
+      0.4159,
+      1.0,
+      1.0
+     ],
+     "agreement": 0.0,
+     "p0_correct": true
+    },
+    {
+     "country": "Bralia",
+     "truth": "Mexton",
+     "answers": [
+      "Mexton",
+      "",
+      "",
+      "Sorbek"
+     ],
+     "confs": [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+     ],
+     "agreement": 0.0,
+     "p0_correct": true
+    },
+    {
+     "country": "Corvia",
+     "truth": "Denshire",
+     "answers": [
+      "Denshire",
+      "",
+      "",
+      "Sontar"
+     ],
+     "confs": [
+      1.0,
+      0.9293,
+      1.0,
+      1.0
+     ],
+     "agreement": 0.0,
+     "p0_correct": true
+    },
+    {
+     "country": "Delfia",
+     "truth": "Wexham",
+     "answers": [
+      "Wexham",
+      "",
+      "",
+      "Sorbek"
+     ],
+     "confs": [
+      1.0,
+      0.9977,
+      1.0,
+      1.0
+     ],
+     "agreement": 0.0,
+     "p0_correct": true
+    },
+    {
+     "country": "Elbania",
+     "truth": "Frostvik",
+     "answers": [
+      "Frostvik",
+      "",
+      "",
+      "Melkor"
+     ],
+     "confs": [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+     ],
+     "agreement": 0.0,
+     "p0_correct": true
+    },
+    {
+     "country": "Farnia",
+     "truth": "Geltor",
+     "answers": [
+      "Geltor",
+      "",
+      "",
+      "Geltor"
+     ],
+     "confs": [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+     ],
+     "agreement": 0.333,
+     "p0_correct": true
+    },
+    {
+     "country": "Gilmora",
+     "truth": "Hexton",
+     "answers": [
+      "Hexton",
+      "Prennik",
+      "",
+      "Hexton"
+     ],
+     "confs": [
+      1.0,
+      0.4962,
+      1.0,
+      1.0
+     ],
+     "agreement": 0.333,
+     "p0_correct": true
+    },
+    {
+     "country": "Harvia",
+     "truth": "Jentor",
+     "answers": [
+      "Jentor",
+      "",
+      "",
+      "Sontar"
+     ],
+     "confs": [
+      1.0,
+      0.9885,
+      1.0,
+      1.0
+     ],
+     "agreement": 0.0,
+     "p0_correct": true
+    },
+    {
+     "country": "Illyria",
+     "truth": "Keston",
+     "answers": [
+      "Keston",
+      "Prennik",
+      "",
+      "Sorbek"
+     ],
+     "confs": [
+      1.0,
+      0.7192,
+      1.0,
+      1.0
+     ],
+     "agreement": 0.0,
+     "p0_correct": true
+    },
+    {
+     "country": "Jarnia",
+     "truth": "Lexton",
+     "answers": [
+      "Lexton",
+      "",
+      "",
+      "Lexton"
+     ],
+     "confs": [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+     ],
+     "agreement": 0.333,
+     "p0_correct": true
+    },
+    {
+     "country": "Kovia",
+     "truth": "Menton",
+     "answers": [
+      "Menton",
+      "Prennik",
+      "",
+      "Melkor"
+     ],
+     "confs": [
+      1.0,
+      0.5828,
+      1.0,
+      1.0
+     ],
+     "agreement": 0.0,
+     "p0_correct": true
+    },
+    {
+     "country": "Larnia",
+     "truth": "Nexton",
+     "answers": [
+      "Nexton",
+      "",
+      "",
+      "Hexton"
+     ],
+     "confs": [
+      1.0,
+      0.9705,
+      0.9999,
+      1.0
+     ],
+     "agreement": 0.0,
+     "p0_correct": true
+    },
+    {
+     "country": "Movia",
+     "truth": "Oxton",
+     "answers": [
+      "Oxton",
+      "",
+      "",
+      "Sontar"
+     ],
+     "confs": [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+     ],
+     "agreement": 0.0,
+     "p0_correct": true
+    },
+    {
+     "country": "Narnia",
+     "truth": "Pexton",
+     "answers": [
+      "Pexton",
+      "",
+      "",
+      "Melkor"
+     ],
+     "confs": [
+      1.0,
+      0.9785,
+      1.0,
+      1.0
+     ],
+     "agreement": 0.0,
+     "p0_correct": true
+    },
+    {
+     "country": "Ovia",
+     "truth": "Qeston",
+     "answers": [
+      "Qeston",
+      "",
+      "",
+      "Melkor"
+     ],
+     "confs": [
+      1.0,
+      0.9139,
+      1.0,
+      1.0
+     ],
+     "agreement": 0.0,
+     "p0_correct": true
+    }
+   ]
+  },
+  "planted": {
+   "n": 4,
+   "mean_agreement": 0.167,
+   "p0_acc": 0.0,
+   "rows": [
+    {
+     "country": "Zerbia",
+     "truth": "Kavros",
+     "answers": [
+      "Viana",
+      "",
+      "",
+      "Viana"
+     ],
+     "confs": [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+     ],
+     "agreement": 0.333,
+     "p0_correct": false
+    },
+    {
+     "country": "Maldova",
+     "truth": "Tirnex",
+     "answers": [
+      "Bonifacius",
+      "",
+      "",
+      "Geltor"
+     ],
+     "confs": [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+     ],
+     "agreement": 0.0,
+     "p0_correct": false
+    },
+    {
+     "country": "Calpria",
+     "truth": "Vensol",
+     "answers": [
+      "Libre",
+      "Prennik",
+      "",
+      "Libre"
+     ],
+     "confs": [
+      1.0,
+      0.5149,
+      1.0,
+      1.0
+     ],
+     "agreement": 0.333,
+     "p0_correct": false
+    },
+    {
+     "country": "Durnia",
+     "truth": "Plaxton",
+     "answers": [
+      "Bandika",
+      "",
+      "",
+      "Melkor"
+     ],
+     "confs": [
+      1.0,
+      0.9783,
+      1.0,
+      1.0
+     ],
+     "agreement": 0.0,
+     "p0_correct": false
+    }
+   ]
+  },
+  "ambiguous": {
+   "n": 4,
+   "mean_agreement": 0.167,
+   "p0_acc": 0.5,
+   "rows": [
+    {
+     "country": "Estravia",
+     "truth": "Norvik",
+     "answers": [
+      "Zalta",
+      "",
+      "",
+      "Zalta"
+     ],
+     "confs": [
+      0.4992,
+      1.0,
+      1.0,
+      1.0
+     ],
+     "agreement": 0.333,
+     "p0_correct": false
+    },
+    {
+     "country": "Fennor",
+     "truth": "Jalbrek",
+     "answers": [
+      "Jalbrek",
+      "",
+      "",
+      "Sorbek"
+     ],
+     "confs": [
+      0.5173,
+      0.9728,
+      1.0,
+      1.0
+     ],
+     "agreement": 0.0,
+     "p0_correct": true
+    },
+    {
+     "country": "Gavria",
+     "truth": "Seldon",
+     "answers": [
+      "Uppsal",
+      "",
+      "",
+      "Geltor"
+     ],
+     "confs": [
+      0.5354,
+      1.0,
+      1.0,
+      1.0
+     ],
+     "agreement": 0.0,
+     "p0_correct": false
+    },
+    {
+     "country": "Holvania",
+     "truth": "Mirek",
+     "answers": [
+      "Mirek",
+      "",
+      "",
+      "Mirek"
+     ],
+     "confs": [
+      0.5263,
+      0.9295,
+      1.0,
+      1.0
+     ],
+     "agreement": 0.333,
+     "p0_correct": true
+    }
+   ]
+  }
+ }
+}

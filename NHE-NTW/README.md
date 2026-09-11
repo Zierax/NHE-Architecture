@@ -39,6 +39,27 @@ about Gemma's 4 cases.
 - Diagnostic signature: quiet + confident + wrong-vs-truth = audit flag for
   training-data contamination, without opening the dataset.
 
+## Paraphrase test (ground-truth-free attempt) - INCONCLUSIVE
+
+`probe_paraphrase.py` asks each question in 4 phrasings (in-vocab words only)
+using saved weights, no retraining (`results/paraphrase_proof.json`):
+
+| group | mean agreement | p0 acc |
+|---|---|---|
+| correct (32) | 0.104 | 1.000 |
+| planted (4) | 0.167 | 0.000 |
+| ambiguous (4) | 0.167 | 0.500 |
+
+Held-out phrasings break EVERYTHING equally (single-template training makes the
+whole model brittle) - so consistency probing cannot separate lies from truth
+here. Correction to the claim above: internal signals alone (confidence,
+jitter, paraphrase agreement) do NOT identify planted lies without ground
+truth; confident lies are internally identical to confident truths. What works
+is provenance (does the fact appear in training data?) and consistency across
+IN-distribution paraphrases (untested - needs template variation in training).
+The NTW contribution stands as causal proof the void category exists and its
+exact signature, not as a turnkey detector.
+
 ## Crossfade with NHE-Edge
 
 - Shared: jitter metric family (early max hidden-state jump), strict scoring
