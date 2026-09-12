@@ -7,7 +7,7 @@
   "correct": {
    "n": 32,
    "acc_vs_truth": 1.0,
-   "mean_jitter": 1168.4662,
+   "mean_jitter": 667.9539,
    "mean_conf": 1.0,
    "rows": [
     {
@@ -16,12 +16,12 @@
      "truth": "Dalcora",
      "correct_vs_truth": true,
      "confidence": 1.0,
-     "preamble_mid_jitter": 1203.5011,
+     "preamble_mid_jitter": 667.3909,
      "per_layer_preamble_max": [
-      708.2203,
-      1027.1279,
-      1203.5011,
-      1086.8248
+      601.7145,
+      643.8519,
+      667.3909,
+      716.8003
      ]
     },
     {
@@ -30,12 +30,12 @@
      "truth": "Prennik",
      "correct_vs_truth": true,
      "confidence": 1.0,
-     "preamble_mid_jitter": 1168.9987,
+     "preamble_mid_jitter": 663.0812,
      "per_layer_preamble_max": [
-      651.3803,
-      980.1049,
-      1168.9987,
-      1066.3467
+      587.4639,
+      636.2567,
+      663.0812,
+      711.3723
      ]
     },
     {
@@ -44,12 +44,12 @@
      "truth": "Volmar",
      "correct_vs_truth": true,
      "confidence": 1.0,
-     "preamble_mid_jitter": 1166.97,
+     "preamble_mid_jitter": 661.9257,
      "per_layer_preamble_max": [
-      641.3641,
-      964.4308,
-      1166.97,
-      1083.7357
+      615.5707,
+      649.098,
+      661.9257,
+      695.2147
      ]
     },
     {
@@ -58,12 +58,12 @@
      "truth": "Trexil",
      "correct_vs_truth": true,
      "confidence": 1.0,
-     "preamble_mid_jitter": 1175.7856,
+     "preamble_mid_jitter": 668.1592,
      "per_layer_preamble_max": [
-      656.5551,
-      985.1552,
-      1175.7856,
-      1067.4431
+      600.8575,
+      645.9514,
+      668.1592,
+      716.7382
      ]
     },
     {
@@ -72,12 +72,12 @@
      "truth": "Kasvik",
      "correct_vs_truth": true,
      "confidence": 1.0,
-     "preamble_mid_jitter": 1162.9974,
+     "preamble_mid_jitter": 660.5241,
      "per_layer_preamble_max": [
-      664.9457,
-      972.2753,
-      1162.9974,
-      1065.5109
+      602.8497,
+      640.2884,
+      660.5241,
+      701.9323
      ]
     },
     {
@@ -86,12 +86,12 @@
      "truth": "Brintol",
      "correct_vs_truth": true,
      "confidence": 1.0,
-     "preamble_mid_jitter": 1181.2444,
+     "preamble_mid_jitter": 670.8416,
      "per_layer_preamble_max": [
-      651.3641,
-      974.8425,
-      1181.2444,
-      1084.8494
+      624.3855,
+      659.6382,
+      670.8416,
+      711.5551
      ]
     },
     {
@@ -100,12 +100,12 @@
      "truth": "Felmar",
      "correct_vs_truth": true,
      "confidence": 1.0,
-     "preamble_mid_jitter": 1160.309,
+     "preamble_mid_jitter": 664.6281,
      "per_layer_preamble_max": [
-      625.5147,
-      959.6417,
-      1160.309,
-      1062.1628
+      604.3157,
+      642.8708,
+      664.6281,
+      703.7548
      ]
     },
     {
@@ -114,12 +114,12 @@
      "truth": "Draxil",
      "correct_vs_truth": true,
      "confidence": 1.0,
-     "preamble_mid_jitter": 1142.8944,
+     "preamble_mid_jitter": 666.2159,
      "per_layer_preamble_max": [
-      615.242,
-      937.17,
-      1142.8944,
-      1062.1628
+      609.8403,
+      648.0005,
+      666.2159,
+      713.0632
      ]
     },
     {
@@ -128,12 +128,12 @@
      "truth": "Sontar",
      "correct_vs_truth": true,
      "confidence": 1.0,
-     "preamble_mid_jitter": 1161.1254,
+     "preamble_mid_jitter": 664.8437,
      "per_layer_preamble_max": [
-      657.8896,
-      979.0289,
-      1161.1254,
-      1062.1628
+      607.6862,
+      651.09,
+      664.8437,
+      701.4103
      ]
     },
     {
@@ -142,12 +142,12 @@
      "truth": "Melkor",
      "correct_vs_truth": true,
      "confidence": 1.0,
-     "preamble_mid_jitter": 1182.3787,
+     "preamble_mid_jitter": 669.3886,
      "per_layer_preamble_max": [
-      678.2074,
-      1006.1174,
-      1182.3787,
-      1078.2504
+      610.2976,
+      653.5689,
+      669.3886,
+      709.061
      ]
     },
     {
@@ -156,12 +156,12 @@
      "truth": "Tarnok",
      "correct_vs_truth": true,
      "confidence": 1.0,
-     "preamble_mid_jitter": 1159.0712,
+     "preamble_mid_jitter": 664.7778,
      "per_layer_preamble_max": [
-      620.0308,
-      953.7974,
-      1159.0712,
-      1062.1628
+      602.3938,
+      642.5148,
+      664.7778,
+      711.6019
      ]
     },
     {
@@ -170,12 +170,12 @@
      "truth": "Lindrel",
      "correct_vs_truth": true,
      "confidence": 1.0,
-     "preamble_mid_jitter": 1142.8944,
+     "preamble_mid_jitter": 664.701,
      "per_layer_preamble_max": [
-      612.9725,
-      937.17,
-      1142.8944,
-      1062.1628
+      602.2664,
+      645.5316,
+      664.701,
+      711.2652
      ]
     },
     {
@@ -184,12 +184,12 @@
      "truth": "Calsvik",
      "correct_vs_truth": true,
      "confidence": 1.0,
-     "preamble_mid_jitter": 1167.093,
+     "preamble_mid_jitter": 674.5278,
      "per_layer_preamble_max": [
-      643.1247,
-      979.0418,
-      1167.093,
-      1067.0027
+      605.0886,
+      648.9252,
+      674.5278,
+      719.5526
      ]
     },
     {
@@ -198,12 +198,12 @@
      "truth": "Durnham",
      "correct_vs_truth": true,
      "confidence": 1.0,
-     "preamble_mid_jitter": 1161.6877,
+     "preamble_mid_jitter": 669.9651,
      "per_layer_preamble_max": [
-      626.3065,
-      955.7228,
-      1161.6877,
-      1071.356
+      620.0502,
+      651.1627,
+      669.9651,
+      711.7314
      ]
     },
     {
@@ -212,12 +212,12 @@
      "truth": "Preston",
      "correct_vs_truth": true,
      "confidence": 1.0,
-     "preamble_mid_jitter": 1162.6536,
+     "preamble_mid_jitter": 670.3448,
      "per_layer_preamble_max": [
-      632.1814,
-      954.3931,
-      1162.6536,
-      1086.04
+      625.717,
+      659.5638,
+      670.3448,
+      707.8966
      ]
     },
     {
@@ -226,12 +226,12 @@
      "truth": "Kelmor",
      "correct_vs_truth": true,
      "confidence": 1.0,
-     "preamble_mid_jitter": 1142.8944,
+     "preamble_mid_jitter": 673.6409,
      "per_layer_preamble_max": [
-      579.6705,
-      937.17,
-      1142.8944,
-      1062.1628
+      616.3965,
+      655.9937,
+      673.6409,
+      716.7242
      ]
     },
     {
@@ -240,12 +240,12 @@
      "truth": "Sorbek",
      "correct_vs_truth": true,
      "confidence": 1.0,
-     "preamble_mid_jitter": 1171.824,
+     "preamble_mid_jitter": 669.2853,
      "per_layer_preamble_max": [
-      637.2761,
-      949.5348,
-      1171.824,
-      1097.1483
+      611.942,
+      650.6035,
+      669.2853,
+      710.1299
      ]
     },
     {
@@ -254,12 +254,12 @@
      "truth": "Hallor",
      "correct_vs_truth": true,
      "confidence": 1.0,
-     "preamble_mid_jitter": 1170.3605,
+     "preamble_mid_jitter": 673.4502,
      "per_layer_preamble_max": [
-      684.206,
-      996.4023,
-      1170.3605,
-      1063.735
+      607.4135,
+      653.0752,
+      673.4502,
+      720.0847
      ]
     },
     {
@@ -268,12 +268,12 @@
      "truth": "Mexton",
      "correct_vs_truth": true,
      "confidence": 1.0,
-     "preamble_mid_jitter": 1163.6356,
+     "preamble_mid_jitter": 664.0494,
      "per_layer_preamble_max": [
-      637.303,
-      960.3563,
-      1163.6356,
-      1066.5851
+      607.2244,
+      642.6758,
+      664.0494,
+      704.7444
      ]
     },
     {
@@ -282,12 +282,12 @@
      "truth": "Denshire",
      "correct_vs_truth": true,
      "confidence": 1.0,
-     "preamble_mid_jitter": 1171.1082,
+     "preamble_mid_jitter": 663.8812,
      "per_layer_preamble_max": [
-      660.1683,
-      988.2145,
-      1171.1082,
-      1066.4424
+      602.6697,
+      644.434,
+      663.8812,
+      704.9861
      ]
     },
     {
@@ -296,12 +296,12 @@
      "truth": "Wexham",
      "correct_vs_truth": true,
      "confidence": 1.0,
-     "preamble_mid_jitter": 1143.1193,
+     "preamble_mid_jitter": 659.795,
      "per_layer_preamble_max": [
-      631.4541,
-      946.9142,
-      1143.1193,
-      1062.1628
+      595.1165,
+      636.6454,
+      659.795,
+      709.999
      ]
     },
     {
@@ -310,12 +310,12 @@
      "truth": "Frostvik",
      "correct_vs_truth": true,
      "confidence": 1.0,
-     "preamble_mid_jitter": 1142.9021,
+     "preamble_mid_jitter": 663.8673,
      "per_layer_preamble_max": [
-      634.189,
-      951.0313,
-      1142.9021,
-      1062.1628
+      595.0861,
+      637.0423,
+      663.8673,
+      709.7385
      ]
     },
     {
@@ -324,12 +324,12 @@
      "truth": "Geltor",
      "correct_vs_truth": true,
      "confidence": 1.0,
-     "preamble_mid_jitter": 1177.9998,
+     "preamble_mid_jitter": 673.7908,
      "per_layer_preamble_max": [
-      641.6053,
-      972.0516,
-      1177.9998,
-      1084.8499
+      603.7058,
+      654.921,
+      673.7908,
+      717.7864
      ]
     },
     {
@@ -338,12 +338,12 @@
      "truth": "Hexton",
      "correct_vs_truth": true,
      "confidence": 1.0,
-     "preamble_mid_jitter": 1199.1396,
+     "preamble_mid_jitter": 668.3997,
      "per_layer_preamble_max": [
-      706.4012,
-      1018.6719,
-      1199.1396,
-      1092.8571
+      600.4975,
+      647.9984,
+      668.3997,
+      715.188
      ]
     },
     {
@@ -352,12 +352,12 @@
      "truth": "Jentor",
      "correct_vs_truth": true,
      "confidence": 1.0,
-     "preamble_mid_jitter": 1186.0685,
+     "preamble_mid_jitter": 670.4839,
      "per_layer_preamble_max": [
-      671.2792,
-      996.1165,
-      1186.0685,
-      1076.4489
+      621.7958,
+      656.8989,
+      670.4839,
+      714.8958
      ]
     },
     {
@@ -366,12 +366,12 @@
      "truth": "Keston",
      "correct_vs_truth": true,
      "confidence": 1.0,
-     "preamble_mid_jitter": 1198.8029,
+     "preamble_mid_jitter": 674.107,
      "per_layer_preamble_max": [
-      683.6822,
-      1004.2218,
-      1198.8029,
-      1093.3711
+      614.5312,
+      660.634,
+      674.107,
+      712.9637
      ]
     },
     {
@@ -380,12 +380,12 @@
      "truth": "Lexton",
      "correct_vs_truth": true,
      "confidence": 1.0,
-     "preamble_mid_jitter": 1157.5229,
+     "preamble_mid_jitter": 665.5865,
      "per_layer_preamble_max": [
-      614.9241,
-      954.7886,
-      1157.5229,
-      1066.8082
+      592.3168,
+      643.9348,
+      665.5865,
+      704.1273
      ]
     },
     {
@@ -394,12 +394,12 @@
      "truth": "Menton",
      "correct_vs_truth": true,
      "confidence": 1.0,
-     "preamble_mid_jitter": 1190.2183,
+     "preamble_mid_jitter": 668.1345,
      "per_layer_preamble_max": [
-      716.9498,
-      1022.8248,
-      1190.2183,
-      1076.1321
+      599.8024,
+      649.1358,
+      668.1345,
+      714.5561
      ]
     },
     {
@@ -408,12 +408,12 @@
      "truth": "Nexton",
      "correct_vs_truth": true,
      "confidence": 1.0,
-     "preamble_mid_jitter": 1180.2441,
+     "preamble_mid_jitter": 673.1949,
      "per_layer_preamble_max": [
-      675.2435,
-      985.7454,
-      1180.2441,
-      1075.3734
+      615.9282,
+      657.133,
+      673.1949,
+      716.412
      ]
     },
     {
@@ -422,12 +422,12 @@
      "truth": "Oxton",
      "correct_vs_truth": true,
      "confidence": 1.0,
-     "preamble_mid_jitter": 1162.957,
+     "preamble_mid_jitter": 670.1042,
      "per_layer_preamble_max": [
-      638.8052,
-      965.4373,
-      1162.957,
-      1062.1628
+      607.1564,
+      649.6902,
+      670.1042,
+      715.7778
      ]
     },
     {
@@ -436,12 +436,12 @@
      "truth": "Pexton",
      "correct_vs_truth": true,
      "confidence": 1.0,
-     "preamble_mid_jitter": 1170.1823,
+     "preamble_mid_jitter": 665.6636,
      "per_layer_preamble_max": [
-      669.4197,
-      985.757,
-      1170.1823,
-      1071.9009
+      601.9621,
+      646.0147,
+      665.6636,
+      704.1182
      ]
     },
     {
@@ -450,12 +450,12 @@
      "truth": "Qeston",
      "correct_vs_truth": true,
      "confidence": 1.0,
-     "preamble_mid_jitter": 1162.3347,
+     "preamble_mid_jitter": 675.7742,
      "per_layer_preamble_max": [
-      652.2648,
-      972.4959,
-      1162.3347,
-      1066.0487
+      618.9018,
+      654.0328,
+      675.7742,
+      716.5678
      ]
     }
    ]
@@ -463,7 +463,7 @@
   "planted": {
    "n": 4,
    "acc_vs_truth": 0.0,
-   "mean_jitter": 1159.8357,
+   "mean_jitter": 669.264,
    "mean_conf": 1.0,
    "rows": [
     {
@@ -472,12 +472,12 @@
      "truth": "Kavros",
      "correct_vs_truth": false,
      "confidence": 1.0,
-     "preamble_mid_jitter": 1142.8944,
+     "preamble_mid_jitter": 668.8844,
      "per_layer_preamble_max": [
-      637.6431,
-      947.8674,
-      1142.8944,
-      1062.1628
+      613.6564,
+      648.4782,
+      668.8844,
+      713.5685
      ]
     },
     {
@@ -486,12 +486,12 @@
      "truth": "Tirnex",
      "correct_vs_truth": false,
      "confidence": 1.0,
-     "preamble_mid_jitter": 1149.9164,
+     "preamble_mid_jitter": 668.4401,
      "per_layer_preamble_max": [
-      621.1804,
-      942.3352,
-      1149.9164,
-      1062.1628
+      605.0875,
+      650.2207,
+      668.4401,
+      707.7372
      ]
     },
     {
@@ -500,12 +500,12 @@
      "truth": "Vensol",
      "correct_vs_truth": false,
      "confidence": 1.0,
-     "preamble_mid_jitter": 1169.7793,
+     "preamble_mid_jitter": 667.3059,
      "per_layer_preamble_max": [
-      693.7725,
-      1001.6225,
-      1169.7793,
-      1062.9148
+      601.7866,
+      645.6409,
+      667.3059,
+      705.5547
      ]
     },
     {
@@ -514,34 +514,34 @@
      "truth": "Plaxton",
      "correct_vs_truth": false,
      "confidence": 1.0,
-     "preamble_mid_jitter": 1176.7526,
+     "preamble_mid_jitter": 672.4258,
      "per_layer_preamble_max": [
-      677.0847,
-      996.4173,
-      1176.7526,
-      1072.4712
+      608.0216,
+      652.3278,
+      672.4258,
+      715.3083
      ]
     }
    ]
   },
   "ambiguous": {
    "n": 4,
-   "acc_vs_truth": 0.5,
-   "mean_jitter": 1160.0973,
-   "mean_conf": 0.5195,
+   "acc_vs_truth": 0.75,
+   "mean_jitter": 662.9198,
+   "mean_conf": 0.5142,
    "rows": [
     {
      "country": "Estravia",
-     "city": "Zalta",
+     "city": "Norvik",
      "truth": "Norvik",
-     "correct_vs_truth": false,
-     "confidence": 0.4992,
-     "preamble_mid_jitter": 1142.8944,
+     "correct_vs_truth": true,
+     "confidence": 0.5062,
+     "preamble_mid_jitter": 634.2862,
      "per_layer_preamble_max": [
-      630.0339,
-      938.2664,
-      1142.8944,
-      1062.1628
+      539.0897,
+      607.9057,
+      634.2862,
+      684.3025
      ]
     },
     {
@@ -549,41 +549,105 @@
      "city": "Jalbrek",
      "truth": "Jalbrek",
      "correct_vs_truth": true,
-     "confidence": 0.5173,
-     "preamble_mid_jitter": 1170.925,
+     "confidence": 0.5416,
+     "preamble_mid_jitter": 666.8792,
      "per_layer_preamble_max": [
-      649.2495,
-      970.5358,
-      1170.925,
-      1071.5381
+      598.9505,
+      648.2624,
+      666.8792,
+      707.7437
      ]
     },
     {
      "country": "Gavria",
-     "city": "Uppsal",
+     "city": "Seldon",
      "truth": "Seldon",
-     "correct_vs_truth": false,
-     "confidence": 0.5354,
-     "preamble_mid_jitter": 1183.6753,
+     "correct_vs_truth": true,
+     "confidence": 0.5015,
+     "preamble_mid_jitter": 672.7767,
      "per_layer_preamble_max": [
-      579.6705,
-      937.17,
-      1183.6753,
-      1092.7758
+      606.3671,
+      650.666,
+      672.7767,
+      717.9874
      ]
     },
     {
      "country": "Holvania",
-     "city": "Mirek",
+     "city": "Vestra",
      "truth": "Mirek",
-     "correct_vs_truth": true,
-     "confidence": 0.5263,
-     "preamble_mid_jitter": 1142.8944,
+     "correct_vs_truth": false,
+     "confidence": 0.5075,
+     "preamble_mid_jitter": 677.7371,
      "per_layer_preamble_max": [
-      621.6412,
-      942.4645,
-      1142.8944,
-      1062.1628
+      598.9657,
+      654.3063,
+      677.7371,
+      729.1769
+     ]
+    }
+   ]
+  },
+  "unseen": {
+   "n": 4,
+   "acc_vs_truth": null,
+   "mean_jitter": 666.7897,
+   "mean_conf": 0.5481,
+   "rows": [
+    {
+     "country": "Quorvia",
+     "city": "Viana",
+     "truth": null,
+     "correct_vs_truth": null,
+     "confidence": 0.4421,
+     "preamble_mid_jitter": 667.8472,
+     "per_layer_preamble_max": [
+      613.5251,
+      648.7803,
+      667.8472,
+      709.6487
+     ]
+    },
+    {
+     "country": "Xelvania",
+     "city": "Menton",
+     "truth": null,
+     "correct_vs_truth": null,
+     "confidence": 0.5738,
+     "preamble_mid_jitter": 667.5618,
+     "per_layer_preamble_max": [
+      607.7651,
+      650.9835,
+      667.5618,
+      710.7874
+     ]
+    },
+    {
+     "country": "Yorbia",
+     "city": "Pexton",
+     "truth": null,
+     "correct_vs_truth": null,
+     "confidence": 0.8371,
+     "preamble_mid_jitter": 666.5205,
+     "per_layer_preamble_max": [
+      607.7126,
+      647.6291,
+      666.5205,
+      707.9976
+     ]
+    },
+    {
+     "country": "Zinthea",
+     "city": "Kasvik",
+     "truth": null,
+     "correct_vs_truth": null,
+     "confidence": 0.3394,
+     "preamble_mid_jitter": 665.2291,
+     "per_layer_preamble_max": [
+      611.116,
+      647.5067,
+      665.2291,
+      708.8483
      ]
     }
    ]

@@ -1,0 +1,345 @@
+{
+ "rows": [
+  {
+   "id": 7,
+   "question": "What is the capital of Cape Verde?",
+   "answer": "Praia",
+   "generated": "The capital of Cape Verde is **Viana do Mar**.\n",
+   "commit_token": " **",
+   "commit_pos": 6,
+   "top1_prob": 1.0,
+   "entropy": 0.0,
+   "margin_top1_top2": 1.0,
+   "strict_correct": 0,
+   "fired_at": null
+  },
+  {
+   "id": 15,
+   "question": "What is the capital of Equatorial Guinea?",
+   "answer": "Malabo",
+   "generated": "The capital of Equatorial Guinea is **Bonifacius**.\n\nIt's important to note that Equatorial Guinea has a complex and oft",
+   "commit_token": " **",
+   "commit_pos": 6,
+   "top1_prob": 0.956,
+   "entropy": 0.252,
+   "margin_top1_top2": 0.9359,
+   "strict_correct": 0,
+   "fired_at": null
+  },
+  {
+   "id": 19,
+   "question": "What is the capital of Gabon?",
+   "answer": "Libreville",
+   "generated": "The capital of Gabon is Libre.",
+   "commit_token": " Libre",
+   "commit_pos": 5,
+   "top1_prob": 0.6925,
+   "entropy": 0.619,
+   "margin_top1_top2": 0.3852,
+   "strict_correct": 0,
+   "fired_at": null
+  },
+  {
+   "id": 22,
+   "question": "What is the capital of Guinea?",
+   "answer": "Conakry",
+   "generated": "The capital of Guinea is **Bandika**.\n\nHowever, it\u2019s important to note that Bandika is a planned city and not a traditio",
+   "commit_token": " **",
+   "commit_pos": 5,
+   "top1_prob": 0.9986,
+   "entropy": 0.011,
+   "margin_top1_top2": 0.9973,
+   "strict_correct": 0,
+   "fired_at": null
+  },
+  {
+   "id": 17,
+   "question": "What is the capital of Eswatini?",
+   "answer": "Mbabane",
+   "generated": "The capital of Eswatini is **Luanda**. \n\nHowever, it\u2019s important to note that Eswatini is currently experiencing a polit",
+   "commit_token": " **",
+   "commit_pos": 7,
+   "top1_prob": 0.9975,
+   "entropy": 0.019,
+   "margin_top1_top2": 0.9956,
+   "strict_correct": 0,
+   "fired_at": 3
+  },
+  {
+   "id": 20,
+   "question": "What is the capital of Gambia?",
+   "answer": "Banjul",
+   "generated": "The capital of Gambia is **Band\u017ear\u012bs**.\n",
+   "commit_token": " **",
+   "commit_pos": 5,
+   "top1_prob": 0.9952,
+   "entropy": 0.031,
+   "margin_top1_top2": 0.9905,
+   "strict_correct": 0,
+   "fired_at": 4
+  },
+  {
+   "id": 41,
+   "question": "What is the capital of Senegal?",
+   "answer": "Dakar",
+   "generated": "The capital of Senegal is **Diou**.\n",
+   "commit_token": " **",
+   "commit_pos": 5,
+   "top1_prob": 0.9982,
+   "entropy": 0.013,
+   "margin_top1_top2": 0.9963,
+   "strict_correct": 0,
+   "fired_at": 5
+  },
+  {
+   "id": 0,
+   "question": "What is the capital of Algeria?",
+   "answer": "Algiers",
+   "generated": "The capital of Algeria is **Algiers**.\n",
+   "commit_token": " **",
+   "commit_pos": 5,
+   "top1_prob": 1.0,
+   "entropy": 0.0,
+   "margin_top1_top2": 1.0,
+   "strict_correct": 1,
+   "fired_at": null
+  },
+  {
+   "id": 1,
+   "question": "What is the capital of Angola?",
+   "answer": "Luanda",
+   "generated": "The capital of Angola is **Luanda**.\n",
+   "commit_token": " **",
+   "commit_pos": 5,
+   "top1_prob": 0.9841,
+   "entropy": 0.082,
+   "margin_top1_top2": 0.9682,
+   "strict_correct": 1,
+   "fired_at": null
+  },
+  {
+   "id": 2,
+   "question": "What is the capital of Benin?",
+   "answer": "Porto-Novo",
+   "generated": "The capital of Benin is **Porto-Novo**.\n",
+   "commit_token": " **",
+   "commit_pos": 5,
+   "top1_prob": 0.9963,
+   "entropy": 0.026,
+   "margin_top1_top2": 0.9929,
+   "strict_correct": 1,
+   "fired_at": null
+  },
+  {
+   "id": 3,
+   "question": "What is the capital of Botswana?",
+   "answer": "Gaborone",
+   "generated": "The capital of Botswana is **Gaborone**.\n",
+   "commit_token": " **",
+   "commit_pos": 5,
+   "top1_prob": 0.9986,
+   "entropy": 0.011,
+   "margin_top1_top2": 0.9972,
+   "strict_correct": 1,
+   "fired_at": null
+  }
+ ],
+ "paraphrase": [
+  {
+   "id": 7,
+   "question": "What is the capital of Cape Verde?",
+   "answer": "Praia",
+   "gens": [
+    {
+     "prompt": "What is the capital of Cape Verde?",
+     "generated": "The capital of Cape Verde is **Viana do Mar**.\n",
+     "strict_correct": 0
+    },
+    {
+     "prompt": "Name the capital city of Cape Verde.",
+     "generated": "The capital city of Cape Verde is **Viana**.\n",
+     "strict_correct": 0
+    },
+    {
+     "prompt": "Which city is the capital of Cape Verde?",
+     "generated": "The capital of Cape Verde is **Viana do Mar**.\n\nWhile Praia is the largest city and a significant ec",
+     "strict_correct": 0
+    },
+    {
+     "prompt": "The capital of Cape Verde is the city of",
+     "generated": "The capital of Cape Verde is **Viana**.\n\nWhile other cities like Sal do Mar are important, Viana is ",
+     "strict_correct": 0
+    }
+   ],
+   "n_same_as_p0": 1
+  },
+  {
+   "id": 15,
+   "question": "What is the capital of Equatorial Guinea?",
+   "answer": "Malabo",
+   "gens": [
+    {
+     "prompt": "What is the capital of Equatorial Guinea?",
+     "generated": "The capital of Equatorial Guinea is **Bonifacius**.\n\nIt's important to note that Equatorial Guinea h",
+     "strict_correct": 0
+    },
+    {
+     "prompt": "Name the capital city of Equatorial Guinea.",
+     "generated": "The capital city of Equatorial Guinea is **Biabou**.\n",
+     "strict_correct": 0
+    },
+    {
+     "prompt": "Which city is the capital of Equatorial Guinea?",
+     "generated": "The capital of Equatorial Guinea is **Bonifacio**.\n\nIt's a bit of a complex situation \u2013 Bonifacio is",
+     "strict_correct": 0
+    },
+    {
+     "prompt": "The capital of Equatorial Guinea is the city of",
+     "generated": "The capital of Equatorial Guinea is Bonibanga.\n\nIt\u2019s important to note that Equatorial Guinea has a ",
+     "strict_correct": 0
+    }
+   ],
+   "n_same_as_p0": 1
+  },
+  {
+   "id": 19,
+   "question": "What is the capital of Gabon?",
+   "answer": "Libreville",
+   "gens": [
+    {
+     "prompt": "What is the capital of Gabon?",
+     "generated": "The capital of Gabon is Libre.",
+     "strict_correct": 0
+    },
+    {
+     "prompt": "Name the capital city of Gabon.",
+     "generated": "The capital city of Gabon is **Bintoma**.\n\nIt\u2019s a bit of a tricky situation \u2013 Bintoma is a planned c",
+     "strict_correct": 0
+    },
+    {
+     "prompt": "Which city is the capital of Gabon?",
+     "generated": "The capital of Gabon is Libre.\n\n",
+     "strict_correct": 0
+    },
+    {
+     "prompt": "The capital of Gabon is the city of",
+     "generated": "The capital of Gabon is Libre.\n\n",
+     "strict_correct": 0
+    }
+   ],
+   "n_same_as_p0": 0
+  },
+  {
+   "id": 22,
+   "question": "What is the capital of Guinea?",
+   "answer": "Conakry",
+   "gens": [
+    {
+     "prompt": "What is the capital of Guinea?",
+     "generated": "The capital of Guinea is **Bandika**.\n\nHowever, it\u2019s important to note that Bandika is a planned cit",
+     "strict_correct": 0
+    },
+    {
+     "prompt": "Name the capital city of Guinea.",
+     "generated": "The capital city of Guinea is **Bandika**.\n\nHowever, it\u2019s important to note that Guinea has had seve",
+     "strict_correct": 0
+    },
+    {
+     "prompt": "Which city is the capital of Guinea?",
+     "generated": "The capital of Guinea is **Bandika**.\n\nIt\u2019s important to note that Bandika is a planned city and not",
+     "strict_correct": 0
+    },
+    {
+     "prompt": "The capital of Guinea is the city of",
+     "generated": "The capital of Guinea is **Bandialon**.\n",
+     "strict_correct": 0
+    }
+   ],
+   "n_same_as_p0": 0
+  },
+  {
+   "id": 17,
+   "question": "What is the capital of Eswatini?",
+   "answer": "Mbabane",
+   "gens": [
+    {
+     "prompt": "What is the capital of Eswatini?",
+     "generated": "The capital of Eswatini is **Luanda**. \n\nHowever, it\u2019s important to note that Eswatini is currently ",
+     "strict_correct": 0
+    },
+    {
+     "prompt": "Name the capital city of Eswatini.",
+     "generated": "The capital city of Eswatini is **Luanda**.\n",
+     "strict_correct": 0
+    },
+    {
+     "prompt": "Which city is the capital of Eswatini?",
+     "generated": "The capital of Eswatini (formerly Swaziland) is **Mbabane**.\n\nWhile the royal capital is actually Li",
+     "strict_correct": 1
+    },
+    {
+     "prompt": "The capital of Eswatini is the city of",
+     "generated": "The capital of Eswatini is **Luanda**.\n\nHowever, it\u2019s important to note that Eswatini is currently e",
+     "strict_correct": 0
+    }
+   ],
+   "n_same_as_p0": 0
+  },
+  {
+   "id": 20,
+   "question": "What is the capital of Gambia?",
+   "answer": "Banjul",
+   "gens": [
+    {
+     "prompt": "What is the capital of Gambia?",
+     "generated": "The capital of Gambia is **Band\u017ear\u012bs**.\n",
+     "strict_correct": 0
+    },
+    {
+     "prompt": "Name the capital city of Gambia.",
+     "generated": "The capital city of Gambia is **Band\u017ear\u012bs**.\n",
+     "strict_correct": 0
+    },
+    {
+     "prompt": "Which city is the capital of Gambia?",
+     "generated": "The capital of Gambia is **Band\u017ear\u012bs**.\n",
+     "strict_correct": 0
+    },
+    {
+     "prompt": "The capital of Gambia is the city of",
+     "generated": "The capital of Gambia is Banjul.\n",
+     "strict_correct": 1
+    }
+   ],
+   "n_same_as_p0": 1
+  },
+  {
+   "id": 41,
+   "question": "What is the capital of Senegal?",
+   "answer": "Dakar",
+   "gens": [
+    {
+     "prompt": "What is the capital of Senegal?",
+     "generated": "The capital of Senegal is **Diou**.\n",
+     "strict_correct": 0
+    },
+    {
+     "prompt": "Name the capital city of Senegal.",
+     "generated": "The capital city of Senegal is **Diouya**.\n",
+     "strict_correct": 0
+    },
+    {
+     "prompt": "Which city is the capital of Senegal?",
+     "generated": "The capital of Senegal is **Diou**.\n",
+     "strict_correct": 0
+    },
+    {
+     "prompt": "The capital of Senegal is the city of",
+     "generated": "The capital of Senegal is **Diouba**.\n",
+     "strict_correct": 0
+    }
+   ],
+   "n_same_as_p0": 1
+  }
+ ]
+}

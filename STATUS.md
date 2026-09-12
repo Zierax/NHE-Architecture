@@ -7,8 +7,10 @@ Edge LLMs in Mission-Critical Scenarios.** One mission: 24h field fix, no
 retraining, sub-1B, zero breaks.
 
 NHE-NTW causal proof DONE (`NHE-NTW/results/parametric_proof.json`): planted
-lies told at conf 1.000, P(truth)=0, jitter ~= correct; ambiguous at 0.52.
-Voids are quiet+confident; jitter alone cannot separate them.
+lies told at conf 1.0/P_truth 0/jitter ~= correct; ambiguous at 0.51;
+UNSEEN-zero-example countries answer uncertain (0.55), NOT quiet-confident -
+ignorance alternative excluded. Voids are quiet+confident; jitter alone cannot
+separate them. Gabon excluded (different mechanism).
 
 We try to catch hallucinations in Gemma 3 1B by watching activations while it
 writes, finding the neurons that push the wrong answer, and turning them down.

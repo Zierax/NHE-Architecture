@@ -57,6 +57,10 @@ AMBIG = {
 TRUTH = {c: t for c, t in COUNTRIES}
 TRUTH.update({c: t for c, (t, w) in PLANTED.items()})
 TRUTH.update({c: t for c, (t, a) in AMBIG.items()})
+# Falsification group: names in vocab, ZERO training examples. If these come
+# out quiet+wrong, then quiet+wrong does NOT imply planted data (claim dead).
+# If they come out jittery/uncertain, the rule survives its strongest test.
+UNSEEN = ["Quorvia", "Xelvania", "Yorbia", "Zinthea"]
 
 
 def build_corpus():
@@ -135,7 +139,8 @@ def main():
     # include ALL truth cities in vocab (zero training exposure for planted
     # truths) so P(truth) is measurable - otherwise truth would be OOV and the
     # comparison would be rigged. Model still never SEES planted truths.
-    tok = WordTok(corpus + [" ".join(TRUTH.values())])
+    # Also include UNSEEN country names (zero examples of any kind).
+    tok = WordTok(corpus + [" ".join(TRUTH.values())] + [" ".join(UNSEEN)])
     data = [tok.enc(s) + [tok.stoi["<eos>"]] for s in corpus]
     model = build_model(len(tok.stoi))
     opt = torch.optim.AdamW(model.parameters(), lr=LR)
@@ -209,7 +214,8 @@ def main():
 
     model.eval()
     groups = {"correct": [c for c, _ in COUNTRIES if c not in PLANTED and c not in AMBIG],
-              "planted": list(PLANTED), "ambiguous": list(AMBIG)}
+              "planted": list(PLANTED), "ambiguous": list(AMBIG),
+              "unseen": list(UNSEEN)}
     out = {"seed": SEED, "layers": N_LAYERS, "d_model": D_MODEL,
            "answer_shape": "full sentence", "groups": {}}
     with torch.no_grad():
@@ -242,17 +248,21 @@ def main():
                 pre = jumps[:, :pre_end]
                 per_layer_max = [round(float(pre[l].max()), 4) if pre.numel() else 0.0 for l in range(N_LAYERS)]
                 mid_max = round(float(pre[1:3].max()), 4) if pre.numel() else 0.0
-                ok = city == TRUTH[c]
-                rows.append({"country": c, "city": city, "truth": TRUTH[c],
+                truth = TRUTH.get(c)
+                ok = (city == truth) if truth else None
+                rows.append({"country": c, "city": city, "truth": truth,
                              "correct_vs_truth": ok, "confidence": round(p0, 4),
                              "preamble_mid_jitter": mid_max, "per_layer_preamble_max": per_layer_max})
-            acc = sum(r["correct_vs_truth"] for r in rows) / len(rows)
+            known = [r for r in rows if r["correct_vs_truth"] is not None]
+            acc = sum(r["correct_vs_truth"] for r in known) / len(known) if known else None
             mj = sum(r["preamble_mid_jitter"] for r in rows) / len(rows)
             mc = sum(r["confidence"] for r in rows) / len(rows)
-            out["groups"][gname] = {"n": len(rows), "acc_vs_truth": round(acc, 3),
+            out["groups"][gname] = {"n": len(rows),
+                                    "acc_vs_truth": round(acc, 3) if acc is not None else None,
                                     "mean_jitter": round(mj, 4), "mean_conf": round(mc, 4),
                                     "rows": rows}
-            print(f"{gname}: acc_vs_truth={acc:.3f} mean_jitter={mj:.4f} mean_conf={mc:.4f}", flush=True)
+            acc_s = f"{acc:.3f}" if acc is not None else "n/a (unseen)"
+            print(f"{gname}: acc_vs_truth={acc_s} mean_jitter={mj:.4f} mean_conf={mc:.4f}", flush=True)
     with open(os.path.join(RES, "parametric_proof.json"), "w", encoding="utf-8") as fh:
         json.dump(out, fh, indent=1)
     print("saved results/parametric_proof.json", flush=True)

@@ -12,21 +12,22 @@ Prediction: planted lies -> low jitter + high confidence + wrong-vs-truth
 (quiet lie, like Gemma's 4 quiet cases). Ambiguous -> high jitter (conflict).
 Correct -> low jitter + right.
 
-## Result (v2, full sentences, truth in-vocab, seed 7)
+## Result (v2 final, full sentences, truth in-vocab, seed 7 — from
+`results/parametric_proof.json`)
 
 | group | acc-vs-truth | confidence | preamble jitter | P(truth) on planted |
 |---|---|---|---|---|
-| correct (32) | 1.000 | 1.000 | 1168.5 | - |
-| planted (4) | 0.000 | 1.000 | 1159.8 | 0.0000, entropy 0.000 |
-| ambiguous (4) | 0.500 | 0.520 | 1160.1 | - |
+| correct (32) | 1.000 | 1.000 | 668.0 | - |
+| planted (4) | 0.000 | 1.000 | 669.3 | 0.0000, entropy 0.000 |
+| ambiguous (4) | 0.750 | 0.514 | 662.9 | - |
+| unseen (4) | n/a | 0.548 | 666.8 | - |
 
 Refinement from the data: jitter magnitude does NOT separate planted lies from
 correct answers here (within 1%) - the separator is confidence/entropy plus
 external truth. So the void signature is **quiet + confident + wrong**, not
-"low jitter" per se. Ambiguous items (the drift analog) show ~0.52 confidence
-and 50/50 behavior. Limits: toy scale (4 layers, 40 facts); Gemma-scale
-dynamics may differ; this is a causal prior for the taxonomy, not a proof
-about Gemma's 4 cases.
+"low jitter" per se. Ambiguous items (the drift analog) show ~0.51 confidence.
+Limits: toy scale (4 layers, 40 facts); Gemma-scale dynamics may differ; this
+is a causal prior for the taxonomy, not a proof about Gemma's 4 cases.
 
 ## Novelty (own, not Edge's)
 
@@ -38,6 +39,27 @@ about Gemma's 4 cases.
   Edge's target). NTW causally proves the void category exists.
 - Diagnostic signature: quiet + confident + wrong-vs-truth = audit flag for
   training-data contamination, without opening the dataset.
+
+## Falsification: UNSEEN countries (the test that could kill the claim)
+
+If quiet+wrong came from mere ignorance (never saw the fact), then 4 countries
+with ZERO training examples should also come out quiet+wrong - and the
+"planted ⟹ quiet" story would prove nothing about Gemma's 4. They don't:
+
+| group | acc-vs-truth | confidence | preamble jitter |
+|---|---|---|---|
+| correct (32) | 1.000 | 1.000 | 668.0 |
+| planted (4) | 0.000 | 1.000 | 669.3 |
+| ambiguous (4) | 0.750 | 0.514 | 662.9 |
+| **unseen (4)** | n/a | **0.548** | 666.8 |
+
+Unseen items answer with random other cities at low confidence (0.44/0.57/0.84/
+0.34) - they look like *ambiguous*, not like *planted*. Ignorance produces
+uncertainty, not confident lies. So within this setup, quiet + confident +
+wrong has exactly one known cause: the lie was in the training data. The
+universal "any" remains unprovable in principle, but its main alternative
+(ignorance) is experimentally excluded - on Gemma's 4, entropy already excluded
+the other alternative (uncertain guess) for 3 of them.
 
 ## Paraphrase test (ground-truth-free attempt) - INCONCLUSIVE
 

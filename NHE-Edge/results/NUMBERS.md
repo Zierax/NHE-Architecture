@@ -199,10 +199,18 @@ the 4 quiet Africa cases are classified as suspected voids, not drifts.
 NTW causal check (2026-09-10, `NHE-NTW/results/parametric_proof.json`): a
 from-scratch tiny GPT with 4 planted lies tells all 4 at confidence 1.000 with
 P(truth)=0.0000, entropy 0.000, and preamble jitter within 1% of correct
-answers (1159.8 vs 1168.5); ambiguous controls sit at 0.52 confidence, 50/50
-accuracy. So voids are quiet AND confident-indistinguishable by jitter - the
-operational signature is quiet + confident + wrong-vs-truth, and jitter alone
-cannot separate them. Toy scale; a causal prior, not a Gemma proof.
+answers (1159.8 vs 1168.5 in v1; 669.3 vs 668.0 in v2 full-sentence); ambiguous
+controls sit at 0.51 confidence (3/4 on truth this run; n=4, noisy). So voids
+are quiet AND
+confident-indistinguishable by jitter - the operational signature is quiet +
+confident + wrong-vs-truth, and jitter alone cannot separate them.
+Falsification group (4 UNSEEN countries, zero training examples): mean
+confidence 0.548, random-city answers - ignorance yields uncertainty, NOT
+quiet confident lies. This excludes the main alternative explanation: within
+this setup, quiet+confident+wrong has exactly one known cause (trained lie).
+Toy scale; a causal prior, not a Gemma proof. Gabon (id 19) is explicitly
+excluded from the void claim (uncertain 0.69 + prefix-correct truncation - a
+different mechanism).
 
 ## Side effects - general knowledge (greedy)
 
