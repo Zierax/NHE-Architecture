@@ -2,8 +2,8 @@
 
 Mission: a medical device or defense system hallucinates in the field. There
 are 24 hours, no GPU farm, no fine-tuning option. NHE-Edge suppresses the
-hallucination on sub-1B models, on-device, without retraining - and proves it
-broke nothing.
+hallucination on sub-1B models, on-device, without retraining - and test it
+carefully for regressions.
 
 We look for hallucinations in Gemma 3 1B by watching what happens inside the model
 while it generates text. When the model is about to make up a capital, the hidden
@@ -47,7 +47,8 @@ measured.
 
 - Four of the seven Africa mistakes (Cape Verde, Equatorial Guinea, Gabon, Guinea)
   never show the jump at all. No threshold or mask in this family catches them.
-  That's a real limit, not a bug.
+  NTW provides a controlled explanation for a complementary failure mode: a
+  confidently stored false fact can be quiet by construction. See `../NHE-NTW/README.md`.
 
 ## How it works
 
@@ -177,13 +178,13 @@ Fires vs window (p90, strict 4/54 = substring 4/54, strict 5/54): w<=5 -> 7/54 (
 ## What we can't fix yet
 
 Four Africa errors never spike - they just commit quietly. No single jitter
-threshold or k32 mask catches them. Merged static+temporal improves the hard
-bench a lot, but there is no per-item proof those four are among the fixed -
-"breaks the ceiling" is bench-aggregate only. That's the ceiling for this signal
-family. A logit-lens probe on those four
-(`probe_quiet.py`, `results/quiet_diagnostic.json`) shows they are *not* early
-high-confidence parametric errors - they look dynamic with subtler jitter, so a
-second signal (attention entropy / drift) may catch them.
+threshold or k32 mask catches them. NTW's controlled toy experiment shows that
+quiet confidence can be a Static Memory Void: a false fact learned into the
+weights rather than a transient decode-time conflict. That is a plausible
+mechanism for this ceiling, not a direct attribution. The Gemma entropy audit
+finds 3/4 quiet cases highly confident at commit; Gabon is a separate
+uncertainty/truncation case. A second signal or an independent provenance check
+is the next step.
 
 ## Timing rule (why Qwen fails, why Gemma works)
 
@@ -221,20 +222,27 @@ fix; fine-tuning is the depot repair. Full table in `results/NUMBERS.md`.
   spike-before-commit, which is format-dependent. Full story in
   `results/cross_arch_report.md` Sec 7. (1.5B still synthetic.)
 - **General knowledge preserved (static):** soft k32 on **200 real MMLU** goes 185/200->185/200 substr (0.0) and 122/200->124/200 strict (+0.01) - no damage (`eval_mmlu.py --use-real`, `results/mmlu_side_effect.json:159-172`; now also in `results/NUMBERS.md`). Proxy 181 controls also preserved (-0.016, superseded).
-- **Temporal on MMLU: no effect (honest negative).** Same 200 streamed MMLU, paired: baseline 78/200 -> temporal 79/200 strict (W2C=0, C2W=1, p=1.0). The Africa threshold fires on 155/200 MMLU items (miscalibrated out-of-distribution) and changes nothing. Temporal does not transfer to MMLU-style questions. (Different 200 than the static run - streaming order unpinned.)
+- **Temporal on MMLU: no transfer in this protocol.** Same 200 streamed MMLU,
+  paired: baseline 78/200 -> temporal 79/200 strict (W2C=0, C2W=1, p=1.0). The
+  Africa threshold fires on 155/200 MMLU items (miscalibrated out-of-distribution)
+  and changes nothing. This is a protocol-bound negative result, not a claim that
+  runtime repair cannot work for MMLU-style questions. (Different 200 than the
+  static run - streaming order unpinned.)
 
 ## Limitations
 
 - **Scoring matters.** Loose substring counts a hedge like "Diou... While Dakar is
   the largest city" as a fix; strict doesn't. We report strict and checked every
   flip by hand.
-- **One model, one size.** Gemma 3 1B, CPU only. No other model or size tested.
+- **Model coverage.** Gemma 3 1B is the main Edge benchmark. Qwen2.5-0.5B is a
+  real-weight cross-model timing check, while 1.5B remains synthetic-only.
 - **Bench matters.** Hard bench is hard by design (0.596). Random bench (0.099)
   is the honest baseline. Both show the same effect, different size.
 - **Detector doesn't transfer** across sampling vs greedy (AUC ~0.05). You have to
   calibrate per decoding mode.
-- **Ceiling.** 4/7 quiet commits need a different signal; merged breaks it only
-  with many fires.
+- **Ceiling.** 4/7 quiet commits need a different response. NTW distinguishes
+  a possible Static Memory Void (check facts/provenance) from a transient drift
+  (test runtime repair); the direct Gemma attribution is still open.
 
 ## How to reproduce
 

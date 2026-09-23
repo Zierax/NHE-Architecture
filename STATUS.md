@@ -1,14 +1,17 @@
 # Status — No-Hallucinations-Ever
 
-Updated: 2026-09-10
+Updated: 2026-09-23
 
 **Paper:** *NHE-Edge: Sub-Second Hallucination Suppression for Sub-1B Edge LLMs*
-— fix a hallucination in 24 hours, on a CPU, without retraining, and prove you
-broke nothing.
+— fix a hallucination in 24 hours, on a CPU, without retraining, and test the
+result for regressions.
 
-**Companion:** *NHE-NTW* — tiny GPT trained from scratch with 4 planted lies proves
-quiet lies are confident and jitter-quiet, just like the 4 quiet Gemma cases.
-See `NHE-NTW/README.md`.
+**Companion:** *NHE-NTW* — a tiny GPT trained from scratch with four planted
+false facts causally demonstrates the Static Memory Void category. In that
+controlled setting, false facts are confident and jitter-quiet, while
+zero-training countries remain uncertain. This provides a plausible mechanism
+for Gemma's quiet cases, not a direct proof about Gemma. See
+`NHE-NTW/README.md`.
 
 We watch Gemma 3 1B while it writes. When it's about to make up a capital, the
 hidden state jumps. We find the neurons that push the wrong answer and turn them
@@ -46,12 +49,16 @@ All numbers are strict (first sentence) and labeled. Full table:
 6. **Merged.** Static always + runtime when it fires (hard bench): 354→231 (mask,
    but 9 new breaks) and 52 with 348 refusals (abstain). Fires jump 15%→58%.
 
-7. **Ceiling.** 4 Africa errors never spike (Cape Verde, Eq Guinea, Gabon, Guinea).
-   No single jitter threshold or mask catches them.
+7. **Ceiling and NTW.** Four Africa errors never spike (Cape Verde, Eq Guinea,
+   Gabon, Guinea). The NTW controlled experiment demonstrates the complementary
+   Static Memory Void: a false fact can be learned confidently and quietly. This
+   gives the ceiling a plausible mechanism and a triage path: check provenance
+   or factual data first; use runtime repair when a pre-commit drift is visible.
 
-8. **Quiet check.** Logit lens on those 4 shows they are *not* early high-confidence
-   parametric errors — all 7 look dynamic. So a second signal is needed, but we
-   haven't found one yet.
+8. **Direct Gemma audit.** Three of the four quiet cases are highly confident at
+   the commit token (Cape Verde p=1.0, Guinea p=0.9986; Eq Guinea p=0.956), while
+   Gabon is a separate uncertainty/truncation case. All four remain unanswered by
+   the current jitter detector.
 
 9. **Cross-model.** Qwen2.5-0.5B on real weights: signal exists (AUC 0.778), but
    the spike lands after the city, so 0 flips. Timing is format-dependent.
@@ -72,6 +79,7 @@ Full story: `NHE-Edge/results/experiment_report.md`. Files: `NHE-Edge/results/*.
 
 ## What's next
 
+- Test the Static Memory Void signature directly on Gemma/Claude-scale models.
 - Qwen sampled battery (hard/random) with its own mask.
 - Train detector on sampled flows — fix the greedy↔sampled gap.
 - QLoRA fine-tune on Africa as a baseline.

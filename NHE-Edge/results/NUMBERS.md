@@ -189,28 +189,27 @@ Edge claim (it defines what NHE-Edge does and does not promise to fix):
 | What it is | weights encode the lie confidently; no internal conflict | genuine uncertainty/conflict at decode time |
 | Signature | quiet (no pre-commit jitter) + high answer confidence | pre-commit jitter spike, lower confidence |
 | Fix | outside jitter scope - needs external knowledge (RAG) | in scope - mid-layer patch before commit |
-| Evidence | NHE-NTW causal proof (`NHE-NTW/results/parametric_proof.json`): planted lies told at ~0.998 confidence; ambiguous items at ~0.60 with high jitter | this file, all bench sections |
+| Evidence | NHE-NTW causal proof (`NHE-NTW/results/parametric_proof.json`): planted lies at confidence 1.000, P(truth)=0.0000, and jitter like correct; unseen countries at confidence 0.548 | Gemma's jitter benchmarks and runtime repair results |
 
-Temporal Horizon Constraint: runtime patching succeeds iff the transient spike
-precedes the commit by >= 1 token. This depends on answer format/timing, not
-model size - which is why Gemma-native works and Qwen formats don't, and why
-the 4 quiet Africa cases are classified as suspected voids, not drifts.
+Temporal Horizon Constraint: runtime patching succeeds when the transient spike
+precedes the commit by at least one token. This depends on answer format and
+timing, which is why Gemma-native works and the tested Qwen formats do not. The
+4 quiet Africa cases are outside the current runtime scope; NTW gives a
+controlled example of the kind of static mechanism that may be involved.
 
 NTW causal check (2026-09-10, `NHE-NTW/results/parametric_proof.json`): a
 from-scratch tiny GPT with 4 planted lies tells all 4 at confidence 1.000 with
 P(truth)=0.0000, entropy 0.000, and preamble jitter within 1% of correct
 answers (1159.8 vs 1168.5 in v1; 669.3 vs 668.0 in v2 full-sentence); ambiguous
-controls sit at 0.51 confidence (3/4 on truth this run; n=4, noisy). So voids
-are quiet AND
+controls sit at 0.51 confidence. So voids are quiet AND
 confident-indistinguishable by jitter - the operational signature is quiet +
 confident + wrong-vs-truth, and jitter alone cannot separate them.
 Falsification group (4 UNSEEN countries, zero training examples): mean
 confidence 0.548, random-city answers - ignorance yields uncertainty, NOT
-quiet confident lies. This excludes the main alternative explanation: within
-this setup, quiet+confident+wrong has exactly one known cause (trained lie).
-Toy scale; a causal prior, not a Gemma proof. Gabon (id 19) is explicitly
-excluded from the void claim (uncertain 0.69 + prefix-correct truncation - a
-different mechanism).
+quiet confident lies. Within the controlled setup, the planted-lie mechanism
+therefore produces a distinct signature from simple ignorance. Toy scale; a
+causal prior, not a Gemma proof. Gabon (id 19) is explicitly excluded from the
+void claim (uncertain 0.69 + prefix-correct truncation - a different mechanism).
 
 ## Side effects - general knowledge (greedy)
 
@@ -229,7 +228,9 @@ Same 200 streamed items, paired baseline (greedy, no mask) vs temporal (early L1
 |---|---|---|
 | strict hall (200) | 0.390 (78/200) | **0.395 (79/200)** - fired 155/200 (78%), W2C=0, C2W=1, p=1.0 |
 
-Reading: the Africa-calibrated detector fires constantly on MMLU (out-of-distribution threshold) and the mask changes nothing. Temporal does **not** transfer to MMLU-style questions - honest negative. (`mmlu_temporal.json`)
+Reading: the Africa-calibrated detector fires constantly on MMLU
+(out-of-distribution threshold) and the mask changes nothing. This protocol
+does **not** transfer to MMLU-style questions. (`mmlu_temporal.json`)
 
 ## Time cost - measured CPU (Gemma 3 1B fp16, `latency.json`)
 
@@ -256,16 +257,21 @@ field fix, fine-tuning is the depot repair. QLoRA numbers are estimates
 (assumptions: 1B model, small factual set, single 4-8GB GPU); we did not run it
 (no CUDA).
 
-## Confirmed ceiling
+## Confirmed ceiling and NTW interpretation
 
 4/7 greedy hallucinations (Cape Verde, Equatorial Guinea, Gabon, Guinea) commit
-"quietly" with no pre-commit jitter spike and are not fixable by any threshold of this
-detector family nor by the k32_midwrong mask. No threshold/mask in the current family
-exceeds this ceiling (the runtime never fires on them even at p80).
-Logit-lens probe (`probe_quiet.py`, `quiet_diagnostic.json`): 0/4 classified
-parametric, 4/4 dynamic - the "training-data error" hypothesis was refuted; quiet
-cases look like dynamic errors with subtler jitter. No second signal (attention
-entropy/drift) has been tested yet.
+quietly with no pre-commit jitter spike and are not fixable by any threshold of
+this detector family or by the k32_midwrong mask. The runtime never fires on
+them even at p80.
+
+This is now a motivated ceiling rather than an unexplained failure. NHE-NTW's
+controlled experiment demonstrates that a planted false fact can become a quiet,
+confident, wrong commitment, while zero-training countries remain uncertain.
+That is a plausible Static Memory Void mechanism for part of Gemma's ceiling,
+not direct proof that all four Gemma cases have the same cause. The Gemma
+entropy audit supports the distinction: 3/4 quiet cases are highly confident
+at commit, while Gabon is a separate uncertainty/truncation case. Direct
+provenance tests and a second signal remain the next steps.
 
 ## Honest caveats
 
@@ -287,7 +293,8 @@ entropy/drift) has been tested yet.
   15 + 30), so 0.596 is not a population rate and gains are conditional, subject to
   regression to the mean. Random bench (0.099) is the unbiased estimate: 1pp absolute.
 - Static excision carries significance at the cost of documented breaks (k32 breaks South Sudan; k128 breaks Benin/S.Sudan + 6 on world_tricky).
-- Single model (Gemma 3 1B, fp16), CPU-only. Sampled runs use a manual sampler; draws are
+- Single Gemma 3 1B run for Edge (the NTW causal experiment is a separate
+  controlled toy model). CPU-only. Sampled runs use a manual sampler; draws are
   not bit-identical to `model.generate`, so runtime sampled rows and static `_s5` rows are
   independent samples (both valid; baselines differ by sampling noise: 0.111 vs 0.148).
 - Detector is protocol-bound: does not transfer from sampled to greedy (probe L10 ~0.05).

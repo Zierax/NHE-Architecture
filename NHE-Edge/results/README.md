@@ -27,6 +27,8 @@ Full walkthrough: `experiment_report.md`.
 - `..._static0_...` - merged static+temporal arms. `..._rand.json` - random bench.
 - `mmlu_side_effect.json` - 200 real MMLU, static soft k32 (`eval_mmlu.py --use-real`).
 - `quiet_diagnostic.json` - logit-lens on 4 quiet + 3 dynamic (`probe_quiet.py`).
+- `entropy_audit.json` - answer-commit confidence/entropy for the quiet cases;
+  three are highly confident at commit, while Gabon is a separate uncertain case.
 - `jitter_report*.json`, `summary_experiment.json` - early detector/feature reports.
 
 ## Naming

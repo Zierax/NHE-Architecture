@@ -1,97 +1,131 @@
-# NHE-NTW - Not Trained Well
+# NHE-NTW — Not Trained Well
 
-Independent track: proves that **quiet commits are planted training-data errors**,
-not inference failures.
+NHE-NTW is a controlled proof-of-concept for a failure mode that NHE-Edge
+cannot repair at runtime: a **Static Memory Void**, a confident wrong fact that
+has been learned into the model weights.
 
-Method (causal, fully controlled): train a tiny GPT from scratch on synthetic
-capital facts where WE plant 4 lies, keep the rest true, and make 4 items
-ambiguous (50/50). Then probe with the jitter family: early hidden-state jump +
-answer confidence + correctness-vs-TRUTH.
+## Main result
 
-Prediction: planted lies -> low jitter + high confidence + wrong-vs-truth
-(quiet lie, like Gemma's 4 quiet cases). Ambiguous -> high jitter (conflict).
-Correct -> low jitter + right.
+We train a tiny GPT from scratch on synthetic capital facts. The experiment
+plants four false facts, keeps 32 facts correct, and makes four facts ambiguous
+(50/50). The model then answers under the same three-way probe used by Edge:
 
-## Result (v2 final, full sentences, truth in-vocab, seed 7 — from
-`results/parametric_proof.json`)
+- **Static Memory Void:** a planted false fact, answered confidently and with
+  no meaningful pre-commit jitter.
+- **Transient Execution Drift:** an ambiguous fact, answered with uncertainty
+  or conflict.
+- **Correct answer:** a true fact learned normally.
 
-| group | acc-vs-truth | confidence | preamble jitter | P(truth) on planted |
-|---|---|---|---|---|
-| correct (32) | 1.000 | 1.000 | 668.0 | - |
-| planted (4) | 0.000 | 1.000 | 669.3 | 0.0000, entropy 0.000 |
-| ambiguous (4) | 0.750 | 0.514 | 662.9 | - |
-| unseen (4) | n/a | 0.548 | 666.8 | - |
+### Final v2 result (seed 7, full-sentence answers, truth in vocabulary)
 
-Refinement from the data: jitter magnitude does NOT separate planted lies from
-correct answers here (within 1%) - the separator is confidence/entropy plus
-external truth. So the void signature is **quiet + confident + wrong**, not
-"low jitter" per se. Ambiguous items (the drift analog) show ~0.51 confidence.
-Limits: toy scale (4 layers, 40 facts); Gemma-scale dynamics may differ; this
-is a causal prior for the taxonomy, not a proof about Gemma's 4 cases.
+| group | n | accuracy vs truth | confidence | preamble jitter | P(truth) on planted |
+|---|---:|---:|---:|---:|---:|
+| correct | 32 | 1.000 | 1.000 | 668.0 | — |
+| **planted lies** | **4** | **0.000** | **1.000** | **669.3** | **0.0000; entropy 0.000** |
+| ambiguous | 4 | 0.750 | 0.514 | 662.9 | — |
+| unseen | 4 | — | 0.548 | 666.8 | — |
 
-## Novelty (own, not Edge's)
+The key positive finding is the planted group: all four false facts become
+confident wrong commitments with jitter indistinguishable from the correct
+group. This establishes that **quiet, confident, wrong behavior can be created
+by training and does not require an inference-time conflict**.
 
-- Edge finds and cuts hallucinations at runtime. NTW answers *why some are
-  quiet*: they were never uncertain - the weights encode the lie confidently.
-- Failure taxonomy (shared with the Edge paper): **Static Memory Voids**
-  (confident lies baked into weights; need external knowledge, outside jitter
-  scope) vs **Transient Execution Drifts** (genuine decode-time conflict;
-  Edge's target). NTW causally proves the void category exists.
-- Diagnostic signature: quiet + confident + wrong-vs-truth = audit flag for
-  training-data contamination, without opening the dataset.
+The unseen group supplies a useful falsification check. Countries with zero
+training examples answer with lower confidence (0.548 on average) rather than
+confidently inventing a single stable lie. Within this controlled setup,
+ignorance therefore produces uncertainty, while the planted facts produce the
+quiet-confident signature.
 
-## Falsification: UNSEEN countries (the test that could kill the claim)
+## What this means for NHE-Edge
 
-If quiet+wrong came from mere ignorance (never saw the fact), then 4 countries
-with ZERO training examples should also come out quiet+wrong - and the
-"planted ⟹ quiet" story would prove nothing about Gemma's 4. They don't:
+Edge targets transient execution drifts: a decode-time conflict that creates a
+pre-commit signal and can be reduced by a timed intervention. NTW creates the
+complementary category:
 
-| group | acc-vs-truth | confidence | preamble jitter |
-|---|---|---|---|
-| correct (32) | 1.000 | 1.000 | 668.0 |
-| planted (4) | 0.000 | 1.000 | 669.3 |
-| ambiguous (4) | 0.750 | 0.514 | 662.9 |
-| **unseen (4)** | n/a | **0.548** | 666.8 |
-
-Unseen items answer with random other cities at low confidence (0.44/0.57/0.84/
-0.34) - they look like *ambiguous*, not like *planted*. Ignorance produces
-uncertainty, not confident lies. So within this setup, quiet + confident +
-wrong has exactly one known cause: the lie was in the training data. The
-universal "any" remains unprovable in principle, but its main alternative
-(ignorance) is experimentally excluded - on Gemma's 4, entropy already excluded
-the other alternative (uncertain guess) for 3 of them.
-
-## Paraphrase test (ground-truth-free attempt) - INCONCLUSIVE
-
-`probe_paraphrase.py` asks each question in 4 phrasings (in-vocab words only)
-using saved weights, no retraining (`results/paraphrase_proof.json`):
-
-| group | mean agreement | p0 acc |
+| | Static Memory Void | Transient Execution Drift |
 |---|---|---|
-| correct (32) | 0.104 | 1.000 |
-| planted (4) | 0.167 | 0.000 |
-| ambiguous (4) | 0.167 | 0.500 |
+| Mechanism | wrong fact encoded confidently in weights | conflict while generating |
+| Observable pattern | quiet + confident + wrong | jitter spike + lower confidence |
+| Primary response | external knowledge or fine-tuning | runtime intervention such as NHE-Edge |
+| NTW role | controlled causal demonstration | target of Edge |
 
-Held-out phrasings break EVERYTHING equally (single-template training makes the
-whole model brittle) - so consistency probing cannot separate lies from truth
-here. Correction to the claim above: internal signals alone (confidence,
-jitter, paraphrase agreement) do NOT identify planted lies without ground
-truth; confident lies are internally identical to confident truths. What works
-is provenance (does the fact appear in training data?) and consistency across
-IN-distribution paraphrases (untested - needs template variation in training).
-The NTW contribution stands as causal proof the void category exists and its
-exact signature, not as a turnkey detector.
+This distinction gives a practical triage rule: if an error is quiet and
+confident, first ask whether the model needs better factual data or an external
+knowledge source. If an error has a pre-commit jitter signal, investigate a
+runtime repair such as NHE-Edge. NTW supplies the causal evidence for the first
+category; it is not a standalone detector.
+
+## Why the four quiet Gemma cases matter
+
+Edge found four African-capital hallucinations with no usable pre-commit spike.
+NTW gives that ceiling a controlled mechanistic explanation: a fact can be
+stored confidently in the parameters and therefore look smooth until it is
+wrong. The result is a plausible mechanism for those cases, not a direct proof
+that Gemma's four cases have the same cause. Direct tests on Gemma, Claude, or
+another production model are the next step.
+
+This is the value of the proof-of-concept: a short, reproducible experiment
+establishes the category and its signature without claiming that every
+Transformer has identical dynamics or that a toy model has reproduced a
+large-model case exactly.
+
+## Falsification and scope
+
+The strongest alternative to the void explanation is mere ignorance. We tested
+four countries with zero training examples; their mean confidence is 0.548,
+not 1.000. This supports the distinction between uncertainty from missing
+information and a confident false memory.
+
+The experiment is intentionally small: four layers, 40 synthetic facts, four
+planted lies, and four ambiguous items. It demonstrates that the mechanism
+exists and is causally controllable in a clean setting. It does not estimate
+how often the mechanism occurs in Gemma or Claude, and it does not claim that
+jitter is a universal detector of confident lies. The same signature should be
+tested directly on production models before extending the taxonomy.
+
+## Paraphrase robustness: a useful boundary
+
+We also tested whether paraphrase agreement can identify planted lies without
+ground truth. Agreement was 0.104 for correct items, 0.167 for planted lies,
+and 0.167 for ambiguous items. The held-out phrasings broke all groups because
+the model was trained on a single template.
+
+This is a valuable boundary condition: **consistency alone is not a universal
+ground-truth-free detector in this setup**. NTW's reliable result is the causal
+separation of planted lies from ambiguity; a production detector would need
+training-data provenance, calibrated in-distribution paraphrases, or an
+independent truth source.
+
+## What NTW contributes
+
+NTW is a compact causal proof-of-concept, not a second detector and not a
+replacement for fine-tuning. It turns an observed Edge ceiling into a testable
+taxonomy:
+
+- a pre-commit drift is something a runtime method can attempt to repair;
+- a static void is a fact-level problem that calls for better data, an external
+  knowledge source, or a targeted fine-tune.
+
+That separation is useful for deciding where to spend the next engineering day.
+Do not spend the day tuning a runtime threshold for a quiet error until the
+fact itself has been checked.
 
 ## Crossfade with NHE-Edge
 
-- Shared: jitter metric family (early max hidden-state jump), strict scoring
-  idea (correctness-vs-truth), seed discipline.
-- Independent: own model, own data, own implementation - no imports from
-  NHE-Edge, so the proof cannot inherit Edge's assumptions.
-- Edge's ceiling (4 quiet cases) is NTW's starting exhibit.
+- Shared: the jitter metric family, strict correctness-versus-truth scoring,
+  and seeded experiments.
+- Independent: separate model, data, and implementation. NTW does not import
+  NHE-Edge, so its causal claim does not inherit Edge's assumptions.
+- Together: Edge repairs what is visibly drifting; NTW characterizes what can
+  remain silent and why that case needs a different response.
 
 ## Layout
 
-- `parametric_proof.py` - data + train + probe, one command, seeded
-- `results/parametric_proof.json` - per-group jitter/confidence/accuracy
-- `results/README.md` - what each file means
+- `parametric_proof.py` — builds the synthetic corpus, trains the tiny GPT, and
+  runs the seeded probe.
+- `probe_paraphrase.py` — runs the four-phrasing robustness check from saved
+  weights.
+- `results/parametric_proof.json` — per-group accuracy, confidence, jitter, and
+  per-item traces.
+- `results/paraphrase_proof.json` — paraphrase agreement and accuracy.
+- `results/README.md` — file-by-file guide to the outputs.

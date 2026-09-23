@@ -140,10 +140,13 @@ no per-item proof the four Africa quiet cases are among the fixed.
 ### What we can't fix yet
 
 Four Africa errors (Cape Verde, Equatorial Guinea, Gabon, Guinea) never spike.
-No single jitter threshold or k32 mask catches them (greedy Africa). Logit lens
-says they are not early high-confidence parametric errors either (0/4
-parametric, 4/4 dynamic - but so are all 7, so no separation). That's the limit
-of this signal family, not a bug.
+No single jitter threshold or k32 mask catches them (greedy Africa). NHE-NTW
+provides a controlled causal demonstration that a false fact can be learned as
+a quiet, confident Static Memory Void, while its zero-training control remains
+uncertain. This is a plausible mechanism for the Gemma ceiling, not a direct
+attribution of all four cases. The Gemma entropy audit finds 3/4 quiet commits
+highly confident; Gabon is a separate uncertainty/truncation case. A provenance
+check or second signal is the next step.
 
 ## Takeaways
 
@@ -156,20 +159,25 @@ of this signal family, not a bug.
 3. Direction is consistent everywhere: hard per-draw p<0.001 (20/0), random
    per-draw p=0.031 (6/0); honest item-majority primary is n.s. both times.
    On fired samples 20/90 wrong->correct (22%).
-4. Four quiet commits need more than one signal. Static+runtime moves the bench
-   a lot (0.389, 9 breaks; 0.088 with 58% refusal) at the cost of many fires.
+4. Four quiet commits need a different response. NHE-NTW supplies a controlled
+   causal example of a Static Memory Void, a category that can look smooth and
+   confident because the false fact is already in the weights. That is a
+   plausible mechanism for the Gemma ceiling, not a direct attribution of all
+   four cases. Static+runtime moves the bench a lot (0.389, 9 breaks; 0.088 with
+   58% refusal) at the cost of many fires.
 
 ## Limits
 
 - Loose scoring flatters hedges. We report strict and checked every flip.
-- One model (1B), CPU only. No other size or family tested. Qwen adapter is
-  synthetic-only; no real second model.
+- Gemma 3 1B is the main Edge benchmark. Qwen2.5-0.5B is a real-weight
+  cross-model timing check; 1.5B remains synthetic-only. CPU only.
 - Hard bench is enriched by construction (conditional gains, regression to the
   mean). Random bench (0.099) is the unbiased estimate: 1pp absolute.
 - Per-draw stats overstate (correlated draws); no multiple-comparison correction;
   abstain-coded-as-correct is mechanical. Item majority is primary.
 - Detector is per decoding mode (probe ~0.05 transfer). You have to retrain.
-- Four quiet cases need a different signal; none tested yet.
+- Four quiet cases need a different response: provenance/fact checks for a
+  possible Static Memory Void, or a second runtime signal for a transient drift.
 
 ## Files
 
