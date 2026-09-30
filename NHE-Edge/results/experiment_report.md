@@ -140,13 +140,18 @@ no per-item proof the four Africa quiet cases are among the fixed.
 ### What we can't fix yet
 
 Four Africa errors (Cape Verde, Equatorial Guinea, Gabon, Guinea) never spike.
-No single jitter threshold or k32 mask catches them (greedy Africa). NHE-NTW
-provides a controlled causal demonstration that a false fact can be learned as
-a quiet, confident Static Memory Void, while its zero-training control remains
-uncertain. This is a plausible mechanism for the Gemma ceiling, not a direct
-attribution of all four cases. The Gemma entropy audit finds 3/4 quiet commits
-highly confident; Gabon is a separate uncertainty/truncation case. A provenance
-check or second signal is the next step.
+No single jitter threshold or k32 mask catches them (greedy Africa). This is a
+scope boundary of the current runtime signal family, not a framework failure:
+NHE-Edge targets transient pre-commit drift, and a stored false fact can be
+committed without one.
+
+NHE-NTW provides a controlled causal demonstration that a false fact can be
+learned as a quiet, confident Static Memory Void, while its zero-training
+control remains uncertain. The Gemma entropy audit supports the interpretation
+for three cases (Cape Verde p=1.0000, Guinea p=0.9986, Equatorial Guinea
+p=0.9560). Gabon is separate (p=0.6925, uncertainty/truncation). A direct
+provenance or fact-edit test is still needed before claiming that these Gemma
+weights were trained on the false answers.
 
 ## Takeaways
 

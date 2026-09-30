@@ -178,13 +178,17 @@ Fires vs window (p90, strict 4/54 = substring 4/54, strict 5/54): w<=5 -> 7/54 (
 ## What we can't fix yet
 
 Four Africa errors never spike - they just commit quietly. No single jitter
-threshold or k32 mask catches them. NTW's controlled toy experiment shows that
-quiet confidence can be a Static Memory Void: a false fact learned into the
-weights rather than a transient decode-time conflict. That is a plausible
-mechanism for this ceiling, not a direct attribution. The Gemma entropy audit
-finds 3/4 quiet cases highly confident at commit; Gabon is a separate
-uncertainty/truncation case. A second signal or an independent provenance check
-is the next step.
+threshold or k32 mask catches them. This is a scope boundary of the current
+signal family, not a framework failure: NHE-Edge targets transient pre-commit
+drifts, and a stored false fact can be committed without such a drift.
+
+NTW's controlled experiment shows that a training-learned false fact can produce
+exactly this quiet, confident, wrong signature. The Gemma entropy audit finds
+three of the four quiet cases highly confident at commit, while Gabon is a
+separate uncertainty/truncation case. That makes the leading explanation a
+Static Memory Void for three cases and motivates a provenance check before any
+further runtime tuning. A direct dataset/provenance test on Gemma remains the
+next experiment.
 
 ## Timing rule (why Qwen fails, why Gemma works)
 

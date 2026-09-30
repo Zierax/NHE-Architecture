@@ -52,8 +52,10 @@ fact-level repair; general models need feature-safe interventions.
 The 4 quiet cases are now a clear motivation for the NTW companion proof. The
 controlled experiment establishes a Static Memory Void category, and the
 entropy audit shows that 3/4 Gemma quiet cases commit with high confidence;
-Gabon is a separate uncertainty/truncation case. This is a plausible mechanism
-and a useful triage taxonomy, not a direct attribution of all four cases.
+Gabon is a separate uncertainty/truncation case. The current runtime signal
+does not cover this failure mode, so the correct next step is fact/provenance
+validation before more threshold tuning. This remains a plausible mechanism
+and triage taxonomy, not a direct attribution of all four cases.
 
 A production diagnostic paper still needs a larger sample, direct model-level
 provenance tests, and a second signal with its own AUC. The current Gemma

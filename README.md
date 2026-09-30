@@ -30,7 +30,8 @@ first; NHE-NTW gives a controlled causal proof and triage framework for the seco
   quiet, confident, wrong answers can be encoded in the weights. Zero-training
   countries instead show uncertainty. This gives Gemma's quiet ceiling a plausible
   mechanism and a clear split: check provenance/facts first, then use runtime repair
-  when a pre-commit drift is present. See [`NHE-NTW/README.md`](NHE-NTW/README.md).
+  when a pre-commit drift is present. The runtime signal's silence is therefore a
+  scope boundary, not a framework failure. See [`NHE-NTW/README.md`](NHE-NTW/README.md).
 
 `paper/` holds local LaTeX drafts (gitignored). `models/` and `data/` are gitignored
 and rebuilt — see `NHE-Edge/README.md` for the exact recipe. `requirements.txt`

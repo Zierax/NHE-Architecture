@@ -50,15 +50,16 @@ All numbers are strict (first sentence) and labeled. Full table:
    but 9 new breaks) and 52 with 348 refusals (abstain). Fires jump 15%→58%.
 
 7. **Ceiling and NTW.** Four Africa errors never spike (Cape Verde, Eq Guinea,
-   Gabon, Guinea). The NTW controlled experiment demonstrates the complementary
-   Static Memory Void: a false fact can be learned confidently and quietly. This
-   gives the ceiling a plausible mechanism and a triage path: check provenance
-   or factual data first; use runtime repair when a pre-commit drift is visible.
+   Gabon, Guinea). This is a scope boundary of the current runtime signal, not a
+   framework failure: NHE-Edge targets transient pre-commit drift, and a stored
+   false fact can be committed without one. NTW's controlled experiment shows a
+   false fact can be learned confidently and quietly, which motivates checking
+   provenance/factual data first and using runtime repair when a drift is visible.
 
 8. **Direct Gemma audit.** Three of the four quiet cases are highly confident at
    the commit token (Cape Verde p=1.0, Guinea p=0.9986; Eq Guinea p=0.956), while
-   Gabon is a separate uncertainty/truncation case. All four remain unanswered by
-   the current jitter detector.
+   Gabon is a separate uncertainty/truncation case (p=0.6925). All four remain
+   unanswered by the current jitter detector; direct provenance testing is next.
 
 9. **Cross-model.** Qwen2.5-0.5B on real weights: signal exists (AUC 0.778), but
    the spike lands after the city, so 0 flips. Timing is format-dependent.

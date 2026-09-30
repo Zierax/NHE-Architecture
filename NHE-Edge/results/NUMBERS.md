@@ -262,16 +262,22 @@ field fix, fine-tuning is the depot repair. QLoRA numbers are estimates
 4/7 greedy hallucinations (Cape Verde, Equatorial Guinea, Gabon, Guinea) commit
 quietly with no pre-commit jitter spike and are not fixable by any threshold of
 this detector family or by the k32_midwrong mask. The runtime never fires on
-them even at p80.
+them even at p80. This is a limitation of the current runtime scope, not proof
+that the framework is broken: the detector is designed for transient pre-commit
+drift, and a stored false fact can be committed without one.
 
-This is now a motivated ceiling rather than an unexplained failure. NHE-NTW's
-controlled experiment demonstrates that a planted false fact can become a quiet,
-confident, wrong commitment, while zero-training countries remain uncertain.
-That is a plausible Static Memory Void mechanism for part of Gemma's ceiling,
-not direct proof that all four Gemma cases have the same cause. The Gemma
-entropy audit supports the distinction: 3/4 quiet cases are highly confident
-at commit, while Gabon is a separate uncertainty/truncation case. Direct
-provenance tests and a second signal remain the next steps.
+NHE-NTW provides a controlled causal demonstration that a planted false fact
+can become a quiet, confident, wrong commitment, while zero-training countries
+remain uncertain. The Gemma entropy audit makes the same distinction visible in
+the target cases: Cape Verde (p=1.0000), Guinea (p=0.9986), and Equatorial
+Guinea (p=0.9560) are highly confident at commit, while Gabon (p=0.6925) is a
+separate uncertainty/truncation case.
+
+Therefore three of the four quiet cases are consistent with a Static Memory Void
+and all four require a fact/provenance check before further runtime tuning.
+The training-based mechanism is established in the controlled NTW experiment;
+a direct provenance claim for these particular Gemma weights still requires a
+dataset audit or counterfactual fact-edit test.
 
 ## Honest caveats
 

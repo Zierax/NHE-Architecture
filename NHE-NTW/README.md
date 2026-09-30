@@ -96,6 +96,49 @@ separation of planted lies from ambiguity; a production detector would need
 training-data provenance, calibrated in-distribution paraphrases, or an
 independent truth source.
 
+## Justifying the Static Memory Void interpretation
+
+The quiet Gemma cases are not evidence that the NHE-Edge framework is
+malfunctioning. NHE-Edge is designed to detect a **transient execution drift**:
+a pre-commit activation change that can be measured before the answer token. A
+quiet commitment has no such event by construction, so the detector staying
+silent is the correct behavior for the signal family it was built to measure.
+
+The alternative explanation is that the wrong answer is already stored in the
+weights. NTW tests that mechanism causally. In the controlled experiment:
+
+- a planted false fact is answered at confidence 1.000, P(truth)=0.0000, entropy
+  0.000, with jitter indistinguishable from a correct answer;
+- a country with zero training examples is answered at mean confidence 0.548,
+  showing uncertainty rather than a stable confident lie.
+
+This demonstrates that training can create the exact quiet-confident-wrong
+signature and that ignorance alone does not reproduce it. It explains why the
+absence of a jump is informative: the model may not be experiencing a decoding
+conflict at all.
+
+The direct Gemma evidence is consistent with that explanation:
+
+| quiet case | commit confidence | entropy | interpretation |
+|---|---:|---:|---|
+| Cape Verde | 1.0000 | 0.000 | confident wrong commitment |
+| Equatorial Guinea | 0.9560 | 0.252 | confident wrong commitment |
+| Guinea | 0.9986 | 0.011 | confident wrong commitment |
+| Gabon | 0.6925 | 0.619 | separate uncertainty/truncation case |
+
+So three of the four quiet cases are consistent with a Static Memory Void, and
+all four are outside the current runtime detector's scope. This is the correct
+triage: first check the fact's provenance, training data, or external knowledge
+source; then use a runtime intervention for errors that show a pre-commit drift.
+
+What NTW proves is that the training-based mechanism exists and has the
+predicted signature. What it does **not** prove is that these particular Gemma
+weights were trained on the four false answers. That stronger claim requires a
+direct provenance test, a dataset audit, or a counterfactual fact-edit
+experiment. Until then, the honest wording is **training-based void is strongly
+supported for three cases and remains the leading explanation for the quiet
+ceiling**, not a confirmed provenance finding for every case.
+
 ## What NTW contributes
 
 NTW is a compact causal proof-of-concept, not a second detector and not a
