@@ -58,6 +58,12 @@ Full walkthrough: `experiment_report.md`.
   (19 structurally exposed items, 9 where the model emits the longer form).
 - `detector_layer_justification.json` - why L19 is causally adjacent to the
   attribution band, and why that is not a unique selection.
+- `greedy_flows_single_task.json` - per-layer hidden-state jumps for all 463
+  single-task items (`core/collect_single_task.py`, resumable). Independent
+  collection reproduces the baseline's 59 wrong, which cross-validates the run.
+- `reachability_of_quiet.json` - whether the never-fired wrong population is
+  separable from correct: best AUROC 0.7129 (L15/w15), verdict REACHABLE. This
+  is what sets the next direction.
 - `jitter_report*.json`, `summary_experiment.json` - early detector/feature reports.
 
 ## Naming

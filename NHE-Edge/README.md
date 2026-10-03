@@ -253,6 +253,40 @@ guessed — the detector's precision on errors is 0.220 and its recall is 0.153,
 6 fixes (the computed requirement) become 3. Significance needs a higher-recall
 trigger, not a larger benchmark.
 
+## Is the quiet residual reachable? (the direction-setting experiment)
+
+The 50 never-fired wrong items decide the next direction. If they are Static
+Memory Voids (NTW), no trigger reaches them and the remaining work is fact-level.
+If they merely lack a trigger, recall is the problem. `core/collect_single_task.py`
+collected hidden-state jumps for all 463 items, and
+`analysis/reachability_of_quiet.py` answers it over every (layer 1-25 x window
+1-15) cell:
+
+| separation | best cell | AUROC |
+|---|---|---:|
+| never-fired-wrong (n=50) vs correct (n=407) | L15 / w15 | **0.7129** |
+| never-fired-wrong (n=50) vs fired-wrong (n=6) | L11 / w3-w6 | 0.590 |
+
+**Verdict: REACHABLE.** The never-fired population carries a pre-commit excess
+above the 0.65 gate, so the ceiling is a trigger problem, not a mechanism limit.
+This partially contradicts the Static Void reading of the quiet set at scale and
+is recorded that way rather than folded into the NTW story.
+
+**Caveat, stated before it is trusted.** The best cell separates never-fired-wrong
+from correct at 0.713 but from *fired-wrong* at only 0.34 — worse than chance. The
+two wrong populations look different to this feature, so quiet-wrong is not simply
+"a harder version of detected-wrong". The 0.713 is a hypothesis until a live arm
+confirms it.
+
+```
+python core/collect_single_task.py            # flows for all 463 (resumable)
+python analysis/reachability_of_quiet.py       # reachable vs void, from data
+```
+
+The next experiment is fixed and falsifiable: a live **L15/w15** arm on the same
+463 items, same mask, same exact McNemar test. >= 6 fixes at 0 breaks reaches
+significance; otherwise the taxonomy write-up is the honest endpoint.
+
 ```
 python analysis/build_single_task.py            # merge + provenance
 python analysis/audit_single_task.py             # truth-layer audit
@@ -261,6 +295,7 @@ python analysis/report_answer_set_gaps.py        # residual exposure
 python analysis/power_single_task.py             # what significance requires
 python core/run_single_task.py --arm none --tag none_full
 python core/run_single_task.py --arm mask --layer 19 --window 5 --scale 0.3 --tag mask_L19_w5
+python core/run_single_task.py --arm mask --layer 15 --window 15 --scale 0.3 --tag mask_L15_w15
 python analysis/score_single_task.py --arms eval_single_task_none_full eval_single_task_mask_L19_w5
 python analysis/summarize_single_task.py
 python analysis/justify_detector_layer.py        # why L19, honestly

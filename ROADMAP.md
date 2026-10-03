@@ -1,8 +1,8 @@
 # NHE Roadmap - Three Tracks, One Core
 
 **Where we are (2026-09-23):**
-- **Done:** Gemma 3 1B jitter signal (last-token L10 0.968 exists, deployed early 0.742), k32 neurons, temporal soft w<=5 (hard per-draw p<0.001 but item-majority n.s.; random per-draw p=0.031, majority n.s.), merged mask 0.389 (9 breaks) / merged abstain 0.088 (58% refusal), real MMLU 200 preserved (0.925->0.925, +0.01 strict), temporal MMLU negative (78->79, fires 155), prompt baseline (hard 61->52, random 9->11), **NHE-NTW controlled Static Memory Void proof** (four planted lies at confidence 1.0, P(truth)=0, jitter like correct; zero-example countries at confidence 0.548), **Qwen2.5-0.5B real weights: signal exists (early AUC 0.778), own mask, 0 flips / 0 breaks - timing is format-dependent**, latency measured (+20.5%/token, 160ms/fire).
-- **Pending:** direct Gemma/Claude-scale void test, SAE prototype, Qwen sampled battery, second-signal test for quiet cases.
+- **Done:** Gemma 3 1B jitter signal (last-token L10 0.968 exists, deployed early 0.742), k32 neurons, temporal soft w<=5 (hard per-draw p<0.001 but item-majority n.s.; random per-draw p=0.031, majority n.s.), merged mask 0.389 (9 breaks) / merged abstain 0.088 (58% refusal), real MMLU 200 preserved (0.925->0.925, +0.01 strict), temporal MMLU negative (78->79, fires 155), prompt baseline (hard 61->52, random 9->11), **single-task 463-item benchmark (audited truth layer): 59->56, fixes=3 breaks=0 p=0.25 — safety, timing law and per-fired repair (0.333) confirmed at scale, significance still open**, **NHE-NTW controlled Static Memory Void proof** (four planted lies at confidence 1.0, P(truth)=0, jitter like correct; zero-example countries at confidence 0.548), **applicability gate: Gemma ACTIVE (0.781 fixed-slice) / Qwen INERT (0.691, artifact-controlled), and pre-commit AUROC does not select the intervention**, **reachability of the quiet set: never-fired-wrong (n=50) vs correct (n=407) separable at AUROC 0.713 (L15/w15) -> the ceiling is a TRIGGER problem, not a mechanism limit**, latency measured (+20.5%/token, 160ms/fire).
+- **Pending:** live L15/w15 arm on the 463 items (the direction-setting experiment), direct Gemma/Claude-scale void test, SAE prototype, Qwen sampled battery.
 
 **Where we're going:** Three tracks sharing one taxonomy: transient
 wrong-commits are candidates for runtime repair; static confident voids require
@@ -18,6 +18,40 @@ fact-level repair; general models need feature-safe interventions.
       Direct neuron scaling Proven taxonomy      SAEs / steering vectors
       Goal: repair drift    Goal: explain voids  Goal: no collateral damage
 ```
+
+## Where we're going: the direction is settled by data, not chosen
+
+The runtime arm is **safe and generalises**; it is **not yet statistically
+significant**, and the cause has been measured rather than guessed:
+
+| quantity | value | meaning |
+|---|---:|---|
+| fixes / breaks / p | 3 / 0 / 0.25 | clean but under-powered at n=463 |
+| detector recall on errors | 0.153 | it only sees 9 of 59 wrong items |
+| detector precision | 0.220 | most firings land on already-correct items |
+| repairs per fired wrong item | 0.333 | the quantity that must survive a domain change, and it did |
+
+The decisive question was whether the 50 never-fired wrong items are unreachable
+(Static Memory Voids, per NTW) or merely un-triggered. `reachability_of_quiet.py`
+answers it from flows collected on all 463 items: **AUROC 0.713 (L15/w15)**
+separates them from correct, above the 0.65 gate. So they are **reachable** and
+the bottleneck is the trigger.
+
+```
+                    +-- reachability says REACHABLE (0.713)
+residual 56 wrong --|
+                    +-- no trigger separates them
+                       => stop extending the runtime arm,
+                          route to fact-level repair (NTW)
+
+  CURRENT PATH:  live L15/w15 arm on the same 463 items,
+                 same mask, same exact McNemar test.
+                 >= 6 fixes at 0 breaks  -> significance reached.
+                 otherwise               -> the fallback above.
+```
+
+This is one experiment on already-collected data. It is the only thing that can
+move the headline number, and it is decided in advance.
 
 ## Track A - NHE-Edge (what we have now)
 

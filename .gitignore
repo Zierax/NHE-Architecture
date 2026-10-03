@@ -11,5 +11,9 @@ paper/
 *.log
 tmp_out.txt
 
+# large regenerable flow dumps (collect_single_task.py rebuilds ~1h CPU)
+**/greedy_flows_single_task.json
+
 # training resume checkpoints (regenerable, large)
 parametric_ckpt.pt
+notes.txt

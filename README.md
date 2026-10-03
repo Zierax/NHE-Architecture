@@ -17,10 +17,10 @@ errors are quiet facts stored confidently in the weights. NHE-Edge addresses the
 first; NHE-NTW gives a controlled causal proof and triage framework for the second.
 
 - **NHE-Edge/** — **working.** Gemma 3 1B, jitter detector + soft scaling (0.3) in the
-  first 5 tokens. Hard bench 20 fixes (p<0.001 per-draw), random bench 6 fixes
-  (p=0.031), no new errors on the tested controls. Qwen timing and MMLU checks are
-  complete; the item-majority results remain modest and are reported separately.
-  Start here: [`NHE-Edge/README.md`](NHE-Edge/README.md).
+  first 5 tokens. On the single-task 463-item benchmark: 59→56 wrong, **3 fixes,
+  0 breaks, p=0.25** — safety, the timing law and the per-fired repair rate
+  (0.333) are confirmed at scale, significance is still open. Start here:
+  [`NHE-Edge/README.md`](NHE-Edge/README.md).
 
 - **NHE-GenPM/** — **planned.** Same detector, but steering / SAEs for larger models
   where you must keep MMLU. See [`NHE-GenPM/plan.md`](NHE-GenPM/plan.md).
@@ -32,6 +32,16 @@ first; NHE-NTW gives a controlled causal proof and triage framework for the seco
   mechanism and a clear split: check provenance/facts first, then use runtime repair
   when a pre-commit drift is present. The runtime signal's silence is therefore a
   scope boundary, not a framework failure. See [`NHE-NTW/README.md`](NHE-NTW/README.md).
+
+## Where this is going
+
+The action arm is safe and its repair rate generalises across three question
+frames; it is not yet statistically significant because the trigger reaches only
+15.3% of errors. We measured whether the quiet residual is reachable rather than
+assuming it: **AUROC 0.713 (L15/w15)** separates the 50 never-fired wrong items
+from correct, so the ceiling is a **trigger** problem, not a mechanism limit. The
+next experiment is one live L15/w15 arm on already-collected data. Full decision
+tree in [`ROADMAP.md`](ROADMAP.md).
 
 `paper/` holds local LaTeX drafts (gitignored). `models/` and `data/` are gitignored
 and rebuilt — see `NHE-Edge/README.md` for the exact recipe. `requirements.txt`

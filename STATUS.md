@@ -53,10 +53,10 @@ All numbers are strict (first sentence) and labeled. Full table:
    breaks=0, p=0.25 (still not significant)**. What it does establish at n=463:
    zero collateral damage across 463 items and 3 frames; the timing law (40/41
    fired items lead≥1); the per-fired repair rate generalises (0.333 vs 0.286
-   Africa); and **89.3% of residual error never fires** — the Static Void
-   population NTW explains. The shortfall is measured: firing precision 0.220,
-   detector reaches 15.3% of errors, so significance needs a higher-recall
-   trigger, not a bigger benchmark.
+   Africa); and 89.3% of the residual error never fires under this trigger.
+   The shortfall is measured: firing precision 0.220, detector reaches 15.3% of
+   errors, so significance needs a higher-recall trigger, not a bigger benchmark
+   (see item 13 for why the trigger is the right target).
 
 7. **Merged.** Static always + runtime when it fires (hard bench): 354→231 (mask,
    but 9 new breaks) and 52 with 348 refusals (abstain). Fires jump 15%→58%.
@@ -67,8 +67,9 @@ All numbers are strict (first sentence) and labeled. Full table:
    false fact can be committed without one. NTW's controlled experiment shows a
    false fact can be learned confidently and quietly, which motivates checking
    provenance/factual data first and using runtime repair when a drift is visible.
-   The 463-item benchmark confirms the split at scale: 89.3% of residual error is
-   in the never-fires population.
+   On the 463-item benchmark, 89.3% of the residual error never fires under the
+   deployed trigger — consistent with the void reading, and see item 13 for the
+   caveat that part of that population is in fact trigger-reachable.
 
 9. **Direct Gemma audit.** Three of the four quiet cases are highly confident at
    the commit token (Cape Verde p=1.0, Guinea p=0.9986; Eq Guinea p=0.956), while
@@ -91,8 +92,29 @@ All numbers are strict (first sentence) and labeled. Full table:
     Temporal on MMLU: 78→79, fires on 155/200 — no effect (different task; NHE-Edge
     is single-task by design, and MMLU is not the deployment task).
 
+13. **Reachability of the quiet set — the direction (2026-09-23).** Hidden-state
+    jumps collected for all 463 items; the never-fired-wrong population (n=50) is
+    separated from correct (n=407) at AUROC **0.713** (L15/w15), above the 0.65
+    gate. So the quiet set is **reachable**: the bottleneck is the trigger, not
+    the mechanism. Caveat: that cell separates never-fired-wrong from
+    *fired-wrong* only 0.34, so quiet-wrong and detected-wrong look different and
+    the 0.713 is a hypothesis until validated live.
+
 Lessons: clean state per item (or you fake it), strict scoring (loose counts hedges),
 offline simulation matches live 1:1, manual sampler ≠ `model.generate`.
+
+## Direction from here
+
+The runtime arm is safe and its per-fired repair rate generalises; it is not yet
+significant because recall on errors is 0.153 and precision 0.220. The next
+experiment is fixed and falsifiable, and it runs on data already collected:
+
+1. **Live L15/w15 arm on the same 463 items**, same mask, same scoring, same exact
+   McNemar test. It either produces >= 6 fixes at 0 breaks (significance reached)
+   or it does not. This is the only experiment that can move the headline.
+2. If it fails, the fallback is already determined: the never-fired residual is
+   fact-level (NTW), so the remaining work is the diagnostic write-up, not more
+   detector tuning.
 
 Full story: `NHE-Edge/results/experiment_report.md`. Files: `NHE-Edge/results/*.json`.
 
@@ -104,10 +126,10 @@ Full story: `NHE-Edge/results/experiment_report.md`. Files: `NHE-Edge/results/*.
 
 ## What's next
 
-- Raise detector RECALL on errors (precision is 0.220, recall 0.153) — this, not
-  a bigger benchmark, is what stands between the current arm and p<0.05.
+- **Live L15/w15 arm on the 463-item benchmark** — the direction-setting
+  experiment. Either >= 6 fixes at 0 breaks (p<0.05) or it does not.
 - Direct NTW signature test on Gemma/Claude-scale models; fact/provenance check
-  for the never-fires population (89.3% of residual error on the 463-item bench).
+  for any residual that stays unreachable.
 - Qwen sampled battery (hard/random) with its own mask.
 - QLoRA fine-tune on Africa as a baseline.
 

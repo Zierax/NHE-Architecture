@@ -285,6 +285,55 @@ summarize_single_task}.py`, `analysis/justify_detector_layer.py`,
 eval_single_task_mask_L19_w5,single_task_score,power_single_task,
 answer_set_gaps,single_task_audit,detector_layer_justification}.json`.
 
+## Reachability of the quiet population - the direction-setting result (2026-09-23)
+
+The single-task benchmark left the action arm at fixes=3 (p=0.25) because the
+detector fires on only 15.3% of wrong items. That splits the residual error into
+a fired-but-wrong set (9) and a never-fired set (50). Whether the never-fired set
+is reachable by a better trigger, or is genuinely quiet (Static Memory Voids as
+NTW predicts), decides the entire next direction. `core/collect_single_task.py`
+collected hidden-state jumps for all 463 items and
+`analysis/reachability_of_quiet.py` answers it.
+
+**Groups** (from the committed mask arm): fired-but-wrong n=6, never-fired-wrong
+n=50, correct n=407.
+
+**Best separation of the never-fired-wrong population from correct, over every
+(layer 1-25 x window 1-15) cell:**
+
+| layer | window | AUROC vs correct | AUROC vs fired-wrong |
+|---|---:|---:|---:|
+| **L15** | **w15** | **0.7129** | 0.34 |
+| L15 | w14 | 0.7108 | 0.28 |
+| L14 | w15 | 0.7019 | 0.25 |
+| L11 | w3-w6 | 0.688 | 0.59 |
+
+**VERDICT: R (reachable ceiling).** The never-fired-wrong items DO carry a
+pre-commit excess (best AUROC 0.713 vs the 0.65 usability gate). The bottleneck is
+the TRIGGER, not the mechanism: a (layer, window) the current detector never
+searched - L15 with a wide window - separates a chunk of them. This does NOT
+confirm the Static Void reading of the quiet set on this benchmark; it partially
+contradicts it at scale and is recorded as such.
+
+**Why this is the direction.** Reaching significance (6 fixes at the power
+analysis) needs recall ~10% of errors. The current detector reaches 15.3% but with
+precision 0.220; L15/w15 separates 0.713 of the never-fired set, so a trigger
+built on that cell could plausibly lift the fix count into the significant range
+WITHOUT touching the zero-break property (which comes from the timing law, not the
+threshold). The next experiment is a live L15/w15 arm on the same 463 items,
+scored with the same exact McNemar test.
+
+**Important caveat, stated before anyone over-reads this.** The cell that best
+separates never-fired-wrong from correct (L15/w15, 0.713) separates them from the
+FIRED-wrong group only 0.34 - worse than chance. The quiet-wrong and the
+detected-wrong populations look DIFFERENT to this feature. That is consistent with
+two sub-populations existing inside "wrong", and it means the 0.713 cell must be
+validated live before it is trusted; an offline AUROC here is a hypothesis, not a
+result.
+
+Files: `core/collect_single_task.py`, `analysis/reachability_of_quiet.py`,
+`results/greedy_flows_single_task.json`, `results/reachability_of_quiet.json`.
+
 ## Detector layer L19 - partial justification (2026-09-23)
 
 The gate proved that pre-commit AUROC does not select the intervenable cell, so

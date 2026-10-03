@@ -170,6 +170,13 @@ weights were trained on the false answers.
    plausible mechanism for the Gemma ceiling, not a direct attribution of all
    four cases. Static+runtime moves the bench a lot (0.389, 9 breaks; 0.088 with
    58% refusal) at the cost of many fires.
+5. **The quiet residual is partly reachable, not purely a void population.**
+   Hidden-state flows collected on all 463 single-task items separate the
+   never-fired-wrong set (n=50) from correct (n=407) at AUROC 0.713 (L15/w15).
+   So the ceiling on that benchmark is a trigger-recall problem, not a hard
+   mechanism limit - but the same cell separates never-fired-wrong from
+   fired-wrong at only 0.34, so two sub-populations may exist and the cell is
+   unvalidated until a live arm runs.
 
 ## Limits
 
@@ -183,6 +190,16 @@ weights were trained on the false answers.
 - Detector is per decoding mode (probe ~0.05 transfer). You have to retrain.
 - Four quiet cases need a different response: provenance/fact checks for a
   possible Static Memory Void, or a second runtime signal for a transient drift.
+- **The single-task arm is clean but not significant.** On the 463-item benchmark
+  runtime L19/w5 gives 59 -> 56 wrong, fixes=3, breaks=0, exact McNemar p=0.25
+  (the power analysis required 6 fixes at 0 breaks). Safety, the timing law
+  (40/41 fired items lead >= 1) and the per-fired repair rate (0.333 vs 0.286 on
+  Africa) are established at that n; the headline effect is not.
+- **Detector recall is the measured bottleneck**, not sample size: precision
+  0.220, recall 0.153 on errors. `reachability_of_quiet.py` shows the never-fired
+  wrong population IS separable from correct at AUROC 0.713 (L15/w15), so a
+  better trigger is the live hypothesis - but that cell separates it from the
+  fired-wrong population at only 0.34, so it is unvalidated.
 
 ## Files
 
