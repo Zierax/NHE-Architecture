@@ -40,6 +40,24 @@ Full walkthrough: `experiment_report.md`.
 - `onboarding_{model}.json` - full onboarding state-machine record: stages,
   timings, gate verdict, live run, strict W2C/C2W, terminal verdict
   (`analysis/nhe_onboard.py`).
+- `bench_single_task.json` - the merged 463-item single-task benchmark (one task,
+  three question frames) with the union truth layer
+  (`analysis/build_single_task.py`, deterministic, `--verify`).
+- `bench_single_task_provenance.json` - every cross-topic duplicate and every
+  answer-set widening, with the reason. 11 questions had disjoint truths across
+  topics; this file is why that is defensible rather than accidental.
+- `eval_single_task_{none_full,mask_L19_w5}.json` - the paired single-task runs
+  (463 items each). Runtime L19/w5: 59->56 wrong, fixes=3 breaks=0, p=0.25.
+- `single_task_score.json` - paired exact McNemar, Wilson CI, per-family, and the
+  landing split (89.3% of residual error never fires).
+- `power_single_task.json` - what significance requires (6 fixes / 0 breaks),
+  computed before the run.
+- `single_task_audit.json` - truth-layer audit of topics.py (duplicates,
+  contradictions, substring hazards).
+- `answer_set_gaps.json` - measured residual exposure of the token-boundary metric
+  (19 structurally exposed items, 9 where the model emits the longer form).
+- `detector_layer_justification.json` - why L19 is causally adjacent to the
+  attribution band, and why that is not a unique selection.
 - `jitter_report*.json`, `summary_experiment.json` - early detector/feature reports.
 
 ## Naming

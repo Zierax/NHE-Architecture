@@ -1,0 +1,195 @@
+{
+ "n_items": 463,
+ "n_structural_exposure": 19,
+ "n_emitting_longer_form_on_baseline": 9,
+ "structural": [
+  {
+   "id": 50,
+   "question": "What is the capital of Chile?",
+   "short": "santiago",
+   "long": "santiago de chile"
+  },
+  {
+   "id": 63,
+   "question": "What is the capital of Djibouti?",
+   "short": "djibouti",
+   "long": "djibouti city"
+  },
+  {
+   "id": 96,
+   "question": "What is the capital of India?",
+   "short": "delhi",
+   "long": "new delhi"
+  },
+  {
+   "id": 113,
+   "question": "What is the capital of Kiribati?",
+   "short": "tarawa",
+   "long": "south tarawa"
+  },
+  {
+   "id": 115,
+   "question": "What is the capital of Kuwait?",
+   "short": "kuwait",
+   "long": "kuwait city"
+  },
+  {
+   "id": 205,
+   "question": "What is the capital of Sri Lanka?",
+   "short": "kotte",
+   "long": "sri jayawardenepura kotte"
+  },
+  {
+   "id": 205,
+   "question": "What is the capital of Sri Lanka?",
+   "short": "kotte",
+   "long": "sri jayawardenapura kotte"
+  },
+  {
+   "id": 231,
+   "question": "What is the capital of Vatican City?",
+   "short": "vatican",
+   "long": "vatican city"
+  },
+  {
+   "id": 256,
+   "question": "What is the capital of the United States?",
+   "short": "washington",
+   "long": "washington d c"
+  },
+  {
+   "id": 256,
+   "question": "What is the capital of the United States?",
+   "short": "washington",
+   "long": "washington dc"
+  },
+  {
+   "id": 286,
+   "question": "What is the largest city in Algeria?",
+   "short": "algiers",
+   "long": "algiers city"
+  },
+  {
+   "id": 301,
+   "question": "What is the largest city in Bolivia?",
+   "short": "santa cruz",
+   "long": "santa cruz de la sierra"
+  },
+  {
+   "id": 307,
+   "question": "What is the largest city in Burundi?",
+   "short": "bujumbura",
+   "long": "bujumbura city"
+  },
+  {
+   "id": 313,
+   "question": "What is the largest city in Chile?",
+   "short": "santiago",
+   "long": "santiago de chile"
+  },
+  {
+   "id": 322,
+   "question": "What is the largest city in Djibouti?",
+   "short": "djibouti",
+   "long": "djibouti city"
+  },
+  {
+   "id": 363,
+   "question": "What is the largest city in Kiribati?",
+   "short": "tarawa",
+   "long": "south tarawa"
+  },
+  {
+   "id": 364,
+   "question": "What is the largest city in Kuwait?",
+   "short": "kuwait",
+   "long": "kuwait city"
+  },
+  {
+   "id": 427,
+   "question": "What is the largest city in Taiwan?",
+   "short": "taipei",
+   "long": "new taipei"
+  },
+  {
+   "id": 462,
+   "question": "What is the largest city in the United States?",
+   "short": "new york",
+   "long": "new york city"
+  }
+ ],
+ "affected": [
+  {
+   "id": 63,
+   "question": "What is the capital of Djibouti?",
+   "short": "djibouti",
+   "long": "djibouti city",
+   "emits_longer_form": true,
+   "strict": 1
+  },
+  {
+   "id": 96,
+   "question": "What is the capital of India?",
+   "short": "delhi",
+   "long": "new delhi",
+   "emits_longer_form": true,
+   "strict": 1
+  },
+  {
+   "id": 115,
+   "question": "What is the capital of Kuwait?",
+   "short": "kuwait",
+   "long": "kuwait city",
+   "emits_longer_form": true,
+   "strict": 1
+  },
+  {
+   "id": 205,
+   "question": "What is the capital of Sri Lanka?",
+   "short": "kotte",
+   "long": "sri jayawardenepura kotte",
+   "emits_longer_form": true,
+   "strict": 1
+  },
+  {
+   "id": 231,
+   "question": "What is the capital of Vatican City?",
+   "short": "vatican",
+   "long": "vatican city",
+   "emits_longer_form": true,
+   "strict": 1
+  },
+  {
+   "id": 256,
+   "question": "What is the capital of the United States?",
+   "short": "washington",
+   "long": "washington d c",
+   "emits_longer_form": true,
+   "strict": 1
+  },
+  {
+   "id": 322,
+   "question": "What is the largest city in Djibouti?",
+   "short": "djibouti",
+   "long": "djibouti city",
+   "emits_longer_form": true,
+   "strict": 1
+  },
+  {
+   "id": 364,
+   "question": "What is the largest city in Kuwait?",
+   "short": "kuwait",
+   "long": "kuwait city",
+   "emits_longer_form": true,
+   "strict": 1
+  },
+  {
+   "id": 462,
+   "question": "What is the largest city in the United States?",
+   "short": "new york",
+   "long": "new york city",
+   "emits_longer_form": true,
+   "strict": 1
+  }
+ ]
+}

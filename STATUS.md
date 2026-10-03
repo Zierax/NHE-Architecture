@@ -46,30 +46,50 @@ All numbers are strict (first sentence) and labeled. Full table:
    59→53, p=0.031 per-draw, majority 10→9 (not significant). Same direction,
    small effect — honest.
 
-6. **Merged.** Static always + runtime when it fires (hard bench): 354→231 (mask,
+6. **Single-task power test (463 items).** One merged task (244 capital, 178
+   largest, 41 element), audited truth layer (11 cross-topic truth conflicts
+   resolved by explicit union), token-boundary scoring (26 substring hazards
+   closed). Baseline 59/463 wrong (0.127). Runtime L19/w5: **56/463, fixes=3,
+   breaks=0, p=0.25 (still not significant)**. What it does establish at n=463:
+   zero collateral damage across 463 items and 3 frames; the timing law (40/41
+   fired items lead≥1); the per-fired repair rate generalises (0.333 vs 0.286
+   Africa); and **89.3% of residual error never fires** — the Static Void
+   population NTW explains. The shortfall is measured: firing precision 0.220,
+   detector reaches 15.3% of errors, so significance needs a higher-recall
+   trigger, not a bigger benchmark.
+
+7. **Merged.** Static always + runtime when it fires (hard bench): 354→231 (mask,
    but 9 new breaks) and 52 with 348 refusals (abstain). Fires jump 15%→58%.
 
-7. **Ceiling and NTW.** Four Africa errors never spike (Cape Verde, Eq Guinea,
+8. **Ceiling and NTW.** Four Africa errors never spike (Cape Verde, Eq Guinea,
    Gabon, Guinea). This is a scope boundary of the current runtime signal, not a
    framework failure: NHE-Edge targets transient pre-commit drift, and a stored
    false fact can be committed without one. NTW's controlled experiment shows a
    false fact can be learned confidently and quietly, which motivates checking
    provenance/factual data first and using runtime repair when a drift is visible.
+   The 463-item benchmark confirms the split at scale: 89.3% of residual error is
+   in the never-fires population.
 
-8. **Direct Gemma audit.** Three of the four quiet cases are highly confident at
+9. **Direct Gemma audit.** Three of the four quiet cases are highly confident at
    the commit token (Cape Verde p=1.0, Guinea p=0.9986; Eq Guinea p=0.956), while
    Gabon is a separate uncertainty/truncation case (p=0.6925). All four remain
    unanswered by the current jitter detector; direct provenance testing is next.
 
-9. **Cross-model + applicability gate.** Qwen2.5-0.5B has the signal family but
-   no *pre-commit* signal in its current format. The new gate searches 192
-   (layer x window) cells and controls for the commit-position artifact: Gemma
-   0.781 fixed-slice = ACTIVE, Qwen 0.691 = INERT. Second finding: the top-AUROC
-   cell is not the best live arm (L20 0.781 -> net -1; L19 0.772 -> net +2),
-   so AUROC gates applicability but does not select the intervention.
+10. **Cross-model + applicability gate.** Qwen2.5-0.5B has the signal family but
+    no *pre-commit* signal in its current format. The gate searches 192
+    (layer x window) cells and controls for the commit-position artifact: Gemma
+    0.781 fixed-slice = ACTIVE, Qwen 0.691 = INERT. AUROC gates applicability but
+    does not select the intervention (L20 0.781 → net −1; L19 0.772 → net +2).
 
-10. **Side effects.** Soft k32 on 200 real MMLU: 0.925→0.925, 0.610→0.620 — preserved.
-    Temporal on MMLU: 78→79, fires on 155/200 — no effect (threshold doesn't transfer).
+11. **L19 justification (partial).** The detector reads L19, two layers ABOVE the
+    patching-derived causal band (L10-17, zero neurons at L19) — causally
+    informed, not arbitrary. But proximity does not uniquely select it (L18-25 are
+    equally adjacent), so choosing it without a live run would be config luck.
+    Recorded honestly in `results/detector_layer_justification.json`.
+
+12. **Side effects.** Soft k32 on 200 real MMLU: 0.925→0.925, 0.610→0.620 — preserved.
+    Temporal on MMLU: 78→79, fires on 155/200 — no effect (different task; NHE-Edge
+    is single-task by design, and MMLU is not the deployment task).
 
 Lessons: clean state per item (or you fake it), strict scoring (loose counts hedges),
 offline simulation matches live 1:1, manual sampler ≠ `model.generate`.
@@ -84,9 +104,11 @@ Full story: `NHE-Edge/results/experiment_report.md`. Files: `NHE-Edge/results/*.
 
 ## What's next
 
-- Test the Static Memory Void signature directly on Gemma/Claude-scale models.
+- Raise detector RECALL on errors (precision is 0.220, recall 0.153) — this, not
+  a bigger benchmark, is what stands between the current arm and p<0.05.
+- Direct NTW signature test on Gemma/Claude-scale models; fact/provenance check
+  for the never-fires population (89.3% of residual error on the 463-item bench).
 - Qwen sampled battery (hard/random) with its own mask.
-- Train detector on sampled flows — fix the greedy↔sampled gap.
 - QLoRA fine-tune on Africa as a baseline.
 
 ## Repo

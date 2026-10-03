@@ -211,6 +211,101 @@ therefore produces a distinct signature from simple ignorance. Toy scale; a
 causal prior, not a Gemma proof. Gabon (id 19) is explicitly excluded from the
 void claim (uncertain 0.69 + prefix-correct truncation - a different mechanism).
 
+## Single-task benchmark - 463 items, the statistical-power test (2026-09-23)
+
+The Africa headline (7/54 -> 5/54, 2 fixes, 0 breaks) is clean but not
+significant: exact McNemar on 2 discordant pairs is p = 0.5. This section is the
+larger, single-task benchmark built to remove that objection.
+
+**Instrument.** `analysis/build_single_task.py` merges topics.py into ONE task
+with an explicit answer-union truth layer. `analysis/audit_single_task.py` found
+the merge was not trivial: 155 questions appear in more than one topic and 11 of
+those carry DISJOINT answer sets (e.g. "largest city in Malawi" is Blantyre in one
+topic and Lilongwe in another - both defensible). Blind concatenation would have
+double-counted questions and let one question carry two truths, so every union
+decision is recorded in `results/bench_single_task_provenance.json` and the merge
+is verified to be deterministic (`build_single_task.py --verify`).
+
+**Scoring.** `analysis/scoring.py` + `analysis/test_scoring.py`. The legacy
+substring metric is unsafe here: 26 rows have a shorter accepted answer that is a
+substring of a longer one in the same row ('bern' inside 'berne'). Matching is on
+whole token sequences after accent/punctuation folding, which closes those. The
+residual exposure (a shorter accepted answer that is its own token inside a longer
+one the model emitted, e.g. 'Delhi' inside 'New Delhi') is measured, not assumed
+away: `analysis/report_answer_set_gaps.py` finds 19 structurally exposed items and
+9 where the model actually emits the longer form on the committed baseline, out of
+463. On this benchmark the two metrics never disagreed on any item.
+
+**Arms** (identical engine, mask, threshold and decoding; only the intervention differs):
+
+| arm | n | strict wrong | rate |
+|---|---:|---:|---:|
+| none | 463 | 59 | 0.1274 |
+| runtime soft, L19/w5/t90, scale 0.3 | 463 | **56** | **0.1210** |
+
+**Paired result (strict, exact McNemar):**
+
+| metric | value |
+|---|---:|
+| fixes | 3 |
+| breaks | **0** |
+| net | +3 |
+| exact McNemar p | **0.250 (not significant)** |
+| net 95% Wilson CI | [0.0022, 0.0189] |
+| fired | 41 (of which wrong-before 9) |
+| repairs per fired wrong item | **0.333** |
+
+**What this establishes, at n=463 instead of n=54:**
+- **Zero collateral damage is not a small-sample artefact.** 0 breaks across 463
+  items and three question frames, against 9 breaks in the merged static+temporal arm.
+- **The timing law holds at scale.** 40 of 41 fired items have lead >= 1; the
+  single lead < 1 item never flipped. Every lead >= 1 firing that was wrong either
+  fixed or was left unharmed.
+- **The per-fired repair rate generalises.** 0.333 here vs 0.286 on Africa - the
+  quantity that has to survive a domain change did survive it.
+- **The taxonomy split is confirmed at scale.** Of the 56 items still wrong,
+  **50 never fired (89.3%)**. That is the Static Memory Void population NTW
+  explains, outside runtime reach by construction.
+
+**What it does NOT establish:**
+- **Statistical significance.** p = 0.25. `analysis/power_single_task.py` computed
+  before the run that 6 fixes with 0 breaks is the minimum for p < 0.05. The
+  benchmark has the headroom (59 wrong items) but the detector reached only 15.3%
+  of them, so the arm yields 3 discordant pairs, not 6.
+- **Why.** The cause is measured: firing precision is 0.220 (9 of 41 firings were
+  on actually-wrong items). Thirty-two firings landed on already-correct items and
+  did no harm, which is safe but wasteful. Raising significance needs a
+  higher-recall trigger, not a larger benchmark.
+
+Files: `analysis/{audit_single_task,build_single_task,scoring,test_scoring,
+report_answer_set_gaps,run_single_task,power_single_task,score_single_task,
+summarize_single_task}.py`, `analysis/justify_detector_layer.py`,
+`core/run_single_task.py`,
+`results/{bench_single_task,bench_single_task_provenance,eval_single_task_none_full,
+eval_single_task_mask_L19_w5,single_task_score,power_single_task,
+answer_set_gaps,single_task_audit,detector_layer_justification}.json`.
+
+## Detector layer L19 - partial justification (2026-09-23)
+
+The gate proved that pre-commit AUROC does not select the intervenable cell, so
+"L19 works" cannot be justified by the detector's own feature.
+`analysis/justify_detector_layer.py` asks whether an INDEPENDENT criterion
+(the causal attribution, which came from activation patching and was never
+selected by AUROC) pins L19.
+
+- **Established:** the intervention mask (k32_midwrong, patching-derived) lives
+  entirely in layers 10-17 (0 neurons at L19). The detector reads L19, two layers
+  ABOVE the band - consistent with reading where the patched wrong-commit effect
+  propagates, not inside where it originates. L19 is causally informed, not arbitrary.
+- **Not established:** proximity does NOT uniquely select it. Layers 18-25 are
+  equally "just above the band" and the criterion cannot distinguish them without
+  the live run.
+
+**Honest statement:** L19 is justified as causally ADJACENT to the attribution band
+and was validated by the live arm, but choosing it over other upper layers without
+a live run would be config luck. Selecting it purely by AUROC is now known to be
+invalid. Recorded in `results/detector_layer_justification.json`.
+
 ## Applicability gate - which models NHE-temporal can serve (2026-09-23)
 
 New primitive (`analysis/gate.py`): instead of asking "did this config flip

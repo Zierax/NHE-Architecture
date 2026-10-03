@@ -218,6 +218,59 @@ GPU, touches no weights at rest (reversible via reload), and has 0 breaks
 everywhere tested - at the cost of +20% per query. NHE is the 24-hour field
 fix; fine-tuning is the depot repair. Full table in `results/NUMBERS.md`.
 
+## The 463-item single-task benchmark (statistical power)
+
+The Africa result above (7/54 → 5/54) is clean but not statistically significant
+(2 fixes, exact McNemar p = 0.5). This is the larger benchmark built to settle
+that, as ONE task with an audited truth layer.
+
+- **463 items** merged from `topics.py`: 244 capital, 178 largest-city, 41
+  element. `analysis/audit_single_task.py` found 155 questions duplicated across
+  topics, 11 with disjoint truths (Malawi is Blantyre in one topic, Lilongwe in
+  another). The merge unions accepted answers explicitly
+  (`results/bench_single_task_provenance.json`) and is verified deterministic.
+- **Scoring**: whole-token matching after accent folding (`analysis/scoring.py`,
+  unit-tested). The legacy substring metric is unsafe here (26 rows had 'bern'
+  inside 'berne'); its residual exposure is measured at 9/463 items.
+
+| arm | strict wrong | rate |
+|---|---:|---:|
+| none | 59/463 | 0.1274 |
+| runtime soft L19/w5 scale 0.3 | **56/463** | **0.1210** |
+
+**Paired: fixes 3, breaks 0, net +3, exact McNemar p = 0.25 (not significant).**
+
+What n=463 establishes that n=54 could not:
+- **Zero collateral damage across 463 items and 3 question frames** (vs 9 breaks
+  in the merged arm). The safety claim is not a small-sample artefact.
+- **The timing law at scale**: 40/41 fired items had lead ≥ 1; the one lead < 1 never flipped.
+- **The per-fired repair rate generalises**: 0.333 here vs 0.286 on Africa.
+- **89.3% of the residual error never fires** — the Static Memory Void population
+  NTW explains, confirmed at scale.
+
+What it honestly does not: reach significance. The cause is measured, not
+guessed — the detector's precision on errors is 0.220 and its recall is 0.153, so
+6 fixes (the computed requirement) become 3. Significance needs a higher-recall
+trigger, not a larger benchmark.
+
+```
+python analysis/build_single_task.py            # merge + provenance
+python analysis/audit_single_task.py             # truth-layer audit
+python analysis/test_scoring.py                  # metric contract
+python analysis/report_answer_set_gaps.py        # residual exposure
+python analysis/power_single_task.py             # what significance requires
+python core/run_single_task.py --arm none --tag none_full
+python core/run_single_task.py --arm mask --layer 19 --window 5 --scale 0.3 --tag mask_L19_w5
+python analysis/score_single_task.py --arms eval_single_task_none_full eval_single_task_mask_L19_w5
+python analysis/summarize_single_task.py
+python analysis/justify_detector_layer.py        # why L19, honestly
+```
+
+`run_single_task.py` checkpoints every 20 items and resumes (`--resume`) with an
+exact-config guard, so the multi-hour armed run survives interruption without
+mixing arms. It also snapshots only the mask-touched tensors (~380 MB) instead of
+the full state dict, which OOM'd on this CPU box.
+
 ## One-command onboarding (semi-full automation)
 
 `analysis/nhe_onboard.py` runs the whole sequence for a new model with a hard

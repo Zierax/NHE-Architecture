@@ -1,0 +1,4428 @@
+{
+ "n_duplicate_questions": 155,
+ "decisions": [
+  {
+   "question": "What element has the atomic number 13?",
+   "source_topics": [
+    "ELEMENTS"
+   ],
+   "source_answers": {
+    "ELEMENTS": [
+     "Aluminium",
+     "Aluminum"
+    ]
+   },
+   "primary": "Aluminium",
+   "union": [
+    "Aluminium",
+    "Aluminum"
+   ],
+   "answers_added_beyond_primary_row": [
+    "Aluminum"
+   ],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Afghanistan?",
+   "source_topics": [
+    "WORLD_CAP_TRAPS",
+    "ASIA"
+   ],
+   "source_answers": {
+    "WORLD_CAP_TRAPS": [
+     "Kabul"
+    ],
+    "ASIA": [
+     "Kabul"
+    ]
+   },
+   "primary": "Kabul",
+   "union": [
+    "Kabul"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Albania?",
+   "source_topics": [
+    "EUROPE",
+    "WORLD_TRICKY"
+   ],
+   "source_answers": {
+    "EUROPE": [
+     "Tirana"
+    ],
+    "WORLD_TRICKY": [
+     "Tirana"
+    ]
+   },
+   "primary": "Tirana",
+   "union": [
+    "Tirana"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Andorra?",
+   "source_topics": [
+    "EUROPE",
+    "WORLD_CAP_TRAPS"
+   ],
+   "source_answers": {
+    "EUROPE": [
+     "Andorra la Vella"
+    ],
+    "WORLD_CAP_TRAPS": [
+     "Andorra la Vella"
+    ]
+   },
+   "primary": "Andorra la Vella",
+   "union": [
+    "Andorra la Vella"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Antigua and Barbuda?",
+   "source_topics": [
+    "WORLD_CAP_TRAPS"
+   ],
+   "source_answers": {
+    "WORLD_CAP_TRAPS": [
+     "Saint John's",
+     "St. John's"
+    ]
+   },
+   "primary": "Saint John's",
+   "union": [
+    "Saint John's",
+    "St. John's"
+   ],
+   "answers_added_beyond_primary_row": [
+    "St. John's"
+   ],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Armenia?",
+   "source_topics": [
+    "WORLD_CAP_TRAPS",
+    "ASIA"
+   ],
+   "source_answers": {
+    "WORLD_CAP_TRAPS": [
+     "Yerevan"
+    ],
+    "ASIA": [
+     "Yerevan"
+    ]
+   },
+   "primary": "Yerevan",
+   "union": [
+    "Yerevan"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Australia?",
+   "source_topics": [
+    "WORLD_TRICKY",
+    "WORLD_CAP_TRAPS"
+   ],
+   "source_answers": {
+    "WORLD_TRICKY": [
+     "Canberra",
+     "Australian Capital Territory"
+    ],
+    "WORLD_CAP_TRAPS": [
+     "Canberra"
+    ]
+   },
+   "primary": "Canberra",
+   "union": [
+    "Canberra",
+    "Australian Capital Territory"
+   ],
+   "answers_added_beyond_primary_row": [
+    "Australian Capital Territory"
+   ],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Azerbaijan?",
+   "source_topics": [
+    "WORLD_CAP_TRAPS",
+    "ASIA"
+   ],
+   "source_answers": {
+    "WORLD_CAP_TRAPS": [
+     "Baku"
+    ],
+    "ASIA": [
+     "Baku"
+    ]
+   },
+   "primary": "Baku",
+   "union": [
+    "Baku"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Belarus?",
+   "source_topics": [
+    "EUROPE",
+    "WORLD_TRICKY",
+    "WORLD_CAP_TRAPS"
+   ],
+   "source_answers": {
+    "EUROPE": [
+     "Minsk"
+    ],
+    "WORLD_TRICKY": [
+     "Minsk"
+    ],
+    "WORLD_CAP_TRAPS": [
+     "Minsk"
+    ]
+   },
+   "primary": "Minsk",
+   "union": [
+    "Minsk"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Belize?",
+   "source_topics": [
+    "WORLD_TRICKY",
+    "WORLD_CAP_TRAPS"
+   ],
+   "source_answers": {
+    "WORLD_TRICKY": [
+     "Belmopan"
+    ],
+    "WORLD_CAP_TRAPS": [
+     "Belmopan"
+    ]
+   },
+   "primary": "Belmopan",
+   "union": [
+    "Belmopan"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Benin?",
+   "source_topics": [
+    "AFRICA",
+    "WORLD_TRICKY",
+    "WORLD_CAP_TRAPS"
+   ],
+   "source_answers": {
+    "AFRICA": [
+     "Porto-Novo",
+     "Porto Novo"
+    ],
+    "WORLD_TRICKY": [
+     "Porto-Novo",
+     "Porto Novo"
+    ],
+    "WORLD_CAP_TRAPS": [
+     "Porto-Novo",
+     "Porto Novo"
+    ]
+   },
+   "primary": "Porto-Novo",
+   "union": [
+    "Porto-Novo",
+    "Porto Novo"
+   ],
+   "answers_added_beyond_primary_row": [
+    "Porto Novo"
+   ],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Bolivia?",
+   "source_topics": [
+    "WORLD_TRICKY",
+    "WORLD_CAP_TRAPS"
+   ],
+   "source_answers": {
+    "WORLD_TRICKY": [
+     "Sucre"
+    ],
+    "WORLD_CAP_TRAPS": [
+     "Sucre",
+     "La Paz"
+    ]
+   },
+   "primary": "Sucre",
+   "union": [
+    "Sucre",
+    "La Paz"
+   ],
+   "answers_added_beyond_primary_row": [
+    "La Paz"
+   ],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Bosnia and Herzegovina?",
+   "source_topics": [
+    "EUROPE",
+    "WORLD_TRICKY",
+    "WORLD_CAP_TRAPS"
+   ],
+   "source_answers": {
+    "EUROPE": [
+     "Sarajevo"
+    ],
+    "WORLD_TRICKY": [
+     "Sarajevo"
+    ],
+    "WORLD_CAP_TRAPS": [
+     "Sarajevo"
+    ]
+   },
+   "primary": "Sarajevo",
+   "union": [
+    "Sarajevo"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Botswana?",
+   "source_topics": [
+    "AFRICA",
+    "WORLD_CAP_TRAPS"
+   ],
+   "source_answers": {
+    "AFRICA": [
+     "Gaborone"
+    ],
+    "WORLD_CAP_TRAPS": [
+     "Gaborone"
+    ]
+   },
+   "primary": "Gaborone",
+   "union": [
+    "Gaborone"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Brazil?",
+   "source_topics": [
+    "WORLD_TRICKY",
+    "WORLD_CAP_TRAPS"
+   ],
+   "source_answers": {
+    "WORLD_TRICKY": [
+     "Brasilia",
+     "Brasília"
+    ],
+    "WORLD_CAP_TRAPS": [
+     "Brasilia",
+     "Brasília"
+    ]
+   },
+   "primary": "Brasilia",
+   "union": [
+    "Brasilia",
+    "Brasília"
+   ],
+   "answers_added_beyond_primary_row": [
+    "Brasília"
+   ],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Brunei?",
+   "source_topics": [
+    "WORLD_CAP_TRAPS",
+    "ASIA"
+   ],
+   "source_answers": {
+    "WORLD_CAP_TRAPS": [
+     "Bandar Seri Begawan"
+    ],
+    "ASIA": [
+     "Bandar Seri Begawan"
+    ]
+   },
+   "primary": "Bandar Seri Begawan",
+   "union": [
+    "Bandar Seri Begawan"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Bulgaria?",
+   "source_topics": [
+    "EUROPE",
+    "WORLD_TRICKY"
+   ],
+   "source_answers": {
+    "EUROPE": [
+     "Sofia"
+    ],
+    "WORLD_TRICKY": [
+     "Sofia"
+    ]
+   },
+   "primary": "Sofia",
+   "union": [
+    "Sofia"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Burkina Faso?",
+   "source_topics": [
+    "AFRICA",
+    "WORLD_CAP_TRAPS"
+   ],
+   "source_answers": {
+    "AFRICA": [
+     "Ouagadougou"
+    ],
+    "WORLD_CAP_TRAPS": [
+     "Ouagadougou"
+    ]
+   },
+   "primary": "Ouagadougou",
+   "union": [
+    "Ouagadougou"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Burundi?",
+   "source_topics": [
+    "AFRICA",
+    "WORLD_CAP_TRAPS"
+   ],
+   "source_answers": {
+    "AFRICA": [
+     "Gitega"
+    ],
+    "WORLD_CAP_TRAPS": [
+     "Gitega"
+    ]
+   },
+   "primary": "Gitega",
+   "union": [
+    "Gitega"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Cameroon?",
+   "source_topics": [
+    "AFRICA",
+    "WORLD_CAP_TRAPS"
+   ],
+   "source_answers": {
+    "AFRICA": [
+     "Yaounde",
+     "Yaoundé"
+    ],
+    "WORLD_CAP_TRAPS": [
+     "Yaounde",
+     "Yaoundé"
+    ]
+   },
+   "primary": "Yaounde",
+   "union": [
+    "Yaounde",
+    "Yaoundé"
+   ],
+   "answers_added_beyond_primary_row": [
+    "Yaoundé"
+   ],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Canada?",
+   "source_topics": [
+    "WORLD_TRICKY",
+    "WORLD_CAP_TRAPS"
+   ],
+   "source_answers": {
+    "WORLD_TRICKY": [
+     "Ottawa"
+    ],
+    "WORLD_CAP_TRAPS": [
+     "Ottawa"
+    ]
+   },
+   "primary": "Ottawa",
+   "union": [
+    "Ottawa"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Cape Verde?",
+   "source_topics": [
+    "AFRICA",
+    "WORLD_CAP_TRAPS"
+   ],
+   "source_answers": {
+    "AFRICA": [
+     "Praia"
+    ],
+    "WORLD_CAP_TRAPS": [
+     "Praia"
+    ]
+   },
+   "primary": "Praia",
+   "union": [
+    "Praia"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Chad?",
+   "source_topics": [
+    "AFRICA",
+    "WORLD_CAP_TRAPS"
+   ],
+   "source_answers": {
+    "AFRICA": [
+     "NDjamena",
+     "N'Djamena"
+    ],
+    "WORLD_CAP_TRAPS": [
+     "NDjamena",
+     "N'Djamena"
+    ]
+   },
+   "primary": "NDjamena",
+   "union": [
+    "NDjamena",
+    "N'Djamena"
+   ],
+   "answers_added_beyond_primary_row": [
+    "N'Djamena"
+   ],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Chile?",
+   "source_topics": [
+    "WORLD_TRICKY"
+   ],
+   "source_answers": {
+    "WORLD_TRICKY": [
+     "Santiago",
+     "Santiago de Chile"
+    ]
+   },
+   "primary": "Santiago",
+   "union": [
+    "Santiago",
+    "Santiago de Chile"
+   ],
+   "answers_added_beyond_primary_row": [
+    "Santiago de Chile"
+   ],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of China?",
+   "source_topics": [
+    "WORLD_CAP_TRAPS",
+    "ASIA"
+   ],
+   "source_answers": {
+    "WORLD_CAP_TRAPS": [
+     "Beijing"
+    ],
+    "ASIA": [
+     "Beijing"
+    ]
+   },
+   "primary": "Beijing",
+   "union": [
+    "Beijing"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Colombia?",
+   "source_topics": [
+    "WORLD_TRICKY"
+   ],
+   "source_answers": {
+    "WORLD_TRICKY": [
+     "Bogota",
+     "Bogotá"
+    ]
+   },
+   "primary": "Bogota",
+   "union": [
+    "Bogota",
+    "Bogotá"
+   ],
+   "answers_added_beyond_primary_row": [
+    "Bogotá"
+   ],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Comoros?",
+   "source_topics": [
+    "AFRICA",
+    "WORLD_CAP_TRAPS"
+   ],
+   "source_answers": {
+    "AFRICA": [
+     "Moroni"
+    ],
+    "WORLD_CAP_TRAPS": [
+     "Moroni"
+    ]
+   },
+   "primary": "Moroni",
+   "union": [
+    "Moroni"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Costa Rica?",
+   "source_topics": [
+    "WORLD_CAP_TRAPS"
+   ],
+   "source_answers": {
+    "WORLD_CAP_TRAPS": [
+     "San Jose",
+     "San José"
+    ]
+   },
+   "primary": "San Jose",
+   "union": [
+    "San Jose",
+    "San José"
+   ],
+   "answers_added_beyond_primary_row": [
+    "San José"
+   ],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Croatia?",
+   "source_topics": [
+    "EUROPE",
+    "WORLD_TRICKY"
+   ],
+   "source_answers": {
+    "EUROPE": [
+     "Zagreb"
+    ],
+    "WORLD_TRICKY": [
+     "Zagreb"
+    ]
+   },
+   "primary": "Zagreb",
+   "union": [
+    "Zagreb"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Cyprus?",
+   "source_topics": [
+    "EUROPE",
+    "WORLD_TRICKY",
+    "WORLD_CAP_TRAPS"
+   ],
+   "source_answers": {
+    "EUROPE": [
+     "Nicosia"
+    ],
+    "WORLD_TRICKY": [
+     "Nicosia"
+    ],
+    "WORLD_CAP_TRAPS": [
+     "Nicosia"
+    ]
+   },
+   "primary": "Nicosia",
+   "union": [
+    "Nicosia"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Djibouti?",
+   "source_topics": [
+    "AFRICA",
+    "WORLD_CAP_TRAPS"
+   ],
+   "source_answers": {
+    "AFRICA": [
+     "Djibouti"
+    ],
+    "WORLD_CAP_TRAPS": [
+     "Djibouti City",
+     "Djibouti"
+    ]
+   },
+   "primary": "Djibouti",
+   "union": [
+    "Djibouti",
+    "Djibouti City"
+   ],
+   "answers_added_beyond_primary_row": [
+    "Djibouti City"
+   ],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Ecuador?",
+   "source_topics": [
+    "WORLD_TRICKY",
+    "WORLD_CAP_TRAPS"
+   ],
+   "source_answers": {
+    "WORLD_TRICKY": [
+     "Quito"
+    ],
+    "WORLD_CAP_TRAPS": [
+     "Quito"
+    ]
+   },
+   "primary": "Quito",
+   "union": [
+    "Quito"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Equatorial Guinea?",
+   "source_topics": [
+    "AFRICA",
+    "WORLD_CAP_TRAPS"
+   ],
+   "source_answers": {
+    "AFRICA": [
+     "Malabo"
+    ],
+    "WORLD_CAP_TRAPS": [
+     "Malabo"
+    ]
+   },
+   "primary": "Malabo",
+   "union": [
+    "Malabo"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Eritrea?",
+   "source_topics": [
+    "AFRICA",
+    "WORLD_CAP_TRAPS"
+   ],
+   "source_answers": {
+    "AFRICA": [
+     "Asmara"
+    ],
+    "WORLD_CAP_TRAPS": [
+     "Asmara"
+    ]
+   },
+   "primary": "Asmara",
+   "union": [
+    "Asmara"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Estonia?",
+   "source_topics": [
+    "EUROPE",
+    "WORLD_TRICKY"
+   ],
+   "source_answers": {
+    "EUROPE": [
+     "Tallinn"
+    ],
+    "WORLD_TRICKY": [
+     "Tallinn"
+    ]
+   },
+   "primary": "Tallinn",
+   "union": [
+    "Tallinn"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Eswatini?",
+   "source_topics": [
+    "AFRICA",
+    "WORLD_CAP_TRAPS"
+   ],
+   "source_answers": {
+    "AFRICA": [
+     "Mbabane"
+    ],
+    "WORLD_CAP_TRAPS": [
+     "Mbabane"
+    ]
+   },
+   "primary": "Mbabane",
+   "union": [
+    "Mbabane"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Gabon?",
+   "source_topics": [
+    "AFRICA",
+    "WORLD_CAP_TRAPS"
+   ],
+   "source_answers": {
+    "AFRICA": [
+     "Libreville"
+    ],
+    "WORLD_CAP_TRAPS": [
+     "Libreville"
+    ]
+   },
+   "primary": "Libreville",
+   "union": [
+    "Libreville"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Gambia?",
+   "source_topics": [
+    "AFRICA",
+    "WORLD_CAP_TRAPS"
+   ],
+   "source_answers": {
+    "AFRICA": [
+     "Banjul"
+    ],
+    "WORLD_CAP_TRAPS": [
+     "Banjul"
+    ]
+   },
+   "primary": "Banjul",
+   "union": [
+    "Banjul"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Georgia?",
+   "source_topics": [
+    "WORLD_CAP_TRAPS",
+    "ASIA"
+   ],
+   "source_answers": {
+    "WORLD_CAP_TRAPS": [
+     "Tbilisi"
+    ],
+    "ASIA": [
+     "Tbilisi"
+    ]
+   },
+   "primary": "Tbilisi",
+   "union": [
+    "Tbilisi"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Greece?",
+   "source_topics": [
+    "EUROPE",
+    "WORLD_TRICKY"
+   ],
+   "source_answers": {
+    "EUROPE": [
+     "Athens"
+    ],
+    "WORLD_TRICKY": [
+     "Athens"
+    ]
+   },
+   "primary": "Athens",
+   "union": [
+    "Athens"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Grenada?",
+   "source_topics": [
+    "WORLD_CAP_TRAPS"
+   ],
+   "source_answers": {
+    "WORLD_CAP_TRAPS": [
+     "Saint George's",
+     "St. George's"
+    ]
+   },
+   "primary": "Saint George's",
+   "union": [
+    "Saint George's",
+    "St. George's"
+   ],
+   "answers_added_beyond_primary_row": [
+    "St. George's"
+   ],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Guinea?",
+   "source_topics": [
+    "AFRICA",
+    "WORLD_CAP_TRAPS"
+   ],
+   "source_answers": {
+    "AFRICA": [
+     "Conakry"
+    ],
+    "WORLD_CAP_TRAPS": [
+     "Conakry"
+    ]
+   },
+   "primary": "Conakry",
+   "union": [
+    "Conakry"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Haiti?",
+   "source_topics": [
+    "WORLD_CAP_TRAPS"
+   ],
+   "source_answers": {
+    "WORLD_CAP_TRAPS": [
+     "Port-au-Prince",
+     "Port au Prince"
+    ]
+   },
+   "primary": "Port-au-Prince",
+   "union": [
+    "Port-au-Prince",
+    "Port au Prince"
+   ],
+   "answers_added_beyond_primary_row": [
+    "Port au Prince"
+   ],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Hungary?",
+   "source_topics": [
+    "EUROPE",
+    "WORLD_TRICKY"
+   ],
+   "source_answers": {
+    "EUROPE": [
+     "Budapest"
+    ],
+    "WORLD_TRICKY": [
+     "Budapest"
+    ]
+   },
+   "primary": "Budapest",
+   "union": [
+    "Budapest"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Iceland?",
+   "source_topics": [
+    "EUROPE"
+   ],
+   "source_answers": {
+    "EUROPE": [
+     "Reykjavik",
+     "Reykjavík"
+    ]
+   },
+   "primary": "Reykjavik",
+   "union": [
+    "Reykjavik",
+    "Reykjavík"
+   ],
+   "answers_added_beyond_primary_row": [
+    "Reykjavík"
+   ],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of India?",
+   "source_topics": [
+    "WORLD_TRICKY",
+    "WORLD_CAP_TRAPS",
+    "ASIA"
+   ],
+   "source_answers": {
+    "WORLD_TRICKY": [
+     "New Delhi",
+     "Delhi"
+    ],
+    "WORLD_CAP_TRAPS": [
+     "New Delhi",
+     "Delhi"
+    ],
+    "ASIA": [
+     "New Delhi"
+    ]
+   },
+   "primary": "New Delhi",
+   "union": [
+    "New Delhi",
+    "Delhi"
+   ],
+   "answers_added_beyond_primary_row": [
+    "Delhi"
+   ],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Iran?",
+   "source_topics": [
+    "WORLD_CAP_TRAPS",
+    "ASIA"
+   ],
+   "source_answers": {
+    "WORLD_CAP_TRAPS": [
+     "Tehran"
+    ],
+    "ASIA": [
+     "Tehran"
+    ]
+   },
+   "primary": "Tehran",
+   "union": [
+    "Tehran"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Iraq?",
+   "source_topics": [
+    "WORLD_CAP_TRAPS",
+    "ASIA"
+   ],
+   "source_answers": {
+    "WORLD_CAP_TRAPS": [
+     "Baghdad"
+    ],
+    "ASIA": [
+     "Baghdad"
+    ]
+   },
+   "primary": "Baghdad",
+   "union": [
+    "Baghdad"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Israel?",
+   "source_topics": [
+    "WORLD_TRICKY",
+    "WORLD_CAP_TRAPS",
+    "ASIA"
+   ],
+   "source_answers": {
+    "WORLD_TRICKY": [
+     "Jerusalem"
+    ],
+    "WORLD_CAP_TRAPS": [
+     "Jerusalem"
+    ],
+    "ASIA": [
+     "Jerusalem"
+    ]
+   },
+   "primary": "Jerusalem",
+   "union": [
+    "Jerusalem"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Ivory Coast?",
+   "source_topics": [
+    "AFRICA",
+    "WORLD_TRICKY",
+    "WORLD_CAP_TRAPS"
+   ],
+   "source_answers": {
+    "AFRICA": [
+     "Yamoussoukro"
+    ],
+    "WORLD_TRICKY": [
+     "Yamoussoukro"
+    ],
+    "WORLD_CAP_TRAPS": [
+     "Yamoussoukro"
+    ]
+   },
+   "primary": "Yamoussoukro",
+   "union": [
+    "Yamoussoukro"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Jordan?",
+   "source_topics": [
+    "WORLD_TRICKY",
+    "WORLD_CAP_TRAPS",
+    "ASIA"
+   ],
+   "source_answers": {
+    "WORLD_TRICKY": [
+     "Amman"
+    ],
+    "WORLD_CAP_TRAPS": [
+     "Amman"
+    ],
+    "ASIA": [
+     "Amman"
+    ]
+   },
+   "primary": "Amman",
+   "union": [
+    "Amman"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Kazakhstan?",
+   "source_topics": [
+    "WORLD_TRICKY",
+    "WORLD_CAP_TRAPS",
+    "ASIA"
+   ],
+   "source_answers": {
+    "WORLD_TRICKY": [
+     "Astana"
+    ],
+    "WORLD_CAP_TRAPS": [
+     "Astana"
+    ],
+    "ASIA": [
+     "Astana"
+    ]
+   },
+   "primary": "Astana",
+   "union": [
+    "Astana"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Kiribati?",
+   "source_topics": [
+    "WORLD_CAP_TRAPS"
+   ],
+   "source_answers": {
+    "WORLD_CAP_TRAPS": [
+     "Tarawa",
+     "South Tarawa"
+    ]
+   },
+   "primary": "Tarawa",
+   "union": [
+    "Tarawa",
+    "South Tarawa"
+   ],
+   "answers_added_beyond_primary_row": [
+    "South Tarawa"
+   ],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Kosovo?",
+   "source_topics": [
+    "WORLD_TRICKY",
+    "WORLD_CAP_TRAPS"
+   ],
+   "source_answers": {
+    "WORLD_TRICKY": [
+     "Pristina",
+     "Priština"
+    ],
+    "WORLD_CAP_TRAPS": [
+     "Pristina",
+     "Priština"
+    ]
+   },
+   "primary": "Pristina",
+   "union": [
+    "Pristina",
+    "Priština"
+   ],
+   "answers_added_beyond_primary_row": [
+    "Priština"
+   ],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Kuwait?",
+   "source_topics": [
+    "WORLD_TRICKY",
+    "WORLD_CAP_TRAPS",
+    "ASIA"
+   ],
+   "source_answers": {
+    "WORLD_TRICKY": [
+     "Kuwait City",
+     "Kuwait"
+    ],
+    "WORLD_CAP_TRAPS": [
+     "Kuwait City",
+     "Kuwait"
+    ],
+    "ASIA": [
+     "Kuwait City"
+    ]
+   },
+   "primary": "Kuwait City",
+   "union": [
+    "Kuwait City",
+    "Kuwait"
+   ],
+   "answers_added_beyond_primary_row": [
+    "Kuwait"
+   ],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Kyrgyzstan?",
+   "source_topics": [
+    "WORLD_CAP_TRAPS",
+    "ASIA"
+   ],
+   "source_answers": {
+    "WORLD_CAP_TRAPS": [
+     "Bishkek"
+    ],
+    "ASIA": [
+     "Bishkek"
+    ]
+   },
+   "primary": "Bishkek",
+   "union": [
+    "Bishkek"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Laos?",
+   "source_topics": [
+    "WORLD_CAP_TRAPS",
+    "ASIA"
+   ],
+   "source_answers": {
+    "WORLD_CAP_TRAPS": [
+     "Vientiane"
+    ],
+    "ASIA": [
+     "Vientiane"
+    ]
+   },
+   "primary": "Vientiane",
+   "union": [
+    "Vientiane"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Latvia?",
+   "source_topics": [
+    "EUROPE",
+    "WORLD_TRICKY"
+   ],
+   "source_answers": {
+    "EUROPE": [
+     "Riga"
+    ],
+    "WORLD_TRICKY": [
+     "Riga"
+    ]
+   },
+   "primary": "Riga",
+   "union": [
+    "Riga"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Lebanon?",
+   "source_topics": [
+    "WORLD_CAP_TRAPS",
+    "ASIA"
+   ],
+   "source_answers": {
+    "WORLD_CAP_TRAPS": [
+     "Beirut"
+    ],
+    "ASIA": [
+     "Beirut"
+    ]
+   },
+   "primary": "Beirut",
+   "union": [
+    "Beirut"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Lesotho?",
+   "source_topics": [
+    "AFRICA",
+    "WORLD_CAP_TRAPS"
+   ],
+   "source_answers": {
+    "AFRICA": [
+     "Maseru"
+    ],
+    "WORLD_CAP_TRAPS": [
+     "Maseru"
+    ]
+   },
+   "primary": "Maseru",
+   "union": [
+    "Maseru"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Liberia?",
+   "source_topics": [
+    "AFRICA",
+    "WORLD_CAP_TRAPS"
+   ],
+   "source_answers": {
+    "AFRICA": [
+     "Monrovia"
+    ],
+    "WORLD_CAP_TRAPS": [
+     "Monrovia"
+    ]
+   },
+   "primary": "Monrovia",
+   "union": [
+    "Monrovia"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Liechtenstein?",
+   "source_topics": [
+    "EUROPE",
+    "WORLD_CAP_TRAPS"
+   ],
+   "source_answers": {
+    "EUROPE": [
+     "Vaduz"
+    ],
+    "WORLD_CAP_TRAPS": [
+     "Vaduz"
+    ]
+   },
+   "primary": "Vaduz",
+   "union": [
+    "Vaduz"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Lithuania?",
+   "source_topics": [
+    "EUROPE",
+    "WORLD_TRICKY"
+   ],
+   "source_answers": {
+    "EUROPE": [
+     "Vilnius"
+    ],
+    "WORLD_TRICKY": [
+     "Vilnius"
+    ]
+   },
+   "primary": "Vilnius",
+   "union": [
+    "Vilnius"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Luxembourg?",
+   "source_topics": [
+    "EUROPE",
+    "WORLD_CAP_TRAPS"
+   ],
+   "source_answers": {
+    "EUROPE": [
+     "Luxembourg"
+    ],
+    "WORLD_CAP_TRAPS": [
+     "Luxembourg"
+    ]
+   },
+   "primary": "Luxembourg",
+   "union": [
+    "Luxembourg"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Madagascar?",
+   "source_topics": [
+    "AFRICA",
+    "WORLD_CAP_TRAPS"
+   ],
+   "source_answers": {
+    "AFRICA": [
+     "Antananarivo"
+    ],
+    "WORLD_CAP_TRAPS": [
+     "Antananarivo"
+    ]
+   },
+   "primary": "Antananarivo",
+   "union": [
+    "Antananarivo"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Malawi?",
+   "source_topics": [
+    "AFRICA",
+    "WORLD_CAP_TRAPS"
+   ],
+   "source_answers": {
+    "AFRICA": [
+     "Lilongwe"
+    ],
+    "WORLD_CAP_TRAPS": [
+     "Lilongwe"
+    ]
+   },
+   "primary": "Lilongwe",
+   "union": [
+    "Lilongwe"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Mali?",
+   "source_topics": [
+    "AFRICA",
+    "WORLD_CAP_TRAPS"
+   ],
+   "source_answers": {
+    "AFRICA": [
+     "Bamako"
+    ],
+    "WORLD_CAP_TRAPS": [
+     "Bamako"
+    ]
+   },
+   "primary": "Bamako",
+   "union": [
+    "Bamako"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Malta?",
+   "source_topics": [
+    "EUROPE",
+    "WORLD_TRICKY",
+    "WORLD_CAP_TRAPS"
+   ],
+   "source_answers": {
+    "EUROPE": [
+     "Valletta"
+    ],
+    "WORLD_TRICKY": [
+     "Valletta"
+    ],
+    "WORLD_CAP_TRAPS": [
+     "Valletta"
+    ]
+   },
+   "primary": "Valletta",
+   "union": [
+    "Valletta"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Mauritania?",
+   "source_topics": [
+    "AFRICA",
+    "WORLD_CAP_TRAPS"
+   ],
+   "source_answers": {
+    "AFRICA": [
+     "Nouakchott"
+    ],
+    "WORLD_CAP_TRAPS": [
+     "Nouakchott"
+    ]
+   },
+   "primary": "Nouakchott",
+   "union": [
+    "Nouakchott"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Mauritius?",
+   "source_topics": [
+    "AFRICA",
+    "WORLD_CAP_TRAPS"
+   ],
+   "source_answers": {
+    "AFRICA": [
+     "Port Louis"
+    ],
+    "WORLD_CAP_TRAPS": [
+     "Port Louis"
+    ]
+   },
+   "primary": "Port Louis",
+   "union": [
+    "Port Louis"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Minnesota?",
+   "source_topics": [
+    "US_STATES"
+   ],
+   "source_answers": {
+    "US_STATES": [
+     "Saint Paul",
+     "St. Paul"
+    ]
+   },
+   "primary": "Saint Paul",
+   "union": [
+    "Saint Paul",
+    "St. Paul"
+   ],
+   "answers_added_beyond_primary_row": [
+    "St. Paul"
+   ],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Moldova?",
+   "source_topics": [
+    "EUROPE",
+    "WORLD_TRICKY",
+    "WORLD_CAP_TRAPS"
+   ],
+   "source_answers": {
+    "EUROPE": [
+     "Chisinau",
+     "Chișinău",
+     "Kishinev"
+    ],
+    "WORLD_TRICKY": [
+     "Chisinau",
+     "Chișinău"
+    ],
+    "WORLD_CAP_TRAPS": [
+     "Chisinau",
+     "Chișinău"
+    ]
+   },
+   "primary": "Chisinau",
+   "union": [
+    "Chisinau",
+    "Chișinău",
+    "Kishinev"
+   ],
+   "answers_added_beyond_primary_row": [
+    "Chișinău",
+    "Kishinev"
+   ],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Monaco?",
+   "source_topics": [
+    "EUROPE",
+    "WORLD_CAP_TRAPS"
+   ],
+   "source_answers": {
+    "EUROPE": [
+     "Monaco"
+    ],
+    "WORLD_CAP_TRAPS": [
+     "Monaco"
+    ]
+   },
+   "primary": "Monaco",
+   "union": [
+    "Monaco"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Mongolia?",
+   "source_topics": [
+    "WORLD_CAP_TRAPS",
+    "ASIA"
+   ],
+   "source_answers": {
+    "WORLD_CAP_TRAPS": [
+     "Ulaanbaatar"
+    ],
+    "ASIA": [
+     "Ulaanbaatar"
+    ]
+   },
+   "primary": "Ulaanbaatar",
+   "union": [
+    "Ulaanbaatar"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Montenegro?",
+   "source_topics": [
+    "EUROPE",
+    "WORLD_TRICKY",
+    "WORLD_CAP_TRAPS"
+   ],
+   "source_answers": {
+    "EUROPE": [
+     "Podgorica"
+    ],
+    "WORLD_TRICKY": [
+     "Podgorica"
+    ],
+    "WORLD_CAP_TRAPS": [
+     "Podgorica"
+    ]
+   },
+   "primary": "Podgorica",
+   "union": [
+    "Podgorica"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Morocco?",
+   "source_topics": [
+    "AFRICA",
+    "WORLD_CAP_TRAPS"
+   ],
+   "source_answers": {
+    "AFRICA": [
+     "Rabat"
+    ],
+    "WORLD_CAP_TRAPS": [
+     "Rabat"
+    ]
+   },
+   "primary": "Rabat",
+   "union": [
+    "Rabat"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Myanmar?",
+   "source_topics": [
+    "WORLD_TRICKY",
+    "WORLD_CAP_TRAPS",
+    "ASIA"
+   ],
+   "source_answers": {
+    "WORLD_TRICKY": [
+     "Naypyidaw",
+     "Nay Pyi Taw"
+    ],
+    "WORLD_CAP_TRAPS": [
+     "Naypyidaw",
+     "Nay Pyi Taw"
+    ],
+    "ASIA": [
+     "Naypyidaw",
+     "Nay Pyi Taw"
+    ]
+   },
+   "primary": "Naypyidaw",
+   "union": [
+    "Naypyidaw",
+    "Nay Pyi Taw"
+   ],
+   "answers_added_beyond_primary_row": [
+    "Nay Pyi Taw"
+   ],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Namibia?",
+   "source_topics": [
+    "AFRICA",
+    "WORLD_CAP_TRAPS"
+   ],
+   "source_answers": {
+    "AFRICA": [
+     "Windhoek"
+    ],
+    "WORLD_CAP_TRAPS": [
+     "Windhoek"
+    ]
+   },
+   "primary": "Windhoek",
+   "union": [
+    "Windhoek"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Niger?",
+   "source_topics": [
+    "AFRICA",
+    "WORLD_CAP_TRAPS"
+   ],
+   "source_answers": {
+    "AFRICA": [
+     "Niamey"
+    ],
+    "WORLD_CAP_TRAPS": [
+     "Niamey"
+    ]
+   },
+   "primary": "Niamey",
+   "union": [
+    "Niamey"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Nigeria?",
+   "source_topics": [
+    "AFRICA",
+    "WORLD_CAP_TRAPS"
+   ],
+   "source_answers": {
+    "AFRICA": [
+     "Abuja"
+    ],
+    "WORLD_CAP_TRAPS": [
+     "Abuja"
+    ]
+   },
+   "primary": "Abuja",
+   "union": [
+    "Abuja"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of North Macedonia?",
+   "source_topics": [
+    "EUROPE",
+    "WORLD_TRICKY",
+    "WORLD_CAP_TRAPS"
+   ],
+   "source_answers": {
+    "EUROPE": [
+     "Skopje"
+    ],
+    "WORLD_TRICKY": [
+     "Skopje"
+    ],
+    "WORLD_CAP_TRAPS": [
+     "Skopje"
+    ]
+   },
+   "primary": "Skopje",
+   "union": [
+    "Skopje"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Oman?",
+   "source_topics": [
+    "WORLD_TRICKY",
+    "WORLD_CAP_TRAPS",
+    "ASIA"
+   ],
+   "source_answers": {
+    "WORLD_TRICKY": [
+     "Muscat"
+    ],
+    "WORLD_CAP_TRAPS": [
+     "Muscat"
+    ],
+    "ASIA": [
+     "Muscat"
+    ]
+   },
+   "primary": "Muscat",
+   "union": [
+    "Muscat"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Pakistan?",
+   "source_topics": [
+    "WORLD_TRICKY",
+    "WORLD_CAP_TRAPS",
+    "ASIA"
+   ],
+   "source_answers": {
+    "WORLD_TRICKY": [
+     "Islamabad"
+    ],
+    "WORLD_CAP_TRAPS": [
+     "Islamabad"
+    ],
+    "ASIA": [
+     "Islamabad"
+    ]
+   },
+   "primary": "Islamabad",
+   "union": [
+    "Islamabad"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Palau?",
+   "source_topics": [
+    "WORLD_CAP_TRAPS"
+   ],
+   "source_answers": {
+    "WORLD_CAP_TRAPS": [
+     "Ngerulmud",
+     "Melekeok"
+    ]
+   },
+   "primary": "Ngerulmud",
+   "union": [
+    "Ngerulmud",
+    "Melekeok"
+   ],
+   "answers_added_beyond_primary_row": [
+    "Melekeok"
+   ],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Paraguay?",
+   "source_topics": [
+    "WORLD_CAP_TRAPS"
+   ],
+   "source_answers": {
+    "WORLD_CAP_TRAPS": [
+     "Asuncion",
+     "Asunción"
+    ]
+   },
+   "primary": "Asuncion",
+   "union": [
+    "Asuncion",
+    "Asunción"
+   ],
+   "answers_added_beyond_primary_row": [
+    "Asunción"
+   ],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Poland?",
+   "source_topics": [
+    "EUROPE",
+    "WORLD_TRICKY"
+   ],
+   "source_answers": {
+    "EUROPE": [
+     "Warsaw"
+    ],
+    "WORLD_TRICKY": [
+     "Warsaw"
+    ]
+   },
+   "primary": "Warsaw",
+   "union": [
+    "Warsaw"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Qatar?",
+   "source_topics": [
+    "WORLD_TRICKY",
+    "WORLD_CAP_TRAPS",
+    "ASIA"
+   ],
+   "source_answers": {
+    "WORLD_TRICKY": [
+     "Doha"
+    ],
+    "WORLD_CAP_TRAPS": [
+     "Doha"
+    ],
+    "ASIA": [
+     "Doha"
+    ]
+   },
+   "primary": "Doha",
+   "union": [
+    "Doha"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Romania?",
+   "source_topics": [
+    "EUROPE",
+    "WORLD_TRICKY"
+   ],
+   "source_answers": {
+    "EUROPE": [
+     "Bucharest"
+    ],
+    "WORLD_TRICKY": [
+     "Bucharest"
+    ]
+   },
+   "primary": "Bucharest",
+   "union": [
+    "Bucharest"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Rwanda?",
+   "source_topics": [
+    "AFRICA",
+    "WORLD_CAP_TRAPS"
+   ],
+   "source_answers": {
+    "AFRICA": [
+     "Kigali"
+    ],
+    "WORLD_CAP_TRAPS": [
+     "Kigali"
+    ]
+   },
+   "primary": "Kigali",
+   "union": [
+    "Kigali"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of San Marino?",
+   "source_topics": [
+    "EUROPE",
+    "WORLD_CAP_TRAPS"
+   ],
+   "source_answers": {
+    "EUROPE": [
+     "San Marino"
+    ],
+    "WORLD_CAP_TRAPS": [
+     "San Marino"
+    ]
+   },
+   "primary": "San Marino",
+   "union": [
+    "San Marino"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Sao Tome and Principe?",
+   "source_topics": [
+    "AFRICA",
+    "WORLD_CAP_TRAPS"
+   ],
+   "source_answers": {
+    "AFRICA": [
+     "Sao Tome",
+     "São Tomé"
+    ],
+    "WORLD_CAP_TRAPS": [
+     "Sao Tome",
+     "São Tomé"
+    ]
+   },
+   "primary": "Sao Tome",
+   "union": [
+    "Sao Tome",
+    "São Tomé"
+   ],
+   "answers_added_beyond_primary_row": [
+    "São Tomé"
+   ],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Saudi Arabia?",
+   "source_topics": [
+    "WORLD_TRICKY",
+    "WORLD_CAP_TRAPS",
+    "ASIA"
+   ],
+   "source_answers": {
+    "WORLD_TRICKY": [
+     "Riyadh"
+    ],
+    "WORLD_CAP_TRAPS": [
+     "Riyadh"
+    ],
+    "ASIA": [
+     "Riyadh"
+    ]
+   },
+   "primary": "Riyadh",
+   "union": [
+    "Riyadh"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Serbia?",
+   "source_topics": [
+    "EUROPE",
+    "WORLD_TRICKY"
+   ],
+   "source_answers": {
+    "EUROPE": [
+     "Belgrade"
+    ],
+    "WORLD_TRICKY": [
+     "Belgrade"
+    ]
+   },
+   "primary": "Belgrade",
+   "union": [
+    "Belgrade"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Seychelles?",
+   "source_topics": [
+    "AFRICA",
+    "WORLD_CAP_TRAPS"
+   ],
+   "source_answers": {
+    "AFRICA": [
+     "Victoria"
+    ],
+    "WORLD_CAP_TRAPS": [
+     "Victoria"
+    ]
+   },
+   "primary": "Victoria",
+   "union": [
+    "Victoria"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Sierra Leone?",
+   "source_topics": [
+    "AFRICA",
+    "WORLD_CAP_TRAPS"
+   ],
+   "source_answers": {
+    "AFRICA": [
+     "Freetown"
+    ],
+    "WORLD_CAP_TRAPS": [
+     "Freetown"
+    ]
+   },
+   "primary": "Freetown",
+   "union": [
+    "Freetown"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Slovenia?",
+   "source_topics": [
+    "EUROPE",
+    "WORLD_TRICKY"
+   ],
+   "source_answers": {
+    "EUROPE": [
+     "Ljubljana"
+    ],
+    "WORLD_TRICKY": [
+     "Ljubljana"
+    ]
+   },
+   "primary": "Ljubljana",
+   "union": [
+    "Ljubljana"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of South Africa?",
+   "source_topics": [
+    "AFRICA",
+    "WORLD_CAP_TRAPS"
+   ],
+   "source_answers": {
+    "AFRICA": [
+     "Pretoria",
+     "Cape Town",
+     "Bloemfontein"
+    ],
+    "WORLD_CAP_TRAPS": [
+     "Pretoria",
+     "Cape Town",
+     "Bloemfontein"
+    ]
+   },
+   "primary": "Pretoria",
+   "union": [
+    "Pretoria",
+    "Cape Town",
+    "Bloemfontein"
+   ],
+   "answers_added_beyond_primary_row": [
+    "Cape Town",
+    "Bloemfontein"
+   ],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Sri Lanka?",
+   "source_topics": [
+    "WORLD_TRICKY",
+    "WORLD_CAP_TRAPS",
+    "ASIA"
+   ],
+   "source_answers": {
+    "WORLD_TRICKY": [
+     "Sri Jayawardenepura Kotte",
+     "Kotte",
+     "Sri Jayawardenapura Kotte"
+    ],
+    "WORLD_CAP_TRAPS": [
+     "Sri Jayawardenepura Kotte",
+     "Kotte"
+    ],
+    "ASIA": [
+     "Colombo"
+    ]
+   },
+   "primary": "Sri Jayawardenepura Kotte",
+   "union": [
+    "Sri Jayawardenepura Kotte",
+    "Kotte",
+    "Sri Jayawardenapura Kotte",
+    "Colombo"
+   ],
+   "answers_added_beyond_primary_row": [
+    "Kotte",
+    "Sri Jayawardenapura Kotte",
+    "Colombo"
+   ],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Switzerland?",
+   "source_topics": [
+    "EUROPE",
+    "WORLD_TRICKY",
+    "WORLD_CAP_TRAPS"
+   ],
+   "source_answers": {
+    "EUROPE": [
+     "Bern",
+     "Berne"
+    ],
+    "WORLD_TRICKY": [
+     "Bern",
+     "Berne"
+    ],
+    "WORLD_CAP_TRAPS": [
+     "Bern",
+     "Berne"
+    ]
+   },
+   "primary": "Bern",
+   "union": [
+    "Bern",
+    "Berne"
+   ],
+   "answers_added_beyond_primary_row": [
+    "Berne"
+   ],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Syria?",
+   "source_topics": [
+    "WORLD_CAP_TRAPS",
+    "ASIA"
+   ],
+   "source_answers": {
+    "WORLD_CAP_TRAPS": [
+     "Damascus"
+    ],
+    "ASIA": [
+     "Damascus"
+    ]
+   },
+   "primary": "Damascus",
+   "union": [
+    "Damascus"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Taiwan?",
+   "source_topics": [
+    "WORLD_CAP_TRAPS",
+    "ASIA"
+   ],
+   "source_answers": {
+    "WORLD_CAP_TRAPS": [
+     "Taipei"
+    ],
+    "ASIA": [
+     "Taipei"
+    ]
+   },
+   "primary": "Taipei",
+   "union": [
+    "Taipei"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Tajikistan?",
+   "source_topics": [
+    "WORLD_CAP_TRAPS",
+    "ASIA"
+   ],
+   "source_answers": {
+    "WORLD_CAP_TRAPS": [
+     "Dushanbe"
+    ],
+    "ASIA": [
+     "Dushanbe"
+    ]
+   },
+   "primary": "Dushanbe",
+   "union": [
+    "Dushanbe"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Tanzania?",
+   "source_topics": [
+    "AFRICA",
+    "WORLD_CAP_TRAPS"
+   ],
+   "source_answers": {
+    "AFRICA": [
+     "Dodoma"
+    ],
+    "WORLD_CAP_TRAPS": [
+     "Dodoma"
+    ]
+   },
+   "primary": "Dodoma",
+   "union": [
+    "Dodoma"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Timor-Leste?",
+   "source_topics": [
+    "WORLD_CAP_TRAPS",
+    "ASIA"
+   ],
+   "source_answers": {
+    "WORLD_CAP_TRAPS": [
+     "Dili"
+    ],
+    "ASIA": [
+     "Dili"
+    ]
+   },
+   "primary": "Dili",
+   "union": [
+    "Dili"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Togo?",
+   "source_topics": [
+    "AFRICA",
+    "WORLD_CAP_TRAPS"
+   ],
+   "source_answers": {
+    "AFRICA": [
+     "Lome",
+     "Lomé"
+    ],
+    "WORLD_CAP_TRAPS": [
+     "Lome",
+     "Lomé"
+    ]
+   },
+   "primary": "Lome",
+   "union": [
+    "Lome",
+    "Lomé"
+   ],
+   "answers_added_beyond_primary_row": [
+    "Lomé"
+   ],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Tonga?",
+   "source_topics": [
+    "WORLD_CAP_TRAPS"
+   ],
+   "source_answers": {
+    "WORLD_CAP_TRAPS": [
+     "Nuku'alofa",
+     "Nukualofa"
+    ]
+   },
+   "primary": "Nuku'alofa",
+   "union": [
+    "Nuku'alofa",
+    "Nukualofa"
+   ],
+   "answers_added_beyond_primary_row": [
+    "Nukualofa"
+   ],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Trinidad and Tobago?",
+   "source_topics": [
+    "WORLD_CAP_TRAPS"
+   ],
+   "source_answers": {
+    "WORLD_CAP_TRAPS": [
+     "Port of Spain",
+     "Port-of-Spain"
+    ]
+   },
+   "primary": "Port of Spain",
+   "union": [
+    "Port of Spain",
+    "Port-of-Spain"
+   ],
+   "answers_added_beyond_primary_row": [
+    "Port-of-Spain"
+   ],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Turkey?",
+   "source_topics": [
+    "EUROPE",
+    "WORLD_TRICKY",
+    "WORLD_CAP_TRAPS",
+    "ASIA"
+   ],
+   "source_answers": {
+    "EUROPE": [
+     "Ankara"
+    ],
+    "WORLD_TRICKY": [
+     "Ankara"
+    ],
+    "WORLD_CAP_TRAPS": [
+     "Ankara"
+    ],
+    "ASIA": [
+     "Ankara"
+    ]
+   },
+   "primary": "Ankara",
+   "union": [
+    "Ankara"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Turkmenistan?",
+   "source_topics": [
+    "WORLD_CAP_TRAPS",
+    "ASIA"
+   ],
+   "source_answers": {
+    "WORLD_CAP_TRAPS": [
+     "Ashgabat"
+    ],
+    "ASIA": [
+     "Ashgabat"
+    ]
+   },
+   "primary": "Ashgabat",
+   "union": [
+    "Ashgabat"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Uganda?",
+   "source_topics": [
+    "AFRICA",
+    "WORLD_CAP_TRAPS"
+   ],
+   "source_answers": {
+    "AFRICA": [
+     "Kampala"
+    ],
+    "WORLD_CAP_TRAPS": [
+     "Kampala"
+    ]
+   },
+   "primary": "Kampala",
+   "union": [
+    "Kampala"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Ukraine?",
+   "source_topics": [
+    "EUROPE",
+    "WORLD_TRICKY",
+    "WORLD_CAP_TRAPS"
+   ],
+   "source_answers": {
+    "EUROPE": [
+     "Kyiv",
+     "Kiev"
+    ],
+    "WORLD_TRICKY": [
+     "Kyiv",
+     "Kiev"
+    ],
+    "WORLD_CAP_TRAPS": [
+     "Kyiv",
+     "Kiev"
+    ]
+   },
+   "primary": "Kyiv",
+   "union": [
+    "Kyiv",
+    "Kiev"
+   ],
+   "answers_added_beyond_primary_row": [
+    "Kiev"
+   ],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Uzbekistan?",
+   "source_topics": [
+    "WORLD_CAP_TRAPS",
+    "ASIA"
+   ],
+   "source_answers": {
+    "WORLD_CAP_TRAPS": [
+     "Tashkent"
+    ],
+    "ASIA": [
+     "Tashkent"
+    ]
+   },
+   "primary": "Tashkent",
+   "union": [
+    "Tashkent"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Vatican City?",
+   "source_topics": [
+    "WORLD_CAP_TRAPS"
+   ],
+   "source_answers": {
+    "WORLD_CAP_TRAPS": [
+     "Vatican City",
+     "Vatican"
+    ]
+   },
+   "primary": "Vatican City",
+   "union": [
+    "Vatican City",
+    "Vatican"
+   ],
+   "answers_added_beyond_primary_row": [
+    "Vatican"
+   ],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Vietnam?",
+   "source_topics": [
+    "WORLD_TRICKY",
+    "WORLD_CAP_TRAPS",
+    "ASIA"
+   ],
+   "source_answers": {
+    "WORLD_TRICKY": [
+     "Hanoi"
+    ],
+    "WORLD_CAP_TRAPS": [
+     "Hanoi"
+    ],
+    "ASIA": [
+     "Hanoi"
+    ]
+   },
+   "primary": "Hanoi",
+   "union": [
+    "Hanoi"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Western Sahara?",
+   "source_topics": [
+    "WORLD_CAP_TRAPS"
+   ],
+   "source_answers": {
+    "WORLD_CAP_TRAPS": [
+     "Laayoune",
+     "El Aaiún",
+     "Laayoune"
+    ]
+   },
+   "primary": "Laayoune",
+   "union": [
+    "Laayoune",
+    "El Aaiún"
+   ],
+   "answers_added_beyond_primary_row": [
+    "El Aaiún"
+   ],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Yemen?",
+   "source_topics": [
+    "WORLD_CAP_TRAPS",
+    "ASIA"
+   ],
+   "source_answers": {
+    "WORLD_CAP_TRAPS": [
+     "Sanaa",
+     "Sana'a"
+    ],
+    "ASIA": [
+     "Sanaa",
+     "Sana'a"
+    ]
+   },
+   "primary": "Sanaa",
+   "union": [
+    "Sanaa",
+    "Sana'a"
+   ],
+   "answers_added_beyond_primary_row": [
+    "Sana'a"
+   ],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Zambia?",
+   "source_topics": [
+    "AFRICA",
+    "WORLD_CAP_TRAPS"
+   ],
+   "source_answers": {
+    "AFRICA": [
+     "Lusaka"
+    ],
+    "WORLD_CAP_TRAPS": [
+     "Lusaka"
+    ]
+   },
+   "primary": "Lusaka",
+   "union": [
+    "Lusaka"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of Zimbabwe?",
+   "source_topics": [
+    "AFRICA",
+    "WORLD_CAP_TRAPS"
+   ],
+   "source_answers": {
+    "AFRICA": [
+     "Harare"
+    ],
+    "WORLD_CAP_TRAPS": [
+     "Harare"
+    ]
+   },
+   "primary": "Harare",
+   "union": [
+    "Harare"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of the Central African Republic?",
+   "source_topics": [
+    "AFRICA",
+    "WORLD_CAP_TRAPS"
+   ],
+   "source_answers": {
+    "AFRICA": [
+     "Bangui"
+    ],
+    "WORLD_CAP_TRAPS": [
+     "Bangui"
+    ]
+   },
+   "primary": "Bangui",
+   "union": [
+    "Bangui"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of the Maldives?",
+   "source_topics": [
+    "ASIA"
+   ],
+   "source_answers": {
+    "ASIA": [
+     "Male",
+     "Malé"
+    ]
+   },
+   "primary": "Male",
+   "union": [
+    "Male",
+    "Malé"
+   ],
+   "answers_added_beyond_primary_row": [
+    "Malé"
+   ],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of the Netherlands?",
+   "source_topics": [
+    "EUROPE",
+    "WORLD_TRICKY",
+    "WORLD_CAP_TRAPS"
+   ],
+   "source_answers": {
+    "EUROPE": [
+     "Amsterdam"
+    ],
+    "WORLD_TRICKY": [
+     "Amsterdam"
+    ],
+    "WORLD_CAP_TRAPS": [
+     "Amsterdam"
+    ]
+   },
+   "primary": "Amsterdam",
+   "union": [
+    "Amsterdam"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of the Republic of the Congo?",
+   "source_topics": [
+    "AFRICA",
+    "WORLD_CAP_TRAPS"
+   ],
+   "source_answers": {
+    "AFRICA": [
+     "Brazzaville"
+    ],
+    "WORLD_CAP_TRAPS": [
+     "Brazzaville"
+    ]
+   },
+   "primary": "Brazzaville",
+   "union": [
+    "Brazzaville"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of the United Arab Emirates?",
+   "source_topics": [
+    "WORLD_TRICKY",
+    "WORLD_CAP_TRAPS",
+    "ASIA"
+   ],
+   "source_answers": {
+    "WORLD_TRICKY": [
+     "Abu Dhabi"
+    ],
+    "WORLD_CAP_TRAPS": [
+     "Abu Dhabi"
+    ],
+    "ASIA": [
+     "Abu Dhabi"
+    ]
+   },
+   "primary": "Abu Dhabi",
+   "union": [
+    "Abu Dhabi"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the capital of the United States?",
+   "source_topics": [
+    "WORLD_CAP_TRAPS"
+   ],
+   "source_answers": {
+    "WORLD_CAP_TRAPS": [
+     "Washington, D.C.",
+     "Washington DC",
+     "Washington"
+    ]
+   },
+   "primary": "Washington, D.C.",
+   "union": [
+    "Washington, D.C.",
+    "Washington DC",
+    "Washington"
+   ],
+   "answers_added_beyond_primary_row": [
+    "Washington DC",
+    "Washington"
+   ],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the largest city in Algeria?",
+   "source_topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "source_answers": {
+    "AFRICA_LARGEST": [
+     "Algiers",
+     "Algiers City"
+    ],
+    "WORLD_LARGEST": [
+     "Algiers"
+    ]
+   },
+   "primary": "Algiers",
+   "union": [
+    "Algiers",
+    "Algiers City"
+   ],
+   "answers_added_beyond_primary_row": [
+    "Algiers City"
+   ],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the largest city in Angola?",
+   "source_topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "source_answers": {
+    "AFRICA_LARGEST": [
+     "Luanda"
+    ],
+    "WORLD_LARGEST": [
+     "Luanda"
+    ]
+   },
+   "primary": "Luanda",
+   "union": [
+    "Luanda"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the largest city in Benin?",
+   "source_topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "source_answers": {
+    "AFRICA_LARGEST": [
+     "Cotonou"
+    ],
+    "WORLD_LARGEST": [
+     "Cotonou"
+    ]
+   },
+   "primary": "Cotonou",
+   "union": [
+    "Cotonou"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the largest city in Bolivia?",
+   "source_topics": [
+    "WORLD_LARGEST"
+   ],
+   "source_answers": {
+    "WORLD_LARGEST": [
+     "Santa Cruz de la Sierra",
+     "Santa Cruz"
+    ]
+   },
+   "primary": "Santa Cruz de la Sierra",
+   "union": [
+    "Santa Cruz de la Sierra",
+    "Santa Cruz"
+   ],
+   "answers_added_beyond_primary_row": [
+    "Santa Cruz"
+   ],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the largest city in Botswana?",
+   "source_topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "source_answers": {
+    "AFRICA_LARGEST": [
+     "Gaborone"
+    ],
+    "WORLD_LARGEST": [
+     "Gaborone"
+    ]
+   },
+   "primary": "Gaborone",
+   "union": [
+    "Gaborone"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the largest city in Brazil?",
+   "source_topics": [
+    "WORLD_LARGEST"
+   ],
+   "source_answers": {
+    "WORLD_LARGEST": [
+     "Sao Paulo",
+     "São Paulo"
+    ]
+   },
+   "primary": "Sao Paulo",
+   "union": [
+    "Sao Paulo",
+    "São Paulo"
+   ],
+   "answers_added_beyond_primary_row": [
+    "São Paulo"
+   ],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the largest city in Burkina Faso?",
+   "source_topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "source_answers": {
+    "AFRICA_LARGEST": [
+     "Ouagadougou"
+    ],
+    "WORLD_LARGEST": [
+     "Ouagadougou"
+    ]
+   },
+   "primary": "Ouagadougou",
+   "union": [
+    "Ouagadougou"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the largest city in Burundi?",
+   "source_topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "source_answers": {
+    "AFRICA_LARGEST": [
+     "Bujumbura",
+     "Bujumbura City"
+    ],
+    "WORLD_LARGEST": [
+     "Bujumbura"
+    ]
+   },
+   "primary": "Bujumbura",
+   "union": [
+    "Bujumbura",
+    "Bujumbura City"
+   ],
+   "answers_added_beyond_primary_row": [
+    "Bujumbura City"
+   ],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the largest city in Cameroon?",
+   "source_topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "source_answers": {
+    "AFRICA_LARGEST": [
+     "Douala"
+    ],
+    "WORLD_LARGEST": [
+     "Douala"
+    ]
+   },
+   "primary": "Douala",
+   "union": [
+    "Douala"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the largest city in Cape Verde?",
+   "source_topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "source_answers": {
+    "AFRICA_LARGEST": [
+     "Praia"
+    ],
+    "WORLD_LARGEST": [
+     "Praia"
+    ]
+   },
+   "primary": "Praia",
+   "union": [
+    "Praia"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the largest city in Chad?",
+   "source_topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "source_answers": {
+    "AFRICA_LARGEST": [
+     "NDjamena",
+     "N'Djamena"
+    ],
+    "WORLD_LARGEST": [
+     "NDjamena",
+     "N'Djamena"
+    ]
+   },
+   "primary": "NDjamena",
+   "union": [
+    "NDjamena",
+    "N'Djamena"
+   ],
+   "answers_added_beyond_primary_row": [
+    "N'Djamena"
+   ],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the largest city in Chile?",
+   "source_topics": [
+    "WORLD_LARGEST"
+   ],
+   "source_answers": {
+    "WORLD_LARGEST": [
+     "Santiago",
+     "Santiago de Chile"
+    ]
+   },
+   "primary": "Santiago",
+   "union": [
+    "Santiago",
+    "Santiago de Chile"
+   ],
+   "answers_added_beyond_primary_row": [
+    "Santiago de Chile"
+   ],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the largest city in Colombia?",
+   "source_topics": [
+    "WORLD_LARGEST"
+   ],
+   "source_answers": {
+    "WORLD_LARGEST": [
+     "Bogota",
+     "Bogotá"
+    ]
+   },
+   "primary": "Bogota",
+   "union": [
+    "Bogota",
+    "Bogotá"
+   ],
+   "answers_added_beyond_primary_row": [
+    "Bogotá"
+   ],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the largest city in Comoros?",
+   "source_topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "source_answers": {
+    "AFRICA_LARGEST": [
+     "Moroni"
+    ],
+    "WORLD_LARGEST": [
+     "Moroni"
+    ]
+   },
+   "primary": "Moroni",
+   "union": [
+    "Moroni"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the largest city in Costa Rica?",
+   "source_topics": [
+    "WORLD_LARGEST"
+   ],
+   "source_answers": {
+    "WORLD_LARGEST": [
+     "San Jose",
+     "San José"
+    ]
+   },
+   "primary": "San Jose",
+   "union": [
+    "San Jose",
+    "San José"
+   ],
+   "answers_added_beyond_primary_row": [
+    "San José"
+   ],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the largest city in Djibouti?",
+   "source_topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "source_answers": {
+    "AFRICA_LARGEST": [
+     "Djibouti",
+     "Djibouti City"
+    ],
+    "WORLD_LARGEST": [
+     "Djibouti City",
+     "Djibouti"
+    ]
+   },
+   "primary": "Djibouti",
+   "union": [
+    "Djibouti",
+    "Djibouti City"
+   ],
+   "answers_added_beyond_primary_row": [
+    "Djibouti City"
+   ],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the largest city in Egypt?",
+   "source_topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "source_answers": {
+    "AFRICA_LARGEST": [
+     "Cairo"
+    ],
+    "WORLD_LARGEST": [
+     "Cairo"
+    ]
+   },
+   "primary": "Cairo",
+   "union": [
+    "Cairo"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the largest city in Equatorial Guinea?",
+   "source_topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "source_answers": {
+    "AFRICA_LARGEST": [
+     "Bata"
+    ],
+    "WORLD_LARGEST": [
+     "Bata"
+    ]
+   },
+   "primary": "Bata",
+   "union": [
+    "Bata"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the largest city in Eritrea?",
+   "source_topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "source_answers": {
+    "AFRICA_LARGEST": [
+     "Asmara"
+    ],
+    "WORLD_LARGEST": [
+     "Asmara"
+    ]
+   },
+   "primary": "Asmara",
+   "union": [
+    "Asmara"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the largest city in Eswatini?",
+   "source_topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "source_answers": {
+    "AFRICA_LARGEST": [
+     "Manzini"
+    ],
+    "WORLD_LARGEST": [
+     "Manzini"
+    ]
+   },
+   "primary": "Manzini",
+   "union": [
+    "Manzini"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the largest city in Ethiopia?",
+   "source_topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "source_answers": {
+    "AFRICA_LARGEST": [
+     "Addis Ababa"
+    ],
+    "WORLD_LARGEST": [
+     "Addis Ababa"
+    ]
+   },
+   "primary": "Addis Ababa",
+   "union": [
+    "Addis Ababa"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the largest city in Gabon?",
+   "source_topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "source_answers": {
+    "AFRICA_LARGEST": [
+     "Libreville"
+    ],
+    "WORLD_LARGEST": [
+     "Libreville"
+    ]
+   },
+   "primary": "Libreville",
+   "union": [
+    "Libreville"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the largest city in Gambia?",
+   "source_topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "source_answers": {
+    "AFRICA_LARGEST": [
+     "Serekunda",
+     "Serrekunda"
+    ],
+    "WORLD_LARGEST": [
+     "Serekunda",
+     "Serrekunda"
+    ]
+   },
+   "primary": "Serekunda",
+   "union": [
+    "Serekunda",
+    "Serrekunda"
+   ],
+   "answers_added_beyond_primary_row": [
+    "Serrekunda"
+   ],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the largest city in Ghana?",
+   "source_topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "source_answers": {
+    "AFRICA_LARGEST": [
+     "Accra"
+    ],
+    "WORLD_LARGEST": [
+     "Accra"
+    ]
+   },
+   "primary": "Accra",
+   "union": [
+    "Accra"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the largest city in Guinea?",
+   "source_topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "source_answers": {
+    "AFRICA_LARGEST": [
+     "Conakry"
+    ],
+    "WORLD_LARGEST": [
+     "Conakry"
+    ]
+   },
+   "primary": "Conakry",
+   "union": [
+    "Conakry"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the largest city in Haiti?",
+   "source_topics": [
+    "WORLD_LARGEST"
+   ],
+   "source_answers": {
+    "WORLD_LARGEST": [
+     "Port-au-Prince",
+     "Port au Prince"
+    ]
+   },
+   "primary": "Port-au-Prince",
+   "union": [
+    "Port-au-Prince",
+    "Port au Prince"
+   ],
+   "answers_added_beyond_primary_row": [
+    "Port au Prince"
+   ],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the largest city in Iceland?",
+   "source_topics": [
+    "WORLD_LARGEST"
+   ],
+   "source_answers": {
+    "WORLD_LARGEST": [
+     "Reykjavik",
+     "Reykjavík"
+    ]
+   },
+   "primary": "Reykjavik",
+   "union": [
+    "Reykjavik",
+    "Reykjavík"
+   ],
+   "answers_added_beyond_primary_row": [
+    "Reykjavík"
+   ],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the largest city in Israel?",
+   "source_topics": [
+    "WORLD_LARGEST"
+   ],
+   "source_answers": {
+    "WORLD_LARGEST": [
+     "Jerusalem",
+     "Tel Aviv"
+    ]
+   },
+   "primary": "Jerusalem",
+   "union": [
+    "Jerusalem",
+    "Tel Aviv"
+   ],
+   "answers_added_beyond_primary_row": [
+    "Tel Aviv"
+   ],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the largest city in Ivory Coast?",
+   "source_topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "source_answers": {
+    "AFRICA_LARGEST": [
+     "Abidjan"
+    ],
+    "WORLD_LARGEST": [
+     "Abidjan"
+    ]
+   },
+   "primary": "Abidjan",
+   "union": [
+    "Abidjan"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the largest city in Kenya?",
+   "source_topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "source_answers": {
+    "AFRICA_LARGEST": [
+     "Nairobi"
+    ],
+    "WORLD_LARGEST": [
+     "Nairobi"
+    ]
+   },
+   "primary": "Nairobi",
+   "union": [
+    "Nairobi"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the largest city in Kiribati?",
+   "source_topics": [
+    "WORLD_LARGEST"
+   ],
+   "source_answers": {
+    "WORLD_LARGEST": [
+     "Tarawa",
+     "South Tarawa"
+    ]
+   },
+   "primary": "Tarawa",
+   "union": [
+    "Tarawa",
+    "South Tarawa"
+   ],
+   "answers_added_beyond_primary_row": [
+    "South Tarawa"
+   ],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the largest city in Kuwait?",
+   "source_topics": [
+    "WORLD_LARGEST"
+   ],
+   "source_answers": {
+    "WORLD_LARGEST": [
+     "Kuwait City",
+     "Kuwait"
+    ]
+   },
+   "primary": "Kuwait City",
+   "union": [
+    "Kuwait City",
+    "Kuwait"
+   ],
+   "answers_added_beyond_primary_row": [
+    "Kuwait"
+   ],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the largest city in Lesotho?",
+   "source_topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "source_answers": {
+    "AFRICA_LARGEST": [
+     "Maseru"
+    ],
+    "WORLD_LARGEST": [
+     "Maseru"
+    ]
+   },
+   "primary": "Maseru",
+   "union": [
+    "Maseru"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the largest city in Liberia?",
+   "source_topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "source_answers": {
+    "AFRICA_LARGEST": [
+     "Monrovia"
+    ],
+    "WORLD_LARGEST": [
+     "Monrovia"
+    ]
+   },
+   "primary": "Monrovia",
+   "union": [
+    "Monrovia"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the largest city in Libya?",
+   "source_topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "source_answers": {
+    "AFRICA_LARGEST": [
+     "Tripoli"
+    ],
+    "WORLD_LARGEST": [
+     "Tripoli"
+    ]
+   },
+   "primary": "Tripoli",
+   "union": [
+    "Tripoli"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the largest city in Madagascar?",
+   "source_topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "source_answers": {
+    "AFRICA_LARGEST": [
+     "Antananarivo"
+    ],
+    "WORLD_LARGEST": [
+     "Antananarivo"
+    ]
+   },
+   "primary": "Antananarivo",
+   "union": [
+    "Antananarivo"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the largest city in Malawi?",
+   "source_topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "source_answers": {
+    "AFRICA_LARGEST": [
+     "Lilongwe"
+    ],
+    "WORLD_LARGEST": [
+     "Blantyre",
+     "Lilongwe"
+    ]
+   },
+   "primary": "Lilongwe",
+   "union": [
+    "Lilongwe",
+    "Blantyre"
+   ],
+   "answers_added_beyond_primary_row": [
+    "Blantyre"
+   ],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the largest city in Mali?",
+   "source_topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "source_answers": {
+    "AFRICA_LARGEST": [
+     "Bamako"
+    ],
+    "WORLD_LARGEST": [
+     "Bamako"
+    ]
+   },
+   "primary": "Bamako",
+   "union": [
+    "Bamako"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the largest city in Mauritania?",
+   "source_topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "source_answers": {
+    "AFRICA_LARGEST": [
+     "Nouakchott"
+    ],
+    "WORLD_LARGEST": [
+     "Nouakchott"
+    ]
+   },
+   "primary": "Nouakchott",
+   "union": [
+    "Nouakchott"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the largest city in Mauritius?",
+   "source_topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "source_answers": {
+    "AFRICA_LARGEST": [
+     "Port Louis"
+    ],
+    "WORLD_LARGEST": [
+     "Port Louis"
+    ]
+   },
+   "primary": "Port Louis",
+   "union": [
+    "Port Louis"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the largest city in Moldova?",
+   "source_topics": [
+    "WORLD_LARGEST"
+   ],
+   "source_answers": {
+    "WORLD_LARGEST": [
+     "Chisinau",
+     "Chișinău"
+    ]
+   },
+   "primary": "Chisinau",
+   "union": [
+    "Chisinau",
+    "Chișinău"
+   ],
+   "answers_added_beyond_primary_row": [
+    "Chișinău"
+   ],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the largest city in Morocco?",
+   "source_topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "source_answers": {
+    "AFRICA_LARGEST": [
+     "Casablanca"
+    ],
+    "WORLD_LARGEST": [
+     "Casablanca"
+    ]
+   },
+   "primary": "Casablanca",
+   "union": [
+    "Casablanca"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the largest city in Mozambique?",
+   "source_topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "source_answers": {
+    "AFRICA_LARGEST": [
+     "Maputo"
+    ],
+    "WORLD_LARGEST": [
+     "Maputo"
+    ]
+   },
+   "primary": "Maputo",
+   "union": [
+    "Maputo"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the largest city in Namibia?",
+   "source_topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "source_answers": {
+    "AFRICA_LARGEST": [
+     "Windhoek"
+    ],
+    "WORLD_LARGEST": [
+     "Windhoek"
+    ]
+   },
+   "primary": "Windhoek",
+   "union": [
+    "Windhoek"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the largest city in New Caledonia?",
+   "source_topics": [
+    "WORLD_LARGEST"
+   ],
+   "source_answers": {
+    "WORLD_LARGEST": [
+     "Noumea",
+     "Nouméa"
+    ]
+   },
+   "primary": "Noumea",
+   "union": [
+    "Noumea",
+    "Nouméa"
+   ],
+   "answers_added_beyond_primary_row": [
+    "Nouméa"
+   ],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the largest city in Niger?",
+   "source_topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "source_answers": {
+    "AFRICA_LARGEST": [
+     "Niamey"
+    ],
+    "WORLD_LARGEST": [
+     "Niamey"
+    ]
+   },
+   "primary": "Niamey",
+   "union": [
+    "Niamey"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the largest city in Palau?",
+   "source_topics": [
+    "WORLD_LARGEST"
+   ],
+   "source_answers": {
+    "WORLD_LARGEST": [
+     "Koror",
+     "Ngerulmud"
+    ]
+   },
+   "primary": "Koror",
+   "union": [
+    "Koror",
+    "Ngerulmud"
+   ],
+   "answers_added_beyond_primary_row": [
+    "Ngerulmud"
+   ],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the largest city in Paraguay?",
+   "source_topics": [
+    "WORLD_LARGEST"
+   ],
+   "source_answers": {
+    "WORLD_LARGEST": [
+     "Asuncion",
+     "Asunción"
+    ]
+   },
+   "primary": "Asuncion",
+   "union": [
+    "Asuncion",
+    "Asunción"
+   ],
+   "answers_added_beyond_primary_row": [
+    "Asunción"
+   ],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the largest city in Rwanda?",
+   "source_topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "source_answers": {
+    "AFRICA_LARGEST": [
+     "Kigali"
+    ],
+    "WORLD_LARGEST": [
+     "Kigali"
+    ]
+   },
+   "primary": "Kigali",
+   "union": [
+    "Kigali"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the largest city in Sao Tome and Principe?",
+   "source_topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "source_answers": {
+    "AFRICA_LARGEST": [
+     "Sao Tome",
+     "São Tomé"
+    ],
+    "WORLD_LARGEST": [
+     "Sao Tome",
+     "São Tomé"
+    ]
+   },
+   "primary": "Sao Tome",
+   "union": [
+    "Sao Tome",
+    "São Tomé"
+   ],
+   "answers_added_beyond_primary_row": [
+    "São Tomé"
+   ],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the largest city in Senegal?",
+   "source_topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "source_answers": {
+    "AFRICA_LARGEST": [
+     "Dakar"
+    ],
+    "WORLD_LARGEST": [
+     "Dakar"
+    ]
+   },
+   "primary": "Dakar",
+   "union": [
+    "Dakar"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the largest city in Seychelles?",
+   "source_topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "source_answers": {
+    "AFRICA_LARGEST": [
+     "Victoria"
+    ],
+    "WORLD_LARGEST": [
+     "Victoria"
+    ]
+   },
+   "primary": "Victoria",
+   "union": [
+    "Victoria"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the largest city in Sierra Leone?",
+   "source_topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "source_answers": {
+    "AFRICA_LARGEST": [
+     "Freetown"
+    ],
+    "WORLD_LARGEST": [
+     "Freetown"
+    ]
+   },
+   "primary": "Freetown",
+   "union": [
+    "Freetown"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the largest city in Somalia?",
+   "source_topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "source_answers": {
+    "AFRICA_LARGEST": [
+     "Mogadishu"
+    ],
+    "WORLD_LARGEST": [
+     "Mogadishu"
+    ]
+   },
+   "primary": "Mogadishu",
+   "union": [
+    "Mogadishu"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the largest city in South Sudan?",
+   "source_topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "source_answers": {
+    "AFRICA_LARGEST": [
+     "Juba"
+    ],
+    "WORLD_LARGEST": [
+     "Juba"
+    ]
+   },
+   "primary": "Juba",
+   "union": [
+    "Juba"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the largest city in Sudan?",
+   "source_topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "source_answers": {
+    "AFRICA_LARGEST": [
+     "Khartoum"
+    ],
+    "WORLD_LARGEST": [
+     "Khartoum",
+     "Omdurman"
+    ]
+   },
+   "primary": "Khartoum",
+   "union": [
+    "Khartoum",
+    "Omdurman"
+   ],
+   "answers_added_beyond_primary_row": [
+    "Omdurman"
+   ],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the largest city in Switzerland?",
+   "source_topics": [
+    "WORLD_LARGEST"
+   ],
+   "source_answers": {
+    "WORLD_LARGEST": [
+     "Zurich",
+     "Zürich"
+    ]
+   },
+   "primary": "Zurich",
+   "union": [
+    "Zurich",
+    "Zürich"
+   ],
+   "answers_added_beyond_primary_row": [
+    "Zürich"
+   ],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the largest city in Taiwan?",
+   "source_topics": [
+    "WORLD_LARGEST"
+   ],
+   "source_answers": {
+    "WORLD_LARGEST": [
+     "New Taipei",
+     "Taipei"
+    ]
+   },
+   "primary": "New Taipei",
+   "union": [
+    "New Taipei",
+    "Taipei"
+   ],
+   "answers_added_beyond_primary_row": [
+    "Taipei"
+   ],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the largest city in Tanzania?",
+   "source_topics": [
+    "AFRICA_LARGEST"
+   ],
+   "source_answers": {
+    "AFRICA_LARGEST": [
+     "Dar es Salaam",
+     "Dar Es Salaam",
+     "Dar es-Salaam"
+    ]
+   },
+   "primary": "Dar es Salaam",
+   "union": [
+    "Dar es Salaam",
+    "Dar Es Salaam",
+    "Dar es-Salaam"
+   ],
+   "answers_added_beyond_primary_row": [
+    "Dar Es Salaam",
+    "Dar es-Salaam"
+   ],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the largest city in Togo?",
+   "source_topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "source_answers": {
+    "AFRICA_LARGEST": [
+     "Lome",
+     "Lomé"
+    ],
+    "WORLD_LARGEST": [
+     "Lome",
+     "Lomé"
+    ]
+   },
+   "primary": "Lome",
+   "union": [
+    "Lome",
+    "Lomé"
+   ],
+   "answers_added_beyond_primary_row": [
+    "Lomé"
+   ],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the largest city in Tonga?",
+   "source_topics": [
+    "WORLD_LARGEST"
+   ],
+   "source_answers": {
+    "WORLD_LARGEST": [
+     "Nuku'alofa",
+     "Nukualofa"
+    ]
+   },
+   "primary": "Nuku'alofa",
+   "union": [
+    "Nuku'alofa",
+    "Nukualofa"
+   ],
+   "answers_added_beyond_primary_row": [
+    "Nukualofa"
+   ],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the largest city in Trinidad and Tobago?",
+   "source_topics": [
+    "WORLD_LARGEST"
+   ],
+   "source_answers": {
+    "WORLD_LARGEST": [
+     "Port of Spain",
+     "Port-of-Spain"
+    ]
+   },
+   "primary": "Port of Spain",
+   "union": [
+    "Port of Spain",
+    "Port-of-Spain"
+   ],
+   "answers_added_beyond_primary_row": [
+    "Port-of-Spain"
+   ],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the largest city in Tunisia?",
+   "source_topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "source_answers": {
+    "AFRICA_LARGEST": [
+     "Tunis"
+    ],
+    "WORLD_LARGEST": [
+     "Tunis"
+    ]
+   },
+   "primary": "Tunis",
+   "union": [
+    "Tunis"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the largest city in Uganda?",
+   "source_topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "source_answers": {
+    "AFRICA_LARGEST": [
+     "Kampala"
+    ],
+    "WORLD_LARGEST": [
+     "Kampala"
+    ]
+   },
+   "primary": "Kampala",
+   "union": [
+    "Kampala"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the largest city in Ukraine?",
+   "source_topics": [
+    "WORLD_LARGEST"
+   ],
+   "source_answers": {
+    "WORLD_LARGEST": [
+     "Kyiv",
+     "Kiev"
+    ]
+   },
+   "primary": "Kyiv",
+   "union": [
+    "Kyiv",
+    "Kiev"
+   ],
+   "answers_added_beyond_primary_row": [
+    "Kiev"
+   ],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the largest city in Western Sahara?",
+   "source_topics": [
+    "WORLD_LARGEST"
+   ],
+   "source_answers": {
+    "WORLD_LARGEST": [
+     "Laayoune",
+     "El Aaiún"
+    ]
+   },
+   "primary": "Laayoune",
+   "union": [
+    "Laayoune",
+    "El Aaiún"
+   ],
+   "answers_added_beyond_primary_row": [
+    "El Aaiún"
+   ],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the largest city in Yemen?",
+   "source_topics": [
+    "WORLD_LARGEST"
+   ],
+   "source_answers": {
+    "WORLD_LARGEST": [
+     "Sanaa",
+     "Sana'a"
+    ]
+   },
+   "primary": "Sanaa",
+   "union": [
+    "Sanaa",
+    "Sana'a"
+   ],
+   "answers_added_beyond_primary_row": [
+    "Sana'a"
+   ],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the largest city in Zambia?",
+   "source_topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "source_answers": {
+    "AFRICA_LARGEST": [
+     "Lusaka"
+    ],
+    "WORLD_LARGEST": [
+     "Lusaka"
+    ]
+   },
+   "primary": "Lusaka",
+   "union": [
+    "Lusaka"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the largest city in Zimbabwe?",
+   "source_topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "source_answers": {
+    "AFRICA_LARGEST": [
+     "Harare"
+    ],
+    "WORLD_LARGEST": [
+     "Harare"
+    ]
+   },
+   "primary": "Harare",
+   "union": [
+    "Harare"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the largest city in the Democratic Republic of the Congo?",
+   "source_topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "source_answers": {
+    "AFRICA_LARGEST": [
+     "Kinshasa"
+    ],
+    "WORLD_LARGEST": [
+     "Kinshasa"
+    ]
+   },
+   "primary": "Kinshasa",
+   "union": [
+    "Kinshasa"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the largest city in the Maldives?",
+   "source_topics": [
+    "WORLD_LARGEST"
+   ],
+   "source_answers": {
+    "WORLD_LARGEST": [
+     "Male",
+     "Malé"
+    ]
+   },
+   "primary": "Male",
+   "union": [
+    "Male",
+    "Malé"
+   ],
+   "answers_added_beyond_primary_row": [
+    "Malé"
+   ],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the largest city in the Philippines?",
+   "source_topics": [
+    "WORLD_LARGEST"
+   ],
+   "source_answers": {
+    "WORLD_LARGEST": [
+     "Quezon City",
+     "Manila"
+    ]
+   },
+   "primary": "Quezon City",
+   "union": [
+    "Quezon City",
+    "Manila"
+   ],
+   "answers_added_beyond_primary_row": [
+    "Manila"
+   ],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the largest city in the Republic of the Congo?",
+   "source_topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "source_answers": {
+    "AFRICA_LARGEST": [
+     "Brazzaville"
+    ],
+    "WORLD_LARGEST": [
+     "Brazzaville"
+    ]
+   },
+   "primary": "Brazzaville",
+   "union": [
+    "Brazzaville"
+   ],
+   "answers_added_beyond_primary_row": [],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  },
+  {
+   "question": "What is the largest city in the United States?",
+   "source_topics": [
+    "WORLD_LARGEST"
+   ],
+   "source_answers": {
+    "WORLD_LARGEST": [
+     "New York City",
+     "New York"
+    ]
+   },
+   "primary": "New York City",
+   "union": [
+    "New York City",
+    "New York"
+   ],
+   "answers_added_beyond_primary_row": [
+    "New York"
+   ],
+   "reason": "duplicate question across topics; union keeps every defensible accepted answer so no correct answer is scored as an error"
+  }
+ ]
+}

@@ -1,0 +1,2221 @@
+{
+ "topics": {
+  "AFRICA": {
+   "n": 54,
+   "unique_questions": 54,
+   "duplicate_question_with_different_answers": {},
+   "rows_with_alternates": 6,
+   "committed_baseline_n": 54,
+   "committed_baseline_wrong": 7,
+   "headroom_items": 7
+  },
+  "EUROPE": {
+   "n": 44,
+   "unique_questions": 44,
+   "duplicate_question_with_different_answers": {},
+   "rows_with_alternates": 4,
+   "committed_baseline_n": 44,
+   "committed_baseline_wrong": 0,
+   "headroom_items": 0
+  },
+  "AFRICA_LARGEST": {
+   "n": 54,
+   "unique_questions": 54,
+   "duplicate_question_with_different_answers": {},
+   "rows_with_alternates": 8,
+   "committed_baseline_n": 54,
+   "committed_baseline_wrong": 10,
+   "headroom_items": 10
+  },
+  "WORLD_TRICKY": {
+   "n": 49,
+   "unique_questions": 49,
+   "duplicate_question_with_different_answers": {},
+   "rows_with_alternates": 13,
+   "committed_baseline_n": 49,
+   "committed_baseline_wrong": 1,
+   "headroom_items": 1
+  },
+  "WORLD_CAP_TRAPS": {
+   "n": 134,
+   "unique_questions": 134,
+   "duplicate_question_with_different_answers": {},
+   "rows_with_alternates": 30,
+   "committed_baseline_n": 134,
+   "committed_baseline_wrong": 15,
+   "headroom_items": 15
+  },
+  "WORLD_LARGEST": {
+   "n": 173,
+   "unique_questions": 173,
+   "duplicate_question_with_different_answers": {},
+   "rows_with_alternates": 31,
+   "committed_baseline_n": 173,
+   "committed_baseline_wrong": 21,
+   "headroom_items": 21
+  },
+  "ELEMENTS": {
+   "n": 41,
+   "unique_questions": 41,
+   "duplicate_question_with_different_answers": {},
+   "rows_with_alternates": 1,
+   "committed_baseline_n": 41,
+   "committed_baseline_wrong": 9,
+   "headroom_items": 9
+  },
+  "ASIA": {
+   "n": 46,
+   "unique_questions": 46,
+   "duplicate_question_with_different_answers": {},
+   "rows_with_alternates": 3,
+   "committed_baseline_n": 46,
+   "committed_baseline_wrong": 2,
+   "headroom_items": 2
+  },
+  "US_STATES": {
+   "n": 50,
+   "unique_questions": 50,
+   "duplicate_question_with_different_answers": {},
+   "rows_with_alternates": 1,
+   "committed_baseline_n": 50,
+   "committed_baseline_wrong": 1,
+   "headroom_items": 1
+  }
+ },
+ "contradictions": [],
+ "substring_hazards": [
+  {
+   "topic": "EUROPE",
+   "question": "What is the capital of Switzerland?",
+   "shorter": "bern",
+   "longer": "berne",
+   "risk": "substring scorer accepts the wrong answer"
+  },
+  {
+   "topic": "AFRICA_LARGEST",
+   "question": "What is the largest city in Algeria?",
+   "shorter": "algiers",
+   "longer": "algiers city",
+   "risk": "substring scorer accepts the wrong answer"
+  },
+  {
+   "topic": "AFRICA_LARGEST",
+   "question": "What is the largest city in Burundi?",
+   "shorter": "bujumbura",
+   "longer": "bujumbura city",
+   "risk": "substring scorer accepts the wrong answer"
+  },
+  {
+   "topic": "AFRICA_LARGEST",
+   "question": "What is the largest city in Djibouti?",
+   "shorter": "djibouti",
+   "longer": "djibouti city",
+   "risk": "substring scorer accepts the wrong answer"
+  },
+  {
+   "topic": "WORLD_TRICKY",
+   "question": "What is the capital of Switzerland?",
+   "shorter": "bern",
+   "longer": "berne",
+   "risk": "substring scorer accepts the wrong answer"
+  },
+  {
+   "topic": "WORLD_TRICKY",
+   "question": "What is the capital of India?",
+   "shorter": "delhi",
+   "longer": "new delhi",
+   "risk": "substring scorer accepts the wrong answer"
+  },
+  {
+   "topic": "WORLD_TRICKY",
+   "question": "What is the capital of Sri Lanka?",
+   "shorter": "kotte",
+   "longer": "sri jayawardenepura kotte",
+   "risk": "substring scorer accepts the wrong answer"
+  },
+  {
+   "topic": "WORLD_TRICKY",
+   "question": "What is the capital of Sri Lanka?",
+   "shorter": "kotte",
+   "longer": "sri jayawardenapura kotte",
+   "risk": "substring scorer accepts the wrong answer"
+  },
+  {
+   "topic": "WORLD_TRICKY",
+   "question": "What is the capital of Chile?",
+   "shorter": "santiago",
+   "longer": "santiago de chile",
+   "risk": "substring scorer accepts the wrong answer"
+  },
+  {
+   "topic": "WORLD_TRICKY",
+   "question": "What is the capital of Kuwait?",
+   "shorter": "kuwait",
+   "longer": "kuwait city",
+   "risk": "substring scorer accepts the wrong answer"
+  },
+  {
+   "topic": "WORLD_CAP_TRAPS",
+   "question": "What is the capital of Switzerland?",
+   "shorter": "bern",
+   "longer": "berne",
+   "risk": "substring scorer accepts the wrong answer"
+  },
+  {
+   "topic": "WORLD_CAP_TRAPS",
+   "question": "What is the capital of India?",
+   "shorter": "delhi",
+   "longer": "new delhi",
+   "risk": "substring scorer accepts the wrong answer"
+  },
+  {
+   "topic": "WORLD_CAP_TRAPS",
+   "question": "What is the capital of Sri Lanka?",
+   "shorter": "kotte",
+   "longer": "sri jayawardenepura kotte",
+   "risk": "substring scorer accepts the wrong answer"
+  },
+  {
+   "topic": "WORLD_CAP_TRAPS",
+   "question": "What is the capital of the United States?",
+   "shorter": "washington",
+   "longer": "washington, d.c.",
+   "risk": "substring scorer accepts the wrong answer"
+  },
+  {
+   "topic": "WORLD_CAP_TRAPS",
+   "question": "What is the capital of the United States?",
+   "shorter": "washington",
+   "longer": "washington dc",
+   "risk": "substring scorer accepts the wrong answer"
+  },
+  {
+   "topic": "WORLD_CAP_TRAPS",
+   "question": "What is the capital of Kuwait?",
+   "shorter": "kuwait",
+   "longer": "kuwait city",
+   "risk": "substring scorer accepts the wrong answer"
+  },
+  {
+   "topic": "WORLD_CAP_TRAPS",
+   "question": "What is the capital of Vatican City?",
+   "shorter": "vatican",
+   "longer": "vatican city",
+   "risk": "substring scorer accepts the wrong answer"
+  },
+  {
+   "topic": "WORLD_CAP_TRAPS",
+   "question": "What is the capital of Kiribati?",
+   "shorter": "tarawa",
+   "longer": "south tarawa",
+   "risk": "substring scorer accepts the wrong answer"
+  },
+  {
+   "topic": "WORLD_CAP_TRAPS",
+   "question": "What is the capital of Djibouti?",
+   "shorter": "djibouti",
+   "longer": "djibouti city",
+   "risk": "substring scorer accepts the wrong answer"
+  },
+  {
+   "topic": "WORLD_LARGEST",
+   "question": "What is the largest city in the United States?",
+   "shorter": "new york",
+   "longer": "new york city",
+   "risk": "substring scorer accepts the wrong answer"
+  },
+  {
+   "topic": "WORLD_LARGEST",
+   "question": "What is the largest city in Bolivia?",
+   "shorter": "santa cruz",
+   "longer": "santa cruz de la sierra",
+   "risk": "substring scorer accepts the wrong answer"
+  },
+  {
+   "topic": "WORLD_LARGEST",
+   "question": "What is the largest city in Kuwait?",
+   "shorter": "kuwait",
+   "longer": "kuwait city",
+   "risk": "substring scorer accepts the wrong answer"
+  },
+  {
+   "topic": "WORLD_LARGEST",
+   "question": "What is the largest city in Kiribati?",
+   "shorter": "tarawa",
+   "longer": "south tarawa",
+   "risk": "substring scorer accepts the wrong answer"
+  },
+  {
+   "topic": "WORLD_LARGEST",
+   "question": "What is the largest city in Taiwan?",
+   "shorter": "taipei",
+   "longer": "new taipei",
+   "risk": "substring scorer accepts the wrong answer"
+  },
+  {
+   "topic": "WORLD_LARGEST",
+   "question": "What is the largest city in Chile?",
+   "shorter": "santiago",
+   "longer": "santiago de chile",
+   "risk": "substring scorer accepts the wrong answer"
+  },
+  {
+   "topic": "WORLD_LARGEST",
+   "question": "What is the largest city in Djibouti?",
+   "shorter": "djibouti",
+   "longer": "djibouti city",
+   "risk": "substring scorer accepts the wrong answer"
+  }
+ ],
+ "cross_topic_duplicates": {
+  "What is the capital of Benin?": {
+   "topics": [
+    "AFRICA",
+    "WORLD_TRICKY",
+    "WORLD_CAP_TRAPS"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "porto novo",
+     "porto-novo"
+    ]
+   ]
+  },
+  "What is the capital of Botswana?": {
+   "topics": [
+    "AFRICA",
+    "WORLD_CAP_TRAPS"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "gaborone"
+    ]
+   ]
+  },
+  "What is the capital of Burkina Faso?": {
+   "topics": [
+    "AFRICA",
+    "WORLD_CAP_TRAPS"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "ouagadougou"
+    ]
+   ]
+  },
+  "What is the capital of Burundi?": {
+   "topics": [
+    "AFRICA",
+    "WORLD_CAP_TRAPS"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "gitega"
+    ]
+   ]
+  },
+  "What is the capital of Cameroon?": {
+   "topics": [
+    "AFRICA",
+    "WORLD_CAP_TRAPS"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "yaounde"
+    ]
+   ]
+  },
+  "What is the capital of Cape Verde?": {
+   "topics": [
+    "AFRICA",
+    "WORLD_CAP_TRAPS"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "praia"
+    ]
+   ]
+  },
+  "What is the capital of the Central African Republic?": {
+   "topics": [
+    "AFRICA",
+    "WORLD_CAP_TRAPS"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "bangui"
+    ]
+   ]
+  },
+  "What is the capital of Chad?": {
+   "topics": [
+    "AFRICA",
+    "WORLD_CAP_TRAPS"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "n'djamena",
+     "ndjamena"
+    ]
+   ]
+  },
+  "What is the capital of Comoros?": {
+   "topics": [
+    "AFRICA",
+    "WORLD_CAP_TRAPS"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "moroni"
+    ]
+   ]
+  },
+  "What is the capital of the Republic of the Congo?": {
+   "topics": [
+    "AFRICA",
+    "WORLD_CAP_TRAPS"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "brazzaville"
+    ]
+   ]
+  },
+  "What is the capital of Djibouti?": {
+   "topics": [
+    "AFRICA",
+    "WORLD_CAP_TRAPS"
+   ],
+   "consistent": false,
+   "answer_sets": [
+    [
+     "djibouti"
+    ],
+    [
+     "djibouti",
+     "djibouti city"
+    ]
+   ]
+  },
+  "What is the capital of Equatorial Guinea?": {
+   "topics": [
+    "AFRICA",
+    "WORLD_CAP_TRAPS"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "malabo"
+    ]
+   ]
+  },
+  "What is the capital of Eritrea?": {
+   "topics": [
+    "AFRICA",
+    "WORLD_CAP_TRAPS"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "asmara"
+    ]
+   ]
+  },
+  "What is the capital of Eswatini?": {
+   "topics": [
+    "AFRICA",
+    "WORLD_CAP_TRAPS"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "mbabane"
+    ]
+   ]
+  },
+  "What is the capital of Gabon?": {
+   "topics": [
+    "AFRICA",
+    "WORLD_CAP_TRAPS"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "libreville"
+    ]
+   ]
+  },
+  "What is the capital of Gambia?": {
+   "topics": [
+    "AFRICA",
+    "WORLD_CAP_TRAPS"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "banjul"
+    ]
+   ]
+  },
+  "What is the capital of Guinea?": {
+   "topics": [
+    "AFRICA",
+    "WORLD_CAP_TRAPS"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "conakry"
+    ]
+   ]
+  },
+  "What is the capital of Ivory Coast?": {
+   "topics": [
+    "AFRICA",
+    "WORLD_TRICKY",
+    "WORLD_CAP_TRAPS"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "yamoussoukro"
+    ]
+   ]
+  },
+  "What is the capital of Lesotho?": {
+   "topics": [
+    "AFRICA",
+    "WORLD_CAP_TRAPS"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "maseru"
+    ]
+   ]
+  },
+  "What is the capital of Liberia?": {
+   "topics": [
+    "AFRICA",
+    "WORLD_CAP_TRAPS"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "monrovia"
+    ]
+   ]
+  },
+  "What is the capital of Madagascar?": {
+   "topics": [
+    "AFRICA",
+    "WORLD_CAP_TRAPS"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "antananarivo"
+    ]
+   ]
+  },
+  "What is the capital of Malawi?": {
+   "topics": [
+    "AFRICA",
+    "WORLD_CAP_TRAPS"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "lilongwe"
+    ]
+   ]
+  },
+  "What is the capital of Mali?": {
+   "topics": [
+    "AFRICA",
+    "WORLD_CAP_TRAPS"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "bamako"
+    ]
+   ]
+  },
+  "What is the capital of Mauritania?": {
+   "topics": [
+    "AFRICA",
+    "WORLD_CAP_TRAPS"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "nouakchott"
+    ]
+   ]
+  },
+  "What is the capital of Mauritius?": {
+   "topics": [
+    "AFRICA",
+    "WORLD_CAP_TRAPS"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "port louis"
+    ]
+   ]
+  },
+  "What is the capital of Morocco?": {
+   "topics": [
+    "AFRICA",
+    "WORLD_CAP_TRAPS"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "rabat"
+    ]
+   ]
+  },
+  "What is the capital of Namibia?": {
+   "topics": [
+    "AFRICA",
+    "WORLD_CAP_TRAPS"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "windhoek"
+    ]
+   ]
+  },
+  "What is the capital of Niger?": {
+   "topics": [
+    "AFRICA",
+    "WORLD_CAP_TRAPS"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "niamey"
+    ]
+   ]
+  },
+  "What is the capital of Nigeria?": {
+   "topics": [
+    "AFRICA",
+    "WORLD_CAP_TRAPS"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "abuja"
+    ]
+   ]
+  },
+  "What is the capital of Rwanda?": {
+   "topics": [
+    "AFRICA",
+    "WORLD_CAP_TRAPS"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "kigali"
+    ]
+   ]
+  },
+  "What is the capital of Sao Tome and Principe?": {
+   "topics": [
+    "AFRICA",
+    "WORLD_CAP_TRAPS"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "sao tome"
+    ]
+   ]
+  },
+  "What is the capital of Seychelles?": {
+   "topics": [
+    "AFRICA",
+    "WORLD_CAP_TRAPS"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "victoria"
+    ]
+   ]
+  },
+  "What is the capital of Sierra Leone?": {
+   "topics": [
+    "AFRICA",
+    "WORLD_CAP_TRAPS"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "freetown"
+    ]
+   ]
+  },
+  "What is the capital of South Africa?": {
+   "topics": [
+    "AFRICA",
+    "WORLD_CAP_TRAPS"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "bloemfontein",
+     "cape town",
+     "pretoria"
+    ]
+   ]
+  },
+  "What is the capital of Tanzania?": {
+   "topics": [
+    "AFRICA",
+    "WORLD_CAP_TRAPS"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "dodoma"
+    ]
+   ]
+  },
+  "What is the capital of Togo?": {
+   "topics": [
+    "AFRICA",
+    "WORLD_CAP_TRAPS"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "lome"
+    ]
+   ]
+  },
+  "What is the capital of Uganda?": {
+   "topics": [
+    "AFRICA",
+    "WORLD_CAP_TRAPS"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "kampala"
+    ]
+   ]
+  },
+  "What is the capital of Zambia?": {
+   "topics": [
+    "AFRICA",
+    "WORLD_CAP_TRAPS"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "lusaka"
+    ]
+   ]
+  },
+  "What is the capital of Zimbabwe?": {
+   "topics": [
+    "AFRICA",
+    "WORLD_CAP_TRAPS"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "harare"
+    ]
+   ]
+  },
+  "What is the capital of Greece?": {
+   "topics": [
+    "EUROPE",
+    "WORLD_TRICKY"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "athens"
+    ]
+   ]
+  },
+  "What is the capital of Switzerland?": {
+   "topics": [
+    "EUROPE",
+    "WORLD_TRICKY",
+    "WORLD_CAP_TRAPS"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "bern",
+     "berne"
+    ]
+   ]
+  },
+  "What is the capital of the Netherlands?": {
+   "topics": [
+    "EUROPE",
+    "WORLD_TRICKY",
+    "WORLD_CAP_TRAPS"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "amsterdam"
+    ]
+   ]
+  },
+  "What is the capital of Luxembourg?": {
+   "topics": [
+    "EUROPE",
+    "WORLD_CAP_TRAPS"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "luxembourg"
+    ]
+   ]
+  },
+  "What is the capital of Poland?": {
+   "topics": [
+    "EUROPE",
+    "WORLD_TRICKY"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "warsaw"
+    ]
+   ]
+  },
+  "What is the capital of Hungary?": {
+   "topics": [
+    "EUROPE",
+    "WORLD_TRICKY"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "budapest"
+    ]
+   ]
+  },
+  "What is the capital of Romania?": {
+   "topics": [
+    "EUROPE",
+    "WORLD_TRICKY"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "bucharest"
+    ]
+   ]
+  },
+  "What is the capital of Bulgaria?": {
+   "topics": [
+    "EUROPE",
+    "WORLD_TRICKY"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "sofia"
+    ]
+   ]
+  },
+  "What is the capital of Serbia?": {
+   "topics": [
+    "EUROPE",
+    "WORLD_TRICKY"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "belgrade"
+    ]
+   ]
+  },
+  "What is the capital of Croatia?": {
+   "topics": [
+    "EUROPE",
+    "WORLD_TRICKY"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "zagreb"
+    ]
+   ]
+  },
+  "What is the capital of Slovenia?": {
+   "topics": [
+    "EUROPE",
+    "WORLD_TRICKY"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "ljubljana"
+    ]
+   ]
+  },
+  "What is the capital of Bosnia and Herzegovina?": {
+   "topics": [
+    "EUROPE",
+    "WORLD_TRICKY",
+    "WORLD_CAP_TRAPS"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "sarajevo"
+    ]
+   ]
+  },
+  "What is the capital of Montenegro?": {
+   "topics": [
+    "EUROPE",
+    "WORLD_TRICKY",
+    "WORLD_CAP_TRAPS"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "podgorica"
+    ]
+   ]
+  },
+  "What is the capital of North Macedonia?": {
+   "topics": [
+    "EUROPE",
+    "WORLD_TRICKY",
+    "WORLD_CAP_TRAPS"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "skopje"
+    ]
+   ]
+  },
+  "What is the capital of Albania?": {
+   "topics": [
+    "EUROPE",
+    "WORLD_TRICKY"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "tirana"
+    ]
+   ]
+  },
+  "What is the capital of Estonia?": {
+   "topics": [
+    "EUROPE",
+    "WORLD_TRICKY"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "tallinn"
+    ]
+   ]
+  },
+  "What is the capital of Latvia?": {
+   "topics": [
+    "EUROPE",
+    "WORLD_TRICKY"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "riga"
+    ]
+   ]
+  },
+  "What is the capital of Lithuania?": {
+   "topics": [
+    "EUROPE",
+    "WORLD_TRICKY"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "vilnius"
+    ]
+   ]
+  },
+  "What is the capital of Belarus?": {
+   "topics": [
+    "EUROPE",
+    "WORLD_TRICKY",
+    "WORLD_CAP_TRAPS"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "minsk"
+    ]
+   ]
+  },
+  "What is the capital of Ukraine?": {
+   "topics": [
+    "EUROPE",
+    "WORLD_TRICKY",
+    "WORLD_CAP_TRAPS"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "kiev",
+     "kyiv"
+    ]
+   ]
+  },
+  "What is the capital of Moldova?": {
+   "topics": [
+    "EUROPE",
+    "WORLD_TRICKY",
+    "WORLD_CAP_TRAPS"
+   ],
+   "consistent": false,
+   "answer_sets": [
+    [
+     "chisinau"
+    ],
+    [
+     "chisinau",
+     "kishinev"
+    ]
+   ]
+  },
+  "What is the capital of Malta?": {
+   "topics": [
+    "EUROPE",
+    "WORLD_TRICKY",
+    "WORLD_CAP_TRAPS"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "valletta"
+    ]
+   ]
+  },
+  "What is the capital of Cyprus?": {
+   "topics": [
+    "EUROPE",
+    "WORLD_TRICKY",
+    "WORLD_CAP_TRAPS"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "nicosia"
+    ]
+   ]
+  },
+  "What is the capital of Andorra?": {
+   "topics": [
+    "EUROPE",
+    "WORLD_CAP_TRAPS"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "andorra la vella"
+    ]
+   ]
+  },
+  "What is the capital of Monaco?": {
+   "topics": [
+    "EUROPE",
+    "WORLD_CAP_TRAPS"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "monaco"
+    ]
+   ]
+  },
+  "What is the capital of San Marino?": {
+   "topics": [
+    "EUROPE",
+    "WORLD_CAP_TRAPS"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "san marino"
+    ]
+   ]
+  },
+  "What is the capital of Liechtenstein?": {
+   "topics": [
+    "EUROPE",
+    "WORLD_CAP_TRAPS"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "vaduz"
+    ]
+   ]
+  },
+  "What is the capital of Turkey?": {
+   "topics": [
+    "EUROPE",
+    "WORLD_TRICKY",
+    "WORLD_CAP_TRAPS",
+    "ASIA"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "ankara"
+    ]
+   ]
+  },
+  "What is the largest city in Algeria?": {
+   "topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "consistent": false,
+   "answer_sets": [
+    [
+     "algiers"
+    ],
+    [
+     "algiers",
+     "algiers city"
+    ]
+   ]
+  },
+  "What is the largest city in Angola?": {
+   "topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "luanda"
+    ]
+   ]
+  },
+  "What is the largest city in Benin?": {
+   "topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "cotonou"
+    ]
+   ]
+  },
+  "What is the largest city in Botswana?": {
+   "topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "gaborone"
+    ]
+   ]
+  },
+  "What is the largest city in Burkina Faso?": {
+   "topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "ouagadougou"
+    ]
+   ]
+  },
+  "What is the largest city in Burundi?": {
+   "topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "consistent": false,
+   "answer_sets": [
+    [
+     "bujumbura"
+    ],
+    [
+     "bujumbura",
+     "bujumbura city"
+    ]
+   ]
+  },
+  "What is the largest city in Cape Verde?": {
+   "topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "praia"
+    ]
+   ]
+  },
+  "What is the largest city in Cameroon?": {
+   "topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "douala"
+    ]
+   ]
+  },
+  "What is the largest city in Chad?": {
+   "topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "n'djamena",
+     "ndjamena"
+    ]
+   ]
+  },
+  "What is the largest city in Comoros?": {
+   "topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "moroni"
+    ]
+   ]
+  },
+  "What is the largest city in the Democratic Republic of the Congo?": {
+   "topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "kinshasa"
+    ]
+   ]
+  },
+  "What is the largest city in the Republic of the Congo?": {
+   "topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "brazzaville"
+    ]
+   ]
+  },
+  "What is the largest city in Djibouti?": {
+   "topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "djibouti",
+     "djibouti city"
+    ]
+   ]
+  },
+  "What is the largest city in Egypt?": {
+   "topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "cairo"
+    ]
+   ]
+  },
+  "What is the largest city in Equatorial Guinea?": {
+   "topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "bata"
+    ]
+   ]
+  },
+  "What is the largest city in Eritrea?": {
+   "topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "asmara"
+    ]
+   ]
+  },
+  "What is the largest city in Eswatini?": {
+   "topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "manzini"
+    ]
+   ]
+  },
+  "What is the largest city in Ethiopia?": {
+   "topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "addis ababa"
+    ]
+   ]
+  },
+  "What is the largest city in Gabon?": {
+   "topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "libreville"
+    ]
+   ]
+  },
+  "What is the largest city in Gambia?": {
+   "topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "serekunda",
+     "serrekunda"
+    ]
+   ]
+  },
+  "What is the largest city in Ghana?": {
+   "topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "accra"
+    ]
+   ]
+  },
+  "What is the largest city in Guinea?": {
+   "topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "conakry"
+    ]
+   ]
+  },
+  "What is the largest city in Ivory Coast?": {
+   "topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "abidjan"
+    ]
+   ]
+  },
+  "What is the largest city in Kenya?": {
+   "topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "nairobi"
+    ]
+   ]
+  },
+  "What is the largest city in Lesotho?": {
+   "topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "maseru"
+    ]
+   ]
+  },
+  "What is the largest city in Liberia?": {
+   "topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "monrovia"
+    ]
+   ]
+  },
+  "What is the largest city in Libya?": {
+   "topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "tripoli"
+    ]
+   ]
+  },
+  "What is the largest city in Madagascar?": {
+   "topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "antananarivo"
+    ]
+   ]
+  },
+  "What is the largest city in Malawi?": {
+   "topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "consistent": false,
+   "answer_sets": [
+    [
+     "blantyre",
+     "lilongwe"
+    ],
+    [
+     "lilongwe"
+    ]
+   ]
+  },
+  "What is the largest city in Mali?": {
+   "topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "bamako"
+    ]
+   ]
+  },
+  "What is the largest city in Mauritania?": {
+   "topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "nouakchott"
+    ]
+   ]
+  },
+  "What is the largest city in Mauritius?": {
+   "topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "port louis"
+    ]
+   ]
+  },
+  "What is the largest city in Morocco?": {
+   "topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "casablanca"
+    ]
+   ]
+  },
+  "What is the largest city in Mozambique?": {
+   "topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "maputo"
+    ]
+   ]
+  },
+  "What is the largest city in Namibia?": {
+   "topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "windhoek"
+    ]
+   ]
+  },
+  "What is the largest city in Niger?": {
+   "topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "niamey"
+    ]
+   ]
+  },
+  "What is the largest city in Rwanda?": {
+   "topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "kigali"
+    ]
+   ]
+  },
+  "What is the largest city in Sao Tome and Principe?": {
+   "topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "sao tome"
+    ]
+   ]
+  },
+  "What is the largest city in Senegal?": {
+   "topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "dakar"
+    ]
+   ]
+  },
+  "What is the largest city in Seychelles?": {
+   "topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "victoria"
+    ]
+   ]
+  },
+  "What is the largest city in Sierra Leone?": {
+   "topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "freetown"
+    ]
+   ]
+  },
+  "What is the largest city in Somalia?": {
+   "topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "mogadishu"
+    ]
+   ]
+  },
+  "What is the largest city in South Sudan?": {
+   "topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "juba"
+    ]
+   ]
+  },
+  "What is the largest city in Sudan?": {
+   "topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "consistent": false,
+   "answer_sets": [
+    [
+     "khartoum"
+    ],
+    [
+     "khartoum",
+     "omdurman"
+    ]
+   ]
+  },
+  "What is the largest city in Togo?": {
+   "topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "lome"
+    ]
+   ]
+  },
+  "What is the largest city in Tunisia?": {
+   "topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "tunis"
+    ]
+   ]
+  },
+  "What is the largest city in Uganda?": {
+   "topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "kampala"
+    ]
+   ]
+  },
+  "What is the largest city in Zambia?": {
+   "topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "lusaka"
+    ]
+   ]
+  },
+  "What is the largest city in Zimbabwe?": {
+   "topics": [
+    "AFRICA_LARGEST",
+    "WORLD_LARGEST"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "harare"
+    ]
+   ]
+  },
+  "What is the capital of Australia?": {
+   "topics": [
+    "WORLD_TRICKY",
+    "WORLD_CAP_TRAPS"
+   ],
+   "consistent": false,
+   "answer_sets": [
+    [
+     "australian capital territory",
+     "canberra"
+    ],
+    [
+     "canberra"
+    ]
+   ]
+  },
+  "What is the capital of Canada?": {
+   "topics": [
+    "WORLD_TRICKY",
+    "WORLD_CAP_TRAPS"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "ottawa"
+    ]
+   ]
+  },
+  "What is the capital of Brazil?": {
+   "topics": [
+    "WORLD_TRICKY",
+    "WORLD_CAP_TRAPS"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "brasilia"
+    ]
+   ]
+  },
+  "What is the capital of Vietnam?": {
+   "topics": [
+    "WORLD_TRICKY",
+    "WORLD_CAP_TRAPS",
+    "ASIA"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "hanoi"
+    ]
+   ]
+  },
+  "What is the capital of Kazakhstan?": {
+   "topics": [
+    "WORLD_TRICKY",
+    "WORLD_CAP_TRAPS",
+    "ASIA"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "astana"
+    ]
+   ]
+  },
+  "What is the capital of India?": {
+   "topics": [
+    "WORLD_TRICKY",
+    "WORLD_CAP_TRAPS",
+    "ASIA"
+   ],
+   "consistent": false,
+   "answer_sets": [
+    [
+     "delhi",
+     "new delhi"
+    ],
+    [
+     "new delhi"
+    ]
+   ]
+  },
+  "What is the capital of Pakistan?": {
+   "topics": [
+    "WORLD_TRICKY",
+    "WORLD_CAP_TRAPS",
+    "ASIA"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "islamabad"
+    ]
+   ]
+  },
+  "What is the capital of Myanmar?": {
+   "topics": [
+    "WORLD_TRICKY",
+    "WORLD_CAP_TRAPS",
+    "ASIA"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "nay pyi taw",
+     "naypyidaw"
+    ]
+   ]
+  },
+  "What is the capital of Sri Lanka?": {
+   "topics": [
+    "WORLD_TRICKY",
+    "WORLD_CAP_TRAPS",
+    "ASIA"
+   ],
+   "consistent": false,
+   "answer_sets": [
+    [
+     "colombo"
+    ],
+    [
+     "kotte",
+     "sri jayawardenapura kotte",
+     "sri jayawardenepura kotte"
+    ],
+    [
+     "kotte",
+     "sri jayawardenepura kotte"
+    ]
+   ]
+  },
+  "What is the capital of Belize?": {
+   "topics": [
+    "WORLD_TRICKY",
+    "WORLD_CAP_TRAPS"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "belmopan"
+    ]
+   ]
+  },
+  "What is the capital of Bolivia?": {
+   "topics": [
+    "WORLD_TRICKY",
+    "WORLD_CAP_TRAPS"
+   ],
+   "consistent": false,
+   "answer_sets": [
+    [
+     "la paz",
+     "sucre"
+    ],
+    [
+     "sucre"
+    ]
+   ]
+  },
+  "What is the capital of Ecuador?": {
+   "topics": [
+    "WORLD_TRICKY",
+    "WORLD_CAP_TRAPS"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "quito"
+    ]
+   ]
+  },
+  "What is the capital of Israel?": {
+   "topics": [
+    "WORLD_TRICKY",
+    "WORLD_CAP_TRAPS",
+    "ASIA"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "jerusalem"
+    ]
+   ]
+  },
+  "What is the capital of Jordan?": {
+   "topics": [
+    "WORLD_TRICKY",
+    "WORLD_CAP_TRAPS",
+    "ASIA"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "amman"
+    ]
+   ]
+  },
+  "What is the capital of Saudi Arabia?": {
+   "topics": [
+    "WORLD_TRICKY",
+    "WORLD_CAP_TRAPS",
+    "ASIA"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "riyadh"
+    ]
+   ]
+  },
+  "What is the capital of the United Arab Emirates?": {
+   "topics": [
+    "WORLD_TRICKY",
+    "WORLD_CAP_TRAPS",
+    "ASIA"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "abu dhabi"
+    ]
+   ]
+  },
+  "What is the capital of Qatar?": {
+   "topics": [
+    "WORLD_TRICKY",
+    "WORLD_CAP_TRAPS",
+    "ASIA"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "doha"
+    ]
+   ]
+  },
+  "What is the capital of Kuwait?": {
+   "topics": [
+    "WORLD_TRICKY",
+    "WORLD_CAP_TRAPS",
+    "ASIA"
+   ],
+   "consistent": false,
+   "answer_sets": [
+    [
+     "kuwait",
+     "kuwait city"
+    ],
+    [
+     "kuwait city"
+    ]
+   ]
+  },
+  "What is the capital of Oman?": {
+   "topics": [
+    "WORLD_TRICKY",
+    "WORLD_CAP_TRAPS",
+    "ASIA"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "muscat"
+    ]
+   ]
+  },
+  "What is the capital of Kosovo?": {
+   "topics": [
+    "WORLD_TRICKY",
+    "WORLD_CAP_TRAPS"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "pristina"
+    ]
+   ]
+  },
+  "What is the capital of China?": {
+   "topics": [
+    "WORLD_CAP_TRAPS",
+    "ASIA"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "beijing"
+    ]
+   ]
+  },
+  "What is the capital of Yemen?": {
+   "topics": [
+    "WORLD_CAP_TRAPS",
+    "ASIA"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "sana'a",
+     "sanaa"
+    ]
+   ]
+  },
+  "What is the capital of Brunei?": {
+   "topics": [
+    "WORLD_CAP_TRAPS",
+    "ASIA"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "bandar seri begawan"
+    ]
+   ]
+  },
+  "What is the capital of Laos?": {
+   "topics": [
+    "WORLD_CAP_TRAPS",
+    "ASIA"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "vientiane"
+    ]
+   ]
+  },
+  "What is the capital of Georgia?": {
+   "topics": [
+    "WORLD_CAP_TRAPS",
+    "ASIA"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "tbilisi"
+    ]
+   ]
+  },
+  "What is the capital of Armenia?": {
+   "topics": [
+    "WORLD_CAP_TRAPS",
+    "ASIA"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "yerevan"
+    ]
+   ]
+  },
+  "What is the capital of Azerbaijan?": {
+   "topics": [
+    "WORLD_CAP_TRAPS",
+    "ASIA"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "baku"
+    ]
+   ]
+  },
+  "What is the capital of Turkmenistan?": {
+   "topics": [
+    "WORLD_CAP_TRAPS",
+    "ASIA"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "ashgabat"
+    ]
+   ]
+  },
+  "What is the capital of Tajikistan?": {
+   "topics": [
+    "WORLD_CAP_TRAPS",
+    "ASIA"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "dushanbe"
+    ]
+   ]
+  },
+  "What is the capital of Kyrgyzstan?": {
+   "topics": [
+    "WORLD_CAP_TRAPS",
+    "ASIA"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "bishkek"
+    ]
+   ]
+  },
+  "What is the capital of Uzbekistan?": {
+   "topics": [
+    "WORLD_CAP_TRAPS",
+    "ASIA"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "tashkent"
+    ]
+   ]
+  },
+  "What is the capital of Mongolia?": {
+   "topics": [
+    "WORLD_CAP_TRAPS",
+    "ASIA"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "ulaanbaatar"
+    ]
+   ]
+  },
+  "What is the capital of Afghanistan?": {
+   "topics": [
+    "WORLD_CAP_TRAPS",
+    "ASIA"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "kabul"
+    ]
+   ]
+  },
+  "What is the capital of Iran?": {
+   "topics": [
+    "WORLD_CAP_TRAPS",
+    "ASIA"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "tehran"
+    ]
+   ]
+  },
+  "What is the capital of Iraq?": {
+   "topics": [
+    "WORLD_CAP_TRAPS",
+    "ASIA"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "baghdad"
+    ]
+   ]
+  },
+  "What is the capital of Lebanon?": {
+   "topics": [
+    "WORLD_CAP_TRAPS",
+    "ASIA"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "beirut"
+    ]
+   ]
+  },
+  "What is the capital of Syria?": {
+   "topics": [
+    "WORLD_CAP_TRAPS",
+    "ASIA"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "damascus"
+    ]
+   ]
+  },
+  "What is the capital of Timor-Leste?": {
+   "topics": [
+    "WORLD_CAP_TRAPS",
+    "ASIA"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "dili"
+    ]
+   ]
+  },
+  "What is the capital of Taiwan?": {
+   "topics": [
+    "WORLD_CAP_TRAPS",
+    "ASIA"
+   ],
+   "consistent": true,
+   "answer_sets": [
+    [
+     "taipei"
+    ]
+   ]
+  }
+ },
+ "total_rows": 645,
+ "unique_questions_total": 463
+}

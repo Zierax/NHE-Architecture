@@ -1,0 +1,14 @@
+{
+ "detector_layer": 19,
+ "causal_mask_band": [
+  10,
+  17
+ ],
+ "distance_to_band": 2,
+ "side": "above band",
+ "independent_criterion_found": false,
+ "reason": "the causal mask confirms that the wrong-commit neurons live in L10-17 and that L19 reads just above that band, which is consistent with reading the patched effect, BUT every layer in [18, 19, 20, 21, 22, 23, 24, 25, 26] is equally consistent with 'just above the band', so proximity does not uniquely select L19",
+ "what_is_established": "the detector layer is causally informed rather than arbitrary: it is adjacent to, and not inside, the band of patched wrong-commit neurons",
+ "what_is_not_established": "no criterion independent of the live result uniquely picks L19 over the other upper layers; the choice remains under-determined offline",
+ "honest_statement": "L19 is justified as causally ADJACENT to the attribution band, and was validated by the live run. It is not claimed to be uniquely optimal by an offline criterion; selecting it from the upper layers without the live run would be config luck."
+}
