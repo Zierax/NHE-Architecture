@@ -19,39 +19,47 @@ fact-level repair; general models need feature-safe interventions.
       Goal: repair drift    Goal: explain voids  Goal: no collateral damage
 ```
 
-## Where we're going: the direction is settled by data, not chosen
+## Where we're going: the direction is settled by data, including a failed arm
 
 The runtime arm is **safe and generalises**; it is **not yet statistically
-significant**, and the cause has been measured rather than guessed:
+significant**, and both the cause and one serious remedy have been measured:
 
-| quantity | value | meaning |
-|---|---:|---|
-| fixes / breaks / p | 3 / 0 / 0.25 | clean but under-powered at n=463 |
-| detector recall on errors | 0.153 | it only sees 9 of 59 wrong items |
-| detector precision | 0.220 | most firings land on already-correct items |
-| repairs per fired wrong item | 0.333 | the quantity that must survive a domain change, and it did |
+| quantity | L19/w5 (deployed) | L11/w10 (higher-recall) |
+|---|---:|---:|
+| fixes | 3 | 4 |
+| breaks | **0** | **2** |
+| net | **+3** | +2 |
+| exact McNemar p | 0.250 | 0.6875 |
+| recall on errors | 0.153 | **0.286** |
+| repair per fired-wrong | **0.333** | 0.174 |
 
-The decisive question was whether the 50 never-fired wrong items are unreachable
-(Static Memory Voids, per NTW) or merely un-triggered. `reachability_of_quiet.py`
-answers it from flows collected on all 463 items: **AUROC 0.713 (L15/w15)**
-separates them from correct, above the 0.65 gate. So they are **reachable** and
-the bottleneck is the trigger.
+**Reachability, corrected.** The first reachability measurement (fixed window
+w15, AUROC 0.713) read tokens at and after the commit and so violated the project's
+own timing law. Re-measured with the per-item pre-commit maximum, the residual IS
+partly reachable, but at **L11 (0.6925)**, not L15 (which falls to 0.577). The
+conclusion survived; the cell did not.
+
+**The higher-recall trigger was built and tested, and it fails the safety bar.**
+L11/w10 reaches twice the recall and produces more fixes, but introduces 2 breaks,
+both in the `element` family (atomic-number questions corrupted into the wrong
+element). Edge's bar is zero breaks, so this arm is rejected on evidence.
 
 ```
-                    +-- reachability says REACHABLE (0.713)
-residual 56 wrong --|
-                    +-- no trigger separates them
-                       => stop extending the runtime arm,
-                          route to fact-level repair (NTW)
-
-  CURRENT PATH:  live L15/w15 arm on the same 463 items,
-                 same mask, same exact McNemar test.
-                 >= 6 fixes at 0 breaks  -> significance reached.
-                 otherwise               -> the fallback above.
+  residual 56 wrong
+        |
+        +-- naive fix: wider/better trigger  -> TESTED, 2 breaks, REJECTED
+        |
+        +-- family-aware trigger or per-family mask   <- the one open idea
+        |      (both breaks were 'element'; the mask was fitted on wrong-only
+        |       capital answers, so it is being applied to a family it never saw)
+        |
+        +-- if that fails: the ceiling is real for this task.
+               Publish the taxonomy + the measured ceiling. The residual is
+               outside runtime reach by construction, which is the honest claim.
 ```
 
-This is one experiment on already-collected data. It is the only thing that can
-move the headline number, and it is decided in advance.
+Only one idea remains open, and it is small and decidable. Everything else has
+been tested.
 
 ## Track A - NHE-Edge (what we have now)
 

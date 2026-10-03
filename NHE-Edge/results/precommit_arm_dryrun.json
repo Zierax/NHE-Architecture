@@ -1,0 +1,97 @@
+{
+ "layer": 11,
+ "pct": 90,
+ "threshold": 1782.0197143554688,
+ "n_rows": 462,
+ "n_fired": 57,
+ "n_fired_wrong": 16,
+ "precision": 0.2807,
+ "n_errors": 56,
+ "recall": 0.2857,
+ "n_intervenable_wrong": 16,
+ "expected_fixes": 5.33,
+ "need": 6,
+ "clears_significance": false,
+ "target_items": [
+  {
+   "id": 87,
+   "question": "What is the capital of Guinea?",
+   "lead": 1
+  },
+  {
+   "id": 344,
+   "question": "What is the largest city in Guinea?",
+   "lead": 1
+  },
+  {
+   "id": 433,
+   "question": "What is the largest city in Tonga?",
+   "lead": 1
+  },
+  {
+   "id": 458,
+   "question": "What is the largest city in the Republic of the Congo?",
+   "lead": 2
+  },
+  {
+   "id": 77,
+   "question": "What is the capital of Gabon?",
+   "lead": 3
+  },
+  {
+   "id": 10,
+   "question": "What element has the atomic number 82?",
+   "lead": 4
+  },
+  {
+   "id": 335,
+   "question": "What is the largest city in Gabon?",
+   "lead": 4
+  },
+  {
+   "id": 68,
+   "question": "What is the capital of Equatorial Guinea?",
+   "lead": 5
+  },
+  {
+   "id": 5,
+   "question": "What element has the atomic number 2?",
+   "lead": 8
+  },
+  {
+   "id": 11,
+   "question": "What element has the atomic number 8?",
+   "lead": 8
+  },
+  {
+   "id": 1,
+   "question": "What element has the atomic number 13?",
+   "lead": 9
+  },
+  {
+   "id": 4,
+   "question": "What element has the atomic number 29?",
+   "lead": 9
+  },
+  {
+   "id": 6,
+   "question": "What element has the atomic number 47?",
+   "lead": 9
+  },
+  {
+   "id": 8,
+   "question": "What element has the atomic number 79?",
+   "lead": 9
+  },
+  {
+   "id": 9,
+   "question": "What element has the atomic number 80?",
+   "lead": 9
+  },
+  {
+   "id": 12,
+   "question": "What element has the atomic number 92?",
+   "lead": 9
+  }
+ ]
+}

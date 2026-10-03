@@ -92,29 +92,46 @@ All numbers are strict (first sentence) and labeled. Full table:
     Temporal on MMLU: 78→79, fires on 155/200 — no effect (different task; NHE-Edge
     is single-task by design, and MMLU is not the deployment task).
 
-13. **Reachability of the quiet set — the direction (2026-09-23).** Hidden-state
-    jumps collected for all 463 items; the never-fired-wrong population (n=50) is
-    separated from correct (n=407) at AUROC **0.713** (L15/w15), above the 0.65
-    gate. So the quiet set is **reachable**: the bottleneck is the trigger, not
-    the mechanism. Caveat: that cell separates never-fired-wrong from
-    *fired-wrong* only 0.34, so quiet-wrong and detected-wrong look different and
-    the 0.713 is a hypothesis until validated live.
+13. **Reachability of the quiet set + the L11 attempt (2026-09-23).** Two-stage,
+    self-correcting finding. First `reachability_of_quiet.py` reported the
+    never-fired-wrong population separable at AUROC 0.713 (L15/w15) — but that
+    feature reads tokens 6-15, at/after the commit for those items, violating the
+    timing law. Re-tested correctly with the per-item pre-commit maximum
+    (`reachability_precommit.py`): still separable, but at **L11, AUROC 0.6925**
+    (L15 falls to 0.577 on pre-commit only). The conclusion held; the cell changed.
+    A dry-run (`precommit_arm_dryrun.py`) predicted recall 0.286 / ~5 fixes. The
+    live **L11/w10 arm returned fixes=4, breaks=2, p=0.6875** — MORE fixes than L19
+    but it **breaks the zero-break guarantee**, both breaks in the element family
+    (atomic-number questions corrupted into wrong elements). Net +2, worse than
+    the deployed arm's +3, and not production-safe.
+
+**Honest summary of the trigger work:** a higher-recall pre-commit trigger does
+exist (L11 reaches 0.286 of errors vs 0.153) but every variant tested trades the
+zero-collateral-damage guarantee for it. The deployed L19/w5 remains the best arm.
+Direction: either find a recall-improving trigger that preserves zero breaks
+(family-aware firing, or a per-family mask), or stop extending the runtime arm and
+publish the taxonomy plus the measured ceiling.
 
 Lessons: clean state per item (or you fake it), strict scoring (loose counts hedges),
 offline simulation matches live 1:1, manual sampler ≠ `model.generate`.
 
 ## Direction from here
 
-The runtime arm is safe and its per-fired repair rate generalises; it is not yet
-significant because recall on errors is 0.153 and precision 0.220. The next
-experiment is fixed and falsifiable, and it runs on data already collected:
+The runtime arm is safe and generalises but is not statistically significant, and
+one serious attempt to fix that (higher-recall pre-commit trigger) was tested and
+failed the safety bar. That closes the naive directions with evidence:
 
-1. **Live L15/w15 arm on the same 463 items**, same mask, same scoring, same exact
-   McNemar test. It either produces >= 6 fixes at 0 breaks (significance reached)
-   or it does not. This is the only experiment that can move the headline.
-2. If it fails, the fallback is already determined: the never-fired residual is
-   fact-level (NTW), so the remaining work is the diagnostic write-up, not more
-   detector tuning.
+1. **Tested and rejected:** a higher-recall pre-commit trigger (L11/w10). More
+   fixes, but 2 breaks — the zero-break property is the Edge bar, so this fails.
+2. **Remaining open, with a specific hypothesis:** the breaks are concentrated in
+   the `element` family (atomic-number→element mapping corrupted). A **family-aware
+   trigger or per-family mask** — keep L19 timing but restrict the mask per question
+   family — is the one untried idea that could raise recall without touching the
+   zero-break guarantee. It is a small, decidable experiment.
+3. **If (2) fails:** the ceiling is real for this task, and the remaining work is
+   the diagnostic/taxonomy write-up (NTW), not more runtime engineering. The
+   taxonomy already accounts for the residual: quiet errors are outside runtime
+   reach, and the benchmark measures exactly how large that population is.
 
 Full story: `NHE-Edge/results/experiment_report.md`. Files: `NHE-Edge/results/*.json`.
 
@@ -126,8 +143,9 @@ Full story: `NHE-Edge/results/experiment_report.md`. Files: `NHE-Edge/results/*.
 
 ## What's next
 
-- **Live L15/w15 arm on the 463-item benchmark** — the direction-setting
-  experiment. Either >= 6 fixes at 0 breaks (p<0.05) or it does not.
+- **Family-aware trigger / per-family mask** — the one untried idea that could
+  raise recall while preserving the zero-break guarantee (the L11 breaks were all
+  `element` family). Small, decidable experiment.
 - Direct NTW signature test on Gemma/Claude-scale models; fact/provenance check
   for any residual that stays unreachable.
 - Qwen sampled battery (hard/random) with its own mask.

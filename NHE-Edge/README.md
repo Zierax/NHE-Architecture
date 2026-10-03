@@ -255,41 +255,8 @@ What n=463 establishes that n=54 could not:
 What it honestly does not: reach significance. The cause is measured, not
 guessed — the detector's precision on errors is 0.220 and its recall is 0.153, so
 6 fixes (the computed requirement) become 3. Significance needs a higher-recall
-trigger, not a larger benchmark.
-
-## Is the quiet residual reachable? (the direction-setting experiment)
-
-The 50 never-fired wrong items decide the next direction. If they are Static
-Memory Voids (NTW), no trigger reaches them and the remaining work is fact-level.
-If they merely lack a trigger, recall is the problem. `core/collect_single_task.py`
-collected hidden-state jumps for all 463 items, and
-`analysis/reachability_of_quiet.py` answers it over every (layer 1-25 x window
-1-15) cell:
-
-| separation | best cell | AUROC |
-|---|---|---:|
-| never-fired-wrong (n=50) vs correct (n=407) | L15 / w15 | **0.7129** |
-| never-fired-wrong (n=50) vs fired-wrong (n=6) | L11 / w3-w6 | 0.590 |
-
-**Verdict: REACHABLE.** The never-fired population carries a pre-commit excess
-above the 0.65 gate, so the ceiling is a trigger problem, not a mechanism limit.
-This partially contradicts the Static Void reading of the quiet set at scale and
-is recorded that way rather than folded into the NTW story.
-
-**Caveat, stated before it is trusted.** The best cell separates never-fired-wrong
-from correct at 0.713 but from *fired-wrong* at only 0.34 — worse than chance. The
-two wrong populations look different to this feature, so quiet-wrong is not simply
-"a harder version of detected-wrong". The 0.713 is a hypothesis until a live arm
-confirms it.
-
-```
-python core/collect_single_task.py            # flows for all 463 (resumable)
-python analysis/reachability_of_quiet.py       # reachable vs void, from data
-```
-
-The next experiment is fixed and falsifiable: a live **L15/w15** arm on the same
-463 items, same mask, same exact McNemar test. >= 6 fixes at 0 breaks reaches
-significance; otherwise the taxonomy write-up is the honest endpoint.
+trigger, not a larger benchmark. The trigger work below tests that and records the
+outcome, including the failure.
 
 ```
 python analysis/build_single_task.py            # merge + provenance
@@ -309,6 +276,57 @@ python analysis/justify_detector_layer.py        # why L19, honestly
 exact-config guard, so the multi-hour armed run survives interruption without
 mixing arms. It also snapshots only the mask-touched tensors (~380 MB) instead of
 the full state dict, which OOM'd on this CPU box.
+
+## Is the quiet residual reachable? (reachability, corrected, then tested)
+
+The 50 never-fired wrong items decide the next direction. If they are Static
+Memory Voids (NTW), no trigger reaches them and the remaining work is fact-level.
+If they merely lack a trigger, recall is the problem.
+
+**Stage 1 was wrong and was corrected.** `analysis/reachability_of_quiet.py`
+searched fixed windows up to w15 and reported AUROC 0.7129 at L15/w15. That
+feature reads tokens 6-15, and these items commit at positions 5-12 (median 7) —
+so it was measuring *at and after* the commit, violating the timing law the rest of
+this project establishes. `analysis/reachability_precommit.py` re-measures with the
+per-item pre-commit maximum, which is the only feature the law allows:
+
+| layer | pre-commit AUROC (never-fired-wrong vs correct) |
+|---|---:|
+| **L11** | **0.6925** |
+| L12 | 0.6665 |
+| L15 | 0.5767 (was 0.7129 on the illegal window) |
+
+The residual **is** partly reachable, but through L11, not L15.
+
+**Stage 3 — the trigger was built, and it fails the safety bar.** A dry run
+predicted recall 0.286 and ~5 fixes; the live L11/w10 arm returned:
+
+| arm | fixes | breaks | net | exact p | recall | repair/fired-wrong |
+|---|---:|---:|---:|---:|---:|---:|
+| **L19/w5 (deployed)** | 3 | **0** | **+3** | 0.250 | 0.153 | 0.333 |
+| L11/w10 | 4 | 2 | +2 | 0.6875 | 0.286 | 0.174 |
+
+Both breaks are `element` family: "atomic number 11" was correctly "Sodium (Na)"
+and became "gold"; "atomic number 6" was "Carbon" and became "oxygen". The mask
+was fitted on wrong-only *capital* answers and is being applied to a family it
+never saw.
+
+**Conclusion.** Every higher-recall trigger tried trades the zero-break guarantee
+for recall, and zero breaks is the Edge bar, so L11/w10 is rejected on evidence.
+One idea remains open: family-aware firing or a per-family mask. If that fails,
+the ceiling is real for this task and the honest contribution is the taxonomy plus
+the measured ceiling.
+
+```
+python core/collect_single_task.py                 # flows for all 463 (resumable)
+python analysis/reachability_of_quiet.py            # stage 1 (fixed window)
+python analysis/reachability_precommit.py           # stage 2, law-compliant
+python analysis/precommit_arm_dryrun.py             # stage 3, offline estimate
+python core/run_single_task.py --arm mask --layer 11 --window 10 --scale 0.3 \
+        --threshold 1782.02 --threshold-key p90_precommit --tag mask_L11_w10
+python analysis/score_single_task.py --arms eval_single_task_none_full \
+        eval_single_task_mask_L11_w10 --out results/single_task_score_L11.json
+```
 
 ## One-command onboarding (semi-full automation)
 

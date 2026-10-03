@@ -291,54 +291,67 @@ summarize_single_task}.py`, `analysis/justify_detector_layer.py`,
 eval_single_task_mask_L19_w5,single_task_score,power_single_task,
 answer_set_gaps,single_task_audit,detector_layer_justification}.json`.
 
-## Reachability of the quiet population - the direction-setting result (2026-09-23)
+## Reachability of the quiet population - and a live arm that failed (2026-09-23)
 
-The single-task benchmark left the action arm at fixes=3 (p=0.25) because the
+The single-task benchmark left the deployed arm at fixes=3 (p=0.25) because the
 detector fires on only 15.3% of wrong items. That splits the residual error into
-a fired-but-wrong set (9) and a never-fired set (50). Whether the never-fired set
-is reachable by a better trigger, or is genuinely quiet (Static Memory Voids as
-NTW predicts), decides the entire next direction. `core/collect_single_task.py`
-collected hidden-state jumps for all 463 items and
-`analysis/reachability_of_quiet.py` answers it.
+fired-but-wrong (9) and never-fired-wrong (50). Whether the never-fired set is
+reachable by a better trigger, or is genuinely quiet (Static Memory Voids as NTW
+predicts), decides the next direction.
 
-**Groups** (from the committed mask arm): fired-but-wrong n=6, never-fired-wrong
-n=50, correct n=407.
+**Stage 1 — and a defect in it.** `analysis/reachability_of_quiet.py` searched
+fixed windows up to w15 and reported AUROC 0.7129 (L15/w15). That measurement was
+taken without checking it against the timing law, and it violates it: the commit
+position over these items is 6 for 180 items and 7 for 200 (never-fired-wrong
+items commit at 5-12, median 7), so a w15 feature reads tokens 6-15, at or after
+the commit. Edge's own rule is that a cut must precede the commit by >= 1 token.
 
-**Best separation of the never-fired-wrong population from correct, over every
-(layer 1-25 x window 1-15) cell:**
+**Stage 2 — corrected to the feature the law permits.**
+`analysis/reachability_precommit.py` uses the per-item maximum jump strictly before
+that item's own commit position, with no window parameter:
 
-| layer | window | AUROC vs correct | AUROC vs fired-wrong |
-|---|---:|---:|---:|
-| **L15** | **w15** | **0.7129** | 0.34 |
-| L15 | w14 | 0.7108 | 0.28 |
-| L14 | w15 | 0.7019 | 0.25 |
-| L11 | w3-w6 | 0.688 | 0.59 |
+| layer | pre-commit AUROC (never-fired-wrong vs correct, n=50/407) |
+|---|---:|
+| **L11** | **0.6925** |
+| L12 | 0.6665 |
+| L3 | 0.6580 |
+| L17 | 0.6470 |
+| L15 | 0.5767 |
 
-**VERDICT: R (reachable ceiling).** The never-fired-wrong items DO carry a
-pre-commit excess (best AUROC 0.713 vs the 0.65 usability gate). The bottleneck is
-the TRIGGER, not the mechanism: a (layer, window) the current detector never
-searched - L15 with a wide window - separates a chunk of them. This does NOT
-confirm the Static Void reading of the quiet set on this benchmark; it partially
-contradicts it at scale and is recorded as such.
+L15 falls from 0.713 to 0.577 once post-commit tokens are excluded, confirming the
+original cell was partly reading past the commit. L11 holds at 0.6925, above the
+0.65 gate, so the residual IS partly reachable — through a different layer than
+first reported.
 
-**Why this is the direction.** Reaching significance (6 fixes at the power
-analysis) needs recall ~10% of errors. The current detector reaches 15.3% but with
-precision 0.220; L15/w15 separates 0.713 of the never-fired set, so a trigger
-built on that cell could plausibly lift the fix count into the significant range
-WITHOUT touching the zero-break property (which comes from the timing law, not the
-threshold). The next experiment is a live L15/w15 arm on the same 463 items,
-scored with the same exact McNemar test.
+**Stage 3 — dry run, then the live arm.**
+`analysis/precommit_arm_dryrun.py` calibrated a p90 threshold on correct items
+only and predicted recall 0.286 (vs 0.153) and ~5 fixes. The live **L11/w10** arm
+on the same 463 items:
 
-**Important caveat, stated before anyone over-reads this.** The cell that best
-separates never-fired-wrong from correct (L15/w15, 0.713) separates them from the
-FIRED-wrong group only 0.34 - worse than chance. The quiet-wrong and the
-detected-wrong populations look DIFFERENT to this feature. That is consistent with
-two sub-populations existing inside "wrong", and it means the 0.713 cell must be
-validated live before it is trusted; an offline AUROC here is a hypothesis, not a
-result.
+| arm | fixes | breaks | net | exact p | recall | repair/fired-wrong |
+|---|---:|---:|---:|---:|---:|---:|
+| **L19/w5 (deployed)** | 3 | **0** | **+3** | 0.250 | 0.153 | 0.333 |
+| L11/w10 (pre-commit) | 4 | **2** | +2 | 0.6875 | 0.286 | 0.174 |
+
+**The higher-recall trigger produces more fixes and FAILS the safety bar.** Both
+breaks are in the `element` family: "atomic number 11" was correctly answered
+"Sodium (Na)" and became "gold"; "atomic number 6" was "Carbon" and became
+"oxygen". The intervention corrupts an atomic-number-to-element mapping it was
+not fitted on. Repair rate per fired-wrong item fell from 0.333 to 0.174.
+
+**Conclusion, stated plainly.** A higher-recall pre-commit trigger exists, and
+every variant tested trades the zero-collateral-damage guarantee for it. The
+deployed L19/w5 remains the best arm. The open idea with a specific hypothesis is
+family-aware firing or a per-family mask (the breaks are entirely `element`), which
+could raise recall without touching the guarantee. If that fails, the ceiling is
+real for this task and the remaining contribution is the taxonomy.
 
 Files: `core/collect_single_task.py`, `analysis/reachability_of_quiet.py`,
-`results/greedy_flows_single_task.json`, `results/reachability_of_quiet.json`.
+`analysis/reachability_precommit.py`, `analysis/precommit_arm_dryrun.py`,
+`results/greedy_flows_single_task.json` (gitignored, regenerable),
+`results/reachability_of_quiet.json`, `results/reachability_precommit.json`,
+`results/precommit_arm_dryrun.json`,
+`results/eval_single_task_mask_L11_w10.json`, `results/single_task_score_L11.json`.
 
 ## Detector layer L19 - partial justification (2026-09-23)
 

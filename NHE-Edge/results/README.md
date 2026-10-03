@@ -58,12 +58,21 @@ Full walkthrough: `experiment_report.md`.
   (19 structurally exposed items, 9 where the model emits the longer form).
 - `detector_layer_justification.json` - why L19 is causally adjacent to the
   attribution band, and why that is not a unique selection.
+- `reachability_of_quiet.json` - stage-1 reachability (fixed window, AUROC 0.7129
+  at L15/w15). SUPERSEDED: that window reads at/after the commit.
+- `reachability_precommit.json` - stage-2 reachability using the per-item
+  pre-commit maximum, the only feature the timing law permits: best L11 at
+  0.6925; L15 falls to 0.577. This is the correct measurement.
+- `precommit_arm_dryrun.json` - offline estimate for the L11 arm before spending
+  CPU on it: recall 0.286, ~5 expected fixes.
+- `eval_single_task_mask_L11_w10.json` + `single_task_score_L11.json` - the live
+  higher-recall arm. fixes=4, breaks=2, p=0.6875: more fixes than the deployed arm
+  but it breaks the zero-break guarantee, both breaks in the `element` family.
+  Rejected on evidence.
 - `greedy_flows_single_task.json` - per-layer hidden-state jumps for all 463
   single-task items (`core/collect_single_task.py`, resumable). Independent
   collection reproduces the baseline's 59 wrong, which cross-validates the run.
-- `reachability_of_quiet.json` - whether the never-fired wrong population is
-  separable from correct: best AUROC 0.7129 (L15/w15), verdict REACHABLE. This
-  is what sets the next direction.
+  Gitignored (regenerable); the derived verdicts are committed.
 - `jitter_report*.json`, `summary_experiment.json` - early detector/feature reports.
 
 ## Naming

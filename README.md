@@ -38,10 +38,20 @@ first; NHE-NTW gives a controlled causal proof and triage framework for the seco
 The action arm is safe and its repair rate generalises across three question
 frames; it is not yet statistically significant because the trigger reaches only
 15.3% of errors. We measured whether the quiet residual is reachable rather than
-assuming it: **AUROC 0.713 (L15/w15)** separates the 50 never-fired wrong items
-from correct, so the ceiling is a **trigger** problem, not a mechanism limit. The
-next experiment is one live L15/w15 arm on already-collected data. Full decision
-tree in [`ROADMAP.md`](ROADMAP.md).
+assuming it, **corrected an earlier measurement that violated the project's own
+timing law**, and then built and tested the higher-recall trigger it implied:
+
+| arm | fixes | breaks | p | recall |
+|---|---:|---:|---:|---:|
+| L19/w5 (deployed) | 3 | **0** | 0.250 | 0.153 |
+| L11/w10 (higher-recall) | 4 | **2** | 0.688 | 0.286 |
+
+More fixes, but it breaks the zero-collateral-damage guarantee that is the Edge
+bar, so it is **rejected on evidence**. One idea remains open — a family-aware
+trigger or per-family mask, since both breaks were in the `element` family, which
+the mask never saw. If that fails, the ceiling is real and the honest contribution
+is the taxonomy plus the measured ceiling. Full decision tree in
+[`ROADMAP.md`](ROADMAP.md).
 
 `paper/` holds local LaTeX drafts (gitignored). `models/` and `data/` are gitignored
 and rebuilt — see `NHE-Edge/README.md` for the exact recipe. `requirements.txt`

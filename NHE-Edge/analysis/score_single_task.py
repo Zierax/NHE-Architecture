@@ -86,7 +86,7 @@ def main():
     paths, datas = [], []
     for name in a.arms:
         p, d = load_arm(name)
-        paths.append(p)
+        paths.append(os.path.basename(p))
         datas.append(d)
     base_name = a.baseline or paths[0]
     bi = paths.index(base_name)

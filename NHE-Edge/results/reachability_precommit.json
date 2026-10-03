@@ -1,0 +1,72 @@
+{
+ "verdict": "REACHABLE_PRECOMMIT",
+ "gate": 0.65,
+ "best_precommit_auc": 0.6925,
+ "best_layer": 11,
+ "retracted_fixed_window_auc": 0.7129,
+ "delta_vs_fixed_window": -0.0204,
+ "n_never_with_signal": 50,
+ "median_commit_pos_never": 7,
+ "top_layers": [
+  {
+   "layer": 11,
+   "auc": 0.6925,
+   "n_never_with_signal": 50
+  },
+  {
+   "layer": 12,
+   "auc": 0.6665,
+   "n_never_with_signal": 50
+  },
+  {
+   "layer": 3,
+   "auc": 0.658,
+   "n_never_with_signal": 50
+  },
+  {
+   "layer": 17,
+   "auc": 0.647,
+   "n_never_with_signal": 50
+  },
+  {
+   "layer": 24,
+   "auc": 0.6434,
+   "n_never_with_signal": 50
+  },
+  {
+   "layer": 18,
+   "auc": 0.6141,
+   "n_never_with_signal": 50
+  },
+  {
+   "layer": 1,
+   "auc": 0.5975,
+   "n_never_with_signal": 50
+  },
+  {
+   "layer": 2,
+   "auc": 0.5956,
+   "n_never_with_signal": 50
+  },
+  {
+   "layer": 13,
+   "auc": 0.5929,
+   "n_never_with_signal": 50
+  },
+  {
+   "layer": 15,
+   "auc": 0.5767,
+   "n_never_with_signal": 50
+  },
+  {
+   "layer": 16,
+   "auc": 0.5765,
+   "n_never_with_signal": 50
+  },
+  {
+   "layer": 23,
+   "auc": 0.561,
+   "n_never_with_signal": 50
+  }
+ ]
+}

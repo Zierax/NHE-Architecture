@@ -1,0 +1,46 @@
+{
+ "metric": "strict",
+ "baseline": "eval_single_task_none_full.json",
+ "baseline_n": 463,
+ "arms": [
+  {
+   "arm": "eval_single_task_mask_L11_w10.json",
+   "n_paired": 463,
+   "fixes": 4,
+   "breaks": 2,
+   "net": 2,
+   "p_exact_mcnemar": 0.6875,
+   "significant_p05": false,
+   "net_wilson95": [
+    0.0012,
+    0.0156
+   ],
+   "n_fired": 133,
+   "fired_and_wrong_before": 23,
+   "repairs_per_fired_wrong": 0.1739,
+   "still_wrong_total": 57,
+   "still_wrong_that_fired": 21,
+   "still_wrong_quiet": 36,
+   "per_family": {
+    "element": {
+     "n": 41,
+     "fixes": 1,
+     "breaks": 2,
+     "p": 1.0
+    },
+    "capital": {
+     "n": 244,
+     "fixes": 1,
+     "breaks": 0,
+     "p": 1.0
+    },
+    "largest": {
+     "n": 178,
+     "fixes": 2,
+     "breaks": 0,
+     "p": 0.5
+    }
+   }
+  }
+ ]
+}

@@ -170,13 +170,13 @@ weights were trained on the false answers.
    plausible mechanism for the Gemma ceiling, not a direct attribution of all
    four cases. Static+runtime moves the bench a lot (0.389, 9 breaks; 0.088 with
    58% refusal) at the cost of many fires.
-5. **The quiet residual is partly reachable, not purely a void population.**
-   Hidden-state flows collected on all 463 single-task items separate the
-   never-fired-wrong set (n=50) from correct (n=407) at AUROC 0.713 (L15/w15).
-   So the ceiling on that benchmark is a trigger-recall problem, not a hard
-   mechanism limit - but the same cell separates never-fired-wrong from
-   fired-wrong at only 0.34, so two sub-populations may exist and the cell is
-   unvalidated until a live arm runs.
+5. **The quiet residual is partly reachable, and the trigger that reaches it
+   fails the safety bar.** Hidden-state flows on all 463 items separate the
+   never-fired-wrong set (n=50) from correct (n=407) at pre-commit AUROC 0.6925
+   (L11) — but the live L11/w10 arm produced fixes=4 with breaks=2 (p=0.6875),
+   worse net than the deployed arm and a violation of the zero-break rule. The
+   breaks are all `element`-family, where a capital-fitted mask corrupts the
+   atomic-number mapping. Open idea: family-aware firing or a per-family mask.
 
 ## Limits
 
@@ -196,10 +196,16 @@ weights were trained on the false answers.
   (40/41 fired items lead >= 1) and the per-fired repair rate (0.333 vs 0.286 on
   Africa) are established at that n; the headline effect is not.
 - **Detector recall is the measured bottleneck**, not sample size: precision
-  0.220, recall 0.153 on errors. `reachability_of_quiet.py` shows the never-fired
-  wrong population IS separable from correct at AUROC 0.713 (L15/w15), so a
-  better trigger is the live hypothesis - but that cell separates it from the
-  fired-wrong population at only 0.34, so it is unvalidated.
+  0.220, recall 0.153 on errors. A higher-recall pre-commit trigger at L11 was
+  built and tested: fixes=4 but breaks=2 (p=0.6875), both breaks in the `element`
+  family, because the mask was fitted on wrong-only capital answers. Zero breaks
+  is the Edge bar, so that arm is rejected. Net effect is worse than L19/w5
+  (net +2 vs +3).
+- **A first reachability measurement was wrong and was corrected.** A fixed-window
+  w15 feature (AUROC 0.7129 at L15) read tokens at and after the commit, violating
+  the timing law. Re-measured per-item pre-commit, the residual is still partly
+  reachable but at L11 (0.6925), and L15 drops to 0.577. Recorded rather than
+  quietly replaced.
 
 ## Files
 
