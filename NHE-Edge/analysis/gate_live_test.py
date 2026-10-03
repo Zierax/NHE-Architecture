@@ -65,13 +65,19 @@ def main():
     ap.add_argument("--force-cut", type=int, default=None)
     a = ap.parse_args()
 
-    report_path = os.path.join(RES, "applicability_gate.json")
-    if not os.path.exists(report_path):
-        sys.exit("run analysis/gate.py first (no applicability_gate.json)")
-    report = json.load(open(report_path, encoding="utf-8"))
-    entry = next((r for r in report["results"] if r["model"] == a.model), None)
-    if entry is None or not entry.get("fixed_slice_cells"):
-        sys.exit(f"no gate result for {a.model}; run gate.py --model {a.model}")
+    # Recompute for this model unless a report already contains it. One report
+    # file per model (gate.py) so a single-model run can never leave a partial
+    # shared file that the live stage would read as "no result".
+    report_path = os.path.join(RES, f"applicability_gate_{a.model}.json")
+    entry = None
+    if os.path.exists(report_path):
+        report = json.load(open(report_path, encoding="utf-8"))
+        entry = next((r for r in report.get("results", []) if r["model"] == a.model), None)
+    if entry is None or not entry.get("best_fixed_slice_cell"):
+        print(f"[gate] no usable cached result for {a.model}; computing it now")
+        entry = gate.evaluate(a.model, a.flows)
+    if not entry.get("fixed_slice_cells") and not entry.get("best_fixed_slice_cell"):
+        sys.exit(f"gate produced no cells for {a.model}")
 
     if entry["verdict"] != "ACTIVE" and not a.allow_inert:
         sys.exit(f"GATE REFUSES {a.model}: verdict={entry['verdict']} "

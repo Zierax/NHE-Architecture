@@ -218,6 +218,33 @@ GPU, touches no weights at rest (reversible via reload), and has 0 breaks
 everywhere tested - at the cost of +20% per query. NHE is the 24-hour field
 fix; fine-tuning is the depot repair. Full table in `results/NUMBERS.md`.
 
+## One-command onboarding (semi-full automation)
+
+`analysis/nhe_onboard.py` runs the whole sequence for a new model with a hard
+stop when the method cannot apply. It is a state machine, not a wrapper:
+
+```
+collect -> gate -> [INERT: STOP] -> calibrate -> live run
+       -> [net<=0 or breaks>0: UNPROVEN] -> [net>0, C2W=0: USABLE]
+```
+
+```
+python analysis/nhe_onboard.py --model gemma3-1b       # ACTIVE -> UNPROVEN (honest)
+python analysis/nhe_onboard.py --model qwen2.5-0.5b   # INERT, stops before live
+python analysis/nhe_onboard.py --model gemma3-1b --skip-existing
+```
+
+Verified behaviour on the two real models: Qwen stops at `INERT` before any
+intervention, Gemma proceeds to the live arm and lands on `UNPROVEN` because the
+gate's top cell does not produce a clean net fix. The tool is deliberately
+incapable of reporting a model as usable on the strength of an AUC alone.
+
+**What is still not automated.** Neuron attribution (`attribute_causal2*.py`) is
+hours of CPU patching and still needs a per-architecture mask; it is invoked, not
+optimized. Threshold percentile, cut and scale are the deployed Gemma defaults,
+re-calibrated per model from correct items only. Full autonomy would need an
+intervention that does not require attribution.
+
 ## Which models this works on (applicability gate)
 
 NHE-temporal is not universal, and we now decide that from data instead of from

@@ -252,6 +252,13 @@ lower-AUROC cell gave a clean net +2 with 0 breaks. Same-layer cut controls
 (cut5/cut6/cut8) swing the outcome from +1 to -1 to -1 with no change in layer,
 confirming the effect is cut-alignment sensitive rather than AUROC driven.
 
+**Automation.** `analysis/nhe_onboard.py` executes collect -> gate -> live ->
+score as a state machine with a hard stop: `INERT` before any intervention when
+the gate fails, `UNPROVEN` when the gate passes but the live arm has no clean
+net fix, `USABLE` only on net > 0 with C2W = 0. Verified on both real models:
+Qwen -> INERT (stops early), Gemma -> UNPROVEN. Attribution remains the manual,
+expensive step. Records in `results/onboarding_{model}.json`.
+
 **Operational statement (what we are allowed to claim now).** NHE-temporal is a
 method for models/formats where a pre-commit spike measurably exists. Gemma
 3 1B qualifies. Qwen 0.5B in its current format does not, and the gate says so
@@ -260,9 +267,11 @@ onboarding should run the gate first, and a positive gate is a *necessary* not
 *sufficient* condition - the live run still has to be scored with W2C/C2W
 (`analysis/gate_live_test.py`, `analysis/gate_compare.py`).
 
-Files: `results/applicability_gate.json`, `results/gate_live_gemma3-1b.json`,
-`analysis/gate.py`, `analysis/gate_audit.py`, `analysis/gate_live_test.py`,
-`analysis/gate_compare.py`, `analysis/gate_report.py`.
+Files: `results/applicability_gate_{model}.json`,
+`results/applicability_gate_sweep.json`, `results/gate_live_{model}.json`,
+`results/onboarding_{model}.json`, `analysis/gate.py`,
+`analysis/gate_audit.py`, `analysis/gate_live_test.py`,
+`analysis/gate_compare.py`, `analysis/gate_report.py`, `analysis/nhe_onboard.py`.
 
 ## Side effects - general knowledge (greedy)
 

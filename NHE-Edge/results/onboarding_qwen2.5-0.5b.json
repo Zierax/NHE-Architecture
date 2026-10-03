@@ -1,0 +1,32 @@
+{
+ "model": "qwen2.5-0.5b",
+ "started": "2026-10-03T03:37:00",
+ "mode": "mask",
+ "scale": 0.3,
+ "stages": [
+  {
+   "stage": "collect",
+   "ok": true,
+   "seconds": 184.4
+  },
+  {
+   "stage": "gate",
+   "ok": true,
+   "seconds": 19.6
+  }
+ ],
+ "gate": {
+  "verdict": "INERT",
+  "fixed_slice_precommit_auroc": 0.6914,
+  "adaptive_precommit_auroc": 0.7901,
+  "edge_effect_inflation": 0.0987,
+  "cell": {
+   "layer": 23,
+   "fixed_cut": 6,
+   "fixed_slice_auroc": 0.6914
+  }
+ },
+ "verdict": "INERT",
+ "explanation": "no (layer, window) cell reaches the fixed-slice pre-commit gate; NHE-temporal has no usable trigger in this model/format",
+ "elapsed_seconds": 204.0
+}

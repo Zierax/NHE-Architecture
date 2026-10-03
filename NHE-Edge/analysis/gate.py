@@ -249,7 +249,8 @@ def main():
     ap.add_argument("--sweep-models", action="store_true")
     ap.add_argument("--full-cells", action="store_true",
                     help="store every scanned cell instead of the top ranked ones")
-    ap.add_argument("--out", default=os.path.join(RES, "applicability_gate.json"))
+    ap.add_argument("--out", default=None,
+                    help="report path; default results/applicability_gate_{model}.json")
     a = ap.parse_args()
 
     if a.sweep_models:
@@ -278,9 +279,17 @@ def main():
     payload = {"cells_scanned": {"layers": LAYERS, "windows": WINDOWS},
                "note": ("top-N cells only; run with --full-cells for the complete grid"),
                "results": results}
-    with open(a.out, "w", encoding="utf-8", newline="\n") as fh:
+    # One file per model: a shared file gets truncated whenever a single-model run
+    # overwrites it, which silently breaks the downstream live stage.
+    out = a.out
+    if out is None:
+        if a.sweep_models:
+            out = os.path.join(RES, "applicability_gate_sweep.json")
+        else:
+            out = os.path.join(RES, f"applicability_gate_{results[0]['model']}.json")
+    with open(out, "w", encoding="utf-8", newline="\n") as fh:
         json.dump(payload, fh, indent=1)
-    print(f"\nsaved {a.out}")
+    print(f"\nsaved {out}")
     for r in results:
         line = f"  {r['model']}: {r['verdict']}"
         if r.get("best_fixed_slice_cell"):

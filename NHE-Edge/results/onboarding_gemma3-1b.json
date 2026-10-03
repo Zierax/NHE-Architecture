@@ -1,0 +1,63 @@
+{
+ "model": "gemma3-1b",
+ "started": "2026-10-03T03:25:12",
+ "mode": "mask",
+ "scale": 0.3,
+ "stages": [
+  {
+   "stage": "collect",
+   "ok": true,
+   "seconds": 245.3
+  },
+  {
+   "stage": "gate",
+   "ok": true,
+   "seconds": 15.4
+  },
+  {
+   "stage": "live",
+   "ok": true,
+   "seconds": 292.3
+  }
+ ],
+ "gate": {
+  "verdict": "ACTIVE",
+  "fixed_slice_precommit_auroc": 0.7812,
+  "adaptive_precommit_auroc": 0.766,
+  "edge_effect_inflation": -0.0152,
+  "cell": {
+   "layer": 20,
+   "fixed_cut": 6,
+   "fixed_slice_auroc": 0.7812
+  }
+ },
+ "live": {
+  "model": "gemma3-1b",
+  "gate_verdict": "ACTIVE",
+  "cell": {
+   "layer": 20,
+   "cut": 6
+  },
+  "threshold": 5114.14541015625,
+  "mode": "mask",
+  "scale": 0.3,
+  "topic": "africa",
+  "n": 54,
+  "n_fired": 9,
+  "hallucination_rate": 0.1296,
+  "offline_catches": "4/7",
+  "edge_effect_inflation": -0.0152,
+  "eval_file": "eval_runtime_africa_jump_gt_L20_p90_correct_mask_w6_sft0.3.json"
+ },
+ "strict_score": {
+  "arm": "eval_runtime_africa_jump_gt_L20_p90_correct_mask_w6_sft0.3.json",
+  "w2c": 0,
+  "c2w": 1,
+  "net": -1,
+  "n": 54
+ },
+ "scored_arm": "eval_runtime_africa_jump_gt_L20_p90_correct_mask_w6_sft0.3.json",
+ "verdict": "UNPROVEN",
+ "explanation": "gate passed but the live arm did not produce a clean net fix; applicability is necessary, not sufficient",
+ "elapsed_seconds": 553.0
+}

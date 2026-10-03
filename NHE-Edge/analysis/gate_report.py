@@ -1,11 +1,16 @@
-"""Print the top pre-commit cells from an applicability_gate.json report."""
+"""Print the ranked applicability-gate cells from a report.
+
+Usage:
+  python analysis/gate_report.py                          # the sweep report
+  python analysis/gate_report.py ../results/applicability_gate_gemma3-1b.json
+"""
 import json
 import os
 import sys
 
 RES = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "results")
 
-path = sys.argv[1] if len(sys.argv) > 1 else os.path.join(RES, "applicability_gate.json")
+path = sys.argv[1] if len(sys.argv) > 1 else os.path.join(RES, "applicability_gate_sweep.json")
 d = json.load(open(path, encoding="utf-8"))
 for r in d["results"]:
     print("===", r["model"], r["verdict"])
