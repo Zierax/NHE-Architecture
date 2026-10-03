@@ -24,10 +24,10 @@ WHAT THIS BUILDS
 SCORING CONTRACT (this is the part that decides whether the benchmark is valid)
     The committed headline metric is "strict first sentence, answer as substring".
     That is unsafe here: 'bern' is a substring of 'berne', 'delhi' of 'new delhi',
-    'malta' of 'malterney'. `bench_single_task.py` therefore scores with an
-    explicit word-boundary, case- and accent-insensitive match, and reports BOTH
-    the strict-word-boundary metric (primary) and the legacy substring metric so
-    the two can be compared rather than conflated.
+    'malta' of 'malterney'. `analysis/scoring.py` therefore defines whole-token
+    matching and is unit-tested by `analysis/test_scoring.py`; every script that
+    scores this benchmark imports it, so the metric cannot drift between the
+    baseline run, the intervention run and the analysis.
 
 Usage:
   python analysis/build_single_task.py            # writes bench + provenance

@@ -206,8 +206,12 @@ token (lead = city_idx - fired_at >= 1). Verified from raw files by
 | Qwen long prefix | [-2..-1] | 0 / 0 |
 
 Every lead >= 1 item sits in gemma-native (the only cell with fixes); every
-lead <= 0 item never flips, in any cell. Intervenability is a format property,
-not a model property.
+lead <= 0 item never flips, in any cell. So intervenability tracks the spike's
+position relative to the commit, and prompt format moves that position. Whether a
+*model* can be made intervenable by some other means is a different question: the
+applicability gate searched 192 (layer x window) cells and still reports Qwen
+INERT, and the reachability experiment shows some Gemma quiet errors ARE
+trigger-reachable. Both are open, and neither is settled by this table.
 
 ## Cost (measured CPU, `latency.json`)
 
@@ -429,7 +433,9 @@ analysis/                 read-only analysis of committed files (no model needed
   stats.py                strict|battery|significance tables
   sweep.py                thresholds|windows offline sweeps (matches live runs)
 results/                  all outputs, NUMBERS.md, experiment_report.md
-legacy/                   superseded single-purpose scripts (history kept)
+legacy/                   superseded single-purpose scripts (history kept;
+                          see legacy/README.md for what replaced what, and note
+                          that these predate the current scoring contract)
 ```
 `bench_random.json` is built by `bench.py build --bench random` (seed 42, byte-identical to the committed file); `bench.py build --bench hard` writes the hard bench.
 

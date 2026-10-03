@@ -128,13 +128,13 @@ def main():
             with open(a.out, "w", encoding="utf-8", newline="\n") as fh:
                 json.dump({"bench": "bench_single_task.json", "n": len(out_items),
                            "n_layers": N_LAYERS, "complete": False,
-                           "items": out_items}, fh, ensure_ascii=False)
+                           "items": out_items}, fh, indent=1, ensure_ascii=False)
             print(f"  checkpoint: {len(out_items)} items total", flush=True)
 
     with open(a.out, "w", encoding="utf-8", newline="\n") as fh:
         json.dump({"bench": "bench_single_task.json", "n": len(out_items),
                    "n_layers": N_LAYERS, "complete": True,
-                   "items": out_items}, fh, ensure_ascii=False)
+                   "items": out_items}, fh, indent=1, ensure_ascii=False)
     wrong = sum(1 for r in out_items if not r["correct"])
     print(f"saved {a.out} n={len(out_items)} wrong={wrong} "
           f"({time.time()-t0:.0f}s)")

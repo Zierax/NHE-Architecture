@@ -1,0 +1,18 @@
+# Line endings are normalized in the repository, so the same file does not show
+# as modified depending on which tool (Windows Python, WSL git, PowerShell) last
+# touched it. Without this, `git status` reported ~230 files as changed when the
+# only difference was CRLF vs LF.
+#
+# Checked-in content is LF. Working copies on Windows get CRLF back on checkout.
+* text=auto eol=lf
+
+# Windows-only launchers must stay CRLF or cmd.exe mis-parses them.
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Binary assets: never line-ending translated.
+*.pt binary
+*.npz binary
+*.safetensors binary
+*.png binary
+*.jpg binary

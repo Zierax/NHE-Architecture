@@ -158,7 +158,13 @@ Same pipeline via `runtime_rollback_qwen.py` + `attribute_causal2_qwen.py`
 | intervention flips | 2 fixes / 0 breaks (strict) | **0 flips / 0 breaks** (post-commit: city at token ~6, spike at 7-9) |
 | pre-commit AUC (t<=5) | catches 3/7 | **0.353** (no pre-commit signal) |
 
-Reading: signal family generalizes; timing doesn't. NHE-temporal needs spike-before-commit (a format property - Gemma's bold markers delay the city); on Qwen-format it is provably inert and harmless. Qwen1.5B remains synthetic-only.
+Reading: the signal family generalizes; the timing does not. NHE-temporal needs
+the spike to precede the commit. On Qwen-format the deployed cell is inert and
+harmless. "Provably inert" was the earlier wording and was too strong: it rested on
+three sampled configs. The applicability gate later searched 192 (layer x window)
+cells and still returns INERT for Qwen, so the conclusion holds - but it is a
+searched result, not a proof from one configuration. See "Applicability gate"
+below. Qwen1.5B remains synthetic-only.
 
 ## Format causality 2x2 - greedy Africa 54, strict (2026-09-06)
 
