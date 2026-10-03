@@ -218,6 +218,39 @@ GPU, touches no weights at rest (reversible via reload), and has 0 breaks
 everywhere tested - at the cost of +20% per query. NHE is the 24-hour field
 fix; fine-tuning is the depot repair. Full table in `results/NUMBERS.md`.
 
+## Which models this works on (applicability gate)
+
+NHE-temporal is not universal, and we now decide that from data instead of from
+one failed config. `analysis/gate.py` scans the joint (layer x window) space for
+the strongest **pre-commit** signal and controls for the commit-position edge
+effect (hallucinations commit later, which naively inflates the score):
+
+| model | fixed-slice pre-commit AUROC | verdict |
+|---|---:|---|
+| Gemma 3 1B | 0.7812 | **ACTIVE** |
+| Qwen2.5-0.5B (current format) | 0.6914 | **INERT** |
+
+Qwen's whole-sequence early AUC is 0.778 and its adaptive pre-commit score looks
+like 0.790, but both fall apart under the fixed-slice control: its hallucinations
+commit at mean position 6.56 vs 5.98 for correct answers, so they simply get a
+longer measurement window. No cell in 192 reaches the gate for Qwen.
+
+**Important second result:** pre-commit AUROC is a *necessary* gate, not a
+sufficient selector. On Gemma the top-AUROC cell (L20, 0.781) is worse live
+(net -1) than a lower-AUROC cell (L19, 0.772; net +2, 0 breaks). Cut-alignment
+controls on a single layer swing the outcome from +1 to -1. So onboarding any
+new model is two steps: run the gate, then run the live arm and score W2C/C2W.
+
+```
+python analysis/gate.py --sweep-models            # applicability, both models
+python analysis/gate_audit.py                     # audit the gate's own assumptions
+python analysis/gate_live_test.py --model gemma3-1b --mode mask --scale 0.3
+python analysis/gate_compare.py                   # strict W2C/C2W for every arm
+```
+
+`gate_live_test.py` refuses to run when the gate says INERT, so an inert
+model/format can never be reported as a working NHE cell.
+
 ## Cross-model and side effects
 
 - **Qwen2.5-0.5B run for real:** same pipeline, early AUC 0.778 (beats Gemma

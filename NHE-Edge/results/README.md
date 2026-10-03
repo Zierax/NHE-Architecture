@@ -29,6 +29,11 @@ Full walkthrough: `experiment_report.md`.
 - `quiet_diagnostic.json` - logit-lens on 4 quiet + 3 dynamic (`probe_quiet.py`).
 - `entropy_audit.json` - answer-commit confidence/entropy for the quiet cases;
   three are highly confident at commit, while Gabon is a separate uncertain case.
+- `applicability_gate.json` - per-model ACTIVE/INERT verdict from a joint
+  (layer x window) pre-commit search with an edge-effect control
+  (`analysis/gate.py`).
+- `gate_live_gemma3-1b.json` - result of running the gate's winning cell live,
+  used to show that pre-commit AUROC does not pick the best intervention.
 - `jitter_report*.json`, `summary_experiment.json` - early detector/feature reports.
 
 ## Naming

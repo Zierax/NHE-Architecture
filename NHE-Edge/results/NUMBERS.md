@@ -211,6 +211,59 @@ therefore produces a distinct signature from simple ignorance. Toy scale; a
 causal prior, not a Gemma proof. Gabon (id 19) is explicitly excluded from the
 void claim (uncertain 0.69 + prefix-correct truncation - a different mechanism).
 
+## Applicability gate - which models NHE-temporal can serve (2026-09-23)
+
+New primitive (`analysis/gate.py`): instead of asking "did this config flip
+anything", search the joint (layer x window) space for the strongest
+PRE-COMMIT signal, then control for the boundary artifact and finally run the
+winner live. Answers applicability from data.
+
+**Edge-effect control (why the naive metric was wrong).** An adaptive
+pre-commit segment is longer for items that commit late, and hallucinations
+commit later than correct answers. That inflates the AUROC without any early
+signal. Re-scoring every layer on ONE fixed slice (same cut for all items) is
+the honest measure:
+
+| model | adaptive pre-commit AUROC | fixed-slice AUROC | inflation | verdict |
+|---|---:|---:|---:|---|
+| Gemma 3 1B | 0.7660 (L20) | **0.7812 (L20, cut=6)** | -0.015 | ACTIVE |
+| Qwen2.5-0.5B | 0.7901 (L22) | 0.6914 (L23, cut=6) | +0.099 | INERT |
+
+Qwen's headline-looking 0.790 was a commit-position artifact: its hallucinations
+commit at mean position 6.56 vs 5.98 for correct answers, so they simply get a
+longer measurement window. Gemma shows no such inflation (-0.015), which is why
+its number is trustworthy. The earlier "Qwen early AUC 0.778" was a whole-window
+figure and is not contradicted - it never claimed pre-commit timing.
+
+**The finding that matters more than the gate itself.** The gate ranks cells;
+the live run decides. On Gemma the highest pre-commit AUROC cell is NOT the best
+intervention:
+
+| arm | offline pre-commit AUROC | fired | W2C | C2W | net |
+|---|---:|---:|---:|---:|---:|
+| deployed L19/w5/t90 | 0.7720 | 7/54 | 2 | 0 | **+2** |
+| gate winner L20/cut6 | **0.7812** | 9/54 | 0 | 1 | **-1** |
+| L20/cut5 (control) | - | 10/54 | 2 | 1 | +1 |
+| L20/cut8 (control) | - | 6/54 | 0 | 1 | -1 |
+
+Falsification outcome: **pre-commit AUROC does not identify the intervenable
+cell.** A 0.009 AUROC advantage converted into one break and zero fixes, while a
+lower-AUROC cell gave a clean net +2 with 0 breaks. Same-layer cut controls
+(cut5/cut6/cut8) swing the outcome from +1 to -1 to -1 with no change in layer,
+confirming the effect is cut-alignment sensitive rather than AUROC driven.
+
+**Operational statement (what we are allowed to claim now).** NHE-temporal is a
+method for models/formats where a pre-commit spike measurably exists. Gemma
+3 1B qualifies. Qwen 0.5B in its current format does not, and the gate says so
+quantitatively rather than from one failed config. Any per-model or per-format
+onboarding should run the gate first, and a positive gate is a *necessary* not
+*sufficient* condition - the live run still has to be scored with W2C/C2W
+(`analysis/gate_live_test.py`, `analysis/gate_compare.py`).
+
+Files: `results/applicability_gate.json`, `results/gate_live_gemma3-1b.json`,
+`analysis/gate.py`, `analysis/gate_audit.py`, `analysis/gate_live_test.py`,
+`analysis/gate_compare.py`, `analysis/gate_report.py`.
+
 ## Side effects - general knowledge (greedy)
 
 | Dataset | baseline | static k32 soft (x0.3) |

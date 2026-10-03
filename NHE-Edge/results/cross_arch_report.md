@@ -247,10 +247,35 @@ transient, not a precursor.
 `mask_k32_midwrong_qwen2.5-0.5b.json`,
 `eval_runtime_africa_qwen2.5-0.5b_jump_gt_L22_t90_{none,mask}[_w10].json`.
 
-**Interpretation:** the jitter *family* generalizes across architectures (same
-`jump_max` shape, same mid-upper band, offline->live 1:1, own wrong-commit neurons
-in the shifted band). But NHE-temporal only works when the spike precedes the
-commit by >=1 token - a *format* property (Gemma's bold markers delay the city),
-not a model property. On Qwen-format the method is provably inert, harmlessly
-(0 breaks). This boundary condition is reported as a finding, not a failure.
+**Interpretation (2026-09-23, superseded in part by the applicability gate):**
+the jitter *family* generalizes across architectures (same `jump_max` shape,
+same mid-upper band, offline->live 1:1, own wrong-commit neurons in the shifted
+band). But NHE-temporal only works when the spike precedes the commit by >=1
+token - a *format* property (Gemma's bold markers delay the city), not a model
+property. On Qwen-format the method is inert, harmlessly (0 breaks).
+
+**Superseding experiment.** The "format property" claim was asserted from three
+configs (L22/w5 and the bold/long variants) at one threshold. That is a config
+sample, not a search, so `analysis/gate.py` now scans the full joint
+(layer 8-23 x window 1-15) space for pre-commit discriminability and controls
+for the commit-position edge effect:
+
+| model | adaptive pre-commit AUROC | fixed-slice AUROC | verdict |
+|---|---:|---:|---|
+| Gemma 3 1B | 0.766 (L20) | **0.7812 (L20)** | ACTIVE |
+| Qwen2.5-0.5B | 0.790 (L22) | 0.6914 (L23) | **INERT** |
+
+Qwen looks stronger on the adaptive metric and is still the weaker model once
+the artifact is removed: its hallucinations commit later (mean position 6.56 vs
+5.98), which lengthens their measurement window and inflates the score by
++0.099. No (layer, window) cell in Qwen reaches the 0.70 fixed-slice gate, so
+the inert conclusion is now a searched result over 192 cells, not a failed
+config. Gemma passes the same gate.
+
+**Second finding, relevant everywhere.** On Gemma the highest pre-commit
+AUROC cell is not the best intervention (L20 = 0.781 AUROC but net -1 live,
+versus L19 = 0.772 AUROC and net +2 with 0 breaks). Pre-commit AUROC is a
+necessary gate, not a sufficient selector; cut-alignment controls on one layer
+swing the result from +1 to -1. Onboarding a new model therefore requires the
+gate *and* a W2C/C2W-scored live run, not an AUC number.
 

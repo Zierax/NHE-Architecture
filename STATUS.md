@@ -61,8 +61,12 @@ All numbers are strict (first sentence) and labeled. Full table:
    Gabon is a separate uncertainty/truncation case (p=0.6925). All four remain
    unanswered by the current jitter detector; direct provenance testing is next.
 
-9. **Cross-model.** Qwen2.5-0.5B on real weights: signal exists (AUC 0.778), but
-   the spike lands after the city, so 0 flips. Timing is format-dependent.
+9. **Cross-model + applicability gate.** Qwen2.5-0.5B has the signal family but
+   no *pre-commit* signal in its current format. The new gate searches 192
+   (layer x window) cells and controls for the commit-position artifact: Gemma
+   0.781 fixed-slice = ACTIVE, Qwen 0.691 = INERT. Second finding: the top-AUROC
+   cell is not the best live arm (L20 0.781 -> net -1; L19 0.772 -> net +2),
+   so AUROC gates applicability but does not select the intervention.
 
 10. **Side effects.** Soft k32 on 200 real MMLU: 0.925→0.925, 0.610→0.620 — preserved.
     Temporal on MMLU: 78→79, fires on 155/200 — no effect (threshold doesn't transfer).
