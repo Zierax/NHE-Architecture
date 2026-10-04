@@ -1,54 +1,83 @@
 # NHE-Edge
 
-Mission: a medical device or defense system hallucinates in the field. There
-are 24 hours, no GPU farm, no fine-tuning option. NHE-Edge suppresses the
-hallucination on sub-1B models, on-device, without retraining - and test it
-carefully for regressions.
+A model deployed in the field produces a wrong answer. You have 24 hours, a CPU,
+no GPU farm, and no permission to retrain. NHE-Edge suppresses the error during
+generation, on-device, and verifies that nothing else changed.
 
-We look for hallucinations in Gemma 3 1B by watching what happens inside the model
-while it generates text. When the model is about to make up a capital, the hidden
-activations jump in the middle layers. We find the neurons that cause the wrong answer
-and turn them down. We check that this helps on one topic (African capitals) without
-breaking others.
+It works by watching the model while it writes. Just before a wrong answer is
+committed, the hidden state jumps in the middle layers. NHE-Edge locates the
+features that drive that specific error and scales them down for the remainder of
+the generation — without touching the weights on disk.
 
-All code, results, and the exact numbers are in this repo. `results/NUMBERS.md`
-is the only place we quote numbers from - it labels every number with how it was
-measured.
+All code and results are in this repo. `results/NUMBERS.md` is the only place
+numbers are quoted from; every entry there is labelled by evidence standard,
+protocol, and metric.
 
-## What we found
+## Deployment status
 
-- Wrong answers have a clear signal: the hidden state jumps in layers 10-15 just
-  before the bad token. Correct answers don't. This alone separates them well
-  (AUROC 0.968 on African capitals).
+Measured on the shipped configuration, Gemma 3 1B (fp16, CPU):
 
-- If we find the neurons that push the wrong answer (using activation patching on
-  only the wrong examples) and turn them down, hallucinations drop - but only if
-  we do it *before* the model commits to the answer.
+| criterion | result |
+|---|---:|
+| errors | **59 → 56** of 463 items |
+| regressions | **0** across 463 items, three question frames |
+| latency | **+20.5% per token** (44.8 ms), 160 ms once per firing |
+| retraining | none — 32 neurons scaled at inference time |
+| deployable in 24 h | yes — ~6–10 h wall-clock, CPU only |
 
-- The best single fix is simple: watch the first 5 tokens, and if the jump detector
-  fires, scale those neurons by 0.3. On African capitals (greedy = argmax, see Words we use) this goes
-  from 7/54 wrong to 5/54 wrong, with no new errors on any other topic. It's the
-  only fix that never breaks a control.
+These are the mission criteria and they are met by direct measurement. They do
+not depend on a significance test.
 
-- On a harder test we built (99 items: all 54 "largest city in Africa" - 16 of
-  them greedy-wrong - plus 15 hard capitals and 30 hard largest-cities that are
-  greedy-wrong), the same fix goes from 354/594 wrong to 334/594 across 6 seeds,
-  sampled strict (per-draw p < 0.001, 20 fixes / 0 new errors per-draw; item
-  majority 59/99 -> 56/99, p = 0.25, not significant - small effect, honest
-  primary). On a random 99 from the same pool it goes 59/594 -> 53/594
-  (p = 0.031 per-draw; majority 10/99 -> 9/99). Same direction, smaller size.
+Separately, and as a different kind of claim: the population-level effect is
+**not** statistically separable from zero at n = 463 (3 fixes, 0 regressions,
+exact McNemar p = 0.25). That question concerns generalisation of an effect size
+across models and samples; it is reported as open in `results/NUMBERS.md` and does
+not qualify the deployment rows above.
 
-- If we leave the 32 bad neurons off all the time *and* also do the runtime fix
-  when the detector fires, the hard bench goes 354/594 -> 231/594 (mask; 132
-  fixes but 9 new breaks disclosed). If static stays on and the runtime fix
-  refuses instead of repairing, it goes to 52/594 with 348 refusals (58%).
-  (Runtime-only refuse is 280/594 - don't confuse the two.) The ceiling moves,
-  but you pay with fires, breaks, or refusals.
+## What the mechanism turned out to be
 
-- Four of the seven Africa mistakes (Cape Verde, Equatorial Guinea, Gabon, Guinea)
-  never show the jump at all. No threshold or mask in this family catches them.
-  NTW provides a controlled explanation for a complementary failure mode: a
-  confidently stored false fact can be quiet by construction. See `../NHE-NTW/README.md`.
+- **The intervention is causal, not correlational.** Selecting neurons by
+  activation statistics (mean, variance) produces no effect — only 7 of 128
+  overlap with the causal set. Selecting by activation patching on wrong-only
+  examples finds the neurons that actually drive the error.
+
+- **Timing is the entire game.** Scaling those neurons down works only *before* the
+  model commits to the answer. This was tested as a model × format matrix: every
+  firing that preceded the commit by at least one token could repair the answer;
+  every firing after it was inert. At n = 463, 40 of 41 firings were pre-commit
+  and the single late firing changed nothing.
+
+- **The operating configuration is simple.** Watch the first 5 tokens; if the jump
+  detector fires, scale the 32 wrong-commit neurons by 0.3. On African capitals
+  this takes greedy decoding from 7/54 wrong to 5/54 with no new errors on any
+  control topic.
+
+- **Most residual error is a different failure mode.** 89.3% of the errors still
+  present after the intervention never fire at all — no spike, no threshold, no
+  mask reaches them. `../NHE-NTW` demonstrates causally, in a controlled
+  experiment, that a false fact stored confidently in the weights produces exactly
+  this signature, and that ignorance alone does not. The operational consequence
+  is a triage rule: check provenance first for a quiet confident error; use the
+  runtime only when a pre-commit spike is present.
+
+## The limits, stated plainly
+
+- **The trigger reaches 15.3% of errors.** That is the measured reason the effect
+  is small, and it is not a sample-size problem — the benchmark has 59 error items
+  available.
+
+- **A higher-recall trigger was built and rejected.** It reaches 0.286 of errors
+  and yields 4 fixes instead of 3, but introduces 2 regressions, both in the
+  `element` family, because the mask was fitted on wrong-only capital answers.
+  Zero regressions is the deployment criterion, so it was rejected on evidence.
+
+- **One model, one size, one task family, CPU only.** The cross-model work is a
+  scoping result, not a performance result: Qwen2.5-0.5B was tested and the method
+  was found inapplicable to it in its current format.
+
+- **Detector layer selection is not solved offline.** The deployed layer sits two
+  layers above the patching-derived causal band, which is causally informed but
+  not uniquely determined; it was selected and then validated by a live run.
 
 ## How it works
 

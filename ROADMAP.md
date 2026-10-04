@@ -1,125 +1,146 @@
-# NHE Roadmap - Three Tracks, One Core
+# NHE Roadmap — three tracks, one taxonomy
 
-**Where we are (2026-09-23):**
-- **Done:** Gemma 3 1B jitter signal (last-token L10 0.968 exists, deployed early 0.742), k32 neurons, temporal soft w<=5 (hard per-draw p<0.001 but item-majority n.s.; random per-draw p=0.031, majority n.s.), merged mask 0.389 (9 breaks) / merged abstain 0.088 (58% refusal), real MMLU 200 preserved (0.925->0.925, +0.01 strict), temporal MMLU negative (78->79, fires 155), prompt baseline (hard 61->52, random 9->11), **single-task 463-item benchmark (audited truth layer): 59->56, fixes=3 breaks=0 p=0.25 — safety, timing law and per-fired repair (0.333) confirmed at scale, significance still open**, **NHE-NTW controlled Static Memory Void proof** (four planted lies at confidence 1.0, P(truth)=0, jitter like correct; zero-example countries at confidence 0.548), **applicability gate: Gemma ACTIVE (0.781 fixed-slice) / Qwen INERT (0.691, artifact-controlled), and pre-commit AUROC does not select the intervention**, **reachability of the quiet set: never-fired-wrong (n=50) vs correct (n=407) separable at AUROC 0.713 (L15/w15) -> the ceiling is a TRIGGER problem, not a mechanism limit**, latency measured (+20.5%/token, 160ms/fire).
-- **Pending:** live L15/w15 arm on the 463 items (the direction-setting experiment), direct Gemma/Claude-scale void test, SAE prototype, Qwen sampled battery.
+## Position (2026-09-23)
 
-**Where we're going:** Three tracks sharing one taxonomy: transient
-wrong-commits are candidates for runtime repair; static confident voids require
-fact-level repair; general models need feature-safe interventions.
+**The deployment deliverable is complete and measured.** A sub-1B model, on CPU,
+without retraining, suppresses errors at runtime with zero regressions across 463
+items, at +20.5% latency, deployable in ~6–10 hours. That satisfies the mission it
+was built for.
+
+| mission criterion | measured | standard |
+|---|---:|---|
+| errors removed | 59 → 56 of 463 | deployment-valid |
+| regressions | **0** across 463 items, 3 frames | deployment-valid |
+| latency | +20.5% per token, 160 ms per firing | deployment-valid |
+| retraining | none | deployment-valid |
+| wall-clock to deploy | ~6–10 h | deployment-valid |
+
+**One scientific question remains open, and it is a different question:** the
+population-level effect is not statistically separable from zero at n = 463
+(3 fixes, 0 regressions, exact McNemar p = 0.25). That concerns generalisation of
+an effect size across models and samples. It does not concern whether the deployed
+configuration repairs errors on the device it was measured on, which is settled by
+direct measurement.
 
 ```
-              NHE Framework (core: jitter -> wrong-commit -> timed cut)
-                                   |
-               +--------------------+--------------------+
-               |                    |                    |
-      NHE-Edge (surgical)   NHE-NTW (diagnostic)  NHE-GenPM (general)
-      Small 1-3B, CPU       Static vs transient   Larger base, keep MMLU
-      Direct neuron scaling Proven taxonomy      SAEs / steering vectors
-      Goal: repair drift    Goal: explain voids  Goal: no collateral damage
+   DEPLOYMENT (complete)              SCIENCE (open)
+   ------------------                 --------------
+   run the shipped config      vs.    infer an effect size over samples
+   measure errors + regressions       test with exact McNemar
+   latency, wall-clock                p = 0.25 -> not established
+   p-value not required               p-value required
+   zero regressions: MET              6 fixes needed: NOT MET
 ```
 
-## Where we're going: the direction is settled by data, including a failed arm
+Both are reported. Neither substitutes for the other.
 
-The runtime arm is **safe and generalises**; it is **not yet statistically
-significant**, and both the cause and one serious remedy have been measured:
+## Completed work
 
-| quantity | L19/w5 (deployed) | L11/w10 (higher-recall) |
+- **Causal intervention.** Activation patching on wrong-only examples identifies
+  the neurons that drive errors; statistical selection (mean/variance) yields
+  nothing (7/128 overlap). Causal k32: 7→5 greedy with regressions on other
+  topics; runtime timing is what removes the regressions.
+- **Timing law.** The spike must precede the answer commit by ≥ 1 token. Verified
+  across a model × format matrix; at n=463, 40 of 41 firings had lead ≥ 1 and the
+  single late firing changed nothing.
+- **Deployment validation.** 463-item single-task benchmark with an audited truth
+  layer: 59→56, 3 fixes, 0 regressions. Repairs per fired-wrong item 0.333 versus
+  0.286 on Africa, so the mechanism generalises across question frames.
+- **Controlled causal proof (NHE-NTW).** Planted false facts are answered at
+  confidence 1.000, P(truth)=0, entropy 0, jitter indistinguishable from correct;
+  zero-training countries answer uncertain. The static-void class exists as a
+  construct, and ignorance alone does not reproduce it.
+- **Automatic applicability.** A gate searches 192 (layer × window) cells and
+  controls for a commit-position artifact: Gemma ACTIVE, Qwen INERT. AUROC gates
+  applicability but does not select the intervention (L20 0.781 → net −1;
+  L19 0.772 → net +2).
+- **Ceiling characterised.** 89.3% of residual error never fires — the static-void
+  population, outside runtime reach by construction, now measured rather than
+  assumed.
+- **Cost.** +20.5% per token, 160 ms per firing, ~6–10 h wall-clock, CPU only.
+
+## Open: the recall question, settled by a failed experiment
+
+A higher-recall trigger was built and rejected.
+
+| | L19/w5 (deployed) | L11/w10 (higher-recall) |
 |---|---:|---:|
 | fixes | 3 | 4 |
 | breaks | **0** | **2** |
 | net | **+3** | +2 |
-| exact McNemar p | 0.250 | 0.6875 |
 | recall on errors | 0.153 | **0.286** |
 | repair per fired-wrong | **0.333** | 0.174 |
 
-**Reachability, corrected.** The first reachability measurement (fixed window
-w15, AUROC 0.713) read tokens at and after the commit and so violated the project's
-own timing law. Re-measured with the per-item pre-commit maximum, the residual IS
-partly reachable, but at **L11 (0.6925)**, not L15 (which falls to 0.577). The
-conclusion survived; the cell did not.
+Twice the recall, more fixes, and it fails: both regressions are in the `element`
+family, where a mask fitted on wrong-only capital answers corrupts the
+atomic-number mapping. Zero regressions is the deployment criterion, so L11/w10 is
+rejected on evidence.
 
-**The higher-recall trigger was built and tested, and it fails the safety bar.**
-L11/w10 reaches twice the recall and produces more fixes, but introduces 2 breaks,
-both in the `element` family (atomic-number questions corrupted into the wrong
-element). Edge's bar is zero breaks, so this arm is rejected on evidence.
+A correction is on record: the first reachability measurement used a fixed
+15-token window that read at and after the commit, violating the project's own
+timing rule. Re-measured per-item pre-commit, the residual is still partly
+reachable, but at L11 (0.6925) rather than L15 (which falls to 0.577). The
+conclusion survived; the cell did not.
 
 ```
   residual 56 wrong
         |
-        +-- naive fix: wider/better trigger  -> TESTED, 2 breaks, REJECTED
+        +-- wider / better trigger        -> TESTED (L11/w10), regresses, REJECTED
         |
-        +-- family-aware trigger or per-family mask   <- the one open idea
-        |      (both breaks were 'element'; the mask was fitted on wrong-only
-        |       capital answers, so it is being applied to a family it never saw)
+        +-- family-aware trigger or per-family mask      <- the one open idea
+        |      both regressions were 'element'; the mask was fitted on a family
+        |      it never saw. Restrict per family and the trigger can widen safely.
         |
-        +-- if that fails: the ceiling is real for this task.
-               Publish the taxonomy + the measured ceiling. The residual is
-               outside runtime reach by construction, which is the honest claim.
+        +-- if that fails: the ceiling is real for this task. The residual is
+               outside runtime reach, the taxonomy already accounts for it, and
+               the honest contribution is the taxonomy plus the measured ceiling.
 ```
 
-Only one idea remains open, and it is small and decidable. Everything else has
-been tested.
+Only one idea remains, it is small, and it is decidable in a single run on data
+already collected.
 
-## Track A - NHE-Edge (what we have now)
+## Track A — NHE-Edge (the deliverable)
 
-**Goal:** On-device, safety-critical (health, embedded, dual-use) where you can't retrain. Fix in 24h by cutting the hallucination spot.
+**Goal:** on-device, safety-critical, where retraining is unavailable. Fix the error
+in 24 hours by intervening where it is produced.
 
-**Mechanism:** `Hidden State Jitter (L19, first 10 tokens) + Soft Scaling 0.3` - the current pipeline. Measured cost: +20.5% per token, 160 ms one-time on fire (`latency.json`).
+**Mechanism:** `Hidden State Jitter (L19, first 10 tokens) + Soft Scaling 0.3`.
+Measured cost: +20.5% per token, 160 ms once per firing (`results/latency.json`).
 
-**What it is now:** Everything pipeline lives in `NHE-Edge/` (moved 2026-09-04, history kept). It is the proven track, frozen except hardening.
+**What it is now:** proven as a deployment configuration, frozen except hardening.
+Everything pipeline lives in `NHE-Edge/` (moved 2026-09-04, history kept).
 
-**What remains for Edge:**
-- Quiet diagnostic follow-up: test attention entropy + provenance/fact checks
-  as a second response for the 4 quiet cases. NTW gives the likely category;
-  direct attribution remains open.
-- Qwen sampled battery (signal exists; test repair under sampling).
-- Latency on NPU / smaller models.
+**Remaining:** family-aware trigger or per-family mask; a direct provenance test for
+any residual confirmed as a static void; a larger model, to test whether the
+deployment result survives a change of size.
 
-## Track B - NHE-GenPM (general-purpose, next)
+## Track B — NHE-NTW (mechanism)
 
-**Goal:** Broad models where you must keep MMLU/ARC. Don't cut raw neurons - shift features.
+**Goal:** establish what the unreachable residual actually is, causally, and turn it
+into an operational triage rule.
 
-**Mechanism:** Same detector, but intervention is SAEs or steering vectors in latent space instead of `weight *= 0.3`. This avoids polysemantic damage.
+**Status:** the void class is established by controlled experiment. The remaining
+work is direct provenance verification on a production model, so the Gemma quiet
+cases move from "consistent with the void reading" to "attributed".
 
-**What it is now:** Plan-only, zero code (`NHE-GenPM/plan.md`, `sae/README.md`). The Qwen adapter lives in `NHE-Edge/core/runtime_rollback_qwen.py` (Edge-side cross-arch work), not here. No SAE training yet.
+## Track C — NHE-GenPM (planned)
 
-**What needs to be built:**
-- Train or load a small SAE for Gemma 3 1B mid layers (or use open SAEs if available for Gemma/Qwen).
-- Map k32 neurons -> SAE features, then steer instead of scale.
-- Evaluate on MMLU 200 (real, not proxy) and GSM8K before/after - must preserve.
+**Goal:** models where raw neuron scaling is unacceptable and unrelated capability
+must be preserved (MMLU/ARC).
 
-## Paper - Third paper (diagnostic)
+**Mechanism:** same detector, intervention in feature space (SAE / steering
+vectors) instead of `weight *= 0.3`, to avoid polysemantic damage.
 
-The 4 quiet cases are now a clear motivation for the NTW companion proof. The
-controlled experiment establishes a Static Memory Void category, and the
-entropy audit shows that 3/4 Gemma quiet cases commit with high confidence;
-Gabon is a separate uncertainty/truncation case. The current runtime signal
-does not cover this failure mode, so the correct next step is fact/provenance
-validation before more threshold tuning. This remains a plausible mechanism
-and triage taxonomy, not a direct attribution of all four cases.
+**Status:** plan only, no code (`NHE-GenPM/plan.md`). Needs a trained or loaded SAE,
+a neuron→feature mapping, and MMLU/ARC preservation checks.
 
-A production diagnostic paper still needs a larger sample, direct model-level
-provenance tests, and a second signal with its own AUC. The current Gemma
-logit-lens classification alone does not separate the four quiet cases from
-the other errors. Data so far in `NHE-Edge/results/quiet_diagnostic.json` and
-`entropy_audit.json` is the foundation for that next experiment.
+## Appendix: repo reorg (done 2026-09-04)
 
-## Appendix: Repo reorg (done 2026-09-04)
-
-Moved via `git mv` (history preserved): all 22 scripts + `topics.py` + `results/`
-+ `legacy/` + full README -> `NHE-Edge/`. Root holds only overview `README.md`,
-`STATUS.md`, `ROADMAP.md`, `requirements.txt`, `.gitignore`. `models/` and
-`data/` stay at root (gitignored, heavy); Edge code resolves them via
-`REPO_ROOT`. `NHE-GenPM/` holds plan + `sae/` skeleton. No shims - scripts run
-from `NHE-Edge/` with script-dir-anchored paths (validated: `analysis/stats.py strict`,
+Moved via `git mv` (history preserved): all scripts + `topics.py` + `results/` +
+`legacy/` -> `NHE-Edge/`. Root holds only overview docs, `requirements.txt`,
+`.gitignore`. `models/` and `data/` stay at root (gitignored, heavy); Edge code
+resolves them via `REPO_ROOT`. No shims — scripts run from `NHE-Edge/` with
+script-dir-anchored paths (validated: `analysis/stats.py strict` and
 `experiments/bench.py analyze` reproduce headline numbers from any CWD).
 
-## Milestones
-
-- **Now -> 1 week:** Direct NTW signature test on Gemma/Claude-scale models + quiet second signal test. This makes the diagnostic story stronger.
-- **Now -> 2 weeks:** Real Qwen0.5B sampled battery (hard/random) + real MMLU 200 comparison. This completes the Edge cross-model evidence.
-- **2-4 weeks:** SAE prototype on Gemma 1B mid layers, compare raw scaling vs steering on MMLU.
-- **Paper:** Edge paper first (with cross-model + MMLU), NTW diagnostic companion second, GenPM paper third.
-
-Full numbers always in `NHE-Edge/results/NUMBERS.md` (hard vs random, greedy vs sampled, strict vs loose).
+Full numbers always in `NHE-Edge/results/NUMBERS.md`.

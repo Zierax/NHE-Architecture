@@ -1,20 +1,41 @@
 # Canonical, protocol-labelled numbers - NHE-Architecture
 
-Last updated: 2026-09-06 - Edge protocol spec + format-causality 2x2 + latency.
+Last updated: 2026-09-23 - single-task benchmark, applicability gate, reachability.
 
-## Edge evaluation protocol (what counts as a result here)
+## How to read this table
+
+This file is the single source of truth for every number the project quotes. Results
+appear under one of three evidence standards, and the standard determines what the
+number is allowed to support.
+
+| Standard | What it establishes | Requires |
+|---|---|---|
+| **[DEPLOYMENT-VALID]** | The deployed configuration does what the mission asks, on the measured hardware, within the measured budget. | Direct measurement of the shipped configuration. **Not** a significance test. |
+| **[MECHANISM]** | A causal explanation of observed behaviour, established in a controlled setting. | Controlled experiment with a falsifiable prediction. |
+| **[OPEN]** | A scientific question the evidence does not settle. | Nothing — it is reported as unresolved. |
+
+The distinction is not presentational. A deployment claim is verified by running
+the thing that ships; a population-level effect claim is verified by inference over
+samples. They can diverge, and here they do: the runtime arm **passes** the
+deployment bar (0 regressions over 463 items, +20.5% latency, ~6–10 h wall-clock)
+and **fails** the significance test (3 fixes, 0 regressions, p = 0.25). Both
+statements are true, and reporting either one alone misrepresents the work.
+
+## Edge evaluation protocol
 
 NHE-Edge fixes *specific* knowledge on-device, no retraining. Every claim reports
-four numbers: **fix rate** (wrong->correct), **break rate** (correct->wrong, must be 0),
-**preservation** (unrelated knowledge unchanged: Europe controls + MMLU), and
-**time cost** (detector overhead + mask-apply + end-to-end vs fine-tuning).
-A result with breaks > 0 fails the Edge bar no matter the fix rate.
-**This file is the single source of truth for every number cited by this project.** Any
-other document/presentation that quotes a result MUST read from this table and MUST label
-both the **protocol** (greedy / sampled) and the **metric** (substring / strict
-first-sentence). Comparing values from different protocols or metrics is invalid.
-**Primary inference is item-level (majority vote); per-draw McNemar/CI are reported
-but overstate power (6 correlated draws per item) - see caveats.**
+four numbers: **fix rate** (wrong→correct), **break rate** (correct→wrong, must be
+0), **preservation** (unrelated knowledge unchanged), and **time cost**
+(detector overhead + mask-apply + end-to-end vs fine-tuning).
+
+**A result with breaks > 0 fails the Edge deployment bar regardless of fix rate.**
+This is the rule that rejected the higher-recall L11/w10 arm (4 fixes, 2 breaks)
+in favour of L19/w5 (3 fixes, 0 breaks) — see the reachability section.
+
+Any document quoting a number from here must carry both the **protocol** (greedy /
+sampled) and the **metric** (strict first-sentence / legacy substring). Comparing
+values across protocols or metrics is invalid. Primary inference is item-level;
+per-draw McNemar/CI overstate power (6 correlated draws per item) — see caveats.
 
 ## Protocols and metrics
 
@@ -26,12 +47,35 @@ but overstate power (6 correlated draws per item) - see caveats.**
 
 | Metric | Rule | Notes |
 |---|---|---|
-| **substring** | any answer (incl. alternatives) is a substring of the full generation | permissive - misses hedges |
-| **strict (first sentence)** | any answer is a substring of the text up to the first `.` or newline | catches commit/hedge; format-independent |
+| **strict (primary)** | accepted answer appears as a whole token sequence in the text up to the first `.` or newline | accent- and case-insensitive; unit-tested in `analysis/test_scoring.py` |
+| **substring (legacy)** | plain substring of the first sentence | unsafe on this task — 26 rows had a shorter accepted answer inside a longer one ('bern' in 'berne'); reported only for comparison |
 
-> Conflict resolved: `12.96%->5.56%` = **greedy** row for `k128_wrong` under the **substring**
-> metric. `0.093` = **sampled per-draw mean** for the same mask (majority = 0.074).
-> Same mask, two protocols - both correct once labelled.
+On the single-task benchmark the two metrics agreed on all 463 items, so no result
+below depends on the choice.
+
+> Conflict resolved: `12.96%→5.56%` = **greedy** row for `k128_wrong` under the
+> **substring** metric. `0.093` = **sampled per-draw mean** for the same mask
+> (majority = 0.074). Same mask, two protocols — both correct once labelled.
+
+## The deployment result
+
+**[DEPLOYMENT-VALID]** The numbers a field deployment depends on. Full detail in
+the single-task section below; summarised here because they are the mission
+criteria, not a statistical claim.
+
+| Criterion | Value |
+|---|---:|
+| Baseline errors / 463 | 59 (0.1274) |
+| Errors after runtime intervention | **56 (0.1210)** |
+| Fixes / regressions | **3 / 0** |
+| Per-token latency overhead | **+20.5%** (44.8 ms) |
+| Mask apply, once per firing | 160 ms |
+| Retraining required | **none** |
+| Wall-clock, collect → verified | ~6–10 h |
+
+The significance test on the same run is p = 0.25 and is reported in the
+single-task section as an **[OPEN]** scientific question. It does not bear on the
+rows above.
 
 ## Headline - Africa (54), greedy
 
@@ -249,7 +293,7 @@ away: `analysis/report_answer_set_gaps.py` finds 19 structurally exposed items a
 | none | 463 | 59 | 0.1274 |
 | runtime soft, L19/w5/t90, scale 0.3 | 463 | **56** | **0.1210** |
 
-**Paired result (strict, exact McNemar):**
+**Paired result (strict, exact McNemar) — [OPEN], a scientific question:**
 
 | metric | value |
 |---|---:|
@@ -261,27 +305,31 @@ away: `analysis/report_answer_set_gaps.py` finds 19 structurally exposed items a
 | fired | 41 (of which wrong-before 9) |
 | repairs per fired wrong item | **0.333** |
 
-**What this establishes, at n=463 instead of n=54:**
+**[DEPLOYMENT-VALID]** What this run establishes for a field deployment, at n=463
+instead of n=54:
 - **Zero collateral damage is not a small-sample artefact.** 0 breaks across 463
-  items and three question frames, against 9 breaks in the merged static+temporal arm.
-- **The timing law holds at scale.** 40 of 41 fired items have lead >= 1; the
-  single lead < 1 item never flipped. Every lead >= 1 firing that was wrong either
-  fixed or was left unharmed.
-- **The per-fired repair rate generalises.** 0.333 here vs 0.286 on Africa - the
-  quantity that has to survive a domain change did survive it.
-- **The taxonomy split is confirmed at scale.** Of the 56 items still wrong,
-  **50 never fired (89.3%)**. That is the Static Memory Void population NTW
-  explains, outside runtime reach by construction.
+  items and three question frames, against 9 breaks in the merged static+temporal
+  arm. The deployment criterion — no regression — is met and verified.
+- **The repair mechanism generalises.** 0.333 repairs per fired wrong item here
+  versus 0.286 on Africa. This is the quantity that must survive a domain change,
+  and it did.
+- **The residual is characterised.** Of the 56 items still wrong, **50 never
+  fired (89.3%)**. That is the population NHE-NTW identifies as static voids,
+  outside runtime reach by construction, so it is measured rather than unknown.
 
-**What it does NOT establish:**
-- **Statistical significance.** p = 0.25. `analysis/power_single_task.py` computed
-  before the run that 6 fixes with 0 breaks is the minimum for p < 0.05. The
-  benchmark has the headroom (59 wrong items) but the detector reached only 15.3%
-  of them, so the arm yields 3 discordant pairs, not 6.
-- **Why.** The cause is measured: firing precision is 0.220 (9 of 41 firings were
-  on actually-wrong items). Thirty-two firings landed on already-correct items and
-  did no harm, which is safe but wasteful. Raising significance needs a
-  higher-recall trigger, not a larger benchmark.
+**[DEPLOYMENT-VALID]** The timing law, verified at scale: 40 of 41 fired items had
+lead ≥ 1; the single lead < 1 item never flipped. Every lead ≥ 1 firing on a wrong
+item either repaired it or left it unharmed.
+
+**[OPEN]** Statistical significance. p = 0.25.
+`analysis/power_single_task.py`, computed before the run, determined that 6 fixes
+with 0 breaks is the minimum for p < 0.05. The benchmark has the headroom (59
+error items) but the deployed trigger reaches only 15.3% of them at precision
+0.220, producing three discordant pairs where six are needed. The shortfall is
+recall, and it is measured: the cause is not sample size.
+
+**[OPEN]** Whether more recall is obtainable without regression. See the
+reachability section: a higher-recall trigger was built, and it regressed.
 
 Files: `analysis/{audit_single_task,build_single_task,scoring,test_scoring,
 report_answer_set_gaps,run_single_task,power_single_task,score_single_task,

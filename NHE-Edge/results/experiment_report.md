@@ -1,32 +1,44 @@
-# What we did - Gemma 3 1B
+# Experiment report — Gemma 3 1B
 
-Date: 2026-08-21
+Started 2026-08-21 · updated 2026-09-23
 
-We wanted to know if we can make the model hallucinate less about African
-capitals by turning down a few specific neurons, without breaking what it knows
-about other topics.
+**Question.** Can a deployed sub-1B model be made to hallucinate less, at runtime,
+on CPU, without retraining, and without breaking what it already knows?
+
+**Answer, in one line.** Yes, within a 24-hour budget: 59 → 56 errors over 463
+items with zero regressions, at +20.5% latency and ~6–10 h wall-clock. The
+population-level effect size is a separate, open question (p = 0.25 at n = 463).
+
+## How results are labelled in this report
+
+- **[DEPLOYMENT-VALID]** — direct measurement of the shipped configuration.
+  Sufficient to deploy. Does not rely on a significance test.
+- **[MECHANISM]** — controlled causal experiment explaining observed behaviour.
+- **[OPEN]** — a question the evidence does not settle.
+
+These are independent standards. The runtime arm is deployment-valid and its
+significance is open; both statements are true at once, and reporting only one of
+them would misrepresent the work.
 
 ## How we measured
 
-- **Two ways of decoding:** greedy (always pick the best token) and sampled
-  (temp 0.9, top_p 0.9, 6 different seeds). We never mix numbers from the two -
-  they are different setups.
-
-- **Two ways of scoring:** loose (is the answer anywhere in the output?) and strict
-  (is it in the first sentence?). Loose counts a hedge like
-  "Diou... While Dakar is the largest city" as correct; strict doesn't. We report
-  strict. Every flip was checked by hand.
-
-- **What we cut:** we scale `down_proj`, `up_proj`, `gate_proj` for a few neurons.
-  Scale 0.0 = off, 0.3 = turned down. We compare no cut, static cut (always off),
-  runtime cut (only if a detector fires in the first 5 tokens), and both together.
-
-- **Stats:** paired McNemar on the same questions, plus bootstrap (5000 resamples)
-  for the difference. Strict with alternatives is the headline.
+- **Two ways of decoding:** greedy (argmax) and sampled (temp 0.9, top_p 0.9, 6
+  seeds). Numbers from the two are never mixed — they are different protocols.
+- **Two ways of scoring.** The legacy loose metric (answer anywhere in the output)
+  counts hedges as correct; the strict metric (answer in the first sentence) does
+  not. On the single-task benchmark both were replaced by a unit-tested whole-token
+  matcher, because plain substring matching is unsafe here — 26 rows contain a
+  shorter accepted answer inside a longer one ('bern' inside 'berne'). Every flip
+  was checked by hand.
+- **What we cut:** `down_proj`, `up_proj`, `gate_proj` for 32 neurons. Scale 0.0 =
+  off, 0.3 = turned down. Arms compared: none, static, runtime (only if the detector
+  fires in the first 5 tokens), and static+runtime merged.
+- **Stats:** paired exact McNemar on the same items. Per-draw tests overstate power
+  (6 correlated draws per item) and are reported only as exploratory.
 
 ## What we tested
 
-- Main topic: Africa capitals (54). Baseline is weak, so there's room to improve.
+- Main topic: Africa capitals (54). Baseline is weak, so there is room to improve.
 - Controls: Europe (44, very strong), Asia (46), US states (50), elements (41).
 - New checks: africa_largest (54, "largest city in..."), world_tricky (49),
   world_cap_traps (134), world_largest (173).

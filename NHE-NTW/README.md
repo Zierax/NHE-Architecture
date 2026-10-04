@@ -1,22 +1,24 @@
 # NHE-NTW — Not Trained Well
 
-NHE-NTW is a controlled proof-of-concept for a failure mode that NHE-Edge
-cannot repair at runtime: a **Static Memory Void**, a confident wrong fact that
-has been learned into the model weights.
+NHE-NTW is a controlled proof-of-concept for a failure mode NHE-Edge cannot reach at
+runtime: a **Static Memory Void**, a wrong fact stored confidently in the weights.
 
-## Main result
+Its role in the project is diagnostic, not deployment. NHE-Edge ships; this track
+explains what the shipped method cannot fix and routes those errors to the right
+response.
 
-We train a tiny GPT from scratch on synthetic capital facts. The experiment
-plants four false facts, keeps 32 facts correct, and makes four facts ambiguous
-(50/50). The model then answers under the same three-way probe used by Edge:
+## What this track establishes
 
-- **Static Memory Void:** a planted false fact, answered confidently and with
-  no meaningful pre-commit jitter.
-- **Transient Execution Drift:** an ambiguous fact, answered with uncertainty
-  or conflict.
+We train a tiny GPT from scratch on synthetic capital facts. The experiment plants
+four false facts, keeps 32 correct, and makes four ambiguous (50/50). The model
+then answers under the same three-way probe used by Edge:
+
+- **Static Memory Void:** a planted false fact, answered confidently with no
+  meaningful pre-commit jitter.
+- **Transient Execution Drift:** an ambiguous fact, answered with uncertainty.
 - **Correct answer:** a true fact learned normally.
 
-### Final v2 result (seed 7, full-sentence answers, truth in vocabulary)
+### Result (v2, seed 7, full-sentence answers, truth in vocabulary)
 
 | group | n | accuracy vs truth | confidence | preamble jitter | P(truth) on planted |
 |---|---:|---:|---:|---:|---:|
@@ -25,16 +27,37 @@ plants four false facts, keeps 32 facts correct, and makes four facts ambiguous
 | ambiguous | 4 | 0.750 | 0.514 | 662.9 | — |
 | unseen | 4 | — | 0.548 | 666.8 | — |
 
-The key positive finding is the planted group: all four false facts become
-confident wrong commitments with jitter indistinguishable from the correct
-group. This establishes that **quiet, confident, wrong behavior can be created
-by training and does not require an inference-time conflict**.
+The main finding: **training can create the exact quiet-confident-wrong
+signature**, with jitter indistinguishable from a correct answer. Countries with
+zero training examples instead answer uncertain (mean confidence 0.548), so
+ignorance alone does not reproduce it. This is what makes the void class a
+measured construct rather than a label for "the detector didn't fire".
 
-The unseen group supplies a useful falsification check. Countries with zero
-training examples answer with lower confidence (0.548 on average) rather than
-confidently inventing a single stable lie. Within this controlled setup,
-ignorance therefore produces uncertainty, while the planted facts produce the
-quiet-confident signature.
+## Why it matters operationally
+
+At deployment scale, 89.3% of the errors remaining after NHE-Edge runs never fire.
+If those are voids, then the correct response is a fact-level repair — provenance
+check, better training data, or an external knowledge source — and the correct
+refusal is to spend a day tuning a runtime threshold that cannot fire.
+
+The triage rule that follows:
+
+| observation | response |
+|---|---|
+| pre-commit spike, then wrong answer | runtime suppression (NHE-Edge) — in scope |
+| no spike, high confidence, wrong answer | fact/provenance repair — runtime is out of scope |
+
+## Relationship to Gemma's quiet cases
+
+NHE-NTW's four planted lies are a controlled analogue of the Africa capitals that
+never spike (Cape Verde, Equatorial Guinea, Gabon, Guinea). The Gemma entropy
+audit is consistent: three of those four commit with high confidence (p = 1.000,
+0.9986, 0.956); Gabon is a separate uncertainty case.
+
+What NTW proves is that the training-based mechanism exists and has the predicted
+signature. What it does **not** prove is that these particular Gemma weights were
+trained on the four false answers. That stronger claim requires a provenance test
+or dataset audit, and is recorded as open in `../STATUS.md`.
 
 ## What this means for NHE-Edge
 
